@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useCallback, useMemo } from "react";
 import BANCO from "../data/banco.json";
+import { supabase } from "../lib/supabase";
 
 // ── CONFIGURAÇÕES DOS USUÁRIOS ─────────────────────────────────────────────
 const USERS = [
@@ -246,7 +247,55 @@ export default function App() {
     return () => document.head.removeChild(style);
   }, []);
 
-  // Carregar sessão e SRS do localStorage
+  // Salvar progresso no Supabase
+  const saveSRSData = async (username, srs, currentSettings) => {
+    try {
+      await supabase.from("user_progress").upsert({
+        username,
+        srs_data: srs,
+        settings: currentSettings,
+        updated_at: new Date().toISOString(),
+      });
+    } catch (e) {
+      console.error("Erro ao salvar no Supabase:", e);
+    }
+  };
+
+  // Carregar progresso do Supabase
+  const loadUserData = async (username) => {
+    try {
+      const { data, error } = await supabase
+        .from("user_progress")
+        .select("srs_data, settings")
+        .eq("username", username)
+        .single();
+
+      if (error) {
+        console.warn("Erro ao buscar do Supabase, usando local:", error);
+        const savedSRS = localStorage.getItem("pcpe_srs_" + username);
+        if (savedSRS) setSrsData(JSON.parse(savedSRS));
+        const savedSettings = localStorage.getItem("pcpe_settings_" + username);
+        if (savedSettings) {
+          const settings = JSON.parse(savedSettings);
+          if (settings.reviewOrder) setReviewOrder(settings.reviewOrder);
+        }
+        return;
+      }
+
+      if (data) {
+        if (data.srs_data) setSrsData(data.srs_data);
+        if (data.settings && data.settings.reviewOrder) {
+          setReviewOrder(data.settings.reviewOrder);
+        }
+        localStorage.setItem("pcpe_srs_" + username, JSON.stringify(data.srs_data || {}));
+        localStorage.setItem("pcpe_settings_" + username, JSON.stringify(data.settings || {}));
+      }
+    } catch (e) {
+      console.error("Erro no loadUserData:", e);
+    }
+  };
+
+  // Carregar sessão e SRS do localStorage e Supabase
   useEffect(() => {
     try {
       const savedSession = localStorage.getItem("pcpe_session");
@@ -254,13 +303,7 @@ export default function App() {
         const user = JSON.parse(savedSession);
         if (USERS.find(u => u.username === user.username)) {
           setCurrentUser(user);
-          const savedSRS = localStorage.getItem("pcpe_srs_" + user.username);
-          if (savedSRS) setSrsData(JSON.parse(savedSRS));
-          const savedSettings = localStorage.getItem("pcpe_settings_" + user.username);
-          if (savedSettings) {
-            const settings = JSON.parse(savedSettings);
-            if (settings.reviewOrder) setReviewOrder(settings.reviewOrder);
-          }
+          loadUserData(user.username);
         }
       }
     } catch (e) {
@@ -271,16 +314,8 @@ export default function App() {
   const handleLogin = (user) => {
     try {
       localStorage.setItem("pcpe_session", JSON.stringify(user));
-      const savedSRS = localStorage.getItem("pcpe_srs_" + user.username);
-      setSrsData(savedSRS ? JSON.parse(savedSRS) : {});
-      const savedSettings = localStorage.getItem("pcpe_settings_" + user.username);
-      if (savedSettings) {
-        const settings = JSON.parse(savedSettings);
-        if (settings.reviewOrder) setReviewOrder(settings.reviewOrder);
-      } else {
-        setReviewOrder("random");
-      }
       setCurrentUser(user);
+      loadUserData(user.username);
     } catch {}
   };
 
@@ -306,6 +341,7 @@ export default function App() {
       } catch (e) {
         console.error(e);
       }
+      saveSRSData(currentUser.username, srsData, { reviewOrder: order });
     }
   };
 
@@ -472,6 +508,7 @@ export default function App() {
       } catch (e) {
         console.error(e);
       }
+      saveSRSData(currentUser.username, updatedSRS, { reviewOrder });
     }
 
     if (currentQueueIndex + 1 < studyQueue.length) {
