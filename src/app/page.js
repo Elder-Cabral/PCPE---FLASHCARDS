@@ -267,8 +267,7 @@ export default function App() {
       const { data, error } = await supabase
         .from("user_progress")
         .select("srs_data, settings")
-        .eq("username", username)
-        .single();
+        .eq("username", username);
 
       if (error) {
         console.warn("Erro ao buscar do Supabase, usando local:", error);
@@ -282,13 +281,26 @@ export default function App() {
         return;
       }
 
-      if (data) {
-        if (data.srs_data) setSrsData(data.srs_data);
-        if (data.settings && data.settings.reviewOrder) {
-          setReviewOrder(data.settings.reviewOrder);
+      if (data && data.length > 0) {
+        const row = data[0];
+        if (row.srs_data) setSrsData(row.srs_data);
+        if (row.settings && row.settings.reviewOrder) {
+          setReviewOrder(row.settings.reviewOrder);
         }
-        localStorage.setItem("pcpe_srs_" + username, JSON.stringify(data.srs_data || {}));
-        localStorage.setItem("pcpe_settings_" + username, JSON.stringify(data.settings || {}));
+        localStorage.setItem("pcpe_srs_" + username, JSON.stringify(row.srs_data || {}));
+        localStorage.setItem("pcpe_settings_" + username, JSON.stringify(row.settings || {}));
+      } else {
+        console.log("Nenhum dado no Supabase para", username, "- Migrando localStorage local.");
+        const savedSRS = localStorage.getItem("pcpe_srs_" + username);
+        const savedSettings = localStorage.getItem("pcpe_settings_" + username);
+        
+        const localSRS = savedSRS ? JSON.parse(savedSRS) : {};
+        const localSettings = savedSettings ? JSON.parse(savedSettings) : { reviewOrder: "random" };
+
+        setSrsData(localSRS);
+        if (localSettings.reviewOrder) setReviewOrder(localSettings.reviewOrder);
+
+        await saveSRSData(username, localSRS, localSettings);
       }
     } catch (e) {
       console.error("Erro no loadUserData:", e);
