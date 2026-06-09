@@ -736,6 +736,7 @@ export default function App() {
             onClick={() => {
               setStudyMode(null);
               setSelectedMateria(null);
+              setSessionCompleted(false);
             }}
             className="btn-hover"
             style={{
