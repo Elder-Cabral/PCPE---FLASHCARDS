@@ -29,34 +29,34 @@ function calculateSM2(q, interval = 1, repetition = 0, ef = 2.5) {
   let newRepetition = 0;
   let newEf = ef;
 
-  if (q > 0) {
-    if (repetition === 0) {
-      newInterval = 1;
-    } else if (repetition === 1) {
-      newInterval = q === 1 ? 2 : (q === 2 ? 4 : 6);
-    } else {
-      newInterval = Math.round(interval * ef);
-    }
-    newRepetition = repetition + 1;
-  } else {
+  if (q === 0) { // Errei
     newInterval = 1;
     newRepetition = 0;
+    newEf = Math.max(1.3, ef - 0.2);
+  } else if (q === 1) { // Difícil
+    newInterval = 3;
+    newRepetition = repetition + 1;
+    newEf = Math.max(1.3, ef - 0.15);
+  } else if (q === 2) { // Bom
+    newInterval = 6;
+    newRepetition = repetition + 1;
+    newEf = ef;
+  } else if (q === 3) { // Fácil
+    newInterval = 10;
+    newRepetition = repetition + 1;
+    newEf = Math.min(3.0, ef + 0.15);
   }
 
-  // Ajuste do Fator de Facilidade (Ease Factor)
-  if (q === 3) {
-    newEf = Math.min(3.0, ef + 0.15);
-  } else if (q === 1) {
-    newEf = Math.max(1.3, ef - 0.15);
-  } else if (q === 0) {
-    newEf = Math.max(1.3, ef - 0.2);
-  }
+  // Vencimento à meia-noite (00:00:00) de newInterval dias a partir de hoje
+  const targetDate = new Date();
+  targetDate.setDate(targetDate.getDate() + newInterval);
+  targetDate.setHours(0, 0, 0, 0);
 
   return {
     interval: newInterval,
     repetition: newRepetition,
     ef: newEf,
-    dueDate: Date.now() + newInterval * 24 * 60 * 60 * 1000,
+    dueDate: targetDate.getTime(),
     lastReviewed: Date.now()
   };
 }
@@ -116,6 +116,7 @@ export default function App() {
   const [isFlipped, setIsFlipped] = useState(false);
   const [sessionCompleted, setSessionCompleted] = useState(false);
   const [sessionStats, setSessionStats] = useState({ studied: 0, gotWrong: 0, gotEasy: 0 });
+  const [reviewOrder, setReviewOrder] = useState("random"); // 'random', 'easy_first', 'hard_first'
 
   // Estilos globais e de responsividade injetados
   useEffect(() => {
@@ -254,6 +255,11 @@ export default function App() {
           setCurrentUser(user);
           const savedSRS = localStorage.getItem("pcpe_srs_" + user.username);
           if (savedSRS) setSrsData(JSON.parse(savedSRS));
+          const savedSettings = localStorage.getItem("pcpe_settings_" + user.username);
+          if (savedSettings) {
+            const settings = JSON.parse(savedSettings);
+            if (settings.reviewOrder) setReviewOrder(settings.reviewOrder);
+          }
         }
       }
     } catch (e) {
@@ -266,6 +272,13 @@ export default function App() {
       localStorage.setItem("pcpe_session", JSON.stringify(user));
       const savedSRS = localStorage.getItem("pcpe_srs_" + user.username);
       setSrsData(savedSRS ? JSON.parse(savedSRS) : {});
+      const savedSettings = localStorage.getItem("pcpe_settings_" + user.username);
+      if (savedSettings) {
+        const settings = JSON.parse(savedSettings);
+        if (settings.reviewOrder) setReviewOrder(settings.reviewOrder);
+      } else {
+        setReviewOrder("random");
+      }
       setCurrentUser(user);
     } catch {}
   };
@@ -279,6 +292,40 @@ export default function App() {
     setStudyMode(null);
     setShowTopicSelector(false);
     setSrsData({});
+  };
+
+  const updateReviewOrder = (order) => {
+    setReviewOrder(order);
+    if (currentUser) {
+      try {
+        localStorage.setItem(
+          "pcpe_settings_" + currentUser.username,
+          JSON.stringify({ reviewOrder: order })
+        );
+      } catch (e) {
+        console.error(e);
+      }
+    }
+  };
+
+  const sortQueue = (queueToSort) => {
+    const sorted = [...queueToSort];
+    if (reviewOrder === "random") {
+      sorted.sort(() => Math.random() - 0.5);
+    } else if (reviewOrder === "easy_first") {
+      sorted.sort((a, b) => {
+        const intervalA = srsData[a.id] ? srsData[a.id].interval : 4;
+        const intervalB = srsData[b.id] ? srsData[b.id].interval : 4;
+        return intervalB - intervalA;
+      });
+    } else if (reviewOrder === "hard_first") {
+      sorted.sort((a, b) => {
+        const intervalA = srsData[a.id] ? srsData[a.id].interval : 4;
+        const intervalB = srsData[b.id] ? srsData[b.id].interval : 4;
+        return intervalA - intervalB;
+      });
+    }
+    return sorted;
   };
 
   // Cálculo de estatísticas gerais
@@ -345,9 +392,9 @@ export default function App() {
       queue = [...dueCards, ...newCards];
     }
 
-    queue.sort(() => Math.random() - 0.5);
+    const sortedQueue = sortQueue(queue);
 
-    setStudyQueue(queue);
+    setStudyQueue(sortedQueue);
     setCurrentQueueIndex(0);
     setIsFlipped(false);
     setStudyMode(mode);
@@ -361,9 +408,9 @@ export default function App() {
     const cards = BANCO[selectedMateria] || [];
     let queue = cards.filter(c => topicsToStudy.includes(c.topico));
 
-    queue.sort(() => Math.random() - 0.5);
+    const sortedQueue = sortQueue(queue);
 
-    setStudyQueue(queue);
+    setStudyQueue(sortedQueue);
     setCurrentQueueIndex(0);
     setIsFlipped(false);
     setStudyMode("topic");
@@ -471,11 +518,11 @@ export default function App() {
 
           {/* Flashcard 3D */}
           <div
-            onClick={() => !isFlipped && setIsFlipped(true)}
+            onClick={() => setIsFlipped(prev => !prev)}
             style={{
               width: "100%",
               height: 320,
-              cursor: isFlipped ? "default" : "pointer",
+              cursor: "pointer",
               perspective: 1000
             }}
           >
@@ -942,6 +989,33 @@ export default function App() {
   // Página Inicial - Lista de Matérias
   return (
     <Shell user={currentUser} stats={stats} onLogout={handleLogout}>
+      {/* Barra de Preferências */}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20, background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "12px 18px", flexWrap: "wrap", gap: 12 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+          <span style={{ fontSize: 16 }}>⚙️</span>
+          <span style={{ color: "#94a3b8", fontSize: 13, fontWeight: 500 }}>Ordem de Estudo / Revisão:</span>
+        </div>
+        <select
+          value={reviewOrder}
+          onChange={(e) => updateReviewOrder(e.target.value)}
+          style={{
+            background: "#0f172a",
+            border: "1px solid rgba(255,255,255,0.1)",
+            borderRadius: 10,
+            padding: "8px 12px",
+            color: "#f1f5f9",
+            fontSize: 13,
+            fontWeight: 500,
+            outline: "none",
+            cursor: "pointer"
+          }}
+        >
+          <option value="random">🎲 Aleatório (Padrão)</option>
+          <option value="easy_first">📈 Fáceis Primeiro (Dificuldade Ascendente)</option>
+          <option value="hard_first">📉 Difíceis Primeiro (Dificuldade Descendente)</option>
+        </select>
+      </div>
+
       {/* Cards de Métricas Gerais - Utiliza classe responsiva */}
       <div className="dashboard-metrics-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 14, marginBottom: 28 }}>
         <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 20, padding: 18, display: "flex", alignItems: "center", gap: 16 }}>
