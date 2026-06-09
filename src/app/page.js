@@ -117,7 +117,7 @@ export default function App() {
   const [sessionCompleted, setSessionCompleted] = useState(false);
   const [sessionStats, setSessionStats] = useState({ studied: 0, gotWrong: 0, gotEasy: 0 });
 
-  // Estilos globais injetados
+  // Estilos globais e de responsividade injetados
   useEffect(() => {
     const style = document.createElement("style");
     style.innerHTML = `
@@ -155,6 +155,70 @@ export default function App() {
       .custom-scrollbar::-webkit-scrollbar-thumb {
         background: rgba(255,255,255,0.1);
         border-radius: 3px;
+      }
+
+      /* Classes Responsivas e Estilos de Otimização Mobile */
+      .srs-buttons-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+      .materia-stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+      .flashcard-box {
+        position: absolute;
+        inset: 0;
+        backface-visibility: hidden;
+        border-radius: 24px;
+        padding: 36px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+      }
+      .flashcard-front-style {
+        background: linear-gradient(135deg, #0e1726, #090d16);
+        border: 1px solid rgba(255,255,255,0.06);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      }
+      .flashcard-back-style {
+        background: linear-gradient(135deg, #0f162a, #0b0f19);
+        box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+        overflow-y: auto;
+      }
+
+      @media (max-width: 480px) {
+        .srs-buttons-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 12px !important;
+        }
+        .materia-stats-grid {
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 10px !important;
+        }
+        .materia-stats-grid > div:last-child {
+          grid-column: span 2 !important;
+        }
+        .flashcard-box {
+          padding: 24px 20px !important;
+        }
+        .flashcard-question-text {
+          font-size: 16px !important;
+        }
+        .flashcard-answer-text {
+          font-size: 14px !important;
+        }
+        .materia-title {
+          font-size: 20px !important;
+        }
+        .dashboard-metrics-grid {
+          grid-template-columns: 1fr !important;
+          gap: 10px !important;
+        }
       }
     `;
     document.head.appendChild(style);
@@ -257,7 +321,6 @@ export default function App() {
     if (mode === "all") {
       queue = [...cards];
     } else {
-      // Modo SRS Inteligente: Cards vencidos (Due) primeiro, depois novos cards (limite de 15 por sessão)
       const dueCards = cards.filter(c => srsData[c.id] && srsData[c.id].dueDate <= Date.now());
       const newCards = cards.filter(c => !srsData[c.id]).slice(0, 15);
       queue = [...dueCards, ...newCards];
@@ -277,7 +340,6 @@ export default function App() {
   // Preparar fila de estudos por Tópicos
   const startTopicStudySession = (topicsToStudy) => {
     const cards = BANCO[selectedMateria] || [];
-    // Filtra cards que pertencem a um dos tópicos selecionados
     let queue = cards.filter(c => topicsToStudy.includes(c.topico));
 
     queue.sort(() => Math.random() - 0.5);
@@ -340,7 +402,7 @@ export default function App() {
 
     return (
       <Shell user={currentUser} stats={stats} onLogout={handleLogout}>
-        <div style={{ display: "flex", flexDirection: "column", gap: 24, maxWidth: 640, margin: "0 auto" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 20, maxWidth: 640, margin: "0 auto" }}>
           {/* Header do Estudo */}
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
             <button
@@ -354,15 +416,16 @@ export default function App() {
                 border: "1px solid rgba(255,255,255,0.08)",
                 color: "#94a3b8",
                 borderRadius: 12,
-                padding: "8px 16px",
+                padding: "8px 14px",
                 cursor: "pointer",
                 fontSize: 13,
-                fontWeight: 500
+                fontWeight: 500,
+                outline: "none"
               }}
             >
               ← Voltar
             </button>
-            <div style={{ textAlign: "center" }}>
+            <div style={{ textAlign: "center", padding: "0 8px" }}>
               <span style={{ color: matInfo?.color, fontSize: 11, fontWeight: 600, letterSpacing: 2, textTransform: "uppercase" }}>
                 {matInfo?.emoji} {matInfo?.label}
               </span>
@@ -408,72 +471,39 @@ export default function App() {
               }}
             >
               {/* Frente */}
-              <div
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  backfaceVisibility: "hidden",
-                  background: "linear-gradient(135deg, #0e1726, #090d16)",
-                  border: "1px solid rgba(255,255,255,0.06)",
-                  borderRadius: 24,
-                  padding: 36,
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  boxShadow: "0 20px 40px rgba(0,0,0,0.5)"
-                }}
-              >
+              <div className="flashcard-box flashcard-front-style">
                 <div style={{ fontSize: 10, color: "#3b82f6", fontWeight: 600, letterSpacing: 3, marginBottom: 20 }}>✦ PERGUNTA ✦</div>
-                <p style={{ color: "#f1f5f9", fontSize: 17, lineHeight: 1.7, textAlign: "center", margin: 0, fontWeight: 400, fontFamily: "Georgia, serif" }}>
+                <p className="flashcard-question-text" style={{ color: "#f1f5f9", fontSize: 18, lineHeight: 1.65, textAlign: "center", margin: 0, fontWeight: 400, fontFamily: "Georgia, serif" }}>
                   {currentCard?.pergunta}
                 </p>
-                <div style={{ marginTop: 32, color: "rgba(255,255,255,0.2)", fontSize: 11, letterSpacing: 1, fontWeight: 500 }}>
+                <div style={{ marginTop: 28, color: "rgba(255,255,255,0.2)", fontSize: 11, letterSpacing: 1, fontWeight: 500 }}>
                   Clique para revelar a resposta
                 </div>
               </div>
 
               {/* Verso */}
-              <div
-                className="custom-scrollbar"
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  backfaceVisibility: "hidden",
-                  transform: "rotateY(180deg)",
-                  background: "linear-gradient(135deg, #0f162a, #0b0f19)",
-                  border: `1px solid ${matInfo?.color}50`,
-                  borderRadius: 24,
-                  padding: 36,
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "flex-start",
-                  alignItems: "center",
-                  boxShadow: `0 20px 45px ${matInfo?.color}15`,
-                  overflowY: "auto"
-                }}
-              >
-                <div style={{ fontSize: 10, color: matInfo?.color, fontWeight: 600, letterSpacing: 3, marginBottom: 16 }}>✦ RESPOSTA ✦</div>
+              <div className="custom-scrollbar flashcard-box flashcard-back-style" style={{ border: `1px solid ${matInfo?.color}40` }}>
+                <div style={{ fontSize: 10, color: matInfo?.color, fontWeight: 600, letterSpacing: 3, marginBottom: 14 }}>✦ RESPOSTA ✦</div>
                 
-                <p style={{ color: "#e2e8f0", fontSize: 15, lineHeight: 1.7, textAlign: "center", margin: "0 0 20px 0", fontFamily: "Georgia, serif" }}>
+                <p className="flashcard-answer-text" style={{ color: "#e2e8f0", fontSize: 15, lineHeight: 1.65, textAlign: "center", margin: "0 0 16px 0", fontFamily: "Georgia, serif" }}>
                   {currentCard?.resposta}
                 </p>
 
                 {/* Dica do Professor */}
                 {currentCard?.dica && (
                   <div style={{
-                    background: "rgba(234,179,8,0.05)",
-                    border: "1px solid rgba(234,179,8,0.15)",
+                    background: "rgba(234,179,8,0.04)",
+                    border: "1px solid rgba(234,179,8,0.12)",
                     borderRadius: 14,
-                    padding: "16px 20px",
+                    padding: "12px 16px",
                     width: "100%",
                     boxSizing: "border-box",
                     marginTop: "auto"
                   }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: 8, color: "#eab308", fontSize: 11, fontWeight: 600, letterSpacing: 1, marginBottom: 6 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#eab308", fontSize: 11, fontWeight: 600, letterSpacing: 1, marginBottom: 4 }}>
                       <span>🎓</span> DICA DO PROFESSOR (CEBRASPE)
                     </div>
-                    <p style={{ color: "#d1d5db", fontSize: 12, lineHeight: 1.6, margin: 0 }}>
+                    <p style={{ color: "#d1d5db", fontSize: 11, lineHeight: 1.5, margin: 0 }}>
                       {currentCard?.dica}
                     </p>
                   </div>
@@ -486,8 +516,8 @@ export default function App() {
           <div style={{ minHeight: 70 }}>
             {isFlipped ? (
               studyMode === "srs" || studyMode === "topic" ? (
-                // 4 Botões SM-2
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10 }}>
+                // 4 Botões SM-2 com classe responsiva
+                <div className="srs-buttons-grid">
                   <button
                     onClick={() => handleCardFeedback(0)}
                     className="btn-hover"
@@ -518,7 +548,7 @@ export default function App() {
                   </button>
                 </div>
               ) : (
-                // Botão Próximo Simples (Modo Completo)
+                // Botão Próximo Simples
                 <button
                   onClick={() => {
                     if (currentQueueIndex + 1 < studyQueue.length) {
@@ -545,7 +575,7 @@ export default function App() {
                 </button>
               )
             ) : (
-              // Botão Revelar Centralizado
+              // Botão Revelar
               <button
                 onClick={() => setIsFlipped(true)}
                 className="btn-hover"
@@ -570,26 +600,26 @@ export default function App() {
     );
   }
 
-  // Se a sessão de estudos foi completada
+  // Sessão de Estudos Completada
   if (sessionCompleted) {
     const matInfo = MATERIAS.find(m => m.id === selectedMateria);
     return (
       <Shell user={currentUser} stats={stats} onLogout={handleLogout}>
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "40px 20px", maxWidth: 480, margin: "0 auto", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 24 }}>
-          <div style={{ fontSize: 64, marginBottom: 20 }}>🏆</div>
-          <h2 style={{ color: "#fff", fontSize: 24, fontWeight: 600, margin: 0 }}>Meta Diária Concluída!</h2>
-          <p style={{ color: "#64748b", fontSize: 14, lineHeight: 1.5, marginTop: 8, marginBottom: 24 }}>
-            Você revisou os cards programados de <strong>{matInfo?.label}</strong>. O algoritmo SM-2 atualizou seus intervalos científicos de memorização.
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "32px 20px", maxWidth: 480, margin: "0 auto", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 24 }}>
+          <div style={{ fontSize: 56, marginBottom: 16 }}>🏆</div>
+          <h2 style={{ color: "#fff", fontSize: 22, fontWeight: 600, margin: 0 }}>Meta Diária Concluída!</h2>
+          <p style={{ color: "#64748b", fontSize: 13, lineHeight: 1.5, marginTop: 8, marginBottom: 24 }}>
+            Você revisou os cards programados de <strong>{matInfo?.label}</strong>. O progresso foi computado no algoritmo de repetição.
           </p>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, width: "100%", marginBottom: 32 }}>
-            <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "16px 12px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, width: "100%", marginBottom: 24 }}>
+            <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "14px 10px" }}>
               <div style={{ fontSize: 20, fontWeight: 700, color: "#3b82f6" }}>{sessionStats.studied}</div>
-              <div style={{ fontSize: 10, color: "#64748b", marginTop: 4, fontWeight: 500, letterSpacing: 1 }}>CARDS REVISADOS</div>
+              <div style={{ fontSize: 9, color: "#64748b", marginTop: 4, fontWeight: 600, letterSpacing: 0.5 }}>CARDS ESTUDADOS</div>
             </div>
-            <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "16px 12px" }}>
+            <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "14px 10px" }}>
               <div style={{ fontSize: 20, fontWeight: 700, color: "#10b981" }}>{stats.streak} dias</div>
-              <div style={{ fontSize: 10, color: "#64748b", marginTop: 4, fontWeight: 500, letterSpacing: 1 }}>OFENSIVA ATUAL</div>
+              <div style={{ fontSize: 9, color: "#64748b", marginTop: 4, fontWeight: 600, letterSpacing: 0.5 }}>OFENSIVA ATUAL</div>
             </div>
           </div>
 
@@ -642,7 +672,7 @@ export default function App() {
 
       return (
         <Shell user={currentUser} stats={stats} onLogout={handleLogout}>
-          <div style={{ maxWidth: 560, margin: "0 auto", display: "flex", flexDirection: "column", gap: 24 }}>
+          <div style={{ maxWidth: 560, margin: "0 auto", display: "flex", flexDirection: "column", gap: 20 }}>
             <button
               onClick={() => setShowTopicSelector(false)}
               className="btn-hover"
@@ -662,21 +692,21 @@ export default function App() {
             </button>
 
             <div style={{ textAlign: "center" }}>
-              <div style={{ fontSize: 48, marginBottom: 8 }}>🔍</div>
-              <h2 style={{ color: "#fff", fontSize: 22, fontWeight: 600, margin: 0 }}>Estudar por Tópicos</h2>
+              <div style={{ fontSize: 44, marginBottom: 8 }}>🔍</div>
+              <h2 className="materia-title" style={{ color: "#fff", fontSize: 22, fontWeight: 600, margin: 0 }}>Estudar por Tópicos</h2>
               <p style={{ color: "#64748b", fontSize: 13, marginTop: 4 }}>
-                Selecione um ou mais assuntos de <strong>{mat.label}</strong> para estudar:
+                Selecione os assuntos de <strong>{mat.label}</strong> para estudar:
               </p>
             </div>
 
-            {/* Botões de Seleção Rápida */}
+            {/* Seleção Rápida */}
             <div style={{ display: "flex", gap: 10, justifyContent: "center" }}>
               <button
                 onClick={handleSelectAll}
                 className="btn-hover"
                 style={{
-                  background: "rgba(255,255,255,0.05)",
-                  border: "1px solid rgba(255,255,255,0.08)",
+                  background: "rgba(255,255,255,0.04)",
+                  border: "1px solid rgba(255,255,255,0.06)",
                   color: "#f1f5f9",
                   borderRadius: 10,
                   padding: "6px 12px",
@@ -685,14 +715,14 @@ export default function App() {
                   cursor: "pointer"
                 }}
               >
-                ✓ Selecionar Todos
+                ✓ Todos
               </button>
               <button
                 onClick={handleClearAll}
                 className="btn-hover"
                 style={{
-                  background: "rgba(255,255,255,0.05)",
-                  border: "1px solid rgba(255,255,255,0.08)",
+                  background: "rgba(255,255,255,0.04)",
+                  border: "1px solid rgba(255,255,255,0.06)",
                   color: "#f1f5f9",
                   borderRadius: 10,
                   padding: "6px 12px",
@@ -701,12 +731,12 @@ export default function App() {
                   cursor: "pointer"
                 }}
               >
-                ✗ Limpar Seleção
+                ✗ Limpar
               </button>
             </div>
 
             {/* Lista de Tópicos */}
-            <div style={{ display: "flex", flexDirection: "column", gap: 10, maxHeight: 300, overflowY: "auto", paddingRight: 6 }} className="custom-scrollbar">
+            <div style={{ display: "flex", flexDirection: "column", gap: 10, maxHeight: 280, overflowY: "auto", paddingRight: 4 }} className="custom-scrollbar">
               {uniqueTopics.map(t => {
                 const count = cards.filter(c => c.topico === t).length;
                 const isChecked = selectedTopics.includes(t);
@@ -719,25 +749,24 @@ export default function App() {
                       alignItems: "center",
                       justifyContent: "space-between",
                       background: isChecked ? "rgba(59,130,246,0.06)" : "rgba(255,255,255,0.01)",
-                      border: isChecked ? "1px solid rgba(59,130,246,0.3)" : "1px solid rgba(255,255,255,0.05)",
+                      border: isChecked ? "1px solid rgba(59,130,246,0.25)" : "1px solid rgba(255,255,255,0.04)",
                       borderRadius: 14,
-                      padding: "14px 18px",
-                      cursor: "pointer",
-                      transition: "all 0.2s ease"
+                      padding: "12px 16px",
+                      cursor: "pointer"
                     }}
                   >
-                    <div style={{ display: "flex", alignItems: "center", gap: 12, flex: 1, paddingRight: 10 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 10, flex: 1, paddingRight: 6 }}>
                       <div style={{
-                        width: 18,
-                        height: 18,
-                        borderRadius: 6,
+                        width: 16,
+                        height: 16,
+                        borderRadius: 5,
                         border: isChecked ? "2px solid #3b82f6" : "2px solid rgba(255,255,255,0.2)",
                         background: isChecked ? "#3b82f6" : "transparent",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                         color: "#fff",
-                        fontSize: 10,
+                        fontSize: 9,
                         fontWeight: "bold",
                         flexShrink: 0
                       }}>
@@ -747,15 +776,15 @@ export default function App() {
                         {t}
                       </span>
                     </div>
-                    <span style={{ fontSize: 10, fontWeight: 600, color: isChecked ? "#3b82f6" : "#64748b", background: isChecked ? "rgba(59,130,246,0.1)" : "rgba(255,255,255,0.03)", borderRadius: 8, padding: "3px 8px", flexShrink: 0 }}>
-                      {count} {count === 1 ? 'card' : 'cards'}
+                    <span style={{ fontSize: 10, fontWeight: 600, color: isChecked ? "#3b82f6" : "#64748b", background: isChecked ? "rgba(59,130,246,0.08)" : "rgba(255,255,255,0.02)", borderRadius: 8, padding: "3px 8px", flexShrink: 0 }}>
+                      {count}
                     </span>
                   </div>
                 );
               })}
             </div>
 
-            {/* Botão de Iniciar */}
+            {/* Iniciar Estudo */}
             <button
               onClick={() => selectedCardsCount > 0 && startTopicStudySession(selectedTopics)}
               className="btn-hover"
@@ -803,25 +832,25 @@ export default function App() {
 
           <div style={{ textAlign: "center" }}>
             <div style={{ fontSize: 56, marginBottom: 12 }}>{mat.emoji}</div>
-            <h2 style={{ color: "#fff", fontSize: 24, fontWeight: 600, margin: 0 }}>{mat.label}</h2>
+            <h2 className="materia-title" style={{ color: "#fff", fontSize: 24, fontWeight: 600, margin: 0 }}>{mat.label}</h2>
             <div style={{ color: "#64748b", fontSize: 13, marginTop: 4 }}>
               {mStats.total} cards carregados
             </div>
           </div>
 
-          {/* Cards de Status */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
-            <div style={{ background: "rgba(239,68,68,0.05)", border: "1px solid rgba(239,68,68,0.15)", borderRadius: 16, padding: "16px 12px", textAlign: "center" }}>
+          {/* Cards de Status - Utiliza classe responsiva */}
+          <div className="materia-stats-grid">
+            <div style={{ background: "rgba(239,68,68,0.04)", border: "1px solid rgba(239,68,68,0.12)", borderRadius: 16, padding: "16px 12px", textAlign: "center" }}>
               <div style={{ fontSize: 22, fontWeight: 700, color: "#ef4444" }}>{mStats.due}</div>
-              <div style={{ fontSize: 10, color: "#64748b", marginTop: 4, fontWeight: 600 }}>A REVISAR</div>
+              <div style={{ fontSize: 10, color: "#64748b", marginTop: 4, fontWeight: 600, letterSpacing: 0.5 }}>A REVISAR</div>
             </div>
-            <div style={{ background: "rgba(59,130,246,0.05)", border: "1px solid rgba(59,130,246,0.15)", borderRadius: 16, padding: "16px 12px", textAlign: "center" }}>
+            <div style={{ background: "rgba(59,130,246,0.04)", border: "1px solid rgba(59,130,246,0.12)", borderRadius: 16, padding: "16px 12px", textAlign: "center" }}>
               <div style={{ fontSize: 22, fontWeight: 700, color: "#3b82f6" }}>{mStats.new}</div>
-              <div style={{ fontSize: 10, color: "#64748b", marginTop: 4, fontWeight: 600 }}>NOVOS</div>
+              <div style={{ fontSize: 10, color: "#64748b", marginTop: 4, fontWeight: 600, letterSpacing: 0.5 }}>NOVOS</div>
             </div>
-            <div style={{ background: "rgba(16,185,129,0.05)", border: "1px solid rgba(16,185,129,0.15)", borderRadius: 16, padding: "16px 12px", textAlign: "center" }}>
+            <div style={{ background: "rgba(16,185,129,0.04)", border: "1px solid rgba(16,185,129,0.12)", borderRadius: 16, padding: "16px 12px", textAlign: "center" }}>
               <div style={{ fontSize: 22, fontWeight: 700, color: "#10b981" }}>{mStats.studied}</div>
-              <div style={{ fontSize: 10, color: "#64748b", marginTop: 4, fontWeight: 600 }}>ESTUDADOS</div>
+              <div style={{ fontSize: 10, color: "#64748b", marginTop: 4, fontWeight: 600, letterSpacing: 0.5 }}>ESTUDADOS</div>
             </div>
           </div>
 
@@ -894,8 +923,8 @@ export default function App() {
   // Página Inicial - Lista de Matérias
   return (
     <Shell user={currentUser} stats={stats} onLogout={handleLogout}>
-      {/* Cards de Métricas Gerais */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 14, marginBottom: 28 }}>
+      {/* Cards de Métricas Gerais - Utiliza classe responsiva */}
+      <div className="dashboard-metrics-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 14, marginBottom: 28 }}>
         <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 20, padding: 18, display: "flex", alignItems: "center", gap: 16 }}>
           <div style={{ fontSize: 24, padding: 10, background: "rgba(239,68,68,0.1)", borderRadius: 14, color: "#ef4444" }}>🔥</div>
           <div>
@@ -942,7 +971,6 @@ export default function App() {
                 outline: "none"
               }}
             >
-              {/* Background gradient sutil */}
               <div style={{ position: "absolute", top: 0, right: 0, width: 70, height: 70, borderRadius: "0 20px 0 100%", background: `${m.color}08` }} />
               
               <div style={{ fontSize: 28, marginBottom: 10 }}>{m.emoji}</div>
@@ -997,7 +1025,6 @@ function TelaLogin({ onLogin }) {
 
   return (
     <div style={{ minHeight: "100vh", background: "#030712", display: "flex", alignItems: "center", justifyContent: "center", padding: 20, boxSizing: "border-box" }}>
-      {/* Background decorativo */}
       <div style={{ position: "fixed", inset: 0, zIndex: 0, backgroundImage: "linear-gradient(rgba(59,130,246,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.02) 1px,transparent 1px)", backgroundSize: "40px 40px", pointerEvents: "none" }} />
       <div style={{ position: "fixed", top: -200, left: "50%", transform: "translateX(-50%)", width: 600, height: 400, borderRadius: "50%", background: "radial-gradient(ellipse,rgba(59,130,246,0.05) 0%,transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
 
@@ -1063,7 +1090,6 @@ function TelaLogin({ onLogin }) {
 function Shell({ children, user, stats, onLogout }) {
   return (
     <div style={{ minHeight: "100vh", background: "#030712", padding: "24px 16px 48px", boxSizing: "border-box", position: "relative", overflow: "hidden" }}>
-      {/* Linhas de fundo e efeito radial decorativo */}
       <div style={{ position: "fixed", inset: 0, zIndex: 0, backgroundImage: "linear-gradient(rgba(59,130,246,0.01) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.01) 1px,transparent 1px)", backgroundSize: "40px 40px", pointerEvents: "none" }} />
       <div style={{ position: "fixed", top: -200, left: "50%", transform: "translateX(-50%)", width: 600, height: 400, borderRadius: "50%", background: "radial-gradient(ellipse,rgba(59,130,246,0.03) 0%,transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
 
