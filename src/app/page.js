@@ -122,10 +122,22 @@ export default function App() {
     const style = document.createElement("style");
     style.innerHTML = `
       @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+      
+      * {
+        box-sizing: border-box;
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #030712;
+        max-width: 100vw;
+        width: 100%;
+        overflow-x: hidden;
+      }
+
       body {
         font-family: 'Outfit', sans-serif;
-        margin: 0;
-        background-color: #030712;
       }
       .card-hover {
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -190,8 +202,11 @@ export default function App() {
         box-shadow: 0 20px 45px rgba(0,0,0,0.4);
         overflow-y: auto;
       }
+      .login-card {
+        padding: 48px 36px;
+      }
 
-      @media (max-width: 480px) {
+      @media (max-width: 640px) {
         .srs-buttons-grid {
           grid-template-columns: repeat(2, 1fr) !important;
           gap: 12px !important;
@@ -204,7 +219,7 @@ export default function App() {
           grid-column: span 2 !important;
         }
         .flashcard-box {
-          padding: 24px 20px !important;
+          padding: 24px 16px !important;
         }
         .flashcard-question-text {
           font-size: 16px !important;
@@ -218,6 +233,9 @@ export default function App() {
         .dashboard-metrics-grid {
           grid-template-columns: 1fr !important;
           gap: 10px !important;
+        }
+        .login-card {
+          padding: 32px 20px !important;
         }
       }
     `;
@@ -402,7 +420,7 @@ export default function App() {
 
     return (
       <Shell user={currentUser} stats={stats} onLogout={handleLogout}>
-        <div style={{ display: "flex", flexDirection: "column", gap: 20, maxWidth: 640, margin: "0 auto" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 20, width: "100%", maxWidth: 640, margin: "0 auto", boxSizing: "border-box" }}>
           {/* Header do Estudo */}
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
             <button
@@ -605,7 +623,7 @@ export default function App() {
     const matInfo = MATERIAS.find(m => m.id === selectedMateria);
     return (
       <Shell user={currentUser} stats={stats} onLogout={handleLogout}>
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "32px 20px", maxWidth: 480, margin: "0 auto", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 24 }}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "32px 20px", width: "100%", maxWidth: 480, margin: "0 auto", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 24, boxSizing: "border-box" }}>
           <div style={{ fontSize: 56, marginBottom: 16 }}>🏆</div>
           <h2 style={{ color: "#fff", fontSize: 22, fontWeight: 600, margin: 0 }}>Meta Diária Concluída!</h2>
           <p style={{ color: "#64748b", fontSize: 13, lineHeight: 1.5, marginTop: 8, marginBottom: 24 }}>
@@ -672,7 +690,7 @@ export default function App() {
 
       return (
         <Shell user={currentUser} stats={stats} onLogout={handleLogout}>
-          <div style={{ maxWidth: 560, margin: "0 auto", display: "flex", flexDirection: "column", gap: 20 }}>
+          <div style={{ width: "100%", maxWidth: 560, margin: "0 auto", display: "flex", flexDirection: "column", gap: 20, boxSizing: "border-box" }}>
             <button
               onClick={() => setShowTopicSelector(false)}
               className="btn-hover"
@@ -811,7 +829,7 @@ export default function App() {
 
     return (
       <Shell user={currentUser} stats={stats} onLogout={handleLogout}>
-        <div style={{ maxWidth: 560, margin: "0 auto", display: "flex", flexDirection: "column", gap: 24 }}>
+        <div style={{ width: "100%", maxWidth: 560, margin: "0 auto", display: "flex", flexDirection: "column", gap: 24, boxSizing: "border-box" }}>
           <button
             onClick={() => setSelectedMateria(null)}
             className="btn-hover"
@@ -1024,11 +1042,11 @@ function TelaLogin({ onLogin }) {
   };
 
   return (
-    <div style={{ minHeight: "100vh", background: "#030712", display: "flex", alignItems: "center", justifyContent: "center", padding: 20, boxSizing: "border-box" }}>
+    <div style={{ minHeight: "100vh", background: "#030712", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px 16px", boxSizing: "border-box", width: "100%", maxWidth: "100vw", overflowX: "hidden" }}>
       <div style={{ position: "fixed", inset: 0, zIndex: 0, backgroundImage: "linear-gradient(rgba(59,130,246,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.02) 1px,transparent 1px)", backgroundSize: "40px 40px", pointerEvents: "none" }} />
       <div style={{ position: "fixed", top: -200, left: "50%", transform: "translateX(-50%)", width: 600, height: 400, borderRadius: "50%", background: "radial-gradient(ellipse,rgba(59,130,246,0.05) 0%,transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
 
-      <div style={{ position: "relative", zIndex: 1, background: "rgba(17,24,39,0.7)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 24, padding: "48px 36px", width: "100%", maxWidth: 380, boxShadow: "0 24px 64px rgba(0,0,0,0.6)" }}>
+      <div className="login-card" style={{ position: "relative", zIndex: 1, background: "rgba(17,24,39,0.7)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 24, width: "100%", maxWidth: 380, boxShadow: "0 24px 64px rgba(0,0,0,0.6)", boxSizing: "border-box" }}>
         <div style={{ textAlign: "center", marginBottom: 36 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>🔒</div>
           <h1 style={{ color: "#f1f5f9", fontSize: 22, fontWeight: 700, margin: 0, letterSpacing: 0.5 }}>Flashcards PC-PE</h1>
@@ -1044,7 +1062,7 @@ function TelaLogin({ onLogin }) {
               onChange={e => setUsername(e.target.value)}
               onKeyDown={e => e.key === "Enter" && handleFormSubmit()}
               placeholder="Digite seu usuário"
-              style={{ width: "100%", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, padding: "12px 14px", color: "#f1f5f9", fontSize: 14, boxSizing: "border-box", outline: "none", transition: "border 0.2s", fontFamily: "inherit" }}
+              style={{ width: "100%", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, padding: "12px 14px", color: "#f1f5f9", fontSize: 16, boxSizing: "border-box", outline: "none", transition: "border 0.2s", fontFamily: "inherit" }}
             />
           </div>
           <div>
@@ -1055,7 +1073,7 @@ function TelaLogin({ onLogin }) {
               onChange={e => setPassword(e.target.value)}
               onKeyDown={e => e.key === "Enter" && handleFormSubmit()}
               placeholder="••••"
-              style={{ width: "100%", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, padding: "12px 14px", color: "#f1f5f9", fontSize: 14, boxSizing: "border-box", outline: "none", transition: "border 0.2s", fontFamily: "inherit" }}
+              style={{ width: "100%", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, padding: "12px 14px", color: "#f1f5f9", fontSize: 16, boxSizing: "border-box", outline: "none", transition: "border 0.2s", fontFamily: "inherit" }}
             />
           </div>
 
@@ -1089,11 +1107,11 @@ function TelaLogin({ onLogin }) {
 // ── COMPONENTE: SHELL / LAYOUT ──────────────────────────────────────────────
 function Shell({ children, user, stats, onLogout }) {
   return (
-    <div style={{ minHeight: "100vh", background: "#030712", padding: "24px 16px 48px", boxSizing: "border-box", position: "relative", overflow: "hidden" }}>
+    <div style={{ minHeight: "100vh", background: "#030712", padding: "24px 16px 48px", boxSizing: "border-box", position: "relative", width: "100%", maxWidth: "100vw", overflowX: "hidden" }}>
       <div style={{ position: "fixed", inset: 0, zIndex: 0, backgroundImage: "linear-gradient(rgba(59,130,246,0.01) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.01) 1px,transparent 1px)", backgroundSize: "40px 40px", pointerEvents: "none" }} />
       <div style={{ position: "fixed", top: -200, left: "50%", transform: "translateX(-50%)", width: 600, height: 400, borderRadius: "50%", background: "radial-gradient(ellipse,rgba(59,130,246,0.03) 0%,transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
 
-      <div style={{ position: "relative", zIndex: 1, maxWidth: 800, margin: "0 auto" }}>
+      <div style={{ position: "relative", zIndex: 1, width: "100%", maxWidth: 800, margin: "0 auto", boxSizing: "border-box" }}>
         {/* Topbar */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 28 }}>
           <div style={{ display: "inline-block", background: "linear-gradient(135deg,#e11d48,#be123c)", borderRadius: 10, padding: "6px 14px" }}>
