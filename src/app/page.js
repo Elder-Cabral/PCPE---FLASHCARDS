@@ -201,6 +201,7 @@ export default function App() {
         background: linear-gradient(135deg, #0f162a, #0b0f19);
         box-shadow: 0 20px 45px rgba(0,0,0,0.4);
         overflow-y: auto;
+        transform: rotateY(180deg);
       }
       .login-card {
         padding: 48px 36px;
@@ -403,7 +404,7 @@ export default function App() {
       setIsFlipped(false);
       setTimeout(() => {
         setCurrentQueueIndex(prev => prev + 1);
-      }, 250);
+      }, 200);
     } else {
       setSessionCompleted(true);
     }
@@ -484,7 +485,7 @@ export default function App() {
                 width: "100%",
                 height: "100%",
                 transformStyle: "preserve-3d",
-                transition: "transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
+                transition: "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
                 transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)"
               }}
             >
@@ -571,7 +572,7 @@ export default function App() {
                   onClick={() => {
                     if (currentQueueIndex + 1 < studyQueue.length) {
                       setIsFlipped(false);
-                      setTimeout(() => setCurrentQueueIndex(prev => prev + 1), 250);
+                      setTimeout(() => setCurrentQueueIndex(prev => prev + 1), 200);
                     } else {
                       setSessionCompleted(true);
                     }
