@@ -3,9 +3,9 @@ import { useState, useEffect, useCallback } from "react";
 
 // ── USUÁRIOS ──────────────────────────────────────────────────────────────
 const USERS = [
-  { username: "elder",   password: "123", role: "admin", name: "Elder" },
-  { username: "helo",    password: "123", role: "user",  name: "Helo" },
-  { username: "dannilo", password: "123", role: "user",  name: "Dannilo" },
+  { username: "elder",   password: "passei", role: "admin", name: "Elder" },
+  { username: "helo",    password: "passei", role: "user",  name: "Helo" },
+  { username: "dannilo", password: "passei", role: "user",  name: "Dannilo" },
 ];
 
 // ── BANCO ─────────────────────────────────────────────────────────────────
@@ -64,7 +64,7 @@ function TelaLogin({ onLogin }) {
               value={username}
               onChange={e => setUsername(e.target.value)}
               onKeyDown={e => e.key === "Enter" && handleLogin()}
-              placeholder="elder / helo / dannilo"
+              placeholder="Digite seu usuário"
               style={{ width:"100%", background:"#1e293b", border:"1px solid #334155", borderRadius:10, padding:"12px 14px", color:"#f1f5f9", fontSize:14, fontFamily:"monospace", boxSizing:"border-box", outline:"none" }}
             />
           </div>

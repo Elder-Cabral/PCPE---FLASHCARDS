@@ -1,11 +1,11 @@
 # Flashcards PC-PE — Deploy na Vercel
 
 ## Usuários
-| Usuário  | Senha | Perfil |
-|----------|-------|--------|
-| elder    | 123   | admin  |
-| helo     | 123   | user   |
-| dannilo  | 123   | user   |
+| Usuário  | Senha  | Perfil |
+|----------|--------|--------|
+| elder    | passei | admin  |
+| helo     | passei | user   |
+| dannilo  | passei | user   |
 
 ## Como fazer deploy na Vercel (passo a passo)
 
