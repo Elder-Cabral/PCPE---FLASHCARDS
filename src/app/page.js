@@ -117,6 +117,7 @@ export default function App() {
   const [sessionCompleted, setSessionCompleted] = useState(false);
   const [sessionStats, setSessionStats] = useState({ studied: 0, gotWrong: 0, gotEasy: 0 });
   const [reviewOrder, setReviewOrder] = useState("random"); // 'random', 'easy_first', 'hard_first'
+  const [globalReviewMessage, setGlobalReviewMessage] = useState("");
 
   // Estilos globais e de responsividade injetados
   useEffect(() => {
@@ -328,6 +329,32 @@ export default function App() {
     return sorted;
   };
 
+  const startGlobalReviewSession = () => {
+    let queue = [];
+    for (const mat of MATERIAS) {
+      const cards = BANCO[mat.id] || [];
+      const due = cards.filter(c => srsData[c.id] && srsData[c.id].dueDate <= Date.now());
+      queue = [...queue, ...due];
+    }
+    const sortedQueue = sortQueue(queue);
+    setStudyQueue(sortedQueue);
+    setCurrentQueueIndex(0);
+    setIsFlipped(false);
+    setStudyMode("global_srs");
+    setSelectedMateria(null);
+    setSessionCompleted(false);
+    setSessionStats({ studied: 0, gotWrong: 0, gotEasy: 0 });
+  };
+
+  const handleGlobalReviewClick = () => {
+    if (stats.dueCount > 0) {
+      startGlobalReviewSession();
+    } else {
+      setGlobalReviewMessage("Você não tem Flashcards para revisar hoje, volte amanhã.");
+      setTimeout(() => setGlobalReviewMessage(""), 5000);
+    }
+  };
+
   // Cálculo de estatísticas gerais
   const stats = useMemo(() => {
     const result = {
@@ -430,7 +457,7 @@ export default function App() {
       gotEasy: prev.gotEasy + (q === 3 ? 1 : 0)
     }));
 
-    if (studyMode === "srs" || studyMode === "topic") {
+    if (studyMode === "srs" || studyMode === "topic" || studyMode === "global_srs") {
       const currentState = srsData[currentCard.id] || { interval: 1, repetition: 0, ef: 2.5 };
       const nextState = calculateSM2(q, currentState.interval, currentState.repetition, currentState.ef);
 
@@ -464,7 +491,11 @@ export default function App() {
   // Se estiver estudando
   if (studyMode && studyQueue.length > 0 && !sessionCompleted) {
     const currentCard = studyQueue[currentQueueIndex];
-    const matInfo = MATERIAS.find(m => m.id === selectedMateria);
+    const isGlobal = studyMode === "global_srs";
+    const matInfo = !isGlobal ? MATERIAS.find(m => m.id === selectedMateria) : null;
+    const themeColor = isGlobal ? "#3b82f6" : (matInfo?.color || "#3b82f6");
+    const labelText = isGlobal ? "Revisão Geral" : (matInfo?.label || "");
+    const emojiText = isGlobal ? "⚡" : (matInfo?.emoji || "");
 
     return (
       <Shell user={currentUser} stats={stats} onLogout={handleLogout}>
@@ -492,11 +523,17 @@ export default function App() {
               ← Voltar
             </button>
             <div style={{ textAlign: "center", padding: "0 8px" }}>
-              <span style={{ color: matInfo?.color, fontSize: 11, fontWeight: 600, letterSpacing: 2, textTransform: "uppercase" }}>
-                {matInfo?.emoji} {matInfo?.label}
+              <span style={{ color: themeColor, fontSize: 11, fontWeight: 600, letterSpacing: 2, textTransform: "uppercase" }}>
+                {emojiText} {labelText}
               </span>
               <div style={{ fontSize: 10, color: "#64748b", fontWeight: 500, marginTop: 2 }}>
-                {studyMode === "srs" ? "ESTUDO INTELIGENTE (SM-2)" : studyMode === "topic" ? "ESTUDO POR TÓPICOS" : "MODO COMPLETO"}
+                {studyMode === "global_srs"
+                  ? "REVISÃO DIÁRIA GLOBAL"
+                  : studyMode === "srs"
+                    ? "ESTUDO INTELIGENTE (SM-2)"
+                    : studyMode === "topic"
+                      ? "ESTUDO POR TÓPICOS"
+                      : "MODO COMPLETO"}
               </div>
             </div>
             <div style={{ fontSize: 13, color: "#64748b", fontFamily: "monospace" }}>
@@ -510,7 +547,7 @@ export default function App() {
               style={{
                 width: `${((currentQueueIndex + 1) / studyQueue.length) * 100}%`,
                 height: "100%",
-                background: `linear-gradient(90deg, ${matInfo?.color}, #ffffff)`,
+                background: `linear-gradient(90deg, ${themeColor}, #ffffff)`,
                 transition: "width 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
               }}
             />
@@ -548,8 +585,8 @@ export default function App() {
               </div>
 
               {/* Verso */}
-              <div className="custom-scrollbar flashcard-box flashcard-back-style" style={{ border: `1px solid ${matInfo?.color}40` }}>
-                <div style={{ fontSize: 10, color: matInfo?.color, fontWeight: 600, letterSpacing: 3, marginBottom: 14 }}>✦ RESPOSTA ✦</div>
+              <div className="custom-scrollbar flashcard-box flashcard-back-style" style={{ border: `1px solid ${themeColor}40` }}>
+                <div style={{ fontSize: 10, color: themeColor, fontWeight: 600, letterSpacing: 3, marginBottom: 14 }}>✦ RESPOSTA ✦</div>
                 
                 <p className="flashcard-answer-text" style={{ color: "#e2e8f0", fontSize: 15, lineHeight: 1.65, textAlign: "center", margin: "0 0 16px 0", fontFamily: "Georgia, serif" }}>
                   {currentCard?.resposta}
@@ -581,7 +618,7 @@ export default function App() {
           {/* Botões de Ação */}
           <div style={{ minHeight: 70 }}>
             {isFlipped ? (
-              studyMode === "srs" || studyMode === "topic" ? (
+              studyMode === "srs" || studyMode === "topic" || studyMode === "global_srs" ? (
                 // 4 Botões SM-2 com classe responsiva
                 <div className="srs-buttons-grid">
                   <button
@@ -668,14 +705,20 @@ export default function App() {
 
   // Sessão de Estudos Completada
   if (sessionCompleted) {
-    const matInfo = MATERIAS.find(m => m.id === selectedMateria);
+    const isGlobal = studyMode === "global_srs";
+    const matInfo = !isGlobal ? MATERIAS.find(m => m.id === selectedMateria) : null;
     return (
       <Shell user={currentUser} stats={stats} onLogout={handleLogout}>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "32px 20px", width: "100%", maxWidth: 480, margin: "0 auto", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 24, boxSizing: "border-box" }}>
           <div style={{ fontSize: 56, marginBottom: 16 }}>🏆</div>
-          <h2 style={{ color: "#fff", fontSize: 22, fontWeight: 600, margin: 0 }}>Meta Diária Concluída!</h2>
+          <h2 style={{ color: "#fff", fontSize: 22, fontWeight: 600, margin: 0 }}>
+            {isGlobal ? "Você mandou bem, por hoje, amanhã tem mais." : "Meta Diária Concluída!"}
+          </h2>
           <p style={{ color: "#64748b", fontSize: 13, lineHeight: 1.5, marginTop: 8, marginBottom: 24 }}>
-            Você revisou os cards programados de <strong>{matInfo?.label}</strong>. O progresso foi computado no algoritmo de repetição.
+            {isGlobal
+              ? "Sua rodada de revisões diárias foi concluída. Todas as respostas foram computadas e seu plano foi atualizado."
+              : <span>Você revisou os cards programados de <strong>{matInfo?.label}</strong>. O progresso foi computado no algoritmo de repetição.</span>
+            }
           </p>
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, width: "100%", marginBottom: 24 }}>
@@ -1025,11 +1068,38 @@ export default function App() {
             <div style={{ fontSize: 10, color: "#64748b", fontWeight: 600, letterSpacing: 0.5, marginTop: 2 }}>OFENSIVA DE ESTUDOS</div>
           </div>
         </div>
-        <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 20, padding: 18, display: "flex", alignItems: "center", gap: 16 }}>
-          <div style={{ fontSize: 24, padding: 10, background: "rgba(59,130,246,0.1)", borderRadius: 14, color: "#3b82f6" }}>⚡</div>
-          <div>
-            <div style={{ fontSize: 20, fontWeight: 700, color: "#fff" }}>{stats.dueCount}</div>
-            <div style={{ fontSize: 10, color: "#64748b", fontWeight: 600, letterSpacing: 0.5, marginTop: 2 }}>CARDS A REVISAR HOJE</div>
+        <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 20, padding: 18, display: "flex", flexDirection: "column", gap: 14, justifyContent: "center" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+            <div style={{ fontSize: 24, padding: 10, background: "rgba(59,130,246,0.1)", borderRadius: 14, color: "#3b82f6" }}>⚡</div>
+            <div>
+              <div style={{ fontSize: 20, fontWeight: 700, color: "#fff" }}>{stats.dueCount}</div>
+              <div style={{ fontSize: 10, color: "#64748b", fontWeight: 600, letterSpacing: 0.5, marginTop: 2 }}>CARDS A REVISAR HOJE</div>
+            </div>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+            <button
+              onClick={handleGlobalReviewClick}
+              className="btn-hover"
+              style={{
+                width: "100%",
+                background: stats.dueCount > 0 ? "linear-gradient(135deg, #3b82f6, #2563eb)" : "rgba(255,255,255,0.04)",
+                border: stats.dueCount > 0 ? "none" : "1px solid rgba(255,255,255,0.08)",
+                borderRadius: 10,
+                padding: "8px 12px",
+                color: stats.dueCount > 0 ? "#fff" : "#64748b",
+                fontSize: 12,
+                fontWeight: 600,
+                cursor: "pointer",
+                textAlign: "center"
+              }}
+            >
+              Revisar ⚡
+            </button>
+            {globalReviewMessage && (
+              <div style={{ color: "#f59e0b", fontSize: 10, fontWeight: 500, textAlign: "center", lineHeight: 1.4 }}>
+                {globalReviewMessage}
+              </div>
+            )}
           </div>
         </div>
         <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 20, padding: 18, display: "flex", alignItems: "center", gap: 16 }}>
