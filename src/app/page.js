@@ -108,7 +108,9 @@ export default function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [srsData, setSrsData] = useState({});
   const [selectedMateria, setSelectedMateria] = useState(null);
-  const [studyMode, setStudyMode] = useState(null); // 'srs' ou 'all'
+  const [showTopicSelector, setShowTopicSelector] = useState(false);
+  const [selectedTopics, setSelectedTopics] = useState([]);
+  const [studyMode, setStudyMode] = useState(null); // 'srs', 'all' ou 'topic'
   const [studyQueue, setStudyQueue] = useState([]);
   const [currentQueueIndex, setCurrentQueueIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
@@ -192,6 +194,7 @@ export default function App() {
     setCurrentUser(null);
     setSelectedMateria(null);
     setStudyMode(null);
+    setShowTopicSelector(false);
     setSrsData({});
   };
 
@@ -246,7 +249,7 @@ export default function App() {
     return result;
   }, [srsData]);
 
-  // Preparar fila de estudos
+  // Preparar fila de estudos padrão (Todos / SRS)
   const startStudySession = (materiaId, mode) => {
     const cards = BANCO[materiaId] || [];
     let queue = [];
@@ -260,7 +263,6 @@ export default function App() {
       queue = [...dueCards, ...newCards];
     }
 
-    // Shuffle a fila
     queue.sort(() => Math.random() - 0.5);
 
     setStudyQueue(queue);
@@ -272,19 +274,35 @@ export default function App() {
     setSessionStats({ studied: 0, gotWrong: 0, gotEasy: 0 });
   };
 
-  // Responder a um card no modo SRS
+  // Preparar fila de estudos por Tópicos
+  const startTopicStudySession = (topicsToStudy) => {
+    const cards = BANCO[selectedMateria] || [];
+    // Filtra cards que pertencem a um dos tópicos selecionados
+    let queue = cards.filter(c => topicsToStudy.includes(c.topico));
+
+    queue.sort(() => Math.random() - 0.5);
+
+    setStudyQueue(queue);
+    setCurrentQueueIndex(0);
+    setIsFlipped(false);
+    setStudyMode("topic");
+    setSessionCompleted(false);
+    setSessionStats({ studied: 0, gotWrong: 0, gotEasy: 0 });
+    setShowTopicSelector(false);
+  };
+
+  // Responder a um card no modo SRS / Tópicos
   const handleCardFeedback = (q) => {
     const currentCard = studyQueue[currentQueueIndex];
     if (!currentCard) return;
 
-    // Atualizar estatísticas da sessão
     setSessionStats(prev => ({
       studied: prev.studied + 1,
       gotWrong: prev.gotWrong + (q === 0 ? 1 : 0),
       gotEasy: prev.gotEasy + (q === 3 ? 1 : 0)
     }));
 
-    if (studyMode === "srs") {
+    if (studyMode === "srs" || studyMode === "topic") {
       const currentState = srsData[currentCard.id] || { interval: 1, repetition: 0, ef: 2.5 };
       const nextState = calculateSM2(q, currentState.interval, currentState.repetition, currentState.ef);
 
@@ -301,7 +319,6 @@ export default function App() {
       }
     }
 
-    // Próximo card ou finalizar
     if (currentQueueIndex + 1 < studyQueue.length) {
       setIsFlipped(false);
       setTimeout(() => {
@@ -312,7 +329,6 @@ export default function App() {
     }
   };
 
-  // Se não estiver logado, exibe tela de login
   if (!currentUser) {
     return <TelaLogin onLogin={handleLogin} />;
   }
@@ -328,7 +344,10 @@ export default function App() {
           {/* Header do Estudo */}
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
             <button
-              onClick={() => setStudyMode(null)}
+              onClick={() => {
+                setStudyMode(null);
+                setShowTopicSelector(false);
+              }}
               className="btn-hover"
               style={{
                 background: "rgba(255,255,255,0.05)",
@@ -348,7 +367,7 @@ export default function App() {
                 {matInfo?.emoji} {matInfo?.label}
               </span>
               <div style={{ fontSize: 10, color: "#64748b", fontWeight: 500, marginTop: 2 }}>
-                {studyMode === "srs" ? "ESTUDO INTELIGENTE (SM-2)" : "MODO COMPLETO"}
+                {studyMode === "srs" ? "ESTUDO INTELIGENTE (SM-2)" : studyMode === "topic" ? "ESTUDO POR TÓPICOS" : "MODO COMPLETO"}
               </div>
             </div>
             <div style={{ fontSize: 13, color: "#64748b", fontFamily: "monospace" }}>
@@ -406,7 +425,7 @@ export default function App() {
                 }}
               >
                 <div style={{ fontSize: 10, color: "#3b82f6", fontWeight: 600, letterSpacing: 3, marginBottom: 20 }}>✦ PERGUNTA ✦</div>
-                <p style={{ color: "#f1f5f9", fontSize: 18, lineHeight: 1.7, textAlign: "center", margin: 0, fontWeight: 400, fontFamily: "Georgia, serif" }}>
+                <p style={{ color: "#f1f5f9", fontSize: 17, lineHeight: 1.7, textAlign: "center", margin: 0, fontWeight: 400, fontFamily: "Georgia, serif" }}>
                   {currentCard?.pergunta}
                 </p>
                 <div style={{ marginTop: 32, color: "rgba(255,255,255,0.2)", fontSize: 11, letterSpacing: 1, fontWeight: 500 }}>
@@ -436,7 +455,7 @@ export default function App() {
               >
                 <div style={{ fontSize: 10, color: matInfo?.color, fontWeight: 600, letterSpacing: 3, marginBottom: 16 }}>✦ RESPOSTA ✦</div>
                 
-                <p style={{ color: "#e2e8f0", fontSize: 16, lineHeight: 1.7, textAlign: "center", margin: "0 0 20px 0", fontFamily: "Georgia, serif" }}>
+                <p style={{ color: "#e2e8f0", fontSize: 15, lineHeight: 1.7, textAlign: "center", margin: "0 0 20px 0", fontFamily: "Georgia, serif" }}>
                   {currentCard?.resposta}
                 </p>
 
@@ -466,7 +485,7 @@ export default function App() {
           {/* Botões de Ação */}
           <div style={{ minHeight: 70 }}>
             {isFlipped ? (
-              studyMode === "srs" ? (
+              studyMode === "srs" || studyMode === "topic" ? (
                 // 4 Botões SM-2
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10 }}>
                   <button
@@ -603,6 +622,163 @@ export default function App() {
   if (selectedMateria) {
     const mat = MATERIAS.find(m => m.id === selectedMateria);
     const mStats = stats.materiaStats[selectedMateria] || { total: 0, studied: 0, due: 0, new: 0 };
+    const cards = BANCO[selectedMateria] || [];
+
+    // TELA DE SELEÇÃO DE TÓPICOS
+    if (showTopicSelector) {
+      const uniqueTopics = [...new Set(cards.map(c => c.topico))].filter(Boolean);
+
+      const handleToggleTopic = (t) => {
+        setSelectedTopics(prev => {
+          if (prev.includes(t)) return prev.filter(x => x !== t);
+          return [...prev, t];
+        });
+      };
+
+      const handleSelectAll = () => setSelectedTopics(uniqueTopics);
+      const handleClearAll = () => setSelectedTopics([]);
+
+      const selectedCardsCount = cards.filter(c => selectedTopics.includes(c.topico)).length;
+
+      return (
+        <Shell user={currentUser} stats={stats} onLogout={handleLogout}>
+          <div style={{ maxWidth: 560, margin: "0 auto", display: "flex", flexDirection: "column", gap: 24 }}>
+            <button
+              onClick={() => setShowTopicSelector(false)}
+              className="btn-hover"
+              style={{
+                alignSelf: "flex-start",
+                background: "rgba(255,255,255,0.05)",
+                border: "1px solid rgba(255,255,255,0.08)",
+                color: "#94a3b8",
+                borderRadius: 12,
+                padding: "8px 16px",
+                cursor: "pointer",
+                fontSize: 13,
+                fontWeight: 500
+              }}
+            >
+              ← Voltar
+            </button>
+
+            <div style={{ textAlign: "center" }}>
+              <div style={{ fontSize: 48, marginBottom: 8 }}>🔍</div>
+              <h2 style={{ color: "#fff", fontSize: 22, fontWeight: 600, margin: 0 }}>Estudar por Tópicos</h2>
+              <p style={{ color: "#64748b", fontSize: 13, marginTop: 4 }}>
+                Selecione um ou mais assuntos de <strong>{mat.label}</strong> para estudar:
+              </p>
+            </div>
+
+            {/* Botões de Seleção Rápida */}
+            <div style={{ display: "flex", gap: 10, justifyContent: "center" }}>
+              <button
+                onClick={handleSelectAll}
+                className="btn-hover"
+                style={{
+                  background: "rgba(255,255,255,0.05)",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  color: "#f1f5f9",
+                  borderRadius: 10,
+                  padding: "6px 12px",
+                  fontSize: 11,
+                  fontWeight: 600,
+                  cursor: "pointer"
+                }}
+              >
+                ✓ Selecionar Todos
+              </button>
+              <button
+                onClick={handleClearAll}
+                className="btn-hover"
+                style={{
+                  background: "rgba(255,255,255,0.05)",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  color: "#f1f5f9",
+                  borderRadius: 10,
+                  padding: "6px 12px",
+                  fontSize: 11,
+                  fontWeight: 600,
+                  cursor: "pointer"
+                }}
+              >
+                ✗ Limpar Seleção
+              </button>
+            </div>
+
+            {/* Lista de Tópicos */}
+            <div style={{ display: "flex", flexDirection: "column", gap: 10, maxHeight: 300, overflowY: "auto", paddingRight: 6 }} className="custom-scrollbar">
+              {uniqueTopics.map(t => {
+                const count = cards.filter(c => c.topico === t).length;
+                const isChecked = selectedTopics.includes(t);
+                return (
+                  <div
+                    key={t}
+                    onClick={() => handleToggleTopic(t)}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      background: isChecked ? "rgba(59,130,246,0.06)" : "rgba(255,255,255,0.01)",
+                      border: isChecked ? "1px solid rgba(59,130,246,0.3)" : "1px solid rgba(255,255,255,0.05)",
+                      borderRadius: 14,
+                      padding: "14px 18px",
+                      cursor: "pointer",
+                      transition: "all 0.2s ease"
+                    }}
+                  >
+                    <div style={{ display: "flex", alignItems: "center", gap: 12, flex: 1, paddingRight: 10 }}>
+                      <div style={{
+                        width: 18,
+                        height: 18,
+                        borderRadius: 6,
+                        border: isChecked ? "2px solid #3b82f6" : "2px solid rgba(255,255,255,0.2)",
+                        background: isChecked ? "#3b82f6" : "transparent",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        color: "#fff",
+                        fontSize: 10,
+                        fontWeight: "bold",
+                        flexShrink: 0
+                      }}>
+                        {isChecked && "✓"}
+                      </div>
+                      <span style={{ color: isChecked ? "#f1f5f9" : "#94a3b8", fontSize: 13, fontWeight: 500, textAlign: "left", lineHeight: 1.4 }}>
+                        {t}
+                      </span>
+                    </div>
+                    <span style={{ fontSize: 10, fontWeight: 600, color: isChecked ? "#3b82f6" : "#64748b", background: isChecked ? "rgba(59,130,246,0.1)" : "rgba(255,255,255,0.03)", borderRadius: 8, padding: "3px 8px", flexShrink: 0 }}>
+                      {count} {count === 1 ? 'card' : 'cards'}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Botão de Iniciar */}
+            <button
+              onClick={() => selectedCardsCount > 0 && startTopicStudySession(selectedTopics)}
+              className="btn-hover"
+              disabled={selectedCardsCount === 0}
+              style={{
+                width: "100%",
+                background: selectedCardsCount > 0 ? "linear-gradient(135deg, #10b981, #059669)" : "rgba(255,255,255,0.03)",
+                border: "none",
+                borderRadius: 14,
+                padding: "16px",
+                color: selectedCardsCount > 0 ? "#fff" : "#475569",
+                cursor: selectedCardsCount > 0 ? "pointer" : "default",
+                fontWeight: 600,
+                fontSize: 14,
+                boxShadow: selectedCardsCount > 0 ? "0 4px 15px rgba(16,185,129,0.2)" : "none"
+              }}
+            >
+              ⚡ Iniciar Estudo por Tópicos ({selectedCardsCount} cards)
+            </button>
+          </div>
+        </Shell>
+      );
+    }
 
     return (
       <Shell user={currentUser} stats={stats} onLogout={handleLogout}>
@@ -669,14 +845,37 @@ export default function App() {
             >
               ⚡ Iniciar Estudo Inteligente (SM-2)
             </button>
+            
             <button
-              onClick={() => startStudySession(selectedMateria, "all")}
+              onClick={() => {
+                const uniqueTopics = [...new Set(cards.map(c => c.topico))].filter(Boolean);
+                setSelectedTopics(uniqueTopics);
+                setShowTopicSelector(true);
+              }}
               className="btn-hover"
               style={{
                 width: "100%",
                 background: "rgba(255,255,255,0.04)",
                 border: "1px solid rgba(255,255,255,0.08)",
                 color: "#fff",
+                borderRadius: 14,
+                padding: "16px",
+                cursor: "pointer",
+                fontWeight: 500,
+                fontSize: 14
+              }}
+            >
+              🔍 Estudar por Tópicos
+            </button>
+
+            <button
+              onClick={() => startStudySession(selectedMateria, "all")}
+              className="btn-hover"
+              style={{
+                width: "100%",
+                background: "rgba(255,255,255,0.01)",
+                border: "1px solid rgba(255,255,255,0.05)",
+                color: "#94a3b8",
                 borderRadius: 14,
                 padding: "16px",
                 cursor: "pointer",
