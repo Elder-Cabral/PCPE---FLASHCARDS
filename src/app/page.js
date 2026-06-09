@@ -99,6 +99,20 @@ function calculateStreak(srsData) {
   return streak;
 }
 
+function mergeSRSData(local, remote) {
+  const merged = { ...remote };
+  for (const id in local) {
+    const localCard = local[id];
+    const remoteCard = remote[id];
+    if (localCard) {
+      if (!remoteCard || localCard.lastReviewed > (remoteCard.lastReviewed || 0)) {
+        merged[id] = localCard;
+      }
+    }
+  }
+  return merged;
+}
+
 const isReviewedToday = (timestamp) => {
   if (!timestamp) return false;
   return getLocalDateString(new Date(timestamp)) === getLocalDateString(new Date());
@@ -247,21 +261,43 @@ export default function App() {
     return () => document.head.removeChild(style);
   }, []);
 
-  // Salvar progresso no Supabase
+  // Salvar progresso no Supabase com mesclagem inteligente
   const saveSRSData = async (username, srs, currentSettings) => {
     try {
+      const { data, error } = await supabase
+        .from("user_progress")
+        .select("srs_data, settings")
+        .eq("username", username);
+
+      let latestSRS = {};
+      let latestSettings = currentSettings;
+
+      if (!error && data && data.length > 0) {
+        latestSRS = data[0].srs_data || {};
+        latestSettings = { ...data[0].settings, ...currentSettings };
+      }
+
+      const mergedSRS = mergeSRSData(srs, latestSRS);
+
       await supabase.from("user_progress").upsert({
         username,
-        srs_data: srs,
-        settings: currentSettings,
+        srs_data: mergedSRS,
+        settings: latestSettings,
         updated_at: new Date().toISOString(),
       });
+
+      setSrsData(mergedSRS);
+      localStorage.setItem("pcpe_srs_" + username, JSON.stringify(mergedSRS));
+      if (latestSettings.reviewOrder) {
+        setReviewOrder(latestSettings.reviewOrder);
+        localStorage.setItem("pcpe_settings_" + username, JSON.stringify(latestSettings));
+      }
     } catch (e) {
       console.error("Erro ao salvar no Supabase:", e);
     }
   };
 
-  // Carregar progresso do Supabase
+  // Carregar progresso do Supabase com mesclagem inteligente
   const loadUserData = async (username) => {
     try {
       const { data, error } = await supabase
@@ -269,38 +305,49 @@ export default function App() {
         .select("srs_data, settings")
         .eq("username", username);
 
+      const savedSRS = localStorage.getItem("pcpe_srs_" + username);
+      const savedSettings = localStorage.getItem("pcpe_settings_" + username);
+      const localSRS = savedSRS ? JSON.parse(savedSRS) : {};
+      const localSettings = savedSettings ? JSON.parse(savedSettings) : { reviewOrder: "random" };
+
       if (error) {
         console.warn("Erro ao buscar do Supabase, usando local:", error);
-        const savedSRS = localStorage.getItem("pcpe_srs_" + username);
-        if (savedSRS) setSrsData(JSON.parse(savedSRS));
-        const savedSettings = localStorage.getItem("pcpe_settings_" + username);
-        if (savedSettings) {
-          const settings = JSON.parse(savedSettings);
-          if (settings.reviewOrder) setReviewOrder(settings.reviewOrder);
-        }
+        setSrsData(localSRS);
+        if (localSettings.reviewOrder) setReviewOrder(localSettings.reviewOrder);
         return;
       }
 
       if (data && data.length > 0) {
         const row = data[0];
-        if (row.srs_data) setSrsData(row.srs_data);
-        if (row.settings && row.settings.reviewOrder) {
-          setReviewOrder(row.settings.reviewOrder);
-        }
-        localStorage.setItem("pcpe_srs_" + username, JSON.stringify(row.srs_data || {}));
-        localStorage.setItem("pcpe_settings_" + username, JSON.stringify(row.settings || {}));
+        const remoteSRS = row.srs_data || {};
+        const remoteSettings = row.settings || {};
+
+        const mergedSRS = mergeSRSData(localSRS, remoteSRS);
+        const mergedSettings = { ...localSettings, ...remoteSettings };
+
+        setSrsData(mergedSRS);
+        if (mergedSettings.reviewOrder) setReviewOrder(mergedSettings.reviewOrder);
+
+        localStorage.setItem("pcpe_srs_" + username, JSON.stringify(mergedSRS));
+        localStorage.setItem("pcpe_settings_" + username, JSON.stringify(mergedSettings));
+
+        await supabase.from("user_progress").upsert({
+          username,
+          srs_data: mergedSRS,
+          settings: mergedSettings,
+          updated_at: new Date().toISOString(),
+        });
       } else {
         console.log("Nenhum dado no Supabase para", username, "- Migrando localStorage local.");
-        const savedSRS = localStorage.getItem("pcpe_srs_" + username);
-        const savedSettings = localStorage.getItem("pcpe_settings_" + username);
-        
-        const localSRS = savedSRS ? JSON.parse(savedSRS) : {};
-        const localSettings = savedSettings ? JSON.parse(savedSettings) : { reviewOrder: "random" };
-
         setSrsData(localSRS);
         if (localSettings.reviewOrder) setReviewOrder(localSettings.reviewOrder);
 
-        await saveSRSData(username, localSRS, localSettings);
+        await supabase.from("user_progress").upsert({
+          username,
+          srs_data: localSRS,
+          settings: localSettings,
+          updated_at: new Date().toISOString(),
+        });
       }
     } catch (e) {
       console.error("Erro no loadUserData:", e);
@@ -322,6 +369,16 @@ export default function App() {
       console.error(e);
     }
   }, []);
+
+  // Sincronizar ao focar a aba/janela novamente (ex: alternar entre celular e PC)
+  useEffect(() => {
+    if (!currentUser) return;
+    const handleFocus = () => {
+      loadUserData(currentUser.username);
+    };
+    window.addEventListener("focus", handleFocus);
+    return () => window.removeEventListener("focus", handleFocus);
+  }, [currentUser]);
 
   const handleLogin = (user) => {
     try {
