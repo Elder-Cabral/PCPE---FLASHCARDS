@@ -1,7 +1,34 @@
 "use client";
 import { useState, useEffect, useCallback, useMemo, useRef } from "react";
+import { createClient } from '@supabase/supabase-js';
 import BANCO from "../data/banco.json";
 import { supabase } from "../lib/supabase";
+
+// Helper to obtain a Supabase client at runtime.
+// Priority: environment-exported client (imported supabase) -> dynamic client created
+// from stored localStorage values (pcpe_supabase_url / pcpe_supabase_anon_key) -> stub.
+function getSupabase() {
+  // If server-side or supabase already configured via lib, use it.
+  try {
+    if (supabase && supabase.auth) return supabase;
+  } catch (e) {
+    // fallthrough
+  }
+
+  if (typeof window === 'undefined') return supabase;
+
+  try {
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL || localStorage.getItem('pcpe_supabase_url');
+    const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || localStorage.getItem('pcpe_supabase_anon_key');
+    if (url && key) {
+      return createClient(url, key);
+    }
+  } catch (e) {
+    console.warn('Could not create Supabase client at runtime:', e);
+  }
+
+  return supabase;
+}
 // Local users fixture is optional and intentionally not required in production builds.
 // If you need local users for development, create src/data/users.local.json (ignored by git).
 // Local users fixture, when present, is loaded lazily inside the login component
@@ -277,7 +304,8 @@ export default function App() {
   // Salvar progresso no Supabase com mesclagem inteligente
   const saveSRSData = async (username, srs, currentSettings) => {
     try {
-      const { data, error } = await supabase
+      const client = getSupabase();
+      const { data, error } = await client
         .from("user_progress")
         .select("srs_data, settings")
         .eq("username", username);
@@ -292,7 +320,7 @@ export default function App() {
 
       const mergedSRS = mergeSRSData(srs, latestSRS);
 
-      await supabase.from("user_progress").upsert({
+      await client.from("user_progress").upsert({
         username,
         srs_data: mergedSRS,
         settings: latestSettings,
@@ -316,7 +344,8 @@ export default function App() {
   // Carregar progresso do Supabase com mesclagem inteligente
   const loadUserData = async (username) => {
     try {
-      const { data, error } = await supabase
+      const client = getSupabase();
+      const { data, error } = await client
         .from("user_progress")
         .select("srs_data, settings")
         .eq("username", username);
@@ -349,7 +378,7 @@ export default function App() {
         localStorage.setItem("pcpe_srs_" + username, JSON.stringify(mergedSRS));
         localStorage.setItem("pcpe_settings_" + username, JSON.stringify(mergedSettings));
 
-        await supabase.from("user_progress").upsert({
+        await client.from("user_progress").upsert({
           username,
           srs_data: mergedSRS,
           settings: mergedSettings,
@@ -361,7 +390,7 @@ export default function App() {
         if (localSettings.reviewOrder) setReviewOrder(localSettings.reviewOrder);
         if (localSettings.favorites) setFavorites(localSettings.favorites || []);
 
-        await supabase.from("user_progress").upsert({
+        await client.from("user_progress").upsert({
           username,
           srs_data: localSRS,
           settings: localSettings,
@@ -379,7 +408,8 @@ export default function App() {
       const savedSession = localStorage.getItem("pcpe_session");
       if (savedSession) {
         const user = JSON.parse(savedSession);
-        if (USERS_LOCAL.find(u => u.username === user.username)) {
+        const localUsers = (typeof window !== 'undefined' && window.__PCPE_LOCAL_USERS) ? window.__PCPE_LOCAL_USERS : [];
+        if (localUsers.find(u => u.username === user.username) || user.username) {
           setCurrentUser(user);
           loadUserData(user.username);
         }
@@ -1659,11 +1689,13 @@ export default function App() {
 }
 
 // ── COMPONENTE: TELA DE LOGIN ──────────────────────────────────────────────
-function TelaLogin({ onLogin }) {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [erro, setErro] = useState("");
-  const [usersLocalLoaded, setUsersLocalLoaded] = useState(false);
+  function TelaLogin({ onLogin }) {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [erro, setErro] = useState("");
+    const [usersLocalLoaded, setUsersLocalLoaded] = useState(false);
+    const [sbUrl, setSbUrl] = useState(typeof window !== 'undefined' ? localStorage.getItem('pcpe_supabase_url') || '' : '');
+    const [sbKey, setSbKey] = useState(typeof window !== 'undefined' ? localStorage.getItem('pcpe_supabase_anon_key') || '' : '');
 
   const handleFormSubmit = () => {
     (async () => {
@@ -1671,30 +1703,29 @@ function TelaLogin({ onLogin }) {
         const uname = username.toLowerCase().trim();
 
         // 1) If Supabase env is configured, try to sign in through Supabase first.
-        if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
-          try {
-            // Support login by username: if the input doesn't look like an email,
-            // try to map it via a public table `username_map` (username -> email).
-            // This requires you to create the table in Supabase and populate it.
+        // Attempt Supabase auth if we can create a client. The client may come
+        // from environment (lib) or from runtime values saved in localStorage
+        // (pcpe_supabase_url / pcpe_supabase_anon_key). This lets the app work
+        // locally without NEXT_PUBLIC_* env vars.
+        try {
+          const client = getSupabase();
+          if (client && client.auth) {
+            // Support login by username -> email mapping via `username_map`.
             let loginEmail = uname;
             if (!uname.includes("@")) {
               try {
-                const { data: mapData, error: mapErr } = await supabase
+                const { data: mapData, error: mapErr } = await client
                   .from("username_map")
                   .select("email")
                   .eq("username", uname)
                   .maybeSingle();
-                if (mapErr) {
-                  // ignore mapping errors and fallback to using the raw input
-                } else if (mapData && mapData.email) {
-                  loginEmail = mapData.email;
-                }
+                if (!mapErr && mapData && mapData.email) loginEmail = mapData.email;
               } catch (e) {
-                // ignore and continue with uname as email
+                // ignore mapping errors and continue
               }
             }
 
-            const { data, error } = await supabase.auth.signInWithPassword({
+            const { data, error } = await client.auth.signInWithPassword({
               email: loginEmail,
               password
             });
@@ -1702,12 +1733,13 @@ function TelaLogin({ onLogin }) {
               const u = data.user;
               const name = (u.user_metadata && u.user_metadata.name) || u.email || uname;
               setErro("");
+              // persist the supabase connection if it came from inputs
               onLogin({ username: u.email || uname, role: 'user', name });
               return;
             }
-          } catch (e) {
-            console.warn('Supabase auth attempt failed, falling back to local auth.', e);
           }
+        } catch (e) {
+          console.warn('Supabase auth attempt failed, falling back to local auth.', e);
         }
 
         // 2) Local authentication: load optional fixture at runtime (development only)
@@ -1721,7 +1753,7 @@ function TelaLogin({ onLogin }) {
             window.__PCPE_LOCAL_USERS = data;
           } catch (e) {
             // no-op if file missing
-          }
+  }
           setUsersLocalLoaded(true);
         }
 
@@ -1734,6 +1766,16 @@ function TelaLogin({ onLogin }) {
           if (ok) {
             setErro("");
             onLogin({ username: bcryptMatchUser.username, role: bcryptMatchUser.role, name: bcryptMatchUser.name });
+            return;
+          }
+        }
+
+        // Development helper: allow plaintext match when running locally
+        if (process.env.NODE_ENV !== 'production') {
+          const plainUser = localUsers.find(u => u.username === uname && u.passwordPlain && u.passwordPlain === password);
+          if (plainUser) {
+            setErro("");
+            onLogin({ username: plainUser.username, role: plainUser.role, name: plainUser.name });
             return;
           }
         }
@@ -1793,6 +1835,28 @@ function TelaLogin({ onLogin }) {
               onKeyDown={e => e.key === "Enter" && handleFormSubmit()}
               placeholder="••••"
               style={{ width: "100%", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, padding: "12px 14px", color: "#f1f5f9", fontSize: 16, boxSizing: "border-box", outline: "none", transition: "border 0.2s", fontFamily: "inherit" }}
+            />
+          </div>
+
+          {/* Optional: runtime Supabase connection (for local dev without NEXT_PUBLIC_ envs) */}
+          <div style={{ marginTop: 6 }}>
+            <label style={{ color: "#94a3b8", fontSize: 10, fontWeight: 600, letterSpacing: 1.5, display: "block", marginBottom: 6 }}>SUPABASE URL (opcional)</label>
+            <input
+              type="text"
+              value={sbUrl}
+              onChange={e => { setSbUrl(e.target.value); try { localStorage.setItem('pcpe_supabase_url', e.target.value) } catch {} }}
+              placeholder="https://xyzcompany.supabase.co"
+              style={{ width: "100%", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 10, padding: "8px 10px", color: "#94a3b8", fontSize: 12, boxSizing: "border-box", outline: "none" }}
+            />
+          </div>
+          <div style={{ marginTop: 6 }}>
+            <label style={{ color: "#94a3b8", fontSize: 10, fontWeight: 600, letterSpacing: 1.5, display: "block", marginBottom: 6 }}>SUPABASE ANON KEY (opcional)</label>
+            <input
+              type="password"
+              value={sbKey}
+              onChange={e => { setSbKey(e.target.value); try { localStorage.setItem('pcpe_supabase_anon_key', e.target.value) } catch {} }}
+              placeholder="anon key"
+              style={{ width: "100%", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 10, padding: "8px 10px", color: "#94a3b8", fontSize: 12, boxSizing: "border-box", outline: "none" }}
             />
           </div>
 
