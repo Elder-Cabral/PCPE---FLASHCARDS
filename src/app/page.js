@@ -380,6 +380,22 @@ export default function App() {
     return () => window.removeEventListener("focus", handleFocus);
   }, [currentUser]);
 
+  // Monitorar a virada do dia para liberar cards às 00:00 automaticamente
+  useEffect(() => {
+    if (!currentUser) return;
+    let lastDateStr = getLocalDateString(new Date());
+
+    const interval = setInterval(() => {
+      const todayStr = getLocalDateString(new Date());
+      if (todayStr !== lastDateStr) {
+        lastDateStr = todayStr;
+        loadUserData(currentUser.username);
+      }
+    }, 30000); // Verifica a cada 30 segundos
+
+    return () => clearInterval(interval);
+  }, [currentUser]);
+
   const handleLogin = (user) => {
     try {
       localStorage.setItem("pcpe_session", JSON.stringify(user));
@@ -422,12 +438,18 @@ export default function App() {
       sorted.sort((a, b) => {
         const intervalA = srsData[a.id] ? srsData[a.id].interval : 4;
         const intervalB = srsData[b.id] ? srsData[b.id].interval : 4;
+        if (intervalA === intervalB) {
+          return Math.random() - 0.5;
+        }
         return intervalB - intervalA;
       });
     } else if (reviewOrder === "hard_first") {
       sorted.sort((a, b) => {
         const intervalA = srsData[a.id] ? srsData[a.id].interval : 4;
         const intervalB = srsData[b.id] ? srsData[b.id].interval : 4;
+        if (intervalA === intervalB) {
+          return Math.random() - 0.5;
+        }
         return intervalA - intervalB;
       });
     }
@@ -435,13 +457,17 @@ export default function App() {
   };
 
   const startGlobalReviewSession = () => {
-    let queue = [];
+    let allDue = [];
     for (const mat of MATERIAS) {
       const cards = BANCO[mat.id] || [];
       const due = cards.filter(c => srsData[c.id] && srsData[c.id].dueDate <= Date.now());
-      queue = [...queue, ...due];
+      allDue = [...allDue, ...due];
     }
-    const sortedQueue = sortQueue(queue);
+    
+    // Seleciona até 30 cards vencidos aleatoriamente para evitar repetições
+    const selectedDue = [...allDue].sort(() => Math.random() - 0.5).slice(0, 30);
+    
+    const sortedQueue = sortQueue(selectedDue);
     setStudyQueue(sortedQueue);
     setCurrentQueueIndex(0);
     setIsFlipped(false);
@@ -519,8 +545,13 @@ export default function App() {
     if (mode === "all") {
       queue = [...cards];
     } else {
-      const dueCards = cards.filter(c => srsData[c.id] && srsData[c.id].dueDate <= Date.now());
-      const newCards = cards.filter(c => !srsData[c.id]).slice(0, 15);
+      const allDueCards = cards.filter(c => srsData[c.id] && srsData[c.id].dueDate <= Date.now());
+      const allNewCards = cards.filter(c => !srsData[c.id]);
+      
+      // Seleciona aleatoriamente até 20 vencidos e até 15 novos para não repetir
+      const dueCards = [...allDueCards].sort(() => Math.random() - 0.5).slice(0, 20);
+      const newCards = [...allNewCards].sort(() => Math.random() - 0.5).slice(0, 15);
+      
       queue = [...dueCards, ...newCards];
     }
 
