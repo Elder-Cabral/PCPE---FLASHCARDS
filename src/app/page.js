@@ -2,13 +2,11 @@
 import { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import BANCO from "../data/banco.json";
 import { supabase } from "../lib/supabase";
+import USERS_LOCAL from "../data/users.local.json";
+import crypto from "crypto";
 
-// ── CONFIGURAÇÕES DOS USUÁRIOS ─────────────────────────────────────────────
-const USERS = [
-  { username: "elder",   password: "passei", role: "admin", name: "Elder" },
-  { username: "helo",    password: "passei", role: "user",  name: "Helo" },
-  { username: "dannilo", password: "passei", role: "user",  name: "Dannilo" },
-];
+// Usuários locais agora são carregados de src/data/users.local.json (IGNORADO no git)
+// Por segurança armazenamos apenas hashes de senha (SHA-256) no arquivo local.
 
 // ── CONFIGURAÇÃO DE MATÉRIAS ───────────────────────────────────────────────
 const MATERIAS = [
@@ -1661,14 +1659,19 @@ function TelaLogin({ onLogin }) {
   const [erro, setErro] = useState("");
 
   const handleFormSubmit = () => {
-    const user = USERS.find(
-      u => u.username === username.toLowerCase().trim() && u.password === password
-    );
-    if (user) {
-      setErro("");
-      onLogin(user);
-    } else {
+    try {
+      const uname = username.toLowerCase().trim();
+      const sha = crypto.createHash("sha256").update(password).digest("hex");
+      const user = (USERS_LOCAL || []).find(u => u.username === uname && u.passwordHash === sha);
+      if (user) {
+        setErro("");
+        onLogin({ username: user.username, role: user.role, name: user.name });
+        return;
+      }
       setErro("Usuário ou senha incorretos.");
+    } catch (e) {
+      console.error(e);
+      setErro("Erro durante a autenticação.");
     }
   };
 

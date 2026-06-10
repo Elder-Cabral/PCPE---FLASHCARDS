@@ -21,6 +21,9 @@ yarn-error.log*
 # local env files
 .env*.local
 
+# Local users fixture (do not commit real credentials)
+src/data/users.local.json
+
 # Vercel
 .vercel
 
