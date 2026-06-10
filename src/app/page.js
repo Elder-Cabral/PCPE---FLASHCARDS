@@ -2,7 +2,9 @@
 import { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import BANCO from "../data/banco.json";
 import { supabase } from "../lib/supabase";
-import USERS_LOCAL from "../data/users.local.json";
+// Local users fixture is optional and intentionally not required in production builds.
+// If you need local users for development, create src/data/users.local.json (ignored by git).
+let USERS_LOCAL = [];
 import bcrypt from "bcryptjs";
 
 // Usuários locais agora são carregados de src/data/users.local.json (IGNORADO no git)
@@ -373,7 +375,7 @@ export default function App() {
       const savedSession = localStorage.getItem("pcpe_session");
       if (savedSession) {
         const user = JSON.parse(savedSession);
-        if (USERS.find(u => u.username === user.username)) {
+        if (USERS_LOCAL.find(u => u.username === user.username)) {
           setCurrentUser(user);
           loadUserData(user.username);
         }
