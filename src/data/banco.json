@@ -665,6 +665,21 @@
       "dica": "",
       "topico": "Constituição de PE (Arts. 101 a 105-B)"
     }
+    ,
+    {
+      "id": "leg_estadual_95",
+      "pergunta": "V/F: A Lei nº 6.425/1972 estabelece penalidades como advertência, suspensão e demissão para policiais civis de PE.",
+      "resposta": "Certo. A Lei 6.425/1972 prevê essas penalidades no regime disciplinar do policial civil.",
+      "dica": "Lei vigente — destaque as sanções disciplinares listadas no estatuto.",
+      "topico": "Estatuto do Policial Civil (Lei 6.425/72)"
+    },
+    {
+      "id": "leg_estadual_96",
+      "pergunta": "V/F: De acordo com a LC 317/2015, a progressão funcional na PC-PE pode ocorrer por merecimento e antiguidade.",
+      "resposta": "Certo. A LC 317/2015 prevê progressão por merecimento (avaliação) e por antiguidade, alternadas conforme plano.",
+      "dica": "Lei vigente — relacione LC 317/2015 a critérios de progressão.",
+      "topico": "Plano de Cargos e Carreiras (LC 317/15)"
+    }
   ],
   "dir_const": [
     {
@@ -1296,6 +1311,21 @@
       "resposta": "Privativa da União; os estados não podem criar tipos penais nem alterar penas previstas no Código Penal.",
       "dica": "",
       "topico": "Direitos e Garantias Fundamentais"
+    }
+    ,
+    {
+      "id": "dir_const_90",
+      "pergunta": "V/F: O mandado de segurança protege direito líquido e certo quando não há outro remédio judicial eficaz.",
+      "resposta": "Certo. Mandado de segurança é cabível para direito líquido e certo, vedado quando houver remédio constitucional específico.",
+      "dica": "Lei vigente — MS = direito líquido e certo; compare com HC e HD.",
+      "topico": "Direitos e Garantias Fundamentais"
+    },
+    {
+      "id": "dir_const_91",
+      "pergunta": "V/F: Os princípios da administração pública do art. 37 (LIMPE) aplicam-se a todos os entes federativos.",
+      "resposta": "Certo. Legalidade, Impessoalidade, Moralidade, Publicidade e Eficiência são princípios constitucionais aplicáveis em todas as esferas.",
+      "dica": "Mnemônico: LIMPE. Art. 37 CF/88.",
+      "topico": "Organização do Estado e Administração Pública"
     }
   ],
   "dir_adm": [
@@ -1948,6 +1978,21 @@
       "pergunta": "O que é o princípio da publicidade dos atos administrativos?",
       "resposta": "Obrigação de divulgar os atos para dar transparência à gestão; condição de eficácia, com exceções legais.",
       "dica": "",
+      "topico": "Organização Administrativa, Serviços e Responsabilidade"
+    }
+    ,
+    {
+      "id": "dir_adm_93",
+      "pergunta": "V/F: Os requisitos do ato administrativo são competência, finalidade, forma, motivo e objeto.",
+      "resposta": "Certo. Esses são os cinco requisitos clássicos; vícios em qualquer um podem tornar o ato anulável ou nulo.",
+      "dica": "Decore: Competência, Finalidade, Forma, Motivo, Objeto.",
+      "topico": "Ato e Processo Administrativo"
+    },
+    {
+      "id": "dir_adm_94",
+      "pergunta": "V/F: A responsabilidade civil do Estado é objetiva, exigindo apenas o nexo causal entre ação estatal e dano.",
+      "resposta": "Certo. Art. 37, §6º da CF/88 prevê responsabilidade objetiva do Estado por atos de seus agentes, bastando o nexo causal.",
+      "dica": "Lei/CF vigente — enfoque no nexo causal e na indenização ao particular.",
       "topico": "Organização Administrativa, Serviços e Responsabilidade"
     }
   ],
@@ -3831,6 +3876,20 @@
       "resposta": "Grau de adequação da linguagem ao contexto: formal (situações oficiais), coloquial (situações informais). A redação oficial exige nível formal.",
       "dica": "",
       "topico": "Redação Oficial (Manual da Presidência)"
+    },
+    {
+      "id": "portugues_93",
+      "pergunta": "Qual a regra básica de concordância verbal com sujeito composto por 'e'?",
+      "resposta": "Quando o sujeito tem núcleos ligados por 'e' que indicam pessoas ou coisas distintas, o verbo concorda no plural. Ex.: 'O delegado e o escrivão compareceram.'",
+      "dica": "Regra prática: 'e' normalmente exige plural; exceções: núcleos formam ideia única ou há locuções coletivas.",
+      "topico": "Estrutura Morfossintática"
+    },
+    {
+      "id": "portugues_94",
+      "pergunta": "Como testar se há crase antes de palavra feminina?",
+      "resposta": "Substitua por 'àquele/aquela' ou use a forma masculina equivalente com 'ao'. Se a construção exigir preposição + artigo feminino, haverá crase. Ex.: 'Vou à delegacia'.",
+      "dica": "Teste rápido: coloque 'aquela' após a preposição — se fizer sentido, provavelmente há crase.",
+      "topico": "Ortografia e Pontuação"
     }
   ],
   "informatica": [
@@ -4513,6 +4572,21 @@
       "dica": "",
       "topico": "Pacote Microsoft Office"
     }
+    ,
+    {
+      "id": "informatica_97",
+      "pergunta": "V/F: Phishing é técnica de engenharia social que visa obter dados pessoais por e‑mail ou site falso; verificar domínio evita o golpe.",
+      "resposta": "Certo. Phishing usa engenharia social; identificar domínio, remetente e anexos suspeitos é essencial para prevenção.",
+      "dica": "Prática: sempre verifique o domínio e não clique em links suspeitos.",
+      "topico": "Segurança da Informação e Armazenamento"
+    },
+    {
+      "id": "informatica_98",
+      "pergunta": "V/F: Em Excel, a função SOMA() agrega valores de um intervalo e é diferente de CONCATENAR(), que une textos.",
+      "resposta": "Certo. SOMA() soma números; CONCATENAR() (ou &) une textos. Cobranças de Office costumam exigir essa diferenciação.",
+      "dica": "Pratique =SOMA(A1:A10) e =CONCATENAR(A1;" ";B1) ou =A1&" "&B1.",
+      "topico": "Pacote Microsoft Office"
+    }
   ],
   "raciocinio": [
     {
@@ -5116,6 +5190,21 @@
       "resposta": "Problemas de idade, mistura, trabalho, velocidade, divisibilidade e sequências numéricas que exigem equações e proporções.",
       "dica": "",
       "topico": "Matemática Básica e Conjuntos"
+    }
+    ,
+    {
+      "id": "raciocinio_86",
+      "pergunta": "Quando duas proposições são logicamente equivalentes?",
+      "resposta": "Quando têm a mesma tabela-verdade em todas as avaliações; exemplo: ¬(P ∧ Q) ≡ ¬P ∨ ¬Q (Leis de De Morgan).",
+      "dica": "Teste por tabelas-verdade ou transformações algébricas (De Morgan, distributiva).",
+      "topico": "Lógica Sentencial/Proposicional"
+    },
+    {
+      "id": "raciocinio_87",
+      "pergunta": "O que é a implicação material (P → Q) e quando ela é falsa?",
+      "resposta": "A implicação material é falsa somente quando P é verdadeira e Q é falsa; em todos os outros casos é verdadeira.",
+      "dica": "Lembre: 'se P então Q' só falha quando P ocorre e Q não ocorre.",
+      "topico": "Lógica Sentencial/Proposicional"
     }
   ],
   "contabilidade": [
@@ -5805,6 +5894,21 @@
       "dica": "",
       "topico": "Conceitos, Finalidades e Patrimônio"
     }
+    ,
+    {
+      "id": "contabilidade_98",
+      "pergunta": "O que é previsibilidade de caixa e por que é importante?",
+      "resposta": "Projeção das entradas e saídas futuras de caixa que permite gestão de liquidez e tomada de decisões sobre capital de giro.",
+      "dica": "Use fluxo de caixa projetado para identificar déficits antecipadamente.",
+      "topico": "Conceitos, Finalidades e Patrimônio"
+    },
+    {
+      "id": "contabilidade_99",
+      "pergunta": "Como se classifica uma conta como circulante ou não circulante?",
+      "resposta": "Pelo prazo de realização/exigibilidade: até 12 meses = circulante; após 12 meses = não circulante.",
+      "dica": "Regra prática: prazo < = 12 meses → Circulante.",
+      "topico": "Balancete e Demonstrações Contábeis"
+    }
   ],
   "estatistica": [
     {
@@ -6415,6 +6519,22 @@
       "resposta": "Organização dos dados em classes com suas respectivas frequências; facilita a visualização da distribuição e o cálculo de medidas.",
       "dica": "",
       "topico": "Teoria da Probabilidade"
+    }
+    ,
+    {
+      "id": "estatistica_87",
+      "pergunta": "O que é o coeficiente de variação e quando é útil?",
+      "resposta": "Razão entre o desvio padrão e a média (×100%); útil para comparar dispersões de conjuntos com unidades ou médias diferentes.",
+      "dica": "CV = (σ / x̄) × 100% — quanto menor, menos variabilidade relativa.",
+      "topico": "Estatística Descritiva e Análise Explor.
+"
+    },
+    {
+      "id": "estatistica_88",
+      "pergunta": "Como estimar o tamanho da amostra para proporções?",
+      "resposta": "n = (Z² × p × (1−p)) / E², onde Z é o z-score do nível de confiança, p estimativa da proporção e E margem de erro.",
+      "dica": "Se p desconhecido, use p=0,5 para obter máximo tamanho necessário.",
+      "topico": "Técnicas de Amostragem e Tamanho Amostral"
     }
   ]
 }
