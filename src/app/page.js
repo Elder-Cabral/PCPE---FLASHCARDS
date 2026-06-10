@@ -125,7 +125,7 @@ export default function App() {
   const [selectedMateria, setSelectedMateria] = useState(null);
   const [showTopicSelector, setShowTopicSelector] = useState(false);
   const [selectedTopics, setSelectedTopics] = useState([]);
-  const [studyMode, setStudyMode] = useState(null); // 'srs', 'all' ou 'topic'
+  const [studyMode, setStudyMode] = useState(null); // 'srs', 'all', 'topic' ou 'favorites'
   const [studyQueue, setStudyQueue] = useState([]);
   const [currentQueueIndex, setCurrentQueueIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
@@ -133,6 +133,9 @@ export default function App() {
   const [sessionStats, setSessionStats] = useState({ studied: 0, gotWrong: 0, gotEasy: 0 });
   const [reviewOrder, setReviewOrder] = useState("random"); // 'random', 'easy_first', 'hard_first'
   const [globalReviewMessage, setGlobalReviewMessage] = useState("");
+  const [favorites, setFavorites] = useState([]);
+  const [answeredSessionIds, setAnsweredSessionIds] = useState(new Set());
+  const [toastMessage, setToastMessage] = useState("");
 
   // Estilos globais e de responsividade injetados
   useEffect(() => {
@@ -290,8 +293,11 @@ export default function App() {
       localStorage.setItem("pcpe_srs_" + username, JSON.stringify(mergedSRS));
       if (latestSettings.reviewOrder) {
         setReviewOrder(latestSettings.reviewOrder);
-        localStorage.setItem("pcpe_settings_" + username, JSON.stringify(latestSettings));
       }
+      if (latestSettings.favorites) {
+        setFavorites(latestSettings.favorites);
+      }
+      localStorage.setItem("pcpe_settings_" + username, JSON.stringify(latestSettings));
     } catch (e) {
       console.error("Erro ao salvar no Supabase:", e);
     }
@@ -308,12 +314,13 @@ export default function App() {
       const savedSRS = localStorage.getItem("pcpe_srs_" + username);
       const savedSettings = localStorage.getItem("pcpe_settings_" + username);
       const localSRS = savedSRS ? JSON.parse(savedSRS) : {};
-      const localSettings = savedSettings ? JSON.parse(savedSettings) : { reviewOrder: "random" };
+      const localSettings = savedSettings ? JSON.parse(savedSettings) : { reviewOrder: "random", favorites: [] };
 
       if (error) {
         console.warn("Erro ao buscar do Supabase, usando local:", error);
         setSrsData(localSRS);
         if (localSettings.reviewOrder) setReviewOrder(localSettings.reviewOrder);
+        if (localSettings.favorites) setFavorites(localSettings.favorites);
         return;
       }
 
@@ -327,6 +334,7 @@ export default function App() {
 
         setSrsData(mergedSRS);
         if (mergedSettings.reviewOrder) setReviewOrder(mergedSettings.reviewOrder);
+        if (mergedSettings.favorites) setFavorites(mergedSettings.favorites || []);
 
         localStorage.setItem("pcpe_srs_" + username, JSON.stringify(mergedSRS));
         localStorage.setItem("pcpe_settings_" + username, JSON.stringify(mergedSettings));
@@ -341,6 +349,7 @@ export default function App() {
         console.log("Nenhum dado no Supabase para", username, "- Migrando localStorage local.");
         setSrsData(localSRS);
         if (localSettings.reviewOrder) setReviewOrder(localSettings.reviewOrder);
+        if (localSettings.favorites) setFavorites(localSettings.favorites || []);
 
         await supabase.from("user_progress").upsert({
           username,
@@ -421,12 +430,70 @@ export default function App() {
       try {
         localStorage.setItem(
           "pcpe_settings_" + currentUser.username,
-          JSON.stringify({ reviewOrder: order })
+          JSON.stringify({ reviewOrder: order, favorites })
         );
       } catch (e) {
         console.error(e);
       }
-      saveSRSData(currentUser.username, srsData, { reviewOrder: order });
+      saveSRSData(currentUser.username, srsData, { reviewOrder: order, favorites });
+    }
+  };
+
+  const toggleFavorite = (cardId) => {
+    if (!currentUser) return;
+    setFavorites(prev => {
+      const updated = prev.includes(cardId)
+        ? prev.filter(id => id !== cardId)
+        : [...prev, cardId];
+      
+      // Sincroniza as alterações no Supabase e local
+      setTimeout(() => {
+        saveSRSData(currentUser.username, srsData, { reviewOrder, favorites: updated });
+      }, 50);
+      return updated;
+    });
+  };
+
+  const startFavoritesSession = () => {
+    if (favorites.length === 0) return;
+    
+    let queue = [];
+    for (const mat of MATERIAS) {
+      const cards = BANCO[mat.id] || [];
+      const favs = cards.filter(c => favorites.includes(c.id));
+      queue = [...queue, ...favs];
+    }
+
+    const sortedQueue = sortQueue(queue);
+    setStudyQueue(sortedQueue);
+    setCurrentQueueIndex(0);
+    setIsFlipped(false);
+    setStudyMode("favorites");
+    setSelectedMateria(null);
+    setSessionCompleted(false);
+    setSessionStats({ studied: 0, gotWrong: 0, gotEasy: 0 });
+    setAnsweredSessionIds(new Set());
+  };
+
+  const goToNextCard = () => {
+    if (currentQueueIndex + 1 < studyQueue.length) {
+      setIsFlipped(false);
+      setTimeout(() => {
+        setCurrentQueueIndex(prev => prev + 1);
+      }, 200);
+    } else {
+      if (studyMode !== "favorites" && studyMode !== "all") {
+        setSessionCompleted(true);
+      }
+    }
+  };
+
+  const goToPrevCard = () => {
+    if (currentQueueIndex > 0) {
+      setIsFlipped(false);
+      setTimeout(() => {
+        setCurrentQueueIndex(prev => prev - 1);
+      }, 200);
     }
   };
 
@@ -475,6 +542,7 @@ export default function App() {
     setSelectedMateria(null);
     setSessionCompleted(false);
     setSessionStats({ studied: 0, gotWrong: 0, gotEasy: 0 });
+    setAnsweredSessionIds(new Set());
   };
 
   const handleGlobalReviewClick = () => {
@@ -564,6 +632,7 @@ export default function App() {
     setSelectedMateria(materiaId);
     setSessionCompleted(false);
     setSessionStats({ studied: 0, gotWrong: 0, gotEasy: 0 });
+    setAnsweredSessionIds(new Set());
   };
 
   // Preparar fila de estudos por Tópicos
@@ -580,12 +649,19 @@ export default function App() {
     setSessionCompleted(false);
     setSessionStats({ studied: 0, gotWrong: 0, gotEasy: 0 });
     setShowTopicSelector(false);
+    setAnsweredSessionIds(new Set());
   };
 
   // Responder a um card no modo SRS / Tópicos
   const handleCardFeedback = (q) => {
     const currentCard = studyQueue[currentQueueIndex];
     if (!currentCard) return;
+
+    if (answeredSessionIds.has(currentCard.id)) {
+      setToastMessage("Opção já escolhida.");
+      setTimeout(() => setToastMessage(""), 2000);
+      return;
+    }
 
     setSessionStats(prev => ({
       studied: prev.studied + 1,
@@ -608,17 +684,16 @@ export default function App() {
       } catch (e) {
         console.error(e);
       }
-      saveSRSData(currentUser.username, updatedSRS, { reviewOrder });
+      saveSRSData(currentUser.username, updatedSRS, { reviewOrder, favorites });
+      
+      setAnsweredSessionIds(prev => {
+        const next = new Set(prev);
+        next.add(currentCard.id);
+        return next;
+      });
     }
 
-    if (currentQueueIndex + 1 < studyQueue.length) {
-      setIsFlipped(false);
-      setTimeout(() => {
-        setCurrentQueueIndex(prev => prev + 1);
-      }, 200);
-    } else {
-      setSessionCompleted(true);
-    }
+    goToNextCard();
   };
 
   if (!currentUser) {
@@ -636,6 +711,27 @@ export default function App() {
 
     return (
       <Shell user={currentUser} stats={stats} onLogout={handleLogout}>
+        {toastMessage && (
+          <div style={{
+            position: "fixed",
+            top: 24,
+            left: "50%",
+            transform: "translateX(-50%)",
+            background: "rgba(239,68,68,0.95)",
+            border: "1px solid rgba(239,68,68,0.2)",
+            color: "#fff",
+            padding: "12px 24px",
+            borderRadius: 12,
+            fontSize: 13,
+            fontWeight: 600,
+            boxShadow: "0 10px 25px rgba(239,68,68,0.2)",
+            zIndex: 9999,
+            backdropFilter: "blur(4px)",
+            transition: "all 0.3s ease"
+          }}>
+            ⚠️ {toastMessage}
+          </div>
+        )}
         <div style={{ display: "flex", flexDirection: "column", gap: 20, width: "100%", maxWidth: 640, margin: "0 auto", boxSizing: "border-box" }}>
           {/* Header do Estudo */}
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
@@ -670,7 +766,9 @@ export default function App() {
                     ? "ESTUDO INTELIGENTE (SM-2)"
                     : studyMode === "topic"
                       ? "ESTUDO POR TÓPICOS"
-                      : "MODO COMPLETO"}
+                      : studyMode === "favorites"
+                        ? "CONSULTA DE FAVORITOS"
+                        : "MODO COMPLETO"}
               </div>
             </div>
             <div style={{ fontSize: 13, color: "#64748b", fontFamily: "monospace" }}>
@@ -712,6 +810,34 @@ export default function App() {
             >
               {/* Frente */}
               <div className="flashcard-box flashcard-front-style">
+                {/* Botão Favoritar */}
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation(); // Evita virar o card
+                    toggleFavorite(currentCard.id);
+                  }}
+                  style={{
+                    position: "absolute",
+                    top: 16,
+                    right: 16,
+                    background: "transparent",
+                    border: "none",
+                    color: favorites.includes(currentCard.id) ? "#eab308" : "#475569",
+                    cursor: "pointer",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: 2,
+                    zIndex: 10,
+                    outline: "none"
+                  }}
+                >
+                  <span style={{ fontSize: 18 }}>{favorites.includes(currentCard.id) ? "★" : "☆"}</span>
+                  <span style={{ fontSize: 9, fontWeight: 500, opacity: 0.6, letterSpacing: 0.5, color: "#94a3b8" }}>
+                    {favorites.includes(currentCard.id) ? "favoritado" : "favoritar"}
+                  </span>
+                </button>
+
                 <div style={{ fontSize: 10, color: "#3b82f6", fontWeight: 600, letterSpacing: 3, marginBottom: 20 }}>✦ PERGUNTA ✦</div>
                 <p className="flashcard-question-text" style={{ color: "#f1f5f9", fontSize: 18, lineHeight: 1.65, textAlign: "center", margin: 0, fontWeight: 400, fontFamily: "Georgia, serif" }}>
                   {currentCard?.pergunta}
@@ -723,6 +849,34 @@ export default function App() {
 
               {/* Verso */}
               <div className="custom-scrollbar flashcard-box flashcard-back-style" style={{ border: `1px solid ${themeColor}40` }}>
+                {/* Botão Favoritar */}
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleFavorite(currentCard.id);
+                  }}
+                  style={{
+                    position: "absolute",
+                    top: 16,
+                    right: 16,
+                    background: "transparent",
+                    border: "none",
+                    color: favorites.includes(currentCard.id) ? "#eab308" : "#475569",
+                    cursor: "pointer",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: 2,
+                    zIndex: 10,
+                    outline: "none"
+                  }}
+                >
+                  <span style={{ fontSize: 18 }}>{favorites.includes(currentCard.id) ? "★" : "☆"}</span>
+                  <span style={{ fontSize: 9, fontWeight: 500, opacity: 0.6, letterSpacing: 0.5, color: "#94a3b8" }}>
+                    {favorites.includes(currentCard.id) ? "favoritado" : "favoritar"}
+                  </span>
+                </button>
+
                 <div style={{ fontSize: 10, color: themeColor, fontWeight: 600, letterSpacing: 3, marginBottom: 14 }}>✦ RESPOSTA ✦</div>
                 
                 <p className="flashcard-answer-text" style={{ color: "#e2e8f0", fontSize: 15, lineHeight: 1.65, textAlign: "center", margin: "0 0 16px 0", fontFamily: "Georgia, serif" }}>
@@ -788,20 +942,15 @@ export default function App() {
                   </button>
                 </div>
               ) : (
-                // Botão Próximo Simples
+                // Botão Próximo Simples para favoritos ou outros modos
                 <button
-                  onClick={() => {
-                    if (currentQueueIndex + 1 < studyQueue.length) {
-                      setIsFlipped(false);
-                      setTimeout(() => setCurrentQueueIndex(prev => prev + 1), 200);
-                    } else {
-                      setSessionCompleted(true);
-                    }
-                  }}
+                  onClick={goToNextCard}
                   className="btn-hover"
                   style={{
                     width: "100%",
-                    background: "linear-gradient(135deg, #3b82f6, #2563eb)",
+                    background: studyMode === "favorites"
+                      ? "linear-gradient(135deg, #eab308, #ca8a04)"
+                      : "linear-gradient(135deg, #3b82f6, #2563eb)",
                     color: "#fff",
                     border: "none",
                     borderRadius: 14,
@@ -834,6 +983,54 @@ export default function App() {
                 REVELAR RESPOSTA
               </button>
             )}
+          </div>
+
+          {/* Navegação Manual Inferior */}
+          <div style={{ display: "flex", justifyContent: "space-between", gap: 14, width: "100%" }}>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goToPrevCard();
+              }}
+              disabled={currentQueueIndex === 0}
+              className="btn-hover"
+              style={{
+                flex: 1,
+                background: "rgba(255,255,255,0.03)",
+                border: "1px solid rgba(255,255,255,0.06)",
+                borderRadius: 14,
+                padding: "12px 14px",
+                color: currentQueueIndex === 0 ? "#475569" : "#94a3b8",
+                fontSize: 12,
+                fontWeight: 600,
+                cursor: currentQueueIndex === 0 ? "default" : "pointer",
+                outline: "none"
+              }}
+            >
+              ← Card Anterior
+            </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                goToNextCard();
+              }}
+              disabled={currentQueueIndex === studyQueue.length - 1}
+              className="btn-hover"
+              style={{
+                flex: 1,
+                background: "rgba(255,255,255,0.03)",
+                border: "1px solid rgba(255,255,255,0.06)",
+                borderRadius: 14,
+                padding: "12px 14px",
+                color: currentQueueIndex === studyQueue.length - 1 ? "#475569" : "#94a3b8",
+                fontSize: 12,
+                fontWeight: 600,
+                cursor: currentQueueIndex === studyQueue.length - 1 ? "default" : "pointer",
+                outline: "none"
+              }}
+            >
+              Card Seguinte →
+            </button>
           </div>
         </div>
       </Shell>
@@ -1247,6 +1444,58 @@ export default function App() {
             <div style={{ fontSize: 10, color: "#64748b", fontWeight: 600, letterSpacing: 0.5, marginTop: 2 }}>REVISADOS HOJE</div>
           </div>
         </div>
+      </div>
+
+      {/* Seção de Favoritos */}
+      <div style={{ marginBottom: 24 }}>
+        <button
+          onClick={startFavoritesSession}
+          disabled={favorites.length === 0}
+          className={favorites.length > 0 ? "card-hover" : ""}
+          style={{
+            width: "100%",
+            background: favorites.length > 0
+              ? "linear-gradient(135deg, rgba(234, 179, 8, 0.08), rgba(234, 179, 8, 0.02))"
+              : "rgba(255,255,255,0.01)",
+            border: favorites.length > 0
+              ? "1px solid rgba(234, 179, 8, 0.2)"
+              : "1px solid rgba(255,255,255,0.03)",
+            borderRadius: 20,
+            padding: "20px 18px",
+            textAlign: "left",
+            cursor: favorites.length > 0 ? "pointer" : "default",
+            position: "relative",
+            overflow: "hidden",
+            outline: "none",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            opacity: favorites.length > 0 ? 1 : 0.5
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+            <div style={{ fontSize: 28 }}>⭐</div>
+            <div>
+              <div style={{ color: "#f1f5f9", fontSize: 15, fontWeight: 600 }}>Meus Flashcards Favoritos</div>
+              <div style={{ color: "#94a3b8", fontSize: 11, marginTop: 4 }}>
+                {favorites.length > 0
+                  ? "Banco de consulta rápida para revisão livre"
+                  : "Adicione estrelas nos flashcards para salvá-los aqui"
+                }
+              </div>
+            </div>
+          </div>
+          <span style={{
+            fontSize: 12,
+            fontWeight: 700,
+            color: favorites.length > 0 ? "#eab308" : "#475569",
+            background: favorites.length > 0 ? "rgba(234,179,8,0.1)" : "rgba(255,255,255,0.04)",
+            borderRadius: 10,
+            padding: "4px 10px"
+          }}>
+            {favorites.length} {favorites.length === 1 ? 'card' : 'cards'}
+          </span>
+        </button>
       </div>
 
       {/* Grid de Matérias */}
