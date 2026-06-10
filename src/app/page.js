@@ -1659,33 +1659,56 @@ function TelaLogin({ onLogin }) {
   const [erro, setErro] = useState("");
 
   const handleFormSubmit = () => {
-    try {
-      const uname = username.toLowerCase().trim();
-      // Primeiro tenta bcrypt (caso fixture esteja em bcrypt). Se não der, tenta SHA-256 para compatibilidade.
-      const bcryptMatchUser = (USERS_LOCAL || []).find(u => u.username === uname && u.passwordHash && u.passwordHash.startsWith("$2a$"));
-      if (bcryptMatchUser) {
-        const ok = bcrypt.compareSync(password, bcryptMatchUser.passwordHash);
-        if (ok) {
+    (async () => {
+      try {
+        const uname = username.toLowerCase().trim();
+
+        // 1) If Supabase env is configured, try to sign in through Supabase first.
+        if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+          try {
+            const { data, error } = await supabase.auth.signInWithPassword({
+              email: uname,
+              password
+            });
+            if (!error && data && data.user) {
+              const u = data.user;
+              const name = (u.user_metadata && u.user_metadata.name) || u.email || uname;
+              setErro("");
+              onLogin({ username: u.email || uname, role: 'user', name });
+              return;
+            }
+          } catch (e) {
+            console.warn('Supabase auth attempt failed, falling back to local auth.', e);
+          }
+        }
+
+        // 2) Local authentication: bcrypt (preferred)
+        const bcryptMatchUser = (USERS_LOCAL || []).find(u => u.username === uname && u.passwordHash && u.passwordHash.startsWith("$2a$"));
+        if (bcryptMatchUser) {
+          const ok = bcrypt.compareSync(password, bcryptMatchUser.passwordHash);
+          if (ok) {
+            setErro("");
+            onLogin({ username: bcryptMatchUser.username, role: bcryptMatchUser.role, name: bcryptMatchUser.name });
+            return;
+          }
+        }
+
+        // 3) Fallback: SHA-256 legacy hashes (compatibility)
+        const crypto = await import("crypto");
+        const sha = crypto.createHash("sha256").update(password).digest("hex");
+        const user = (USERS_LOCAL || []).find(u => u.username === uname && u.passwordHash === sha);
+        if (user) {
           setErro("");
-          onLogin({ username: bcryptMatchUser.username, role: bcryptMatchUser.role, name: bcryptMatchUser.name });
+          onLogin({ username: user.username, role: user.role, name: user.name });
           return;
         }
-      }
 
-      // Fallback: SHA-256 legacy hashes (compatibilidade)
-      const crypto = await import("crypto");
-      const sha = crypto.createHash("sha256").update(password).digest("hex");
-      const user = (USERS_LOCAL || []).find(u => u.username === uname && u.passwordHash === sha);
-      if (user) {
-        setErro("");
-        onLogin({ username: user.username, role: user.role, name: user.name });
-        return;
+        setErro("Usuário ou senha incorretos.");
+      } catch (e) {
+        console.error(e);
+        setErro("Erro durante a autenticação.");
       }
-      setErro("Usuário ou senha incorretos.");
-    } catch (e) {
-      console.error(e);
-      setErro("Erro durante a autenticação.");
-    }
+    })();
   };
 
   return (
