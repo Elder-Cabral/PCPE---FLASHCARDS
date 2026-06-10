@@ -2052,16 +2052,16 @@
     },
     {
       "id": "dir_penal_14",
-      "pergunta": "O que é furto e qual a pena (art. 155 CP)?",
-      "resposta": "Subtrair coisa alheia móvel para si ou para outrem; pena de 1 a 4 anos de reclusão e multa.",
-      "dica": "",
+      "pergunta": "O que é furto e qual a pena atual (art. 155 CP)?",
+      "resposta": "Subtrair, para si ou para outrem, coisa alheia móvel; pena de reclusão de 1 a 6 anos e multa.",
+      "dica": "Lei 15.397/2026: repouso noturno aumenta a pena de metade (§1º). Atenção às qualificadoras: furto qualificado em regra 2 a 8 anos; furto eletrônico/fraudulento (§4º-B) e furto de veículo levado a outro Estado/exterior, animal, celular/computador, explosivo ou arma de fogo: 4 a 10 anos, conforme o caso.",
       "topico": "Crimes em Espécie (CP)"
     },
     {
       "id": "dir_penal_15",
-      "pergunta": "O que é roubo e qual a pena (art. 157 CP)?",
-      "resposta": "Subtrair coisa alheia mediante violência ou grave ameaça; pena de 4 a 10 anos de reclusão.",
-      "dica": "",
+      "pergunta": "O que é roubo e qual a pena atual (art. 157 CP)?",
+      "resposta": "Subtrair coisa alheia móvel, para si ou para outrem, mediante violência ou grave ameaça; pena de reclusão de 6 a 10 anos e multa.",
+      "dica": "Lei 15.397/2026: bens que comprometam serviços públicos essenciais geram pena de 6 a 12 anos (§1º-A). Roubo de celular/computador/dispositivo informático ou arma de fogo entra como majorante do §2º (aumento de 1/3 até metade).",
       "topico": "Crimes em Espécie (CP)"
     },
     {
@@ -2074,15 +2074,15 @@
     {
       "id": "dir_penal_17",
       "pergunta": "O que é latrocínio (art. 157, §3º, II CP)?",
-      "resposta": "Roubo seguido de morte; pena de 20 a 30 anos de reclusão; crime hediondo.",
-      "dica": "",
+      "resposta": "Roubo qualificado pelo resultado morte; pena de reclusão de 24 a 30 anos e multa; crime hediondo.",
+      "dica": "Lei 15.397/2026 majorou a pena do latrocínio de 20-30 para 24-30 anos. Súmula 610/STF: há latrocínio consumado quando o homicídio se consuma, ainda que não se realize a subtração.",
       "topico": "Teoria do Crime e da Pena"
     },
     {
       "id": "dir_penal_18",
-      "pergunta": "O que é estelionato (art. 171 CP)?",
-      "resposta": "Obter vantagem ilícita induzindo alguém a erro mediante artifício ou ardil; pena de 1 a 5 anos.",
-      "dica": "",
+      "pergunta": "O que é estelionato e qual a pena atual (art. 171 CP)?",
+      "resposta": "Obter vantagem ilícita, em prejuízo alheio, induzindo ou mantendo alguém em erro mediante artifício, ardil ou meio fraudulento; pena de reclusão de 1 a 5 anos e multa.",
+      "dica": "Lei 15.397/2026: incluiu a cessão de conta laranja no art. 171, §2º, VII; fraude eletrônica (§2º-A) passou a ter pena de 4 a 8 anos e multa; revogou o §5º do art. 171.",
       "topico": "Teoria do Crime e da Pena"
     },
     {
@@ -2567,6 +2567,76 @@
       "resposta": "A lei brasileira aplica-se a crimes cometidos no exterior independentemente de condições especiais: contra a vida do Presidente, patrimônio nacional, etc.",
       "dica": "",
       "topico": "Princípios e Aplicação da Lei Penal"
+    },
+    {
+      "id": "dir_penal_88",
+      "pergunta": "Certo ou errado: após a Lei 15.397/2026, a receptação simples passou a ter pena de reclusão de 2 a 6 anos e multa.",
+      "resposta": "Certo. O art. 180 do CP passou a prever reclusão de 2 a 6 anos e multa para a receptação.",
+      "dica": "CEBRASPE gosta de trocar a pena antiga pela nova. Lei 15.397/2026: receptação simples = 2 a 6 anos + multa.",
+      "topico": "Crimes em Espécie (CP)"
+    },
+    {
+      "id": "dir_penal_89",
+      "pergunta": "Qual é a pena da receptação de semovente de produção ou animal doméstico após a Lei 15.397/2026?",
+      "resposta": "Reclusão de 3 a 8 anos e multa, se o agente sabe ou deve saber que o animal é produto de crime e atua com finalidade de produção ou comercialização.",
+      "dica": "Art. 180-A do CP: alcança semovente domesticável de produção, ainda que abatido ou dividido em partes, e animal doméstico.",
+      "topico": "Crimes em Espécie (CP)"
+    },
+    {
+      "id": "dir_penal_90",
+      "pergunta": "Certo ou errado: a interrupção ou perturbação de serviço telegráfico, telefônico, informático, telemático ou de informação de utilidade pública passou a ter pena de 2 a 4 anos e multa.",
+      "resposta": "Certo. A Lei 15.397/2026 majorou a pena do art. 266 do CP para reclusão de 2 a 4 anos e multa.",
+      "dica": "Art. 266 do CP: atenção ao núcleo também cobrado pela banca — interromper, perturbar, impedir ou dificultar o restabelecimento do serviço.",
+      "topico": "Crimes em Espécie (CP)"
+    },
+    {
+      "id": "dir_penal_91",
+      "pergunta": "Quando a pena do art. 266 do CP deve ser aplicada em dobro segundo a Lei 15.397/2026?",
+      "resposta": "Quando o crime é cometido por ocasião de calamidade pública ou mediante subtração, dano ou destruição de equipamento instalado em estrutura usada para serviços de telecomunicações.",
+      "dica": "Pegadinha: não é aumento de 1/3 a 1/2; no art. 266, §2º, as penas são aplicadas em dobro.",
+      "topico": "Crimes em Espécie (CP)"
+    },
+    {
+      "id": "dir_penal_92",
+      "pergunta": "Qual é a pena do furto mediante fraude praticado por meio eletrônico ou informático após a Lei 15.397/2026?",
+      "resposta": "Reclusão de 4 a 10 anos e multa, ainda que o dispositivo esteja desconectado da rede e haja ou não violação de mecanismo de segurança.",
+      "dica": "Art. 155, §4º-B, CP: inclui uso de programa malicioso ou qualquer meio fraudulento análogo. Não confundir com fraude eletrônica do estelionato (art. 171, §2º-A).",
+      "topico": "Crimes em Espécie (CP)"
+    },
+    {
+      "id": "dir_penal_93",
+      "pergunta": "Certo ou errado: o furto de celular, computador ou dispositivo eletrônico semelhante tem pena de reclusão de 4 a 10 anos e multa.",
+      "resposta": "Certo. A Lei 15.397/2026 incluiu essa hipótese no art. 155, §6º, II, do CP.",
+      "dica": "A expressão legal abrange aparelho de telefonia celular, computador, inclusive portátil ou do tipo prancheta, e dispositivo eletrônico ou informático semelhante.",
+      "topico": "Crimes em Espécie (CP)"
+    },
+    {
+      "id": "dir_penal_94",
+      "pergunta": "Qual é a pena do furto de arma de fogo, substâncias explosivas ou acessórios ligados à sua fabricação, montagem ou emprego?",
+      "resposta": "Reclusão de 4 a 10 anos e multa, conforme o art. 155, §7º, do CP.",
+      "dica": "Lei 15.397/2026: a mesma faixa de 4 a 10 anos vale para furto de arma de fogo e para substâncias explosivas ou acessórios correlatos.",
+      "topico": "Crimes em Espécie (CP)"
+    },
+    {
+      "id": "dir_penal_95",
+      "pergunta": "Qual é a pena do furto de fios, cabos ou equipamentos ligados a energia elétrica, telefonia, dados, ferrovias ou metrôs?",
+      "resposta": "Reclusão de 2 a 8 anos e multa, aplicável, em qualquer caso, o privilégio do art. 155, §2º, se presentes seus requisitos.",
+      "dica": "Art. 155, §8º, CP: CEBRASPE pode cobrar que o privilégio do furto (§2º) é expressamente aplicável a essa hipótese.",
+      "topico": "Crimes em Espécie (CP)"
+    },
+    {
+      "id": "dir_penal_96",
+      "pergunta": "Qual é a pena do roubo de bens que comprometam o funcionamento de órgãos públicos ou serviços públicos essenciais?",
+      "resposta": "Reclusão de 6 a 12 anos e multa, conforme o art. 157, §1º-A, do CP.",
+      "dica": "Não confunda com o roubo simples, que passou a ser de 6 a 10 anos. Se compromete serviços públicos essenciais: 6 a 12 anos.",
+      "topico": "Crimes em Espécie (CP)"
+    },
+    {
+      "id": "dir_penal_97",
+      "pergunta": "O que é a cessão de conta laranja incluída no estelionato pela Lei 15.397/2026?",
+      "resposta": "É ceder, gratuita ou onerosamente, conta bancária para trânsito de recursos destinados ao financiamento de atividade criminosa ou que dela sejam fruto; pena de 1 a 5 anos e multa.",
+      "dica": "Art. 171, §2º, VII, CP: a cessão pode ser gratuita ou onerosa. A Lei 15.397/2026 também revogou o §5º do art. 171.",
+      "topico": "Crimes em Espécie (CP)"
     }
   ],
   "dir_proc_penal": [
