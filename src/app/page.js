@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import BANCO from "../data/banco.json";
 import { supabase } from "../lib/supabase";
 import USERS_LOCAL from "../data/users.local.json";
-import crypto from "crypto";
+import bcrypt from "bcryptjs";
 
 // Usuários locais agora são carregados de src/data/users.local.json (IGNORADO no git)
 // Por segurança armazenamos apenas hashes de senha (SHA-256) no arquivo local.
@@ -1661,6 +1661,19 @@ function TelaLogin({ onLogin }) {
   const handleFormSubmit = () => {
     try {
       const uname = username.toLowerCase().trim();
+      // Primeiro tenta bcrypt (caso fixture esteja em bcrypt). Se não der, tenta SHA-256 para compatibilidade.
+      const bcryptMatchUser = (USERS_LOCAL || []).find(u => u.username === uname && u.passwordHash && u.passwordHash.startsWith("$2a$"));
+      if (bcryptMatchUser) {
+        const ok = bcrypt.compareSync(password, bcryptMatchUser.passwordHash);
+        if (ok) {
+          setErro("");
+          onLogin({ username: bcryptMatchUser.username, role: bcryptMatchUser.role, name: bcryptMatchUser.name });
+          return;
+        }
+      }
+
+      // Fallback: SHA-256 legacy hashes (compatibilidade)
+      const crypto = await import("crypto");
       const sha = crypto.createHash("sha256").update(password).digest("hex");
       const user = (USERS_LOCAL || []).find(u => u.username === uname && u.passwordHash === sha);
       if (user) {
