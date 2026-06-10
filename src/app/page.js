@@ -1693,9 +1693,7 @@ export default function App() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [erro, setErro] = useState("");
-    const [usersLocalLoaded, setUsersLocalLoaded] = useState(false);
-    const [sbUrl, setSbUrl] = useState(typeof window !== 'undefined' ? localStorage.getItem('pcpe_supabase_url') || '' : '');
-    const [sbKey, setSbKey] = useState(typeof window !== 'undefined' ? localStorage.getItem('pcpe_supabase_anon_key') || '' : '');
+  const [usersLocalLoaded, setUsersLocalLoaded] = useState(false);
 
   const handleFormSubmit = () => {
     (async () => {
