@@ -1727,6 +1727,14 @@ export default function App() {
               email: loginEmail,
               password
             });
+
+            // Temporary debug log: capture Supabase auth response to help debugging login issues.
+            if (error) {
+              console.warn('Supabase signInWithPassword error for', loginEmail, error);
+            } else if (!data || !data.user) {
+              console.warn('Supabase signInWithPassword no user returned for', loginEmail, { data });
+            }
+
             if (!error && data && data.user) {
               const u = data.user;
               const name = (u.user_metadata && u.user_metadata.name) || u.email || uname;
