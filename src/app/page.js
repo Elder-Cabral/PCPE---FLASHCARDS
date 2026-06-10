@@ -1839,26 +1839,30 @@ export default function App() {
           </div>
 
           {/* Optional: runtime Supabase connection (for local dev without NEXT_PUBLIC_ envs) */}
-          <div style={{ marginTop: 6 }}>
-            <label style={{ color: "#94a3b8", fontSize: 10, fontWeight: 600, letterSpacing: 1.5, display: "block", marginBottom: 6 }}>SUPABASE URL (opcional)</label>
-            <input
-              type="text"
-              value={sbUrl}
-              onChange={e => { setSbUrl(e.target.value); try { localStorage.setItem('pcpe_supabase_url', e.target.value) } catch {} }}
-              placeholder="https://xyzcompany.supabase.co"
-              style={{ width: "100%", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 10, padding: "8px 10px", color: "#94a3b8", fontSize: 12, boxSizing: "border-box", outline: "none" }}
-            />
-          </div>
-          <div style={{ marginTop: 6 }}>
-            <label style={{ color: "#94a3b8", fontSize: 10, fontWeight: 600, letterSpacing: 1.5, display: "block", marginBottom: 6 }}>SUPABASE ANON KEY (opcional)</label>
-            <input
-              type="password"
-              value={sbKey}
-              onChange={e => { setSbKey(e.target.value); try { localStorage.setItem('pcpe_supabase_anon_key', e.target.value) } catch {} }}
-              placeholder="anon key"
-              style={{ width: "100%", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 10, padding: "8px 10px", color: "#94a3b8", fontSize: 12, boxSizing: "border-box", outline: "none" }}
-            />
-          </div>
+          {process.env.NODE_ENV !== 'production' && (
+            <>
+              <div style={{ marginTop: 6 }}>
+                <label style={{ color: "#94a3b8", fontSize: 10, fontWeight: 600, letterSpacing: 1.5, display: "block", marginBottom: 6 }}>SUPABASE URL (opcional)</label>
+                <input
+                  type="text"
+                  value={sbUrl}
+                  onChange={e => { setSbUrl(e.target.value); try { localStorage.setItem('pcpe_supabase_url', e.target.value) } catch {} }}
+                  placeholder="https://xyzcompany.supabase.co"
+                  style={{ width: "100%", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 10, padding: "8px 10px", color: "#94a3b8", fontSize: 12, boxSizing: "border-box", outline: "none" }}
+                />
+              </div>
+              <div style={{ marginTop: 6 }}>
+                <label style={{ color: "#94a3b8", fontSize: 10, fontWeight: 600, letterSpacing: 1.5, display: "block", marginBottom: 6 }}>SUPABASE ANON KEY (opcional)</label>
+                <input
+                  type="password"
+                  value={sbKey}
+                  onChange={e => { setSbKey(e.target.value); try { localStorage.setItem('pcpe_supabase_anon_key', e.target.value) } catch {} }}
+                  placeholder="anon key"
+                  style={{ width: "100%", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 10, padding: "8px 10px", color: "#94a3b8", fontSize: 12, boxSizing: "border-box", outline: "none" }}
+                />
+              </div>
+            </>
+          )}
 
           {erro && <p style={{ color: "#ef4444", fontSize: 12, fontWeight: 500, margin: 0, textAlign: "center" }}>{erro}</p>}
 
