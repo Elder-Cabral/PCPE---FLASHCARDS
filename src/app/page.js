@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import BANCO from "../data/banco.json";
 import { supabase } from "../lib/supabase";
 
@@ -124,6 +124,7 @@ export default function App() {
   const [srsData, setSrsData] = useState({});
   const [selectedMateria, setSelectedMateria] = useState(null);
   const [showTopicSelector, setShowTopicSelector] = useState(false);
+  const [showFavoritesMateriaSelector, setShowFavoritesMateriaSelector] = useState(false);
   const [selectedTopics, setSelectedTopics] = useState([]);
   const [studyMode, setStudyMode] = useState(null); // 'srs', 'all', 'topic' ou 'favorites'
   const [studyQueue, setStudyQueue] = useState([]);
@@ -136,6 +137,7 @@ export default function App() {
   const [favorites, setFavorites] = useState([]);
   const [answeredSessionIds, setAnsweredSessionIds] = useState(new Set());
   const [toastMessage, setToastMessage] = useState("");
+  const feedbackInProgressCardId = useRef(null);
 
   // Estilos globais e de responsividade injetados
   useEffect(() => {
@@ -263,6 +265,10 @@ export default function App() {
     document.head.appendChild(style);
     return () => document.head.removeChild(style);
   }, []);
+
+  useEffect(() => {
+    feedbackInProgressCardId.current = null;
+  }, [currentQueueIndex]);
 
   // Salvar progresso no Supabase com mesclagem inteligente
   const saveSRSData = async (username, srs, currentSettings) => {
@@ -454,22 +460,26 @@ export default function App() {
     });
   };
 
-  const startFavoritesSession = () => {
+  const startFavoritesSession = (materiaId) => {
     if (favorites.length === 0) return;
     
     let queue = [];
-    for (const mat of MATERIAS) {
+    const materiasToSearch = materiaId ? MATERIAS.filter(mat => mat.id === materiaId) : MATERIAS;
+    for (const mat of materiasToSearch) {
       const cards = BANCO[mat.id] || [];
       const favs = cards.filter(c => favorites.includes(c.id));
       queue = [...queue, ...favs];
     }
+
+    if (queue.length === 0) return;
 
     const sortedQueue = sortQueue(queue);
     setStudyQueue(sortedQueue);
     setCurrentQueueIndex(0);
     setIsFlipped(false);
     setStudyMode("favorites");
-    setSelectedMateria(null);
+    setSelectedMateria(materiaId || null);
+    setShowFavoritesMateriaSelector(false);
     setSessionCompleted(false);
     setSessionStats({ studied: 0, gotWrong: 0, gotEasy: 0 });
     setAnsweredSessionIds(new Set());
@@ -657,11 +667,13 @@ export default function App() {
     const currentCard = studyQueue[currentQueueIndex];
     if (!currentCard) return;
 
-    if (answeredSessionIds.has(currentCard.id)) {
-      setToastMessage("Opção já escolhida.");
+    if (answeredSessionIds.has(currentCard.id) || feedbackInProgressCardId.current === currentCard.id) {
+      setToastMessage("Opção foi selecionada anteriormente.");
       setTimeout(() => setToastMessage(""), 2000);
       return;
     }
+
+    feedbackInProgressCardId.current = currentCard.id;
 
     setSessionStats(prev => ({
       studied: prev.studied + 1,
@@ -703,6 +715,7 @@ export default function App() {
   // Se estiver estudando
   if (studyMode && studyQueue.length > 0 && !sessionCompleted) {
     const currentCard = studyQueue[currentQueueIndex];
+    const currentCardWasAnswered = answeredSessionIds.has(currentCard.id);
     const isGlobal = studyMode === "global_srs";
     const matInfo = !isGlobal ? MATERIAS.find(m => m.id === selectedMateria) : null;
     const themeColor = isGlobal ? "#3b82f6" : (matInfo?.color || "#3b82f6");
@@ -739,6 +752,7 @@ export default function App() {
               onClick={() => {
                 setStudyMode(null);
                 setShowTopicSelector(false);
+                setShowFavoritesMateriaSelector(false);
               }}
               className="btn-hover"
               style={{
@@ -911,35 +925,46 @@ export default function App() {
             {isFlipped ? (
               studyMode === "srs" || studyMode === "topic" || studyMode === "global_srs" ? (
                 // 4 Botões SM-2 com classe responsiva
+                <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                {currentCardWasAnswered && (
+                  <div style={{ color: "#fbbf24", fontSize: 12, fontWeight: 600, textAlign: "center" }}>
+                    Opção foi selecionada anteriormente.
+                  </div>
+                )}
                 <div className="srs-buttons-grid">
                   <button
                     onClick={() => handleCardFeedback(0)}
+                    disabled={currentCardWasAnswered}
                     className="btn-hover"
-                    style={{ background: "#ef4444", color: "#fff", border: "none", borderRadius: 14, padding: "14px 10px", cursor: "pointer", fontWeight: 600, fontSize: 12 }}
+                    style={{ background: "#ef4444", color: "#fff", border: "none", borderRadius: 14, padding: "14px 10px", cursor: currentCardWasAnswered ? "not-allowed" : "pointer", fontWeight: 600, fontSize: 12, opacity: currentCardWasAnswered ? 0.55 : 1 }}
                   >
                     ❌ Errei
                   </button>
                   <button
                     onClick={() => handleCardFeedback(1)}
+                    disabled={currentCardWasAnswered}
                     className="btn-hover"
-                    style={{ background: "#f59e0b", color: "#fff", border: "none", borderRadius: 14, padding: "14px 10px", cursor: "pointer", fontWeight: 600, fontSize: 12 }}
+                    style={{ background: "#f59e0b", color: "#fff", border: "none", borderRadius: 14, padding: "14px 10px", cursor: currentCardWasAnswered ? "not-allowed" : "pointer", fontWeight: 600, fontSize: 12, opacity: currentCardWasAnswered ? 0.55 : 1 }}
                   >
                     ⚠️ Difícil
                   </button>
                   <button
                     onClick={() => handleCardFeedback(2)}
+                    disabled={currentCardWasAnswered}
                     className="btn-hover"
-                    style={{ background: "#3b82f6", color: "#fff", border: "none", borderRadius: 14, padding: "14px 10px", cursor: "pointer", fontWeight: 600, fontSize: 12 }}
+                    style={{ background: "#3b82f6", color: "#fff", border: "none", borderRadius: 14, padding: "14px 10px", cursor: currentCardWasAnswered ? "not-allowed" : "pointer", fontWeight: 600, fontSize: 12, opacity: currentCardWasAnswered ? 0.55 : 1 }}
                   >
                     👍 Bom
                   </button>
                   <button
                     onClick={() => handleCardFeedback(3)}
+                    disabled={currentCardWasAnswered}
                     className="btn-hover"
-                    style={{ background: "#10b981", color: "#fff", border: "none", borderRadius: 14, padding: "14px 10px", cursor: "pointer", fontWeight: 600, fontSize: 12 }}
+                    style={{ background: "#10b981", color: "#fff", border: "none", borderRadius: 14, padding: "14px 10px", cursor: currentCardWasAnswered ? "not-allowed" : "pointer", fontWeight: 600, fontSize: 12, opacity: currentCardWasAnswered ? 0.55 : 1 }}
                   >
                     ⚡ Fácil
                   </button>
+                </div>
                 </div>
               ) : (
                 // Botão Próximo Simples para favoritos ou outros modos
@@ -1070,6 +1095,7 @@ export default function App() {
             onClick={() => {
               setStudyMode(null);
               setSelectedMateria(null);
+              setShowFavoritesMateriaSelector(false);
               setSessionCompleted(false);
             }}
             className="btn-hover"
@@ -1087,6 +1113,79 @@ export default function App() {
           >
             Voltar ao Painel
           </button>
+        </div>
+      </Shell>
+    );
+  }
+
+  if (showFavoritesMateriaSelector) {
+    const favoriteMaterias = MATERIAS.map(mat => {
+      const count = (BANCO[mat.id] || []).filter(card => favorites.includes(card.id)).length;
+      return { ...mat, count };
+    }).filter(mat => mat.count > 0);
+
+    return (
+      <Shell user={currentUser} stats={stats} onLogout={handleLogout}>
+        <div style={{ width: "100%", maxWidth: 560, margin: "0 auto", display: "flex", flexDirection: "column", gap: 20, boxSizing: "border-box" }}>
+          <button
+            onClick={() => setShowFavoritesMateriaSelector(false)}
+            className="btn-hover"
+            style={{
+              alignSelf: "flex-start",
+              background: "rgba(255,255,255,0.05)",
+              border: "1px solid rgba(255,255,255,0.08)",
+              color: "#94a3b8",
+              borderRadius: 12,
+              padding: "8px 16px",
+              cursor: "pointer",
+              fontSize: 13,
+              fontWeight: 500
+            }}
+          >
+            ← Voltar
+          </button>
+
+          <div style={{ textAlign: "center" }}>
+            <div style={{ fontSize: 44, marginBottom: 8 }}>⭐</div>
+            <h2 className="materia-title" style={{ color: "#fff", fontSize: 22, fontWeight: 600, margin: 0 }}>Favoritos por Matéria</h2>
+            <p style={{ color: "#64748b", fontSize: 13, marginTop: 4 }}>
+              Escolha a matéria dos flashcards favoritados que deseja revisar.
+            </p>
+          </div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            {favoriteMaterias.map(mat => (
+              <button
+                key={mat.id}
+                onClick={() => startFavoritesSession(mat.id)}
+                className="card-hover"
+                style={{
+                  width: "100%",
+                  background: "rgba(255,255,255,0.02)",
+                  border: `1px solid ${mat.color}33`,
+                  borderRadius: 18,
+                  padding: "16px 18px",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  textAlign: "left",
+                  outline: "none"
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                  <div style={{ fontSize: 26 }}>{mat.emoji}</div>
+                  <div>
+                    <div style={{ color: "#f1f5f9", fontSize: 14, fontWeight: 600 }}>{mat.label}</div>
+                    <div style={{ color: "#94a3b8", fontSize: 11, marginTop: 3 }}>Abrir favoritos desta matéria</div>
+                  </div>
+                </div>
+                <span style={{ color: mat.color, background: `${mat.color}14`, borderRadius: 10, padding: "4px 10px", fontSize: 12, fontWeight: 700 }}>
+                  {mat.count} {mat.count === 1 ? "card" : "cards"}
+                </span>
+              </button>
+            ))}
+          </div>
         </div>
       </Shell>
     );
@@ -1449,7 +1548,7 @@ export default function App() {
       {/* Seção de Favoritos */}
       <div style={{ marginBottom: 24 }}>
         <button
-          onClick={startFavoritesSession}
+          onClick={() => setShowFavoritesMateriaSelector(true)}
           disabled={favorites.length === 0}
           className={favorites.length > 0 ? "card-hover" : ""}
           style={{
