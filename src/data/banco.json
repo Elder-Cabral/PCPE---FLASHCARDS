@@ -4584,7 +4584,7 @@
       "id": "informatica_98",
       "pergunta": "V/F: Em Excel, a função SOMA() agrega valores de um intervalo e é diferente de CONCATENAR(), que une textos.",
       "resposta": "Certo. SOMA() soma números; CONCATENAR() (ou &) une textos. Cobranças de Office costumam exigir essa diferenciação.",
-      "dica": "Pratique =SOMA(A1:A10) e =CONCATENAR(A1;" ";B1) ou =A1&" "&B1.",
+      "dica": "Pratique =SOMA(A1:A10) e =CONCATENAR(A1;\" \";B1) ou =A1&\" \"&B1.",
       "topico": "Pacote Microsoft Office"
     }
   ],
@@ -6526,8 +6526,7 @@
       "pergunta": "O que é o coeficiente de variação e quando é útil?",
       "resposta": "Razão entre o desvio padrão e a média (×100%); útil para comparar dispersões de conjuntos com unidades ou médias diferentes.",
       "dica": "CV = (σ / x̄) × 100% — quanto menor, menos variabilidade relativa.",
-      "topico": "Estatística Descritiva e Análise Explor.
-"
+      "topico": "Estatística Descritiva e Análise Exploratório"
     },
     {
       "id": "estatistica_88",
