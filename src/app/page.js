@@ -4,7 +4,8 @@ import BANCO from "../data/banco.json";
 import { supabase } from "../lib/supabase";
 // Local users fixture is optional and intentionally not required in production builds.
 // If you need local users for development, create src/data/users.local.json (ignored by git).
-let USERS_LOCAL = [];
+// Local users fixture, when present, is loaded lazily inside the login component
+// (so production builds don't require the file).
 import bcrypt from "bcryptjs";
 
 // Usuários locais agora são carregados de src/data/users.local.json (IGNORADO no git)
@@ -120,6 +121,9 @@ const isReviewedToday = (timestamp) => {
 
 // ── COMPONENTE PRINCIPAL ───────────────────────────────────────────────────
 export default function App() {
+  // Keep a client-only local users array. We will load the optional fixture inside
+  // the login component when in development, so server-side builds remain unaffected.
+  const [usersLocal, setUsersLocal] = useState([]);
   const [currentUser, setCurrentUser] = useState(null);
   const [srsData, setSrsData] = useState({});
   const [selectedMateria, setSelectedMateria] = useState(null);
@@ -1659,6 +1663,7 @@ function TelaLogin({ onLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [erro, setErro] = useState("");
+  const [usersLocalLoaded, setUsersLocalLoaded] = useState(false);
 
   const handleFormSubmit = () => {
     (async () => {
@@ -1684,8 +1689,25 @@ function TelaLogin({ onLogin }) {
           }
         }
 
-        // 2) Local authentication: bcrypt (preferred)
-        const bcryptMatchUser = (USERS_LOCAL || []).find(u => u.username === uname && u.passwordHash && u.passwordHash.startsWith("$2a$"));
+        // 2) Local authentication: load optional fixture at runtime (development only)
+        if (!usersLocalLoaded && typeof window !== "undefined" && process.env.NODE_ENV !== "production") {
+          try {
+            const mod = await import("../data/users.local.json");
+            // attach to component-level state so other auth flows can use it
+            // NOTE: we don't set a top-level USERS variable to avoid bundling the file on build
+            const data = mod.default || mod;
+            // mutate the parent App's usersLocal via a custom event (minimal coupling)
+            window.__PCPE_LOCAL_USERS = data;
+          } catch (e) {
+            // no-op if file missing
+          }
+          setUsersLocalLoaded(true);
+        }
+
+        const localUsers = (typeof window !== "undefined" && window.__PCPE_LOCAL_USERS) ? window.__PCPE_LOCAL_USERS : [];
+
+        // bcrypt-based local users (preferred)
+        const bcryptMatchUser = localUsers.find(u => u.username === uname && u.passwordHash && u.passwordHash.startsWith("$2a$"));
         if (bcryptMatchUser) {
           const ok = bcrypt.compareSync(password, bcryptMatchUser.passwordHash);
           if (ok) {
@@ -1695,14 +1717,18 @@ function TelaLogin({ onLogin }) {
           }
         }
 
-        // 3) Fallback: SHA-256 legacy hashes (compatibility)
-        const crypto = await import("crypto");
-        const sha = crypto.createHash("sha256").update(password).digest("hex");
-        const user = (USERS_LOCAL || []).find(u => u.username === uname && u.passwordHash === sha);
-        if (user) {
-          setErro("");
-          onLogin({ username: user.username, role: user.role, name: user.name });
-          return;
+        // Fallback: SHA-256 legacy hashes (compatibility)
+        try {
+          const crypto = await import("crypto");
+          const sha = crypto.createHash("sha256").update(password).digest("hex");
+          const user = localUsers.find(u => u.username === uname && u.passwordHash === sha);
+          if (user) {
+            setErro("");
+            onLogin({ username: user.username, role: user.role, name: user.name });
+            return;
+          }
+        } catch (e) {
+          // In the browser environment, dynamic import('crypto') may fail. Ignore.
         }
 
         setErro("Usuário ou senha incorretos.");
