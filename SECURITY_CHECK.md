@@ -5,7 +5,7 @@ Contexto
 
 Achados (prioridade alta → baixa)
 1. Credenciais em texto claro: src/app/page.js contém um array USERS com senhas em texto claro ("passei"). Remover do código-fonte ou substituir por armazenamento seguro.
-2. Uso de Supabase: package.json indica dependência @supabase/supabase-js. Verificar se as chaves (anon/key ou service_role) não estão commitadas em .env ou arquivos de configuração. .gitignore já contém .env*.local (positivo).
+2. Uso de Supabase: package.json indica dependência @supabase/supabase-js. Chaves foram removidas do código e agora devem ser fornecidas via variáveis de ambiente NEXT_PUBLIC_SUPABASE_URL e NEXT_PUBLIC_SUPABASE_ANON_KEY.
 3. Artefatos build: diretório .next está presente — conteúdo gerado contém referências a process.env mas não deve ser commitado (já está ignorado no .gitignore). Confirme que não há segredos em commits anteriores.
 4. Persistência local: uso de localStorage para sessão e SRS (pcpe_session, pcpe_srs_*). Informação sensível (tokens) não deve ser armazenada sem medidas (ex: breve expiração, proteção). Avaliar se algo sensível é colocado lá.
 5. Proteção no front: não há proteção contra ataques de força bruta no login (apenas verifica USERS em memória). Para produção, usar backend com autenticação, rate limiting e hashing de senhas.
