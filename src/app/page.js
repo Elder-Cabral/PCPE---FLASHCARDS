@@ -1673,8 +1673,29 @@ function TelaLogin({ onLogin }) {
         // 1) If Supabase env is configured, try to sign in through Supabase first.
         if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
           try {
+            // Support login by username: if the input doesn't look like an email,
+            // try to map it via a public table `username_map` (username -> email).
+            // This requires you to create the table in Supabase and populate it.
+            let loginEmail = uname;
+            if (!uname.includes("@")) {
+              try {
+                const { data: mapData, error: mapErr } = await supabase
+                  .from("username_map")
+                  .select("email")
+                  .eq("username", uname)
+                  .maybeSingle();
+                if (mapErr) {
+                  // ignore mapping errors and fallback to using the raw input
+                } else if (mapData && mapData.email) {
+                  loginEmail = mapData.email;
+                }
+              } catch (e) {
+                // ignore and continue with uname as email
+              }
+            }
+
             const { data, error } = await supabase.auth.signInWithPassword({
-              email: uname,
+              email: loginEmail,
               password
             });
             if (!error && data && data.user) {
