@@ -2005,12 +2005,28 @@ function LoginBadge() {
   }
 
   return (
-    <div style={{ marginBottom: 18, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <div style={{ 
+      marginBottom: 24, 
+      display: 'flex', 
+      justifyContent: 'center', 
+      alignItems: 'center',
+      background: 'linear-gradient(135deg, rgba(59,130,246,0.08), rgba(14,23,38,0.6))',
+      borderRadius: 24,
+      padding: '20px',
+      border: '1px solid rgba(59,130,246,0.2)',
+      boxShadow: '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1)'
+    }}>
       <img
         src="/pcpe-badge.png"
         alt="Polícia Civil de Pernambuco"
         onError={() => setFailed(true)}
-        style={{ width: 85, height: 85, objectFit: 'contain', filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.3))' }}
+        style={{ 
+          width: 100, 
+          height: 100, 
+          objectFit: 'contain', 
+          filter: 'drop-shadow(0 6px 16px rgba(0,0,0,0.4))',
+          transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+        }}
       />
     </div>
   );
