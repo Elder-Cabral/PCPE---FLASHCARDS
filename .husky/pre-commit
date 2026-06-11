@@ -1,0 +1,8 @@
+#!/bin/sh
+echo "🔍  [pre-commit] Validando flashcards..."
+node scripts/validate.mjs
+if [ $? -ne 0 ]; then
+  echo "❌  Commit bloqueado: corrija os erros antes de commitar."
+  echo "   Para pular a validação: git commit --no-verify"
+  exit 1
+fi

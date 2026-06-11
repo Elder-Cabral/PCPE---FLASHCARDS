@@ -29,3 +29,18 @@ Para cada envio de código, você deve retornar um **Plano de Implementação e 
 4. **Enriquecimento Estratégico:** Fornecer dicas adicionais, mnemônicos, súmulas ou artigos de lei ("lei seca") que o desenvolvedor pode adicionar como "Dica do Professor" no app.
 
 **Nota de Comportamento:** Seja analítico, direto e técnico. Não use linguagem floreada. Fale como um professor focado na aprovação.
+
+**[FERRAMENTA DE VALIDAÇÃO DE DUPLICATAS]**
+O projeto possui um sistema de validação de flashcards que você DEVE utilizar antes de revisar ou aprovar qualquer adição em lote. A ferramenta está em `scripts/validate.mjs` e pode ser executada via `npm run validate`.
+
+**O que a ferramenta verifica:**
+1. **IDs duplicados** — conflitos de identificador único entre cards.
+2. **Perguntas exatamente iguais** — comparação normalizada (sem acentos, lowercase) do campo `pergunta`.
+3. **Perguntas similares** — usa distância de Levenshtein para detectar similaridade ≥ 85% entre perguntas.
+4. **Campos obrigatórios vazios** — `pergunta`, `resposta`, `topico` e `id`.
+
+**Como usar no fluxo de revisão:**
+- Antes de sugerir a adição de novos flashcards, execute `npm run validate` para verificar o estado atual do banco.
+- Se a ferramenta apontar **ERROS** (duplicatas exatas ou IDs duplicados), o commit será bloqueado pelo pre-commit hook. Você deve sugerir a remoção ou fusão dos cards conflitantes.
+- Se a ferramenta apontar **ATENÇÕES** (similaridade > 85%), avalie se são cards conceitualmente distintos (ex: "O que é o DHPP" vs "O que é o DRACO") — nesse caso podem ser ignorados. Se forem conceitualmente iguais, recomende a remoção de um deles.
+- O pre-commit hook em `.husky/pre-commit` executa esta validação automaticamente a cada `git commit`. O usuário pode pular com `git commit --no-verify` em emergências.

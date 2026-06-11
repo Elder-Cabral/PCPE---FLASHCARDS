@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "validate": "node scripts/validate.mjs",
+    "prepare": "git config core.hooksPath .husky"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.108.0",
