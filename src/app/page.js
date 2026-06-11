@@ -260,23 +260,33 @@ export default function App() {
         padding: 48px 36px;
       }
 
-      /* Login background hero placed behind page content to ensure visibility */
-      .login-hero {
+      /* Composite hero: banner + overlay + subtle grid on top. Placed in the same fixed element
+         as the existing grid so layering is preserved and images are visible. */
+      .login-hero-composite {
         position: fixed;
         inset: 0;
         z-index: 0;
         pointer-events: none;
-        background-color: #030712; /* fallback color */
-        background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/banner-pc.webp');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+        background-color: #030712; /* fallback */
+        background-image:
+          linear-gradient(rgba(59,130,246,0.02) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(59,130,246,0.02) 1px, transparent 1px),
+          linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+          url('/banner-pc.webp');
+        background-size: 40px 40px, 40px 40px, cover, cover;
+        background-position: center, center, center, center;
+        background-repeat: repeat, repeat, no-repeat, no-repeat;
       }
 
       @media (max-width: 768px) {
-        .login-hero {
-          background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('/banner-mobile.webp');
-          background-position: center top;
+        .login-hero-composite {
+          background-image:
+            linear-gradient(rgba(59,130,246,0.02) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(59,130,246,0.02) 1px, transparent 1px),
+            linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+            url('/banner-mobile.webp');
+          background-position: center, center, center top, center top;
+          background-size: 40px 40px, 40px 40px, cover, cover;
         }
       }
 
@@ -1830,9 +1840,8 @@ export default function App() {
 
   return (
     <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px 16px", boxSizing: "border-box", width: "100%", maxWidth: "100vw", overflowX: "hidden" }}>
-      {/* Background hero placed via an extra fixed element to guarantee it is visible behind other fixed decorations */}
-      <div className="login-hero" />
-      <div style={{ position: "fixed", inset: 0, zIndex: 0, backgroundImage: "linear-gradient(rgba(59,130,246,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.02) 1px,transparent 1px)", backgroundSize: "40px 40px", pointerEvents: "none" }} />
+      {/* Composite background (hero + grid) placed as a single fixed element to ensure images show */}
+      <div className="login-hero-composite" />
       <div style={{ position: "fixed", top: -200, left: "50%", transform: "translateX(-50%)", width: 600, height: 400, borderRadius: "50%", background: "radial-gradient(ellipse,rgba(59,130,246,0.05) 0%,transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
 
       <div className="login-card" style={{ position: "relative", zIndex: 1, background: "rgba(17,24,39,0.7)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 24, width: "100%", maxWidth: 380, boxShadow: "0 24px 64px rgba(0,0,0,0.6)", boxSizing: "border-box" }}>
