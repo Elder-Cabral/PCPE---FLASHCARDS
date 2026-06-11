@@ -1995,9 +1995,9 @@ function TelaLogin({ onLogin }) {
   );
 }
 
-// Small component that renders the badge image with fallback to lock emoji
+// Small component that renders the PCPE badge image with fallback to lock emoji
 function LoginBadge() {
-  // Note: put the badge image at public/badge-small.png
+  // Note: put the badge image at public/pcpe-badge.png (Polícia Civil de Pernambuco)
   const [failed, setFailed] = useState(false);
   if (failed) {
     // fallback to the emoji so the UI remains consistent even if the image is missing
@@ -2005,12 +2005,14 @@ function LoginBadge() {
   }
 
   return (
-    <img
-      src="/icone-login.ico"
-      alt="badge"
-      onError={() => setFailed(true)}
-      style={{ width: 56, height: 56, objectFit: 'contain', marginBottom: 12, display: 'block', marginLeft: 'auto', marginRight: 'auto' }}
-    />
+    <div style={{ marginBottom: 18, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <img
+        src="/pcpe-badge.png"
+        alt="Polícia Civil de Pernambuco"
+        onError={() => setFailed(true)}
+        style={{ width: 85, height: 85, objectFit: 'contain', filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.3))' }}
+      />
+    </div>
   );
 }
 
