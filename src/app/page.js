@@ -2006,10 +2006,10 @@ function LoginBadge() {
 
   return (
     <img
-      src="/badge-small.png"
+      src="/icone-login.ico"
       alt="badge"
       onError={() => setFailed(true)}
-      style={{ width: 48, height: 48, objectFit: 'contain', marginBottom: 12 }}
+      style={{ width: 56, height: 56, objectFit: 'contain', marginBottom: 12, display: 'block', marginLeft: 'auto', marginRight: 'auto' }}
     />
   );
 }
