@@ -1785,7 +1785,7 @@ export default function App() {
 }
 
 // ── COMPONENTE: TELA DE LOGIN ──────────────────────────────────────────────
-  function TelaLogin({ onLogin }) {
+function TelaLogin({ onLogin }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [erro, setErro] = useState("");
@@ -1911,8 +1911,9 @@ export default function App() {
       <div style={{ position: "fixed", top: -200, left: "50%", transform: "translateX(-50%)", width: 600, height: 400, borderRadius: "50%", background: "radial-gradient(ellipse,rgba(59,130,246,0.05) 0%,transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
 
       <div className="login-card login-box" style={{ position: "relative", zIndex: 1, background: "rgba(17,24,39,0.7)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 24, width: "100%", maxWidth: 380, boxShadow: "0 24px 64px rgba(0,0,0,0.6)", boxSizing: "border-box" }}>
-        <div style={{ textAlign: "center", marginBottom: 36 }}>
-          <div style={{ fontSize: 48, marginBottom: 12 }}>🔒</div>
+      <div style={{ textAlign: "center", marginBottom: 36 }}>
+          {/* Badge image replaces the lock emoji. Place badge-small.png into /public */}
+          <LoginBadge />
           <h1 style={{ color: "#f1f5f9", fontSize: 22, fontWeight: 700, margin: 0, letterSpacing: 0.5 }}>Flashcards PC-PE</h1>
           <p style={{ color: "#64748b", fontSize: 11, fontWeight: 600, marginTop: 8, letterSpacing: 2 }}>AGENTE DE POLÍCIA · PE</p>
         </div>
@@ -1991,6 +1992,19 @@ export default function App() {
         </div>
       </div>
     </div>
+  );
+}
+
+// Small component that renders the badge image with fallback to lock emoji
+function LoginBadge() {
+  // Note: put the badge image at public/badge-small.png
+  return (
+    <img
+      src="/badge-small.png"
+      alt="badge"
+      onError={(e) => { e.currentTarget.style.display = 'none'; }}
+      style={{ width: 48, height: 48, objectFit: 'contain', marginBottom: 12 }}
+    />
   );
 }
 
