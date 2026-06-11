@@ -260,10 +260,13 @@ export default function App() {
         padding: 48px 36px;
       }
 
-      /* Login page background images (desktop / mobile) */
-      .login-bg {
+      /* Login background hero placed behind page content to ensure visibility */
+      .login-hero {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
         background-color: #030712; /* fallback color */
-        /* overlay + desktop banner */
         background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/banner-pc.webp');
         background-size: cover;
         background-position: center;
@@ -271,8 +274,7 @@ export default function App() {
       }
 
       @media (max-width: 768px) {
-        .login-bg {
-          /* slightly stronger overlay on mobile for legibility */
+        .login-hero {
           background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('/banner-mobile.webp');
           background-position: center top;
         }
@@ -1827,7 +1829,9 @@ export default function App() {
   };
 
   return (
-    <div className="login-bg" style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px 16px", boxSizing: "border-box", width: "100%", maxWidth: "100vw", overflowX: "hidden" }}>
+    <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px 16px", boxSizing: "border-box", width: "100%", maxWidth: "100vw", overflowX: "hidden" }}>
+      {/* Background hero placed via an extra fixed element to guarantee it is visible behind other fixed decorations */}
+      <div className="login-hero" />
       <div style={{ position: "fixed", inset: 0, zIndex: 0, backgroundImage: "linear-gradient(rgba(59,130,246,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.02) 1px,transparent 1px)", backgroundSize: "40px 40px", pointerEvents: "none" }} />
       <div style={{ position: "fixed", top: -200, left: "50%", transform: "translateX(-50%)", width: 600, height: 400, borderRadius: "50%", background: "radial-gradient(ellipse,rgba(59,130,246,0.05) 0%,transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
 
