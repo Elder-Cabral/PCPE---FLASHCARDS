@@ -344,6 +344,24 @@ export default function App() {
         background-repeat: repeat, repeat, no-repeat, no-repeat;
       }
 
+      /* Dashboard content container: glass panel like the login card */
+      .dashboard-content {
+        background: rgba(15, 23, 42, 0.6);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 24px;
+        padding: 28px 24px;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.5);
+      }
+
+      @media (max-width: 640px) {
+        .dashboard-content {
+          padding: 20px 14px !important;
+          border-radius: 16px !important;
+        }
+      }
+
       @media (max-width: 768px) {
         .login-hero-composite {
           background-image:
@@ -2080,7 +2098,9 @@ function Shell({ children, user, stats, onLogout }) {
         </div>
 
         {/* Content */}
-        {children}
+        <div className="dashboard-content">
+          {children}
+        </div>
       </div>
     </div>
   );
