@@ -173,7 +173,7 @@ export default function App() {
   // Estilos globais e de responsividade injetados
   useEffect(() => {
     const style = document.createElement("style");
-      style.innerHTML = `
+    style.innerHTML = `
       @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
       
       * {
@@ -257,7 +257,11 @@ export default function App() {
         transform: rotateY(180deg);
       }
       .login-card {
+        /* Fix size / padding to avoid layout shift on font/image load */
         padding: 48px 36px;
+        min-width: 320px;
+        max-width: 380px;
+        box-sizing: border-box;
       }
 
       /* Composite hero: banner + overlay + subtle grid on top. Placed in the same fixed element
