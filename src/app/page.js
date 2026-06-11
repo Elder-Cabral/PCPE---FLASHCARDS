@@ -2002,7 +2002,7 @@ function LoginBadge() {
   return (
     <div style={{ marginBottom: 24, display: 'flex', justifyContent: 'center' }}>
       <img
-        src="/police-icon.png"
+        src="/mira.png"
         alt="Policial Civil"
         onError={() => setFailed(true)}
         style={{ 
