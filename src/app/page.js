@@ -264,6 +264,40 @@ export default function App() {
         box-sizing: border-box;
       }
 
+      /* --- REGRA PARA O TELEMÓVEL (O padrão) --- */
+      .landing-container {
+        background-image: url('/banner-mobile.webp');
+        background-size: cover;
+        background-position: center;
+
+        min-height: 100vh;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        /* Este 'padding-top' cria uma barreira invisível no topo (ocupando 30% da tela), empurrando a caixa de login para baixo */
+        padding-top: 30vh;
+
+        /* Margens laterais para a caixa não colar nas bordas do telemóvel */
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .login-box {
+        width: 100%;
+        max-width: 400px;
+        padding: 32px;
+        border-radius: 16px;
+        background: rgba(15, 23, 42, 0.7);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+
+        /* Como já empurrámos tudo com o padding acima, aqui pode ficar zero */
+        margin-top: 0;
+      }
+
       /* Composite hero: banner + overlay + subtle grid on top. Placed in the same fixed element
          as the existing grid so layering is preserved and images are visible. */
       .login-hero-composite {
