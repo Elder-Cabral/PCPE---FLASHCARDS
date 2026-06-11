@@ -264,6 +264,17 @@ export default function App() {
         box-sizing: border-box;
       }
 
+      /* Smooth transitions to avoid abrupt jumps when breakpoint changes */
+      .landing-container {
+        transition: padding-right 360ms cubic-bezier(.2,.8,.2,1), justify-content 360ms cubic-bezier(.2,.8,.2,1);
+      }
+
+      .login-box {
+        transition: transform 300ms cubic-bezier(.2,.8,.2,1), opacity 220ms ease;
+        will-change: transform, opacity;
+        box-shadow: 0 18px 50px rgba(2,6,23,0.6);
+      }
+
       /* --- REGRA PARA O TELEMÓVEL (O padrão) --- */
       .landing-container {
         background-image: url('/banner-mobile.webp');
