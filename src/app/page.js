@@ -277,7 +277,7 @@ export default function App() {
 
       /* --- REGRA PARA O TELEMÓVEL (O padrão) --- */
       .landing-container {
-        background-image: url('/banner-mobile.webp');
+        background-image: url('/banner-mobile.jpeg');
         background-size: cover;
         background-position: center;
 
@@ -321,7 +321,7 @@ export default function App() {
           linear-gradient(rgba(59,130,246,0.02) 1px, transparent 1px),
           linear-gradient(90deg, rgba(59,130,246,0.02) 1px, transparent 1px),
           linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-          url('/banner-pc.webp');
+          url('/banner-pc.jpeg');
         background-size: 40px 40px, 40px 40px, cover, cover;
         background-position: center, center, center, center;
         background-repeat: repeat, repeat, no-repeat, no-repeat;
@@ -333,7 +333,7 @@ export default function App() {
             linear-gradient(rgba(59,130,246,0.02) 1px, transparent 1px),
             linear-gradient(90deg, rgba(59,130,246,0.02) 1px, transparent 1px),
             linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-            url('/banner-mobile.webp');
+            url('/banner-mobile.jpeg');
           background-position: center, center, center top, center top;
           background-size: 40px 40px, 40px 40px, cover, cover;
         }
@@ -374,7 +374,7 @@ export default function App() {
       /* --- A MAGIA ACONTECE AQUI (Para PC) --- */
       @media (min-width: 768px) {
         .landing-container {
-          background-image: url('/banner-pc.webp');
+          background-image: url('/banner-pc.jpeg');
           /* Mantém a imagem alinhada à esquerda para o logo não sumir */
           background-position: left center;
           /* MUDE ISTO: Empurra a caixa de login para o lado direito */
