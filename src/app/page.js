@@ -1998,11 +1998,17 @@ function TelaLogin({ onLogin }) {
 // Small component that renders the badge image with fallback to lock emoji
 function LoginBadge() {
   // Note: put the badge image at public/badge-small.png
+  const [failed, setFailed] = useState(false);
+  if (failed) {
+    // fallback to the emoji so the UI remains consistent even if the image is missing
+    return <div style={{ fontSize: 40, marginBottom: 12 }}>🔒</div>;
+  }
+
   return (
     <img
       src="/badge-small.png"
       alt="badge"
-      onError={(e) => { e.currentTarget.style.display = 'none'; }}
+      onError={() => setFailed(true)}
       style={{ width: 48, height: 48, objectFit: 'contain', marginBottom: 12 }}
     />
   );
