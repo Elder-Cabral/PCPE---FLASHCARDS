@@ -325,6 +325,23 @@ export default function App() {
       .login-card {
         padding: 32px 20px !important;
       }
+
+      /* --- A MAGIA ACONTECE AQUI (Para PC) --- */
+      @media (min-width: 768px) {
+        .landing-container {
+          background-image: url('/banner-pc.webp');
+          /* Mantém a imagem alinhada à esquerda para o logo não sumir */
+          background-position: left center;
+          /* MUDE ISTO: Empurra a caixa de login para o lado direito */
+          justify-content: flex-end;
+          /* Dá um espaço para a caixa não colar no canto da tela */
+          padding-right: 12%;
+        }
+
+        .login-box {
+          margin-top: 0;
+        }
+      }
       }
     `;
     document.head.appendChild(style);
@@ -1843,12 +1860,12 @@ export default function App() {
   };
 
   return (
-    <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px 16px", boxSizing: "border-box", width: "100%", maxWidth: "100vw", overflowX: "hidden" }}>
+    <div className="landing-container" style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px 16px", boxSizing: "border-box", width: "100%", maxWidth: "100vw", overflowX: "hidden" }}>
       {/* Composite background (hero + grid) placed as a single fixed element to ensure images show */}
       <div className="login-hero-composite" />
       <div style={{ position: "fixed", top: -200, left: "50%", transform: "translateX(-50%)", width: 600, height: 400, borderRadius: "50%", background: "radial-gradient(ellipse,rgba(59,130,246,0.05) 0%,transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
 
-      <div className="login-card" style={{ position: "relative", zIndex: 1, background: "rgba(17,24,39,0.7)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 24, width: "100%", maxWidth: 380, boxShadow: "0 24px 64px rgba(0,0,0,0.6)", boxSizing: "border-box" }}>
+      <div className="login-card login-box" style={{ position: "relative", zIndex: 1, background: "rgba(17,24,39,0.7)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 24, width: "100%", maxWidth: 380, boxShadow: "0 24px 64px rgba(0,0,0,0.6)", boxSizing: "border-box" }}>
         <div style={{ textAlign: "center", marginBottom: 36 }}>
           <div style={{ fontSize: 48, marginBottom: 12 }}>🔒</div>
           <h1 style={{ color: "#f1f5f9", fontSize: 22, fontWeight: 700, margin: 0, letterSpacing: 0.5 }}>Flashcards PC-PE</h1>
