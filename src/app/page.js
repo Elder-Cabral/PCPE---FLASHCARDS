@@ -327,11 +327,37 @@ export default function App() {
         background-repeat: repeat, repeat, no-repeat, no-repeat;
       }
 
+      /* Shell (dashboard) hero composite — same banner as login */
+      .shell-hero-composite {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background-color: #030712;
+        background-image:
+          linear-gradient(rgba(59,130,246,0.01) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(59,130,246,0.01) 1px, transparent 1px),
+          linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+          url('/banner-pc.jpeg');
+        background-size: 40px 40px, 40px 40px, cover, cover;
+        background-position: center, center, center, center;
+        background-repeat: repeat, repeat, no-repeat, no-repeat;
+      }
+
       @media (max-width: 768px) {
         .login-hero-composite {
           background-image:
             linear-gradient(rgba(59,130,246,0.02) 1px, transparent 1px),
             linear-gradient(90deg, rgba(59,130,246,0.02) 1px, transparent 1px),
+            linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+            url('/banner-mobile.jpeg');
+          background-position: center, center, center top, center top;
+          background-size: 40px 40px, 40px 40px, cover, cover;
+        }
+        .shell-hero-composite {
+          background-image:
+            linear-gradient(rgba(59,130,246,0.01) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(59,130,246,0.01) 1px, transparent 1px),
             linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
             url('/banner-mobile.jpeg');
           background-position: center, center, center top, center top;
@@ -2021,7 +2047,7 @@ function LoginBadge() {
 function Shell({ children, user, stats, onLogout }) {
   return (
     <div style={{ minHeight: "100vh", background: "#030712", padding: "24px 16px 48px", boxSizing: "border-box", position: "relative", width: "100%", maxWidth: "100vw", overflowX: "hidden" }}>
-      <div style={{ position: "fixed", inset: 0, zIndex: 0, backgroundImage: "linear-gradient(rgba(59,130,246,0.01) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.01) 1px,transparent 1px)", backgroundSize: "40px 40px", pointerEvents: "none" }} />
+      <div className="shell-hero-composite" />
       <div style={{ position: "fixed", top: -200, left: "50%", transform: "translateX(-50%)", width: 600, height: 400, borderRadius: "50%", background: "radial-gradient(ellipse,rgba(59,130,246,0.03) 0%,transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
 
       <div style={{ position: "relative", zIndex: 1, width: "100%", maxWidth: 800, margin: "0 auto", boxSizing: "border-box" }}>
