@@ -173,7 +173,7 @@ export default function App() {
   // Estilos globais e de responsividade injetados
   useEffect(() => {
     const style = document.createElement("style");
-    style.innerHTML = `
+      style.innerHTML = `
       @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
       
       * {
@@ -260,6 +260,24 @@ export default function App() {
         padding: 48px 36px;
       }
 
+      /* Login page background images (desktop / mobile) */
+      .login-bg {
+        background-color: #030712; /* fallback color */
+        /* overlay + desktop banner */
+        background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/banner-pc.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      @media (max-width: 768px) {
+        .login-bg {
+          /* slightly stronger overlay on mobile for legibility */
+          background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('/banner-mobile.webp');
+          background-position: center top;
+        }
+      }
+
       @media (max-width: 640px) {
         .srs-buttons-grid {
           grid-template-columns: repeat(2, 1fr) !important;
@@ -288,9 +306,9 @@ export default function App() {
           grid-template-columns: 1fr !important;
           gap: 10px !important;
         }
-        .login-card {
-          padding: 32px 20px !important;
-        }
+      .login-card {
+        padding: 32px 20px !important;
+      }
       }
     `;
     document.head.appendChild(style);
@@ -1809,7 +1827,7 @@ export default function App() {
   };
 
   return (
-    <div style={{ minHeight: "100vh", background: "#030712", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px 16px", boxSizing: "border-box", width: "100%", maxWidth: "100vw", overflowX: "hidden" }}>
+    <div className="login-bg" style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px 16px", boxSizing: "border-box", width: "100%", maxWidth: "100vw", overflowX: "hidden" }}>
       <div style={{ position: "fixed", inset: 0, zIndex: 0, backgroundImage: "linear-gradient(rgba(59,130,246,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.02) 1px,transparent 1px)", backgroundSize: "40px 40px", pointerEvents: "none" }} />
       <div style={{ position: "fixed", top: -200, left: "50%", transform: "translateX(-50%)", width: 600, height: 400, borderRadius: "50%", background: "radial-gradient(ellipse,rgba(59,130,246,0.05) 0%,transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
 
