@@ -24,6 +24,9 @@ yarn-error.log*
 # Local users fixture (do not commit real credentials)
 src/data/users.local.json
 
+# Auto-generated similarity reports
+/reports/
+
 # Vercel
 .vercel
 

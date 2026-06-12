@@ -192,6 +192,16 @@ export default function App() {
       body {
         font-family: 'Outfit', sans-serif;
       }
+
+      /* Animação suave de entrada do login */
+      @keyframes loginFadeIn {
+        from { opacity: 0; transform: translateY(20px) scale(0.96); }
+        to   { opacity: 1; transform: translateY(0) scale(1); }
+      }
+      .login-fade-in {
+        animation: loginFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
       .card-hover {
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
@@ -256,68 +266,14 @@ export default function App() {
         overflow-y: auto;
         transform: rotateY(180deg);
       }
-      .login-card {
-        /* Fix size / padding to avoid layout shift on font/image load */
-        padding: 48px 36px;
-        min-width: 320px;
-        max-width: 380px;
-        box-sizing: border-box;
-      }
 
-      /* Smooth transitions to avoid abrupt jumps when breakpoint changes */
-      .landing-container {
-        transition: padding-right 360ms cubic-bezier(.2,.8,.2,1), justify-content 360ms cubic-bezier(.2,.8,.2,1);
-      }
-
-      .login-box {
-        transition: transform 300ms cubic-bezier(.2,.8,.2,1), opacity 220ms ease;
-        will-change: transform, opacity;
-        box-shadow: 0 18px 50px rgba(2,6,23,0.6);
-      }
-
-      /* --- REGRA PARA O TELEMÓVEL (O padrão) --- */
-      .landing-container {
-        background-image: url('/banner-mobile.jpeg');
-        background-size: cover;
-        background-position: center;
-
-        height: 100vh;
-        width: 100%;
-        overflow: hidden;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        /* Este 'padding-top' cria uma barreira invisível no topo (ocupando 30% da tela), empurrando a caixa de login para baixo */
-        padding-top: 30vh;
-
-        /* Margens laterais para a caixa não colar nas bordas do telemóvel */
-        padding-left: 24px;
-        padding-right: 24px;
-      }
-
-      .login-box {
-        width: 100%;
-        max-width: 400px;
-        padding: 32px;
-        border-radius: 16px;
-        background: rgba(15, 23, 42, 0.7);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-
-        /* Como já empurrámos tudo com o padding acima, aqui pode ficar zero */
-        margin-top: 0;
-      }
-
-      /* Composite hero: banner + overlay + subtle grid on top. Placed in the same fixed element
-         as the existing grid so layering is preserved and images are visible. */
+      /* Composite hero: banner + overlay + subtle grid on top */
       .login-hero-composite {
         position: fixed;
         inset: 0;
         z-index: 0;
         pointer-events: none;
-        background-color: #030712; /* fallback */
+        background-color: #030712;
         background-image:
           linear-gradient(rgba(59,130,246,0.02) 1px, transparent 1px),
           linear-gradient(90deg, rgba(59,130,246,0.02) 1px, transparent 1px),
@@ -328,7 +284,6 @@ export default function App() {
         background-repeat: repeat, repeat, no-repeat, no-repeat;
       }
 
-      /* Shell (dashboard) hero composite — same banner as login */
       .shell-hero-composite {
         position: fixed;
         inset: 0;
@@ -345,7 +300,7 @@ export default function App() {
         background-repeat: repeat, repeat, no-repeat, no-repeat;
       }
 
-      /* Dashboard content container: glass panel like the login card */
+      /* Dashboard content container */
       .dashboard-content {
         background: rgba(15, 23, 42, 0.6);
         backdrop-filter: blur(10px);
@@ -412,26 +367,6 @@ export default function App() {
           grid-template-columns: 1fr !important;
           gap: 10px !important;
         }
-      .login-card {
-        padding: 32px 20px !important;
-      }
-
-      /* --- A MAGIA ACONTECE AQUI (Para PC) --- */
-      @media (min-width: 768px) {
-        .landing-container {
-          background-image: url('/banner-pc.jpeg');
-          /* Mantém a imagem alinhada à esquerda para o logo não sumir */
-          background-position: left center;
-          /* MUDE ISTO: Empurra a caixa de login para o lado direito */
-          justify-content: flex-end;
-          /* Dá um espaço para a caixa não colar no canto da tela */
-          padding-right: 12%;
-        }
-
-        .login-box {
-          margin-top: 0;
-        }
-      }
       }
     `;
     document.head.appendChild(style);
@@ -1923,12 +1858,12 @@ function TelaLogin({ onLogin }) {
   };
 
   return (
-    <div className="landing-container" style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px 16px", boxSizing: "border-box", width: "100%", overflow: "hidden" }}>
+    <div style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px 16px", boxSizing: "border-box", width: "100%", overflow: "hidden" }}>
       {/* Composite background (hero + grid) placed as a single fixed element to ensure images show */}
       <div className="login-hero-composite" />
       <div style={{ position: "fixed", top: -200, left: "50%", transform: "translateX(-50%)", width: 600, height: 400, borderRadius: "50%", background: "radial-gradient(ellipse,rgba(59,130,246,0.05) 0%,transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
 
-      <div className="login-card login-box" style={{ position: "relative", zIndex: 1, background: "rgba(17,24,39,0.7)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 24, width: "100%", maxWidth: 380, boxShadow: "0 24px 64px rgba(0,0,0,0.6)", boxSizing: "border-box" }}>
+      <div className="login-fade-in" style={{ position: "relative", zIndex: 1, background: "rgba(17,24,39,0.7)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 24, width: "100%", maxWidth: 380, boxShadow: "0 24px 64px rgba(0,0,0,0.6)", boxSizing: "border-box" }}>
       <div style={{ textAlign: "center", marginBottom: 36 }}>
           {/* Badge image replaces the lock emoji. Place badge-small.png into /public */}
           <LoginBadge />

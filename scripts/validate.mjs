@@ -1,9 +1,10 @@
-import { readFileSync } from "fs";
-import { resolve, dirname } from "path";
+import { readFileSync, writeFileSync, mkdirSync } from "fs";
+import { resolve, dirname, join } from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const BANCO_PATH = resolve(__dirname, "../src/data/banco.json");
+const REPORTS_DIR = resolve(__dirname, "../reports");
 
 // ─── Normalização de texto ───────────────────────────────────────────────────
 
@@ -61,6 +62,9 @@ function flattenCards(data) {
 let hasErrors = false;
 let hasWarnings = false;
 
+// ─── Coleção de avisos para relatório ─────────────────────────────────────────
+const similarityWarnings = [];
+
 function error(msg, card) {
   hasErrors = true;
   const loc = card ? `  [${card.materia}] ${card.id}: ` : "  ";
@@ -73,6 +77,19 @@ function warn(msg, cardA, cardB, sim) {
   console.warn(
     `  ATENÇÃO  "${cardA.id}" <-> "${cardB.id}"${simPct}\n           ${msg}`
   );
+
+  if (sim !== undefined) {
+    similarityWarnings.push({
+      idA: cardA.id,
+      idB: cardB.id,
+      materiaA: cardA.materia,
+      materiaB: cardB.materia,
+      perguntaA: cardA.pergunta,
+      perguntaB: cardB.pergunta,
+      similaridade: sim,
+      msg
+    });
+  }
 }
 
 function checkDuplicateIds(cards) {
@@ -160,6 +177,71 @@ function checkEncoding(cards) {
   }
 }
 
+// ─── Geração de relatório markdown ────────────────────────────────────────────
+
+function generateReport(cardsCount) {
+  if (similarityWarnings.length === 0) return;
+
+  const now = new Date();
+  const timestamp = now.toISOString().replace(/[:.]/g, "-").slice(0, 19);
+  const dateStr = now.toLocaleString("pt-BR", { timeZone: "America/Recife" });
+  const filename = `similaridade-${timestamp}.md`;
+  const filepath = join(REPORTS_DIR, filename);
+
+  // Agrupar por matéria
+  const byMateria = {};
+  for (const w of similarityWarnings) {
+    const key = w.materiaA || "desconhecida";
+    if (!byMateria[key]) byMateria[key] = 0;
+    byMateria[key]++;
+  }
+
+  // Ordenar por similaridade (decrescente)
+  const sorted = [...similarityWarnings].sort((a, b) => b.similaridade - a.similaridade);
+
+  let md = "";
+  md += `# Relatório de Similaridade entre Flashcards\n\n`;
+  md += `**Data:** ${dateStr}  \n`;
+  md += `**Total de flashcards analisados:** ${cardsCount}  \n`;
+  md += `**Pares similares encontrados:** ${similarityWarnings.length}\n\n`;
+  md += `---\n\n`;
+
+  // Sumário por matéria
+  if (Object.keys(byMateria).length > 0) {
+    md += `## Sumário por Matéria\n\n`;
+    md += `| Matéria | Pares similares |\n`;
+    md += `|---------|-----------------|\n`;
+    const sortedMaterias = Object.entries(byMateria).sort((a, b) => b[1] - a[1]);
+    for (const [mat, count] of sortedMaterias) {
+      md += `| ${mat} | ${count} |\n`;
+    }
+    md += `\n---\n\n`;
+  }
+
+  // Detalhamento
+  md += `## Detalhamento dos Pares\n\n`;
+  sorted.forEach((w, idx) => {
+    const simLabel = w.similaridade >= 0.95 ? "ALTÍSSIMA" : "ALTA";
+    md += `### ${idx + 1}. \`${w.idA}\` ↔ \`${w.idB}\` (${(w.similaridade * 100).toFixed(1)}% — ${simLabel})\n\n`;
+    md += `**Matéria A:** ${w.materiaA}  \n`;
+    md += `**Matéria B:** ${w.materiaB}  \n\n`;
+    md += `**Pergunta A:**  \n`;
+    md += `> ${w.perguntaA}\n\n`;
+    md += `**Pergunta B:**  \n`;
+    md += `> ${w.perguntaB}\n\n`;
+    md += `**Análise:** (preencher após avaliação)\n\n`;
+    md += `${w.similaridade >= 0.95 ? "⚠️ " : ""}---\n\n`;
+  });
+
+  md += `---\n\n`;
+  md += `*Relatório gerado automaticamente em ${dateStr} pelo script de validação.*\n`;
+
+  mkdirSync(REPORTS_DIR, { recursive: true });
+  writeFileSync(filepath, md, "utf-8");
+
+  console.warn(`  📄  Relatório salvo em: ${filepath}`);
+}
+
 // ─── Main ────────────────────────────────────────────────────────────────────
 
 function main() {
@@ -192,6 +274,9 @@ function main() {
   checkEncoding(cards);
 
   console.log("");
+
+  // Gera relatório markdown se houver similaridades detectadas
+  generateReport(cards.length);
 
   if (hasErrors) {
     console.error(`  ❌  ${hasErrors ? "ERROS encontrados" : ""}${hasErrors && hasWarnings ? " e " : ""}${hasWarnings ? "ATENÇÕES" : ""}`);
