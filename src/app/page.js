@@ -2006,10 +2006,8 @@ function Shell({ children, user, stats, onLogout, centered }) {
         </div>
 
         {centered ? (
-          <div style={{ flex: 1, overflow: "hidden", minHeight: 0, display: "flex", flexDirection: "column", justifyContent: "center" }}>
-            <div className="dashboard-content" style={{ width: "100%", boxSizing: "border-box" }}>
-              {children}
-            </div>
+          <div style={{ flex: 1, overflow: "hidden", minHeight: 0, display: "flex", flexDirection: "column", justifyContent: "center", background: "rgba(15,23,42,0.6)", backdropFilter: "blur(10px)", WebkitBackdropFilter: "blur(10px)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 24, boxShadow: "0 18px 50px rgba(0,0,0,0.5)" }}>
+            {children}
           </div>
         ) : (
           <div style={{ flex: 1, overflowY: "auto", minHeight: 0 }} className="custom-scrollbar">
