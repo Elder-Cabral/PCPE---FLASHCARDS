@@ -281,8 +281,9 @@ export default function App() {
         background-size: cover;
         background-position: center;
 
-        min-height: 100vh;
+        height: 100vh;
         width: 100%;
+        overflow: hidden;
 
         display: flex;
         justify-content: center;
@@ -1921,7 +1922,7 @@ function TelaLogin({ onLogin }) {
   };
 
   return (
-    <div className="landing-container" style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px 16px", boxSizing: "border-box", width: "100%", maxWidth: "100vw", overflowX: "hidden" }}>
+    <div className="landing-container" style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px 16px", boxSizing: "border-box", width: "100%", overflow: "hidden" }}>
       {/* Composite background (hero + grid) placed as a single fixed element to ensure images show */}
       <div className="login-hero-composite" />
       <div style={{ position: "fixed", top: -200, left: "50%", transform: "translateX(-50%)", width: 600, height: 400, borderRadius: "50%", background: "radial-gradient(ellipse,rgba(59,130,246,0.05) 0%,transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
@@ -2036,13 +2037,13 @@ function LoginBadge() {
 // ── COMPONENTE: SHELL / LAYOUT ──────────────────────────────────────────────
 function Shell({ children, user, stats, onLogout }) {
   return (
-    <div style={{ minHeight: "100vh", background: "#030712", padding: "24px 16px 48px", boxSizing: "border-box", position: "relative", width: "100%", maxWidth: "100vw", overflowX: "hidden" }}>
+    <div style={{ height: "100vh", overflow: "hidden", background: "#030712", boxSizing: "border-box", position: "relative", width: "100%", display: "flex", flexDirection: "column" }}>
       <div className="shell-hero-composite" />
       <div style={{ position: "fixed", top: -200, left: "50%", transform: "translateX(-50%)", width: 600, height: 400, borderRadius: "50%", background: "radial-gradient(ellipse,rgba(59,130,246,0.03) 0%,transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
 
-      <div style={{ position: "relative", zIndex: 1, width: "100%", maxWidth: 800, margin: "0 auto", boxSizing: "border-box" }}>
-        {/* Topbar */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 28 }}>
+      <div style={{ position: "relative", zIndex: 1, width: "100%", maxWidth: 800, margin: "0 auto", boxSizing: "border-box", flex: 1, display: "flex", flexDirection: "column", minHeight: 0, padding: "24px 16px 32px" }}>
+        {/* Topbar (fixo, não rola) */}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 28, flexShrink: 0 }}>
           <div style={{ display: "inline-block", background: "linear-gradient(135deg,#e11d48,#be123c)", borderRadius: 10, padding: "6px 14px" }}>
             <span style={{ color: "#fff", fontWeight: 700, fontSize: 9, letterSpacing: 2, fontFamily: "monospace" }}>PC-PE · AGENTE</span>
           </div>
@@ -2069,9 +2070,11 @@ function Shell({ children, user, stats, onLogout }) {
           </div>
         </div>
 
-        {/* Content */}
-        <div className="dashboard-content">
-          {children}
+        {/* Content (rolável verticalmente) */}
+        <div style={{ flex: 1, overflowY: "auto", minHeight: 0 }} className="custom-scrollbar">
+          <div className="dashboard-content">
+            {children}
+          </div>
         </div>
       </div>
     </div>
