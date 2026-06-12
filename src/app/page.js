@@ -174,6 +174,7 @@ export default function App() {
   const [graphPeriod, setGraphPeriod] = useState("30d");
   const [graphCustomStart, setGraphCustomStart] = useState("");
   const [graphCustomEnd, setGraphCustomEnd] = useState("");
+  const [cardSnapshot, setCardSnapshot] = useState({});
   const feedbackInProgressCardId = useRef(null);
 
   // Estilos globais e de responsividade injetados
@@ -598,6 +599,30 @@ export default function App() {
       console.error(e);
     }
   }, []);
+
+  // Inicializar snapshot de cards para detectar "Novas" questões adicionadas
+  useEffect(() => {
+    if (!currentUser) return;
+    try {
+      const key = "pcpe_card_snapshot_" + currentUser.username;
+      const saved = localStorage.getItem(key);
+      const current = {};
+      for (const mat of MATERIAS) {
+        current[mat.id] = (BANCO[mat.id] || []).length;
+      }
+      if (!saved) {
+        localStorage.setItem(key, JSON.stringify(current));
+        setCardSnapshot(current);
+      } else {
+        const old = JSON.parse(saved);
+        if (JSON.stringify(old) !== JSON.stringify(current)) {
+          setCardSnapshot(current);
+        } else {
+          setCardSnapshot(old);
+        }
+      }
+    } catch {}
+  }, [currentUser]);
 
   // Sincronizar ao focar a aba/janela novamente (ex: alternar entre celular e PC)
   useEffect(() => {
@@ -1518,6 +1543,11 @@ export default function App() {
 
             {/* Lista de Tópicos */}
             <div style={{ display: "flex", flexDirection: "column", gap: 10, maxHeight: 280, overflowY: "auto", paddingRight: 4 }} className="custom-scrollbar">
+              {uniqueTopics.length > 6 && (
+                <div style={{ textAlign: "center", color: "#64748b", fontSize: 10, padding: "4px 0", fontWeight: 500, letterSpacing: 0.5 }}>
+                  ↓ Role para ver mais tópicos
+                </div>
+              )}
               {uniqueTopics.map(t => {
                 const count = cards.filter(c => c.topico === t).length;
                 const isChecked = selectedTopics.includes(t);
@@ -1909,19 +1939,35 @@ export default function App() {
                 <span style={{ fontSize: 10, fontWeight: 600, color: "#94a3b8", background: "rgba(255,255,255,0.04)", borderRadius: 8, padding: "3px 8px" }}>
                   {mStats.total} cards
                 </span>
-                {mStats.due > 0 ? (
-                  <span style={{ fontSize: 10, fontWeight: 700, color: "#ef4444", background: "rgba(239,68,68,0.1)", borderRadius: 8, padding: "3px 8px" }}>
-                    🔥 {mStats.due} revisar
-                  </span>
-                ) : mStats.new > 0 ? (
-                  <span style={{ fontSize: 10, fontWeight: 600, color: m.color, background: `${m.color}15`, borderRadius: 8, padding: "3px 8px" }}>
-                    Novas
-                  </span>
-                ) : (
-                  <span style={{ fontSize: 10, fontWeight: 600, color: "#10b981", background: "rgba(16,185,129,0.1)", borderRadius: 8, padding: "3px 8px" }}>
-                    ✓ Concluído
-                  </span>
-                )}
+                {(() => {
+                  const isNew = cardSnapshot[m.id] !== undefined && mStats.total > cardSnapshot[m.id];
+                  if (mStats.due > 0) {
+                    return (
+                      <span style={{ fontSize: 10, fontWeight: 700, color: "#ef4444", background: "rgba(239,68,68,0.1)", borderRadius: 8, padding: "3px 8px" }}>
+                        🔥 {mStats.due} revisar
+                      </span>
+                    );
+                  }
+                  if (isNew) {
+                    return (
+                      <span style={{ fontSize: 10, fontWeight: 600, color: "#06b6d4", background: "rgba(6,182,212,0.1)", borderRadius: 8, padding: "3px 8px" }}>
+                        🆕 {mStats.total - cardSnapshot[m.id]} novas
+                      </span>
+                    );
+                  }
+                  if (mStats.studied < mStats.total) {
+                    return (
+                      <span style={{ fontSize: 10, fontWeight: 600, color: "#94a3b8", background: "rgba(255,255,255,0.04)", borderRadius: 8, padding: "3px 8px" }}>
+                        {mStats.total - mStats.studied} restantes
+                      </span>
+                    );
+                  }
+                  return (
+                    <span style={{ fontSize: 10, fontWeight: 600, color: "#10b981", background: "rgba(16,185,129,0.1)", borderRadius: 8, padding: "3px 8px" }}>
+                      ✓ Concluído
+                    </span>
+                  );
+                })()}
               </div>
             </button>
           );
@@ -2189,14 +2235,22 @@ function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, 
   const percentDominados = totalStudiedCards > 0 ? Math.round((cardsDominados / totalStudiedCards) * 100) : 0;
 
   const uniqueStudyDays = new Set();
-  const totalSessionsSet = new Set();
-  for (const entry of answerHistory) {
-    const day = getLocalDateString(new Date(entry.timestamp));
-    uniqueStudyDays.add(day);
-    const dayTs = new Date(day).getTime();
-    totalSessionsSet.add(dayTs + "-" + entry.materia);
+  let totalSessions = 0;
+  if (answerHistory.length > 0) {
+    const sorted = [...answerHistory].sort((a, b) => a.timestamp - b.timestamp);
+    const SESSION_GAP_MS = 15 * 60 * 1000;
+    uniqueStudyDays.add(getLocalDateString(new Date(sorted[0].timestamp)));
+    totalSessions = 1;
+    let lastTs = sorted[0].timestamp;
+    for (let i = 1; i < sorted.length; i++) {
+      const entry = sorted[i];
+      uniqueStudyDays.add(getLocalDateString(new Date(entry.timestamp)));
+      if (entry.timestamp - lastTs >= SESSION_GAP_MS) {
+        totalSessions++;
+      }
+      lastTs = entry.timestamp;
+    }
   }
-  const totalSessions = totalSessionsSet.size;
 
   const materiaData = useMemo(() => {
     return MATERIAS.map(mat => {
@@ -2518,6 +2572,34 @@ function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, 
             </div>
           )}
         </div>
+
+        {/* Instruções */}
+        <details style={{ background: "rgba(255,255,255,0.01)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "14px 16px", cursor: "pointer" }}>
+          <summary style={{ color: "#94a3b8", fontSize: 12, fontWeight: 600, letterSpacing: 0.5 }}>📖 Como funciona cada métrica</summary>
+          <div style={{ marginTop: 12, display: "flex", flexDirection: "column", gap: 12, cursor: "default" }}>
+            <div style={{ fontSize: 11, color: "#94a3b8", lineHeight: 1.6 }}>
+              <strong style={{ color: "#f1f5f9" }}>Cards Estudados</strong> — Total de flashcards que você já respondeu pelo menos uma vez (de {allCardsTotal} disponíveis).
+            </div>
+            <div style={{ fontSize: 11, color: "#94a3b8", lineHeight: 1.6 }}>
+              <strong style={{ color: "#f1f5f9" }}>Dominados</strong> — Cards que você acertou 3+ vezes seguidas (repetições "Bom" ou "Fácil") sem errar no meio do caminho. Quanto maior esse número, mais perto da revisão final você está.
+            </div>
+            <div style={{ fontSize: 11, color: "#94a3b8", lineHeight: 1.6 }}>
+              <strong style={{ color: "#f1f5f9" }}>Sequência (dias)</strong> — Dias consecutivos com pelo menos um flashcard estudado. Se você pular um dia, a contagem volta a zero, igual "ofensiva" do Duolingo.
+            </div>
+            <div style={{ fontSize: 11, color: "#94a3b8", lineHeight: 1.6 }}>
+              <strong style={{ color: "#f1f5f9" }}>Sessões</strong> — Cada vez que você estuda por um período contínuo conta como 1 sessão. Se você ficar <strong style={{ color: "#e2e8f0" }}>15 minutos ou mais sem responder nenhum card</strong>, a próxima resposta inicia uma nova sessão. Ex: estudar 10 min de manhã + 10 min à noite = 2 sessões no mesmo dia.
+            </div>
+            <div style={{ fontSize: 11, color: "#94a3b8", lineHeight: 1.6 }}>
+              <strong style={{ color: "#f1f5f9" }}>Taxa de Acerto</strong> — Porcentagem de respostas "Bom" ou "Fácil" em relação ao total de respostas na matéria. O filtro de período (7/15/30 dias) altera esse número para mostrar apenas o período selecionado.
+            </div>
+            <div style={{ fontSize: 11, color: "#94a3b8", lineHeight: 1.6 }}>
+              <strong style={{ color: "#f1f5f9" }}>Gráfico</strong> — Barras verdes = acertos (Bom/Fácil). Barras vermelhas = erros (Errei/Difícil). Use os filtros para ver sua evolução nos últimos 7, 15 ou 30 dias, ou escolha um período personalizado.
+            </div>
+            <div style={{ fontSize: 11, color: "#94a3b8", lineHeight: 1.6, borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: 10 }}>
+              ⚠️ Dados passados não existem: o histórico começou a ser registrado a partir da implementação desta tela. Os números e gráficos refletem apenas o período a partir de agora.
+            </div>
+          </div>
+        </details>
 
         {/* Dados zerados */}
         {answerHistory.length === 0 && (
