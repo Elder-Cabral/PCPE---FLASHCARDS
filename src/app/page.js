@@ -898,7 +898,7 @@ export default function App() {
     const emojiText = isGlobal ? "⚡" : (matInfo?.emoji || "");
 
     return (
-      <Shell user={currentUser} stats={stats} onLogout={handleLogout}>
+      <Shell user={currentUser} stats={stats} onLogout={handleLogout} centered>
         {toastMessage && (
           <div style={{
             position: "fixed",
@@ -920,9 +920,9 @@ export default function App() {
             ⚠️ {toastMessage}
           </div>
         )}
-        <div style={{ display: "flex", flexDirection: "column", gap: 20, width: "100%", maxWidth: 640, margin: "0 auto", boxSizing: "border-box" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 20, width: "100%", maxWidth: 640, margin: "0 auto", boxSizing: "border-box", flex: 1, minHeight: 0 }}>
           {/* Header do Estudo */}
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexShrink: 0 }}>
             <button
               onClick={() => {
                 setStudyMode(null);
@@ -966,7 +966,7 @@ export default function App() {
           </div>
 
           {/* Barra de Progresso */}
-          <div style={{ width: "100%", height: 6, background: "rgba(255,255,255,0.03)", borderRadius: 3, overflow: "hidden", border: "1px solid rgba(255,255,255,0.05)" }}>
+          <div style={{ width: "100%", height: 6, background: "rgba(255,255,255,0.03)", borderRadius: 3, overflow: "hidden", border: "1px solid rgba(255,255,255,0.05)", flexShrink: 0 }}>
             <div
               style={{
                 width: `${((currentQueueIndex + 1) / studyQueue.length) * 100}%`,
@@ -982,7 +982,8 @@ export default function App() {
             onClick={() => setIsFlipped(prev => !prev)}
             style={{
               width: "100%",
-              height: 320,
+              flex: 1,
+              minHeight: 200,
               cursor: "pointer",
               perspective: 1000
             }}
@@ -1068,7 +1069,7 @@ export default function App() {
           </div>
 
           {/* Botões de Ação */}
-          <div style={{ minHeight: 70 }}>
+          <div style={{ minHeight: 70, flexShrink: 0 }}>
             {isFlipped ? (
               studyMode === "srs" || studyMode === "topic" || studyMode === "global_srs" ? (
                 // 4 Botões SM-2 com classe responsiva
@@ -1158,7 +1159,7 @@ export default function App() {
           </div>
 
           {/* Navegação Manual Inferior */}
-          <div style={{ display: "flex", justifyContent: "space-between", gap: 14, width: "100%" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", gap: 14, width: "100%", flexShrink: 0 }}>
             <button
               onClick={(e) => {
                 e.stopPropagation();
@@ -1214,7 +1215,7 @@ export default function App() {
     const isGlobal = studyMode === "global_srs";
     const matInfo = !isGlobal ? MATERIAS.find(m => m.id === selectedMateria) : null;
     return (
-      <Shell user={currentUser} stats={stats} onLogout={handleLogout}>
+      <Shell user={currentUser} stats={stats} onLogout={handleLogout} centered>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "32px 20px", width: "100%", maxWidth: 480, margin: "0 auto", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 24, boxSizing: "border-box" }}>
           <div style={{ fontSize: 56, marginBottom: 16 }}>🏆</div>
           <h2 style={{ color: "#fff", fontSize: 22, fontWeight: 600, margin: 0 }}>
@@ -2035,7 +2036,7 @@ function LoginBadge() {
 }
 
 // ── COMPONENTE: SHELL / LAYOUT ──────────────────────────────────────────────
-function Shell({ children, user, stats, onLogout }) {
+function Shell({ children, user, stats, onLogout, centered }) {
   return (
     <div style={{ height: "100vh", overflow: "hidden", background: "#030712", boxSizing: "border-box", position: "relative", width: "100%", display: "flex", flexDirection: "column" }}>
       <div className="shell-hero-composite" />
@@ -2070,12 +2071,17 @@ function Shell({ children, user, stats, onLogout }) {
           </div>
         </div>
 
-        {/* Content (rolável verticalmente) */}
-        <div style={{ flex: 1, overflowY: "auto", minHeight: 0 }} className="custom-scrollbar">
-          <div className="dashboard-content">
+        {centered ? (
+          <div style={{ flex: 1, overflow: "hidden", minHeight: 0, display: "flex", flexDirection: "column", justifyContent: "center" }}>
             {children}
           </div>
-        </div>
+        ) : (
+          <div style={{ flex: 1, overflowY: "auto", minHeight: 0 }} className="custom-scrollbar">
+            <div className="dashboard-content">
+              {children}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
