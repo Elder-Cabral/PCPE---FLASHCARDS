@@ -634,7 +634,7 @@ export default function App() {
     return () => window.removeEventListener("focus", handleFocus);
   }, [currentUser]);
 
-  // Monitorar a virada do dia para liberar cards às 00:00 automaticamente
+  // Sincronizar dados a cada 30s (cards revisados em outro dispositivo, virada do dia, etc)
   useEffect(() => {
     if (!currentUser) return;
     let lastDateStr = getLocalDateString(new Date());
@@ -643,9 +643,9 @@ export default function App() {
       const todayStr = getLocalDateString(new Date());
       if (todayStr !== lastDateStr) {
         lastDateStr = todayStr;
-        loadUserData(currentUser.username);
       }
-    }, 30000); // Verifica a cada 30 segundos
+      loadUserData(currentUser.username);
+    }, 30000);
 
     return () => clearInterval(interval);
   }, [currentUser]);
@@ -931,7 +931,7 @@ export default function App() {
     const cardMateriaId = currentCard.id.substring(0, currentCard.id.lastIndexOf("_"));
     recordAnswer(currentCard.id, cardMateriaId, q);
 
-    if (studyMode === "srs" || studyMode === "topic" || studyMode === "global_srs") {
+    if (studyMode === "srs" || studyMode === "topic" || studyMode === "global_srs" || studyMode === "all") {
       const currentState = srsData[currentCard.id] || { interval: 1, repetition: 0, ef: 2.5 };
       const nextState = calculateSM2(q, currentState.interval, currentState.repetition, currentState.ef);
 
