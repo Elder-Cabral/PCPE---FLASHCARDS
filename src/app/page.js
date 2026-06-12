@@ -2587,7 +2587,7 @@ function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, 
               <strong style={{ color: "#f1f5f9" }}>Sequência (dias)</strong> — Dias consecutivos com pelo menos um flashcard estudado. Se você pular um dia, a contagem volta a zero, igual "ofensiva" do Duolingo.
             </div>
             <div style={{ fontSize: 11, color: "#94a3b8", lineHeight: 1.6 }}>
-              <strong style={{ color: "#f1f5f9" }}>Sessões</strong> — Cada vez que você estuda por um período contínuo conta como 1 sessão. Se você ficar <strong style={{ color: "#e2e8f0" }}>15 minutos ou mais sem responder nenhum card</strong>, a próxima resposta inicia uma nova sessão. Ex: estudar 10 min de manhã + 10 min à noite = 2 sessões no mesmo dia.
+              <strong style={{ color: "#f1f5f9" }}>Sessões</strong> — Cada vez que você senta pra estudar conta como 1 sessão. Se você parar por <strong style={{ color: "#e2e8f0" }}>mais de 15 minutos</strong> e depois voltar a responder, é uma nova sessão. Ex: estudou de manhã e depois à noite = 2 sessões.
             </div>
             <div style={{ fontSize: 11, color: "#94a3b8", lineHeight: 1.6 }}>
               <strong style={{ color: "#f1f5f9" }}>Taxa de Acerto</strong> — Porcentagem de respostas "Bom" ou "Fácil" em relação ao total de respostas na matéria. O filtro de período (7/15/30 dias) altera esse número para mostrar apenas o período selecionado.
