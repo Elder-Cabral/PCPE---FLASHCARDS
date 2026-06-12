@@ -266,7 +266,7 @@ export default function App() {
         inset: 0;
         backface-visibility: hidden;
         border-radius: 24px;
-        padding: 36px;
+        padding: 42px 40px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -370,13 +370,16 @@ export default function App() {
           grid-column: span 2 !important;
         }
         .flashcard-box {
-          padding: 24px 16px !important;
+          padding: 32px 20px !important;
+          border-radius: 20px !important;
         }
         .flashcard-question-text {
           font-size: 16px !important;
+          line-height: 1.6 !important;
         }
         .flashcard-answer-text {
           font-size: 14px !important;
+          line-height: 1.6 !important;
         }
         .materia-title {
           font-size: 20px !important;
@@ -384,6 +387,31 @@ export default function App() {
         .dashboard-metrics-grid {
           grid-template-columns: 1fr !important;
           gap: 10px !important;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .flashcard-box {
+          padding: 28px 16px !important;
+          border-radius: 16px !important;
+        }
+        .flashcard-question-text {
+          font-size: 15px !important;
+          line-height: 1.55 !important;
+        }
+        .flashcard-answer-text {
+          font-size: 13px !important;
+          line-height: 1.55 !important;
+        }
+      }
+
+      /* Safe area insets for notched mobile devices */
+      @supports (padding: env(safe-area-inset-bottom)) {
+        .shell-padding-top {
+          padding-top: env(safe-area-inset-top, 0px);
+        }
+        .shell-padding-bottom {
+          padding-bottom: env(safe-area-inset-bottom, 0px);
         }
       }
     `;
@@ -1032,121 +1060,102 @@ export default function App() {
 
           {/* Flashcard 3D */}
           <div
-            onClick={() => setIsFlipped(prev => !prev)}
             style={{
               width: "100%",
               flex: 1,
               minHeight: 200,
-              cursor: "pointer",
-              perspective: 1000
+              position: "relative"
             }}
           >
             <div
+              onClick={() => setIsFlipped(prev => !prev)}
               style={{
-                position: "relative",
                 width: "100%",
                 height: "100%",
-                transformStyle: "preserve-3d",
-                transition: "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)"
+                cursor: "pointer",
+                perspective: 1000
               }}
             >
-              {/* Frente */}
-              <div className="flashcard-box flashcard-front-style">
-                {/* Botão Favoritar */}
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation(); // Evita virar o card
-                    toggleFavorite(currentCard.id);
-                  }}
-                  style={{
-                    position: "absolute",
-                    top: 16,
-                    right: 16,
-                    background: "transparent",
-                    border: "none",
-                    color: favorites.includes(currentCard.id) ? "#eab308" : "#475569",
-                    cursor: "pointer",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    gap: 2,
-                    zIndex: 10,
-                    outline: "none"
-                  }}
-                >
-                  <span style={{ fontSize: 18 }}>{favorites.includes(currentCard.id) ? "★" : "☆"}</span>
-                  <span style={{ fontSize: 9, fontWeight: 500, opacity: 0.6, letterSpacing: 0.5, color: "#94a3b8" }}>
-                    {favorites.includes(currentCard.id) ? "favoritado" : "favoritar"}
-                  </span>
-                </button>
+              <div
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  height: "100%",
+                  transformStyle: "preserve-3d",
+                  transition: "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                  transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)"
+                }}
+              >
+                {/* Frente */}
+                <div className="flashcard-box flashcard-front-style">
+                  <div style={{ fontSize: 10, color: "#3b82f6", fontWeight: 600, letterSpacing: 3, marginBottom: 20 }}>✦ PERGUNTA ✦</div>
+                  <p className="flashcard-question-text" style={{ color: "#f1f5f9", fontSize: 18, lineHeight: 1.65, textAlign: "center", margin: 0, fontWeight: 400, fontFamily: "Georgia, serif" }}>
+                    {currentCard?.pergunta}
+                  </p>
+                  <div style={{ marginTop: 28, color: "rgba(255,255,255,0.2)", fontSize: 11, letterSpacing: 1, fontWeight: 500 }}>
+                    Clique para revelar a resposta
+                  </div>
+                </div>
 
-                <div style={{ fontSize: 10, color: "#3b82f6", fontWeight: 600, letterSpacing: 3, marginBottom: 20 }}>✦ PERGUNTA ✦</div>
-                <p className="flashcard-question-text" style={{ color: "#f1f5f9", fontSize: 18, lineHeight: 1.65, textAlign: "center", margin: 0, fontWeight: 400, fontFamily: "Georgia, serif" }}>
-                  {currentCard?.pergunta}
-                </p>
-                <div style={{ marginTop: 28, color: "rgba(255,255,255,0.2)", fontSize: 11, letterSpacing: 1, fontWeight: 500 }}>
-                  Clique para revelar a resposta
+                {/* Verso */}
+                <div className="custom-scrollbar flashcard-box flashcard-back-style" style={{ border: `1px solid ${themeColor}40` }}>
+                  <div style={{ fontSize: 10, color: themeColor, fontWeight: 600, letterSpacing: 3, marginBottom: 14 }}>✦ RESPOSTA ✦</div>
+                  
+                  <p className="flashcard-answer-text" style={{ color: "#e2e8f0", fontSize: 15, lineHeight: 1.65, textAlign: "center", margin: "0 0 16px 0", fontFamily: "Georgia, serif" }}>
+                    {currentCard?.resposta}
+                  </p>
+
+                  {/* Dica do Professor */}
+                  {currentCard?.dica && (
+                    <div style={{
+                      background: "rgba(234,179,8,0.04)",
+                      border: "1px solid rgba(234,179,8,0.12)",
+                      borderRadius: 14,
+                      padding: "12px 16px",
+                      width: "100%",
+                      boxSizing: "border-box",
+                      marginTop: "auto"
+                    }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#eab308", fontSize: 11, fontWeight: 600, letterSpacing: 1, marginBottom: 4 }}>
+                        <span>🎓</span> DICA DO PROFESSOR (CEBRASPE)
+                      </div>
+                      <p style={{ color: "#d1d5db", fontSize: 11, lineHeight: 1.5, margin: 0 }}>
+                        {currentCard?.dica}
+                      </p>
+                    </div>
+                  )}
                 </div>
               </div>
-
-              {/* Verso */}
-              <div className="custom-scrollbar flashcard-box flashcard-back-style" style={{ border: `1px solid ${themeColor}40`, position: "relative" }}>
-                {/* Botão Favoritar (verso) */}
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    toggleFavorite(currentCard.id);
-                  }}
-                  style={{
-                    position: "absolute",
-                    top: 16,
-                    right: 16,
-                    background: "transparent",
-                    border: "none",
-                    color: favorites.includes(currentCard.id) ? "#eab308" : "#475569",
-                    cursor: "pointer",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    gap: 2,
-                    zIndex: 10,
-                    outline: "none"
-                  }}
-                >
-                  <span style={{ fontSize: 18 }}>{favorites.includes(currentCard.id) ? "★" : "☆"}</span>
-                  <span style={{ fontSize: 9, fontWeight: 500, opacity: 0.6, letterSpacing: 0.5, color: "#94a3b8" }}>
-                    {favorites.includes(currentCard.id) ? "favoritado" : "favoritar"}
-                  </span>
-                </button>
-
-                <div style={{ fontSize: 10, color: themeColor, fontWeight: 600, letterSpacing: 3, marginBottom: 14 }}>✦ RESPOSTA ✦</div>
-                
-                <p className="flashcard-answer-text" style={{ color: "#e2e8f0", fontSize: 15, lineHeight: 1.65, textAlign: "center", margin: "0 0 16px 0", fontFamily: "Georgia, serif" }}>
-                  {currentCard?.resposta}
-                </p>
-
-                {/* Dica do Professor */}
-                {currentCard?.dica && (
-                  <div style={{
-                    background: "rgba(234,179,8,0.04)",
-                    border: "1px solid rgba(234,179,8,0.12)",
-                    borderRadius: 14,
-                    padding: "12px 16px",
-                    width: "100%",
-                    boxSizing: "border-box",
-                    marginTop: "auto"
-                  }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#eab308", fontSize: 11, fontWeight: 600, letterSpacing: 1, marginBottom: 4 }}>
-                      <span>🎓</span> DICA DO PROFESSOR (CEBRASPE)
-                    </div>
-                    <p style={{ color: "#d1d5db", fontSize: 11, lineHeight: 1.5, margin: 0 }}>
-                      {currentCard?.dica}
-                    </p>
-                  </div>
-                )}
-              </div>
             </div>
+
+            {/* Botão Favoritar ÚNICO — fora do flip container, sempre no canto superior direito */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleFavorite(currentCard.id);
+              }}
+              style={{
+                position: "absolute",
+                top: 16,
+                right: 16,
+                background: "transparent",
+                border: "none",
+                color: favorites.includes(currentCard.id) ? "#eab308" : "#475569",
+                cursor: "pointer",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: 2,
+                zIndex: 20,
+                outline: "none",
+                pointerEvents: "auto"
+              }}
+            >
+              <span style={{ fontSize: 18 }}>{favorites.includes(currentCard.id) ? "★" : "☆"}</span>
+              <span style={{ fontSize: 9, fontWeight: 500, opacity: 0.6, letterSpacing: 0.5, color: "#94a3b8" }}>
+                {favorites.includes(currentCard.id) ? "favoritado" : "favoritar"}
+              </span>
+            </button>
           </div>
 
           {/* Botões de Ação */}
