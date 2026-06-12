@@ -222,14 +222,26 @@ export default function App() {
         transform: translateY(0);
       }
       .custom-scrollbar::-webkit-scrollbar {
-        width: 6px;
+        width: 8px;
       }
       .custom-scrollbar::-webkit-scrollbar-track {
-        background: rgba(0,0,0,0.1);
+        background: rgba(255,255,255,0.06);
+        border-radius: 4px;
       }
       .custom-scrollbar::-webkit-scrollbar-thumb {
-        background: rgba(255,255,255,0.1);
-        border-radius: 3px;
+        background: rgba(59,130,246,0.35);
+        border-radius: 4px;
+        border: 2px solid transparent;
+        background-clip: content-box;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: rgba(59,130,246,0.55);
+        border: 2px solid transparent;
+        background-clip: content-box;
+      }
+      .custom-scrollbar {
+        scrollbar-width: auto;
+        scrollbar-color: rgba(59,130,246,0.35) rgba(255,255,255,0.06);
       }
 
       /* Classes Responsivas e Estilos de Otimização Mobile */
@@ -277,7 +289,7 @@ export default function App() {
         background-image:
           linear-gradient(rgba(59,130,246,0.02) 1px, transparent 1px),
           linear-gradient(90deg, rgba(59,130,246,0.02) 1px, transparent 1px),
-          linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+          linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
           url('/banner-pc.jpeg');
         background-size: 40px 40px, 40px 40px, cover, cover;
         background-position: center, center, center, center;
@@ -293,7 +305,7 @@ export default function App() {
         background-image:
           linear-gradient(rgba(59,130,246,0.01) 1px, transparent 1px),
           linear-gradient(90deg, rgba(59,130,246,0.01) 1px, transparent 1px),
-          linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+          linear-gradient(rgba(0,0,0,0.80), rgba(0,0,0,0.80)),
           url('/banner-pc.jpeg');
         background-size: 40px 40px, 40px 40px, cover, cover;
         background-position: center, center, center, center;
@@ -323,7 +335,7 @@ export default function App() {
           background-image:
             linear-gradient(rgba(59,130,246,0.02) 1px, transparent 1px),
             linear-gradient(90deg, rgba(59,130,246,0.02) 1px, transparent 1px),
-            linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+            linear-gradient(rgba(0,0,0,0.80), rgba(0,0,0,0.80)),
             url('/banner-mobile.jpeg');
           background-position: center, center, center top, center top;
           background-size: 40px 40px, 40px 40px, cover, cover;
@@ -332,7 +344,7 @@ export default function App() {
           background-image:
             linear-gradient(rgba(59,130,246,0.01) 1px, transparent 1px),
             linear-gradient(90deg, rgba(59,130,246,0.01) 1px, transparent 1px),
-            linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+            linear-gradient(rgba(0,0,0,0.80), rgba(0,0,0,0.80)),
             url('/banner-mobile.jpeg');
           background-position: center, center, center top, center top;
           background-size: 40px 40px, 40px 40px, cover, cover;
@@ -617,30 +629,38 @@ export default function App() {
     }
   };
 
-  const sortQueue = (queueToSort) => {
-    const sorted = [...queueToSort];
-    if (reviewOrder === "random") {
-      sorted.sort(() => Math.random() - 0.5);
-    } else if (reviewOrder === "easy_first") {
-      sorted.sort((a, b) => {
-        const intervalA = srsData[a.id] ? srsData[a.id].interval : 4;
-        const intervalB = srsData[b.id] ? srsData[b.id].interval : 4;
-        if (intervalA === intervalB) {
-          return Math.random() - 0.5;
-        }
-        return intervalB - intervalA;
-      });
-    } else if (reviewOrder === "hard_first") {
-      sorted.sort((a, b) => {
-        const intervalA = srsData[a.id] ? srsData[a.id].interval : 4;
-        const intervalB = srsData[b.id] ? srsData[b.id].interval : 4;
-        if (intervalA === intervalB) {
-          return Math.random() - 0.5;
-        }
-        return intervalA - intervalB;
-      });
+  const dificuldadeRank = { facil: 0, media: 1, dificil: 2 };
+
+  /** Embaralha um array in-place (Fisher-Yates) */
+  const shuffle = (arr) => {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
     }
-    return sorted;
+    return arr;
+  };
+
+  const sortQueue = (queueToSort) => {
+    if (reviewOrder === "random") {
+      return shuffle([...queueToSort]);
+    }
+    // Agrupar por dificuldade, embaralhar dentro de cada grupo, concatenar
+    const grupos = { facil: [], media: [], dificil: [] };
+    for (const card of queueToSort) {
+      const d = card.dificuldade || "media";
+      if (grupos[d]) grupos[d].push(card);
+      else grupos.media.push(card);
+    }
+    shuffle(grupos.facil);
+    shuffle(grupos.media);
+    shuffle(grupos.dificil);
+    if (reviewOrder === "easy_first") {
+      return [...grupos.facil, ...grupos.media, ...grupos.dificil];
+    }
+    if (reviewOrder === "hard_first") {
+      return [...grupos.dificil, ...grupos.media, ...grupos.facil];
+    }
+    return shuffle([...queueToSort]);
   };
 
   const startGlobalReviewSession = () => {
@@ -1571,8 +1591,8 @@ export default function App() {
           }}
         >
           <option value="random">🎲 Aleatório (Padrão)</option>
-          <option value="easy_first">📈 Fáceis Primeiro (Dificuldade Ascendente)</option>
-          <option value="hard_first">📉 Difíceis Primeiro (Dificuldade Descendente)</option>
+          <option value="easy_first">🟢 Fácil → Difícil (Fácil primeiro)</option>
+          <option value="hard_first">🔴 Difícil → Fácil (Difícil primeiro)</option>
         </select>
       </div>
 
