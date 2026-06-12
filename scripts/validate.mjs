@@ -284,7 +284,7 @@ function main() {
   }
 
   if (hasWarnings) {
-    console.warn(`  ⚠️  Nenhum erro, mas ${hasWarnings} atenções foram emitidas. Revise antes de commitar.`);
+    console.warn(`  ⚠️  Nenhum erro, mas ${similarityWarnings.length} atenções foram emitidas. Revise antes de commitar.`);
     process.exit(0);
   }
 
