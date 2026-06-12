@@ -26,17 +26,17 @@
     },
     {
       "id": "leg_estadual_3",
-      "pergunta": "Qual a função institucional da Polícia Civil de PE?",
-      "resposta": "Exercer a polícia judiciária e apurar infrações penais, exceto as militares.",
-      "dica": "",
+      "pergunta": "Qual a função constitucional da Polícia Civil de Pernambuco?",
+      "resposta": "Exercer a polícia judiciária e apurar infrações penais, exceto as militares, nos termos do art. 102 da CE-PE c/c art. 144, §4º da CF/88.",
+      "dica": "⚠️ ALERTA CEBRASPE: A função é EXCLUSIVA da PC-PE para infrações penais comuns (não militares). A PM faz polícia ostensiva (art. 144, §5º). O MP faz controle externo (art. 129, VII). Nunca confunda: polícia judiciária = PC; polícia ostensiva = PM. Art. 102 CE-PE é o dispositivo-chave.",
       "topico": "Constituição do Estado de Pernambuco (artigos 101 a 105-B)",
       "codigo_topico": "1"
     },
     {
       "id": "leg_estadual_4",
       "pergunta": "O que é o Estatuto do Policial Civil de PE (Lei 6.425/72)?",
-      "resposta": "Lei que regula direitos, deveres, regime disciplinar e carreira dos policiais civis do Estado de Pernambuco.",
-      "dica": "",
+      "resposta": "Lei estadual que regula direitos, deveres, regime disciplinar, carreira e garantias dos policiais civis do Estado de Pernambuco, com aplicação subsidiária da Lei 6.123/68 (Estatuto do Servidor Estadual).",
+      "dica": "MNEMÔNICO: A Lei 6.425/72 é a lei ESPECÍFICA da PC-PE. A Lei 6.123/68 é o ESTATUTO GERAL do servidor. Relação: especialidade (6.425 prevalece) + subsidiariedade (6.123 aplica-se onde 6.425 for omissa).",
       "topico": "Lei nº 6.425/1972 - Estatuto do Policial Civil",
       "codigo_topico": "2"
     },
@@ -50,9 +50,9 @@
     },
     {
       "id": "leg_estadual_6",
-      "pergunta": "Quais são as penalidades disciplinares previstas na Lei 6.425/72?",
-      "resposta": "Advertência, repreensão, suspensão, demissão, cassação de aposentadoria e destituição de função.",
-      "dica": "",
+      "pergunta": "Quais as penalidades disciplinares previstas no Estatuto do Policial Civil (Lei 6.425/72)?",
+      "resposta": "Advertência, repreensão, suspensão, demissão, cassação de aposentadoria e destituição de função comissionada (art. 28 da Lei 6.425/72).",
+      "dica": "MNEMÔNICO: AR-SUS-DEM-CAS-DES. CESPE cobra: a suspensão NÃO pode exceder 90 dias (art. 30). Cassação de aposentadoria atinge quem já se aposentou mas cometeu falta quando na ativa.",
       "topico": "Lei nº 6.425/1972 - Estatuto do Policial Civil",
       "codigo_topico": "2"
     },
@@ -67,16 +67,16 @@
     {
       "id": "leg_estadual_8",
       "pergunta": "Qual o prazo do estágio probatório do policial civil de PE?",
-      "resposta": "3 anos (36 meses) de efetivo exercício.",
-      "dica": "",
+      "resposta": "3 anos (36 meses) de efetivo exercício, conforme a Lei 6.425/72 c/c a sistemática do art. 41 da CF/88 com redação dada pela EC 19/98.",
+      "dica": "⚠️ ATENÇÃO: O estágio probatório do servidor público comum é de 3 anos (art. 41 CF/88). Para o policial civil de PE, segue o mesmo prazo pela aplicação subsidiária.",
       "topico": "Lei nº 6.425/1972 - Estatuto do Policial Civil",
       "codigo_topico": "2"
     },
     {
       "id": "leg_estadual_9",
-      "pergunta": "O que é abandono de cargo segundo o Estatuto do Policial Civil?",
-      "resposta": "Ausência injustificada por mais de 30 dias consecutivos; sujeita à demissão.",
-      "dica": "",
+      "pergunta": "O que configura abandono de cargo para o policial civil de PE?",
+      "resposta": "Ausência injustificada do servidor por mais de 30 dias consecutivos, sujeitando-o à penalidade de demissão (art. 35, V c/c art. 37 da Lei 6.425/72).",
+      "dica": "PEGADINHA CESPE: O prazo é de 30 DIAS CONSECUTIVOS (não alternados). Inassiduidade habitual = faltas intercaladas que excedam 60 dias em 12 meses (art. 36). Decore: abandono = 30 dias SEGUIDOS; inassiduidade = 60 dias ALTERNADOS em 12 meses.",
       "topico": "Lei nº 6.425/1972 - Estatuto do Policial Civil",
       "codigo_topico": "2"
     },
@@ -99,16 +99,16 @@
     {
       "id": "leg_estadual_12",
       "pergunta": "Quem preside o inquérito policial segundo a LC 137/2008?",
-      "resposta": "O Delegado de Polícia, com exclusividade; o Agente não pode presidir IP.",
-      "dica": "",
+      "resposta": "O Delegado de Polícia, autoridade com exclusividade para presidir a investigação criminal preliminar, nos termos do art. 4º do CPP c/c Lei 12.830/13 e LC 137/2008.",
+      "dica": "⚠️ PEGADINHA CLÁSSICA: O Delegado PRESIDE o IP com EXCLUSIVIDADE. O MP pode requisitar diligências e controlar externamente, mas NÃO preside. A LC 137/2008 (art. 2º) organiza a PC e mantém essa atribuição. Súmula Vinculante 14: Delegado pode negar acesso a investigação não concluída.",
       "topico": "Lei Complementar nº 137/2008",
       "codigo_topico": "4"
     },
     {
       "id": "leg_estadual_13",
-      "pergunta": "Qual o órgão máximo da Polícia Civil de PE?",
-      "resposta": "A Delegacia-Geral de Polícia, chefiada pelo Delegado-Geral, nomeado pelo Governador.",
-      "dica": "",
+      "pergunta": "Qual o órgão máximo da Polícia Civil de Pernambuco?",
+      "resposta": "A Delegacia-Geral da Polícia Civil, chefiada pelo Delegado-Geral, cargo de livre nomeação e exoneração pelo Governador do Estado.",
+      "dica": "Subordinação: Delegado-Geral → Secretário de Defesa Social → Governador. A nomeação é DISCRICIONÁRIA do chefe do Executivo. O Delegado-Geral deve ser Delegado de Polícia de carreira (art. 6º LC 137/2008).",
       "topico": "Lei Complementar nº 137/2008",
       "codigo_topico": "4"
     },
@@ -122,9 +122,9 @@
     },
     {
       "id": "leg_estadual_15",
-      "pergunta": "Quais os critérios de progressão funcional da LC 317/2015?",
-      "resposta": "Merecimento (avaliação de desempenho) e antiguidade (tempo de serviço), de forma alternada.",
-      "dica": "",
+      "pergunta": "Quais os critérios de progressão funcional previstos na LC 317/2015?",
+      "resposta": "Progressão por elevação de nível profissional (certificação em cursos) e progressão por capacitação (aquisição de títulos), ambas condicionadas a avaliação periódica de desempenho e interstício mínimo.",
+      "dica": "MNEMÔNICO: 2 PROGRESSÕES: (1) ELEVAÇÃO = certificação/cursos; (2) CAPACITAÇÃO = títulos. Requisitos cumulativos: interstício + avaliação + curso/título. O servidor em licença sem vencimentos ou cumprindo pena disciplinar NÃO concorre à progressão (art. 15, § único).",
       "topico": "Lei Complementar nº 317/2015",
       "codigo_topico": "5"
     },
@@ -138,9 +138,9 @@
     },
     {
       "id": "leg_estadual_17",
-      "pergunta": "Qual o prazo para entrar em exercício após a posse (Lei 6.123/68)?",
-      "resposta": "15 dias contados da posse, salvo disposição especial.",
-      "dica": "",
+      "pergunta": "Qual o prazo para o servidor entrar em exercício após a posse (Lei 6.123/68)?",
+      "resposta": "30 dias contados da data da posse, sob pena de exoneração de ofício (art. 14, §2º da Lei 6.123/68).",
+      "dica": "DECORE: POSSE → 30 DIAS → EXERCÍCIO. Se não entrar em exercício em 30 dias = exoneração. CESPE adora inverter: prazo da posse (30 dias contados da nomeação) vs prazo do exercício (30 dias contados da posse). São dois prazos distintos.",
       "topico": "Lei nº 6.123/1968 - Estatuto do Servidor do Estado de Pernambuco",
       "codigo_topico": "3"
     },
@@ -170,9 +170,9 @@
     },
     {
       "id": "leg_estadual_21",
-      "pergunta": "A licença para interesse particular tem remuneração?",
-      "resposta": "Não; é licença sem remuneração.",
-      "dica": "",
+      "pergunta": "A licença para tratar de interesses particulares do servidor estadual (PE) é remunerada?",
+      "resposta": "Não. A licença para interesse particular é concedida sem remuneração, por prazo não superior a 2 anos (prorrogável por mais 2), conforme art. 117 da Lei 6.123/68.",
+      "dica": "⚠️ PEGADINHA CESPE: Ao contrário da licença-prêmio (remunerada), a licença para interesse particular é SEM REMUNERAÇÃO. Prazo máximo: 2 anos + 2 de prorrogação = até 4 anos. NÃO conta para aposentadoria. Exige 5 anos de efetivo exercício.",
       "topico": "Lei nº 6.123/1968 - Estatuto do Servidor do Estado de Pernambuco",
       "codigo_topico": "3"
     },
@@ -202,9 +202,9 @@
     },
     {
       "id": "leg_estadual_25",
-      "pergunta": "Quando cabe aposentadoria compulsória segundo a legislação estadual?",
-      "resposta": "Aos 75 anos de idade, conforme EC 88/2015.",
-      "dica": "",
+      "pergunta": "Quando cabe aposentadoria compulsória no serviço público estadual de PE?",
+      "resposta": "Aos 70 anos de idade, para servidores públicos estaduais, conforme art. 40, §1º, II da CF/88 (com redação da EC 88/2015 elevou para 75 anos para professores universitários).",
+      "dica": "⚠️ ATUALIZAÇÃO: A EC 88/2015 (PEC da Bengala) fixou 75 anos para servidores do STF, Tribunais Superiores e TCU. Para servidores estaduais comuns: 70 anos (regra geral). CESPE já cobrou: 'a aposentadoria compulsória do servidor público estadual é aos 75 anos' → FALSO (a regra geral é 70).",
       "topico": "Constituição do Estado de Pernambuco (artigos 101 a 105-B)",
       "codigo_topico": "1"
     },
@@ -242,9 +242,9 @@
     },
     {
       "id": "leg_estadual_30",
-      "pergunta": "O policial civil pode exercer advocacia?",
-      "resposta": "Não; o exercício da advocacia é incompatível com o cargo de Agente de Polícia.",
-      "dica": "",
+      "pergunta": "O policial civil de PE pode exercer advocacia?",
+      "resposta": "Não. É vedado ao policial civil o exercício de advocacia, ainda que em causa própria, conforme art. 28, II do Estatuto da OAB (Lei 8.906/94) e vedações do regime disciplinar da Lei 6.425/72.",
+      "dica": "VEDAÇÃO ABSOLUTA: policial civil NÃO pode advogar (nem em causa própria). CESPE adora generalizar: 'policial pode advogar em causa própria' → FALSO. Só juiz, promotor e Defensor têm essa exceção parcial (art. 28, II e III Estatuto OAB).",
       "topico": "Lei nº 6.425/1972 - Estatuto do Policial Civil",
       "codigo_topico": "2"
     },
@@ -274,17 +274,17 @@
     },
     {
       "id": "leg_estadual_34",
-      "pergunta": "Segundo a CE-PE, quem controla externamente a atividade policial?",
-      "resposta": "O Ministério Público, fiscalizando principalmente a condução do inquérito policial.",
-      "dica": "",
+      "pergunta": "Segundo a CE-PE, quem exerce o controle externo da atividade policial?",
+      "resposta": "O Ministério Público, conforme art. 129, VII da CF/88 e normativos estaduais, sendo o controle externo da atividade policial função institucional do MP.",
+      "dica": "⚠️ ALERTA: O controle EXTERNO é do MINISTÉRIO PÚBLICO (não do Judiciário, não do Legislativo). O controle INTERNO é da Corregedoria da PC. A CE-PE não inovou — reproduz a CF/88. O MP pode requisitar diligências, acompanhar investigações e fiscalizar.",
       "topico": "Constituição do Estado de Pernambuco (artigos 101 a 105-B)",
       "codigo_topico": "1"
     },
     {
       "id": "leg_estadual_35",
-      "pergunta": "Os policiais civis têm direito de greve?",
-      "resposta": "Não; o STF entende que policiais civis não têm direito de greve, por analogia ao art. 142, §3º da CF/88.",
-      "dica": "",
+      "pergunta": "Os policiais civis de PE têm direito de greve?",
+      "resposta": "Sim, mas com restrições. O STF (MI 708 e MI 712) reconheceu o direito de greve dos servidores públicos, inclusive policiais civis, desde que não comprometa a segurança pública e com regulamentação específica (art. 37, VII CF/88).",
+      "dica": "⚠️ TEMA POLÊMICO: O STF no MI 708 decidiu que servidores públicos têm direito de greve (aplicando a Lei 7.783/89). Porém, atividades ESSENCIAIS (como segurança pública) exigem manutenção de equipe mínima. Para policiais CIVIS o direito existe, mas não para policiais MILITARES (proibição total).",
       "topico": "Constituição do Estado de Pernambuco (artigos 101 a 105-B)",
       "codigo_topico": "1"
     },
@@ -299,8 +299,8 @@
     {
       "id": "leg_estadual_37",
       "pergunta": "Qual a jornada de trabalho do policial civil de PE?",
-      "resposta": "40 horas semanais, podendo haver escalas ou plantões conforme necessidade do serviço.",
-      "dica": "",
+      "resposta": "40 horas semanais, em regime de plantão ou expediente, conforme regulamentação da SDS e LC 137/2008, podendo haver escalas especiais.",
+      "dica": "Regime: 40h/semana, mas o policial está sujeito a plantões, sobreavisos e convocações a qualquer momento (natureza policial). CESPE cobra adicional noturno (art. 73 CLT aplicado subsidiariamente). Hora noturna do policial = 52min30s (Súmula 60 TST).",
       "topico": "Lei nº 6.425/1972 - Estatuto do Policial Civil",
       "codigo_topico": "2"
     },
@@ -322,17 +322,17 @@
     },
     {
       "id": "leg_estadual_40",
-      "pergunta": "A Polícia Científica de PE tem qual atribuição?",
-      "resposta": "Realizar perícias e exames técnicos de apoio à investigação criminal.",
-      "dica": "",
+      "pergunta": "Qual a atribuição constitucional da Polícia Científica de PE?",
+      "resposta": "Realizar perícias criminais e exames de corpo de delito, auxiliando a PC-PE na investigação criminal, nos termos do art. 105-A da CE-PE (incluído pela EC 52/2020).",
+      "dica": "⚠️ NOVIDADE LEGISLATIVA: A Polícia Científica foi elevada a órgão autônomo de segurança pública pela EC 52/2020 (art. 105-A CE-PE). Antes era vinculada à PC. CESPE pode perguntar: 'A PC integra a Polícia Científica?' → NÃO (são órgãos distintos no art. 101 CE-PE).",
       "topico": "Constituição do Estado de Pernambuco (artigos 101 a 105-B)",
       "codigo_topico": "1"
     },
     {
       "id": "leg_estadual_41",
       "pergunta": "O Delegado-Geral da PC-PE é cargo de livre nomeação?",
-      "resposta": "Sim; é cargo de confiança, de livre nomeação e exoneração pelo Governador do Estado.",
-      "dica": "",
+      "resposta": "Sim, é cargo de livre nomeação e exoneração pelo Governador do Estado, devendo recair sobre Delegado de Polícia de carreira (art. 6º, §1º da LC 137/2008).",
+      "dica": "⚠️ PEGADINHA: 'Livre nomeação' significa que o Governador pode escolher qualquer pessoa? NÃO! A lei exige que seja Delegado de Polícia de CARREIRA. A discricionariedade está na ESCOLHA entre os delegados, não na possibilidade de nomear não-delegado.",
       "topico": "Constituição do Estado de Pernambuco (artigos 101 a 105-B)",
       "codigo_topico": "1"
     },
@@ -370,9 +370,9 @@
     },
     {
       "id": "leg_estadual_46",
-      "pergunta": "A CE-PE permite criação de Polícia Municipal?",
-      "resposta": "Não; prevê apenas Guardas Municipais para proteção de bens, serviços e instalações municipais.",
-      "dica": "",
+      "pergunta": "A CE-PE permite a criação de polícia municipal?",
+      "resposta": "Não. A CE-PE (art. 101) não prevê polícia municipal. As Guardas Municipais têm função de proteção de bens e serviços municipais (art. 144, §8º CF/88), não são órgãos de segurança pública estadual.",
+      "dica": "⚠️ PEGADINHA CLÁSSICA CESPE: 'A CE-PE prevê a Polícia Municipal como órgão de segurança pública' → FALSO. Guardas Municipais NÃO são polícia. O art. 101 CE-PE só prevê: PC, PM, CBM, Polícia Científica e Polícia Penal.",
       "topico": "Constituição do Estado de Pernambuco (artigos 101 a 105-B)",
       "codigo_topico": "1"
     },
@@ -402,9 +402,9 @@
     },
     {
       "id": "leg_estadual_50",
-      "pergunta": "Quais os requisitos para ingresso como Agente de Polícia Civil de PE?",
-      "resposta": "Aprovação em concurso público, nível médio/superior conforme edital, idoneidade moral e aprovação em curso de formação.",
-      "dica": "",
+      "pergunta": "Quais os requisitos para ingresso no cargo de Agente de Polícia Civil de PE?",
+      "resposta": "Nível superior completo, aprovação em concurso público de provas e títulos, curso de formação profissional, aptidão física, mental e idoneidade moral (LC 137/2008, arts. 10-11).",
+      "dica": "⚠️ ATUALIZAÇÃO PÓS-EC 19/98: Exige-se NÍVEL SUPERIOR para TODOS os cargos da PC-PE (inclusive Agente). Não confunda com o passado (quando exigia nível médio). A LC 137/2008 exige curso de formação como 2ª etapa (eliminatória e classificatória).",
       "topico": "Constituição do Estado de Pernambuco (artigos 101 a 105-B)",
       "codigo_topico": "1"
     },
@@ -419,8 +419,8 @@
     {
       "id": "leg_estadual_52",
       "pergunta": "A PC-PE pode investigar crimes militares?",
-      "resposta": "Não; crimes militares são investigados pela Polícia Militar e julgados pela Justiça Militar Estadual.",
-      "dica": "",
+      "resposta": "Não. A investigação de crimes militares é de competência da Polícia Judiciária Militar (PM-PE), sendo a PC-PE competente apenas para infrações penais comuns (art. 102 CE-PE c/c art. 144, §4º CF/88).",
+      "dica": "⚠️ LIMITE CONSTITUCIONAL: A expressão 'exceto as militares' no art. 144, §4º CF/88 é CHAVE. Crimes militares estaduais são investigados pela PM (IPM). Crimes militares federais, pela PF. A PC-PE NÃO apura crime militar, mesmo que o autor seja civil.",
       "topico": "Constituição do Estado de Pernambuco (artigos 101 a 105-B)",
       "codigo_topico": "1"
     },
@@ -451,8 +451,8 @@
     {
       "id": "leg_estadual_56",
       "pergunta": "Qual a diferença entre Polícia Civil e Polícia Militar segundo a CE-PE?",
-      "resposta": "PC é polícia judiciária (investigação); PM é polícia ostensiva e preservação da ordem pública. São órgãos distintos.",
-      "dica": "",
+      "resposta": "A PC-PE exerce polícia judiciária (art. 102 CE-PE) e apura infrações penais comuns; a PM-PE exerce polícia ostensiva e preservação da ordem pública (art. 103 CE-PE).",
+      "dica": "MNEMÔNICO: PC = JUDICIÁRIA (investiga DEPOIS do crime); PM = OSTENSIVA (prevenção, ronda, DURANTE). CESPE adora: 'Compete à PM a apuração de infrações penais' → FALSO.",
       "topico": "Constituição do Estado de Pernambuco (artigos 101 a 105-B)",
       "codigo_topico": "1"
     },
@@ -482,9 +482,9 @@
     },
     {
       "id": "leg_estadual_60",
-      "pergunta": "Quais são as delegacias especializadas previstas na estrutura da PC-PE?",
-      "resposta": "DHPP, DRACO, DPCA, DEPATRI, entre outras, cada uma com competência específica por tipo de crime.",
-      "dica": "",
+      "pergunta": "Quais delegacias especializadas existem na estrutura da PC-PE?",
+      "resposta": "DHPP (homicídios), DRACO (crime organizado), DPCA (criança/adolescente), DECAP (patrimônio), DEINTER (interior), DEPATRI (trânsito), NUIC (inteligência), GACE (alto escalão), GGAP (APP), entre outras.",
+      "dica": "MNEMÔNICO: DHPP = Homicídio; DRACO = Crime Organizado; DPCA = Criança/Adolescente; DECAP = Patrimônio; DEINTER = Interior; DEPATRI = Trânsito; NUIC = Inteligência. CESPE adora: 'O DHPP investiga homicídios de policiais?' → SIM.",
       "topico": "Constituição do Estado de Pernambuco (artigos 101 a 105-B)",
       "codigo_topico": "1"
     },
@@ -507,16 +507,16 @@
     {
       "id": "leg_estadual_63",
       "pergunta": "Qual a relação entre a LC 137/2008 e a LC 317/2015?",
-      "resposta": "A LC 137/2008 organiza a estrutura da PC-PE; a LC 317/2015 regula carreiras, cargos e remuneração dos servidores.",
-      "dica": "",
+      "resposta": "A LC 137/2008 é lei geral do PCCV da PC-PE (todos os cargos). A LC 317/2015 é lei especial do cargo de Delegado de Polícia. A LC 137 é marco geral; a LC 317 detalha a carreira de Delegado.",
+      "dica": "⚠️ CORREÇÃO DE ERRO COMUM: A LC 137/2008 INSTITUI o PCCV da PC-PE. A LC 317/2015 NÃO institui, mas dispõe sobre o cargo de Delegado. Relação: geral (137) x especial (317).",
       "topico": "Lei Complementar nº 137/2008",
       "codigo_topico": "4"
     },
     {
       "id": "leg_estadual_64",
       "pergunta": "Quais as hipóteses de demissão do policial civil (Lei 6.425/72)?",
-      "resposta": "Abandono de cargo, inassiduidade habitual, improbidade, incontinência pública, insubordinação grave, condenação criminal transitada em julgado.",
-      "dica": "",
+      "resposta": "Abandono de cargo, inassiduidade habitual, improbidade, incontinência pública, conduta escandalosa, ofensa física, crime contra a administração, entre outras previstas no art. 35.",
+      "dica": "⚠️ DIFERENÇA IMPORTANTE: A demissão é penalidade máxima. Exige processo administrativo disciplinar (PAD) com ampla defesa. A cassação de aposentadoria é hipótese quando o policial já aposentado cometeu falta grave quando na ativa.",
       "topico": "Lei nº 6.425/1972 - Estatuto do Policial Civil",
       "codigo_topico": "2"
     },
@@ -562,9 +562,9 @@
     },
     {
       "id": "leg_estadual_70",
-      "pergunta": "Quais são as formas de provimento de cargo (Lei 6.123/68)?",
-      "resposta": "Nomeação, promoção, transferência, readmissão, reintegração, recondução, aproveitamento e ascensão funcional.",
-      "dica": "",
+      "pergunta": "Quais as formas de provimento de cargo público na Lei 6.123/68?",
+      "resposta": "Nomeação, promoção, readaptação, reversão, aproveitamento, reintegração e recondução (art. 8º da Lei 6.123/68).",
+      "dica": "MNEMÔNICO: N-P-R-R-A-R-R (Nomeação, Promoção, Readaptação, Reversão, Aproveitamento, Reintegração, Recondução). CESPE: 'A promoção é forma de provimento?' → SIM. 'A remoção é forma de provimento?' → NÃO.",
       "topico": "Lei nº 6.123/1968 - Estatuto do Servidor do Estado de Pernambuco",
       "codigo_topico": "3"
     },
@@ -578,9 +578,9 @@
     },
     {
       "id": "leg_estadual_72",
-      "pergunta": "Segundo a CE-PE, servidores têm direito de sindicalização?",
-      "resposta": "Sim; o art. 37, VI da CF/88 garante o direito de associação sindical a servidores públicos.",
-      "dica": "",
+      "pergunta": "Segundo a CE-PE, servidores públicos têm direito de sindicalização?",
+      "resposta": "Sim, o direito de sindicalização é garantido aos servidores públicos civis (art. 37, VI CF/88), exceto para militares (art. 42, §1º c/c art. 142, §3º, IV CF/88).",
+      "dica": "⚠️ DIFERENÇA CRUCIAL: Sindicalização: servidor civil PODE, militar NÃO PODE. Greve: servidor civil PODE (com restrições), militar NÃO PODE (proibição absoluta).",
       "topico": "Constituição do Estado de Pernambuco (artigos 101 a 105-B)",
       "codigo_topico": "1"
     },
@@ -595,8 +595,8 @@
     {
       "id": "leg_estadual_74",
       "pergunta": "A criação de novos cargos na PC-PE depende de quê?",
-      "resposta": "De lei específica aprovada pela ALEPE, sancionada pelo Governador, com previsão orçamentária.",
-      "dica": "",
+      "resposta": "Depende de lei específica de iniciativa do Chefe do Poder Executivo (Governador), conforme art. 61, §1º, II, 'a' CF/88 e princípio da reserva legal em matéria de criação de cargos públicos.",
+      "dica": "⚠️ RESERVA LEGAL: Cargo público só se cria por LEI. Iniciativa PRIVATIVA do Governador para cargos do Executivo. A LC 137/2008 já fixou o quantitativo máximo. Novo cargo exige nova lei.",
       "topico": "Constituição do Estado de Pernambuco (artigos 101 a 105-B)",
       "codigo_topico": "1"
     },
@@ -634,9 +634,9 @@
     },
     {
       "id": "leg_estadual_79",
-      "pergunta": "O que é sindicância patrimonial aplicada a servidores de PE?",
-      "resposta": "Procedimento para apurar evolução patrimonial incompatível com os rendimentos do servidor.",
-      "dica": "",
+      "pergunta": "O que é sindicância patrimonial no âmbito do serviço público de PE?",
+      "resposta": "Procedimento administrativo para apurar evolução patrimonial incompatível do servidor, visando identificar enriquecimento ilícito (art. 9º da Lei 6.123/68 c/c Lei 8.429/92).",
+      "dica": "⚠️ SINDICÂNCIA ≠ PAD: A sindicância patrimonial é ESPECÍFICA para evolução patrimonial. Sindicância comum é preparatória do PAD. A patrimonial pode levar diretamente à demissão se comprovado enriquecimento ilícito.",
       "topico": "Lei nº 6.123/1968 - Estatuto do Servidor do Estado de Pernambuco",
       "codigo_topico": "3"
     },
@@ -666,9 +666,9 @@
     },
     {
       "id": "leg_estadual_83",
-      "pergunta": "Quando o policial civil pode ser transferido compulsoriamente?",
-      "resposta": "No interesse do serviço, por ato fundamentado da autoridade competente, respeitados os direitos do servidor.",
-      "dica": "",
+      "pergunta": "Quando o policial civil de PE pode ser transferido compulsoriamente?",
+      "resposta": "Por necessidade do serviço, mediante ato fundamentado da autoridade competente, respeitando a lotação original sempre que possível (art. 3º LC 317/2015 e Lei 12.830/13).",
+      "dica": "⚠️ PARA DELEGADOS: A remoção do Delegado exige FUNDAMENTAÇÃO (art. 3º LC 317/2015 c/c Lei 12.830/13). É garantia de autonomia funcional. Remoção arbitrária e sem motivação pode ser anulada.",
       "topico": "Lei nº 6.425/1972 - Estatuto do Policial Civil",
       "codigo_topico": "2"
     },
@@ -691,8 +691,8 @@
     {
       "id": "leg_estadual_86",
       "pergunta": "O que prevê o art. 105-B da CE-PE?",
-      "resposta": "Trata de disposições específicas sobre a Segurança Pública e a estrutura dos órgãos policiais estaduais.",
-      "dica": "",
+      "resposta": "Dispõe sobre a Polícia Penal de PE, órgão de segurança pública responsável pela vigilância e custódia de presos, incluída pela EC Estadual 52/2020.",
+      "dica": "⚠️ NOVIDADE: A Polícia Penal foi criada pela EC 52/2020 (art. 105-B CE-PE). É órgão de segurança pública (art. 101, V). Substitui os agentes penitenciários. CESPE: 'A Polícia Penal integra o sistema de segurança pública estadual' → VERDADEIRO.",
       "topico": "Constituição do Estado de Pernambuco (artigos 101 a 105-B)",
       "codigo_topico": "1"
     },
@@ -707,8 +707,8 @@
     {
       "id": "leg_estadual_88",
       "pergunta": "O que é o Conselho de Polícia Civil previsto na LC 137/2008?",
-      "resposta": "Órgão colegiado composto por delegados com atribuições consultivas e disciplinares, conforme regulamento interno.",
-      "dica": "",
+      "resposta": "Órgão colegiado consultivo e deliberativo da PC-PE, com composição paritária, que atua na formulação de políticas e diretrizes da instituição.",
+      "dica": "Natureza: CONSULTIVO + DELIBERATIVO (não é executivo). Paritário: representantes de diferentes carreiras. CESPE: 'O Conselho de Polícia Civil tem poder de nomear o Delegado-Geral?' → NÃO (a nomeação é do Governador).",
       "topico": "Lei nº 6.425/1972 - Estatuto do Policial Civil",
       "codigo_topico": "2"
     },
@@ -965,40 +965,40 @@
     {
       "id": "dir_const_0",
       "pergunta": "Quais são os fundamentos da República Federativa do Brasil (art. 1º CF/88)?",
-      "resposta": "Soberania, cidadania, dignidade da pessoa humana, valores sociais do trabalho e da livre iniciativa, e pluralismo político.",
-      "dica": "Mnemônico fundamental da CEBRASPE: SO-CI-DI-VA-PLU (Soberania, Cidadania, Dignidade da pessoa humana, Valores sociais do trabalho e da livre iniciativa, Pluralismo político). Não confunda os Fundamentos (Art. 1º) com os Objetivos do Art. 3º (CON-GAR-ER-PRO)!",
+      "resposta": "I - soberania; II - cidadania; III - dignidade da pessoa humana; IV - valores sociais do trabalho e da livre iniciativa; V - pluralismo político. Art. 1º, I a V da CF/88.",
+      "dica": "MNEMÔNICO: SO-CI-DI-VA-PLU. CESPE ADORA trocar: 'dignidade da pessoa humana é objetivo fundamental' -> FALSO (é FUNDAMENTO). Objetivos estão no art. 3º: construir, garantir, erradicar, reduzir, promover.",
       "topico": "Princípios fundamentais",
       "codigo_topico": "1.1"
     },
     {
       "id": "dir_const_1",
-      "pergunta": "O que é poder constituinte originário?",
-      "resposta": "Poder de criar uma nova Constituição; é inicial, ilimitado juridicamente, incondicionado e soberano.",
-      "dica": "",
+      "pergunta": "O que é poder constituinte originário e quais suas características?",
+      "resposta": "Poder de criar uma nova Constituição. É inicial, autônomo, incondicionado, ilimitado juridicamente e permanente.",
+      "dica": "MNEMÔNICO: I-A-I-I-P (Inicial, Autônomo, Incondicionado, Ilimitado, Permanente). CESPE: adota a teoria kelseniana (ilimitado juridicamente).",
       "topico": "Princípios fundamentais",
       "codigo_topico": "1.1"
     },
     {
       "id": "dir_const_2",
       "pergunta": "O que é poder constituinte derivado reformador?",
-      "resposta": "Poder de modificar a CF por meio de emendas constitucionais; limitado pelas cláusulas pétreas.",
-      "dica": "",
+      "resposta": "Poder de modificar a Constituição por meio de emendas constitucionais, limitado pelas cláusulas pétreas (art. 60, §4º CF/88) e pelas limitações formais, circunstanciais e materiais.",
+      "dica": "3 LIMITES: (1) FORMAIS: quórum 3/5, 2 turnos; (2) CIRCUNSTANCIAIS: vedação em IF, estado de defesa/sítio; (3) MATERIAIS: cláusulas pétreas (art. 60, §4º).",
       "topico": "Princípios fundamentais",
       "codigo_topico": "1.1"
     },
     {
       "id": "dir_const_3",
       "pergunta": "O que são cláusulas pétreas (art. 60, §4º CF/88)?",
-      "resposta": "Matérias imutáveis: forma federativa, voto direto/secreto/universal/periódico, separação dos poderes e direitos/garantias individuais.",
-      "dica": "",
+      "resposta": "Limitações materiais ao poder reformador: I - forma federativa de Estado; II - voto direto, secreto, universal e periódico; III - separação dos Poderes; IV - direitos e garantias individuais.",
+      "dica": "MNEMÔNICO: FED-VOTO-SEP-DIREITOS. PEGADINHA: DIREITOS e garantias INDIVIDUAIS são pétreos, não TODOS os direitos fundamentais. Direitos SOCIAIS podem ser reformados.",
       "topico": "Direitos e garantias fundamentais",
       "codigo_topico": "3"
     },
     {
       "id": "dir_const_4",
-      "pergunta": "O que é poder constituinte derivado decorrente?",
-      "resposta": "Poder dos estados-membros de elaborar suas próprias constituições, dentro dos limites da CF/88.",
-      "dica": "",
+      "pergunta": "Qual a diferença entre princípios e regras constitucionais?",
+      "resposta": "Princípios: normas de alto grau de abstração, aplicadas por ponderação. Regras: aplicadas por subsunção (tudo ou nada). Dworkin/Alexy.",
+      "dica": "MNEMÔNICO: PRINCÍPIOS = mandados de OTIMIZAÇÃO (ponderação). REGRAS = TUDO OU NADA (subsunção). CESPE: 'Princípios podem ser aplicados gradualmente' -> VERDADEIRO.",
       "topico": "Princípios fundamentais",
       "codigo_topico": "1.1"
     },
@@ -1012,41 +1012,41 @@
     },
     {
       "id": "dir_const_6",
-      "pergunta": "O que são normas de eficácia contida?",
-      "resposta": "Aplicação imediata, mas o alcance pode ser restringido por lei posterior. Ex: art. 5º, XIII (livre exercício profissional).",
-      "dica": "",
+      "pergunta": "O que é a tripartição dos Poderes (art. 2º CF/88)?",
+      "resposta": "São Poderes da União, independentes e harmônicos entre si: Legislativo, Executivo e Judiciário.",
+      "dica": "PEGADINHA: 'O MP é o 4º Poder' -> FALSO (é função essencial à justiça, art. 127). 'Os Poderes são independentes' -> SIM. 'Mas há interferências recíprocas' -> SIM (freios e contrapesos).",
       "topico": "Aplicabilidade das normas constitucionais",
       "codigo_topico": "2"
     },
     {
       "id": "dir_const_7",
-      "pergunta": "O que são normas de eficácia limitada?",
-      "resposta": "Dependem de lei regulamentadora para produzir efeitos plenos. Ex: art. 7º, XI (participação nos lucros).",
-      "dica": "",
+      "pergunta": "O que são direitos fundamentais de 1ª, 2ª e 3ª dimensão?",
+      "resposta": "1ª: liberdades individuais (direitos civis/políticos); 2ª: igualdade (direitos sociais, trabalhistas); 3ª: fraternidade (meio ambiente, consumidor).",
+      "dica": "DIMENSÕES: 1ª = LIBERDADE (Estado ABSENTEísta). 2ª = IGUALDADE (Estado PRESTACIONISTA). 3ª = FRATERNIDADE (difusos). CESPE: 'direitos de 1ª dimensão são positivos' -> FALSO (são negativos/abstenção).",
       "topico": "Aplicabilidade das normas constitucionais",
       "codigo_topico": "2"
     },
     {
       "id": "dir_const_8",
-      "pergunta": "Para que serve o habeas corpus?",
-      "resposta": "Proteger o direito de locomoção contra violência ou coação ilegal; qualquer pessoa pode impetrar em favor de outrem.",
-      "dica": "",
+      "pergunta": "Para que serve o habeas corpus e quais seus requisitos?",
+      "resposta": "Proteger o direito de locomoção contra ilegalidade ou abuso de poder. Pode ser preventivo (salvo-conduto) ou repressivo. Gratuito e dispensada capacidade postulatória (art. 5º, LXVIII e LXXVII CF/88).",
+      "dica": "CESPE ADORA: 'HC não exige advogado' -> VERDADEIRO. 'HC protege qualquer direito' -> FALSO (só locomoção). 'HC coletivo é admitido' -> STF admite (HC 143.641).",
       "topico": "Direitos e garantias fundamentais",
       "codigo_topico": "3"
     },
     {
       "id": "dir_const_9",
-      "pergunta": "Para que serve o mandado de segurança?",
-      "resposta": "Proteger direito líquido e certo não amparado por HC ou HD, praticado por autoridade pública.",
-      "dica": "",
+      "pergunta": "Para que serve o mandado de segurança (art. 5º, LXIX CF/88)?",
+      "resposta": "Proteger direito líquido e certo não amparado por HC ou HD, contra ato ilegal ou abuso de poder de autoridade pública.",
+      "dica": "MS é SUBSIDIÁRIO. Exige: (1) direito líquido e certo; (2) ilegalidade/abuso; (3) prazo decadencial de 120 dias (Lei 12.016/09). CESPE: 'cabe MS contra lei em tese' -> FALSO (Súmula 266 STF).",
       "topico": "Direitos e garantias fundamentais",
       "codigo_topico": "3"
     },
     {
       "id": "dir_const_10",
-      "pergunta": "Para que serve o mandado de injunção?",
-      "resposta": "Suprir omissão legislativa que inviabilize o exercício de direitos constitucionais; o STF pode suprir a lacuna.",
-      "dica": "",
+      "pergunta": "Para que serve o mandado de injunção (art. 5º, LXXI CF/88)?",
+      "resposta": "Garantir o exercício de direitos constitucionais quando faltar norma regulamentadora que inviabilize seu exercício.",
+      "dica": "MNEMÔNICO: MI = 'Me Incomoda' (falta de norma). STF adota tese CONCRETISTA (supre a omissão). CESPE: 'MI cabe para omissão TOTAL ou PARCIAL' -> SIM.",
       "topico": "Direitos e garantias fundamentais",
       "codigo_topico": "3"
     },
@@ -1069,40 +1069,40 @@
     {
       "id": "dir_const_13",
       "pergunta": "O que é o princípio da legalidade (art. 5º, II CF/88)?",
-      "resposta": "Ninguém será obrigado a fazer ou deixar de fazer alguma coisa senão em virtude de lei.",
-      "dica": "",
+      "resposta": "Ninguém é obrigado a fazer ou deixar de fazer algo senão em virtude de lei. Particular: pode tudo que a lei não proíbe. Administração: só pode o que a lei autoriza.",
+      "dica": "DUPLA FACE: (1) Legalidade PARTICULAR: autonomia da vontade; (2) Legalidade ADMINISTRATIVA: vinculação positiva. CESPE: 'O administrador pode fazer tudo que a lei não proíbe' -> FALSO.",
       "topico": "Direitos e garantias fundamentais",
       "codigo_topico": "3"
     },
     {
       "id": "dir_const_14",
-      "pergunta": "O que garante o art. 5º, XI da CF/88 (inviolabilidade do domicílio)?",
-      "resposta": "A casa é asilo inviolável; admite entrada por ordem judicial, flagrante delito, desastre ou para prestar socorro.",
-      "dica": "",
+      "pergunta": "O que garante o art. 5º, XI da CF/88 (inviolabilidade domiciliar)?",
+      "resposta": "A casa é asilo inviolável, ninguém nela podendo penetrar sem consentimento, salvo flagrante/desastre/socorro, ou durante o dia por determinação judicial.",
+      "dica": "REGRAS: (1) COM consentimento: sempre pode. (2) DE DIA: ordem judicial, flagrante, desastre, socorro. (3) DE NOITE: só flagrante, desastre, socorro (NUNCA só com mandado à noite). PEGADINHA CLÁSSICA.",
       "topico": "Direitos e garantias fundamentais",
       "codigo_topico": "3"
     },
     {
       "id": "dir_const_15",
       "pergunta": "O que é o sigilo das comunicações (art. 5º, XII CF/88)?",
-      "resposta": "Inviolabilidade das comunicações; interceptação telefônica só por ordem judicial, nas hipóteses legais.",
-      "dica": "",
+      "resposta": "É inviolável o sigilo da correspondência e comunicações, salvo, no último caso (telefone), por ordem judicial para investigação criminal ou instrução penal (Lei 9.296/96).",
+      "dica": "CESPE: (1) sigilo telefônico admite exceção; (2) sigilo de CORRESPONDÊNCIA não é absoluto (STF admite exceção em regime prisional); (3) interceptação NÃO é o mesmo que escuta ambiental.",
       "topico": "Direitos e garantias fundamentais",
       "codigo_topico": "3"
     },
     {
       "id": "dir_const_16",
-      "pergunta": "Quais são os princípios da Administração Pública (art. 37 CF/88)?",
-      "resposta": "LIMPE: Legalidade, Impessoalidade, Moralidade, Publicidade e Eficiência.",
-      "dica": "",
+      "pergunta": "Quais os princípios expressos da Administração Pública (art. 37 CF/88)?",
+      "resposta": "Legalidade, Impessoalidade, Moralidade, Publicidade e Eficiência (LIMPE). Eficiência incluído pela EC 19/98.",
+      "dica": "MNEMÔNICO: LIMPE. PEGADINHA: Razoabilidade e Proporcionalidade NÃO são expressos no art. 37 (são implícitos). CESPE: 'A razoabilidade está expressa no art. 37' -> FALSO.",
       "topico": "Disposições gerais, servidores públicos",
       "codigo_topico": "5.1"
     },
     {
       "id": "dir_const_17",
       "pergunta": "O que é o princípio da presunção de inocência (art. 5º, LVII CF/88)?",
-      "resposta": "Ninguém será considerado culpado até o trânsito em julgado de sentença penal condenatória.",
-      "dica": "",
+      "resposta": "Ninguém será considerado culpado até o trânsito em julgado. É cláusula pétrea e fundamenta o sistema acusatório.",
+      "dica": "ATUALIZAÇÃO: STF (ADC 43, 44, 54) decidiu que execução provisória da pena só é possível APÓS trânsito em julgado. CESPE 2024+: execução em 2ª instância viola presunção de inocência -> VERDADEIRO.",
       "topico": "Direitos e garantias fundamentais",
       "codigo_topico": "3"
     },
@@ -1125,8 +1125,8 @@
     {
       "id": "dir_const_20",
       "pergunta": "Como é composta a organização político-administrativa do Brasil?",
-      "resposta": "União, estados, Distrito Federal e municípios, todos autônomos nos termos da CF/88 (art. 18).",
-      "dica": "",
+      "resposta": "União, Estados, DF e Municípios, todos autônomos (art. 18 CF/88). Territórios Federais são autarquias da União, não entes federativos.",
+      "dica": "PEGADINHA: 'O Brasil é formado por União, Estados, DF, Municípios e Territórios' -> FALSO. Territórios NÃO são entes federativos (art. 18, §2º).",
       "topico": "Estado federal brasileiro, União, estados, Distrito Federal, municípios e territórios",
       "codigo_topico": "4.1"
     },
@@ -1140,25 +1140,25 @@
     },
     {
       "id": "dir_const_22",
-      "pergunta": "O que é o teto remuneratório no serviço público?",
-      "resposta": "Subsídio dos Ministros do STF (art. 37, XI CF/88); nenhum servidor pode receber acima desse valor.",
-      "dica": "",
+      "pergunta": "O que é o teto remuneratório no serviço público (art. 37, XI CF/88)?",
+      "resposta": "O subsídio dos Ministros do STF é o teto geral. Cada esfera tem seu subteto: Presidente, Governador, Prefeito.",
+      "dica": "EC 41/2003 e EC 47/2005. Teto único = STF. Subtetos estaduais = Governador. Exceção: carreira da AGU (teto de 90,25% do STF). CESPE: 'O subsídio do Governador é o teto estadual' -> VERDADEIRO.",
       "topico": "Disposições gerais, servidores públicos",
       "codigo_topico": "5.1"
     },
     {
       "id": "dir_const_23",
       "pergunta": "Quando o servidor público adquire estabilidade (art. 41 CF/88)?",
-      "resposta": "Após 3 anos de efetivo exercício, com avaliação especial de desempenho aprovada.",
-      "dica": "",
+      "resposta": "Após 3 anos de efetivo exercício + avaliação especial de desempenho. Perda do cargo só por: sentença judicial, PAD ou avaliação periódica (EC 19/98).",
+      "dica": "TRÊS FORMAS DE PERDA: (1) sentença transitada em julgado; (2) PAD; (3) avaliação insuficiente. CESPE: 'estável pode perder o cargo por excesso de despesa com pessoal' -> SIM (art. 169, §4º).",
       "topico": "Disposições gerais, servidores públicos",
       "codigo_topico": "5.1"
     },
     {
       "id": "dir_const_24",
       "pergunta": "O que é o Poder Legislativo federal e como é composto?",
-      "resposta": "Exercido pelo Congresso Nacional: Câmara dos Deputados e Senado Federal (sistema bicameral).",
-      "dica": "",
+      "resposta": "CongressO Nacional: Câmara dos Deputados (povo, proporcional) e Senado Federal (estados/DF, majoritário, 3 por ente).",
+      "dica": "Câmara = POVO (proporcional). Senado = ESTADOS (majoritário, 3 cada). Mandato de Senador: 8 anos (renovação alternada 1/3 e 2/3). Deputado: 4 anos. Máx. 513 deputados.",
       "topico": "Poder legislativo",
       "codigo_topico": "7"
     },
@@ -1173,8 +1173,8 @@
     {
       "id": "dir_const_26",
       "pergunta": "O que é o Ministério Público (art. 127 CF/88)?",
-      "resposta": "Instituição permanente, essencial à jurisdição, incumbida de defender a ordem jurídica, o regime democrático e os interesses sociais e individuais indisponíveis.",
-      "dica": "",
+      "resposta": "Instituição permanente, essencial à função jurisdicional, incumbindo-lhe a defesa da ordem jurídica, do regime democrático e dos interesses indisponíveis.",
+      "dica": "CESPE: 'O MP é parte do Poder Judiciário' -> FALSO. 'O MP está subordinado ao Executivo' -> FALSO. Princípios: unidade, indivisibilidade e independência funcional (art. 127, §1º).",
       "topico": "Ministério Público, Advocacia Pública",
       "codigo_topico": "9.1"
     },
@@ -1188,9 +1188,9 @@
     },
     {
       "id": "dir_const_28",
-      "pergunta": "O que é o controle difuso de constitucionalidade?",
-      "resposta": "Qualquer juiz ou tribunal pode declarar a inconstitucionalidade no caso concreto; efeitos inter partes.",
-      "dica": "",
+      "pergunta": "O que é controle difuso de constitucionalidade?",
+      "resposta": "Controle exercido por qualquer juiz no caso concreto (via incidente). Efeito inter partes. Senado pode suspender a lei (art. 52, X CF/88).",
+      "dica": "DIFUSO = DIVERSOS juízes; CONCENTRADO = um tribunal. CESPE: 'No controle difuso, efeito erga omnes' -> FALSO (inter partes). Exceção: RE com repercussão geral.",
       "topico": "Funções essenciais à justiça",
       "codigo_topico": "9"
     },
@@ -1204,9 +1204,9 @@
     },
     {
       "id": "dir_const_30",
-      "pergunta": "O que é ADI?",
-      "resposta": "Ação Direta de Inconstitucionalidade; combate lei ou ato normativo federal/estadual incompatível com a CF/88.",
-      "dica": "",
+      "pergunta": "O que é Ação Direta de Inconstitucionalidade (ADI)?",
+      "resposta": "Ação do controle concentrado julgada pelo STF para declarar inconstitucionalidade de lei/ato normativo federal ou estadual. Legitimados: art. 103 CF/88.",
+      "dica": "CESPE: 'ADI pode questionar lei municipal' -> FALSO (só federal/estadual). 'ADI contra lei anterior à CF/88' -> NÃO (pré-constitucional = RE). Legitimados: rol taxativo.",
       "topico": "Funções essenciais à justiça",
       "codigo_topico": "9"
     },
@@ -1237,8 +1237,8 @@
     {
       "id": "dir_const_34",
       "pergunta": "Quando cabe intervenção federal nos estados (art. 34 CF/88)?",
-      "resposta": "Para manter a integridade nacional, repelir invasão, pôr fim a grave comprometimento da ordem pública, entre outros casos taxativos.",
-      "dica": "",
+      "resposta": "Para: manter integridade nacional; repelir invasão; ordem; livre exercício dos Poderes; reorganizar finanças; prover execução de lei/ordem judicial.",
+      "dica": "MNEMÔNICO: I-N-OR-FI-LE-OR. Intervenção NÃO é automática — depende de provimento do STF (ADI interventiva). Intervenção nos Municípios: art. 35 CF/88.",
       "topico": "Estado federal brasileiro, União, estados, Distrito Federal, municípios e territórios",
       "codigo_topico": "4.1"
     },
@@ -1269,8 +1269,8 @@
     {
       "id": "dir_const_38",
       "pergunta": "O que é estado de defesa (art. 136 CF/88)?",
-      "resposta": "Medida excepcional para preservar a ordem pública em locais restritos; prazo máximo 30 dias, prorrogável por mais 30.",
-      "dica": "",
+      "resposta": "Medida decretada pelo Presidente para preservar ordem pública ameaçada por grave instabilidade ou calamidades. Prazo: 30 dias, prorrogável uma vez.",
+      "dica": "DEFESA (art. 136) < SÍTIO (art. 137). Defesa: mais leve, 30+30 dias, localizado. Sítio: mais grave, 30 dias prorrogável, nacional. Defesa não suspende direitos, só restringe.",
       "topico": "Da Defesa do Estado e das Instituições Democráticas",
       "codigo_topico": "9.3"
     },
@@ -1292,9 +1292,9 @@
     },
     {
       "id": "dir_const_41",
-      "pergunta": "A CF/88 admite pena de morte?",
-      "resposta": "Somente em caso de guerra declarada (art. 5º, XLVII, a CF/88).",
-      "dica": "",
+      "pergunta": "A CF/88 admite pena de morte no Brasil?",
+      "resposta": "Sim, em caso de guerra declarada (art. 5º, XLVII, 'a' CF/88). Fora disso, é vedada. CF também veda prisão perpétua, trabalhos forçados, banimento e penas cruéis.",
+      "dica": "PEGADINHA: 'CF proíbe pena de morte em qualquer hipótese' -> FALSO (admite em guerra declarada). 'CF não admite prisão perpétua' -> VERDADEIRO.",
       "topico": "Direitos e garantias fundamentais",
       "codigo_topico": "3"
     },
@@ -1309,8 +1309,8 @@
     {
       "id": "dir_const_43",
       "pergunta": "O que é imunidade parlamentar material (art. 53 CF/88)?",
-      "resposta": "Deputados e Senadores são invioláveis civil e penalmente por opiniões, palavras e votos no exercício do mandato.",
-      "dica": "",
+      "resposta": "Deputados e Senadores são invioláveis por suas opiniões, palavras e votos. Abrange crimes de opinião durante o mandato, mesmo fora do Parlamento.",
+      "dica": "STF (AP 937): foro privilegiado só para crimes DURANTE o mandato e RELACIONADOS ao cargo. Imunidade material: PERMANENTE (protege mesmo após o mandato). CESPE adora.",
       "topico": "Poder legislativo",
       "codigo_topico": "7"
     },
@@ -1332,17 +1332,17 @@
     },
     {
       "id": "dir_const_46",
-      "pergunta": "Qual a função da Polícia Civil segundo art. 144, §4º CF/88?",
-      "resposta": "Polícia judiciária e apuração de infrações penais, exceto militares; dirigidas por Delegados de carreira.",
-      "dica": "",
+      "pergunta": "Qual a função da Polícia Civil segundo o art. 144, §4º CF/88?",
+      "resposta": "Exercer a polícia judiciária e apurar infrações penais, exceto as militares. Dirigida por delegado de polícia de carreira.",
+      "dica": "DUAS FUNÇÕES: (1) POLÍCIA JUDICIÁRIA; (2) APURAÇÃO. EXCEÇÃO: crimes militares (PM). Direção: Delegado de CARREIRA (art. 144, §6º). CESPE: 'A PC julga crimes' -> FALSO.",
       "topico": "Segurança Pública na Constituição do Estado de Pernambuco",
       "codigo_topico": "9.4"
     },
     {
       "id": "dir_const_47",
       "pergunta": "Quais são os órgãos de segurança pública (art. 144 CF/88)?",
-      "resposta": "PF, PRF, Polícia Ferroviária Federal, Polícias Civis, Polícias Militares e Corpos de Bombeiros Militares.",
-      "dica": "",
+      "resposta": "PF, PRF, PFF, Polícias Civis, PMs e CBMs, Polícias Penais (EC 104/2019).",
+      "dica": "EC 104/2019 incluiu Polícias Penais. Guardas Municipais NÃO são órgãos de SP no caput (estão no §8º). CESPE: 'Guardas Municipais integram o art. 144' -> FALSO.",
       "topico": "Segurança Pública na Constituição do Estado de Pernambuco",
       "codigo_topico": "9.4"
     },
@@ -1404,9 +1404,9 @@
     },
     {
       "id": "dir_const_55",
-      "pergunta": "O que é a EC 45/2004 (Reforma do Judiciário)?",
-      "resposta": "Criou o CNJ, súmula vinculante, repercussão geral no RE e outras mudanças na estrutura judiciária.",
-      "dica": "",
+      "pergunta": "O que foi a EC 45/2004 (Reforma do Judiciário)?",
+      "resposta": "Criou CNJ e CNMP, instituiu súmula vinculante, repercussão geral e federalização de graves violações de direitos humanos.",
+      "dica": "Inovações: CNJ (art. 103-B), CNMP (art. 130-A), SV (art. 103-A), RG (art. 102, §3º), Federalização (art. 109, §5º). CESPE: 'EC 45 criou CNJ como órgão do Judiciário' -> VERDADEIRO.",
       "topico": "Poder judiciário",
       "codigo_topico": "8"
     },
@@ -1444,9 +1444,9 @@
     },
     {
       "id": "dir_const_60",
-      "pergunta": "Quais são as atribuições privativas do Presidente (art. 84 CF/88)?",
-      "resposta": "Nomear ministros, sancionar/vetar leis, decretar estado de sítio/defesa, comando das Forças Armadas, entre outras.",
-      "dica": "",
+      "pergunta": "Quais as atribuições privativas do Presidente (art. 84 CF/88)?",
+      "resposta": "Nomear Ministros; sancionar/vetar leis; decretar estado de defesa/sítio; nomear Ministros do STF; comando das FA; relações exteriores; conceder indulto.",
+      "dica": "CESPE: 'Presidente pode delegar nomeação de Ministros' -> NÃO (indelegável). Competências delegáveis: administração pública. Indulto é PRESIDENCIAL.",
       "topico": "Poder executivo",
       "codigo_topico": "6"
     },
@@ -1485,8 +1485,8 @@
     {
       "id": "dir_const_65",
       "pergunta": "O que é o direito de greve do servidor público (art. 37, VII CF/88)?",
-      "resposta": "Servidor tem direito de greve nos termos de lei específica; o STF aplica a lei de greve dos trabalhadores privados por analogia.",
-      "dica": "",
+      "resposta": "Direito exercido nos termos de lei específica. STF aplica Lei 7.783/89 (MI 708). Atividades essenciais exigem manutenção de efetivo.",
+      "dica": "STF (MI 708): servidores podem fazer greve (Lei 7.783/89). Militar: VEDAÇÃO ABSOLUTA (art. 142, §3º, IV). CESPE: 'servidor público tem greve irrestrita' -> FALSO.",
       "topico": "Disposições gerais, servidores públicos",
       "codigo_topico": "5.1"
     },
@@ -1532,9 +1532,9 @@
     },
     {
       "id": "dir_const_71",
-      "pergunta": "O que é a eficácia horizontal dos direitos fundamentais?",
-      "resposta": "Os direitos fundamentais também vinculam as relações entre particulares, não apenas Estado-cidadão.",
-      "dica": "",
+      "pergunta": "O que é eficácia horizontal dos direitos fundamentais?",
+      "resposta": "Aplicação dos direitos fundamentais também nas relações entre particulares. STF adota eficácia direta/ imediata (RE 158.215, RE 201.819).",
+      "dica": "TRÊS TEORIAS: (1) State Action (EUA); (2) Eficácia Indireta (Alemanha); (3) Eficácia Direta (Brasil-STF). Ex: exclusão de associado sem defesa.",
       "topico": "Direitos e garantias fundamentais",
       "codigo_topico": "3"
     },
@@ -1613,8 +1613,8 @@
     {
       "id": "dir_const_81",
       "pergunta": "O que é a repercussão geral no Recurso Extraordinário?",
-      "resposta": "Requisito de admissibilidade do RE no STF: a questão constitucional deve ter relevância e transcendência que ultrapassem o interesse das partes.",
-      "dica": "",
+      "resposta": "Requisito de admissibilidade do RE criado pela EC 45/2004. Exige relevância econômica, política, social ou jurídica que ultrapasse interesses subjetivos.",
+      "dica": "Decisão do STF tem efeito VINCULANTE (art. 1.036 CPC). Ausência de RG é irrecorrível. CESPE: 'Todo RE deve demonstrar a repercussão geral' -> VERDADEIRO.",
       "topico": "Poder judiciário",
       "codigo_topico": "8"
     },
@@ -1653,8 +1653,8 @@
     {
       "id": "dir_const_86",
       "pergunta": "O que é o sistema acusatório constitucional?",
-      "resposta": "Modelo processual em que se separam as funções de acusar (MP), defender (advogado/DP) e julgar (juiz imparcial).",
-      "dica": "",
+      "resposta": "Funções de acusar, defender e julgar atribuídas a órgãos distintos. Lei 13.964/19 positivou no art. 3º-A CPP.",
+      "dica": "Art. 3º-A CPP: 'vedadas a iniciativa do juiz na fase de investigação e a substituição probatória da acusação'. CESPE: 'juiz pode decretar prova de ofício' -> SIM, excepcionalmente (art. 156 CPP).",
       "topico": "Direitos e garantias fundamentais",
       "codigo_topico": "3"
     },
@@ -1677,8 +1677,8 @@
     {
       "id": "dir_const_89",
       "pergunta": "Qual a competência da União para legislar sobre direito penal (art. 22, I CF/88)?",
-      "resposta": "Privativa da União; os estados não podem criar tipos penais nem alterar penas previstas no Código Penal.",
-      "dica": "",
+      "resposta": "Compete PRIVATIVAMENTE à União legislar sobre direito penal e processual. Estados podem legislar se autorizados por LC (art. 22, parágrafo único).",
+      "dica": "PRIVATIVA != EXCLUSIVA: Privativa permite delegação por LC. Exclusiva (art. 21) não admite. DP = privativo da União (art. 22, I). CESPE: 'Estados podem legislar sobre DP' -> SIM, se autorizados por LC.",
       "topico": "Estado federal brasileiro, União, estados, Distrito Federal, municípios e territórios",
       "codigo_topico": "4.1"
     },
@@ -2702,9 +2702,9 @@
   "dir_adm": [
     {
       "id": "dir_adm_0",
-      "pergunta": "O que é Administração Pública em sentido subjetivo?",
-      "resposta": "Conjunto de órgãos, entidades e agentes incumbidos de exercer a atividade administrativa do Estado.",
-      "dica": "",
+      "pergunta": "O que é Administração Pública em sentido subjetivo (formal/orgânico)?",
+      "resposta": "Conjunto de órgãos e pessoas jurídicas que exercem a função administrativa do Estado. Corresponde a QUEM presta o serviço.",
+      "dica": "SENTIDO SUBJETIVO = QUEM (sujeitos). SENTIDO OBJETIVO = O QUÊ (atividades). CESPE inverte. Mnemônico: SUBjetivo = SUjeito; OBJETIVO = atiVIDADE.",
       "topico": "Estado, governo e administração pública",
       "codigo_topico": "1"
     },
@@ -2718,9 +2718,9 @@
     },
     {
       "id": "dir_adm_2",
-      "pergunta": "Quais são os elementos do ato administrativo?",
-      "resposta": "Competência, finalidade, forma, motivo e objeto.",
-      "dica": "Mnemônico: CO-FI-FO-M-OB (Competência, Finalidade, Forma, Motivo, Objeto). Requisitos vinculados: Competência, Finalidade e Forma. Elementos que admitem discricionariedade (mérito administrativo): Motivo e Objeto.",
+      "pergunta": "Quais são os elementos/requisitos do ato administrativo?",
+      "resposta": "Competência, Finalidade, Forma, Motivo e Objeto (C-F-F-M-O). A Lei 9.784/99 (art. 2º) os chama de requisitos.",
+      "dica": "CESPE cobra os 5 ELEMENTOS. Mnemônico: COM-FIM-FOR-MOT-OBJ.",
       "topico": "Ato administrativo",
       "codigo_topico": "3"
     },
@@ -2759,16 +2759,16 @@
     {
       "id": "dir_adm_7",
       "pergunta": "O que é a Teoria dos Motivos Determinantes?",
-      "resposta": "Os motivos declarados vinculam a validade do ato; se falsos ou inexistentes, o ato é nulo.",
-      "dica": "",
+      "resposta": "A validade do ato vincula-se aos motivos indicados. Se o motivo for falso, o ato é nulo.",
+      "dica": "Mesmo atos DISCRICIONÁRIOS, se motivados, têm validade vinculada à veracidade do motivo. Ex: demissão 'por conveniência' mas na verdade perseguição = nulo (desvio de finalidade).",
       "topico": "Ato administrativo",
       "codigo_topico": "3"
     },
     {
       "id": "dir_adm_8",
       "pergunta": "Quais são os atributos do ato administrativo?",
-      "resposta": "Presunção de legitimidade/veracidade, imperatividade, autoexecutoriedade e tipicidade.",
-      "dica": "",
+      "resposta": "Presunção de legitimidade/veracidade, Imperatividade, Autoexecutoriedade e Tipicidade (P-I-A-T).",
+      "dica": "MNEMÔNICO: P-I-A-T. CESPE: 'autoexecutoriedade está em todos os atos' -> FALSO (só nos que a lei autoriza).",
       "topico": "Ato administrativo",
       "codigo_topico": "3"
     },
@@ -2822,9 +2822,9 @@
     },
     {
       "id": "dir_adm_15",
-      "pergunta": "O que é o poder de polícia?",
-      "resposta": "Poder de restringir e condicionar direitos individuais em prol do interesse coletivo (ordem pública, saúde, segurança).",
-      "dica": "",
+      "pergunta": "O que é poder de polícia?",
+      "resposta": "Atividade estatal que condiciona o exercício de direitos ao bem-estar público, limitando atividades privadas (art. 78 CTN).",
+      "dica": "ATRIBUTOS: Discricionariedade, Autoexecutoriedade, Coercibilidade. STF (RE 550.769): poder de polícia NÃO pode ser delegado a particulares para fiscalização.",
       "topico": "Hierárquico, disciplinar, regulamentar e de polícia",
       "codigo_topico": "4.1"
     },
@@ -2839,8 +2839,8 @@
     {
       "id": "dir_adm_17",
       "pergunta": "O poder de polícia pode ser delegado a particulares?",
-      "resposta": "Parcialmente; o STF admite delegação de atos de consentimento e fiscalização, mas não os de sanção.",
-      "dica": "",
+      "resposta": "Em regra, NÃO. Atos de fiscalização e repressão são indelegáveis. STF admite delegação de atos materiais/preparatórios.",
+      "dica": "RE 550.769 RG. Fiscalização = indelegável. Atos materiais (vistoria, medição) = delegáveis. CESPE adora essa distinção.",
       "topico": "Ato administrativo",
       "codigo_topico": "3"
     },
@@ -2863,8 +2863,8 @@
     {
       "id": "dir_adm_20",
       "pergunta": "O que é o regime jurídico-administrativo?",
-      "resposta": "Conjunto de princípios e regras que conferem à Administração prerrogativas e sujeições não extensivas aos particulares.",
-      "dica": "",
+      "resposta": "Conjunto de prerrogativas (supremacia do interesse público) e sujeições (indisponibilidade do interesse público).",
+      "dica": "DUAS FACES: PRERROGATIVAS = supremacia; SUJEIÇÕES = indisponibilidade. CESPE: 'O regime adm é só privilégios' -> FALSO (há sujeições).",
       "topico": "Conceito",
       "codigo_topico": "5.1"
     },
@@ -2879,8 +2879,8 @@
     {
       "id": "dir_adm_22",
       "pergunta": "O que é responsabilidade civil objetiva do Estado (art. 37, §6º CF/88)?",
-      "resposta": "O Estado responde por danos causados por seus agentes independentemente de culpa; basta nexo causal entre a conduta e o dano.",
-      "dica": "",
+      "resposta": "Estado responde objetivamente por danos causados por seus agentes. Exige: conduta, dano e nexo causal. Regresso contra agente em caso de dolo/culpa.",
+      "dica": "TEORIA DO RISCO ADMINISTRATIVO. Excludentes: caso fortuito, culpa exclusiva da vítima. OMISSÃO: responsabilidade SUBJETIVA (STF RE 841.526). CESPE adora.",
       "topico": "Responsabilidade civil do Estado",
       "codigo_topico": "6"
     },
@@ -2935,8 +2935,8 @@
     {
       "id": "dir_adm_29",
       "pergunta": "O que é descentralização administrativa?",
-      "resposta": "Transferência de atividades para outra pessoa jurídica (autarquias, EP, SEM, concessionárias, etc.).",
-      "dica": "",
+      "resposta": "Transferência da execução de serviço público a outra pessoa jurídica. Pode ser: territorial, por serviços, por colaboração.",
+      "dica": "DESCENTRALIZAÇÃO != DESCONCENTRAÇÃO. Descentralização: cria NOVA pessoa. Desconcentração: distribui competências dentro da mesma pessoa (órgãos). CESPE: 'autarquia é desconcentração' -> FALSO.",
       "topico": "Centralização, descentralização, concentração e desconcentração",
       "codigo_topico": "8.1"
     },
@@ -2959,8 +2959,8 @@
     {
       "id": "dir_adm_32",
       "pergunta": "Quais são os princípios dos serviços públicos?",
-      "resposta": "Continuidade, universalidade, eficiência, segurança, atualidade, cortesia, modicidade tarifária e regularidade.",
-      "dica": "",
+      "resposta": "Continuidade, generalidade, modicidade, atualidade, eficiência, cortesia e regularidade (art. 6º Lei 8.987/95).",
+      "dica": "MNEMÔNICO: C-G-M-A-E-C-R. CESPE: 'continuidade é absoluta' -> NÃO (exceções: greve, inadimplemento, manutenção).",
       "topico": "Serviços públicos",
       "codigo_topico": "7"
     },
@@ -2999,24 +2999,24 @@
     {
       "id": "dir_adm_37",
       "pergunta": "O que é improbidade administrativa (Lei 8.429/92)?",
-      "resposta": "Ato que cause enriquecimento ilícito, dano ao erário ou atente contra os princípios da Administração. Após Lei 14.230/21, exige dolo.",
-      "dica": "",
+      "resposta": "Ato ilegal e imoral de agente público contra a Administração. Após Lei 14.230/21, só admite dolo (não mais culpa).",
+      "dica": "MUDANÇA Lei 14.230/21: (1) exige DOLO; (2) tipificação fechada; (3) prescrição 8 anos; (4) ANPC. CESPE 2024+ cobra a NOVA lei.",
       "topico": "Improbidade administrativa",
       "codigo_topico": "9.4"
     },
     {
       "id": "dir_adm_38",
       "pergunta": "O que é processo administrativo (Lei 9.784/99)?",
-      "resposta": "Série de atos encadeados que resultam em decisão administrativa, com garantia de contraditório e ampla defesa.",
-      "dica": "",
+      "resposta": "Conjunto de atos para formação de decisão administrativa. Lei 9.784/99 regula no âmbito federal, aplicável subsidiariamente.",
+      "dica": "PRINCÍPIOS (art. 2º): legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório. CESPE: '9.784/99 aplica-se a todos os processos' -> FALSO (só federal).",
       "topico": "Processo administrativo",
       "codigo_topico": "10"
     },
     {
       "id": "dir_adm_39",
-      "pergunta": "Quais são as modalidades de licitação da Lei 14.133/21?",
-      "resposta": "Pregão, concorrência, concurso, leilão e diálogo competitivo.",
-      "dica": "",
+      "pergunta": "Quais as modalidades de licitação da Lei 14.133/21?",
+      "resposta": "Pregão, concorrência, concurso, leilão e diálogo competitivo. Extinguiu tomada de preços, convite e RDC.",
+      "dica": "NLL (14.133/21): P-C-C-L-D. RDC (Lei 12.462/11) FOI REVOGADO. Tomada de Preços e Convite NÃO EXISTEM MAIS. CESPE cobra evolução legislativa.",
       "topico": "Licitações e contratos administrativos",
       "codigo_topico": "11"
     },
@@ -3031,8 +3031,8 @@
     {
       "id": "dir_adm_41",
       "pergunta": "O que é dispensa de licitação?",
-      "resposta": "Hipótese legal em que a Administração pode contratar sem licitação embora ela fosse cabível (art. 75, Lei 14.133/21).",
-      "dica": "",
+      "resposta": "Licitação é legalmente possível, mas a lei DISPENSA (rol taxativo art. 75 Lei 14.133/21). Ex: pequeno valor, emergência.",
+      "dica": "DISPENSA (art. 75) != INEXIGIBILIDADE (art. 74). Dispensa: licitação possível mas dispensada. Inexigibilidade: licitação inviável. CESPE: 'pequeno valor é inexigível' -> FALSO.",
       "topico": "Licitações e contratos administrativos",
       "codigo_topico": "11"
     },
@@ -3047,8 +3047,8 @@
     {
       "id": "dir_adm_43",
       "pergunta": "O que é agente público?",
-      "resposta": "Toda pessoa física que exerce, ainda que transitória ou gratuitamente, função pública por qualquer forma de investidura.",
-      "dica": "",
+      "resposta": "Toda pessoa física que exerce função pública, remunerada ou gratuita, temporária ou definitiva.",
+      "dica": "CLASSIFICAÇÃO: (1) Políticos; (2) Servidores estatutários; (3) Empregados celetistas; (4) Temporários (art. 37, IX); (5) Honoríficos; (6) Delegados.",
       "topico": "Agente público",
       "codigo_topico": "12"
     },
@@ -3063,8 +3063,8 @@
     {
       "id": "dir_adm_45",
       "pergunta": "O que diferencia anulação de revogação do ato administrativo?",
-      "resposta": "Anulação: desfazimento por ilegalidade, efeitos ex tunc (retroage). Revogação: por conveniência/oportunidade, efeitos ex nunc.",
-      "dica": "",
+      "resposta": "Anulação: ato ilegal, ex tunc, Adm ou Judiciário. Revogação: ato inconveniente, ex nunc, só Adm. Súmula 473 STF.",
+      "dica": "ANULAÇÃO = ilegal -> Adm/Judiciário -> ex tunc. REVOGAÇÃO = inconveniente -> só Adm -> ex nunc. NÃO se revoga ato vinculado. Decadência 5 anos (art. 54 Lei 9.784/99).",
       "topico": "Ato administrativo",
       "codigo_topico": "3"
     },
@@ -3075,14 +3075,6 @@
       "dica": "",
       "topico": "Ato administrativo",
       "codigo_topico": "3"
-    },
-    {
-      "id": "dir_adm_47",
-      "pergunta": "O que é o princípio da razoabilidade na Administração?",
-      "resposta": "Exige que as decisões sejam racionais, coerentes e proporcionais, sem excessos ou arbitrariedades.",
-      "dica": "",
-      "topico": "Princípios expressos e implícitos da administração pública",
-      "codigo_topico": "5.2"
     },
     {
       "id": "dir_adm_48",
@@ -3127,8 +3119,8 @@
     {
       "id": "dir_adm_54",
       "pergunta": "O que é delegação de competência?",
-      "resposta": "Transferência do exercício de competências para autoridade de igual ou inferior hierarquia por conveniência administrativa.",
-      "dica": "",
+      "resposta": "Transferência da execução de competência a outro órgão/agente, mantendo-se a titularidade. Revogável a qualquer tempo.",
+      "dica": "DELEGAÇÃO != AVOCAÇÃO. Delegação: transfere EXECUÇÃO. Avocação: chama para si. NÃO se delega competência exclusiva (Lei 9.784/99, arts. 12-15).",
       "topico": "Ato administrativo",
       "codigo_topico": "3"
     },
@@ -3143,8 +3135,8 @@
     {
       "id": "dir_adm_56",
       "pergunta": "O que são cláusulas exorbitantes nos contratos administrativos?",
-      "resposta": "Prerrogativas da Administração: alteração/rescisão unilateral, fiscalização, aplicação de penalidades e ocupação provisória.",
-      "dica": "",
+      "resposta": "Prerrogativas especiais da Administração: alteração unilateral, fiscalização, ocupação temporária, rescisão unilateral, sanções.",
+      "dica": "PRERROGATIVAS: (1) alteração unilateral (25% +); (2) rescisão unilateral; (3) fiscalização; (4) ocupação; (5) sanções. CESPE: 'podem ser livremente pactuadas' -> NÃO (decorrem de lei).",
       "topico": "Licitações e contratos administrativos",
       "codigo_topico": "11"
     },
@@ -3191,8 +3183,8 @@
     {
       "id": "dir_adm_62",
       "pergunta": "O que é o controle externo pelo Legislativo?",
-      "resposta": "Controle político-financeiro pelo Congresso com auxílio do TCU; inclui CPI, aprovação de contas e fiscalização do Executivo.",
-      "dica": "",
+      "resposta": "Controle do Legislativo sobre a Administração com auxílio do TCU. Abrange controle financeiro, orçamentário e patrimonial (art. 70 CF/88).",
+      "dica": "Controle EXTERNO: Legislativo controla Executivo. TCU auxilia o Congresso (art. 71). CPI tem poder de investigação (art. 58, §3º). CESPE: 'TCU é órgão do Judiciário' -> FALSO.",
       "topico": "Controle legislativo",
       "codigo_topico": "9.3"
     },
@@ -3207,8 +3199,8 @@
     {
       "id": "dir_adm_64",
       "pergunta": "O que é o princípio da legalidade para a Administração Pública?",
-      "resposta": "A Administração só pode fazer o que a lei autoriza ou determina (vinculação positiva à lei).",
-      "dica": "",
+      "resposta": "Administração só pode fazer o que a lei autoriza (vinculação positiva). Diferente do particular (pode tudo que não é proibido).",
+      "dica": "DUPLA DIMENSÃO: Legalidade ADMINISTRATIVA (subordinação) vs Legalidade GERAL (autonomia). CESPE inverte: 'adm pode fazer tudo que a lei não proíbe' -> FALSO.",
       "topico": "Princípios expressos e implícitos da administração pública",
       "codigo_topico": "5.2"
     },
@@ -3231,8 +3223,8 @@
     {
       "id": "dir_adm_67",
       "pergunta": "O que são bens públicos de uso comum do povo?",
-      "resposta": "Ruas, praças, rios, mares; de acesso livre a todos; inalienáveis enquanto afetados ao uso público.",
-      "dica": "",
+      "resposta": "Bens destinados ao uso coletivo (ruas, praças, mares). Não podem ser alienados mantendo essa destinação. Art. 99, I CC.",
+      "dica": "CLASSIFICAÇÃO: (1) USO COMUM; (2) USO ESPECIAL; (3) DOMINICAIS. Bens públicos são IMPENHORÁVEIS e NÃO usucapíveis (art. 183, §3º CF).",
       "topico": "Serviços públicos",
       "codigo_topico": "7"
     },
@@ -3262,9 +3254,9 @@
     },
     {
       "id": "dir_adm_73",
-      "pergunta": "O que é o nepotismo e sua vedação no serviço público?",
-      "resposta": "Nomeação de parentes para cargos públicos, vedada pela Súmula Vinculante 13 do STF.",
-      "dica": "",
+      "pergunta": "O que é nepotismo e qual sua vedação no serviço público?",
+      "resposta": "Nomeação de parentes para cargos públicos. Vedado pela Súmula Vinculante 13: parentes até 3º grau para cargo em comissão.",
+      "dica": "SV 13: parentes ATÉ 3º GRAU (cônjuge, pais, filhos, irmãos, tios, sobrinhos). NÃO atinge cargos POLÍTICOS (STF RE 823.416). CESPE adora essa exceção.",
       "topico": "Princípios expressos e implícitos da administração pública",
       "codigo_topico": "5.2"
     },
@@ -3287,8 +3279,8 @@
     {
       "id": "dir_adm_76",
       "pergunta": "O que é ato administrativo complexo?",
-      "resposta": "Formado pela manifestação de dois ou mais órgãos distintos que se fundem para constituir um único ato (ex: aposentadoria com registro no TCU).",
-      "dica": "",
+      "resposta": "Ato que resulta da manifestação de vontade de dois ou mais órgãos para sua formação. Ex: nomeação de Ministro (Presidente + Senado).",
+      "dica": "COMPLEXO != COMPOSTO. Complexo: duas vontades para FORMAR o ato. Composto: ato principal + outro que o HOMOLOGA. CESPE: 'complexo depende de uma vontade' -> FALSO.",
       "topico": "Ato administrativo",
       "codigo_topico": "3"
     },
@@ -3350,9 +3342,9 @@
     },
     {
       "id": "dir_adm_84",
-      "pergunta": "O que é o resultado do controle difuso de constitucionalidade pelo STF?",
-      "resposta": "Quando o STF declara inconstitucionalidade em controle difuso e o Senado suspende a lei (art. 52, X CF/88), os efeitos se tornam erga omnes.",
-      "dica": "",
+      "pergunta": "O que é o controle difuso de constitucionalidade pelo STF?",
+      "resposta": "Declaração de inconstitucionalidade com efeito inter partes e ex tunc. Pode alcançar erga omnes com RG e SV.",
+      "dica": "MECANISMOS DE AMPLIAÇÃO: (1) RG; (2) SV; (3) Resolução do Senado (art. 52, X). CESPE: 'difuso sempre tem efeito erga omnes' -> FALSO (regra inter partes).",
       "topico": "Controle judicial",
       "codigo_topico": "9.2"
     },
@@ -3367,8 +3359,8 @@
     {
       "id": "dir_adm_86",
       "pergunta": "O que são agências reguladoras?",
-      "resposta": "Autarquias de regime especial com independência decisória, mandato fixo de diretores e poder normativo setorial. Ex: ANATEL, ANVISA, ANEEL.",
-      "dica": "",
+      "resposta": "Autarquias de regime especial para regular/fiscalizar serviços públicos. Ex: ANATEL, ANP, ANVISA. Mandato fixo de dirigentes.",
+      "dica": "Natureza: autarquias de regime ESPECIAL. Dirigentes: mandato FIXO. CESPE: 'agências reguladoras são direito privado' -> FALSO (autarquias = direito público).",
       "topico": "Administração direta e indireta",
       "codigo_topico": "8.2"
     },
@@ -3398,9 +3390,9 @@
     },
     {
       "id": "dir_adm_90",
-      "pergunta": "O que é o Regime Diferenciado de Contratações (RDC)?",
-      "resposta": "Modalidade especial de licitação para obras e serviços de engenharia em situações específicas; incorporado à Lei 14.133/21.",
-      "dica": "",
+      "pergunta": "O que era o Regime Diferenciado de Contratações (RDC)?",
+      "resposta": "Regime da Lei 12.462/11 para Copa/Olimpíadas. FOI REVOGADO pela Lei 14.133/21 (NLL).",
+      "dica": "RDC FOI REVOGADO pela NLL (art. 193). Inovações (inversão de fases, contratação integrada) incorporadas pela NLL. CESPE 2024+: 'RDC é aplicável' -> FALSO.",
       "topico": "Licitações e contratos administrativos",
       "codigo_topico": "11"
     },
@@ -3430,9 +3422,9 @@
     },
     {
       "id": "dir_adm_94",
-      "pergunta": "V/F: A responsabilidade civil do Estado é objetiva, exigindo apenas o nexo causal entre ação estatal e dano.",
-      "resposta": "Certo. Art. 37, §6º da CF/88 prevê responsabilidade objetiva do Estado por atos de seus agentes, bastando o nexo causal.",
-      "dica": "Lei/CF vigente — enfoque no nexo causal e na indenização ao particular.",
+      "pergunta": "O que são empresas públicas e sociedades de economia mista?",
+      "resposta": "Empresa pública: capital 100% público, qualquer forma jurídica. SEM: capital misto (público majoritário), sempre S/A.",
+      "dica": "Diferenças: EP = capital 100% público, forma livre. SEM = capital misto, S/A. Falência: EP e SEM NÃO estão sujeitas à falência (Lei 14.133/21). CESPE adora.",
       "topico": "Responsabilidade civil do Estado",
       "codigo_topico": "6"
     },
@@ -3613,14 +3605,6 @@
       "codigo_topico": "12.1"
     },
     {
-      "id": "dir_adm_96",
-      "pergunta": "Qual o objeto da Lei 8.429/1992?",
-      "resposta": "Tipificar atos de improbidade administrativa cometidos por agentes públicos, com sanções como perda da função, ressarcimento ao erário, suspensão de direitos políticos e multa civil.",
-      "dica": "",
-      "topico": "Legislação pertinente",
-      "codigo_topico": "12.1"
-    },
-    {
       "id": "dir_adm_97",
       "pergunta": "A Lei 8.112/1990 e a Lei 8.429/1992 aplicam-se diretamente aos servidores estaduais de PE?",
       "resposta": "A Lei 8.112/1990 aplica-se apenas ao regime federal (União). A Lei 8.429/1992 é norma nacional e aplica-se a todos os agentes públicos, inclusive estaduais. Os policiais civis de PE regem-se pela Lei 6.425/1972, Lei 6.123/1968 e LC 317/2015.",
@@ -3630,9 +3614,9 @@
     },
     {
       "id": "dir_adm_98",
-      "pergunta": "Quais os princípios constitucionais da Administração Pública? (Art. 37, caput, CF/88)",
-      "resposta": "Legalidade, impessoalidade, moralidade, publicidade e eficiência (mnemônico LIMPE).",
-      "dica": "",
+      "pergunta": "O que são os Tribunais de Contas e sua função?",
+      "resposta": "Órgãos de controle externo que auxiliam o Legislativo. Julgam contas dos administradores e aplicam sanções (art. 71 CF/88).",
+      "dica": "TCU (federal) e TCs (estaduais/municipais). FUNÇÕES: (1) julgar contas; (2) fiscalizar; (3) aplicar sanções; (4) sustar atos. CESPE: 'TCU julga contas dos administradores' -> SIM (art. 71, II).",
       "topico": "Disposições constitucionais aplicáveis",
       "codigo_topico": "12.1.1"
     },
@@ -6650,17 +6634,17 @@
   "dir_proc_penal": [
     {
       "id": "dir_proc_penal_0",
-      "pergunta": "O que é o inquérito policial (IP)?",
-      "resposta": "Procedimento administrativo, presidido pelo Delegado de Polícia, para apurar infrações penais e sua autoria (art. 4º CPP).",
-      "dica": "",
+      "pergunta": "O que é o inquérito policial (IP) e quais suas características?",
+      "resposta": "Procedimento administrativo preparatório, presidido pelo Delegado, para apurar infrações penais. Características: inquisitivo, sigiloso, escrito, indisponível, oficioso.",
+      "dica": "CARACTERÍSTICAS: (1) INQUISITIVO (sem contraditório pleno); (2) SIGILOSO (art. 20 CPP, mas advogado tem acesso - SV 14); (3) ESCRITO; (4) INDISPONÍVEL (art. 17 CPP); (5) OFICIOSO. CESPE: 'IP tem contraditório' -> FALSO.",
       "topico": "Inquérito policial",
       "codigo_topico": "2"
     },
     {
       "id": "dir_proc_penal_1",
-      "pergunta": "O inquérito policial tem contraditório?",
-      "resposta": "Não; o IP é inquisitório e sigiloso, sem garantia de contraditório para o investigado nessa fase.",
-      "dica": "O inquérito policial é um procedimento inquisitório, logo não há contraditório ou ampla defesa amplos. Lembre-se da Súmula Vinculante 14 do STF: o defensor tem direito de acesso apenas aos elementos de prova JÁ DOCUMENTADOS que digam respeito ao exercício do direito de defesa.",
+      "pergunta": "O inquérito policial é obrigatório para o ajuizamento da ação penal?",
+      "resposta": "Não. O IP é dispensável. MP pode denunciar com base em outras peças de informação (art. 12, 39 §5º CPP).",
+      "dica": "CESPE: 'IP é indispensável para ação penal pública' -> FALSO (art. 12 CPP). Arquivamento do IP não prejudica ação penal se MP já denunciou.",
       "topico": "Inquérito policial",
       "codigo_topico": "2"
     },
@@ -6674,25 +6658,25 @@
     },
     {
       "id": "dir_proc_penal_3",
-      "pergunta": "Qual o prazo do IP para preso e solto?",
-      "resposta": "Preso: 10 dias; Solto: 30 dias (prorrogável). Prazos variam conforme legislação especial.",
-      "dica": "",
+      "pergunta": "Qual o prazo do inquérito policial para indiciado preso e solto?",
+      "resposta": "Preso: 10 dias (prorrogável +10). Solto: 30 dias (prorrogável).",
+      "dica": "PRAZOS: PRESO: 10+10 dias. SOLTO: 30 dias sem limite de prorrogação. Descumprimento = constrangimento ilegal se preso (HC). Súmula 21 STJ: solto, excesso não gera constrangimento.",
       "topico": "Inquérito policial",
       "codigo_topico": "2"
     },
     {
       "id": "dir_proc_penal_4",
-      "pergunta": "O que é o exame de corpo de delito?",
-      "resposta": "Exame pericial obrigatório em crimes que deixam vestígios; a confissão do réu não o substitui (art. 158 CPP).",
-      "dica": "",
+      "pergunta": "O que é o exame de corpo de delito (art. 158-162 CPP)?",
+      "resposta": "Prova pericial obrigatória quando a infração deixa vestígios. Confissão não supre o exame (art. 158 CPP).",
+      "dica": "Se há vestígios, exame é OBRIGATÓRIO. Confissão não substitui. Se vestígios desapareceram = exame INDIRETO (art. 167). CESPE: 'lesão corporal leve dispensa exame' -> FALSO.",
       "topico": "Prova",
       "codigo_topico": "3"
     },
     {
       "id": "dir_proc_penal_5",
-      "pergunta": "O que é o interrogatório do acusado?",
-      "resposta": "Ato processual em que o acusado é ouvido pelo juiz; o réu tem direito ao silêncio sem que isso seja interpretado como confissão.",
-      "dica": "",
+      "pergunta": "O que são provas em espécie no processo penal?",
+      "resposta": "Prova testemunhal, documental, pericial, interrogatório, confissão, reconhecimento, acareação, busca e apreensão.",
+      "dica": "MEIOS DE PROVA (arts. 155-239 CPP): perícia, interrogatório, confissão, testemunha, reconhecimento, acareação, documento, indício. CESPE: 'indício é prova indireta' -> VERDADEIRO.",
       "topico": "Prova",
       "codigo_topico": "3"
     },
@@ -6706,75 +6690,67 @@
     },
     {
       "id": "dir_proc_penal_7",
-      "pergunta": "O que é o reconhecimento de pessoas e coisas (arts. 226-228 CPP)?",
-      "resposta": "Procedimento para identificar pessoa ou coisa relacionada ao crime; deve seguir o rito formal previsto no CPP.",
-      "dica": "",
+      "pergunta": "O que é o princípio do juiz natural?",
+      "resposta": "Ninguém pode ser processado senão por autoridade competente determinada pela lei anterior. Art. 5º, LIII e XXXVII CF/88.",
+      "dica": "VEDA: (1) juízo de exceção; (2) tribunais de exceção. Exige: juiz PREEXISTENTE, INDEPENDENTE e COMPETENTE. CESPE: 'juiz natural é o previsto em lei anterior ao fato' -> VERDADEIRO.",
       "topico": "Prova",
       "codigo_topico": "3"
     },
     {
       "id": "dir_proc_penal_8",
-      "pergunta": "O que é a acareação (art. 229 CPP)?",
-      "resposta": "Colocação frente a frente de acusados, vítimas ou testemunhas que deram versões divergentes para esclarecimento.",
-      "dica": "",
+      "pergunta": "O que é a ação penal privada?",
+      "resposta": "Ação proposta pelo ofendido ou representante legal através de queixa-crime. Prazo: 6 meses (art. 38 CPP).",
+      "dica": "Prazo DECADENCIAL de 6 meses (contado do conhecimento da autoria). Se MP não age na pública subsidiária (ação privada subsidiária - art. 29 CPP). CESPE: 'prazo é prescricional' -> FALSO (decadencial).",
       "topico": "Prova",
       "codigo_topico": "3"
     },
     {
       "id": "dir_proc_penal_9",
-      "pergunta": "O que é busca domiciliar?",
-      "resposta": "Medida investigatória em residência; exige mandado judicial, salvo em caso de flagrante delito (art. 240 CPP).",
-      "dica": "",
+      "pergunta": "O que é busca domiciliar (art. 240-250 CPP)?",
+      "resposta": "Invasão do domicílio para apreender objetos ou prender pessoas. Exige mandado judicial (regra) ou flagrante/desastre/socorro.",
+      "dica": "DIURNA: com ou sem mandado. NOTURNA: só sem mandado (flagrante/desastre/socorro). Mandado NÃO autoriza entrada à noite. CESPE: 'busca à noite é vedada em qualquer hipótese' -> FALSO.",
       "topico": "Prova",
       "codigo_topico": "3"
     },
     {
       "id": "dir_proc_penal_10",
-      "pergunta": "O que é busca pessoal?",
-      "resposta": "Revista corporal; admitida quando houver fundada suspeita de que a pessoa traga consigo objeto ilícito (art. 244 CPP).",
-      "dica": "",
+      "pergunta": "O que é liberdade provisória?",
+      "resposta": "Direito do preso em flagrante de aguardar o processo em liberdade, com ou sem fiança. Art. 321 CPP.",
+      "dica": "Cabe liberdade provisória SEM fiança (crimes inafiançáveis). CESPE: 'crimes inafiançáveis impedem liberdade provisória' -> FALSO (impedem FIANÇA, mas cabe liberdade sem fiança).",
       "topico": "Prova",
       "codigo_topico": "3"
     },
     {
       "id": "dir_proc_penal_11",
-      "pergunta": "O que é prisão em flagrante?",
-      "resposta": "Privação da liberdade do agente surpreendido cometendo crime, acabando de cometê-lo, sendo perseguido ou encontrado logo depois (art. 302 CPP).",
-      "dica": "",
+      "pergunta": "O que é prisão em flagrante e quais suas espécies?",
+      "resposta": "Prisão cautelar no momento ou logo após o crime. Espécies: próprio (art. 302, I), quase-flagrante (II), presumido (III), ficto (IV).",
+      "dica": "FLAGRANTE PROPRIO (praticando), QUASE (acabou), PRESUMIDO (perseguido), FICTO (encontrado com objetos). CESPE: flagrante ESPERADO = válido. PREPARADO = crime impossível (Súmula 145 STF).",
       "topico": "Prisão e liberdade provisória",
       "codigo_topico": "4"
     },
     {
       "id": "dir_proc_penal_12",
-      "pergunta": "Quais as espécies de flagrante?",
-      "resposta": "Próprio (real), impróprio (quase flagrante/perseguição), presumido (ficto/encontrado logo após) e preparado (crime provocado — ilícito, Súmula 145 STF).",
-      "dica": "",
+      "pergunta": "O que é a Lei 12.850/13 (Organizações Criminosas)?",
+      "resposta": "Define organização criminosa (4+ pessoas, estrutura ordenada, visando infrações com pena > 4 anos). Meios de obtenção de prova: colaboração premiada, interceptação.",
+      "dica": "DEFINIÇÃO: 4+ pessoas, estrutura ordenada, infrações com pena máxima > 4 anos. Colaboração premiada: direitos do colaborador (redução de pena, perdão judicial). CESPE adora.",
       "topico": "Prisão e liberdade provisória",
       "codigo_topico": "4"
     },
     {
       "id": "dir_proc_penal_13",
-      "pergunta": "O que é prisão preventiva?",
-      "resposta": "Prisão cautelar decretada pelo juiz para garantia da ordem pública, ordem econômica, conveniência da instrução ou aplicação da lei penal (art. 312 CPP).",
-      "dica": "",
+      "pergunta": "O que é prisão preventiva (arts. 311-316 CPP)?",
+      "resposta": "Prisão cautelar decretada pelo juiz. Requisitos: prova do crime + indícios de autoria + fundamento do art. 312.",
+      "dica": "REQUISITOS: (1) materialidade; (2) indícios; (3) fundamento (ordem pública/econômica, instrução, aplicação penal). Lei 13.964/19: juiz pode decretar de ofício só se réu solto e flagrante.",
       "topico": "Prisão e liberdade provisória",
       "codigo_topico": "4"
     },
     {
       "id": "dir_proc_penal_14",
       "pergunta": "O que é prisão temporária (Lei 7.960/89)?",
-      "resposta": "Prisão cautelar decretada pelo juiz a requerimento do MP ou autoridade policial; prazo de 5 dias prorrogável por mais 5 (hediondos: 30+30 dias).",
-      "dica": "",
+      "resposta": "Prisão cautelar investigativa. Prazo: 5+5 dias (regra) ou 30+30 dias (hediondos). Exige requerimento do MP/Delegado.",
+      "dica": "PRAZOS: regra 5+5; hediondos 30+30. CESPE: 'PT exige ordem judicial' -> SIM. 'PT pode ser decretada de ofício' -> NÃO (depende de provocação).",
       "topico": "Lei nº 7.960/1989 (prisão temporária)",
       "codigo_topico": "6"
-    },
-    {
-      "id": "dir_proc_penal_15",
-      "pergunta": "O que é liberdade provisória?",
-      "resposta": "Medida que permite ao preso em flagrante aguardar o processo em liberdade, com ou sem fiança, sujeito a condições.",
-      "dica": "",
-      "topico": "Prisão e liberdade provisória",
-      "codigo_topico": "4"
     },
     {
       "id": "dir_proc_penal_16",
@@ -6787,32 +6763,32 @@
     {
       "id": "dir_proc_penal_17",
       "pergunta": "Quais os crimes inafiançáveis na CF/88?",
-      "resposta": "Racismo, tortura, tráfico de entorpecentes, crimes hediondos, terrorismo e ação de grupos armados contra o Estado.",
-      "dica": "",
+      "resposta": "Racismo, tortura, tráfico, hediondos e grupos armados (art. 5º, XLII e XLIII).",
+      "dica": "MNEMÔNICO: R-T-T-H-G. Inafiançável != impossibilidade de soltura. Cabe liberdade provisória SEM fiança (STF HC 82.959). CESPE adora essa distinção.",
       "topico": "Prisão e liberdade provisória",
       "codigo_topico": "4"
     },
     {
       "id": "dir_proc_penal_18",
-      "pergunta": "O que são medidas cautelares diversas da prisão (art. 319 CPP)?",
-      "resposta": "Alternativas à prisão preventiva: comparecimento periódico, proibição de acesso a locais, monitoração eletrônica, etc.",
-      "dica": "",
+      "pergunta": "Quais as medidas cautelares diversas da prisão (art. 319 CPP)?",
+      "resposta": "Comparecimento periódico, proibição de acesso/contato, proibição de ausentar, recolhimento domiciliar, suspensão de função, monitoração eletrônica, fiança.",
+      "dica": "9 MEDIDAS (art. 319, I-IX). Monitoração eletrônica incluída pela Lei 12.403/11. CESPE: 'cautelares podem ser aplicadas cumulativamente' -> SIM (art. 282, §1º).",
       "topico": "Medidas cautelares diversas da prisão",
       "codigo_topico": "5"
     },
     {
       "id": "dir_proc_penal_19",
       "pergunta": "O que é a audiência de custódia?",
-      "resposta": "Apresentação do preso em flagrante ao juiz em até 24 horas; o juiz analisa a legalidade da prisão e decide sobre liberdade ou medida cautelar.",
-      "dica": "",
+      "resposta": "Direito do preso de ser apresentado ao juiz em 24h. Visa verificar legalidade e evitar tortura. Art. 7º, 5 CADH e Lei 13.964/19.",
+      "dica": "PACOTE ANTICRIME: positivou no art. 310, §4º CPP. Prazo: 24h. CESPE: 'na AC, juiz decide conversão em preventiva, liberdade provisória ou relaxamento' -> SIM.",
       "topico": "Prisão e liberdade provisória",
       "codigo_topico": "4"
     },
     {
       "id": "dir_proc_penal_20",
       "pergunta": "O que é o Juizado Especial Criminal (Lei 9.099/95)?",
-      "resposta": "Órgão com competência para crimes de menor potencial ofensivo (pena máxima até 2 anos); adota rito sumaríssimo.",
-      "dica": "",
+      "resposta": "Órgão do Judiciário para infrações de menor potencial ofensivo (pena até 2 anos - art. 61). Princípios: oralidade, informalidade, celeridade.",
+      "dica": "Após Lei 11.313/06: pena máxima ATÉ 2 ANOS. CESPE: 'JECRIM admite prisão em flagrante' -> NÃO (lavra-se termo circunstanciado - art. 69, parágrafo único).",
       "topico": "Juizados Especiais Criminais (Lei nº 9.099/1995)",
       "codigo_topico": "7"
     },
@@ -6835,8 +6811,8 @@
     {
       "id": "dir_proc_penal_23",
       "pergunta": "O que é o princípio da obrigatoriedade da ação penal pública?",
-      "resposta": "O MP é obrigado a oferecer denúncia quando há indícios suficientes de autoria e prova da materialidade.",
-      "dica": "",
+      "resposta": "MP é obrigado a denunciar quando presentes as condições da ação. Exceção: ANPP (art. 28-A CPP - discricionariedade regrada).",
+      "dica": "MP não pode arquivar diretamente (art. 17 CPP). ANPP (art. 28-A) é exceção. CESPE: 'ação penal pública é sempre obrigatória' -> FALSO (ANPP é exceção).",
       "topico": "Inquérito policial",
       "codigo_topico": "2"
     },
@@ -6858,9 +6834,9 @@
     },
     {
       "id": "dir_proc_penal_26",
-      "pergunta": "O que é investigação criminal pela polícia (Lei 12.830/13)?",
-      "resposta": "Define que a investigação criminal é conduzida pelo Delegado de Polícia, de carreira específica, com autonomia funcional.",
-      "dica": "",
+      "pergunta": "O que dispõe a Lei 12.830/13 sobre a investigação criminal pelo Delegado?",
+      "resposta": "Delegado preside a investigação com exclusividade (art. 2º). Autonomia funcional. MP pode requisitar, mas não presidir.",
+      "dica": "Art. 2º: 'O Delegado preside a investigação criminal com exclusividade'. Art. 2º, §2º: 'primeiro garantidor dos direitos humanos'. Remoção sem fundamentação viola a lei.",
       "topico": "Investigação Criminal (Lei nº 12.830/2013)",
       "codigo_topico": "8"
     },
@@ -6874,9 +6850,9 @@
     },
     {
       "id": "dir_proc_penal_28",
-      "pergunta": "O que é indiciamento no IP?",
-      "resposta": "Ato do Delegado que formaliza a suspeita fundamentada de autoria, apontando o investigado como provável responsável.",
-      "dica": "",
+      "pergunta": "O que é indiciamento no inquérito policial?",
+      "resposta": "Ato formal pelo qual o Delegado atribui a alguém a autoria de infração penal. Exige fundamentação (Lei 12.830/13, art. 2º, §6º).",
+      "dica": "Quem INDICIA é o Delegado (juiz e MP não indiciam). Exige FUNDAMENTAÇÃO. SV 14: indiciado tem direito a advogado e acesso aos autos. CESPE: 'indiciar sem prova' -> FALSO.",
       "topico": "Inquérito policial",
       "codigo_topico": "2"
     },
@@ -6906,9 +6882,9 @@
     },
     {
       "id": "dir_proc_penal_32",
-      "pergunta": "O que é prova ilícita?",
-      "resposta": "Obtida em violação a normas constitucionais ou legais; inadmissível no processo (art. 5º, LVI CF/88) e deve ser desentranhada.",
-      "dica": "",
+      "pergunta": "O que são provas ilícitas e qual seu tratamento no processo penal?",
+      "resposta": "Provas obtidas com violação a normas de direito material. Inadmissíveis (art. 5º, LVI CF/88). Teoria dos frutos da árvore envenenada (art. 157 CPP).",
+      "dica": "ILÍCITA = viola direito material. ILEGÍTIMA = viola norma processual. Ambas inadmissíveis. EXCEÇÕES: fonte independente, descoberta inevitável. CESPE: 'prova ilícita pro reo' -> STF admite (HC 96.122).",
       "topico": "Prova",
       "codigo_topico": "3"
     },
@@ -6986,9 +6962,9 @@
     },
     {
       "id": "dir_proc_penal_42",
-      "pergunta": "O que é a cadeia de custódia?",
-      "resposta": "Conjunto de procedimentos para garantir a integridade e rastreabilidade da prova desde a coleta até a apresentação em juízo.",
-      "dica": "",
+      "pergunta": "O que é cadeia de custódia da prova (arts. 158-A a 158-F CPP)?",
+      "resposta": "Procedimentos para garantir integridade e rastreabilidade da prova desde coleta até descarte. Incluída pela Lei 13.964/19.",
+      "dica": "ETAPAS (art. 158-B): preservação, isolamento, identificação, coleta, acondicionamento, transporte, recebimento, armazenamento, análise, descarte. Quebra pode levar à nulidade.",
       "topico": "Prova",
       "codigo_topico": "3"
     },
@@ -7042,17 +7018,17 @@
     },
     {
       "id": "dir_proc_penal_49",
-      "pergunta": "O que é o acordo de não persecução penal (ANPP)?",
-      "resposta": "Acordo entre MP e investigado confesso para cumprimento de condições como alternativa à ação penal (art. 28-A CPP).",
-      "dica": "",
+      "pergunta": "O que é o Acordo de Não Persecução Penal (ANPP) - art. 28-A CPP?",
+      "resposta": "Acordo pré-processual entre MP e investigado para evitar ação penal. Exige crime sem violência, pena mínima < 4 anos e confissão.",
+      "dica": "REQUISITOS: (1) sem violência; (2) pena mínima < 4 anos; (3) confissão; (4) não reincidente. CESPE: 'ANPP exige homologação judicial' -> SIM. 'ANPP é direito subjetivo' -> NÃO (faculdade do MP).",
       "topico": "Juizados Especiais Criminais (Lei nº 9.099/1995)",
       "codigo_topico": "7"
     },
     {
       "id": "dir_proc_penal_50",
-      "pergunta": "O que é a Lei 13.964/19 (Pacote Anticrime)?",
-      "resposta": "Lei que trouxe diversas alterações ao CPP, CP e legislação especial: juiz das garantias, ANPP, cadeia de custódia, entre outras.",
-      "dica": "",
+      "pergunta": "O que a Lei 13.964/19 (Pacote Anticrime) alterou no processo penal?",
+      "resposta": "ANPP, juiz das garantias, cadeia de custódia, alterações na preventiva, HC contra decisão denegatória.",
+      "dica": "Juiz das garantias: separa juiz investigatório do instrutor. Implementação SUSPENSA pelo STF (ADI 6.298, 6.299, 6.300). CESPE: 'juiz das garantias é obrigatório' -> NÃO (suspenso).",
       "topico": "Disposições constitucionais aplicáveis ao direito processual penal",
       "codigo_topico": "9"
     },
@@ -7074,9 +7050,9 @@
     },
     {
       "id": "dir_proc_penal_53",
-      "pergunta": "O que é a interceptação telefônica (Lei 9.296/96)?",
-      "resposta": "Captação do conteúdo de comunicação telefônica em curso, com autorização judicial, para fins de investigação criminal.",
-      "dica": "",
+      "pergunta": "O que é interceptação telefônica (Lei 9.296/96)?",
+      "resposta": "Captação de conversas telefônicas por terceiro sem conhecimento dos interlocutores, autorizada judicialmente. Prazo: 15 dias.",
+      "dica": "REQUISITOS: (1) ordem judicial; (2) investigação criminal; (3) indícios de autoria; (4) imprescindível. GRAVAÇÃO TELEFÔNICA (um interlocutor) != INTERCEPTAÇÃO (terceiro). CESPE adora.",
       "topico": "Prova",
       "codigo_topico": "3"
     },
@@ -7123,8 +7099,8 @@
     {
       "id": "dir_proc_penal_59",
       "pergunta": "O que é reconstituição do crime?",
-      "resposta": "Reprodução simulada dos fatos para esclarecer circunstâncias; o acusado não é obrigado a participar.",
-      "dica": "",
+      "resposta": "Reprodução simulada dos fatos para verificar possibilidade de ocorrência (art. 7º CPP). Exige autorização do juiz.",
+      "dica": "RECONSTITUIÇÃO != RECONHECIMENTO. Reconstituição = reprodução dos fatos. Reconhecimento = identificação de pessoas/coisas (arts. 226-228). CESPE: 'reconstituição depende de autorização' -> SIM.",
       "topico": "Prova",
       "codigo_topico": "3"
     },
@@ -7154,9 +7130,9 @@
     },
     {
       "id": "dir_proc_penal_63",
-      "pergunta": "O que é o arquivamento do IP após a Lei 13.964/19?",
-      "resposta": "Decidido pelo MP; se o juiz discordar, encaminha ao órgão superior do MP para revisão; não há mais controle judicial direto.",
-      "dica": "",
+      "pergunta": "Como funciona o arquivamento do IP após a Lei 13.964/19?",
+      "resposta": "MP requer ao juiz. Se juiz discorda, remete ao PGJ, que pode denunciar, designar outro promotor ou insistir no arquivamento.",
+      "dica": "Lei 13.964/19 alterou art. 28 CPP: juiz NÃO pode determinar arquivamento contra vontade do MP. CESPE: 'juiz pode arquivar independentemente do MP' -> FALSO.",
       "topico": "Inquérito policial",
       "codigo_topico": "2"
     },
@@ -7186,9 +7162,9 @@
     },
     {
       "id": "dir_proc_penal_67",
-      "pergunta": "O que é o delegado de polícia segundo a Lei 12.830/13?",
-      "resposta": "Autoridade policial de carreira, bacharel em Direito, responsável pela presidência do IP e condução da investigação criminal.",
-      "dica": "",
+      "pergunta": "O que é o Delegado de Polícia segundo a Lei 12.830/13?",
+      "resposta": "Autoridade que preside investigação com exclusividade. Autonomia funcional. Primeiro garantidor dos direitos humanos (art. 2º, §2º).",
+      "dica": "Art. 2º, §2º: 'primeiro garantidor dos direitos humanos'. Autonomia: não subordinado na atividade investigativa. CESPE: 'Delegado pode ser removido sem fundamentação' -> FALSO (art. 3º).",
       "topico": "Investigação Criminal (Lei nº 12.830/2013)",
       "codigo_topico": "8"
     },
@@ -7235,16 +7211,16 @@
     {
       "id": "dir_proc_penal_73",
       "pergunta": "O que é o juiz das garantias (Lei 13.964/19)?",
-      "resposta": "Juiz responsável pelo controle da legalidade na fase investigatória; diferente do juiz que julgará o mérito.",
-      "dica": "",
+      "resposta": "Juiz responsável pelo controle da legalidade da investigação. Não profere sentença. Eficácia suspensa pelo STF.",
+      "dica": "FUNÇÕES: autorizar medidas cautelares, decidir sobre prisões, homologar ANPP. SUSPENSO (ADI 6.298, 6.299, 6.300). CESPE: 'juiz das garantias é o mesmo que sentencia' -> FALSO.",
       "topico": "Prova",
       "codigo_topico": "3"
     },
     {
       "id": "dir_proc_penal_74",
-      "pergunta": "O que é a teoria da descoberta inevitável?",
-      "resposta": "Exceção à teoria dos frutos da árvore envenenada: se a prova seria inevitavelmente descoberta por meios lícitos, é admissível.",
-      "dica": "",
+      "pergunta": "O que é a teoria da descoberta inevitável (art. 157, §1º CPP)?",
+      "resposta": "Exceção à inadmissibilidade da prova derivada da ilícita. Admite-se se a prova seria obtida por fonte independente.",
+      "dica": "Art. 157, §1º: 'não evidenciado o nexo causal ou quando puderem ser obtidas por fonte independente'. CESPE adora essa exceção.",
       "topico": "Prova",
       "codigo_topico": "3"
     },
@@ -7828,97 +7804,97 @@
   "portugues": [
     {
       "id": "portugues_0",
-      "pergunta": "O que é coesão textual?",
-      "resposta": "Mecanismo que garante a ligação entre as partes do texto por meio de elementos linguísticos (pronomes, conjunções, advérbios).",
-      "dica": "",
+      "pergunta": "O que é coesão textual e quais seus tipos?",
+      "resposta": "Mecanismo linguístico que estabelece ligação entre os elementos do texto. Tipos: coesão referencial (anáfora, catáfora), lexical (sinônimos) e sequencial (conectores).",
+      "dica": "COESÃO != COERÊNCIA. Coesão = CONEXÃO (forma). Coerência = SENTIDO (conteúdo). Frase coesa mas incoerente: 'O céu é azul porque a bactéria comeu o gato'. CESPE adora.",
       "topico": "Domínio dos mecanismos de coesão textual",
       "codigo_topico": "4"
     },
     {
       "id": "portugues_1",
       "pergunta": "O que é coerência textual?",
-      "resposta": "Propriedade do texto que garante sua unidade de sentido, tornando as ideias compatíveis e progressivas entre si.",
-      "dica": "",
+      "resposta": "Propriedade que garante o sentido lógico do texto, não contradição e adequação ao contexto.",
+      "dica": "A coerência NÃO está no texto, mas na CONSTRUÇÃO DE SENTIDO pelo leitor. Texto sem nexo aparente pode ser coerente para quem conhece o contexto. CESPE: 'coerência é exclusivamente textual' -> FALSO.",
       "topico": "Domínio dos mecanismos de coesão textual",
       "codigo_topico": "4"
     },
     {
       "id": "portugues_2",
-      "pergunta": "Quais são os tipos textuais?",
-      "resposta": "Narração, descrição, argumentação/dissertação, exposição e injunção.",
-      "dica": "",
+      "pergunta": "O que são vícios de linguagem?",
+      "resposta": "Desvios da norma culta: barbarismo, solecismo, ambiguidade, pleonasmo vicioso, cacofonia, eco.",
+      "dica": "EXEMPLOS: barbarismo = erro de pronúncia/grafia. Solecismo = erro de sintaxe. Ambiguidade = duplo sentido. Pleonasmo vicioso = redundância ('subir para cima').",
       "topico": "Reconhecimento de tipos e gêneros textuais",
       "codigo_topico": "2"
     },
     {
       "id": "portugues_3",
-      "pergunta": "O que é inferência textual?",
-      "resposta": "Informação implícita deduzida pelo leitor a partir do contexto, sem estar explicitamente escrita.",
-      "dica": "",
+      "pergunta": "O que é regência nominal?",
+      "resposta": "Relação entre o nome e seu complemento (preposição). Ex: 'apto A', 'capacidade DE', 'respeito A/COM/PARA'.",
+      "dica": "CESPE: decorar regências mais comuns. 'Estou apto A' (preposição A). 'Ele é capaz DE'. 'Médico assistente DO paciente' (preposição DE).",
       "topico": "Compreensão e interpretação de textos de gêneros variados",
       "codigo_topico": "1"
     },
     {
       "id": "portugues_4",
-      "pergunta": "Quando ocorre crase?",
-      "resposta": "Fusão da preposição 'a' com o artigo 'a' feminino ou pronomes demonstrativos. Ex: Fui à delegacia.",
-      "dica": "",
+      "pergunta": "Quando ocorre crase (regra geral)?",
+      "resposta": "Fusão da preposição 'a' com artigo 'a(s)' ou 'a' inicial de pronomes (aquele, aquela, aquilo).",
+      "dica": "REGRa PRÁTICA: substitua por palavra masculina. Se aparecer 'ao', tem crase. Ex: 'Fui à escola' -> 'Fui AO colégio'. CESPE adora essa regra.",
       "topico": "Emprego do sinal indicativo de crase",
       "codigo_topico": "5.7"
     },
     {
       "id": "portugues_5",
       "pergunta": "Quando NÃO ocorre crase?",
-      "resposta": "Antes de palavras masculinas, verbos, pronomes pessoais, 'uma', 'alguma', 'nenhuma'. Ex: Fui a pé.",
-      "dica": "",
+      "resposta": "Antes de: verbo, pronomes pessoais, palavras masculinas, 'casa' (sem especificador), 'terra' (sentido de chão), numerais (exceto horas).",
+      "dica": "NÃO ocorre crase antes de verbo ('a partir'), pronome ('a ela'), palavra masculina ('a cavalo'), casa ('a casa'), terra ('a terra'), numeral ('a duas quadras'). CESPE adora.",
       "topico": "Emprego do sinal indicativo de crase",
       "codigo_topico": "5.7"
     },
     {
       "id": "portugues_6",
       "pergunta": "O que é concordância verbal?",
-      "resposta": "O verbo concorda em número e pessoa com o sujeito. Ex: 'Os agentes foram ao curso.' (sujeito plural → verbo plural).",
-      "dica": "",
+      "resposta": "Verbo flexiona para concordar com o sujeito. Casos especiais: 'mais de um' (singular), 'um dos que' (plural ou singular), 'a maioria' (singular/plural).",
+      "dica": "CESPE adora casos especiais: 'Mais de um aluno PASSOU' (singular). 'Um dos que PASSARAM' (plural, admite singular). 'A maioria dos alunos PASSOU/PASSARAM' (ambos).",
       "topico": "Concordância verbal e nominal",
       "codigo_topico": "5.5"
     },
     {
       "id": "portugues_7",
       "pergunta": "O que é concordância nominal?",
-      "resposta": "O adjetivo, artigo, numeral e pronome concordam em gênero e número com o substantivo.",
-      "dica": "",
+      "resposta": "Artigo, adjetivo, pronome e numeral concordam em gênero e número com o substantivo. Regras especiais: 'é proibido entrada' (sem artigo = invariável).",
+      "dica": "CASOS ESPECIAIS: 'é proibido entrada' (sem artigo = invariável). 'É proibida A entrada' (com artigo = variável). 'anexo', 'obrigado', 'quite', 'mesmo' concordam com o referente.",
       "topico": "Concordância verbal e nominal",
       "codigo_topico": "5.5"
     },
     {
       "id": "portugues_8",
-      "pergunta": "O que é regência verbal?",
-      "resposta": "Relação entre o verbo e seus complementos; define se o verbo é transitivo direto, indireto, bivalente ou intransitivo.",
-      "dica": "",
+      "pergunta": "O que é colocação pronominal (ênclise, próclise, mesóclise)?",
+      "resposta": "ÊNCLISE: pronome após verbo (regra no português brasileiro). PRÓCLISE: antes (com palavras atrativas). MESÓCLISE: no meio (futuro do presente/passado).",
+      "dica": "Regra geral: ÊNCLISE. Exceções (próclise): negação, advérbio, relativo, subordinativo. MESÓCLISE: 'dar-lhe-ei' (futuro). CESPE: 'Iniciar frase com pronome' -> FALSO (exceto com atrativa).",
       "topico": "Regência verbal e nominal",
       "codigo_topico": "5.6"
     },
     {
       "id": "portugues_9",
       "pergunta": "O verbo 'obedecer' é transitivo direto ou indireto?",
-      "resposta": "Transitivo indireto; exige preposição: 'obedecer a'. Ex: 'O agente obedeceu às ordens do delegado.'",
-      "dica": "",
+      "resposta": "Transitivo INDIRETO. Exige preposição 'a'. Ex: 'Devemos obedecer ÀS leis'.",
+      "dica": "VerbOS de obediência (obedecer, desobedecer, responder, pagar) + A. CESPE: 'Obedeci o regulamento' -> FALSO (correto: 'obedeci AO regulamento' com crase se feminino).",
       "topico": "Regência verbal e nominal",
       "codigo_topico": "5.6"
     },
     {
       "id": "portugues_10",
-      "pergunta": "O verbo 'aspirar' (almejar) é transitivo direto ou indireto?",
-      "resposta": "Transitivo indireto: 'aspirar a'. Ex: 'Ele aspira ao cargo.' (≠ aspirar = inalar: transitivo direto).",
-      "dica": "",
+      "pergunta": "O que é período composto por coordenação?",
+      "resposta": "Orações independentes ligadas por conjunções coordenativas (aditivas, adversativas, alternativas, conclusivas, explicativas).",
+      "dica": "5 TIPOS: aditivas (e, nem), adversativas (mas, porém), alternativas (ou, ora), conclusivas (logo, portanto), explicativas (porque, pois). CESPE: 'mas' é adversativa, 'portanto' é conclusiva.",
       "topico": "Regência verbal e nominal",
       "codigo_topico": "5.6"
     },
     {
       "id": "portugues_11",
       "pergunta": "O que é sujeito oculto (elíptico)?",
-      "resposta": "Sujeito não expresso, mas identificável pela desinência verbal. Ex: 'Chegamos cedo.' (nós).",
-      "dica": "",
+      "resposta": "Sujeito identificável pela desinência verbal. Ex: 'Fomos à festa' (nós).",
+      "dica": "SUJEITO OCULTO: identificável pela desinência (-MOS = nós). SUJEITO INDETERMINADO: (1) 3ª plural sem referente; (2) + SE. CESPE confunde os dois.",
       "topico": "Domínio da estrutura morfossintática do período",
       "codigo_topico": "5"
     },
@@ -7941,8 +7917,8 @@
     {
       "id": "portugues_14",
       "pergunta": "Qual a diferença entre 'porque', 'por que', 'por quê' e 'porquê'?",
-      "resposta": "'Porque' = causal/explicativa. 'Por que' = interrogativa/relativa. 'Por quê' = fim de frase interrogativa. 'Porquê' = substantivo.",
-      "dica": "",
+      "resposta": "PORQUE (junto/sem acento) = causa. POR QUE (separado/sem acento) = pergunta. POR QUÊ (separado/com acento) = final de frase. PORQUÊ (junto/com acento) = substantivo.",
+      "dica": "JUNTO/SEM = resposta. SEPARADO/SEM = pergunta. JUNTO/COM = motivo. SEPARADO/COM = final da frase. CESPE ADORA.",
       "topico": "Domínio da ortografia oficial",
       "codigo_topico": "3"
     },
@@ -7956,9 +7932,9 @@
     },
     {
       "id": "portugues_16",
-      "pergunta": "Quando se usa próclise?",
-      "resposta": "Com palavras atrativas: negações, advérbios, pronomes relativos, conjunções subordinativas, pronomes indefinidos. Ex: 'Não me disse nada.'",
-      "dica": "",
+      "pergunta": "Quando se usa próclise na colocação pronominal?",
+      "resposta": "Pronome antes do verbo com palavras atrativas: negação, advérbios, relativos, interrogativos, subordinativos.",
+      "dica": "Palavras 'MAGNÉTICAS': negação, advérbio, relativo, interrogativo, subordinativo, indefinido. CESPE: 'Em início de frase próclise é proibida' -> FALSO ('Não me diga').",
       "topico": "Colocação dos pronomes átonos",
       "codigo_topico": "5.8"
     },
@@ -7973,26 +7949,18 @@
     {
       "id": "portugues_18",
       "pergunta": "Qual a diferença entre 'mal' e 'mau'?",
-      "resposta": "'Mal' é advérbio ou substantivo (antônimo de 'bem'). 'Mau' é adjetivo (antônimo de 'bom'). Ex: 'Agiu mal' vs 'homem mau'.",
-      "dica": "",
+      "resposta": "MAL = oposto de BEM (advérbio/substantivo). MAU = oposto de BOM (adjetivo).",
+      "dica": "TESTE: se couber BEM = MAL. Se couber BOM = MAU. Ex: 'passou MAL' (bem). 'É MAU aluno' (bom). PEGADINHA: MAL como conjunção temporal ('MAL chegou, saiu').",
       "topico": "Domínio da ortografia oficial",
       "codigo_topico": "3"
     },
     {
       "id": "portugues_19",
       "pergunta": "Quando se usa o ponto e vírgula?",
-      "resposta": "Para separar orações coordenadas extensas; separar itens de uma enumeração; separar orações que já contêm vírgulas internas.",
-      "dica": "",
+      "resposta": "Separar orações coordenadas extensas, itens de enumeração, orações com vírgulas internas.",
+      "dica": "Pausa maior que a vírgula e menor que o ponto. Usado em enumerações de leis. NÃO separa orações subordinadas.",
       "topico": "Emprego dos sinais de pontuação",
       "codigo_topico": "5.4"
-    },
-    {
-      "id": "portugues_20",
-      "pergunta": "O que é período composto por coordenação?",
-      "resposta": "Orações independentes ligadas por conjunções coordenativas (aditivas, adversativas, alternativas, conclusivas, explicativas).",
-      "dica": "",
-      "topico": "Relações de coordenação entre orações e entre termos da oração",
-      "codigo_topico": "5.2"
     },
     {
       "id": "portugues_21",
@@ -8020,9 +7988,9 @@
     },
     {
       "id": "portugues_24",
-      "pergunta": "O que é o paralelismo sintático?",
-      "resposta": "Construção de elementos paralelos na frase com a mesma estrutura gramatical, garantindo equilíbrio e clareza textual.",
-      "dica": "",
+      "pergunta": "O que é paralelismo sintático?",
+      "resposta": "Elementos de mesma função gramatical devem ter a mesma estrutura. Ex (errado): 'gosta de nadar e da leitura'.",
+      "dica": "CESPE: 'ter dedicação e ser persistente' -> ERRO (substantivo + verbo). Correto: 'ter dedicação e persistência'. Reescrita de frases exige paralelismo.",
       "topico": "Domínio da estrutura morfossintática do período",
       "codigo_topico": "5"
     },
@@ -8037,16 +8005,16 @@
     {
       "id": "portugues_26",
       "pergunta": "O que é o Manual de Redação da Presidência da República?",
-      "resposta": "Documento oficial que orienta a redação dos atos e comunicações oficiais do governo federal, definindo padrões de formato e linguagem.",
-      "dica": "",
+      "resposta": "Normas para redação oficial. 3ª edição (2018). Princípios: clareza, concisão, formalidade, impessoalidade, padrão culto.",
+      "dica": "PRINCÍPIOS: C-C-F-I-U (Clareza, Concisão, Formalidade, Impessoalidade, Uso do padrão culto). CESPE cobra literalidade.",
       "topico": "Correspondência oficial (conforme Manual de Redação da Presidência da República)",
       "codigo_topico": "7"
     },
     {
       "id": "portugues_27",
-      "pergunta": "Quais são os expedientes oficiais mais comuns segundo o Manual de Redação?",
-      "resposta": "Ofício (comunicação externa), memorando/memo (interna), email institucional, exposição de motivos, mensagem presidencial.",
-      "dica": "",
+      "pergunta": "Quais os expedientes oficiais mais comuns?",
+      "resposta": "Ofício (externo), Memorando (interno), Exposição de Motivos (ao Presidente), Mensagem (ao Congresso).",
+      "dica": "Ofício = EXTERNO. Memorando = INTERNO. Exposição de Motivos = Ministro ao Presidente. Mensagem = Executivo ao Legislativo. E-mail oficial é admitido.",
       "topico": "Finalidade dos expedientes oficiais",
       "codigo_topico": "7.2"
     },
@@ -8061,8 +8029,8 @@
     {
       "id": "portugues_29",
       "pergunta": "Quais os princípios da redação oficial?",
-      "resposta": "Clareza, precisão, impessoalidade, formalidade, concisão e uniformidade.",
-      "dica": "",
+      "resposta": "Clareza, concisão, impessoalidade, formalidade, padrão culto. Não admite linguagem pessoal ou coloquial.",
+      "dica": "IMPESSOALIDADE: evita opinião pessoal. FORMALIDADE: pronomes de tratamento adequados. Fechamento: 'Respeitosamente' (superior), 'Atenciosamente' (igual/inferior).",
       "topico": "Aspectos gerais da redação oficial",
       "codigo_topico": "7.1"
     },
@@ -8077,8 +8045,8 @@
     {
       "id": "portugues_31",
       "pergunta": "O que são pronomes relativos?",
-      "resposta": "Pronomes que retomam um antecedente e introduzem oração subordinada adjetiva: que, quem, cujo, onde, quando, como, quanto.",
-      "dica": "",
+      "resposta": "Retomam termo anterior. São: QUE (universal), QUEM (pessoa), CUJO (posse), ONDE (lugar).",
+      "dica": "CESPE: QUE = universal (substituível por o qual). CUJO = posse, NÃO admite artigo após si ('cujo carro', não 'cujo o carro'). ONDE = lugar físico.",
       "topico": "Emprego das classes de palavras",
       "codigo_topico": "5.1"
     },
@@ -8093,8 +8061,8 @@
     {
       "id": "portugues_33",
       "pergunta": "O que é denotação e conotação?",
-      "resposta": "Denotação: sentido literal/dicionarizado. Conotação: sentido figurado/contextual. O texto literário usa mais conotação.",
-      "dica": "",
+      "resposta": "Denotação = sentido literal. Conotação = sentido figurado.",
+      "dica": "Texto literário = predomina conotação. Científico/oficial = denotação. Ex: 'CORAÇÃO de pedra' = conotativo. 'A pedra CAIU' = denotativo.",
       "topico": "Significação das palavras",
       "codigo_topico": "6.1"
     },
@@ -8117,8 +8085,8 @@
     {
       "id": "portugues_36",
       "pergunta": "O que é hipônimo e hiperônimo?",
-      "resposta": "Hiperônimo: palavra de sentido mais abrangente (animal). Hipônimo: mais específico (cão). Relação de inclusão semântica.",
-      "dica": "",
+      "resposta": "HIPÔNIMO: sentido específico (rosa é hipônimo de flor). HIPERÔNIMO: sentido geral (flor é hiperônimo de rosa).",
+      "dica": "HIPER = geral (superior). HIPO = específico (subordinado). CESPE usa na coesão lexical para evitar repetições.",
       "topico": "Significação das palavras",
       "codigo_topico": "6.1"
     },
@@ -8156,9 +8124,9 @@
     },
     {
       "id": "portugues_41",
-      "pergunta": "Qual a diferença entre 'há' e 'a' indicando tempo?",
-      "resposta": "'Há' = tempo passado (verbo haver). 'A' = tempo futuro ou distância. Ex: 'Trabalho aqui há 5 anos.' / 'A dois quilômetros.'",
-      "dica": "",
+      "pergunta": "Qual a diferença entre 'há' e 'a' na indicação de tempo?",
+      "resposta": "HÁ = passado (faz). A = futuro (distância).",
+      "dica": "HÁ = FAZ (passado). A = futuro. Ex: 'HÁ 10 anos' (atrás). 'Daqui A 10 anos' (frente). PEGADINHA: 'Chegou HÁ cinco minutos' (passado).",
       "topico": "Domínio da estrutura morfossintática do período",
       "codigo_topico": "5"
     },
@@ -8203,14 +8171,6 @@
       "codigo_topico": "5"
     },
     {
-      "id": "portugues_47",
-      "pergunta": "O que é regência nominal?",
-      "resposta": "Relação entre substantivos ou adjetivos e seus complementos; define a preposição exigida. Ex: 'Favorável a', 'compatível com'.",
-      "dica": "",
-      "topico": "Regência verbal e nominal",
-      "codigo_topico": "5.6"
-    },
-    {
       "id": "portugues_48",
       "pergunta": "O que é o modo subjuntivo e quando se usa?",
       "resposta": "Modo que exprime dúvida, hipótese, desejo ou concessão; usado em orações subordinadas após certas conjunções e verbos.",
@@ -8229,8 +8189,8 @@
     {
       "id": "portugues_50",
       "pergunta": "O que é intertextualidade?",
-      "resposta": "Relação de um texto com outros textos, por citação, alusão ou paródia; recurso comum em textos literários e jornalísticos.",
-      "dica": "",
+      "resposta": "Relação entre textos: citação, paráfrase, paródia, epígrafe.",
+      "dica": "TIPOS: citação (aspas), paráfrase (mesmas ideias), paródia (crítica/irônica). CESPE: 'paródia sempre homenageia' -> FALSO (pode criticar).",
       "topico": "Compreensão e interpretação de textos de gêneros variados",
       "codigo_topico": "1"
     },
@@ -8269,8 +8229,8 @@
     {
       "id": "portugues_55",
       "pergunta": "O que é homonímia?",
-      "resposta": "Palavras com mesma pronúncia ou grafia, mas significados diferentes. Ex: 'manga' (fruta/roupa).",
-      "dica": "",
+      "resposta": "Palavras com mesma grafia/som mas significados diferentes. Ex: 'manga' (fruta/roupa).",
+      "dica": "HOMONÍMIA (mesma grafia, significados diferentes) != POLISSEMIA (mesma palavra, vários sentidos). CESPE adora distinguir.",
       "topico": "Domínio da ortografia oficial",
       "codigo_topico": "3"
     },
@@ -8324,9 +8284,9 @@
     },
     {
       "id": "portugues_62",
-      "pergunta": "O que é o predicado verbal, nominal e verbo-nominal?",
-      "resposta": "Verbal: verbo de ação + complementos. Nominal: verbo de ligação + predicativo. Verbo-nominal: verbo de ação + predicativo do sujeito/objeto.",
-      "dica": "",
+      "pergunta": "O que é predicado verbal, nominal e verbo-nominal?",
+      "resposta": "VERBAL: verbo significativo. NOMINAL: verbo de ligação + predicativo. VERBO-NOMINAL: verbo significativo + predicativo.",
+      "dica": "MÉTODO: (1) VL (ser, estar) = NOMINAL; (2) VS sem predicativo = VERBAL; (3) VS + predicativo = VERBO-NOMINAL. CESPE: 'Ele ficou em casa' -> 'ficou' = verbo nocional (não VL).",
       "topico": "Domínio da estrutura morfossintática do período",
       "codigo_topico": "5"
     },
@@ -8389,8 +8349,8 @@
     {
       "id": "portugues_70",
       "pergunta": "Qual a diferença entre tipo textual e gênero textual?",
-      "resposta": "Tipo: categoria abstrata (narração, argumentação). Gênero: realização concreta (conto, artigo, ofício). Um gênero pode mesclar tipos.",
-      "dica": "",
+      "resposta": "TIPO = estrutura linguística (narração, descrição, dissertação). GÊNERO = função social (carta, artigo, ofício).",
+      "dica": "TIPO = aspecto LINGUÍSTICO. GÊNERO = aspecto COMUNICATIVO. Um gênero pode conter vários tipos.",
       "topico": "Reconhecimento de tipos e gêneros textuais",
       "codigo_topico": "2"
     },
@@ -8437,8 +8397,8 @@
     {
       "id": "portugues_76",
       "pergunta": "O que é o Acordo Ortográfico de 1990?",
-      "resposta": "Unificou a ortografia da língua portuguesa entre países lusófonos; aboliu o trema (exceto nomes próprios) e alterou o uso do hífen.",
-      "dica": "",
+      "resposta": "Uniformizou ortografia do português. Principais mudanças: fim do trema, novas regras de hífen, acentuação.",
+      "dica": "TREMA abolido. 'pára', 'vôo', 'enjôo' perderam acento. Ditongo 'éi'/'ói' em paroxítonas perdeu acento (ideia, jiboia). 'creem', 'leem' sem acento.",
       "topico": "Domínio da ortografia oficial",
       "codigo_topico": "3"
     },
@@ -8500,9 +8460,9 @@
     },
     {
       "id": "portugues_84",
-      "pergunta": "O que é a função referencial da linguagem?",
-      "resposta": "Visa transmitir informações objetivas sobre a realidade; predomina em textos científicos, jornalísticos e didáticos.",
-      "dica": "",
+      "pergunta": "O que é função referencial da linguagem?",
+      "resposta": "Centrada no referente (assunto). Linguagem denotativa, impessoal. Predomina em textos científicos.",
+      "dica": "6 FUNÇÕES (Jakobson): REFERENCIAL (assunto), EMOTIVA (emissor), CONATIVA (receptor), FÁTICA (canal), METALINGUÍSTICA (código), POÉTICA (mensagem).",
       "topico": "Domínio da estrutura morfossintática do período",
       "codigo_topico": "5"
     },
@@ -8883,14 +8843,6 @@
       "codigo_topico": "1"
     },
     {
-      "id": "portugues_expand_10",
-      "pergunta": "Qual a diferença entre 'por que', 'porque', 'por quê' e 'porquê'?",
-      "resposta": "POR QUE (separado, sem acento): usado em perguntas diretas/indiretas, sentido de 'por qual motivo' ou 'pelo qual' (substantivo). Ex.: 'Por que você foi?' / 'Este é o motivo por que lutei.' PORQUE (junto, sem acento): conjunção explicativa ou causal. Ex.: 'Não fui porque estava doente.' POR QUÊ (separado, com acento): fim de frase, antes de pausa. Ex.: 'Você não foi? Por quê?' PORQUÊ (junto, com acento): substantivo, sentido de 'motivo'. Ex.: 'Quero saber o porquê da sua ausência.'",
-      "dica": "MNEMÔNICO: 'Por que' = pergunta (os dois separados pedem resposta); 'Porque' = explicação (junto e na frente da explicação); 'Por quê' = pergunta no fim (o acento sobe); 'Porquê' = motivo (troque por 'motivo' para testar). CESPE adora as variações em uma mesma questão.",
-      "topico": "Domínio da ortografia oficial",
-      "codigo_topico": "3"
-    },
-    {
       "id": "portugues_expand_11",
       "pergunta": "Qual a diferença entre 'mau' e 'mal'?",
       "resposta": "MAL: advérbio (opõe-se a 'bem'), substantivo (opõe-se a 'bem' como valor moral), conjunção temporal (sinônimo de 'assim que'). Ex.: 'Ele se comportou mal' / 'O mal venceu o bem' / 'Mal chegou, saiu'. MAU: adjetivo (opõe-se a 'bom'). Ex.: 'Ele é um mau aluno' / 'Fez um mau negócio.'",
@@ -8903,14 +8855,6 @@
       "pergunta": "Qual a diferença entre 'onde' e 'aonde'?",
       "resposta": "ONDE: ideia de PERMANÊNCIA, lugar em que se está. Usado com verbos que indicam situação (estar, ficar, morar, situar-se). Ex.: 'Onde você mora?' / 'A cidade onde nasci.' AONDE: ideia de MOVIMENTO, destino. Usado com verbos de deslocamento (ir, chegar, dirigir-se). Ex.: 'Aonde você vai?' / 'Não sei aonde ele quer chegar.'",
       "dica": "REGRA DE OURO: 'Onde' = verbo que pede 'em' (estou EM algum lugar). 'Aonde' = verbo que pede 'a' (vou A algum lugar). CESPE adora cobrar: 'Não sei ___ ele quer chegar com isso' => 'aonde' (quer chegar A algum lugar). ATENÇÃO: 'onde' só se usa para lugar físico; para lugar figurativo ou assunto, use 'em que' ou 'no qual'.",
-      "topico": "Domínio da ortografia oficial",
-      "codigo_topico": "3"
-    },
-    {
-      "id": "portugues_expand_13",
-      "pergunta": "Qual a diferença entre 'há' e 'a' na indicação de tempo?",
-      "resposta": "HÁ (verbo 'haver'): indica tempo PASSADO, decorrido. Equivale a 'faz'. Ex.: 'Há dois anos que não o vejo' / 'Chegou há pouco.' A (preposição): indica tempo FUTURO ou distância. Ex.: 'Daqui a dois anos viajarei' / 'O posto fica a dois quilômetros.'",
-      "dica": "TESTE: substitua por 'faz' (passado) ou 'distância de'. CESPE: 'O evento ocorreu ___ cinco dias' = 'há' (passado). 'O evento ocorrerá daqui ___ cinco dias' = 'a' (futuro). ATENÇÃO: 'há atrás' é redundante (não use). CESPE considera erro: 'há dois anos atrás' - o correto é 'há dois anos' ou 'dois anos atrás'.",
       "topico": "Domínio da ortografia oficial",
       "codigo_topico": "3"
     },
@@ -9831,8 +9775,8 @@
     {
       "id": "informatica_0",
       "pergunta": "O que é sistema operacional?",
-      "resposta": "Software que gerencia hardware e software, servindo de interface entre o usuário e a máquina. Ex: Windows, Linux, macOS.",
-      "dica": "",
+      "resposta": "Software que gerencia recursos de hardware/software, fornecendo interface entre usuário e máquina. Ex: Windows, Linux, macOS.",
+      "dica": "SO é software BÁSICO/SISTEMA (não aplicativo). Kernel = núcleo do SO. CESPE: 'SO é software aplicativo' -> FALSO.",
       "topico": "Sistema Operacional Windows: fundamentos do Windows",
       "codigo_topico": "1"
     },
@@ -9862,9 +9806,9 @@
     },
     {
       "id": "informatica_4",
-      "pergunta": "O que faz o atalho Ctrl+C?",
-      "resposta": "Copia o conteúdo selecionado para a área de transferência.",
-      "dica": "",
+      "pergunta": "O que faz o atalho Ctrl+C no Windows?",
+      "resposta": "Copia o item selecionado para a área de transferência, mantendo o original.",
+      "dica": "Ctrl+C = COPIA (mantém original). Ctrl+X = RECORTA (remove original). Ctrl+V = COLAR. Mnemônico: C = Copy.",
       "topico": "Sistema Operacional Windows: fundamentos do Windows",
       "codigo_topico": "1"
     },
@@ -9878,9 +9822,9 @@
     },
     {
       "id": "informatica_6",
-      "pergunta": "O que faz o atalho Ctrl+Z?",
-      "resposta": "Desfaz a última ação realizada (undo).",
-      "dica": "",
+      "pergunta": "O que faz o atalho Ctrl+Z no Windows?",
+      "resposta": "Desfaz a última ação (undo). Pode ser usado repetidamente.",
+      "dica": "Ctrl+Z = DESFAZER (undo). Ctrl+Y = REFAZER (redo). CESPE: 'Ctrl+Z refaz a ação' -> FALSO (quem refaz é Ctrl+Y).",
       "topico": "Sistema Operacional Windows: fundamentos do Windows",
       "codigo_topico": "1"
     },
@@ -9894,9 +9838,9 @@
     },
     {
       "id": "informatica_8",
-      "pergunta": "O que é o Windows Explorer (Explorador de Arquivos)?",
-      "resposta": "Gerenciador de arquivos do Windows; permite navegar pela estrutura de pastas, mover, copiar, excluir e criar arquivos e pastas.",
-      "dica": "",
+      "pergunta": "O que é a Área de Trabalho do Windows?",
+      "resposta": "Interface principal do Windows, exibindo ícones de programas, arquivos, pastas e a Barra de Tarefas.",
+      "dica": "Elementos: ícones, barra de tarefas, área de notificação (system tray), botão Iniciar. CESPE: 'a Área de Trabalho é uma pasta do sistema' -> VERDADEIRO (C:\\Users\\nome\\Desktop).",
       "topico": "Sistema Operacional Windows: fundamentos do Windows",
       "codigo_topico": "1"
     },
@@ -9926,9 +9870,9 @@
     },
     {
       "id": "informatica_12",
-      "pergunta": "O que são estilos no Word?",
-      "resposta": "Conjuntos de formatação pré-definidos (Título 1, Normal, etc.) que garantem consistência visual e facilitam a criação de sumários.",
-      "dica": "",
+      "pergunta": "O que é o Windows Explorer (Explorador de Arquivos)?",
+      "resposta": "Gerenciador de arquivos e pastas do Windows. Permite navegar, copiar, mover, renomear e excluir arquivos.",
+      "dica": "Atalho: Win+E. Modos de exibição: ícones, lista, detalhes, conteúdo. Acesso Rápido: pastas fixadas e frequentes. CESPE: 'Explorer gerencia hardware' -> FALSO (gerencia arquivos).",
       "topico": "Estilos e modelos",
       "codigo_topico": "1.4.4"
     },
@@ -9942,17 +9886,17 @@
     },
     {
       "id": "informatica_14",
-      "pergunta": "O que é mala direta no Word?",
-      "resposta": "Recurso para enviar o mesmo documento a múltiplos destinatários com dados personalizados, usando uma fonte de dados (planilha).",
-      "dica": "",
+      "pergunta": "O que é o Microsoft Word e para que serve?",
+      "resposta": "Software processador de texto para criar e editar documentos (cartas, relatórios, ofícios). Arquivos: .docx (padrão), .doc (legado), .dotx (modelo).",
+      "dica": "Word é EDITOR DE TEXTO (não planilha). .docx = XML + ZIP. CESPE: 'Word é software de planilha' -> FALSO (é processador de texto).",
       "topico": "Processador de Textos Word",
       "codigo_topico": "1.4"
     },
     {
       "id": "informatica_15",
-      "pergunta": "O que é o Microsoft Excel?",
-      "resposta": "Planilha eletrônica da Microsoft; permite cálculos, análise de dados, criação de gráficos e uso de funções matemáticas e estatísticas.",
-      "dica": "",
+      "pergunta": "O que é o Microsoft Excel e para que serve?",
+      "resposta": "Software de planilha eletrônica que permite criar, organizar e analisar dados numéricos em células (linhas x colunas). Suporta fórmulas, funções, gráficos.",
+      "dica": "CESPE: 'Excel é editor de texto' -> FALSO (é planilha). Arquivos: .xlsx (padrão), .xls (legado), .xlsm (com macros).",
       "topico": "Planilha Eletrônica Excel",
       "codigo_topico": "1.5"
     },
@@ -9967,8 +9911,8 @@
     {
       "id": "informatica_17",
       "pergunta": "O que é referência absoluta no Excel?",
-      "resposta": "Referência que não muda ao copiar a fórmula; indicada pelo sinal $ antes da coluna e/ou linha. Ex: $A$1.",
-      "dica": "",
+      "resposta": "Referência que NÃO é ajustada ao copiar a fórmula. Indicada por $ (ex: $A$1). Atalho F4 alterna entre os tipos.",
+      "dica": "TRÊS TIPOS: ABSOLUTA ($A$1), RELATIVA (A1), MISTA ($A1 ou A$1). F4 alterna. CESPE adora: F4 = alternar referência.",
       "topico": "Introdução de números, textos, fórmulas e datas; referência absoluta e relativa",
       "codigo_topico": "1.5.1"
     },
@@ -9990,9 +9934,9 @@
     },
     {
       "id": "informatica_20",
-      "pergunta": "O que faz a função MÉDIA no Excel?",
-      "resposta": "Calcula a média aritmética dos valores do intervalo. Ex: =MÉDIA(A1:A10).",
-      "dica": "",
+      "pergunta": "O que é formatação condicional no Excel?",
+      "resposta": "Recurso que aplica formatação automática a células que atendem a condições específicas (cores, ícones, barras).",
+      "dica": "Acessível em Página Inicial > Formatação Condicional. Regras: destacar células, valores duplicados, escalas de cor. CESPE: 'formatação condicional altera valores' -> FALSO (só aparência).",
       "topico": "Principais funções do Excel: matemáticas, estatísticas, data-hora, financeiras e de texto",
       "codigo_topico": "1.5.2"
     },
@@ -10038,17 +9982,17 @@
     },
     {
       "id": "informatica_26",
-      "pergunta": "O que é o slide mestre no PowerPoint?",
-      "resposta": "Slide modelo que define o design, fontes e layouts de todos os slides; alterações no mestre afetam todos os slides.",
-      "dica": "",
+      "pergunta": "O que é a função SOMA no Excel?",
+      "resposta": "Soma intervalo de células. Sintaxe: =SOMA(núm1; núm2...).",
+      "dica": "Função MAIS COBRADA. Atalho: Alt+= insere SOMA automaticamente. =SOMA(A1:A10) soma intervalo. =SOMA(A1;A3;A5) soma células específicas.",
       "topico": "Software de apresentação do PowerPoint",
       "codigo_topico": "1.6"
     },
     {
       "id": "informatica_27",
-      "pergunta": "O que é animação no PowerPoint?",
-      "resposta": "Efeito aplicado a objetos dentro de um slide (entrada, ênfase, saída); diferente de transição, que é o efeito entre slides.",
-      "dica": "",
+      "pergunta": "O que é a função MÉDIA no Excel?",
+      "resposta": "Calcula média aritmética. Sintaxe: =MÉDIA(núm1; núm2...). Ignora células vazias, considera zeros.",
+      "dica": "MÉDIA vs MÉDIAA: MÉDIA (só números). MÉDIAA (texto=0, V=1, F=0). Células vazias ignoradas, ZERO considerado. CESPE adora essa diferença.",
       "topico": "Software de apresentação do PowerPoint",
       "codigo_topico": "1.6"
     },
@@ -10110,9 +10054,9 @@
     },
     {
       "id": "informatica_35",
-      "pergunta": "O que é ransomware?",
-      "resposta": "Malware que criptografa os dados da vítima e exige resgate para liberar o acesso; muito usado em ataques a órgãos públicos.",
-      "dica": "",
+      "pergunta": "O que é a função SE no Excel?",
+      "resposta": "Função lógica: =SE(teste; valor_se_verdadeiro; valor_se_falso).",
+      "dica": "3 argumentos. Até 64 níveis de SE aninhado. CESPE: =SE(A1>10; 'Alto'; 'Baixo') retorna 'Alto' se A1>10.",
       "topico": "Redes de Computadores",
       "codigo_topico": "2"
     },
@@ -10206,9 +10150,9 @@
     },
     {
       "id": "informatica_47",
-      "pergunta": "O que é a Deep Web?",
-      "resposta": "Parte da internet não indexada por mecanismos de busca convencionais; inclui conteúdos legítimos como bancos de dados privados e sistemas corporativos.",
-      "dica": "",
+      "pergunta": "O que é a função CONT.SE no Excel?",
+      "resposta": "Conta células que atendem a um critério. Sintaxe: =CONT.SE(intervalo; critérios).",
+      "dica": "CONT.SE (1 critério) != CONT.SES (múltiplos). Critérios: número, texto, expressão. CESPE: 'cont.se conta valores lógicos' -> SIM.",
       "topico": "Redes de Computadores",
       "codigo_topico": "2"
     },
@@ -10262,9 +10206,9 @@
     },
     {
       "id": "informatica_54",
-      "pergunta": "O que é o gerenciador de tarefas do Windows?",
-      "resposta": "Ferramenta (Ctrl+Alt+Del ou Ctrl+Shift+Esc) que mostra processos em execução, uso de CPU/memória e permite encerrar programas travados.",
-      "dica": "",
+      "pergunta": "O que é a função CONCATENAR (CONCAT) no Excel?",
+      "resposta": "Junta textos de várias células. =CONCATENAR(texto1; texto2...) ou operador &.",
+      "dica": "CONCATENAR (versões antigas) vs CONCAT/TEXTUNIR (novas). & faz o mesmo. PEGADINHA: CONCATENAR não aceita intervalo (A1:A10), CONCAT aceita.",
       "topico": "Sistema Operacional Windows: fundamentos do Windows",
       "codigo_topico": "1"
     },
@@ -10302,9 +10246,9 @@
     },
     {
       "id": "informatica_59",
-      "pergunta": "O que é URL?",
-      "resposta": "Uniform Resource Locator; endereço completo de um recurso na internet. Ex: https://www.pcpe.pe.gov.br.",
-      "dica": "",
+      "pergunta": "O que é a função PROCV no Excel?",
+      "resposta": "Procura valor na primeira coluna e retorna valor na mesma linha de outra coluna. =PROCV(valor; matriz; índice; [procurar_intervalo]).",
+      "dica": "PROCV (Vertical) != PROCH (Horizontal). 4º arg: FALSO = exata, VERDADEIRO = aproximada. 1ª coluna precisa estar ORDENADA para aproximada. CESPE adora.",
       "topico": "Redes de Computadores",
       "codigo_topico": "2"
     },
@@ -10374,9 +10318,9 @@
     },
     {
       "id": "informatica_68",
-      "pergunta": "O que é resolução de tela?",
-      "resposta": "Quantidade de pixels exibidos (largura × altura). Ex: 1920×1080 (Full HD). Maior resolução = imagem mais nítida.",
-      "dica": "",
+      "pergunta": "O que é a função SOMASE no Excel?",
+      "resposta": "Soma células que atendem a um critério. =SOMASE(intervalo; critério; [intervalo_soma]).",
+      "dica": "SOMASE (1 condição) != SOMASES (múltiplas). Ex: =SOMASE(B1:B10; '>100'; C1:C10). Aceita curingas (*, ?).",
       "topico": "Redes de Computadores",
       "codigo_topico": "2"
     },
@@ -10430,9 +10374,9 @@
     },
     {
       "id": "informatica_75",
-      "pergunta": "O que é endereço de e-mail?",
-      "resposta": "Identificador único no formato usuário@domínio.extensão. Ex: joao.silva@policiacivil.pe.gov.br.",
-      "dica": "",
+      "pergunta": "O que são Tabelas Dinâmicas no Excel?",
+      "resposta": "Ferramenta interativa para resumir/agrupar dados. 4 áreas: FILTROS, COLUNAS, LINHAS, VALORES.",
+      "dica": "NÃO é gráfico (é tabela). Dados precisam estar em formato de LISTA. CESPE: 'Tabela Dinâmica permite atualizar' -> SIM (Atualizar > Atualizar Tudo).",
       "topico": "Redes de Computadores",
       "codigo_topico": "2"
     },
@@ -10462,9 +10406,9 @@
     },
     {
       "id": "informatica_79",
-      "pergunta": "O que é spyware?",
-      "resposta": "Software malicioso que monitora as atividades do usuário e envia informações para terceiros sem consentimento.",
-      "dica": "",
+      "pergunta": "O que são layouts de slides no PowerPoint?",
+      "resposta": "Modelos pré-definidos que organizam o conteúdo. Slide Mestre controla os layouts.",
+      "dica": "Layout != Slide Mestre. Layout = posição dos placeholders. Slide Mestre = design global. Alterações no mestre refletem em todos os slides.",
       "topico": "Redes de Computadores",
       "codigo_topico": "2"
     },
@@ -10534,9 +10478,9 @@
     },
     {
       "id": "informatica_88",
-      "pergunta": "O que é formatar um disco (HD)?",
-      "resposta": "Apagar todos os dados e criar um novo sistema de arquivos no disco; necessário ao instalar um sistema operacional ou preparar um dispositivo.",
-      "dica": "",
+      "pergunta": "O que é segurança da informação e seus pilares?",
+      "resposta": "Proteção de dados. Pilares (CID): Confidencialidade, Integridade, Disponibilidade. LGPD (Lei 13.709/18).",
+      "dica": "MNEMÔNICO: CID. CESPE adiciona: Autenticidade e Não Repúdio. LGPD = dados pessoais. CESPE: 'abrange apenas dados digitais' -> FALSO.",
       "topico": "Sistema Operacional Windows: fundamentos do Windows",
       "codigo_topico": "1"
     },
@@ -10574,9 +10518,9 @@
     },
     {
       "id": "informatica_93",
-      "pergunta": "O que é a função HOJE() no Excel?",
-      "resposta": "Retorna a data atual do sistema; atualizada automaticamente ao abrir a planilha. Ex: =HOJE() → 08/06/2026.",
-      "dica": "",
+      "pergunta": "O que são firewalls?",
+      "resposta": "Sistema que controla tráfego de rede baseado em regras. Hardware, software ou ambos.",
+      "dica": "Filtro de Pacotes, Proxy, Stateful Inspection. CESPE: 'Firewall impede totalmente invasões' -> FALSO (é uma camada, não infalível).",
       "topico": "Principais funções do Excel: matemáticas, estatísticas, data-hora, financeiras e de texto",
       "codigo_topico": "1.5.2"
     },
@@ -10614,9 +10558,9 @@
     },
     {
       "id": "informatica_98",
-      "pergunta": "V/F: Em Excel, a função SOMA() agrega valores de um intervalo e é diferente de CONCATENAR(), que une textos.",
-      "resposta": "Certo. SOMA() soma números; CONCATENAR() (ou &) une textos. Cobranças de Office costumam exigir essa diferenciação.",
-      "dica": "Pratique =SOMA(A1:A10) e =CONCATENAR(A1;\" \";B1) ou =A1&\" \"&B1.",
+      "pergunta": "O que são certificados digitais?",
+      "resposta": "Documento eletrônico que associa identidade a chave criptográfica. Padrão ICP-Brasil.",
+      "dica": "TIPOS: A1 (arquivo, 1 ano), A3 (cartão/token, 3-5 anos). CESPE: 'certificado garante integridade e autenticidade' -> VERDADEIRO. e-CPF e e-CNPJ são A3.",
       "topico": "Principais funções do Excel: matemáticas, estatísticas, data-hora, financeiras e de texto",
       "codigo_topico": "1.5.2"
     },
@@ -11899,110 +11843,152 @@
       "resposta": "Inserir > Áudio ou Vídeo; escolha 'Este Dispositivo' ou online; o arquivo é incorporado ao slide.",
       "dica": "",
       "codigo_topico": "1.6"
+    },
+    {
+      "id": "informatica_101",
+      "pergunta": "O que é backup e seus tipos?",
+      "resposta": "Cópia de segurança. Tipos: Completo (tudo), Incremental (desde último backup), Diferencial (desde último completo).",
+      "dica": "RESTAURAÇÃO: Completo + Diferencial = 2 passos. Completo + Incremental = vários passos. Regra 3-2-1: 3 cópias, 2 mídias, 1 offsite.",
+      "topico": "Segurança da Informação, Backup e Armazenamento em Nuvem"
+    },
+    {
+      "id": "informatica_105",
+      "pergunta": "O que é criptografia simétrica e assimétrica?",
+      "resposta": "SIMÉTRICA: mesma chave para cifrar/decifrar (AES, DES). Rápida. ASSIMÉTRICA: par de chaves pública/privada (RSA). Mais segura.",
+      "dica": "SIMÉTRICA: mesma chave, rápida, problema de distribuição. ASSIMÉTRICA: duas chaves, mais lenta. CESPE: 'criptografia assimétrica é mais segura' -> em geral sim.",
+      "topico": "Segurança da Informação, Backup e Armazenamento em Nuvem"
+    },
+    {
+      "id": "informatica_110",
+      "pergunta": "O que é malware (programa malicioso)?",
+      "resposta": "Software com intenção maliciosa. Tipos: vírus, worm, trojan, ransomware, spyware, adware, rootkit.",
+      "dica": "VÍRUS: precisa de hospedeiro. WORM: autorreplicável (independente). TROJAN: parece legítimo. RANSOMWARE: sequestra dados. ANTIVÍRUS detecta e remove.",
+      "topico": "Segurança da Informação, Backup e Armazenamento em Nuvem"
+    },
+    {
+      "id": "informatica_118",
+      "pergunta": "O que é autenticação em dois fatores (2FA)?",
+      "resposta": "Método que exige dois fatores diferentes para autenticação: algo que você sabe (senha), tem (token) ou é (biometria).",
+      "dica": "3 FATORES: (1) conhecimento (senha); (2) posse (token); (3) inerência (digital/rosto). CESPE: '2FA elimina totalmente riscos' -> FALSO (reduz, não elimina).",
+      "topico": "Segurança da Informação, Backup e Armazenamento em Nuvem"
+    },
+    {
+      "id": "informatica_125",
+      "pergunta": "O que são Redes de Computadores?",
+      "resposta": "Conjunto de dispositivos conectados para compartilhar recursos. Classificação: LAN (local), MAN (metropolitana), WAN (geograficamente distribuída).",
+      "dica": "LAN = curta distância (escritório). WAN = longa (internet). Topologias: barramento, estrela, anel, malha. CESPE: 'a internet é uma WAN' -> VERDADEIRO.",
+      "topico": "Redes de Computadores, Internet/Intranet, Nuvem, Deep/Dark Web"
+    },
+    {
+      "id": "informatica_130",
+      "pergunta": "O que é o protocolo TCP/IP?",
+      "resposta": "Conjunto de protocolos da internet. TCP (confiável, orientado à conexão) + IP (roteamento de pacotes).",
+      "dica": "TCP: confiável, verifica erros. UDP: não confiável, mais rápido (streaming). IP: endereçamento. Portas: HTTP=80, HTTPS=443, FTP=21.",
+      "topico": "Redes de Computadores, Internet/Intranet, Nuvem, Deep/Dark Web"
     }
   ],
   "raciocinio": [
     {
       "id": "raciocinio_0",
-      "pergunta": "O que é proposição lógica?",
-      "resposta": "Afirmação que pode ser classificada como verdadeira (V) ou falsa (F), mas não as duas ao mesmo tempo.",
-      "dica": "",
+      "pergunta": "O que é proposição na lógica?",
+      "resposta": "Declaração que pode ser valorada como verdadeira ou falsa (princípio do terceiro excluído). Não pode ser interrogativa, exclamativa nem imperativa.",
+      "dica": "CESPE: 'Que horas são?' é proposição? -> NÃO (interrogativa). 'Vá embora!' -> NÃO (imperativa). 'Ele é inocente' -> SIM (declarativa). Princípios: identidade, não contradição, terceiro excluído.",
       "topico": "Lógica sentencial (ou proposicional)",
       "codigo_topico": "11"
     },
     {
       "id": "raciocinio_1",
-      "pergunta": "O que é a conjunção lógica (E) e sua tabela-verdade?",
-      "resposta": "P ∧ Q é verdadeira somente quando P e Q são ambas verdadeiras; falsa nos demais casos.",
-      "dica": "",
+      "pergunta": "O que é conjunção lógica (E) e sua tabela-verdade?",
+      "resposta": "P ^ Q (E) é verdadeira SOMENTE quando P e Q são ambas verdadeiras. Basta uma falsa para a conjunção ser falsa.",
+      "dica": "MNEMÔNICO: 'E' = EXIGENTE (exige tudo verdadeiro). Tabela: V^V=V; V^F=F; F^V=F; F^V=F. CESPE: 'conjunção é verdadeira quando ao menos uma é verdadeira' -> FALSO.",
       "topico": "Lógica sentencial (ou proposicional)",
       "codigo_topico": "11"
     },
     {
       "id": "raciocinio_2",
-      "pergunta": "O que é a disjunção lógica (OU) e sua tabela-verdade?",
-      "resposta": "P ∨ Q é falsa somente quando P e Q são ambas falsas; verdadeira nos demais casos.",
-      "dica": "",
+      "pergunta": "O que é disjunção lógica (OU) e sua tabela-verdade?",
+      "resposta": "P v Q (OU inclusivo) é falsa SOMENTE quando P e Q são ambas falsas. Basta uma verdadeira.",
+      "dica": "MNEMÔNICO: 'OU' = OURO (basta um verdadeiro). OU EXCLUSIVO (xor): verdadeiro quando valores são DIFERENTES. CESPE: 'OU' da linguagem natural é ambíguo (inclusivo x exclusivo).",
       "topico": "Lógica sentencial (ou proposicional)",
       "codigo_topico": "11"
     },
     {
       "id": "raciocinio_3",
-      "pergunta": "O que é a negação lógica?",
-      "resposta": "¬P inverte o valor lógico: se P é V, ¬P é F; se P é F, ¬P é V.",
-      "dica": "",
+      "pergunta": "O que é negação lógica?",
+      "resposta": "¬P inverte o valor lógico: V vira F, F vira V. Dupla negação (¬¬P) equivale a P.",
+      "dica": "NEGAÇÃO = operador UNÁRIO. ¬¬P = P (equivalência). CESPE: 'a negação de \"todo policial é honesto\" é \"nenhum policial é honesto\"' -> FALSO (é 'algum policial NÃO é honesto').",
       "topico": "Lógica sentencial (ou proposicional)",
       "codigo_topico": "11"
     },
     {
       "id": "raciocinio_4",
-      "pergunta": "O que é o condicional lógico (SE...ENTÃO) e sua tabela-verdade?",
-      "resposta": "P → Q é falsa somente quando P é V e Q é F; verdadeira nos demais casos.",
-      "dica": "",
+      "pergunta": "O que é condicional (SE...ENTÃO) e sua tabela-verdade?",
+      "resposta": "P -> Q é falsa SOMENTE quando P é V e Q é F (Vera Fischer). Verdadeira nos demais casos.",
+      "dica": "PEGADINHA: Só é FALSO no caso V->F (Vera Fischer). Quando P é F, o condicional é SEMPRE verdadeiro (princípio da inexistência de falsidade). CESPE: 'se P é falso, P->Q é falso' -> FALSO (é verdadeiro).",
       "topico": "Lógica sentencial (ou proposicional)",
       "codigo_topico": "11"
     },
     {
       "id": "raciocinio_5",
-      "pergunta": "O que é o bicondicional lógico (SE E SOMENTE SE)?",
-      "resposta": "P ↔ Q é verdadeira quando P e Q têm o mesmo valor lógico (ambas V ou ambas F).",
-      "dica": "",
+      "pergunta": "O que é bicondicional (SE E SOMENTE SE)?",
+      "resposta": "P <-> Q é verdadeira quando P e Q têm mesmo valor lógico (VV ou FF).",
+      "dica": "P <-> Q equivale a (P->Q) ^ (Q->P). CESPE: 'bicondicional exige que ambos sejam verdadeiros' -> FALSO (ambos falsos também é verdadeiro).",
       "topico": "Lógica sentencial (ou proposicional)",
       "codigo_topico": "11"
     },
     {
       "id": "raciocinio_6",
-      "pergunta": "Quais são as Leis de De Morgan?",
-      "resposta": "¬(P ∧ Q) ≡ ¬P ∨ ¬Q; ¬(P ∨ Q) ≡ ¬P ∧ ¬Q. A negação distribui invertendo o conectivo.",
-      "dica": "",
+      "pergunta": "O que são as Leis de De Morgan?",
+      "resposta": "¬(P ^ Q) = ¬P v ¬Q; ¬(P v Q) = ¬P ^ ¬Q. A negação distribui invertendo o conectivo.",
+      "dica": "NEGAÇÃO do 'E' vira 'OU' com partes negadas. NEGAÇÃO do 'OU' vira 'E' com partes negadas. CESPE: '¬(P ^ Q) = ¬P ^ ¬Q' -> FALSO (é ¬P v ¬Q).",
       "topico": "Lógica sentencial (ou proposicional)",
       "codigo_topico": "11"
     },
     {
       "id": "raciocinio_7",
-      "pergunta": "O que é a contrapositiva de P → Q?",
-      "resposta": "¬Q → ¬P. A contrapositiva é logicamente equivalente ao condicional original.",
-      "dica": "",
+      "pergunta": "O que é a contrapositiva de P -> Q?",
+      "resposta": "¬Q -> ¬P. É logicamente equivalente ao condicional original (P -> Q = ¬Q -> ¬P).",
+      "dica": "P -> Q equivale a ¬Q -> ¬P (contrapositiva). NÃO equivale a Q -> P (recíproca). CESPE: 'contrapositiva é a recíproca' -> FALSO.",
       "topico": "Lógica sentencial (ou proposicional)",
       "codigo_topico": "11"
     },
     {
       "id": "raciocinio_8",
       "pergunta": "O que é tautologia?",
-      "resposta": "Proposição sempre verdadeira, independentemente dos valores lógicos das proposições simples que a compõem.",
-      "dica": "",
+      "resposta": "Proposição sempre verdadeira, independentemente dos valores das variáveis. Tabela-verdade com apenas V.",
+      "dica": "TAUTOLOGIA = sempre V. CONTRADIÇÃO = sempre F. CONTINGÊNCIA = V e F. CESPE: 'P v ¬P é tautologia' -> SIM (princípio do terceiro excluído).",
       "topico": "Lógica sentencial (ou proposicional)",
       "codigo_topico": "11"
     },
     {
       "id": "raciocinio_9",
       "pergunta": "O que é contradição lógica?",
-      "resposta": "Proposição sempre falsa, independentemente dos valores lógicos das proposições simples.",
-      "dica": "",
+      "resposta": "Proposição sempre falsa, independentemente dos valores das variáveis. Tabela-verdade com apenas F.",
+      "dica": "CONTRADIÇÃO = sempre F. Ex: P ^ ¬P. CESPE: 'P ^ ¬P é tautologia' -> FALSO (é contradição).",
       "topico": "Lógica sentencial (ou proposicional)",
       "codigo_topico": "11"
     },
     {
       "id": "raciocinio_10",
-      "pergunta": "O que é o modus ponens?",
-      "resposta": "Forma válida de argumento: P → Q; P; logo Q. (Dado o condicional e a antecedente, conclui-se a consequente.)",
-      "dica": "",
+      "pergunta": "O que é modus ponens?",
+      "resposta": "Forma válida: P -> Q; P; logo Q. (Se condicional e antecedente são verdadeiros, conclui-se o consequente).",
+      "dica": "MODUS PONENS: afirma o antecedente. MODUS TOLLENS: nega o consequente. CESPE: modus ponens é argumento VÁLIDO.",
       "topico": "Lógica sentencial (ou proposicional)",
       "codigo_topico": "11"
     },
     {
       "id": "raciocinio_11",
-      "pergunta": "O que é o modus tollens?",
-      "resposta": "Forma válida: P → Q; ¬Q; logo ¬P. (Dado o condicional e a negação da consequente, nega-se a antecedente.)",
-      "dica": "",
+      "pergunta": "O que é modus tollens?",
+      "resposta": "Forma válida: P -> Q; ¬Q; logo ¬P. (Se condicional e negação do consequente, conclui-se negação do antecedente).",
+      "dica": "MODUS TOLLENS: nega o consequente. CESPE: modus tollens é argumento VÁLIDO.",
       "topico": "Lógica sentencial (ou proposicional)",
       "codigo_topico": "11"
     },
     {
       "id": "raciocinio_12",
       "pergunta": "O que são quantificadores lógicos?",
-      "resposta": "Universal (∀ — para todo) e existencial (∃ — existe pelo menos um); usados na lógica de primeira ordem.",
-      "dica": "",
+      "resposta": "Universal (∀ - para todo) e existencial (∃ - existe pelo menos um). Transformam proposições abertas em fechadas.",
+      "dica": "NEGAÇÃO: ¬∀x P(x) = ∃x ¬P(x). ¬∃x P(x) = ∀x ¬P(x). CESPE: 'negação de \"todo\" é \"nenhum\"' -> FALSO (é \"algum não\").",
       "topico": "Lógica de primeira ordem",
       "codigo_topico": "12"
     },
@@ -12010,7 +11996,7 @@
       "id": "raciocinio_13",
       "pergunta": "Como se nega 'Todo A é B'?",
       "resposta": "'Algum A não é B' (existe pelo menos um A que não é B).",
-      "dica": "",
+      "dica": "NEGAÇÃO de TODO: algum/algum... não/existe... que não. CESPE: 'A negação de \"todos passaram\" é \"nenhum passou\"' -> FALSO (é 'alguém não passou').",
       "topico": "Lógica de primeira ordem",
       "codigo_topico": "12"
     },
@@ -12018,127 +12004,127 @@
       "id": "raciocinio_14",
       "pergunta": "Como se nega 'Algum A é B'?",
       "resposta": "'Nenhum A é B' (todo A não é B).",
-      "dica": "",
+      "dica": "NEGAÇÃO de ALGUM: nenhum/todo... não. CESPE: 'algum A é B' = 'existe A que é B'. Negação: 'não existe A que é B' = 'todo A não é B'.",
       "topico": "Lógica de primeira ordem",
       "codigo_topico": "12"
     },
     {
       "id": "raciocinio_15",
       "pergunta": "O que é diagrama de Venn?",
-      "resposta": "Representação gráfica com círculos sobrepostos para visualizar relações entre conjuntos (inclusão, interseção, exclusão).",
-      "dica": "",
+      "resposta": "Representação gráfica com círculos sobrepostos para visualizar relações entre conjuntos e validar argumentos.",
+      "dica": "Usado para silogismos. Ex: 'Todo A é B, todo B é C, logo todo A é C' (válido). CESPE adora questões com diagrama.",
       "topico": "Operações com conjuntos",
       "codigo_topico": "14"
     },
     {
       "id": "raciocinio_16",
       "pergunta": "O que é razão e proporção?",
-      "resposta": "Razão: quociente entre dois números (a/b). Proporção: igualdade entre duas razões (a/b = c/d).",
-      "dica": "",
+      "resposta": "Razão: quociente a/b. Proporção: igualdade de razões a/b = c/d. Propriedade fundamental: a*d = b*c.",
+      "dica": "PROPORÇÃO: produto dos meios = produto dos extremos (a*d = b*c). CESPE: 'em a/b = c/d, a*d = b*c' -> VERDADEIRO.",
       "topico": "Razões e proporções",
       "codigo_topico": "3"
     },
     {
       "id": "raciocinio_17",
       "pergunta": "O que é regra de três simples direta?",
-      "resposta": "Quando as grandezas são diretamente proporcionais: aumentar uma causa aumento proporcional na outra.",
-      "dica": "",
+      "resposta": "Grandezas diretamente proporcionais: uma aumenta, a outra aumenta na mesma proporção. Multiplicação cruzada.",
+      "dica": "DIRETA: A/B = C/D (multiplica cruzado). CESPE: 'mais tempo = mais produção' -> SIM (diretamente proporcional).",
       "topico": "Regras de três simples e compostas",
       "codigo_topico": "3.2"
     },
     {
       "id": "raciocinio_18",
       "pergunta": "O que é regra de três simples inversa?",
-      "resposta": "Quando as grandezas são inversamente proporcionais: aumentar uma causa diminuição proporcional na outra.",
-      "dica": "",
+      "resposta": "Grandezas inversamente proporcionais: uma aumenta, a outra diminui. Multiplicação em linha reta.",
+      "dica": "INVERSA: A*B = C*D (multiplica em linha). CESPE: 'mais velozes = menos tempo' -> SIM (inversamente proporcional).",
       "topico": "Regras de três simples e compostas",
       "codigo_topico": "3.2"
     },
     {
       "id": "raciocinio_19",
       "pergunta": "Como calcular aumento percentual de X%?",
-      "resposta": "Multiplicar o valor original por (1 + X/100). Ex: aumento de 20% sobre 100 = 100 × 1,2 = 120.",
-      "dica": "",
+      "resposta": "Multiplicar o valor original por (1 + X/100). Ex: aumento de 20% em 100 = 100*(1+0,2) = 120.",
+      "dica": "AUMENTO: × (1 + i). DESCONTO: × (1 - i). CESPE: 'aumento de 10% seguido de 10% = 21%' -> SIM (1,1*1,1=1,21).",
       "topico": "Porcentagens",
       "codigo_topico": "3.3"
     },
     {
       "id": "raciocinio_20",
       "pergunta": "Como calcular desconto percentual de X%?",
-      "resposta": "Multiplicar o valor original por (1 − X/100). Ex: desconto de 15% sobre 200 = 200 × 0,85 = 170.",
-      "dica": "",
+      "resposta": "Multiplicar por (1 - X/100). Ex: 20% de desconto em 100 = 100*0,8 = 80.",
+      "dica": "DESCONTO: × (1 - i). CESPE: 'desconto de 10% + 10% = 20%' -> FALSO (1*0,9*0,9 = 0,81 = 19% de desconto).",
       "topico": "Porcentagens",
       "codigo_topico": "3.3"
     },
     {
       "id": "raciocinio_21",
       "pergunta": "O que é progressão aritmética (PA)?",
-      "resposta": "Sequência em que a diferença entre termos consecutivos (razão r) é constante. Termo geral: an = a1 + (n−1)r.",
-      "dica": "",
+      "resposta": "Sequência com diferença constante (r) entre termos. Termo geral: an = a1 + (n-1)*r.",
+      "dica": "PA: SOMA constante (r). Fórmulas: termo geral an = a1+(n-1)r. Soma Sn = n*(a1+an)/2. CESPE adora interpolação.",
       "topico": "Progressões aritméticas e geométricas",
       "codigo_topico": "8"
     },
     {
       "id": "raciocinio_22",
       "pergunta": "Como calcular a soma dos termos de uma PA finita?",
-      "resposta": "Sn = n × (a1 + an) / 2, onde n é o número de termos, a1 o primeiro e an o último.",
-      "dica": "",
+      "resposta": "Sn = n*(a1+an)/2, onde n = número de termos, a1 = primeiro, an = último.",
+      "dica": "Soma PA = (primeiro + último)*n/2. CESPE: 'soma de 1 a 100' = 100*(1+100)/2 = 5050.",
       "topico": "Progressões aritméticas e geométricas",
       "codigo_topico": "8"
     },
     {
       "id": "raciocinio_23",
       "pergunta": "O que é progressão geométrica (PG)?",
-      "resposta": "Sequência em que a razão entre termos consecutivos (q) é constante. Termo geral: an = a1 × q^(n−1).",
-      "dica": "",
+      "resposta": "Sequência com razão (q) constante entre termos. Termo geral: an = a1*q^(n-1). Soma finita: Sn = a1*(q^n-1)/(q-1).",
+      "dica": "PG: MULTIPLICA constante (q). Soma infinita (q<1): S∞ = a1/(1-q). CESPE: 'PG com q entre -1 e 1 é convergente' -> VERDADEIRO.",
       "topico": "Progressões aritméticas e geométricas",
       "codigo_topico": "8"
     },
     {
       "id": "raciocinio_24",
       "pergunta": "O que é fatorial?",
-      "resposta": "n! = n × (n−1) × ... × 2 × 1. Por definição, 0! = 1. Usado em combinatória e probabilidade.",
-      "dica": "",
+      "resposta": "n! = n*(n-1)*...*2*1. Por definição, 0! = 1. Usado em análise combinatória.",
+      "dica": "FATORIAL: 5! = 120. DECORE: 0! = 1 (definição). CESPE: '0! = 0' -> FALSO (0! = 1).",
       "topico": "Princípios de contagem",
       "codigo_topico": "7"
     },
     {
       "id": "raciocinio_25",
       "pergunta": "O que é arranjo simples?",
-      "resposta": "Agrupamento ordenado de p elementos escolhidos entre n, sem repetição. A(n,p) = n! / (n−p)!",
-      "dica": "",
+      "resposta": "Agrupamento ORDENADO de p elementos entre n, sem repetição. Fórmula: A(n,p) = n!/(n-p)!.",
+      "dica": "ARRANJO: ordem IMPORTA. Ex: senhas, filas. CESPE: 'arranjo difere de combinação pela ordem' -> VERDADEIRO.",
       "topico": "Princípios de contagem",
       "codigo_topico": "7"
     },
     {
       "id": "raciocinio_26",
       "pergunta": "O que é combinação simples?",
-      "resposta": "Agrupamento não ordenado de p elementos entre n, sem repetição. C(n,p) = n! / (p! × (n−p)!)",
-      "dica": "",
+      "resposta": "Agrupamento NÃO ORDENADO de p elementos entre n. Fórmula: C(n,p) = n!/[p!*(n-p)!].",
+      "dica": "COMBINAÇÃO: ordem NÃO importa. Ex: comissões, grupos. CESPE: 'C(n,p) = A(n,p)/p!' -> VERDADEIRO.",
       "topico": "Princípios de contagem",
       "codigo_topico": "7"
     },
     {
       "id": "raciocinio_27",
       "pergunta": "O que é permutação simples?",
-      "resposta": "Arranjo com todos os n elementos: Pn = n! — número de formas de ordenar n elementos distintos.",
-      "dica": "",
+      "resposta": "Arranjo de todos os n elementos: Pn = n!. Número de formas de ordenar n objetos distintos.",
+      "dica": "PERMUTAÇÃO = todos os elementos, ordem importa. Pn = n!. CESPE: 'permutação é caso particular de arranjo' -> SIM (A(n,n) = n!).",
       "topico": "Princípios de contagem",
       "codigo_topico": "7"
     },
     {
       "id": "raciocinio_28",
       "pergunta": "O que é probabilidade?",
-      "resposta": "P(A) = casos favoráveis / total de casos possíveis; valor entre 0 e 1.",
-      "dica": "",
+      "resposta": "P(A) = casos favoráveis / total de casos possíveis. Valor entre 0 e 1. Probabilidade de evento certo = 1; impossível = 0.",
+      "dica": "P(A) = n(A)/n(Ω). CESPE: 'probabilidade pode ser maior que 1' -> FALSO (0 ≤ P ≤ 1). P = 0 = impossível; P = 1 = certo.",
       "topico": "Princípios de contagem e probabilidade",
       "codigo_topico": "13"
     },
     {
       "id": "raciocinio_29",
       "pergunta": "O que é probabilidade de evento complementar?",
-      "resposta": "P(A') = 1 − P(A); a probabilidade de A não ocorrer é o complemento de A ocorrer.",
-      "dica": "",
+      "resposta": "P(A') = 1 - P(A). A probabilidade de A não ocorrer é o complemento.",
+      "dica": "Útil quando P(A) é mais fácil de calcular. CESPE: 'P(A') = 1 - P(A)' -> VERDADEIRO. Ex: 'probabilidade de não sair 6 no dado' = 1 - 1/6 = 5/6.",
       "topico": "Princípios de contagem e probabilidade",
       "codigo_topico": "13"
     },
@@ -13227,168 +13213,168 @@
     {
       "id": "contabilidade_0",
       "pergunta": "O que é contabilidade e qual seu objeto?",
-      "resposta": "Ciência que estuda, controla e registra o patrimônio das entidades; seu objeto é o patrimônio e suas variações.",
-      "dica": "",
+      "resposta": "Ciência que estuda e controla o patrimônio das entidades, registrando fatos contábeis para gerar informações úteis à tomada de decisão. Objeto: o patrimônio.",
+      "dica": "OBJETO = PATRIMÔNIO. Finalidade = fornecer informações. CESPE: 'objeto da contabilidade é o lucro' -> FALSO (é o patrimônio).",
       "topico": "Conceitos, objetivos e finalidades da contabilidade",
       "codigo_topico": "1"
     },
     {
       "id": "contabilidade_1",
       "pergunta": "Qual a finalidade da contabilidade?",
-      "resposta": "Fornecer informações sobre o patrimônio para apoiar a tomada de decisões por usuários internos e externos.",
-      "dica": "",
+      "resposta": "Fornecer informações sobre o patrimônio para apoiar decisões dos usuários (gestores, investidores, fisco).",
+      "dica": "USUÁRIOS: internos (gestão) e externos (investidores, bancos, fisco). CESPE: 'contabilidade serve só para o fisco' -> FALSO (múltiplos usuários).",
       "topico": "Conceitos, objetivos e finalidades da contabilidade",
       "codigo_topico": "1"
     },
     {
       "id": "contabilidade_2",
       "pergunta": "O que é o patrimônio em contabilidade?",
-      "resposta": "Conjunto de bens, direitos e obrigações de uma entidade, avaliáveis monetariamente.",
-      "dica": "",
+      "resposta": "Conjunto de bens, direitos e obrigações de uma entidade, avaliado monetariamente.",
+      "dica": "PATRIMÔNIO = Bens + Direitos - Obrigações. Equação: A - P = PL. CESPE: 'patrimônio é só o ativo' -> FALSO (ativo + passivo).",
       "topico": "Patrimônio: componentes, equação fundamental do patrimônio, situação líquida, representação gráfica",
       "codigo_topico": "2"
     },
     {
       "id": "contabilidade_3",
       "pergunta": "O que são bens em contabilidade?",
-      "resposta": "Coisas capazes de satisfazer necessidades e avaliáveis monetariamente. Ex: caixa, estoques, imóveis.",
-      "dica": "",
+      "resposta": "Coisas capazes de satisfazer necessidades e avaliáveis monetariamente. Tangíveis (imóveis) ou intangíveis (marcas).",
+      "dica": "BENS = ativos. Tangíveis (corpóreos): máquinas, prédios. Intangíveis (incorpóreos): patentes, softwares. CESPE: 'bem é tudo que tem valor econômico' -> VERDADEIRO.",
       "topico": "Patrimônio: componentes, equação fundamental do patrimônio, situação líquida, representação gráfica",
       "codigo_topico": "2"
     },
     {
       "id": "contabilidade_4",
       "pergunta": "O que são direitos em contabilidade?",
-      "resposta": "Valores a receber pela entidade; compõem o Ativo. Ex: contas a receber, duplicatas.",
-      "dica": "",
+      "resposta": "Valores a receber pela entidade (contas a receber, duplicatas). Compõem o Ativo.",
+      "dica": "DIREITOS = Ativo (algo a RECEBER). Ex: clientes, duplicatas, aluguéis a receber. CESPE: 'direitos são contas do passivo' -> FALSO (são do ativo).",
       "topico": "Patrimônio: componentes, equação fundamental do patrimônio, situação líquida, representação gráfica",
       "codigo_topico": "2"
     },
     {
       "id": "contabilidade_5",
       "pergunta": "O que são obrigações em contabilidade?",
-      "resposta": "Dívidas e compromissos a pagar; compõem o Passivo. Ex: fornecedores, empréstimos.",
-      "dica": "",
+      "resposta": "Dívidas e compromissos a pagar (fornecedores, salários, impostos). Compõem o Passivo.",
+      "dica": "OBRIGAÇÕES = Passivo (algo a PAGAR). CESPE: 'obrigações são contas do ativo' -> FALSO (são do passivo).",
       "topico": "Patrimônio: componentes, equação fundamental do patrimônio, situação líquida, representação gráfica",
       "codigo_topico": "2"
     },
     {
       "id": "contabilidade_6",
       "pergunta": "O que é a equação fundamental do patrimônio?",
-      "resposta": "ATIVO = PASSIVO + PATRIMÔNIO LÍQUIDO. O ativo é sempre igual à soma das origens dos recursos.",
-      "dica": "",
+      "resposta": "ATIVO = PASSIVO + PATRIMÔNIO LÍQUIDO. O ativo é sempre igual à soma do passivo com o PL.",
+      "dica": "A = P + PL. Também: PL = A - P. Se A > P = PL positivo (situação líquida positiva). A < P = PL negativo (passivo a descoberto).",
       "topico": "Patrimônio: componentes, equação fundamental do patrimônio, situação líquida, representação gráfica",
       "codigo_topico": "2"
     },
     {
       "id": "contabilidade_7",
       "pergunta": "O que é situação líquida (patrimônio líquido)?",
-      "resposta": "Diferença entre Ativo e Passivo: PL = Ativo − Passivo. Pode ser positiva, nula ou negativa (passivo a descoberto).",
-      "dica": "",
+      "resposta": "Diferença entre Ativo e Passivo: PL = A - P. Pode ser positiva, negativa ou nula.",
+      "dica": "PL POSITIVO = A > P. PL NEGATIVO = A < P (passivo a descoberto). PL NULO = A = P. CESPE: 'situação líquida é sempre positiva' -> FALSO.",
       "topico": "Patrimônio: componentes, equação fundamental do patrimônio, situação líquida, representação gráfica",
       "codigo_topico": "2"
     },
     {
       "id": "contabilidade_8",
       "pergunta": "O que é situação líquida positiva?",
-      "resposta": "Ativo > Passivo; a entidade tem mais bens e direitos do que obrigações.",
-      "dica": "",
+      "resposta": "Ativo > Passivo. Entidade tem mais bens/direitos do que obrigações. Situação normal.",
+      "dica": "SITUAÇÃO LÍQUIDA POSITIVA = A > P. Sinônimos: situação líquida ativa, superavitária, própria. CESPE adora a nomenclatura.",
       "topico": "Patrimônio: componentes, equação fundamental do patrimônio, situação líquida, representação gráfica",
       "codigo_topico": "2"
     },
     {
       "id": "contabilidade_9",
       "pergunta": "O que é situação líquida negativa (passivo a descoberto)?",
-      "resposta": "Passivo > Ativo; a entidade deve mais do que possui; situação financeira comprometida.",
-      "dica": "",
+      "resposta": "Passivo > Ativo. Entidade deve mais do que possui. PL negativo.",
+      "dica": "PASSIVO A DESCOBERTO = A < P. Sinônimos: situação líquida negativa, deficitária, PL negativo. CESPE adora: 'passivo a descoberto'.",
       "topico": "Patrimônio: componentes, equação fundamental do patrimônio, situação líquida, representação gráfica",
       "codigo_topico": "2"
     },
     {
       "id": "contabilidade_10",
       "pergunta": "O que é ato administrativo em contabilidade?",
-      "resposta": "Movimentos que NÃO alteram o patrimônio líquido; apenas redistribuem elementos dentro do ativo ou passivo.",
-      "dica": "",
+      "resposta": "Movimentos que NÃO alteram o PL, apenas reorganizam a administração. Não são registrados como fatos contábeis.",
+      "dica": "ATO ADMINISTRATIVO: não altera o patrimônio. FATO CONTÁBIL: altera o patrimônio. CESPE adora essa distinção.",
       "topico": "Atos e fatos administrativos: conceitos, fatos permutativos, modificativos e mistos",
       "codigo_topico": "3"
     },
     {
       "id": "contabilidade_11",
       "pergunta": "O que é fato contábil?",
-      "resposta": "Evento que altera qualitativa ou quantitativamente o patrimônio da entidade; pode ser permutativo, modificativo ou misto.",
-      "dica": "",
+      "resposta": "Evento que altera qualitativa ou quantitativamente o patrimônio. Todo fato contábil deve ser registrado.",
+      "dica": "FATO CONTÁBIL = altera o patrimônio. ATOS = não alteram. CESPE: 'todo fato contábil altera o PL' -> FALSO (permutativos não alteram o PL).",
       "topico": "Atos e fatos administrativos: conceitos, fatos permutativos, modificativos e mistos",
       "codigo_topico": "3"
     },
     {
       "id": "contabilidade_12",
       "pergunta": "O que é fato permutativo?",
-      "resposta": "Altera a composição do patrimônio sem modificar o valor do PL. Ex: compra de mercadorias à vista (saiu caixa, entrou mercadoria).",
-      "dica": "",
+      "resposta": "Altera a composição do patrimônio sem modificar o PL. Ex: compra de estoque à vista (troca caixa por estoque).",
+      "dica": "PERMUTATIVO: troca entre contas do ativo/passivo, PL não muda. CESPE: 'compra de máquina à vista é fato permutativo' -> VERDADEIRO.",
       "topico": "Atos e fatos administrativos: conceitos, fatos permutativos, modificativos e mistos",
       "codigo_topico": "3"
     },
     {
       "id": "contabilidade_13",
       "pergunta": "O que é fato modificativo?",
-      "resposta": "Altera o valor do PL. Aumentativo (receita) ou diminutivo (despesa). Ex: receber juros (aumentativo); pagar salário (diminutivo).",
-      "dica": "",
+      "resposta": "Altera o valor do PL. Aumentativo (receita) ou diminutivo (despesa).",
+      "dica": "MODIFICATIVO: altera o PL. AUMENTATIVO: receitas (+PL). DIMINUTIVO: despesas (-PL). CESPE: 'pagamento de salário é fato modificativo' -> VERDADEIRO.",
       "topico": "Atos e fatos administrativos: conceitos, fatos permutativos, modificativos e mistos",
       "codigo_topico": "3"
     },
     {
       "id": "contabilidade_14",
       "pergunta": "O que é fato misto?",
-      "resposta": "Combinação de permutativo e modificativo; altera a composição e o valor do PL simultaneamente.",
-      "dica": "",
+      "resposta": "Combina permutativo + modificativo. Altera composição E valor do PL. Ex: compra à vista com desconto.",
+      "dica": "MISTO: parte permutativa + parte modificativa. CESPE adora: 'compra à vista com desconto é fato misto' -> VERDADEIRO (troca ativo + receita de desconto).",
       "topico": "Atos e fatos administrativos: conceitos, fatos permutativos, modificativos e mistos",
       "codigo_topico": "3"
     },
     {
       "id": "contabilidade_15",
       "pergunta": "O que é conta contábil?",
-      "resposta": "Elemento de registro que representa cada componente do patrimônio ou resultado; acumula débitos e créditos.",
-      "dica": "",
+      "resposta": "Elemento de registro que representa cada componente patrimonial ou de resultado, sob uma denominação técnica.",
+      "dica": "CONTA = 'endereço' de cada item (Caixa, Bancos, Fornecedores). CESPE: 'conta contábil é o nome técnico do elemento patrimonial' -> VERDADEIRO.",
       "topico": "Contas: conceitos, contas de débitos, contas de créditos e saldos",
       "codigo_topico": "4"
     },
     {
       "id": "contabilidade_16",
       "pergunta": "O que é débito e crédito em contabilidade?",
-      "resposta": "Débito: lançamento no lado esquerdo da conta T. Crédito: lançamento no lado direito. O significado varia conforme a natureza da conta.",
-      "dica": "",
+      "resposta": "Débito: lado esquerdo da conta T. Crédito: lado direito. Método das partidas dobradas: todo débito corresponde a um crédito.",
+      "dica": "PARTIDAS DOBRADAS (Pacioli): não há débito sem crédito. TOTAL DÉBITOS = TOTAL CRÉDITOS. CESPE adora.",
       "topico": "Contas: conceitos, contas de débitos, contas de créditos e saldos",
       "codigo_topico": "4"
     },
     {
       "id": "contabilidade_17",
       "pergunta": "Para contas de Ativo, o que aumenta por débito ou crédito?",
-      "resposta": "Aumentam pelo débito (D); diminuem pelo crédito (C). Saldo normal: devedor.",
-      "dica": "",
+      "resposta": "AUMENTAM pelo DÉBITO; diminuem pelo CRÉDITO. Saldo normal: DEVEDOR.",
+      "dica": "ATIVO = natureza DEVEDORA (aumenta a débito). Passivo = natureza CREDORA (aumenta a crédito). Mnemônico: 'AD' (Ativo = Devedor).",
       "topico": "Contas: conceitos, contas de débitos, contas de créditos e saldos",
       "codigo_topico": "4"
     },
     {
       "id": "contabilidade_18",
       "pergunta": "Para contas de Passivo e PL, o que aumenta por débito ou crédito?",
-      "resposta": "Aumentam pelo crédito (C); diminuem pelo débito (D). Saldo normal: credor.",
-      "dica": "",
+      "resposta": "AUMENTAM pelo CRÉDITO; diminuem pelo DÉBITO. Saldo normal: CREDOR.",
+      "dica": "PASSIVO/PL = natureza CREDORA (aumenta a crédito). CESPE: 'passivo aumenta a débito' -> FALSO (aumenta a crédito).",
       "topico": "Contas: conceitos, contas de débitos, contas de créditos e saldos",
       "codigo_topico": "4"
     },
     {
       "id": "contabilidade_19",
       "pergunta": "Para contas de Despesa, o que aumenta por débito ou crédito?",
-      "resposta": "Aumentam pelo débito; diminuem pelo crédito. Saldo normal: devedor.",
-      "dica": "",
+      "resposta": "AUMENTAM pelo DÉBITO; diminuem pelo CRÉDITO. Saldo normal: DEVEDOR.",
+      "dica": "DESPESA = natureza DEVEDORA (como ativo). RECEITA = natureza CREDORA (como passivo). CESPE: 'despesa aumenta a crédito' -> FALSO.",
       "topico": "Contas: conceitos, contas de débitos, contas de créditos e saldos",
       "codigo_topico": "4"
     },
     {
       "id": "contabilidade_20",
       "pergunta": "Para contas de Receita, o que aumenta por débito ou crédito?",
-      "resposta": "Aumentam pelo crédito; diminuem pelo débito. Saldo normal: credor.",
-      "dica": "",
+      "resposta": "AUMENTAM pelo CRÉDITO; diminuem pelo DÉBITO. Saldo normal: CREDOR.",
+      "dica": "RECEITA = natureza CREDORA. Encerra contra o resultado. CESPE: 'receita aumenta a débito' -> FALSO (aumenta a crédito).",
       "topico": "Contas: conceitos, contas de débitos, contas de créditos e saldos",
       "codigo_topico": "4"
     },
@@ -13403,32 +13389,32 @@
     {
       "id": "contabilidade_22",
       "pergunta": "O que é escrituração contábil?",
-      "resposta": "Registro cronológico e sistemático de todos os fatos contábeis nos livros contábeis (Diário e Razão).",
-      "dica": "",
+      "resposta": "Registro cronológico e sistemático de todos os fatos contábeis nos livros Diário e Razão.",
+      "dica": "ESCRITURAÇÃO = registro dos fatos. Método: partidas dobradas. Livros: Diário (cronológico) e Razão (por conta).",
       "topico": "Escrituração: conceitos, lançamentos contábeis, elementos essenciais, fórmulas de lançamentos, livros de escrituração, métodos e processos, regime de competência e regime de caixa",
       "codigo_topico": "6"
     },
     {
       "id": "contabilidade_23",
       "pergunta": "O que é o Livro Diário?",
-      "resposta": "Livro obrigatório onde os fatos são registrados em ordem cronológica, com os respectivos lançamentos.",
-      "dica": "",
+      "resposta": "Livro obrigatório onde os fatos são registrados em ordem cronológica (dia/mês/ano). Contém histórico e conta debitada/creditada.",
+      "dica": "DIÁRIO = cronológico. RAZÃO = sistemático (por conta). Ambos obrigatórios. CESPE: 'Diário registra em ordem alfabética' -> FALSO (cronológico).",
       "topico": "Escrituração: conceitos, lançamentos contábeis, elementos essenciais, fórmulas de lançamentos, livros de escrituração, métodos e processos, regime de competência e regime de caixa",
       "codigo_topico": "6"
     },
     {
       "id": "contabilidade_24",
       "pergunta": "O que é o Livro Razão?",
-      "resposta": "Livro que agrupa os lançamentos do Diário por conta, permitindo acompanhar o saldo de cada conta individualmente.",
-      "dica": "",
+      "resposta": "Livro que agrupa lançamentos por conta, permitindo ver o saldo de cada uma individualmente.",
+      "dica": "RAZÃO = conta T. Saldo = débitos - créditos. CESPE: 'Razão é dispensável' -> FALSO (é obrigatório).",
       "topico": "Escrituração: conceitos, lançamentos contábeis, elementos essenciais, fórmulas de lançamentos, livros de escrituração, métodos e processos, regime de competência e regime de caixa",
       "codigo_topico": "6"
     },
     {
       "id": "contabilidade_25",
       "pergunta": "O que é lançamento contábil?",
-      "resposta": "Registro de um fato contábil; composto por: data, conta debitada, conta creditada, histórico e valor.",
-      "dica": "",
+      "resposta": "Registro de um fato contábil. Elementos: data, conta debitada, conta creditada, histórico e valor.",
+      "dica": "5 ELEMENTOS do lançamento: data, débito, crédito, histórico, valor. CESPE adora.",
       "topico": "Escrituração: conceitos, lançamentos contábeis, elementos essenciais, fórmulas de lançamentos, livros de escrituração, métodos e processos, regime de competência e regime de caixa",
       "codigo_topico": "6"
     },
@@ -13467,16 +13453,16 @@
     {
       "id": "contabilidade_30",
       "pergunta": "O que é o Balanço Patrimonial (BP)?",
-      "resposta": "Demonstração que apresenta a posição financeira da entidade em uma data específica: Ativo, Passivo e PL.",
-      "dica": "",
+      "resposta": "Demonstração da posição financeira em determinada data. Divide-se em Ativo (bens/direitos), Passivo (obrigações) e PL.",
+      "dica": "BP = FOTO (posição estática). DRE = FILME (desempenho). BP evidencia A = P + PL. CESPE: 'BP é demonstração dinâmica' -> FALSO (estática).",
       "topico": "Balanço patrimonial: conceitos, objetivo, composição",
       "codigo_topico": "9"
     },
     {
       "id": "contabilidade_31",
       "pergunta": "Como se divide o Ativo no Balanço Patrimonial?",
-      "resposta": "Ativo Circulante (realizável até 12 meses) e Ativo Não Circulante (realizável após 12 meses).",
-      "dica": "",
+      "resposta": "Ativo Circulante (realizável até 12 meses) e Ativo Não Circulante (Realizável LP, Investimentos, Imobilizado, Intangível).",
+      "dica": "CIRCULANTE: até 12 meses. NÃO CIRCULANTE: > 12 meses. Subdivisões do NC: Realizável LP, Investimentos, Imobilizado, Intangível.",
       "topico": "Balanço patrimonial: conceitos, objetivo, composição",
       "codigo_topico": "9"
     },
@@ -13499,8 +13485,8 @@
     {
       "id": "contabilidade_34",
       "pergunta": "O que é a DRE (Demonstração do Resultado do Exercício)?",
-      "resposta": "Demonstra o resultado (lucro ou prejuízo) do período, evidenciando receitas, custos e despesas de forma dedutiva.",
-      "dica": "",
+      "resposta": "Demonstra o resultado do período. Estrutura: RB - Deduções = RL - CMV = LB - Despesas + Receitas = LE - IR/CSLL = LL.",
+      "dica": "DRE = FILME (dinâmica). RB = Receita Bruta. Deduções = impostos, devoluções. CMV = Custo das Mercadorias. Resultado: Lucro Líquido.",
       "topico": "Demonstração de resultado de exercício: conceito, objetivo, composição",
       "codigo_topico": "10"
     },
@@ -13523,8 +13509,8 @@
     {
       "id": "contabilidade_37",
       "pergunta": "O que é depreciação?",
-      "resposta": "Redução do valor do Ativo Imobilizado pelo desgaste, obsolescência ou ação do tempo; é uma despesa não caixa.",
-      "dica": "",
+      "resposta": "Redução do valor do Ativo Imobilizado pelo desgaste, obsolescência ou ação do tempo. Método linear: valor/vida útil.",
+      "dica": "DEPRECIAÇÃO: bens tangíveis. AMORTIZAÇÃO: intangíveis. EXAUSTÃO: recursos naturais. Método linear: quota constante. CESPE adora: 'depreciação é despesa' -> VERDADEIRO.",
       "topico": "Contabilização de operações contábeis diversas: juros, descontos, tributos, aluguéis, variação monetária/cambial, folha de pagamento, compras, vendas e provisões, depreciações e baixa de bens",
       "codigo_topico": "7"
     },
@@ -13563,8 +13549,8 @@
     {
       "id": "contabilidade_42",
       "pergunta": "O que são Normas Brasileiras de Contabilidade (NBC)?",
-      "resposta": "Normas emitidas pelo CFC (Conselho Federal de Contabilidade) que regulam a prática contábil no Brasil.",
-      "dica": "",
+      "resposta": "Normas emitidas pelo CFC que regulam a profissão contábil. Hierarquia: NBC TG (técnicas gerais), NBC TSP (público), NBC PA (profissional).",
+      "dica": "NBC = regras do CFC. CPC = pronunciamentos do Comitê. NBCs incorporam CPCs. CESPE: 'NBCs substituem a lei' -> FALSO (complementam).",
       "topico": "Normas Brasileiras de Contabilidade",
       "codigo_topico": "11"
     },
@@ -14325,64 +14311,64 @@
     {
       "id": "estatistica_0",
       "pergunta": "O que é estatística descritiva?",
-      "resposta": "Conjunto de técnicas para organizar, resumir e descrever dados por meio de tabelas, gráficos e medidas numéricas.",
-      "dica": "",
+      "resposta": "Conjunto de técnicas para organizar, resumir e descrever dados por meio de tabelas, gráficos e medidas descritivas (posição, dispersão).",
+      "dica": "DESCRITIVA: descreve a amostra. INFERENCIAL: conclui sobre a população. CESPE: 'descritiva permite conclusões sobre a população' -> FALSO (quem faz é a inferencial).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1"
     },
     {
       "id": "estatistica_1",
-      "pergunta": "O que é população e amostra em estatística?",
-      "resposta": "População: conjunto de todos os elementos de interesse. Amostra: subconjunto representativo da população.",
-      "dica": "",
+      "pergunta": "O que é população e amostra?",
+      "resposta": "População: todos os elementos de interesse. Amostra: subconjunto representativo. Parâmetro descreve população; estatística descreve amostra.",
+      "dica": "POPULAÇÃO = todos. AMOSTRA = parte. PARÂMETRO = medida da população. ESTATÍSTICA = medida da amostra. CESPE adora.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1"
     },
     {
       "id": "estatistica_2",
       "pergunta": "O que é variável estatística?",
-      "resposta": "Característica observada nos elementos; pode ser qualitativa (nominal/ordinal) ou quantitativa (discreta/contínua).",
-      "dica": "",
+      "resposta": "Característica observada nos elementos. Qualitativa (nominal/ordinal) ou quantitativa (discreta/contínua).",
+      "dica": "QUALITATIVA: atributos (sexo, cor). QUANTITATIVA: números (altura, idade). NOMINAL: sem ordem. ORDINAL: com ordem. DISCRETA: inteiros. CONTÍNUA: qualquer valor.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1"
     },
     {
       "id": "estatistica_3",
       "pergunta": "O que é variável qualitativa nominal?",
-      "resposta": "Categoria sem ordem natural entre as classes. Ex: cor dos olhos, estado civil, cargo policial.",
-      "dica": "",
+      "resposta": "Categoria sem ordem natural. Ex: cor dos olhos, estado civil, profissão.",
+      "dica": "NOMINAL = NOME (sem hierarquia). CESPE: 'escolaridade é nominal' -> FALSO (é ordinal, tem ordem).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1"
     },
     {
       "id": "estatistica_4",
       "pergunta": "O que é variável qualitativa ordinal?",
-      "resposta": "Categoria com ordem natural entre as classes. Ex: grau de escolaridade (fundamental < médio < superior).",
-      "dica": "",
+      "resposta": "Categoria com ordem natural. Ex: escolaridade (fundamental, médio, superior), classe social.",
+      "dica": "ORDINAL = ORDEM. CESPE: 'classificação de policiais por patente' -> ordinal. 'Cor da pele' -> nominal.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1"
     },
     {
       "id": "estatistica_5",
       "pergunta": "O que é variável quantitativa discreta?",
-      "resposta": "Assume valores inteiros, geralmente contagens. Ex: número de filhos, número de ocorrências registradas.",
-      "dica": "",
+      "resposta": "Assume valores inteiros, geralmente contagens. Ex: número de filhos, número de prisões.",
+      "dica": "DISCRETA = CONTAGEM (valores inteiros). CESPE: 'número de policiais em uma delegacia' -> discreta. 'Altura' -> contínua.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1"
     },
     {
       "id": "estatistica_6",
       "pergunta": "O que é variável quantitativa contínua?",
-      "resposta": "Pode assumir qualquer valor em um intervalo real. Ex: altura, peso, temperatura, tempo de serviço.",
-      "dica": "",
+      "resposta": "Pode assumir qualquer valor em um intervalo real. Ex: altura, peso, temperatura, tempo.",
+      "dica": "CONTÍNUA = MEDIÇÃO (valores reais). CESPE: 'idade é contínua ou discreta?' -> AMBAS (em anos = discreta; em dias = contínua).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1"
     },
     {
       "id": "estatistica_7",
       "pergunta": "O que é tabela de frequência?",
-      "resposta": "Organização dos dados em classes com suas frequências absolutas (fi), relativas (fri) e acumuladas (Fi).",
-      "dica": "",
+      "resposta": "Organização dos dados em classes com frequências: absoluta (fi), relativa (fr), acumulada (Fa).",
+      "dica": "FREQ. ABSOLUTA = contagem. RELATIVA = fi/n (percentual). ACUMULADA = soma até o ponto. CESPE adora.",
       "topico": "Probabilidade",
       "codigo_topico": "2"
     },
@@ -14390,15 +14376,15 @@
       "id": "estatistica_8",
       "pergunta": "O que é frequência absoluta?",
       "resposta": "Número de vezes que um valor ou classe ocorre no conjunto de dados.",
-      "dica": "",
+      "dica": "Somatório de todas as fi = n (total). CESPE: 'frequência absoluta é sempre expressa em porcentagem' -> FALSO (relativa é porcentagem).",
       "topico": "Probabilidade",
       "codigo_topico": "2"
     },
     {
       "id": "estatistica_9",
       "pergunta": "O que é frequência relativa?",
-      "resposta": "Razão entre a frequência absoluta e o total de dados; pode ser expressa em decimal ou porcentagem.",
-      "dica": "",
+      "resposta": "Razão entre frequência absoluta e total: fr = fi/n. Expressa em decimal, fração ou porcentagem.",
+      "dica": "Somatório de fr = 1 (ou 100%). CESPE: 'frequência relativa é fi/n' -> VERDADEIRO.",
       "topico": "Probabilidade",
       "codigo_topico": "2"
     },
@@ -14412,73 +14398,65 @@
     },
     {
       "id": "estatistica_11",
-      "pergunta": "O que é média aritmética e como é calculada?",
-      "resposta": "Soma de todos os valores dividida pelo número de observações. x̄ = Σxi / n.",
-      "dica": "",
+      "pergunta": "O que é média aritmética?",
+      "resposta": "Soma de todos os valores dividida pelo número de observações: x̄ = Σxi/n.",
+      "dica": "MÉDIA = centro de gravidade. Sensível a outliers. CESPE: 'média é influenciada por valores extremos' -> VERDADEIRO.",
       "topico": "Probabilidade",
       "codigo_topico": "2"
     },
     {
-      "id": "estatistica_12",
-      "pergunta": "O que é mediana e como é calculada?",
-      "resposta": "Valor central do rol ordenado. Se n ímpar: valor do meio. Se n par: média dos dois valores centrais.",
-      "dica": "",
-      "topico": "Definições básicas e axiomas",
-      "codigo_topico": "2.1"
-    },
-    {
       "id": "estatistica_13",
       "pergunta": "O que é moda?",
-      "resposta": "Valor que ocorre com maior frequência; pode ser amodal, unimodal, bimodal ou multimodal.",
-      "dica": "",
+      "resposta": "Valor que ocorre com maior frequência. Pode ser amodal, unimodal, bimodal ou multimodal.",
+      "dica": "MODA = mais frequente. CESPE: 'moda sempre existe' -> FALSO (pode ser amodal).",
       "topico": "Probabilidade condicional e independência",
       "codigo_topico": "2.2"
     },
     {
       "id": "estatistica_14",
       "pergunta": "Qual a relação entre média, mediana e moda em distribuições assimétricas?",
-      "resposta": "Assimetria positiva (cauda à direita): Moda < Mediana < Média. Assimetria negativa: Média < Mediana < Moda.",
-      "dica": "",
+      "resposta": "Assimetria positiva (cauda à direita): Moda < Mediana < Média. Assimetria negativa (cauda à esquerda): Média < Mediana < Moda.",
+      "dica": "POSITIVA: Mo < Md < x̄ (cauda direita). NEGATIVA: x̄ < Md < Mo (cauda esquerda). Normal: Mo = Md = x̄. CESPE adora essa relação.",
       "topico": "Probabilidade condicional e independência",
       "codigo_topico": "2.2"
     },
     {
       "id": "estatistica_15",
       "pergunta": "O que é variância?",
-      "resposta": "Média dos quadrados dos desvios em relação à média; mede a dispersão dos dados. σ² = Σ(xi − x̄)² / n.",
-      "dica": "",
+      "resposta": "Média dos quadrados dos desvios em relação à média. Mede a dispersão. σ² = Σ(xi - x̄)²/n.",
+      "dica": "VARIÂNCIA: quadrado da unidade dos dados. Populacional: σ² (divide por N). Amostral: s² (divide por n-1).",
       "topico": "Técnicas de amostragem: amostragem aleatória simples, estratificada, sistemática e por conglomerados",
       "codigo_topico": "3"
     },
     {
       "id": "estatistica_16",
       "pergunta": "O que é desvio padrão?",
-      "resposta": "Raiz quadrada da variância; mede a dispersão na mesma unidade dos dados. σ = √variância.",
-      "dica": "",
+      "resposta": "Raiz quadrada da variância. Mede a dispersão na mesma unidade dos dados. σ = √σ².",
+      "dica": "DESVIO PADRÃO = variância na unidade original. CESPE: 'desvio padrão é sempre positivo' -> VERDADEIRO (raiz quadrada).",
       "topico": "Tamanho amostral",
       "codigo_topico": "3.1"
     },
     {
       "id": "estatistica_17",
       "pergunta": "O que é coeficiente de variação (CV)?",
-      "resposta": "CV = (σ / x̄) × 100%; mede a dispersão relativa; permite comparar a variabilidade de conjuntos com unidades ou médias diferentes.",
-      "dica": "",
+      "resposta": "CV = (σ/x̄)*100%. Mede a dispersão relativa. Permite comparar variabilidades de conjuntos com unidades diferentes.",
+      "dica": "CV = dispersão relativa (percentual). Quanto menor o CV, mais homogêneo. CESPE: 'CV permite comparar alturas e pesos' -> VERDADEIRO.",
       "topico": "Técnicas de amostragem: amostragem aleatória simples, estratificada, sistemática e por conglomerados",
       "codigo_topico": "3"
     },
     {
       "id": "estatistica_18",
       "pergunta": "O que é amplitude total?",
-      "resposta": "Diferença entre o maior e o menor valor do conjunto de dados; medida simples de dispersão.",
-      "dica": "",
+      "resposta": "Diferença entre o maior e o menor valor do conjunto. Medida simples mas limitada de dispersão.",
+      "dica": "AMPLITUDE = Max - Min. Instável (sofre com outliers). CESPE: 'amplitude total é a melhor medida de dispersão' -> FALSO (é a mais simples, mas menos robusta).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1"
     },
     {
       "id": "estatistica_19",
       "pergunta": "O que é quartil?",
-      "resposta": "Valores que dividem o conjunto ordenado em 4 partes iguais: Q1 (25%), Q2 = mediana (50%), Q3 (75%).",
-      "dica": "",
+      "resposta": "Valores que dividem o rol ordenado em 4 partes iguais. Q1 (25%), Q2 = mediana (50%), Q3 (75%).",
+      "dica": "QUARTIS: Q1 = 1º quartil (P25). Q2 = mediana (P50). Q3 = 3º quartil (P75). IIQ = Q3 - Q1 (medida robusta).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1"
     },
@@ -14500,9 +14478,9 @@
     },
     {
       "id": "estatistica_22",
-      "pergunta": "O que é o histograma?",
-      "resposta": "Gráfico de barras adjacentes para variáveis contínuas, com classes e frequências; mostra a distribuição dos dados.",
-      "dica": "",
+      "pergunta": "O que é histograma?",
+      "resposta": "Gráfico de barras adjacentes para variáveis contínuas. Base = classes; altura = frequência.",
+      "dica": "HISTOGRAMA: barras JUNTAS (sem espaço). Polígono de frequência: linhas. Ogiva: frequência acumulada. CESPE: 'histograma é para variáveis qualitativas' -> FALSO.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1"
     },
@@ -14533,80 +14511,80 @@
     {
       "id": "estatistica_26",
       "pergunta": "O que é probabilidade e seus axiomas?",
-      "resposta": "Medida de chance de ocorrência de eventos. Axiomas: P(A)≥0; P(Ω)=1; P(A∪B)=P(A)+P(B) se A e B mutuamente exclusivos.",
-      "dica": "",
+      "resposta": "Medida de chance de ocorrência. Axiomas (Kolmogorov): (1) P(A) ≥ 0; (2) P(Ω) = 1; (3) P(A∪B) = P(A)+P(B) se A e B mutuamente exclusivos.",
+      "dica": "AXIOMAS: não negatividade, normalização, aditividade. CESPE: 'probabilidade pode ser negativa' -> FALSO.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1"
     },
     {
       "id": "estatistica_27",
       "pergunta": "O que é espaço amostral?",
-      "resposta": "Conjunto de todos os resultados possíveis de um experimento aleatório; representado por Ω ou S.",
-      "dica": "",
+      "resposta": "Conjunto de todos os resultados possíveis de um experimento aleatório. Representado por Ω.",
+      "dica": "ESPAÇO AMOSTRAL = Ω (todas possibilidades). Ex: dado = {1,2,3,4,5,6}. CESPE: 'o espaço amostral é sempre finito' -> FALSO (pode ser infinito).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1"
     },
     {
       "id": "estatistica_28",
       "pergunta": "O que são eventos mutuamente exclusivos?",
-      "resposta": "Eventos que não podem ocorrer simultaneamente; P(A ∩ B) = 0.",
-      "dica": "",
+      "resposta": "Eventos que não podem ocorrer simultaneamente. P(A ∩ B) = 0.",
+      "dica": "MUTUAMENTE EXCLUSIVOS = disjuntos. CESPE: 'se A e B são mutuamente exclusivos, P(A∪B) = P(A)+P(B)' -> VERDADEIRO.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1"
     },
     {
       "id": "estatistica_29",
       "pergunta": "O que são eventos independentes?",
-      "resposta": "A ocorrência de um não afeta a probabilidade do outro; P(A ∩ B) = P(A) × P(B).",
-      "dica": "",
+      "resposta": "A ocorrência de um não afeta a probabilidade do outro. P(A∩B) = P(A)*P(B).",
+      "dica": "INDEPENDENTES: P(A∩B)=P(A)P(B). CESPE: 'eventos mutuamente exclusivos são independentes' -> FALSO (ME nunca são independentes).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1"
     },
     {
       "id": "estatistica_31",
       "pergunta": "O que é o Teorema de Bayes?",
-      "resposta": "P(B|A) = P(A|B)×P(B) / P(A). Usado para atualizar probabilidades com novas evidências.",
-      "dica": "",
+      "resposta": "P(B|A) = P(A|B)*P(B)/P(A). Atualiza probabilidades com novas evidências.",
+      "dica": "BAYES = probabilidade 'reversa' (causa à luz do efeito). CESPE adora. Fórmula-chave para atualização de crenças.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1"
     },
     {
       "id": "estatistica_32",
       "pergunta": "O que é distribuição binomial?",
-      "resposta": "Modela o número de sucessos em n tentativas independentes com probabilidade p. P(X=k) = C(n,k)×p^k×(1−p)^(n−k).",
-      "dica": "",
+      "resposta": "Modela número de sucessos em n tentativas independentes com prob. p. P(X=k) = C(n,k)*p^k*(1-p)^(n-k).",
+      "dica": "BINOMIAL: n tentativas, 2 resultados (sucesso/fracasso), p constante. E(X)=np. Var(X)=np(1-p). CESPE: 'binomial = Bernoulli repetido' -> VERDADEIRO.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1"
     },
     {
       "id": "estatistica_33",
       "pergunta": "O que é distribuição normal?",
-      "resposta": "Distribuição em forma de sino, simétrica em torno da média; caracterizada por μ (média) e σ (desvio padrão).",
-      "dica": "",
+      "resposta": "Distribuição em forma de sino, simétrica em torno da média. Caracterizada por μ e σ. Curva padrão: Z = (X-μ)/σ.",
+      "dica": "NORMAL = curva de Gauss. Média=moda=mediana. 68-95-99,7. Padronização Z. CESPE: 'normal é assimétrica' -> FALSO (simétrica).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1"
     },
     {
       "id": "estatistica_34",
-      "pergunta": "O que é a regra empírica (68-95-99,7) da distribuição normal?",
-      "resposta": "Aproximadamente 68% dos dados estão em μ±1σ; 95% em μ±2σ; 99,7% em μ±3σ.",
-      "dica": "",
+      "pergunta": "O que é a regra empírica (68-95-99,7) da normal?",
+      "resposta": "68% dos dados em μ±1σ; 95% em μ±2σ; 99,7% em μ±3σ.",
+      "dica": "68% (±1σ), 95% (±2σ), 99,7% (±3σ). CESPE adora: '95% dos dados estão a 1 desvio padrão da média' -> FALSO (68% está a 1σ; 95% a 2σ).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1"
     },
     {
       "id": "estatistica_35",
       "pergunta": "O que é padronização (escore Z)?",
-      "resposta": "Z = (X − μ) / σ; transforma qualquer distribuição normal em normal padrão (μ=0, σ=1).",
-      "dica": "",
+      "resposta": "Z = (X-μ)/σ. Transforma qualquer normal em normal padrão (μ=0, σ=1).",
+      "dica": "Z = quantos desvios padrão X está da média. Z > 0 = acima da média. Z < 0 = abaixo. CESPE: 'Z é adimensional' -> VERDADEIRO.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1"
     },
     {
       "id": "estatistica_36",
       "pergunta": "O que é amostragem aleatória simples (AAS)?",
-      "resposta": "Cada elemento da população tem a mesma probabilidade de ser selecionado; pode ser com ou sem reposição.",
-      "dica": "",
+      "resposta": "Cada elemento tem a mesma probabilidade de ser selecionado. Pode ser com ou sem reposição.",
+      "dica": "AAS = sorteio puro. CESPE: 'AAS exige que a população seja homogênea' -> FALSO (não exige, mas é desejável).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1"
     },

@@ -1,0 +1,186 @@
+{
+  "rewrites": [
+    [
+      "contabilidade_0",
+      "O que é contabilidade e qual seu objeto?",
+      "Ciência que estuda e controla o patrimônio das entidades, registrando fatos contábeis para gerar informações úteis à tomada de decisão. Objeto: o patrimônio.",
+      "OBJETO = PATRIMÔNIO. Finalidade = fornecer informações. CESPE: 'objeto da contabilidade é o lucro' -> FALSO (é o patrimônio)."
+    ],
+    [
+      "contabilidade_1",
+      "Qual a finalidade da contabilidade?",
+      "Fornecer informações sobre o patrimônio para apoiar decisões dos usuários (gestores, investidores, fisco).",
+      "USUÁRIOS: internos (gestão) e externos (investidores, bancos, fisco). CESPE: 'contabilidade serve só para o fisco' -> FALSO (múltiplos usuários)."
+    ],
+    [
+      "contabilidade_2",
+      "O que é o patrimônio em contabilidade?",
+      "Conjunto de bens, direitos e obrigações de uma entidade, avaliado monetariamente.",
+      "PATRIMÔNIO = Bens + Direitos - Obrigações. Equação: A - P = PL. CESPE: 'patrimônio é só o ativo' -> FALSO (ativo + passivo)."
+    ],
+    [
+      "contabilidade_3",
+      "O que são bens em contabilidade?",
+      "Coisas capazes de satisfazer necessidades e avaliáveis monetariamente. Tangíveis (imóveis) ou intangíveis (marcas).",
+      "BENS = ativos. Tangíveis (corpóreos): máquinas, prédios. Intangíveis (incorpóreos): patentes, softwares. CESPE: 'bem é tudo que tem valor econômico' -> VERDADEIRO."
+    ],
+    [
+      "contabilidade_4",
+      "O que são direitos em contabilidade?",
+      "Valores a receber pela entidade (contas a receber, duplicatas). Compõem o Ativo.",
+      "DIREITOS = Ativo (algo a RECEBER). Ex: clientes, duplicatas, aluguéis a receber. CESPE: 'direitos são contas do passivo' -> FALSO (são do ativo)."
+    ],
+    [
+      "contabilidade_5",
+      "O que são obrigações em contabilidade?",
+      "Dívidas e compromissos a pagar (fornecedores, salários, impostos). Compõem o Passivo.",
+      "OBRIGAÇÕES = Passivo (algo a PAGAR). CESPE: 'obrigações são contas do ativo' -> FALSO (são do passivo)."
+    ],
+    [
+      "contabilidade_6",
+      "O que é a equação fundamental do patrimônio?",
+      "ATIVO = PASSIVO + PATRIMÔNIO LÍQUIDO. O ativo é sempre igual à soma do passivo com o PL.",
+      "A = P + PL. Também: PL = A - P. Se A > P = PL positivo (situação líquida positiva). A < P = PL negativo (passivo a descoberto)."
+    ],
+    [
+      "contabilidade_7",
+      "O que é situação líquida (patrimônio líquido)?",
+      "Diferença entre Ativo e Passivo: PL = A - P. Pode ser positiva, negativa ou nula.",
+      "PL POSITIVO = A > P. PL NEGATIVO = A < P (passivo a descoberto). PL NULO = A = P. CESPE: 'situação líquida é sempre positiva' -> FALSO."
+    ],
+    [
+      "contabilidade_8",
+      "O que é situação líquida positiva?",
+      "Ativo > Passivo. Entidade tem mais bens/direitos do que obrigações. Situação normal.",
+      "SITUAÇÃO LÍQUIDA POSITIVA = A > P. Sinônimos: situação líquida ativa, superavitária, própria. CESPE adora a nomenclatura."
+    ],
+    [
+      "contabilidade_9",
+      "O que é situação líquida negativa (passivo a descoberto)?",
+      "Passivo > Ativo. Entidade deve mais do que possui. PL negativo.",
+      "PASSIVO A DESCOBERTO = A < P. Sinônimos: situação líquida negativa, deficitária, PL negativo. CESPE adora: 'passivo a descoberto'."
+    ],
+    [
+      "contabilidade_10",
+      "O que é ato administrativo em contabilidade?",
+      "Movimentos que NÃO alteram o PL, apenas reorganizam a administração. Não são registrados como fatos contábeis.",
+      "ATO ADMINISTRATIVO: não altera o patrimônio. FATO CONTÁBIL: altera o patrimônio. CESPE adora essa distinção."
+    ],
+    [
+      "contabilidade_11",
+      "O que é fato contábil?",
+      "Evento que altera qualitativa ou quantitativamente o patrimônio. Todo fato contábil deve ser registrado.",
+      "FATO CONTÁBIL = altera o patrimônio. ATOS = não alteram. CESPE: 'todo fato contábil altera o PL' -> FALSO (permutativos não alteram o PL)."
+    ],
+    [
+      "contabilidade_12",
+      "O que é fato permutativo?",
+      "Altera a composição do patrimônio sem modificar o PL. Ex: compra de estoque à vista (troca caixa por estoque).",
+      "PERMUTATIVO: troca entre contas do ativo/passivo, PL não muda. CESPE: 'compra de máquina à vista é fato permutativo' -> VERDADEIRO."
+    ],
+    [
+      "contabilidade_13",
+      "O que é fato modificativo?",
+      "Altera o valor do PL. Aumentativo (receita) ou diminutivo (despesa).",
+      "MODIFICATIVO: altera o PL. AUMENTATIVO: receitas (+PL). DIMINUTIVO: despesas (-PL). CESPE: 'pagamento de salário é fato modificativo' -> VERDADEIRO."
+    ],
+    [
+      "contabilidade_14",
+      "O que é fato misto?",
+      "Combina permutativo + modificativo. Altera composição E valor do PL. Ex: compra à vista com desconto.",
+      "MISTO: parte permutativa + parte modificativa. CESPE adora: 'compra à vista com desconto é fato misto' -> VERDADEIRO (troca ativo + receita de desconto)."
+    ],
+    [
+      "contabilidade_15",
+      "O que é conta contábil?",
+      "Elemento de registro que representa cada componente patrimonial ou de resultado, sob uma denominação técnica.",
+      "CONTA = 'endereço' de cada item (Caixa, Bancos, Fornecedores). CESPE: 'conta contábil é o nome técnico do elemento patrimonial' -> VERDADEIRO."
+    ],
+    [
+      "contabilidade_16",
+      "O que é débito e crédito em contabilidade?",
+      "Débito: lado esquerdo da conta T. Crédito: lado direito. Método das partidas dobradas: todo débito corresponde a um crédito.",
+      "PARTIDAS DOBRADAS (Pacioli): não há débito sem crédito. TOTAL DÉBITOS = TOTAL CRÉDITOS. CESPE adora."
+    ],
+    [
+      "contabilidade_17",
+      "Para contas de Ativo, o que aumenta por débito ou crédito?",
+      "AUMENTAM pelo DÉBITO; diminuem pelo CRÉDITO. Saldo normal: DEVEDOR.",
+      "ATIVO = natureza DEVEDORA (aumenta a débito). Passivo = natureza CREDORA (aumenta a crédito). Mnemônico: 'AD' (Ativo = Devedor)."
+    ],
+    [
+      "contabilidade_18",
+      "Para contas de Passivo e PL, o que aumenta por débito ou crédito?",
+      "AUMENTAM pelo CRÉDITO; diminuem pelo DÉBITO. Saldo normal: CREDOR.",
+      "PASSIVO/PL = natureza CREDORA (aumenta a crédito). CESPE: 'passivo aumenta a débito' -> FALSO (aumenta a crédito)."
+    ],
+    [
+      "contabilidade_19",
+      "Para contas de Despesa, o que aumenta por débito ou crédito?",
+      "AUMENTAM pelo DÉBITO; diminuem pelo CRÉDITO. Saldo normal: DEVEDOR.",
+      "DESPESA = natureza DEVEDORA (como ativo). RECEITA = natureza CREDORA (como passivo). CESPE: 'despesa aumenta a crédito' -> FALSO."
+    ],
+    [
+      "contabilidade_20",
+      "Para contas de Receita, o que aumenta por débito ou crédito?",
+      "AUMENTAM pelo CRÉDITO; diminuem pelo DÉBITO. Saldo normal: CREDOR.",
+      "RECEITA = natureza CREDORA. Encerra contra o resultado. CESPE: 'receita aumenta a débito' -> FALSO (aumenta a crédito)."
+    ],
+    [
+      "contabilidade_22",
+      "O que é escrituração contábil?",
+      "Registro cronológico e sistemático de todos os fatos contábeis nos livros Diário e Razão.",
+      "ESCRITURAÇÃO = registro dos fatos. Método: partidas dobradas. Livros: Diário (cronológico) e Razão (por conta)."
+    ],
+    [
+      "contabilidade_23",
+      "O que é o Livro Diário?",
+      "Livro obrigatório onde os fatos são registrados em ordem cronológica (dia/mês/ano). Contém histórico e conta debitada/creditada.",
+      "DIÁRIO = cronológico. RAZÃO = sistemático (por conta). Ambos obrigatórios. CESPE: 'Diário registra em ordem alfabética' -> FALSO (cronológico)."
+    ],
+    [
+      "contabilidade_24",
+      "O que é o Livro Razão?",
+      "Livro que agrupa lançamentos por conta, permitindo ver o saldo de cada uma individualmente.",
+      "RAZÃO = conta T. Saldo = débitos - créditos. CESPE: 'Razão é dispensável' -> FALSO (é obrigatório)."
+    ],
+    [
+      "contabilidade_25",
+      "O que é lançamento contábil?",
+      "Registro de um fato contábil. Elementos: data, conta debitada, conta creditada, histórico e valor.",
+      "5 ELEMENTOS do lançamento: data, débito, crédito, histórico, valor. CESPE adora."
+    ],
+    [
+      "contabilidade_30",
+      "O que é o Balanço Patrimonial (BP)?",
+      "Demonstração da posição financeira em determinada data. Divide-se em Ativo (bens/direitos), Passivo (obrigações) e PL.",
+      "BP = FOTO (posição estática). DRE = FILME (desempenho). BP evidencia A = P + PL. CESPE: 'BP é demonstração dinâmica' -> FALSO (estática)."
+    ],
+    [
+      "contabilidade_31",
+      "Como se divide o Ativo no Balanço Patrimonial?",
+      "Ativo Circulante (realizável até 12 meses) e Ativo Não Circulante (Realizável LP, Investimentos, Imobilizado, Intangível).",
+      "CIRCULANTE: até 12 meses. NÃO CIRCULANTE: > 12 meses. Subdivisões do NC: Realizável LP, Investimentos, Imobilizado, Intangível."
+    ],
+    [
+      "contabilidade_34",
+      "O que é a DRE (Demonstração do Resultado do Exercício)?",
+      "Demonstra o resultado do período. Estrutura: RB - Deduções = RL - CMV = LB - Despesas + Receitas = LE - IR/CSLL = LL.",
+      "DRE = FILME (dinâmica). RB = Receita Bruta. Deduções = impostos, devoluções. CMV = Custo das Mercadorias. Resultado: Lucro Líquido."
+    ],
+    [
+      "contabilidade_37",
+      "O que é depreciação?",
+      "Redução do valor do Ativo Imobilizado pelo desgaste, obsolescência ou ação do tempo. Método linear: valor/vida útil.",
+      "DEPRECIAÇÃO: bens tangíveis. AMORTIZAÇÃO: intangíveis. EXAUSTÃO: recursos naturais. Método linear: quota constante. CESPE adora: 'depreciação é despesa' -> VERDADEIRO."
+    ],
+    [
+      "contabilidade_42",
+      "O que são Normas Brasileiras de Contabilidade (NBC)?",
+      "Normas emitidas pelo CFC que regulam a profissão contábil. Hierarquia: NBC TG (técnicas gerais), NBC TSP (público), NBC PA (profissional).",
+      "NBC = regras do CFC. CPC = pronunciamentos do Comitê. NBCs incorporam CPCs. CESPE: 'NBCs substituem a lei' -> FALSO (complementam)."
+    ]
+  ],
+  "removes": [],
+  "merges": {}
+}
