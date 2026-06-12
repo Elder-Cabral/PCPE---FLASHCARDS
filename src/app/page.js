@@ -1037,34 +1037,6 @@ export default function App() {
 
               {/* Verso */}
               <div className="custom-scrollbar flashcard-box flashcard-back-style" style={{ border: `1px solid ${themeColor}40` }}>
-                {/* Botão Favoritar */}
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    toggleFavorite(currentCard.id);
-                  }}
-                  style={{
-                    position: "absolute",
-                    top: 16,
-                    right: 16,
-                    background: "transparent",
-                    border: "none",
-                    color: favorites.includes(currentCard.id) ? "#eab308" : "#475569",
-                    cursor: "pointer",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    gap: 2,
-                    zIndex: 10,
-                    outline: "none"
-                  }}
-                >
-                  <span style={{ fontSize: 18 }}>{favorites.includes(currentCard.id) ? "★" : "☆"}</span>
-                  <span style={{ fontSize: 9, fontWeight: 500, opacity: 0.6, letterSpacing: 0.5, color: "#94a3b8" }}>
-                    {favorites.includes(currentCard.id) ? "favoritado" : "favoritar"}
-                  </span>
-                </button>
-
                 <div style={{ fontSize: 10, color: themeColor, fontWeight: 600, letterSpacing: 3, marginBottom: 14 }}>✦ RESPOSTA ✦</div>
                 
                 <p className="flashcard-answer-text" style={{ color: "#e2e8f0", fontSize: 15, lineHeight: 1.65, textAlign: "center", margin: "0 0 16px 0", fontFamily: "Georgia, serif" }}>

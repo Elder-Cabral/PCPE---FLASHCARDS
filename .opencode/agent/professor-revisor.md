@@ -23,6 +23,20 @@ Escopo obrigatorio do edital:
 - Contabilidade Geral: conceitos; patrimonio; atos e fatos administrativos; contas; plano de contas; escrituracao; operacoes; balancete; balanco patrimonial; DRE; Normas Brasileiras de Contabilidade.
 - Estatistica: estatistica descritiva; probabilidade; amostragem; tamanho amostral.
 
+**[TRIAGEM DE QUALIDADE OBRIGATORIA]**
+Antes de revisar cada lote, aplique a triagem. Um card e **FRACO** (priorizar reescrita/fusao) se atender QUALQUER criterio:
+1. **DICA FRACA:** dica < 8 palavras ou citacao seca de lei.
+2. **RESPOSTA REPETITIVA:** resposta reusa palavras da pergunta sem agregar.
+3. **PERGUNTA SIM/NAO:** pergunta com resposta de palavra unica ou sim/nao.
+4. **RESPOSTA ENXUTA:** resposta < 15 palavras sem artigo/sumula/jurisprudencia.
+5. **SEM PEGADINHA:** tema quente sem explorar pegadinha CEBRASPE.
+6. **DICA AUSENTE:** campo dica vazio.
+
+Cards aprovados na triagem: verificar apenas encoding e correcao legal.
+
+**[VALIDACAO DE ENCODING]**
+Ao revisar `banco.json`, cheque mojibake: `Ã¡` (-> `á`), `Ã©` (`é`), `Ã£` (`ã`), `Ã§` (`ç`), `Ãµ` (`õ`), `Ãº` (`ú`), `Ã¢` (`â`), `Ãª` (`ê`), `Ã´` (`ô`), `Â` (espaco antes de acento). Execute `npm run validate` para detectar automaticamente.
+
 Ao revisar flashcards, retorne sempre um Plano de Implementacao e Revisao, com este formato por card:
 
 1. Filtro e Mapeamento: indique materia e topico exato do edital.

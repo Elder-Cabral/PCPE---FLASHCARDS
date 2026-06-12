@@ -144,6 +144,22 @@ function checkMissingFields(cards) {
   }
 }
 
+// ─── Verificação de encoding (mojibake) ───────────────────────────────────────
+
+const MOJIBAKE_RE = /Ã[^a-zA-Z0-9\sÂ«Â»]|Â[^a-zA-Z0-9\s]/;
+
+function checkEncoding(cards) {
+  const raw = readFileSync(BANCO_PATH, "utf-8");
+  const corrupted = raw.match(MOJIBAKE_RE);
+  if (corrupted) {
+    const uniq = [...new Set(corrupted)].sort();
+    for (const pat of uniq) {
+      const count = (raw.match(new RegExp(pat.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g')) || []).length;
+      error(`Encoding corrompido (mojibake) na string "${pat}" — ${count}x. Execute scripts/fix_encoding_all.mjs para corrigir.`);
+    }
+  }
+}
+
 // ─── Main ────────────────────────────────────────────────────────────────────
 
 function main() {
@@ -171,6 +187,9 @@ function main() {
 
   console.log("  ─── Verificando campos obrigatórios ───");
   checkMissingFields(cards);
+
+  console.log("  ─── Verificando encoding (mojibake) ───");
+  checkEncoding(cards);
 
   console.log("");
 
