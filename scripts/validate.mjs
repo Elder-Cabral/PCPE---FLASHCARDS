@@ -1,10 +1,12 @@
 import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import { resolve, dirname, join } from "path";
 import { fileURLToPath } from "url";
+import { execSync } from "child_process";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const BANCO_PATH = resolve(__dirname, "../src/data/banco.json");
 const REPORTS_DIR = resolve(__dirname, "../reports");
+const BANCO_RELATIVE = "src/data/banco.json";
 
 // ─── Normalização de texto ───────────────────────────────────────────────────
 
@@ -242,6 +244,17 @@ function generateReport(cardsCount) {
   console.warn(`  📄  Relatório salvo em: ${filepath}`);
 }
 
+// ─── Detecta se banco.json foi alterado ───────────────────────────────────────
+
+function bancoAlterado() {
+  try {
+    const saida = execSync("git diff --name-only HEAD", { encoding: "utf-8", cwd: resolve(__dirname, "..") });
+    return saida.split("\n").map(s => s.trim()).includes(BANCO_RELATIVE);
+  } catch {
+    return true; // se falhar, roda completo por segurança
+  }
+}
+
 // ─── Main ────────────────────────────────────────────────────────────────────
 
 function main() {
@@ -264,8 +277,14 @@ function main() {
   console.log("  ─── Verificando perguntas duplicadas (exatas) ───");
   checkDuplicateQuestions(cards);
 
-  console.log("  ─── Verificando perguntas similares ───");
-  checkSimilarQuestions(cards);
+  const bancoModificado = bancoAlterado();
+
+  if (bancoModificado) {
+    console.log("  ─── Verificando perguntas similares ───");
+    checkSimilarQuestions(cards);
+  } else {
+    console.log("  ─── Verificando perguntas similares ─── (pulado — banco.json inalterado)");
+  }
 
   console.log("  ─── Verificando campos obrigatórios ───");
   checkMissingFields(cards);
@@ -275,8 +294,9 @@ function main() {
 
   console.log("");
 
-  // Gera relatório markdown se houver similaridades detectadas
-  generateReport(cards.length);
+  if (bancoModificado) {
+    generateReport(cards.length);
+  }
 
   if (hasErrors) {
     console.error(`  ❌  ${hasErrors ? "ERROS encontrados" : ""}${hasErrors && hasWarnings ? " e " : ""}${hasWarnings ? "ATENÇÕES" : ""}`);
