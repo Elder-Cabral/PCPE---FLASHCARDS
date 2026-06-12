@@ -1742,6 +1742,8 @@ function TelaLogin({ onLogin }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [erro, setErro] = useState("");
+  const [sbUrl, setSbUrl] = useState("");
+  const [sbKey, setSbKey] = useState("");
   const [usersLocalLoaded, setUsersLocalLoaded] = useState(false);
 
   const handleFormSubmit = () => {
@@ -1863,65 +1865,63 @@ function TelaLogin({ onLogin }) {
       <div className="login-hero-composite" />
       <div style={{ position: "fixed", top: -200, left: "50%", transform: "translateX(-50%)", width: 600, height: 400, borderRadius: "50%", background: "radial-gradient(ellipse,rgba(59,130,246,0.05) 0%,transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
 
-      <div className="login-fade-in" style={{ position: "relative", zIndex: 1, background: "rgba(17,24,39,0.7)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 24, width: "100%", maxWidth: 380, boxShadow: "0 24px 64px rgba(0,0,0,0.6)", boxSizing: "border-box" }}>
-      <div style={{ textAlign: "center", marginBottom: 36 }}>
-          {/* Badge image replaces the lock emoji. Place badge-small.png into /public */}
+      <div className="login-fade-in" style={{ position: "relative", zIndex: 1, background: "rgba(17,24,39,0.7)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 24, width: "100%", maxWidth: 360, boxShadow: "0 24px 64px rgba(0,0,0,0.6)", boxSizing: "border-box", padding: "28px 24px" }}>
+        <div style={{ textAlign: "center", marginBottom: 20 }}>
           <LoginBadge />
-          <h1 style={{ color: "#f1f5f9", fontSize: 22, fontWeight: 700, margin: 0, letterSpacing: 0.5 }}>Flashcards PC-PE</h1>
-          <p style={{ color: "#64748b", fontSize: 11, fontWeight: 600, marginTop: 8, letterSpacing: 2 }}>AGENTE DE POLÍCIA · PE</p>
+          <h1 style={{ color: "#f1f5f9", fontSize: 20, fontWeight: 700, margin: 0, letterSpacing: 0.5 }}>Flashcards PC-PE</h1>
+          <p style={{ color: "#64748b", fontSize: 11, fontWeight: 600, marginTop: 6, letterSpacing: 2 }}>AGENTE DE POLÍCIA · PE</p>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <div>
-            <label style={{ color: "#94a3b8", fontSize: 10, fontWeight: 600, letterSpacing: 1.5, display: "block", marginBottom: 6 }}>USUÁRIO</label>
             <input
               type="text"
               value={username}
               onChange={e => setUsername(e.target.value)}
               onKeyDown={e => e.key === "Enter" && handleFormSubmit()}
-              placeholder="Digite seu usuário"
-              style={{ width: "100%", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, padding: "12px 14px", color: "#f1f5f9", fontSize: 16, boxSizing: "border-box", outline: "none", transition: "border 0.2s", fontFamily: "inherit" }}
+              placeholder="Usuário"
+              style={{ width: "100%", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, padding: "10px 12px", color: "#f1f5f9", fontSize: 14, boxSizing: "border-box", outline: "none", transition: "border 0.2s, box-shadow 0.2s", fontFamily: "inherit" }}
+              onFocus={e => { e.target.style.borderColor = "rgba(59,130,246,0.5)"; e.target.style.boxShadow = "0 0 0 3px rgba(59,130,246,0.08)" }}
+              onBlur={e => { e.target.style.borderColor = "rgba(255,255,255,0.08)"; e.target.style.boxShadow = "none" }}
             />
           </div>
           <div>
-            <label style={{ color: "#94a3b8", fontSize: 10, fontWeight: 600, letterSpacing: 1.5, display: "block", marginBottom: 6 }}>SENHA</label>
             <input
               type="password"
               value={password}
               onChange={e => setPassword(e.target.value)}
               onKeyDown={e => e.key === "Enter" && handleFormSubmit()}
-              placeholder="••••"
-              style={{ width: "100%", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 12, padding: "12px 14px", color: "#f1f5f9", fontSize: 16, boxSizing: "border-box", outline: "none", transition: "border 0.2s", fontFamily: "inherit" }}
+              placeholder="Senha"
+              style={{ width: "100%", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, padding: "10px 12px", color: "#f1f5f9", fontSize: 14, boxSizing: "border-box", outline: "none", transition: "border 0.2s, box-shadow 0.2s", fontFamily: "inherit" }}
+              onFocus={e => { e.target.style.borderColor = "rgba(59,130,246,0.5)"; e.target.style.boxShadow = "0 0 0 3px rgba(59,130,246,0.08)" }}
+              onBlur={e => { e.target.style.borderColor = "rgba(255,255,255,0.08)"; e.target.style.boxShadow = "none" }}
             />
           </div>
 
           {/* Optional: runtime Supabase connection (for local dev without NEXT_PUBLIC_ envs) */}
           {process.env.NODE_ENV !== 'production' && (
-            <>
-              <div style={{ marginTop: 6 }}>
-                <label style={{ color: "#94a3b8", fontSize: 10, fontWeight: 600, letterSpacing: 1.5, display: "block", marginBottom: 6 }}>SUPABASE URL (opcional)</label>
+            <details style={{ marginTop: 4 }}>
+              <summary style={{ color: "#64748b", fontSize: 10, fontWeight: 500, cursor: "pointer", letterSpacing: 0.5 }}>Configurar Supabase (opcional)</summary>
+              <div style={{ marginTop: 8, display: "flex", flexDirection: "column", gap: 8 }}>
                 <input
                   type="text"
                   value={sbUrl}
                   onChange={e => { setSbUrl(e.target.value); try { localStorage.setItem('pcpe_supabase_url', e.target.value) } catch {} }}
-                  placeholder="https://xyzcompany.supabase.co"
-                  style={{ width: "100%", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 10, padding: "8px 10px", color: "#94a3b8", fontSize: 12, boxSizing: "border-box", outline: "none" }}
+                  placeholder="URL do Supabase"
+                  style={{ width: "100%", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 8, padding: "6px 10px", color: "#94a3b8", fontSize: 11, boxSizing: "border-box", outline: "none" }}
                 />
-              </div>
-              <div style={{ marginTop: 6 }}>
-                <label style={{ color: "#94a3b8", fontSize: 10, fontWeight: 600, letterSpacing: 1.5, display: "block", marginBottom: 6 }}>SUPABASE ANON KEY (opcional)</label>
                 <input
                   type="password"
                   value={sbKey}
                   onChange={e => { setSbKey(e.target.value); try { localStorage.setItem('pcpe_supabase_anon_key', e.target.value) } catch {} }}
-                  placeholder="anon key"
-                  style={{ width: "100%", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 10, padding: "8px 10px", color: "#94a3b8", fontSize: 12, boxSizing: "border-box", outline: "none" }}
+                  placeholder="Anon Key"
+                  style={{ width: "100%", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 8, padding: "6px 10px", color: "#94a3b8", fontSize: 11, boxSizing: "border-box", outline: "none" }}
                 />
               </div>
-            </>
+            </details>
           )}
 
-          {erro && <p style={{ color: "#ef4444", fontSize: 12, fontWeight: 500, margin: 0, textAlign: "center" }}>{erro}</p>}
+          {erro && <p style={{ color: "#ef4444", fontSize: 11, fontWeight: 500, margin: 0, textAlign: "center" }}>{erro}</p>}
 
           <button
             onClick={handleFormSubmit}
@@ -1929,14 +1929,13 @@ function TelaLogin({ onLogin }) {
             style={{
               background: "linear-gradient(135deg, #2563eb, #1d4ed8)",
               border: "none",
-              borderRadius: 12,
-              padding: "14px",
+              borderRadius: 10,
+              padding: "11px",
               color: "#fff",
-              fontSize: 14,
+              fontSize: 13,
               fontWeight: 600,
               cursor: "pointer",
               letterSpacing: 0.5,
-              marginTop: 6,
               boxShadow: "0 4px 12px rgba(37,99,235,0.2)"
             }}
           >
@@ -1953,19 +1952,19 @@ function LoginBadge() {
   const [failed, setFailed] = useState(false);
   
   return (
-    <div style={{ marginBottom: 24, display: 'flex', justifyContent: 'center' }}>
+    <div style={{ marginBottom: 16, display: 'flex', justifyContent: 'center' }}>
       <img
         src="/mira.png"
         alt="Policial Civil"
         onError={() => setFailed(true)}
         style={{ 
-          width: 60, 
-          height: 60, 
+          width: 48, 
+          height: 48, 
           objectFit: 'contain',
           opacity: failed ? 0 : 1
         }}
       />
-      {failed && <div style={{ fontSize: 48 }}>👮</div>}
+      {failed && <div style={{ fontSize: 40 }}>👮</div>}
     </div>
   );
 }
