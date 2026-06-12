@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback, useMemo, useRef } from "react";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, AreaChart, Area } from "recharts";
 import { createClient } from '@supabase/supabase-js';
 import BANCO from "../data/banco.json";
 import { supabase } from "../lib/supabase";
@@ -168,6 +169,11 @@ export default function App() {
   const [favorites, setFavorites] = useState([]);
   const [answeredSessionIds, setAnsweredSessionIds] = useState(new Set());
   const [toastMessage, setToastMessage] = useState("");
+  const [answerHistory, setAnswerHistory] = useState([]);
+  const [showDesempenho, setShowDesempenho] = useState(false);
+  const [graphPeriod, setGraphPeriod] = useState("30d");
+  const [graphCustomStart, setGraphCustomStart] = useState("");
+  const [graphCustomEnd, setGraphCustomEnd] = useState("");
   const feedbackInProgressCardId = useRef(null);
 
   // Estilos globais e de responsividade injetados
@@ -390,33 +396,81 @@ export default function App() {
   }, [currentQueueIndex]);
 
   // Salvar progresso no Supabase com mesclagem inteligente
+  // ── HISTÓRICO DE RESPOSTAS ────────────────────────────────────────────────
+  const mergeAnswerHistory = (local, remote) => {
+    if (!local?.length) return remote || [];
+    if (!remote?.length) return local || [];
+    const localMap = new Map();
+    for (const entry of local) localMap.set(entry.cardId + "_" + entry.timestamp, entry);
+    for (const entry of remote) {
+      const key = entry.cardId + "_" + entry.timestamp;
+      if (!localMap.has(key)) localMap.set(key, entry);
+    }
+    return Array.from(localMap.values()).sort((a, b) => a.timestamp - b.timestamp);
+  };
+
+  const loadAnswerHistory = (username) => {
+    try {
+      return JSON.parse(localStorage.getItem("pcpe_history_" + username) || "[]");
+    } catch { return []; }
+  };
+
+  const saveAnswerHistoryLocally = (username, history) => {
+    try {
+      localStorage.setItem("pcpe_history_" + username, JSON.stringify(history));
+    } catch {}
+  };
+
+  const recordAnswer = (cardId, materia, resultado) => {
+    const entry = { cardId, materia, resultado, timestamp: Date.now() };
+    setAnswerHistory(prev => {
+      const updated = [...prev, entry];
+      if (currentUser) {
+        saveAnswerHistoryLocally(currentUser.username, updated);
+      }
+      return updated;
+    });
+  };
+
   const saveSRSData = async (username, srs, currentSettings) => {
     try {
       const client = getSupabase();
+
+      const currentHistory = (() => {
+        try { return JSON.parse(localStorage.getItem("pcpe_history_" + username) || "[]"); }
+        catch { return []; }
+      })();
+
       const { data, error } = await client
         .from("user_progress")
-        .select("srs_data, settings")
+        .select("srs_data, settings, answer_history")
         .eq("username", username);
 
       let latestSRS = {};
       let latestSettings = currentSettings;
+      let remoteHistory = [];
 
       if (!error && data && data.length > 0) {
         latestSRS = data[0].srs_data || {};
         latestSettings = { ...data[0].settings, ...currentSettings };
+        remoteHistory = data[0].answer_history || [];
       }
 
       const mergedSRS = mergeSRSData(srs, latestSRS);
+      const mergedHistory = mergeAnswerHistory(currentHistory, remoteHistory);
 
       await client.from("user_progress").upsert({
         username,
         srs_data: mergedSRS,
         settings: latestSettings,
+        answer_history: mergedHistory,
         updated_at: new Date().toISOString(),
       });
 
       setSrsData(mergedSRS);
+      setAnswerHistory(mergedHistory);
       localStorage.setItem("pcpe_srs_" + username, JSON.stringify(mergedSRS));
+      localStorage.setItem("pcpe_history_" + username, JSON.stringify(mergedHistory));
       if (latestSettings.reviewOrder) {
         setReviewOrder(latestSettings.reviewOrder);
       }
@@ -435,17 +489,20 @@ export default function App() {
       const client = getSupabase();
       const { data, error } = await client
         .from("user_progress")
-        .select("srs_data, settings")
+        .select("srs_data, settings, answer_history")
         .eq("username", username);
 
       const savedSRS = localStorage.getItem("pcpe_srs_" + username);
       const savedSettings = localStorage.getItem("pcpe_settings_" + username);
+      const savedHistory = localStorage.getItem("pcpe_history_" + username);
       const localSRS = savedSRS ? JSON.parse(savedSRS) : {};
       const localSettings = savedSettings ? JSON.parse(savedSettings) : { reviewOrder: "random", favorites: [] };
+      const localHistory = savedHistory ? JSON.parse(savedHistory) : [];
 
       if (error) {
         console.warn("Erro ao buscar do Supabase, usando local:", error);
         setSrsData(localSRS);
+        setAnswerHistory(localHistory);
         if (localSettings.reviewOrder) setReviewOrder(localSettings.reviewOrder);
         if (localSettings.favorites) setFavorites(localSettings.favorites);
         return;
@@ -455,26 +512,32 @@ export default function App() {
         const row = data[0];
         const remoteSRS = row.srs_data || {};
         const remoteSettings = row.settings || {};
+        const remoteHistory = row.answer_history || [];
 
         const mergedSRS = mergeSRSData(localSRS, remoteSRS);
         const mergedSettings = { ...localSettings, ...remoteSettings };
+        const mergedHistory = mergeAnswerHistory(localHistory, remoteHistory);
 
         setSrsData(mergedSRS);
+        setAnswerHistory(mergedHistory);
         if (mergedSettings.reviewOrder) setReviewOrder(mergedSettings.reviewOrder);
         if (mergedSettings.favorites) setFavorites(mergedSettings.favorites || []);
 
         localStorage.setItem("pcpe_srs_" + username, JSON.stringify(mergedSRS));
         localStorage.setItem("pcpe_settings_" + username, JSON.stringify(mergedSettings));
+        localStorage.setItem("pcpe_history_" + username, JSON.stringify(mergedHistory));
 
         await client.from("user_progress").upsert({
           username,
           srs_data: mergedSRS,
           settings: mergedSettings,
+          answer_history: mergedHistory,
           updated_at: new Date().toISOString(),
         });
       } else {
         console.log("Nenhum dado no Supabase para", username, "- Migrando localStorage local.");
         setSrsData(localSRS);
+        setAnswerHistory(localHistory);
         if (localSettings.reviewOrder) setReviewOrder(localSettings.reviewOrder);
         if (localSettings.favorites) setFavorites(localSettings.favorites || []);
 
@@ -482,6 +545,7 @@ export default function App() {
           username,
           srs_data: localSRS,
           settings: localSettings,
+          answer_history: localHistory,
           updated_at: new Date().toISOString(),
         });
       }
@@ -811,6 +875,9 @@ export default function App() {
       gotEasy: prev.gotEasy + (q === 3 ? 1 : 0)
     }));
 
+    const cardMateriaId = currentCard.id.substring(0, currentCard.id.lastIndexOf("_"));
+    recordAnswer(currentCard.id, cardMateriaId, q);
+
     if (studyMode === "srs" || studyMode === "topic" || studyMode === "global_srs") {
       const currentState = srsData[currentCard.id] || { interval: 1, repetition: 0, ef: 2.5 };
       const nextState = calculateSM2(q, currentState.interval, currentState.repetition, currentState.ef);
@@ -840,6 +907,37 @@ export default function App() {
 
   if (!currentUser) {
     return <TelaLogin onLogin={handleLogin} />;
+  }
+
+  if (showDesempenho) {
+    return (
+      <TelaDesempenho
+        user={currentUser}
+        stats={stats}
+        srsData={srsData}
+        answerHistory={answerHistory}
+        BANCO={BANCO}
+        MATERIAS={MATERIAS}
+        graphPeriod={graphPeriod}
+        setGraphPeriod={setGraphPeriod}
+        graphCustomStart={graphCustomStart}
+        setGraphCustomStart={setGraphCustomStart}
+        graphCustomEnd={graphCustomEnd}
+        setGraphCustomEnd={setGraphCustomEnd}
+        onBack={() => setShowDesempenho(false)}
+        onLogout={handleLogout}
+        startWeakStudy={(cards) => {
+          setStudyQueue(cards);
+          setCurrentQueueIndex(0);
+          setIsFlipped(false);
+          setStudyMode("topic");
+          setSessionCompleted(false);
+          setSessionStats({ studied: 0, gotWrong: 0, gotEasy: 0 });
+          setAnsweredSessionIds(new Set());
+          setShowDesempenho(false);
+        }}
+      />
+    );
   }
 
   // Se estiver estudando
@@ -1700,6 +1798,45 @@ export default function App() {
         </button>
       </div>
 
+      {/* Desempenho */}
+      <button
+        onClick={() => setShowDesempenho(true)}
+        className="card-hover"
+        style={{
+          width: "100%",
+          background: "linear-gradient(135deg, rgba(99,102,241,0.1), rgba(99,102,241,0.02))",
+          border: "1px solid rgba(99,102,241,0.2)",
+          borderRadius: 20,
+          padding: "20px 18px",
+          textAlign: "left",
+          cursor: "pointer",
+          position: "relative",
+          overflow: "hidden",
+          outline: "none",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          marginBottom: 24
+        }}
+      >
+        <div style={{ position: "absolute", top: 0, right: 0, width: 70, height: 70, borderRadius: "0 20px 0 100%", background: "rgba(99,102,241,0.08)" }} />
+        <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+          <div style={{ fontSize: 28 }}>📊</div>
+          <div>
+            <div style={{ color: "#f1f5f9", fontSize: 15, fontWeight: 600 }}>Meu Desempenho</div>
+            <div style={{ color: "#94a3b8", fontSize: 11, marginTop: 4 }}>
+              Progresso, estatísticas e gráficos de evolução
+            </div>
+          </div>
+        </div>
+        <span style={{
+          fontSize: 16,
+          color: "#818cf8"
+        }}>
+          →
+        </span>
+      </button>
+
       {/* Grid de Matérias */}
       <h3 style={{ color: "#fff", fontSize: 16, fontWeight: 600, letterSpacing: 1, marginBottom: 16, marginTop: 0 }}>MATÉRIAS DO EDITAL</h3>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 14 }}>
@@ -1986,6 +2123,379 @@ function LoginBadge() {
       />
       {failed && <div style={{ fontSize: 40 }}>👮</div>}
     </div>
+  );
+}
+
+// ── COMPONENTE: TELA DESEMPENHO ─────────────────────────────────────────────
+function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, graphPeriod, setGraphPeriod, graphCustomStart, setGraphCustomStart, graphCustomEnd, setGraphCustomEnd, onBack, onLogout, startWeakStudy }) {
+
+  const getFilteredHistory = () => {
+    const now = Date.now();
+    let startMs = 0;
+    if (graphPeriod === "7d") startMs = now - 7 * 86400000;
+    else if (graphPeriod === "15d") startMs = now - 15 * 86400000;
+    else if (graphPeriod === "30d") startMs = now - 30 * 86400000;
+    else if (graphPeriod === "custom") {
+      if (graphCustomStart) startMs = new Date(graphCustomStart).getTime();
+      else startMs = 0;
+    }
+    return answerHistory.filter(e => e.timestamp >= startMs);
+  };
+
+  const filteredHistory = getFilteredHistory();
+  const allCardsTotal = MATERIAS.reduce((sum, m) => sum + ((BANCO[m.id] || []).length), 0);
+  const totalStudiedCards = Object.keys(srsData).length;
+
+  const percentStudied = allCardsTotal > 0 ? Math.round((totalStudiedCards / allCardsTotal) * 100) : 0;
+
+  const cardsDominados = Object.values(srsData).filter(s => s.repetition >= 3 && s.ef >= 2.0).length;
+  const percentDominados = totalStudiedCards > 0 ? Math.round((cardsDominados / totalStudiedCards) * 100) : 0;
+
+  const uniqueStudyDays = new Set();
+  const totalSessionsSet = new Set();
+  for (const entry of answerHistory) {
+    const day = getLocalDateString(new Date(entry.timestamp));
+    uniqueStudyDays.add(day);
+    const dayTs = new Date(day).getTime();
+    totalSessionsSet.add(dayTs + "-" + entry.materia);
+  }
+  const totalSessions = totalSessionsSet.size;
+
+  const materiaData = useMemo(() => {
+    return MATERIAS.map(mat => {
+      const cards = BANCO[mat.id] || [];
+      const total = cards.length;
+      const studied = cards.filter(c => srsData[c.id]).length;
+      const progressPct = total > 0 ? Math.round((studied / total) * 100) : 0;
+
+      const matHistory = filteredHistory.filter(e => e.materia === mat.id);
+      const totalAnswers = matHistory.length;
+      const correctAnswers = matHistory.filter(e => e.resultado >= 2).length;
+      const accuracy = totalAnswers > 0 ? Math.round((correctAnswers / totalAnswers) * 100) : 0;
+
+      const matSrsValues = cards.filter(c => srsData[c.id]).map(c => srsData[c.id]);
+      const hardCards = matSrsValues.filter(s => s.interval <= 3 && s.repetition < 2).length;
+
+      return { ...mat, total, studied, progressPct, accuracy, hardCards, totalAnswers };
+    });
+  }, [MATERIAS, BANCO, srsData, filteredHistory]);
+
+  const weakCards = useMemo(() => {
+    const cardErrorMap = {};
+    for (const entry of answerHistory) {
+      if (!cardErrorMap[entry.cardId]) cardErrorMap[entry.cardId] = { total: 0, errors: 0, materia: entry.materia };
+      cardErrorMap[entry.cardId].total++;
+      if (entry.resultado === 0) cardErrorMap[entry.cardId].errors++;
+    }
+    return Object.entries(cardErrorMap)
+      .filter(([, v]) => v.total >= 2)
+      .map(([cardId, v]) => ({ cardId, errorRate: Math.round((v.errors / v.total) * 100), ...v }))
+      .sort((a, b) => b.errorRate - a.errorRate)
+      .slice(0, 10);
+  }, [answerHistory]);
+
+  const weakCardsFull = useMemo(() => {
+    return weakCards.map(w => {
+      for (const mat of MATERIAS) {
+        const card = (BANCO[mat.id] || []).find(c => c.id === w.cardId);
+        if (card) return { ...w, card, materiaLabel: mat.label, materiaColor: mat.color, materiaId: mat.id };
+      }
+      return w;
+    }).filter(w => w.card);
+  }, [weakCards, MATERIAS, BANCO]);
+
+  const chartData = useMemo(() => {
+    const dayMap = {};
+    const now = Date.now();
+    let startMs = 0;
+    let days = 30;
+    if (graphPeriod === "7d") { startMs = now - 7 * 86400000; days = 7; }
+    else if (graphPeriod === "15d") { startMs = now - 15 * 86400000; days = 15; }
+    else if (graphPeriod === "30d") { startMs = now - 30 * 86400000; days = 30; }
+    else if (graphPeriod === "custom") {
+      if (graphCustomStart) startMs = new Date(graphCustomStart).getTime();
+      if (graphCustomEnd) {
+        days = Math.ceil((new Date(graphCustomEnd).getTime() - startMs) / 86400000);
+      }
+    }
+
+    for (const entry of answerHistory) {
+      if (entry.timestamp < startMs) continue;
+      if (graphPeriod === "custom" && graphCustomEnd && entry.timestamp > new Date(graphCustomEnd).getTime()) continue;
+      const dayStr = getLocalDateString(new Date(entry.timestamp));
+      if (!dayMap[dayStr]) dayMap[dayStr] = { date: dayStr, total: 0, correctos: 0, incorrectos: 0 };
+      dayMap[dayStr].total++;
+      if (entry.resultado >= 2) dayMap[dayStr].correctos++;
+      else dayMap[dayStr].incorrectos++;
+    }
+
+    const result = [];
+    for (let i = 0; i < days; i++) {
+      const d = new Date(now - (days - 1 - i) * 86400000);
+      const dayStr = getLocalDateString(d);
+      const existing = dayMap[dayStr];
+      result.push(existing || { date: dayStr, total: 0, correctos: 0, incorrectos: 0 });
+    }
+    return result;
+  }, [answerHistory, graphPeriod, graphCustomStart, graphCustomEnd]);
+
+  const weakMaterias = materiaData.filter(m => (m.accuracy < 60 && m.totalAnswers >= 3) || m.hardCards > 5);
+
+  const handleStartWeakReview = () => {
+    const cards = weakCardsFull.map(w => w.card).filter(Boolean);
+    if (cards.length > 0) startWeakStudy(cards);
+  };
+
+  return (
+    <Shell user={user} stats={stats} onLogout={onLogout}>
+      <div style={{ width: "100%", maxWidth: 640, margin: "0 auto", display: "flex", flexDirection: "column", gap: 20, boxSizing: "border-box" }}>
+        <button
+          onClick={onBack}
+          className="btn-hover"
+          style={{
+            alignSelf: "flex-start",
+            background: "rgba(255,255,255,0.05)",
+            border: "1px solid rgba(255,255,255,0.08)",
+            color: "#94a3b8",
+            borderRadius: 12,
+            padding: "8px 16px",
+            cursor: "pointer",
+            fontSize: 13,
+            fontWeight: 500
+          }}
+        >
+          ← Voltar
+        </button>
+
+        <div style={{ textAlign: "center" }}>
+          <div style={{ fontSize: 44, marginBottom: 4 }}>📊</div>
+          <h2 className="materia-title" style={{ color: "#fff", fontSize: 22, fontWeight: 600, margin: 0 }}>Meu Desempenho</h2>
+          <p style={{ color: "#64748b", fontSize: 12, marginTop: 4 }}>
+            Acompanhe seu progresso nos estudos
+          </p>
+        </div>
+
+        {/* 1. VISÃO GERAL */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 12 }}>
+          <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "16px 14px", textAlign: "center" }}>
+            <div style={{ fontSize: 24, fontWeight: 700, color: "#3b82f6" }}>{totalStudiedCards}</div>
+            <div style={{ fontSize: 10, color: "#64748b", fontWeight: 600, letterSpacing: 0.5, marginTop: 2 }}>CARDS ESTUDADOS</div>
+            <div style={{ fontSize: 11, color: "#94a3b8", marginTop: 4 }}>{percentStudied}% do total ({allCardsTotal})</div>
+          </div>
+          <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "16px 14px", textAlign: "center" }}>
+            <div style={{ fontSize: 24, fontWeight: 700, color: "#10b981" }}>{percentDominados}%</div>
+            <div style={{ fontSize: 10, color: "#64748b", fontWeight: 600, letterSpacing: 0.5, marginTop: 2 }}>DOMINADOS</div>
+            <div style={{ fontSize: 11, color: "#94a3b8", marginTop: 4 }}>{cardsDominados} cards ({totalStudiedCards > 0 ? Math.round((cardsDominados/totalStudiedCards)*100) : 0}%)</div>
+          </div>
+          <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "16px 14px", textAlign: "center" }}>
+            <div style={{ fontSize: 24, fontWeight: 700, color: "#f97316" }}>{stats.streak}</div>
+            <div style={{ fontSize: 10, color: "#64748b", fontWeight: 600, letterSpacing: 0.5, marginTop: 2 }}>SEQUÊNCIA (DIAS)</div>
+            <div style={{ fontSize: 11, color: "#94a3b8", marginTop: 4 }}>{uniqueStudyDays.size} dias no total</div>
+          </div>
+          <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "16px 14px", textAlign: "center" }}>
+            <div style={{ fontSize: 24, fontWeight: 700, color: "#a78bfa" }}>{totalSessions}</div>
+            <div style={{ fontSize: 10, color: "#64748b", fontWeight: 600, letterSpacing: 0.5, marginTop: 2 }}>SESSÕES</div>
+            <div style={{ fontSize: 11, color: "#94a3b8", marginTop: 4 }}>sessões de estudo</div>
+          </div>
+        </div>
+
+        {/* 2. DESEMPENHO POR MATÉRIA */}
+        <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "18px 16px" }}>
+          <h3 style={{ color: "#fff", fontSize: 14, fontWeight: 600, margin: "0 0 12px 0" }}>📚 Desempenho por Matéria</h3>
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            {materiaData.map(m => {
+              const isWeak = m.totalAnswers >= 3 && m.accuracy < 60;
+              return (
+                <div key={m.id} style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                      <span style={{ fontSize: 16 }}>{m.emoji}</span>
+                      <span style={{ color: "#f1f5f9", fontSize: 12, fontWeight: 500 }}>{m.label}</span>
+                      {isWeak && <span style={{ fontSize: 10, color: "#ef4444", fontWeight: 700 }}>⚠️</span>}
+                    </div>
+                    <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                      <span style={{ fontSize: 11, color: m.accuracy >= 60 ? "#10b981" : "#ef4444", fontWeight: 600 }}>
+                        {m.totalAnswers > 0 ? `${m.accuracy}%` : "-"}
+                      </span>
+                      <span style={{ fontSize: 10, color: "#64748b" }}>{m.studied}/{m.total}</span>
+                    </div>
+                  </div>
+                  <div style={{ width: "100%", height: 4, background: "rgba(255,255,255,0.05)", borderRadius: 2, overflow: "hidden" }}>
+                    <div style={{ width: `${m.progressPct}%`, height: "100%", background: m.progressPct === 100 ? "#10b981" : m.color, borderRadius: 2, transition: "width 0.3s" }} />
+                  </div>
+                  {isWeak && (
+                    <div style={{ fontSize: 9, color: "#ef4444", marginTop: 2 }}>
+                      Pontos fracos: {m.hardCards} cards difíceis · {m.totalAnswers > 0 ? `${100-m.accuracy}%` : ""} de erro
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* 3. PONTOS FRACOS */}
+        {weakCardsFull.length > 0 && (
+          <div style={{ background: "rgba(239,68,68,0.03)", border: "1px solid rgba(239,68,68,0.12)", borderRadius: 16, padding: "18px 16px" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
+              <h3 style={{ color: "#fff", fontSize: 14, fontWeight: 600, margin: 0 }}>⚠️ Pontos Fracos</h3>
+              <button
+                onClick={handleStartWeakReview}
+                className="btn-hover"
+                style={{
+                  background: "rgba(239,68,68,0.1)",
+                  border: "1px solid rgba(239,68,68,0.2)",
+                  borderRadius: 8,
+                  padding: "5px 10px",
+                  color: "#ef4444",
+                  fontSize: 10,
+                  fontWeight: 600,
+                  cursor: "pointer"
+                }}
+              >
+                Revisar pontos fracos
+              </button>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+              {weakCardsFull.map((w, i) => (
+                <div key={w.cardId} style={{ display: "flex", alignItems: "center", gap: 10, background: "rgba(255,255,255,0.02)", borderRadius: 10, padding: "10px 12px" }}>
+                  <span style={{ color: "#64748b", fontSize: 10, fontWeight: 700, width: 16 }}>{i+1}.</span>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ color: "#f1f5f9", fontSize: 11, fontWeight: 500, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                      {w.card?.pergunta || w.cardId}
+                    </div>
+                    <div style={{ color: "#64748b", fontSize: 9, marginTop: 2 }}>
+                      {w.materiaLabel} · {w.total} tentativas
+                    </div>
+                  </div>
+                  <div style={{
+                    fontSize: 10, fontWeight: 700, color: w.errorRate >= 70 ? "#ef4444" : "#f97316",
+                    background: w.errorRate >= 70 ? "rgba(239,68,68,0.1)" : "rgba(249,115,22,0.1)",
+                    borderRadius: 6, padding: "2px 6px", whiteSpace: "nowrap"
+                  }}>
+                    {w.errorRate}% erro
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* 4. GRÁFICO DE EVOLUÇÃO */}
+        <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "18px 16px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14, flexWrap: "wrap", gap: 8 }}>
+            <h3 style={{ color: "#fff", fontSize: 14, fontWeight: 600, margin: 0 }}>📈 Evolução Temporal</h3>
+            <div style={{ display: "flex", gap: 6 }}>
+              {["7d", "15d", "30d", "custom"].map(p => (
+                <button
+                  key={p}
+                  onClick={() => setGraphPeriod(p)}
+                  className="btn-hover"
+                  style={{
+                    background: graphPeriod === p ? "rgba(99,102,241,0.15)" : "rgba(255,255,255,0.03)",
+                    border: graphPeriod === p ? "1px solid rgba(99,102,241,0.3)" : "1px solid rgba(255,255,255,0.06)",
+                    borderRadius: 8,
+                    padding: "4px 10px",
+                    color: graphPeriod === p ? "#818cf8" : "#64748b",
+                    fontSize: 10,
+                    fontWeight: 600,
+                    cursor: "pointer"
+                  }}
+                >
+                  {p === "7d" ? "7 dias" : p === "15d" ? "15 dias" : p === "30d" ? "30 dias" : "Personalizado"}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {graphPeriod === "custom" && (
+            <div style={{ display: "flex", gap: 10, marginBottom: 14, alignItems: "center" }}>
+              <input
+                type="date"
+                value={graphCustomStart}
+                onChange={e => setGraphCustomStart(e.target.value)}
+                style={{ background: "#0f172a", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 8, padding: "6px 10px", color: "#f1f5f9", fontSize: 11, outline: "none" }}
+              />
+              <span style={{ color: "#64748b", fontSize: 11 }}>até</span>
+              <input
+                type="date"
+                value={graphCustomEnd}
+                onChange={e => setGraphCustomEnd(e.target.value)}
+                style={{ background: "#0f172a", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 8, padding: "6px 10px", color: "#f1f5f9", fontSize: 11, outline: "none" }}
+              />
+            </div>
+          )}
+
+          {chartData.length > 0 && chartData.some(d => d.total > 0) ? (
+            <ResponsiveContainer width="100%" height={200}>
+              <BarChart data={chartData} barCategoryGap={2}>
+                <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" />
+                <XAxis
+                  dataKey="date"
+                  tick={{ fill: "#64748b", fontSize: 9 }}
+                  tickFormatter={v => v.slice(5)}
+                  stroke="rgba(255,255,255,0.06)"
+                />
+                <YAxis tick={{ fill: "#64748b", fontSize: 9 }} stroke="rgba(255,255,255,0.06)" allowDecimals={false} />
+                <Tooltip
+                  contentStyle={{
+                    background: "#0f172a",
+                    border: "1px solid rgba(255,255,255,0.1)",
+                    borderRadius: 8,
+                    fontSize: 11,
+                    color: "#f1f5f9"
+                  }}
+                  formatter={(value, name) => [
+                    value,
+                    name === "correctos" ? "Acertos" : name === "incorrectos" ? "Erros" : "Total"
+                  ]}
+                  labelFormatter={label => `Data: ${label}`}
+                />
+                <Bar dataKey="correctos" fill="#10b981" radius={[2, 2, 0, 0]} stackId="a" />
+                <Bar dataKey="incorrectos" fill="#ef4444" radius={[2, 2, 0, 0]} stackId="a" />
+              </BarChart>
+            </ResponsiveContainer>
+          ) : (
+            <div style={{ textAlign: "center", padding: "40px 20px", color: "#64748b", fontSize: 12 }}>
+              <div style={{ fontSize: 32, marginBottom: 8 }}>📭</div>
+              <p>Nenhum dado no período selecionado.</p>
+              <p style={{ fontSize: 11 }}>Os gráficos começarão a aparecer conforme você estudar.</p>
+            </div>
+          )}
+
+          {chartData.length > 0 && chartData.some(d => d.total > 0) && (
+            <div style={{ display: "flex", justifyContent: "center", gap: 20, marginTop: 12, fontSize: 11 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                <div style={{ width: 10, height: 10, borderRadius: 2, background: "#10b981" }} />
+                <span style={{ color: "#94a3b8" }}>Acertos</span>
+              </div>
+              <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                <div style={{ width: 10, height: 10, borderRadius: 2, background: "#ef4444" }} />
+                <span style={{ color: "#94a3b8" }}>Erros</span>
+              </div>
+              <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                <span style={{ color: "#64748b", fontWeight: 500 }}>
+                  Total: {chartData.reduce((s, d) => s + d.total, 0)} cards
+                </span>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Dados zerados */}
+        {answerHistory.length === 0 && (
+          <div style={{ background: "rgba(234,179,8,0.04)", border: "1px solid rgba(234,179,8,0.12)", borderRadius: 16, padding: "18px 16px", textAlign: "center" }}>
+            <div style={{ fontSize: 28, marginBottom: 8 }}>🆕</div>
+            <p style={{ color: "#f1f5f9", fontSize: 13, fontWeight: 500, margin: 0 }}>
+              Seus dados de desempenho começarão a ser registrados agora!
+            </p>
+            <p style={{ color: "#94a3b8", fontSize: 11, marginTop: 6 }}>
+              Estatísticas e gráficos ficarão disponíveis conforme você responder flashcards.
+            </p>
+          </div>
+        )}
+      </div>
+    </Shell>
   );
 }
 
