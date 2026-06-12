@@ -2660,10 +2660,10 @@
     },
     {
       "id": "dir_const_expand_107",
-      "pergunta": "O que é a Advocacia como função essencial Ã  justiça?",
-      "resposta": "O advogado é indispensável Ã  administração da justiça, sendo inviolável por seus atos e manifestações no exercício da profissão (art. 133 CF/88).",
-      "dica": "A Advocacia (privada) também é função essencial Ã  justiça, distinta da Advocacia Pública.",
-      "topico": "Funções essenciais Ã  justiça",
+      "pergunta": "O que é a Advocacia como função essencial à justiça?",
+      "resposta": "O advogado é indispensável à administração da justiça, sendo inviolável por seus atos e manifestações no exercício da profissão (art. 133 CF/88).",
+      "dica": "A Advocacia (privada) também é função essencial à justiça, distinta da Advocacia Pública.",
+      "topico": "Funções essenciais à justiça",
       "codigo_topico": "9"
     },
     {
@@ -2671,7 +2671,7 @@
       "pergunta": "Quem pode propor ação direta de inconstitucionalidade?",
       "resposta": "Os legitimados do art. 103 CF/88: Presidente, Mesa do Senado/Câmara, Governadores, PGR, OAB, partidos políticos com representação no CN, confederações sindicais e entidades de classe de âmbito nacional.",
       "dica": "Mnemônico: PMP PG OAB PEC (Presidente, Mesa, Procurador, Governador, OAB, Partidos, Entidades, Confederações).",
-      "topico": "Funções essenciais Ã  justiça",
+      "topico": "Funções essenciais à justiça",
       "codigo_topico": "9"
     },
     {
@@ -2679,7 +2679,7 @@
       "pergunta": "Qual o efeito da declaração de inconstitucionalidade em ADI?",
       "resposta": "Efeito erga omnes (contra todos), vinculante para os demais órgãos do Judiciário e Administração, e ex tunc (retroativo), salvo modulação temporal pelo STF.",
       "dica": "ADI tem efeito erga omnes e vinculante. Lei 9.868/99 permite modulação dos efeitos (art. 27) por maioria de 2/3.",
-      "topico": "Funções essenciais Ã  justiça",
+      "topico": "Funções essenciais à justiça",
       "codigo_topico": "9"
     },
     {
@@ -2687,15 +2687,15 @@
       "pergunta": "O que é a ação declaratória de constitucionalidade (ADC)?",
       "resposta": "Ação para confirmar a constitucionalidade de lei ou ato normativo federal, com efeito erga omnes e vinculante. Julgada pelo STF (art. 102, I, a).",
       "dica": "ADC só pode ser proposta para lei federal. O legitimado é o mesmo da ADI (art. 103).",
-      "topico": "Funções essenciais Ã  justiça",
+      "topico": "Funções essenciais à justiça",
       "codigo_topico": "9"
     },
     {
       "id": "dir_const_expand_111",
       "pergunta": "O que é a arguição de descumprimento de preceito fundamental (ADPF)?",
       "resposta": "Ação para evitar ou reparar lesão a preceito fundamental decorrente de ato do Poder Público, quando não houver outro meio processual cabível (Lei 9.882/99).",
-      "dica": "ADPF é cabível subsidiariamente (princípio da subsidiariedade). Pode questionar atos anteriores Ã  CF/88.",
-      "topico": "Funções essenciais Ã  justiça",
+      "dica": "ADPF é cabível subsidiariamente (princípio da subsidiariedade). Pode questionar atos anteriores à CF/88.",
+      "topico": "Funções essenciais à justiça",
       "codigo_topico": "9"
     }
   ],
@@ -11016,7 +11016,7 @@
       "id": "informatica_expand_17",
       "topico": "Windows Explorer",
       "pergunta": "O que é o Painel de Navegação no Windows Explorer?",
-      "resposta": "Painel Ã  esquerda com atalhos para Acesso Rápido, OneDrive, Este Computador e Bibliotecas.",
+      "resposta": "Painel à esquerda com atalhos para Acesso Rápido, OneDrive, Este Computador e Bibliotecas.",
       "dica": "",
       "codigo_topico": "1.3"
     },
@@ -11240,7 +11240,7 @@
       "id": "informatica_expand_45",
       "topico": "Organização do texto em listas e colunas",
       "pergunta": "Como aplicar lista de definições no Word?",
-      "resposta": "Estilo em que o termo fica Ã  esquerda e a definição recuada; via Lista Multinível.",
+      "resposta": "Estilo em que o termo fica à esquerda e a definição recuada; via Lista Multinível.",
       "dica": "",
       "codigo_topico": "1.4.2"
     },
@@ -11288,7 +11288,7 @@
       "id": "informatica_expand_51",
       "topico": "Tabelas",
       "pergunta": "O que é o AutoAjuste de tabela no Word?",
-      "resposta": "Recurso que ajusta largura ao conteúdo ou Ã  janela; em Layout > AutoAjuste.",
+      "resposta": "Recurso que ajusta largura ao conteúdo ou à janela; em Layout > AutoAjuste.",
       "dica": "",
       "codigo_topico": "1.4.3"
     },
@@ -11560,7 +11560,7 @@
       "id": "informatica_expand_85",
       "topico": "Introdução de números, textos, fórmulas e datas; referência absoluta e relativa",
       "pergunta": "O que ocorre quando número é digitado como texto?",
-      "resposta": "Fica alinhado Ã  esquerda e não é reconhecido em cálculos; converta para número.",
+      "resposta": "Fica alinhado à esquerda e não é reconhecido em cálculos; converta para número.",
       "dica": "",
       "codigo_topico": "1.5.1"
     },
@@ -11584,7 +11584,7 @@
       "id": "informatica_expand_88",
       "topico": "Formatação de planilhas: número, alinhamento, borda, fonte, padrões",
       "pergunta": "Diferença entre formato Moeda e Contábil?",
-      "resposta": "Moeda: símbolo junto ao número. Contábil: símbolo Ã  esquerda, número Ã  direita, negativos entre parênteses.",
+      "resposta": "Moeda: símbolo junto ao número. Contábil: símbolo à esquerda, número à direita, negativos entre parênteses.",
       "dica": "",
       "codigo_topico": "1.5.3"
     },

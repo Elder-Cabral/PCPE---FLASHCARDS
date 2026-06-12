@@ -30,9 +30,66 @@ Antes de revisar cada lote de flashcards, aplique obrigatoriamente a **triagem d
 Flashcards fracos devem ser **reescritos ou mesclados** com cards vizinhos. Flashcards que passam em todos os critérios devem ser mantidos com verificação apenas de encoding e legal correctness.
 
 **[VALIDAÇÃO DE ENCODING (MOJIBAKE)]**
-Sempre que revisar o arquivo `banco.json`, verifique se há caracteres corrompidos. A corrupção mais comum é a perda de acentos na codificação Latin1→UTF-8, manifestando-se como:
-- `Ã¡` (deveria ser `á`), `Ã©` (`é`), `Ã£` (`ã`), `Ã§` (`ç`), `Ãµ` (`õ`), `Ãº` (`ú`), `Ã¢` (`â`), `Ãª` (`ê`), `Ã´` (`ô`), `Â` (espaço antes de acento), etc.
-- Execute `npm run validate` para detectar automagicamente ocorrências.
+Sempre que revisar o arquivo `banco.json`, verifique se há caracteres corrompidos (mojibake). A corrupção mais comum é a interpretação de bytes UTF-8 como Latin-1 (ISO-8859-1), podendo ocorrer em 1 ou 2 camadas.
+
+**Padrões de corrupção (1 camada — UTF-8 lido como Latin-1):**
+| Corrompido | Correto | UTF-8 bytes |
+|---|---|---|
+| `Ã¡` | `á` | C3 A1 |
+| `Ã©` | `é` | C3 A9 |
+| `Ã£` | `ã` | C3 A3 |
+| `Ã§` | `ç` | C3 A7 |
+| `Ãµ` | `õ` | C3 B5 |
+| `Ãº` | `ú` | C3 BA |
+| `Ã¢` | `â` | C3 A2 |
+| `Ãª` | `ê` | C3 AA |
+| `Ã´` | `ô` | C3 B4 |
+| `Ã­` | `í` | C3 AD |
+| `Ã³` | `ó` | C3 B3 |
+| `Ã ` | `à` | C3 A0 |
+| `Ã` | `Á` | C3 81 |
+| `Ã‰` | `É` | C3 89 |
+| `Ãš` | `Ú` | C3 9A |
+| `Â§` | `§` | C2 A7 |
+| `Âº` | `º` | C2 BA |
+| `Â°` | `°` | C2 B0 |
+| `Âª` | `ª` | C2 AA |
+
+**Padrões de corrupção (2 camadas — dupla codificação):**
+| Corrompido | Correto |
+|---|---|
+| `ÃƒÂ©` | `é` |
+| `ÃƒÂ£` | `ã` |
+| `ÃƒÂ¡` | `á` |
+| `ÃƒÂ³` | `ó` |
+| `ÃƒÂº` | `ú` |
+| `ÃƒÂ­` | `í` |
+| `ÃƒÂ§` | `ç` |
+| `ÃƒÂ´` | `ô` |
+| `ÃƒÂª` | `ê` |
+| `ÃƒÂµ` | `õ` |
+| `ÃƒÂ¢` | `â` |
+| `Ã‚Â§` | `§` |
+| `Ã‚Âº` | `º` |
+| `Ã‚Â°` | `°` |
+| `Ã‚Âª` | `ª` |
+
+**CAUSA RAIZ:** O texto é gerado em UTF-8 pelo agente, mas durante a gravação/leitura do JSON o arquivo é interpretado como Latin-1, fazendo com que cada byte UTF-8 seja tratado como um caractere Latin-1 individual. Isso pode ocorrer em:
+1. **Geração do JSON**: o arquivo de resposta do agente é salvo com encoding incorreto.
+2. **Scripts de insert/merge**: `insert_expand_cards.mjs` ou scripts similares que manipulam JSON.
+3. **Manipulação manual**: edição do `banco.json` em editores que não salvam como UTF-8.
+
+**PREVENÇÃO — REGRAS ABSOLUTAS:**
+1. **Sempre salvar JSON como UTF-8 sem BOM.** No Node.js: `fs.writeFileSync(path, data, 'utf8')`.
+2. **Verificar encoding após qualquer inserção em lote.** Execute `node scripts/fix_mojibake_v3.mjs` (dry-run) para detectar mojibake em todos os campos de texto.
+3. **Se o dry-run apontar corrupções,** aplique com `node scripts/fix_mojibake_v3.mjs --apply`.
+4. **Validar caracteres acentuados na saída.** Antes de finalizar, confira que `à`, `á`, `é`, `ã`, `ç` etc. estão legíveis nos cards gerados.
+5. **NUNCA usar regex manual para corrigir mojibake.** O script `fix_mojibake_v3.mjs` usa abordagem sistemática (decodificação Latin-1→UTF-8 byte a byte) que cobre todos os padrões automaticamente.
+6. **Scripts de importação/merge de dados** (`insert_expand_cards.mjs`, `apply_all_rewrites.mjs`, etc.) **devem SEMPRE**:
+   - Ler arquivos-fonte com `fs.readFileSync(path, 'utf8')`
+   - Aplicar `fix_mojibake_v3` nos dados lidos ANTES de inserir no banco
+   - Escrever o banco com `fs.writeFileSync(path, JSON.stringify(data, null, 2), 'utf8')`
+7. **Em caso de dúvida**, execute `node scripts/fix_mojibake_v3.mjs` (dry-run) antes de qualquer commit que envolva adição de cards. O output mostrará exatamente o que seria alterado.
 
 **[ENTRADA DE DADOS - INPUT]**
 Você receberá trechos de código-fonte contendo as strings e dados dos flashcards do projeto em desenvolvimento. Sua tarefa é analisar o conteúdo de cada flashcard, cruzando-o rigorosamente com a **BASE DE CONHECIMENTO OBRIGATÓRIA** acima.

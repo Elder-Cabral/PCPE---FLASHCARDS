@@ -8,7 +8,7 @@ const BANCO_PATH = resolve(__dirname, "../src/data/banco.json");
 const REPORTS_DIR = resolve(__dirname, "../reports");
 const BANCO_RELATIVE = "src/data/banco.json";
 
-// ─── Normalização de texto ───────────────────────────────────────────────────
+// ─── Normalização ─────────────────────────────────────────────────────────────
 
 function normalize(str) {
   return str
@@ -20,7 +20,7 @@ function normalize(str) {
     .trim();
 }
 
-// ─── Levenshtein distance ────────────────────────────────────────────────────
+// ─── Levenshtein ──────────────────────────────────────────────────────────────
 
 function levenshtein(a, b) {
   const m = a.length, n = b.length;
@@ -42,7 +42,7 @@ function similarity(a, b) {
   return 1 - levenshtein(a, b) / maxLen;
 }
 
-// ─── Leitura do banco ────────────────────────────────────────────────────────
+// ─── Leitura ──────────────────────────────────────────────────────────────────
 
 function loadBanco() {
   const raw = readFileSync(BANCO_PATH, "utf-8");
@@ -59,46 +59,30 @@ function flattenCards(data) {
   return cards;
 }
 
-// ─── Validações ───────────────────────────────────────────────────────────────
+// ─── Detecta se banco.json foi alterado ───────────────────────────────────────
 
-let hasErrors = false;
-let hasWarnings = false;
-
-// ─── Coleção de avisos para relatório ─────────────────────────────────────────
-const similarityWarnings = [];
-
-function error(msg, card) {
-  hasErrors = true;
-  const loc = card ? `  [${card.materia}] ${card.id}: ` : "  ";
-  console.error(`  ERRO  ${loc}${msg}`);
+function bancoAlterado() {
+  try {
+    const saida = execSync("git diff --name-only HEAD", { encoding: "utf-8", cwd: resolve(__dirname, "..") });
+    return saida.split("\n").map(s => s.trim()).includes(BANCO_RELATIVE);
+  } catch {
+    return true;
+  }
 }
 
-function warn(msg, cardA, cardB, sim) {
-  hasWarnings = true;
-  const simPct = sim !== undefined ? ` (similaridade: ${(sim * 100).toFixed(1)}%)` : "";
-  console.warn(
-    `  ATENÇÃO  "${cardA.id}" <-> "${cardB.id}"${simPct}\n           ${msg}`
-  );
+// ─── Validações ───────────────────────────────────────────────────────────────
 
-  if (sim !== undefined) {
-    similarityWarnings.push({
-      idA: cardA.id,
-      idB: cardB.id,
-      materiaA: cardA.materia,
-      materiaB: cardB.materia,
-      perguntaA: cardA.pergunta,
-      perguntaB: cardB.pergunta,
-      similaridade: sim,
-      msg
-    });
-  }
+const issues = [];
+
+function addIssue(tipo, gravidade, msg, detalhes = {}) {
+  issues.push({ tipo, gravidade, msg, ...detalhes });
 }
 
 function checkDuplicateIds(cards) {
   const ids = new Map();
   for (const card of cards) {
     if (ids.has(card.id)) {
-      error(`ID duplicado: "${card.id}" (já em ${ids.get(card.id).materia})`, card);
+      addIssue("ID duplicado", "erro", `"${card.id}" (já em ${ids.get(card.id).materia})`, { card });
     }
     ids.set(card.id, card);
   }
@@ -109,8 +93,9 @@ function checkDuplicateQuestions(cards) {
   for (const card of cards) {
     const key = normalize(card.pergunta);
     if (seen.has(key)) {
-      error(`Pergunta duplicada (exata): "${card.pergunta.substring(0, 60)}..."`, card);
-      error(`  Primeira ocorrência: "${seen.get(key).id}"`, seen.get(key));
+      addIssue("Pergunta duplicada (exata)", "erro", `"${card.pergunta.substring(0, 80)}..."`, {
+        card, firstId: seen.get(key).id
+      });
     }
     seen.set(key, card);
   }
@@ -129,22 +114,12 @@ function checkSimilarQuestions(cards) {
       if (sim >= 0.85 && !flagged.has(`${a.card.id}-${b.card.id}`)) {
         flagged.add(`${a.card.id}-${b.card.id}`);
         flagged.add(`${b.card.id}-${a.card.id}`);
-        warn(
-          `Perguntas com ${sim >= 0.95 ? "ALTÍSSIMA" : "ALTA"} similaridade`,
-          a.card,
-          b.card,
-          sim
-        );
-        warn(
-          `  Pergunta A: "${a.card.pergunta.substring(0, 80)}..."`,
-          a.card,
-          a.card
-        );
-        warn(
-          `  Pergunta B: "${b.card.pergunta.substring(0, 80)}..."`,
-          b.card,
-          b.card
-        );
+        addIssue("Perguntas similares", "atencao", `${(sim * 100).toFixed(1)}%`, {
+          idA: a.card.id, idB: b.card.id,
+          materiaA: a.card.materia, materiaB: b.card.materia,
+          perguntaA: a.card.pergunta, perguntaB: b.card.pergunta,
+          similaridade: sim
+        });
       }
     }
   }
@@ -153,118 +128,119 @@ function checkSimilarQuestions(cards) {
 function checkMissingFields(cards) {
   for (const card of cards) {
     if (!card.pergunta || !card.pergunta.trim())
-      error(`Campo "pergunta" vazio`, card);
+      addIssue("Campo obrigatório vazio", "erro", `"pergunta" vazio em ${card.id}`, { card });
     if (!card.resposta || !card.resposta.trim())
-      error(`Campo "resposta" vazio`, card);
+      addIssue("Campo obrigatório vazio", "erro", `"resposta" vazio em ${card.id}`, { card });
     if (!card.topico || !card.topico.trim())
-      error(`Campo "topico" vazio`, card);
+      addIssue("Campo obrigatório vazio", "erro", `"topico" vazio em ${card.id}`, { card });
     if (!card.id || !card.id.trim())
-      error(`Campo "id" vazio ou inválido`, card);
+      addIssue("Campo obrigatório vazio", "erro", `"id" vazio ou inválido`, { card });
   }
 }
 
-// ─── Verificação de encoding (mojibake) ───────────────────────────────────────
-
-const MOJIBAKE_RE = /Ã[^a-zA-Z0-9\sÂ«Â»]|Â[^a-zA-Z0-9\s]/;
-
 function checkEncoding(cards) {
   const raw = readFileSync(BANCO_PATH, "utf-8");
+  const MOJIBAKE_RE = /\u00c3[\x80-\xbf]|\u00c2[\x80-\xbf]/g;
   const corrupted = raw.match(MOJIBAKE_RE);
   if (corrupted) {
     const uniq = [...new Set(corrupted)].sort();
     for (const pat of uniq) {
       const count = (raw.match(new RegExp(pat.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g')) || []).length;
-      error(`Encoding corrompido (mojibake) na string "${pat}" — ${count}x. Execute scripts/fix_encoding_all.mjs para corrigir.`);
+      addIssue("Encoding corrompido (mojibake)", "erro", `"${pat}" — ${count}x. Execute node scripts/fix_mojibake_v3.mjs --apply`, {});
     }
   }
 }
 
-// ─── Geração de relatório markdown ────────────────────────────────────────────
+// ─── Geração de relatório .md ─────────────────────────────────────────────────
 
 function generateReport(cardsCount) {
-  if (similarityWarnings.length === 0) return;
-
   const now = new Date();
   const timestamp = now.toISOString().replace(/[:.]/g, "-").slice(0, 19);
   const dateStr = now.toLocaleString("pt-BR", { timeZone: "America/Recife" });
-  const filename = `similaridade-${timestamp}.md`;
+  const filename = `validacao-${timestamp}.md`;
   const filepath = join(REPORTS_DIR, filename);
 
-  // Agrupar por matéria
-  const byMateria = {};
-  for (const w of similarityWarnings) {
-    const key = w.materiaA || "desconhecida";
-    if (!byMateria[key]) byMateria[key] = 0;
-    byMateria[key]++;
-  }
-
-  // Ordenar por similaridade (decrescente)
-  const sorted = [...similarityWarnings].sort((a, b) => b.similaridade - a.similaridade);
+  const erros = issues.filter(i => i.gravidade === "erro");
+  const atencao = issues.filter(i => i.gravidade === "atencao");
+  const similaridade = issues.filter(i => i.tipo === "Perguntas similares");
 
   let md = "";
-  md += `# Relatório de Similaridade entre Flashcards\n\n`;
+  md += `# Relatório de Validação de Flashcards\n\n`;
   md += `**Data:** ${dateStr}  \n`;
-  md += `**Total de flashcards analisados:** ${cardsCount}  \n`;
-  md += `**Pares similares encontrados:** ${similarityWarnings.length}\n\n`;
+  md += `**Total de flashcards:** ${cardsCount}  \n`;
+  md += `**Erros:** ${erros.length}  \n`;
+  md += `**Atenções (similaridade):** ${atencao.length}\n\n`;
   md += `---\n\n`;
 
-  // Sumário por matéria
-  if (Object.keys(byMateria).length > 0) {
-    md += `## Sumário por Matéria\n\n`;
+  // ─── Erros ───
+  if (erros.length > 0) {
+    md += `## ❌ Erros Encontrados\n\n`;
+    for (const e of erros) {
+      md += `- **[${e.tipo}]** ${e.msg}\n`;
+    }
+    md += `\n---\n\n`;
+  }
+
+  // ─── Similaridade: sumário por matéria ───
+  if (similaridade.length > 0) {
+    const byMateria = {};
+    for (const s of similaridade) {
+      const key = s.materiaA || "desconhecida";
+      byMateria[key] = (byMateria[key] || 0) + 1;
+    }
+
+    md += `## ⚠️  Similaridade entre Flashcards\n\n`;
+    md += `**Total de pares similares:** ${similaridade.length}\n\n`;
+
+    md += `### Sumário por Matéria\n\n`;
     md += `| Matéria | Pares similares |\n`;
     md += `|---------|-----------------|\n`;
     const sortedMaterias = Object.entries(byMateria).sort((a, b) => b[1] - a[1]);
     for (const [mat, count] of sortedMaterias) {
       md += `| ${mat} | ${count} |\n`;
     }
-    md += `\n---\n\n`;
+    md += `\n`;
+
+    // ─── Detalhamento ───
+    md += `### Detalhamento dos Pares\n\n`;
+    const sorted = [...similaridade].sort((a, b) => b.similaridade - a.similaridade);
+    sorted.forEach((w, idx) => {
+      const simLabel = w.similaridade >= 0.95 ? "ALTÍSSIMA" : "ALTA";
+      md += `#### ${idx + 1}. \`${w.idA}\` ↔ \`${w.idB}\` (${(w.similaridade * 100).toFixed(1)}% — ${simLabel})\n\n`;
+      md += `**Matéria A:** ${w.materiaA}  \n`;
+      md += `**Matéria B:** ${w.materiaB}  \n\n`;
+      md += `**Pergunta A:**  \n> ${w.perguntaA}\n\n`;
+      md += `**Pergunta B:**  \n> ${w.perguntaB}\n\n`;
+      md += `**Análise:** (preencher após avaliação manual)\n\n`;
+      md += `---\n\n`;
+    });
   }
 
-  // Detalhamento
-  md += `## Detalhamento dos Pares\n\n`;
-  sorted.forEach((w, idx) => {
-    const simLabel = w.similaridade >= 0.95 ? "ALTÍSSIMA" : "ALTA";
-    md += `### ${idx + 1}. \`${w.idA}\` ↔ \`${w.idB}\` (${(w.similaridade * 100).toFixed(1)}% — ${simLabel})\n\n`;
-    md += `**Matéria A:** ${w.materiaA}  \n`;
-    md += `**Matéria B:** ${w.materiaB}  \n\n`;
-    md += `**Pergunta A:**  \n`;
-    md += `> ${w.perguntaA}\n\n`;
-    md += `**Pergunta B:**  \n`;
-    md += `> ${w.perguntaB}\n\n`;
-    md += `**Análise:** (preencher após avaliação)\n\n`;
-    md += `${w.similaridade >= 0.95 ? "⚠️ " : ""}---\n\n`;
-  });
-
-  md += `---\n\n`;
   md += `*Relatório gerado automaticamente em ${dateStr} pelo script de validação.*\n`;
 
   mkdirSync(REPORTS_DIR, { recursive: true });
   writeFileSync(filepath, md, "utf-8");
-
-  console.warn(`  📄  Relatório salvo em: ${filepath}`);
+  return filepath;
 }
 
-// ─── Detecta se banco.json foi alterado ───────────────────────────────────────
-
-function bancoAlterado() {
-  try {
-    const saida = execSync("git diff --name-only HEAD", { encoding: "utf-8", cwd: resolve(__dirname, "..") });
-    return saida.split("\n").map(s => s.trim()).includes(BANCO_RELATIVE);
-  } catch {
-    return true; // se falhar, roda completo por segurança
-  }
-}
-
-// ─── Main ────────────────────────────────────────────────────────────────────
+// ─── Main ─────────────────────────────────────────────────────────────────────
 
 function main() {
+  const bancoModificado = bancoAlterado();
+
+  if (!bancoModificado) {
+    console.log("  ℹ️  banco.json inalterado — validação pulada.");
+    console.log("     Para forçar: git add src/data/banco.json e commite novamente.");
+    process.exit(0);
+  }
+
   console.log("\n🔍  Validando flashcards em src/data/banco.json...\n");
 
   let data;
   try {
     data = loadBanco();
   } catch (err) {
-    console.error(`  ERRO FATAL: Não foi possível ler banco.json — ${err.message}`);
+    console.error(`  ERRO FATAL: ${err.message}`);
     process.exit(1);
   }
 
@@ -277,14 +253,8 @@ function main() {
   console.log("  ─── Verificando perguntas duplicadas (exatas) ───");
   checkDuplicateQuestions(cards);
 
-  const bancoModificado = bancoAlterado();
-
-  if (bancoModificado) {
-    console.log("  ─── Verificando perguntas similares ───");
-    checkSimilarQuestions(cards);
-  } else {
-    console.log("  ─── Verificando perguntas similares ─── (pulado — banco.json inalterado)");
-  }
+  console.log("  ─── Verificando perguntas similares ───");
+  checkSimilarQuestions(cards);
 
   console.log("  ─── Verificando campos obrigatórios ───");
   checkMissingFields(cards);
@@ -294,17 +264,28 @@ function main() {
 
   console.log("");
 
-  if (bancoModificado) {
-    generateReport(cards.length);
+  // Gera relatório
+  const reportPath = generateReport(cards.length);
+  console.log(`  📄  Relatório salvo: ${reportPath}\n`);
+
+  const erros = issues.filter(i => i.gravidade === "erro");
+  const atencao = issues.filter(i => i.gravidade === "atencao");
+
+  // Exibe resumo no terminal
+  for (const e of erros) {
+    console.error(`  ❌  ${e.tipo}: ${e.msg}`);
+  }
+  for (const a of atencao) {
+    console.warn(`  ⚠️  ${a.tipo}: ${a.msg}`);
   }
 
-  if (hasErrors) {
-    console.error(`  ❌  ${hasErrors ? "ERROS encontrados" : ""}${hasErrors && hasWarnings ? " e " : ""}${hasWarnings ? "ATENÇÕES" : ""}`);
+  if (erros.length > 0) {
+    console.error(`\n  ❌  ${erros.length} erro(s) encontrado(s). Corrija antes de commitar.`);
     process.exit(1);
   }
 
-  if (hasWarnings) {
-    console.warn(`  ⚠️  Nenhum erro, mas ${similarityWarnings.length} atenções foram emitidas. Revise antes de commitar.`);
+  if (atencao.length > 0) {
+    console.warn(`\n  ⚠️  ${atencao.length} atenções emitidas. Revise o relatório antes de commitar.`);
     process.exit(0);
   }
 
