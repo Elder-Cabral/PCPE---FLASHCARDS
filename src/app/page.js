@@ -2028,7 +2028,7 @@ export default function App() {
             >
               <div style={{ position: "absolute", top: 0, right: 0, width: 70, height: 70, borderRadius: "0 20px 0 100%", background: `${m.color}08` }} />
               
-              <div style={{ fontSize: 28, marginBottom: 10 }}>{m.emoji}</div>
+              <div style={{ fontSize: 28, marginBottom: 10, textAlign: "center" }}>{m.emoji}</div>
               
               <div style={{ color: "#f1f5f9", fontSize: 14, fontWeight: 600, marginBottom: 8, lineHeight: 1.4 }}>
                 {m.label}
