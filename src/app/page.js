@@ -527,46 +527,45 @@ export default function App() {
   const loadUserData = async (username) => {
     try {
       const client = getSupabase();
-      let resolvedUsername = username;
+      let emailKey = null;
 
-      // Query user_progress with the given username.
-      let { data, error } = await client
-        .from("user_progress")
-        .select("srs_data, settings, answer_history")
-        .eq("username", resolvedUsername);
-
-      // If no data found and username is not an email, try to look up
-      // the mapped auth email via username_map (existing data may be keyed
-      // by email from Supabase Auth, not the typed display username).
-      if ((!data || data.length === 0) && !error && !resolvedUsername.includes("@")) {
+      // If username is not an email, look up the mapped auth email
+      // from username_map so we query by the canonical key.
+      if (!username.includes("@")) {
         try {
           const { data: mapData } = await client
             .from("username_map")
             .select("email")
-            .eq("username", resolvedUsername)
+            .eq("username", username)
             .maybeSingle();
-          if (mapData && mapData.email) {
-            const emailKey = mapData.email;
-            const { data: emailData, error: emailErr } = await client
-              .from("user_progress")
-              .select("srs_data, settings, answer_history")
-              .eq("username", emailKey);
-            if (!emailErr && emailData && emailData.length > 0) {
-              data = emailData;
-              resolvedUsername = emailKey;
-              // Update the stored session key for future loads
-              try {
-                const session = JSON.parse(localStorage.getItem("pcpe_session") || "{}");
-                session.username = emailKey;
-                localStorage.setItem("pcpe_session", JSON.stringify(session));
-              } catch (e) { /* ignore */ }
-            }
-          }
+          if (mapData && mapData.email) emailKey = mapData.email;
         } catch (e) {
           console.warn("username_map lookup failed:", e);
         }
       }
 
+      // Query all relevant keys (email first, then typed username as legacy)
+      const queryKeys = emailKey ? [emailKey, username] : [username];
+      let combinedSRS = {};
+      let combinedSettings = {};
+      let combinedHistory = [];
+
+      for (const key of queryKeys) {
+        const { data, error } = await client
+          .from("user_progress")
+          .select("srs_data, settings, answer_history")
+          .eq("username", key);
+        if (!error && data && data.length > 0) {
+          const row = data[0];
+          combinedSRS = mergeSRSData(combinedSRS, row.srs_data || {});
+          combinedSettings = { ...combinedSettings, ...(row.settings || {}) };
+          combinedHistory = mergeAnswerHistory(combinedHistory, row.answer_history || []);
+        }
+      }
+
+      const resolvedUsername = emailKey || username;
+
+      // Read localStorage for the original typed username (legacy local data)
       const savedSRS = localStorage.getItem("pcpe_srs_" + username);
       const savedSettings = localStorage.getItem("pcpe_settings_" + username);
       const savedHistory = localStorage.getItem("pcpe_history_" + username);
@@ -574,55 +573,46 @@ export default function App() {
       const localSettings = savedSettings ? JSON.parse(savedSettings) : { reviewOrder: "random", favorites: [] };
       const localHistory = savedHistory ? JSON.parse(savedHistory) : [];
 
-      if (error) {
-        console.warn("Erro ao buscar do Supabase, usando local:", error);
-        setSrsData(localSRS);
-        setAnswerHistory(localHistory);
-        if (localSettings.reviewOrder) setReviewOrder(localSettings.reviewOrder);
-        if (localSettings.favorites) setFavorites(localSettings.favorites);
-        return;
+      // Merge remote data with local: remote (Supabase) fills the base,
+      // local overwrites any cards with newer timestamps.
+      const mergedSRS = mergeSRSData(localSRS, combinedSRS);
+      const mergedSettings = { ...localSettings, ...combinedSettings };
+      const mergedHistory = mergeAnswerHistory(localHistory, combinedHistory);
+
+      setSrsData(mergedSRS);
+      setAnswerHistory(mergedHistory);
+      if (mergedSettings.reviewOrder) setReviewOrder(mergedSettings.reviewOrder);
+      if (mergedSettings.favorites) setFavorites(mergedSettings.favorites || []);
+
+      // Persist merged data under the canonical key (email when available)
+      localStorage.setItem("pcpe_srs_" + resolvedUsername, JSON.stringify(mergedSRS));
+      localStorage.setItem("pcpe_settings_" + resolvedUsername, JSON.stringify(mergedSettings));
+      localStorage.setItem("pcpe_history_" + resolvedUsername, JSON.stringify(mergedHistory));
+
+      await client.from("user_progress").upsert({
+        username: resolvedUsername,
+        srs_data: mergedSRS,
+        settings: mergedSettings,
+        answer_history: mergedHistory,
+        updated_at: new Date().toISOString(),
+      });
+
+      // Clean up legacy rows that have been merged
+      for (const key of queryKeys) {
+        if (key !== resolvedUsername) {
+          try {
+            await client.from("user_progress").delete().eq("username", key);
+          } catch (e) { /* ignore cleanup errors */ }
+        }
       }
 
-      if (data && data.length > 0) {
-        const row = data[0];
-        const remoteSRS = row.srs_data || {};
-        const remoteSettings = row.settings || {};
-        const remoteHistory = row.answer_history || [];
-
-        const mergedSRS = mergeSRSData(localSRS, remoteSRS);
-        const mergedSettings = { ...localSettings, ...remoteSettings };
-        const mergedHistory = mergeAnswerHistory(localHistory, remoteHistory);
-
-        setSrsData(mergedSRS);
-        setAnswerHistory(mergedHistory);
-        if (mergedSettings.reviewOrder) setReviewOrder(mergedSettings.reviewOrder);
-        if (mergedSettings.favorites) setFavorites(mergedSettings.favorites || []);
-
-        localStorage.setItem("pcpe_srs_" + resolvedUsername, JSON.stringify(mergedSRS));
-        localStorage.setItem("pcpe_settings_" + resolvedUsername, JSON.stringify(mergedSettings));
-        localStorage.setItem("pcpe_history_" + resolvedUsername, JSON.stringify(mergedHistory));
-
-        await client.from("user_progress").upsert({
-          username: resolvedUsername,
-          srs_data: mergedSRS,
-          settings: mergedSettings,
-          answer_history: mergedHistory,
-          updated_at: new Date().toISOString(),
-        });
-      } else {
-        console.log("Nenhum dado no Supabase para", resolvedUsername, "- Migrando localStorage local.");
-        setSrsData(localSRS);
-        setAnswerHistory(localHistory);
-        if (localSettings.reviewOrder) setReviewOrder(localSettings.reviewOrder);
-        if (localSettings.favorites) setFavorites(localSettings.favorites || []);
-
-        await client.from("user_progress").upsert({
-          username: resolvedUsername,
-          srs_data: localSRS,
-          settings: localSettings,
-          answer_history: localHistory,
-          updated_at: new Date().toISOString(),
-        });
+      // Update the stored session to use the canonical key
+      if (emailKey) {
+        try {
+          const session = JSON.parse(localStorage.getItem("pcpe_session") || "{}");
+          session.username = emailKey;
+          localStorage.setItem("pcpe_session", JSON.stringify(session));
+        } catch (e) { /* ignore */ }
       }
     } catch (e) {
       console.error("Erro no loadUserData:", e);
