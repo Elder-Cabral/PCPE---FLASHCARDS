@@ -20,12 +20,16 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env
 
 # Local users fixture (do not commit real credentials)
 src/data/users.local.json
 
 # Auto-generated similarity reports
 /reports/
+
+# Flashcard backups
+src/data/banco-backup-*
 
 # Vercel
 .vercel

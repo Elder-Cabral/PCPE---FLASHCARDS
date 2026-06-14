@@ -153,6 +153,13 @@ function mergeSRSData(local, remote) {
   return merged;
 }
 
+function mergeFavorites(local, remote) {
+  if (!local?.length) return remote || [];
+  if (!remote?.length) return local || [];
+  const set = new Set([...local, ...remote]);
+  return Array.from(set);
+}
+
 const isReviewedToday = (timestamp) => {
   if (!timestamp) return false;
   return getLocalDateString(new Date(timestamp)) === getLocalDateString(new Date());
@@ -187,6 +194,9 @@ export default function App() {
   const [graphCustomEnd, setGraphCustomEnd] = useState("");
   const [cardSnapshot, setCardSnapshot] = useState({});
   const feedbackInProgressCardId = useRef(null);
+  const saveQueueRef = useRef(Promise.resolve());
+  const isSavingRef = useRef(false);
+  const toggleFavTimeoutRef = useRef(null);
 
   // Estilos globais e de responsividade injetados
   useEffect(() => {
@@ -473,54 +483,73 @@ export default function App() {
   };
 
   const saveSRSData = async (username, srs, currentSettings) => {
-    try {
-      const client = getSupabase();
+    const doSave = async () => {
+      isSavingRef.current = true;
+      try {
+        const client = getSupabase();
 
-      const currentHistory = (() => {
-        try { return JSON.parse(localStorage.getItem("pcpe_history_" + username) || "[]"); }
-        catch { return []; }
-      })();
+        const currentHistory = (() => {
+          try { return JSON.parse(localStorage.getItem("pcpe_history_" + username) || "[]"); }
+          catch { return []; }
+        })();
 
-      const { data, error } = await client
-        .from("user_progress")
-        .select("srs_data, settings, answer_history")
-        .eq("username", username);
+        const localSRSFromStorage = (() => {
+          try { return JSON.parse(localStorage.getItem("pcpe_srs_" + username) || "{}"); }
+          catch { return {}; }
+        })();
 
-      let latestSRS = {};
-      let latestSettings = currentSettings;
-      let remoteHistory = [];
+        const { data, error } = await client
+          .from("user_progress")
+          .select("srs_data, settings, answer_history")
+          .eq("username", username);
 
-      if (!error && data && data.length > 0) {
-        latestSRS = data[0].srs_data || {};
-        latestSettings = { ...data[0].settings, ...currentSettings };
-        remoteHistory = data[0].answer_history || [];
+        let latestSRS = {};
+        let latestSettings = currentSettings;
+        let remoteHistory = [];
+
+        if (!error && data && data.length > 0) {
+          latestSRS = data[0].srs_data || {};
+          latestSettings = {
+            ...data[0].settings,
+            ...currentSettings,
+            favorites: mergeFavorites(data[0].settings?.favorites, currentSettings.favorites || [])
+          };
+          remoteHistory = data[0].answer_history || [];
+        }
+
+        const localSRS = mergeSRSData(srs, localSRSFromStorage);
+        const mergedSRS = mergeSRSData(localSRS, latestSRS);
+        const mergedHistory = mergeAnswerHistory(currentHistory, remoteHistory);
+
+        await client.from("user_progress").upsert({
+          username,
+          srs_data: mergedSRS,
+          settings: latestSettings,
+          answer_history: mergedHistory,
+          updated_at: new Date().toISOString(),
+        });
+
+        setSrsData(mergedSRS);
+        setAnswerHistory(mergedHistory);
+        localStorage.setItem("pcpe_srs_" + username, JSON.stringify(mergedSRS));
+        localStorage.setItem("pcpe_history_" + username, JSON.stringify(mergedHistory));
+        if (latestSettings.reviewOrder) {
+          setReviewOrder(latestSettings.reviewOrder);
+        }
+        if (latestSettings.favorites) {
+          setFavorites(latestSettings.favorites);
+        }
+        localStorage.setItem("pcpe_settings_" + username, JSON.stringify(latestSettings));
+      } catch (e) {
+        console.error("Erro ao salvar no Supabase:", e);
+      } finally {
+        isSavingRef.current = false;
       }
+    };
 
-      const mergedSRS = mergeSRSData(srs, latestSRS);
-      const mergedHistory = mergeAnswerHistory(currentHistory, remoteHistory);
-
-      await client.from("user_progress").upsert({
-        username,
-        srs_data: mergedSRS,
-        settings: latestSettings,
-        answer_history: mergedHistory,
-        updated_at: new Date().toISOString(),
-      });
-
-      setSrsData(mergedSRS);
-      setAnswerHistory(mergedHistory);
-      localStorage.setItem("pcpe_srs_" + username, JSON.stringify(mergedSRS));
-      localStorage.setItem("pcpe_history_" + username, JSON.stringify(mergedHistory));
-      if (latestSettings.reviewOrder) {
-        setReviewOrder(latestSettings.reviewOrder);
-      }
-      if (latestSettings.favorites) {
-        setFavorites(latestSettings.favorites);
-      }
-      localStorage.setItem("pcpe_settings_" + username, JSON.stringify(latestSettings));
-    } catch (e) {
-      console.error("Erro ao salvar no Supabase:", e);
-    }
+    const result = saveQueueRef.current.then(doSave);
+    saveQueueRef.current = result.catch(() => {});
+    return result;
   };
 
   // Carregar progresso do Supabase com mesclagem inteligente
@@ -557,8 +586,13 @@ export default function App() {
           .eq("username", key);
         if (!error && data && data.length > 0) {
           const row = data[0];
+          const rowSettings = row.settings || {};
           combinedSRS = mergeSRSData(combinedSRS, row.srs_data || {});
-          combinedSettings = { ...combinedSettings, ...(row.settings || {}) };
+          combinedSettings = {
+            ...combinedSettings,
+            ...rowSettings,
+            favorites: mergeFavorites(combinedSettings.favorites || [], rowSettings.favorites || [])
+          };
           combinedHistory = mergeAnswerHistory(combinedHistory, row.answer_history || []);
         }
       }
@@ -576,7 +610,11 @@ export default function App() {
       // Merge remote data with local: remote (Supabase) fills the base,
       // local overwrites any cards with newer timestamps.
       const mergedSRS = mergeSRSData(localSRS, combinedSRS);
-      const mergedSettings = { ...localSettings, ...combinedSettings };
+      const mergedSettings = {
+        ...localSettings,
+        ...combinedSettings,
+        favorites: mergeFavorites(localSettings.favorites || [], combinedSettings.favorites || [])
+      };
       const mergedHistory = mergeAnswerHistory(localHistory, combinedHistory);
 
       setSrsData(mergedSRS);
@@ -584,18 +622,19 @@ export default function App() {
       if (mergedSettings.reviewOrder) setReviewOrder(mergedSettings.reviewOrder);
       if (mergedSettings.favorites) setFavorites(mergedSettings.favorites || []);
 
-      // Persist merged data under the canonical key (email when available)
-      localStorage.setItem("pcpe_srs_" + resolvedUsername, JSON.stringify(mergedSRS));
-      localStorage.setItem("pcpe_settings_" + resolvedUsername, JSON.stringify(mergedSettings));
-      localStorage.setItem("pcpe_history_" + resolvedUsername, JSON.stringify(mergedHistory));
+      if (!isSavingRef.current) {
+        localStorage.setItem("pcpe_srs_" + resolvedUsername, JSON.stringify(mergedSRS));
+        localStorage.setItem("pcpe_settings_" + resolvedUsername, JSON.stringify(mergedSettings));
+        localStorage.setItem("pcpe_history_" + resolvedUsername, JSON.stringify(mergedHistory));
 
-      await client.from("user_progress").upsert({
-        username: resolvedUsername,
-        srs_data: mergedSRS,
-        settings: mergedSettings,
-        answer_history: mergedHistory,
-        updated_at: new Date().toISOString(),
-      });
+        await client.from("user_progress").upsert({
+          username: resolvedUsername,
+          srs_data: mergedSRS,
+          settings: mergedSettings,
+          answer_history: mergedHistory,
+          updated_at: new Date().toISOString(),
+        });
+      }
 
       // Clean up legacy rows that have been merged
       for (const key of queryKeys) {
@@ -666,8 +705,17 @@ export default function App() {
     const handleFocus = () => {
       loadUserData(currentUser.username);
     };
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === "visible") {
+        loadUserData(currentUser.username);
+      }
+    };
     window.addEventListener("focus", handleFocus);
-    return () => window.removeEventListener("focus", handleFocus);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () => {
+      window.removeEventListener("focus", handleFocus);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
   }, [currentUser]);
 
   // Sincronizar dados a cada 30s (cards revisados em outro dispositivo, virada do dia, etc)
@@ -686,17 +734,27 @@ export default function App() {
     return () => clearInterval(interval);
   }, [currentUser]);
 
-  const handleLogin = (user) => {
+  const handleLogin = async (user) => {
     try {
       localStorage.setItem("pcpe_session", JSON.stringify(user));
       setCurrentUser(user);
       loadUserData(user.username);
+      try {
+        await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(user),
+        });
+      } catch {}
     } catch {}
   };
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     try {
       localStorage.removeItem("pcpe_session");
+      try {
+        await fetch('/api/auth/logout', { method: 'POST' });
+      } catch {}
     } catch {}
     setCurrentUser(null);
     setSelectedMateria(null);
@@ -726,11 +784,15 @@ export default function App() {
       const updated = prev.includes(cardId)
         ? prev.filter(id => id !== cardId)
         : [...prev, cardId];
-      
-      // Sincroniza as alterações no Supabase e local
-      setTimeout(() => {
+
+      try {
+        localStorage.setItem("pcpe_settings_" + currentUser.username, JSON.stringify({ reviewOrder, favorites: updated }));
+      } catch (e) { console.error(e); }
+
+      if (toggleFavTimeoutRef.current) clearTimeout(toggleFavTimeoutRef.current);
+      toggleFavTimeoutRef.current = setTimeout(() => {
         saveSRSData(currentUser.username, srsData, { reviewOrder, favorites: updated });
-      }, 50);
+      }, 500);
       return updated;
     });
   };
@@ -2055,11 +2117,10 @@ function TelaLogin({ onLogin }) {
               password
             });
 
-            // Temporary debug log: capture Supabase auth response to help debugging login issues.
             if (error) {
-              console.warn('Supabase signInWithPassword error for', loginEmail, error);
+              console.warn('Supabase signInWithPassword failed');
             } else if (!data || !data.user) {
-              console.warn('Supabase signInWithPassword no user returned for', loginEmail, { data });
+              console.warn('Supabase signInWithPassword returned no user');
             }
 
             if (!error && data && data.user) {
@@ -2099,16 +2160,6 @@ function TelaLogin({ onLogin }) {
           if (ok) {
             setErro("");
             onLogin({ username: bcryptMatchUser.username, role: bcryptMatchUser.role, name: bcryptMatchUser.name });
-            return;
-          }
-        }
-
-        // Development helper: allow plaintext match when running locally
-        if (process.env.NODE_ENV !== 'production') {
-          const plainUser = localUsers.find(u => u.username === uname && u.passwordPlain && u.passwordPlain === password);
-          if (plainUser) {
-            setErro("");
-            onLogin({ username: plainUser.username, role: plainUser.role, name: plainUser.name });
             return;
           }
         }
