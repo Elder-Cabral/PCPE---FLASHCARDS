@@ -91,6 +91,37 @@ Sempre que revisar o arquivo `banco.json`, verifique se há caracteres corrompid
    - Escrever o banco com `fs.writeFileSync(path, JSON.stringify(data, null, 2), 'utf8')`
 7. **Em caso de dúvida**, execute `node scripts/fix_mojibake_v3.mjs` (dry-run) antes de qualquer commit que envolva adição de cards. O output mostrará exatamente o que seria alterado.
 
+**[VALIDAÇÃO DE ACENTUAÇÃO (ORTOGRAFIA)]**
+Todo texto gerado para os flashcards DEVE obedecer integralmente às regras de acentuação gráfica do Português Brasileiro (Novo Acordo Ortográfico). A falha em aplicar os acentos corretamente gera retrabalho e compromete a credibilidade do material.
+
+**Regras obrigatórias de acentuação:**
+
+1. **Proparoxítonas (antepenúltima sílaba tônica):** TODAS levam acento. Ex: `público`, `jurídico`, `específico`, `necessário`, `arbitrário`, `judiciário`, `válido`, `inválido`, `típico`, `atípico`, `prática`, `crítico`, `lógico`, `ético`, `político`, `conteúdo`, `hipótese`, `análise`, `súmula`, `matéria`, `espécie`, `órgão`, `inquérito`, `silêncio`, `caráter`, `nível`, `alcool`, `indígena`, `legítimo`, `idôneo`, `súbito`.
+
+2. **Paroxítonas terminadas em -l, -r, -ps, -x, -um, -us, -n, -ão, -ã, -ons:** SEMPRE acentuadas. Ex: `possível`, `impossível`, `incrível`, `fácil`, `difícil`, `útil`, `estável`, `provável`, `responsável`, `caráter`, `nível`.
+
+3. **Monossílabos tônicos:** `é` (verbo ser), `só` (sozinho), `pé`, `pá`, `mês`, `nós`, `vós`. NUNCA confundir `e` (conjunção = and, sem acento) com `é` (verbo = is, com acento).
+
+4. **Hiato:** Acentua-se a vogal tônica fechada em hiato quando for seguida de 's' ou sozinha. Ex: `saúde`, `conteúdo`, `juízo`, `juízes`, `país`, `países`, `raízes`, `benefícios`, `indústria`, `polícia`, `presídio`, `série`.
+
+5. **Til (~):** NUNCA omitir em `não`, `-ção` (ex: `execução`, `fundamentação`, `investigação`, `condenação`, `prescrição`, `disposição`, `organização`, `administração`), `-ções` (plural), `-ã`, `-ãs` (ex: `órgão`, `irmã`, `maçã`).
+
+6. **Cedilha (ç):** NUNCA substituir 'ç' por 'c'. Ex: `serviço` (não `servico`), `cobrança` (não `cobranca`), `força` (não `forca`), `licença` (não `licenca`), `infração` (não `infracao`), `sentença` (não `sentenca`), `presença` (não `presenca`), `audiência` (não `audiencia`).
+
+7. **Palavras comuns que costumam ter acento omitido:**
+   - `alguém` (não `alguem`), `também` (não `tambem`), `parabéns` (não `parabens`)
+   - `físico` (não `fisico`), `específico` (não `especifico`), `jurídico` (não `juridico`)
+   - `público` (não `publico`), `necessário` (não `necessario`)
+   - `lícito`/`lícita` (não `licito`/`licita` — mas atenção: `licitação` NÃO tem acento!)
+   - `compatível` (não `compativel`), `notória` (não `notoria`)
+
+8. **NUNCA** acentuar palavras que não exigem acento, como `licitação` (não `lícitação`), `licitar` (não `lícitar`).
+
+**Verificação ao final da geração:**
+- Execute `node scripts/check_accents.mjs` para verificar acentos nos cards de jurisprudências.
+- Antes de finalizar, leia 3-4 cards aleatórios para confirmar visualmente que os acentos estão corretos.
+- Se houver qualquer dúvida sobre a acentuação de uma palavra, consulte o VOLP (Vocabulário Ortográfico da Língua Portuguesa) ou o Acordo Ortográfico vigente.
+
 **[ENTRADA DE DADOS - INPUT]**
 Você receberá trechos de código-fonte contendo as strings e dados dos flashcards do projeto em desenvolvimento. Sua tarefa é analisar o conteúdo de cada flashcard, cruzando-o rigorosamente com a **BASE DE CONHECIMENTO OBRIGATÓRIA** acima.
 
