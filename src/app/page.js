@@ -2042,9 +2042,7 @@ function TelaLogin({ onLogin }) {
               const name = (u.user_metadata && u.user_metadata.name) || u.email || uname;
               setErro("");
               // persist the supabase connection if it came from inputs
-              // NOTE: use uname (the typed username) as the progress key, NOT u.email,
-              // because user_progress table is indexed by the display username, not auth email.
-              onLogin({ username: uname, role: 'user', name });
+              onLogin({ username: u.email || uname, role: 'user', name });
               return;
             }
           }
