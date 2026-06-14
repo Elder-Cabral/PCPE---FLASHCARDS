@@ -62,6 +62,7 @@ const MATERIAS = [
   { id: "raciocinio",     label: "Raciocínio Lógico",     emoji: "🧠",  color: "#eab308" },
   { id: "contabilidade",  label: "Contabilidade Geral",   emoji: "📊",  color: "#ec4899" },
   { id: "estatistica",    label: "Estatística",           emoji: "📈",  color: "#6366f1" },
+  { id: "jurisprudencias", label: "Jurisprudências",       emoji: "⚡",  color: "#f43f5e" },
 ];
 
 // ── UTILS: ALGORITMO SM-2 ──────────────────────────────────────────────────
