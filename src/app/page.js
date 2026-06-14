@@ -52,7 +52,7 @@ import bcrypt from "bcryptjs";
 
 // ── CONFIGURAÇÃO DE MATÉRIAS ───────────────────────────────────────────────
 const MATERIAS = [
-  { id: "leg_estadual",   label: "Legislação Estadual",   emoji: "⚖️",  color: "#ef4444" },
+  { id: "leg_estadual",   label: "Legislação Estadual",   emoji: "📋",  color: "#ef4444" },
   { id: "dir_const",      label: "Dir. Constitucional",   emoji: "📜",  color: "#3b82f6" },
   { id: "dir_adm",        label: "Dir. Administrativo",   emoji: "🏛️",  color: "#10b981" },
   { id: "dir_penal",      label: "Dir. Penal",            emoji: "⚠️",  color: "#8b5cf6" },
@@ -62,7 +62,7 @@ const MATERIAS = [
   { id: "raciocinio",     label: "Raciocínio Lógico",     emoji: "🧠",  color: "#eab308" },
   { id: "contabilidade",  label: "Contabilidade Geral",   emoji: "📊",  color: "#ec4899" },
   { id: "estatistica",    label: "Estatística",           emoji: "📈",  color: "#6366f1" },
-  { id: "jurisprudencias", label: "Jurisprudências",       emoji: "⚡",  color: "#f43f5e" },
+  { id: "jurisprudencias", label: "Jurisprudências",       emoji: "⚖️",  color: "#f43f5e" },
 ];
 
 // ── UTILS: ALGORITMO SM-2 ──────────────────────────────────────────────────
@@ -2057,7 +2057,7 @@ export default function App() {
                   if (mStats.studied < mStats.total) {
                     return (
                       <span style={{ fontSize: 10, fontWeight: 600, color: "#94a3b8", background: "rgba(255,255,255,0.04)", borderRadius: 8, padding: "3px 8px" }}>
-                        {mStats.total - mStats.studied} restantes
+                        {mStats.studied} estudados
                       </span>
                     );
                   }
