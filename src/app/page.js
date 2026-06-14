@@ -527,10 +527,45 @@ export default function App() {
   const loadUserData = async (username) => {
     try {
       const client = getSupabase();
-      const { data, error } = await client
+      let resolvedUsername = username;
+
+      // Query user_progress with the given username.
+      let { data, error } = await client
         .from("user_progress")
         .select("srs_data, settings, answer_history")
-        .eq("username", username);
+        .eq("username", resolvedUsername);
+
+      // If no data found and username is not an email, try to look up
+      // the mapped auth email via username_map (existing data may be keyed
+      // by email from Supabase Auth, not the typed display username).
+      if ((!data || data.length === 0) && !error && !resolvedUsername.includes("@")) {
+        try {
+          const { data: mapData } = await client
+            .from("username_map")
+            .select("email")
+            .eq("username", resolvedUsername)
+            .maybeSingle();
+          if (mapData && mapData.email) {
+            const emailKey = mapData.email;
+            const { data: emailData, error: emailErr } = await client
+              .from("user_progress")
+              .select("srs_data, settings, answer_history")
+              .eq("username", emailKey);
+            if (!emailErr && emailData && emailData.length > 0) {
+              data = emailData;
+              resolvedUsername = emailKey;
+              // Update the stored session key for future loads
+              try {
+                const session = JSON.parse(localStorage.getItem("pcpe_session") || "{}");
+                session.username = emailKey;
+                localStorage.setItem("pcpe_session", JSON.stringify(session));
+              } catch (e) { /* ignore */ }
+            }
+          }
+        } catch (e) {
+          console.warn("username_map lookup failed:", e);
+        }
+      }
 
       const savedSRS = localStorage.getItem("pcpe_srs_" + username);
       const savedSettings = localStorage.getItem("pcpe_settings_" + username);
@@ -563,26 +598,26 @@ export default function App() {
         if (mergedSettings.reviewOrder) setReviewOrder(mergedSettings.reviewOrder);
         if (mergedSettings.favorites) setFavorites(mergedSettings.favorites || []);
 
-        localStorage.setItem("pcpe_srs_" + username, JSON.stringify(mergedSRS));
-        localStorage.setItem("pcpe_settings_" + username, JSON.stringify(mergedSettings));
-        localStorage.setItem("pcpe_history_" + username, JSON.stringify(mergedHistory));
+        localStorage.setItem("pcpe_srs_" + resolvedUsername, JSON.stringify(mergedSRS));
+        localStorage.setItem("pcpe_settings_" + resolvedUsername, JSON.stringify(mergedSettings));
+        localStorage.setItem("pcpe_history_" + resolvedUsername, JSON.stringify(mergedHistory));
 
         await client.from("user_progress").upsert({
-          username,
+          username: resolvedUsername,
           srs_data: mergedSRS,
           settings: mergedSettings,
           answer_history: mergedHistory,
           updated_at: new Date().toISOString(),
         });
       } else {
-        console.log("Nenhum dado no Supabase para", username, "- Migrando localStorage local.");
+        console.log("Nenhum dado no Supabase para", resolvedUsername, "- Migrando localStorage local.");
         setSrsData(localSRS);
         setAnswerHistory(localHistory);
         if (localSettings.reviewOrder) setReviewOrder(localSettings.reviewOrder);
         if (localSettings.favorites) setFavorites(localSettings.favorites || []);
 
         await client.from("user_progress").upsert({
-          username,
+          username: resolvedUsername,
           srs_data: localSRS,
           settings: localSettings,
           answer_history: localHistory,
