@@ -5,27 +5,38 @@ import { createClient } from '@supabase/supabase-js';
 import BANCO from "../data/banco.json";
 import { supabase } from "../lib/supabase";
 
-// Helper to obtain a Supabase client at runtime.
-// Priority: environment-exported client (imported supabase) -> dynamic client created
-// from stored localStorage values (pcpe_supabase_url / pcpe_supabase_anon_key) -> stub.
-function getSupabase() {
-  // If server-side or supabase already configured via lib, use it.
-  try {
-    if (supabase && supabase.auth) return supabase;
-  } catch (e) {
-    // fallthrough
-  }
+// Cache for a runtime-created Supabase client, so we never lose the auth session
+// (which is held in-memory by the client instance after signInWithPassword).
+let _runtimeSupabaseClient = null;
 
+// Helper to obtain a Supabase client at runtime.
+// Priority: dynamic client from localStorage config (cached) -> env-exported client -> stub.
+// We try the localStorage config FIRST because the env-exported client might be a stub
+// when NEXT_PUBLIC_* vars are absent during build, whereas runtime config always works.
+function getSupabase() {
   if (typeof window === 'undefined') return supabase;
+
+  // Reuse cached runtime client (preserves auth session)
+  if (_runtimeSupabaseClient) return _runtimeSupabaseClient;
 
   try {
     const url = process.env.NEXT_PUBLIC_SUPABASE_URL || localStorage.getItem('pcpe_supabase_url');
     const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || localStorage.getItem('pcpe_supabase_anon_key');
     if (url && key) {
-      return createClient(url, key);
+      _runtimeSupabaseClient = createClient(url, key);
+      return _runtimeSupabaseClient;
     }
   } catch (e) {
     console.warn('Could not create Supabase client at runtime:', e);
+  }
+
+  // If env-exported client is a real Supabase client (not the stub), use it.
+  try {
+    if (supabase && !supabase.__isStub) {
+      return supabase;
+    }
+  } catch (e) {
+    // fallthrough
   }
 
   return supabase;
@@ -2031,7 +2042,9 @@ function TelaLogin({ onLogin }) {
               const name = (u.user_metadata && u.user_metadata.name) || u.email || uname;
               setErro("");
               // persist the supabase connection if it came from inputs
-              onLogin({ username: u.email || uname, role: 'user', name });
+              // NOTE: use uname (the typed username) as the progress key, NOT u.email,
+              // because user_progress table is indexed by the display username, not auth email.
+              onLogin({ username: uname, role: 'user', name });
               return;
             }
           }

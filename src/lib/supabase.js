@@ -13,6 +13,7 @@ if (supabaseUrl && supabaseAnonKey) {
   console.warn('Supabase URL or anon key not provided. Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in your environment.');
   const noopResult = async () => ({ data: null, error: null });
   supabase = {
+    __isStub: true,
     from: () => ({ select: noopResult, upsert: noopResult, insert: noopResult, update: noopResult }),
     auth: { signInWithPassword: async () => ({ data: null, error: new Error('Supabase not configured') }) },
   };
