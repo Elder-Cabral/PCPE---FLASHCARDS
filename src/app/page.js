@@ -2018,7 +2018,7 @@ export default function App() {
                 border: "1px solid rgba(255,255,255,0.05)",
                 borderRadius: 20,
                 padding: "20px 18px",
-                textAlign: "left",
+                textAlign: "center",
                 cursor: "pointer",
                 position: "relative",
                 overflow: "hidden",
@@ -2028,13 +2028,13 @@ export default function App() {
             >
               <div style={{ position: "absolute", top: 0, right: 0, width: 70, height: 70, borderRadius: "0 20px 0 100%", background: `${m.color}08` }} />
               
-              <div style={{ fontSize: 28, marginBottom: 10, textAlign: "center" }}>{m.emoji}</div>
+              <div style={{ fontSize: 28, marginBottom: 10 }}>{m.emoji}</div>
               
               <div style={{ color: "#f1f5f9", fontSize: 14, fontWeight: 600, marginBottom: 8, lineHeight: 1.4 }}>
                 {m.label}
               </div>
 
-              <div style={{ display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center" }}>
+              <div style={{ display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center", justifyContent: "center" }}>
                 <span style={{ fontSize: 10, fontWeight: 600, color: "#94a3b8", background: "rgba(255,255,255,0.04)", borderRadius: 8, padding: "3px 8px" }}>
                   {mStats.total} cards
                 </span>
