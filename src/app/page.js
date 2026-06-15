@@ -40,14 +40,7 @@ function getSupabase() {
 
   return supabase;
 }
-// Local users fixture is optional and intentionally not required in production builds.
-// If you need local users for development, create src/data/users.local.json (ignored by git).
-// Local users fixture, when present, is loaded lazily inside the login component
-// (so production builds don't require the file).
-import bcrypt from "bcryptjs";
-
-// Usuários locais agora são carregados de src/data/users.local.json (IGNORADO no git)
-// Por segurança armazenamos apenas hashes de senha (SHA-256) no arquivo local.
+// Local users authentication is handled server-side via POST /api/auth/login.
 
 // ── CONFIGURAÇÃO DE MATÉRIAS ───────────────────────────────────────────────
 const MATERIAS = [
@@ -769,8 +762,7 @@ export default function App() {
       const savedSession = localStorage.getItem("pcpe_session");
       if (savedSession) {
         const user = JSON.parse(savedSession);
-        const localUsers = (typeof window !== 'undefined' && window.__PCPE_LOCAL_USERS) ? window.__PCPE_LOCAL_USERS : [];
-        if (localUsers.find(u => u.username === user.username) || user.username) {
+        if (user && user.username) {
           setCurrentUser(user);
           loadUserData(user.username);
         }
@@ -879,13 +871,6 @@ export default function App() {
       localStorage.setItem("pcpe_session", JSON.stringify(user));
       setCurrentUser(user);
       loadUserData(user.username);
-      try {
-        await fetch('/api/auth/login', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(user),
-        });
-      } catch {}
     } catch {}
   };
 
@@ -2225,22 +2210,16 @@ function TelaLogin({ onLogin }) {
     const [erro, setErro] = useState("");
   const [sbUrl, setSbUrl] = useState("");
   const [sbKey, setSbKey] = useState("");
-  const [usersLocalLoaded, setUsersLocalLoaded] = useState(false);
 
   const handleFormSubmit = () => {
     (async () => {
       try {
         const uname = username.toLowerCase().trim();
 
-        // 1) If Supabase env is configured, try to sign in through Supabase first.
-        // Attempt Supabase auth if we can create a client. The client may come
-        // from environment (lib) or from runtime values saved in localStorage
-        // (pcpe_supabase_url / pcpe_supabase_anon_key). This lets the app work
-        // locally without NEXT_PUBLIC_* env vars.
+        // 1) Try Supabase Auth first (primary auth provider)
         try {
           const client = getSupabase();
           if (client && client.auth) {
-            // Support login by username -> email mapping via `username_map`.
             let loginEmail = uname;
             if (!uname.includes("@")) {
               try {
@@ -2251,7 +2230,7 @@ function TelaLogin({ onLogin }) {
                   .maybeSingle();
                 if (!mapErr && mapData && mapData.email) loginEmail = mapData.email;
               } catch (e) {
-                // ignore mapping errors and continue
+                // ignore mapping errors
               }
             }
 
@@ -2260,65 +2239,45 @@ function TelaLogin({ onLogin }) {
               password
             });
 
-            if (error) {
-              console.warn('Supabase signInWithPassword failed');
-            } else if (!data || !data.user) {
-              console.warn('Supabase signInWithPassword returned no user');
-            }
-
             if (!error && data && data.user) {
               const u = data.user;
               const name = (u.user_metadata && u.user_metadata.name) || u.email || uname;
+              // Sign JWT cookie server-side
+              try {
+                await fetch('/api/auth/login', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ username: u.email || uname, role: 'user', name, loginMethod: 'supabase' }),
+                });
+              } catch {}
               setErro("");
-              // persist the supabase connection if it came from inputs
               onLogin({ username: u.email || uname, role: 'user', name });
               return;
             }
           }
         } catch (e) {
-          console.warn('Supabase auth attempt failed, falling back to local auth.', e);
+          console.warn('Supabase auth failed, trying local auth.', e);
         }
 
-        // 2) Local authentication: load optional fixture at runtime (development only)
-        if (!usersLocalLoaded && typeof window !== "undefined" && process.env.NODE_ENV !== "production") {
-          try {
-            const mod = await import("../data/users.local.json");
-            // attach to component-level state so other auth flows can use it
-            // NOTE: we don't set a top-level USERS variable to avoid bundling the file on build
-            const data = mod.default || mod;
-            // mutate the parent App's usersLocal via a custom event (minimal coupling)
-            window.__PCPE_LOCAL_USERS = data;
-          } catch (e) {
-            // no-op if file missing
-  }
-          setUsersLocalLoaded(true);
-        }
-
-        const localUsers = (typeof window !== "undefined" && window.__PCPE_LOCAL_USERS) ? window.__PCPE_LOCAL_USERS : [];
-
-        // bcrypt-based local users (preferred)
-        const bcryptMatchUser = localUsers.find(u => u.username === uname && u.passwordHash && u.passwordHash.startsWith("$2a$"));
-        if (bcryptMatchUser) {
-          const ok = bcrypt.compareSync(password, bcryptMatchUser.passwordHash);
-          if (ok) {
+        // 2) Local auth via server-side API (bcrypt verified on server)
+        try {
+          const res = await fetch('/api/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username: uname, password, loginMethod: 'local' }),
+          });
+          const data = await res.json();
+          if (res.ok && data.user) {
             setErro("");
-            onLogin({ username: bcryptMatchUser.username, role: bcryptMatchUser.role, name: bcryptMatchUser.name });
+            onLogin({ username: data.user.username, role: data.user.role, name: data.user.name });
             return;
           }
-        }
-
-        // Fallback: SHA-256 legacy hashes (compatibility)
-        try {
-          const crypto = await import("crypto");
-          const sha = crypto.createHash("sha256").update(password).digest("hex");
-          const user = localUsers.find(u => u.username === uname && u.passwordHash === sha);
-          if (user) {
-            setErro("");
-            onLogin({ username: user.username, role: user.role, name: user.name });
+          if (res.status === 429) {
+            setErro("Muitas tentativas. Aguarde alguns minutos.");
             return;
           }
         } catch (e) {
-          // In the browser environment, dynamic import('crypto') may fail. Ignore.
+          console.warn('Local auth API call failed:', e);
         }
 
         setErro("Usuário ou senha incorretos.");
