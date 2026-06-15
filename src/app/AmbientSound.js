@@ -65,22 +65,21 @@ export default function AmbientSound() {
   const [subcategory, setSubcategory] = useState(null);
   const [playing, setPlaying] = useState(false);
   const [volume, setVolume] = useState(50);
-  const [creating, setCreating] = useState(false);
+  const [ytReady, setYtReady] = useState(false);
   const playerRef = useRef(null);
   const containerRef = useRef(null);
-  const apiLoadedRef = useRef(false);
-  const trackForPlayerRef = useRef(null);
-
-  const getTrackId = useCallback(() => {
-    if (!category) return null;
-    if (category === "natureza" || category === "chuva") return category;
-    if ((category === "foco" || category === "urbano") && subcategory) return subcategory;
-    return null;
-  }, [category, subcategory]);
+  const volumeRef = useRef(volume);
+  volumeRef.current = volume;
 
   useEffect(() => {
-    if (typeof window.YT === "undefined" && !apiLoadedRef.current) {
-      apiLoadedRef.current = true;
+    if (typeof window.YT !== "undefined" && window.YT.Player) {
+      setYtReady(true);
+      return;
+    }
+    window.onYouTubeIframeAPIReady = () => {
+      setYtReady(true);
+    };
+    if (!document.querySelector('script[src*="youtube.com/iframe_api"]')) {
       const tag = document.createElement("script");
       tag.src = "https://www.youtube.com/iframe_api";
       document.body.appendChild(tag);
@@ -93,81 +92,65 @@ export default function AmbientSound() {
       playerRef.current = null;
     }
     setPlaying(false);
-    setCreating(false);
   }, []);
 
-  const createAndPlay = useCallback((trackId) => {
-    const videoId = YT_VIDEOS[trackId];
-    if (!videoId) return;
-
-    destroyPlayer();
-    setCreating(true);
-    trackForPlayerRef.current = trackId;
-
-    const tryCreate = () => {
-      if (trackForPlayerRef.current !== trackId) return;
-      if (typeof window.YT === "undefined" || !window.YT.Player) {
-        setTimeout(tryCreate, 300);
-        return;
-      }
-      const container = containerRef.current;
-      if (!container) return;
-      container.innerHTML = "";
-      const div = document.createElement("div");
-      div.id = "yt-player-" + trackId + "-" + Date.now();
-      container.appendChild(div);
-
-      const p = new window.YT.Player(div.id, {
-        videoId,
-        height: "0",
-        width: "0",
-        playerVars: {
-          autoplay: 1,
-          controls: 0,
-          disablekb: 1,
-          enablejsapi: 1,
-          fs: 0,
-          modestbranding: 1,
-          loop: 1,
-          playlist: videoId,
-        },
-        events: {
-          onReady: () => {
-            if (trackForPlayerRef.current !== trackId) return;
-            p.setVolume(volume);
-            setCreating(false);
-            setPlaying(true);
-          },
-          onStateChange: (e) => {
-            if (trackForPlayerRef.current !== trackId) return;
-            if (e.data === window.YT.PlayerState.PLAYING) setPlaying(true);
-            else if (e.data === window.YT.PlayerState.PAUSED || e.data === window.YT.PlayerState.ENDED) setPlaying(false);
-          },
-        },
-      });
-      playerRef.current = p;
-    };
-
-    tryCreate();
-  }, [destroyPlayer, volume]);
-
-  useEffect(() => {
-    if (playerRef.current) {
-      playerRef.current.setVolume(volume);
-    }
-  }, [volume]);
+  const getTrackId = useCallback(() => {
+    if (!category) return null;
+    if (category === "natureza" || category === "chuva") return category;
+    if ((category === "foco" || category === "urbano") && subcategory) return subcategory;
+    return null;
+  }, [category, subcategory]);
 
   const handlePlay = () => {
     const trackId = getTrackId();
     if (!trackId) return;
-    if (playerRef.current && trackForPlayerRef.current === trackId) {
-      // Player ja existe para esta faixa — basta dar play
-      if (typeof playerRef.current.playVideo === "function") {
-        playerRef.current.playVideo();
-      }
-    } else {
-      createAndPlay(trackId);
+    const videoId = YT_VIDEOS[trackId];
+    if (!videoId) return;
+
+    if (playerRef.current && playerRef.current.__trackId === trackId) {
+      try { playerRef.current.playVideo(); } catch {}
+      setPlaying(true);
+      return;
     }
+
+    destroyPlayer();
+
+    const container = containerRef.current;
+    if (!container) return;
+    container.innerHTML = "";
+    const divId = "yt-player-" + trackId + "-" + Date.now();
+    const div = document.createElement("div");
+    div.id = divId;
+    container.appendChild(div);
+
+    // Player criado sincronamente dentro do click handler (autoplay permitido)
+    const p = new window.YT.Player(divId, {
+      videoId,
+      height: "0",
+      width: "0",
+      playerVars: {
+        autoplay: 1,
+        controls: 0,
+        disablekb: 1,
+        enablejsapi: 1,
+        fs: 0,
+        modestbranding: 1,
+        loop: 1,
+        playlist: videoId,
+      },
+      events: {
+        onReady: () => {
+          p.setVolume(volumeRef.current);
+          setPlaying(true);
+        },
+        onStateChange: (e) => {
+          if (e.data === window.YT.PlayerState.PLAYING) setPlaying(true);
+          else if (e.data === window.YT.PlayerState.PAUSED || e.data === window.YT.PlayerState.ENDED) setPlaying(false);
+        },
+      },
+    });
+    p.__trackId = trackId;
+    playerRef.current = p;
   };
 
   const handlePause = () => {
@@ -175,6 +158,12 @@ export default function AmbientSound() {
       playerRef.current.pauseVideo();
     }
   };
+
+  useEffect(() => {
+    if (playerRef.current && typeof playerRef.current.setVolume === "function") {
+      playerRef.current.setVolume(volume);
+    }
+  }, [volume]);
 
   const selectCategory = (catId) => {
     const cat = CATEGORIES.find((c) => c.id === catId);
@@ -278,9 +267,11 @@ export default function AmbientSound() {
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
               <button
                 onClick={playing ? handlePause : handlePlay}
+                disabled={!ytReady}
                 className="btn-hover"
                 style={{
                   ...btnCat,
+                  opacity: ytReady ? 1 : 0.5,
                   background: playing ? "rgba(239,68,68,0.12)" : "rgba(34,197,94,0.12)",
                   border: playing ? "1px solid rgba(239,68,68,0.2)" : "1px solid rgba(34,197,94,0.25)",
                   color: playing ? "#f87171" : "#4ade80",
@@ -288,16 +279,16 @@ export default function AmbientSound() {
                   padding: "4px 10px",
                 }}
               >
-                {playing ? "⏸ Pausar" : creating ? "⏳" : "▶ Tocar"}
+                {!ytReady ? "⏳" : playing ? "⏸ Pausar" : "▶ Tocar"}
               </button>
 
               <span style={{ color: "#94a3b8", fontSize: 11, fontWeight: 500 }}>
                 {getTrackLabel(trackId)}
               </span>
 
-              {creating && (
+              {!ytReady && (
                 <span style={{ color: "#f59e0b", fontSize: 9, fontWeight: 500 }}>
-                  carregando...
+                  Carregando player...
                 </span>
               )}
 

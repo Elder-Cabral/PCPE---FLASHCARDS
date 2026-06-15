@@ -361,19 +361,12 @@ export default function App() {
 
       /* Dashboard content container */
       .dashboard-content {
-        background: rgba(17, 24, 39, 0.8);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-radius: 24px;
         padding: 28px 24px;
-        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.5);
       }
 
       @media (max-width: 640px) {
         .dashboard-content {
           padding: 20px 14px !important;
-          border-radius: 16px !important;
         }
       }
 
@@ -2857,73 +2850,94 @@ function Shell({ children, user, stats, onLogout, centered, userMeta = null, sho
       <div style={{ position: "fixed", top: -200, left: "50%", transform: "translateX(-50%)", width: 600, height: 400, borderRadius: "50%", background: "radial-gradient(ellipse,rgba(59,130,246,0.03) 0%,transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
 
       <div style={{ position: "relative", zIndex: 1, width: "100%", maxWidth: 800, margin: "0 auto", boxSizing: "border-box", flex: 1, display: "flex", flexDirection: "column", minHeight: 0, padding: "24px 16px 32px" }}>
-        {/* Topbar (fixo, não rola) */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12, flexShrink: 0, flexWrap: "wrap", gap: 8 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <div style={{ display: "inline-block", background: "linear-gradient(135deg,#e11d48,#be123c)", borderRadius: 10, padding: "6px 14px" }}>
-              <span style={{ color: "#fff", fontWeight: 700, fontSize: 9, letterSpacing: 2, fontFamily: "monospace" }}>PC-PE · AGENTE</span>
+        {/* ── CARD PRINCIPAL (sólido, sem transparência) ── */}
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", background: "#0f172a", borderRadius: 24, border: "1px solid rgba(255,255,255,0.06)", minHeight: 0, padding: "20px 24px" }}>
+          {/* Topbar */}
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0, flexWrap: "wrap", gap: 8 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              <div style={{ display: "inline-block", background: "linear-gradient(135deg,#e11d48,#be123c)", borderRadius: 10, padding: "6px 14px" }}>
+                <span style={{ color: "#fff", fontWeight: 700, fontSize: 9, letterSpacing: 2, fontFamily: "monospace" }}>PC-PE · AGENTE</span>
+              </div>
+              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                <span style={{ color: "#f97316", fontSize: 12, fontWeight: 600, whiteSpace: "nowrap" }} title="Dias de ofensiva">
+                  🔥 {userMeta?.current_streak ?? calculateStreak(srsData)} <span style={{ color: "#94a3b8", fontSize: 10, fontWeight: 400 }}>dias</span>
+                </span>
+                <span style={{ color: "#334155", fontSize: 11, fontWeight: 300 }}>|</span>
+                <span style={{ color: "#3b82f6", fontSize: 12, fontWeight: 600, whiteSpace: "nowrap" }} title="Escudos disponíveis">
+                  🛡️ {userMeta?.shields_available ?? 2} <span style={{ color: "#94a3b8", fontSize: 10, fontWeight: 400 }}>escudos</span>
+                </span>
+              </div>
             </div>
-            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-              <span style={{ color: "#f97316", fontSize: 12, fontWeight: 600, whiteSpace: "nowrap" }} title="Dias de ofensiva">
-                🔥 {userMeta?.current_streak ?? calculateStreak(srsData)} <span style={{ color: "#94a3b8", fontSize: 10, fontWeight: 400 }}>dias</span>
+            <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              <span style={{ color: "#94a3b8", fontSize: 12, fontWeight: 500 }}>
+                {user.role === "admin" ? "👑" : "👤"} {user.name}
               </span>
-              <span style={{ color: "#334155", fontSize: 11, fontWeight: 300 }}>|</span>
-              <span style={{ color: "#3b82f6", fontSize: 12, fontWeight: 600, whiteSpace: "nowrap" }} title="Escudos disponíveis">
-                🛡️ {userMeta?.shields_available ?? 2} <span style={{ color: "#94a3b8", fontSize: 10, fontWeight: 400 }}>escudos</span>
-              </span>
+              <button
+                onClick={onLogout}
+                className="btn-hover"
+                style={{
+                  background: "rgba(239,68,68,0.08)",
+                  border: "1px solid rgba(239,68,68,0.15)",
+                  borderRadius: 10,
+                  padding: "6px 12px",
+                  fontSize: 11,
+                  fontWeight: 600,
+                  color: "#ef4444",
+                  cursor: "pointer"
+                }}
+              >
+                Sair
+              </button>
             </div>
           </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-            <span style={{ color: "#94a3b8", fontSize: 12, fontWeight: 500 }}>
-              {user.role === "admin" ? "👑" : "👤"} {user.name}
-            </span>
-            <button
-              onClick={onLogout}
-              className="btn-hover"
-              style={{
-                background: "rgba(239,68,68,0.08)",
-                border: "1px solid rgba(239,68,68,0.15)",
-                borderRadius: 10,
-                padding: "6px 12px",
-                fontSize: 11,
-                fontWeight: 600,
-                color: "#ef4444",
-                cursor: "pointer"
-              }}
-            >
-              Sair
-            </button>
-          </div>
-        </div>
 
-        {/* Banner de Escudo de Ofensiva */}
-        {showShieldBanner && (
-          <div style={{
-            display: "flex", alignItems: "center", gap: 10,
-            background: "rgba(59,130,246,0.1)", border: "1px solid rgba(59,130,246,0.2)",
-            borderRadius: 12, padding: "10px 16px", marginBottom: 12, flexShrink: 0,
-          }}>
-            <span style={{ fontSize: 18 }}>🛡️</span>
-            <p style={{ color: "#93c5fd", fontSize: 12, fontWeight: 500, margin: 0, flex: 1, lineHeight: 1.4 }}>
-              Você perdeu um dia, mas seu Escudo de Ofensiva foi ativado e salvou sua sequência! ({userMeta?.shields_available || 0} escudo(s) restante(s))
-            </p>
-            <button
-              onClick={onDismissShield}
-              className="btn-hover"
-              style={{
-                background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)",
-                borderRadius: 8, padding: "4px 10px", fontSize: 11, fontWeight: 600,
-                color: "#94a3b8", cursor: "pointer", outline: "none", whiteSpace: "nowrap",
-              }}
-            >
-              OK
-            </button>
-          </div>
-        )}
+          <hr style={{ width: "100%", border: "none", borderTop: "1px solid rgba(255,255,255,0.06)", margin: "12px 0", flexShrink: 0 }} />
 
-        {/* Pomodoro Timer (sempre montado, oculto via display) */}
-        <div style={{ display: showPomodoro ? 'block' : 'none' }}>
-          <PomodoroBar username={user?.username} onHide={() => setShowPomodoro(false)} />
+          {/* Banner de Escudo de Ofensiva */}
+          {showShieldBanner && (
+            <div style={{
+              display: "flex", alignItems: "center", gap: 10,
+              background: "rgba(59,130,246,0.1)", border: "1px solid rgba(59,130,246,0.2)",
+              borderRadius: 12, padding: "10px 16px", marginBottom: 12, flexShrink: 0,
+            }}>
+              <span style={{ fontSize: 18 }}>🛡️</span>
+              <p style={{ color: "#93c5fd", fontSize: 12, fontWeight: 500, margin: 0, flex: 1, lineHeight: 1.4 }}>
+                Você perdeu um dia, mas seu Escudo de Ofensiva foi ativado e salvou sua sequência! ({userMeta?.shields_available || 0} escudo(s) restante(s))
+              </p>
+              <button
+                onClick={onDismissShield}
+                className="btn-hover"
+                style={{
+                  background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)",
+                  borderRadius: 8, padding: "4px 10px", fontSize: 11, fontWeight: 600,
+                  color: "#94a3b8", cursor: "pointer", outline: "none", whiteSpace: "nowrap",
+                }}
+              >
+                OK
+              </button>
+            </div>
+          )}
+
+          {/* Pomodoro Timer */}
+          <div style={{ display: showPomodoro ? 'block' : 'none', flexShrink: 0 }}>
+            <PomodoroBar username={user?.username} onHide={() => setShowPomodoro(false)} />
+          </div>
+
+          {showPomodoro && (
+            <hr style={{ width: "100%", border: "none", borderTop: "1px solid rgba(255,255,255,0.06)", margin: "12px 0", flexShrink: 0 }} />
+          )}
+
+          {centered ? (
+            <div style={{ flex: 1, overflow: "hidden", minHeight: 0, display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              {children}
+            </div>
+          ) : (
+            <div style={{ flex: 1, overflowY: "auto", minHeight: 0 }} className="custom-scrollbar">
+              <div className="dashboard-content">
+                {children}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Botao flutuante quando oculto durante estudo */}
@@ -2943,18 +2957,6 @@ function Shell({ children, user, stats, onLogout, centered, userMeta = null, sho
           >
             🍅
           </button>
-        )}
-
-        {centered ? (
-          <div style={{ flex: 1, overflow: "hidden", minHeight: 0, display: "flex", flexDirection: "column", justifyContent: "center", background: "rgba(17,24,39,0.8)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 24, boxShadow: "0 18px 50px rgba(0,0,0,0.5)" }}>
-            {children}
-          </div>
-        ) : (
-          <div style={{ flex: 1, overflowY: "auto", minHeight: 0 }} className="custom-scrollbar">
-            <div className="dashboard-content">
-              {children}
-            </div>
-          </div>
         )}
       </div>
     </div>

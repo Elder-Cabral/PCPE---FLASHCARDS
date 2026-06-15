@@ -107,11 +107,7 @@ export default function PomodoroBar({ username, onHide }) {
         display: "flex",
         flexDirection: "column",
         gap: 12,
-        background: "rgba(255,255,255,0.02)",
-        border: "1px solid rgba(255,255,255,0.05)",
-        borderRadius: 16,
-        padding: "14px 18px",
-        marginBottom: 16,
+        padding: "0",
         flexShrink: 0,
       }}
     >
