@@ -33,13 +33,28 @@ function playBeep() {
   }
 }
 
-export default function PomodoroBar({ username, onHide }) {
+export default function PomodoroBar({ username, onHide, onTick }) {
   const [duration, setDuration] = useState(25);
   const [timeLeft, setTimeLeft] = useState(25 * 60);
   const [status, setStatus] = useState("idle");
   const intervalRef = useRef(null);
   const durationRef = useRef(duration);
   durationRef.current = duration;
+  const statusRef = useRef(status);
+  useEffect(() => { statusRef.current = status; }, [status]);
+
+  useEffect(() => {
+    if (onTick) {
+      const mins = Math.floor(timeLeft / 60);
+      const secs = timeLeft % 60;
+      onTick({
+        timeLeft,
+        status,
+        duration,
+        formatted: `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`
+      });
+    }
+  }, [timeLeft, status, duration, onTick]);
 
   useEffect(() => {
     if (status === "running") {

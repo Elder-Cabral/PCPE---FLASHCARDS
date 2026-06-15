@@ -2842,6 +2842,7 @@ function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, 
 // ── COMPONENTE: SHELL / LAYOUT ──────────────────────────────────────────────
 function Shell({ children, user, stats, onLogout, centered, userMeta = null, showShieldBanner = false, onDismissShield = () => {}, srsData = {}, hidePomodoro = false }) {
   const [showPomodoro, setShowPomodoro] = useState(!hidePomodoro);
+  const [pomodoroInfo, setPomodoroInfo] = useState(null);
   useEffect(() => { setShowPomodoro(!hidePomodoro); }, [hidePomodoro]);
 
   return (
@@ -2920,7 +2921,7 @@ function Shell({ children, user, stats, onLogout, centered, userMeta = null, sho
 
           {/* Pomodoro Timer */}
           <div style={{ display: showPomodoro ? 'block' : 'none', flexShrink: 0 }}>
-            <PomodoroBar username={user?.username} onHide={() => setShowPomodoro(false)} />
+            <PomodoroBar username={user?.username} onHide={() => setShowPomodoro(false)} onTick={(info) => setPomodoroInfo(info)} />
           </div>
 
           {showPomodoro && (
@@ -2947,15 +2948,22 @@ function Shell({ children, user, stats, onLogout, centered, userMeta = null, sho
             className="btn-hover"
             style={{
               position: 'fixed', bottom: 20, right: 20, zIndex: 100,
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(255,255,255,0.08)',
+              display: 'flex', alignItems: 'center', gap: 6,
+              background: pomodoroInfo?.status === "running" ? 'rgba(34,197,94,0.15)' : 'rgba(255,255,255,0.04)',
+              border: pomodoroInfo?.status === "running" ? '1px solid rgba(34,197,94,0.25)' : '1px solid rgba(255,255,255,0.08)',
               borderRadius: 24, padding: '10px 16px',
-              color: '#94a3b8', fontSize: 16, cursor: 'pointer',
+              color: pomodoroInfo?.status === "running" ? '#4ade80' : '#94a3b8',
+              fontSize: 16, cursor: 'pointer',
               boxShadow: '0 4px 15px rgba(0,0,0,0.4)',
               outline: 'none',
             }}
           >
             🍅
+            {pomodoroInfo?.status !== "idle" && (
+              <span style={{ fontSize: 11, fontWeight: 600, fontFamily: 'monospace' }}>
+                {pomodoroInfo.formatted}
+              </span>
+            )}
           </button>
         )}
       </div>
