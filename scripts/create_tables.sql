@@ -41,3 +41,31 @@ CREATE POLICY "pomodoro_log_insert" ON pomodoro_log
 CREATE POLICY "pomodoro_log_update" ON pomodoro_log
   FOR UPDATE USING (username = auth.jwt() ->> 'email')
   WITH CHECK (username = auth.jwt() ->> 'email');
+
+-- ── RLS: username_map ───────────────────────────────────────
+ALTER TABLE username_map ENABLE ROW LEVEL SECURITY;
+
+-- Qualquer usuário autenticado pode consultar mappings (lookup público)
+CREATE POLICY "username_map_select" ON username_map
+  FOR SELECT USING (true);
+
+-- Apenas o próprio usuário pode alterar seu mapping
+CREATE POLICY "username_map_insert" ON username_map
+  FOR INSERT WITH CHECK (username = auth.jwt() ->> 'email');
+
+CREATE POLICY "username_map_update" ON username_map
+  FOR UPDATE USING (username = auth.jwt() ->> 'email')
+  WITH CHECK (username = auth.jwt() ->> 'email');
+
+-- ── RLS: user_progress ──────────────────────────────────────
+ALTER TABLE user_progress ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "user_progress_select" ON user_progress
+  FOR SELECT USING (username = auth.jwt() ->> 'email');
+
+CREATE POLICY "user_progress_insert" ON user_progress
+  FOR INSERT WITH CHECK (username = auth.jwt() ->> 'email');
+
+CREATE POLICY "user_progress_update" ON user_progress
+  FOR UPDATE USING (username = auth.jwt() ->> 'email')
+  WITH CHECK (username = auth.jwt() ->> 'email');

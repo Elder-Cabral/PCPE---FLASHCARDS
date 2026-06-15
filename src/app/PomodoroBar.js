@@ -1,4 +1,6 @@
 "use client";
+/** @typedef {import('../types').PomodoroTick} PomodoroTick */
+/** @typedef {import('../types').PomodoroLog} PomodoroLog */
 import { useState, useEffect, useRef } from "react";
 import { supabase } from "../lib/supabase";
 import AmbientSound from "./AmbientSound";
@@ -33,6 +35,14 @@ function playBeep() {
   }
 }
 
+/**
+ * @param {{
+ *   username?: string,
+ *   onHide?: ()=>void,
+ *   onTick?: (tick: PomodoroTick)=>void,
+ *   isMobile?: boolean
+ * }} props
+ */
 export default function PomodoroBar({ username, onHide, onTick, isMobile }) {
   const [duration, setDuration] = useState(25);
   const [timeLeft, setTimeLeft] = useState(25 * 60);

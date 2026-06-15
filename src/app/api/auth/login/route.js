@@ -1,18 +1,34 @@
+/** @typedef {import('../../../types').AppUser} AppUser */
+/** @typedef {import('../../../types').LoginResponse} LoginResponse */
+/** @typedef {import('../../../types').LocalUser} LocalUser */
 import { NextResponse } from 'next/server';
 import { SignJWT } from 'jose';
 import bcrypt from 'bcryptjs';
 import fs from 'fs';
 import path from 'path';
-
-const JWT_SECRET = new TextEncoder().encode(process.env.JWT_SECRET || 'fallback-dev-secret-do-not-use-in-prod');
-const JWT_ISSUER = 'pcpe-flashcards';
-const SESSION_MAX_AGE = 60 * 60 * 24 * 30; // 30 days
+import { JWT_SECRET, JWT_ISSUER, SESSION_MAX_AGE, SESSION_COOKIE, setSessionCookie } from '../../../../lib/jwt-config';
 
 // Simple in-memory rate limiter
 const rateLimitMap = new Map();
 const RATE_LIMIT_WINDOW = 15 * 60 * 1000; // 15 minutes
 const RATE_LIMIT_MAX = 5; // 5 attempts per window
 
+// Limpeza periódica de entradas expiradas do rate limit
+if (typeof setInterval !== 'undefined') {
+  setInterval(() => {
+    const now = Date.now();
+    for (const [ip, entry] of rateLimitMap) {
+      if (now - entry.windowStart > RATE_LIMIT_WINDOW) {
+        rateLimitMap.delete(ip);
+      }
+    }
+  }, 60 * 1000); // a cada 1 minuto
+}
+
+/**
+ * @param {string} ip
+ * @returns {{ allowed: boolean, retryAfter?: number, remaining?: number }}
+ */
 function checkRateLimit(ip) {
   const now = Date.now();
   const entry = rateLimitMap.get(ip);
@@ -28,15 +44,27 @@ function checkRateLimit(ip) {
   return { allowed: true, remaining: RATE_LIMIT_MAX - entry.count };
 }
 
+/**
+ * @param {AppUser} payload
+ * @returns {Promise<{token: string, exp: number}>}
+ */
 async function signSessionToken(payload) {
-  return new SignJWT({ ...payload })
+  const iat = Math.floor(Date.now() / 1000);
+  const exp = iat + SESSION_MAX_AGE;
+  const token = await new SignJWT({ ...payload })
     .setProtectedHeader({ alg: 'HS256' })
-    .setIssuedAt()
+    .setIssuedAt(iat)
     .setIssuer(JWT_ISSUER)
-    .setExpirationTime(`${SESSION_MAX_AGE}s`)
+    .setExpirationTime(exp)
     .sign(JWT_SECRET);
+  return { token, exp };
 }
 
+/**
+ * POST /api/auth/login
+ * @param {import('next/server').NextRequest} request
+ * @returns {Promise<NextResponse>}
+ */
 export async function POST(request) {
   try {
     // Rate limiting by IP
@@ -52,18 +80,22 @@ export async function POST(request) {
     const body = await request.json();
     const { username, password, loginMethod, role, name } = body;
 
-    if (!username) {
+    if (!username || typeof username !== 'string' || username.length > 200) {
+      return NextResponse.json({ error: 'Credenciais inválidas' }, { status: 401 });
+    }
+    if (password !== undefined && (typeof password !== 'string' || password.length > 256)) {
       return NextResponse.json({ error: 'Credenciais inválidas' }, { status: 401 });
     }
 
     let user = null;
 
     if (loginMethod === 'supabase') {
-      user = { username, role: role || 'user', name: name || username };
-    } else {
-      // Local auth: read users.local.json and verify bcrypt
+      // Role is ALWAYS forced server-side — never trust client-supplied role
+      const safeName = typeof name === 'string' ? name.slice(0, 100) : username;
+      user = { username, role: 'user', name: safeName };
+    } else if (loginMethod === 'local') {
       if (!password) {
-        return NextResponse.json({ error: 'Senha obrigatória' }, { status: 401 });
+        return NextResponse.json({ error: 'Credenciais inválidas' }, { status: 401 });
       }
 
       let localUsers = [];
@@ -72,7 +104,7 @@ export async function POST(request) {
         const raw = fs.readFileSync(filePath, 'utf8');
         localUsers = JSON.parse(raw);
       } catch {
-        return NextResponse.json({ error: 'Autenticação local não configurada' }, { status: 500 });
+        return NextResponse.json({ error: 'Erro interno de configuração' }, { status: 500 });
       }
 
       const uname = username.toLowerCase().trim();
@@ -92,18 +124,19 @@ export async function POST(request) {
       }
 
       user = { username: match.username, role: match.role, name: match.name };
+    } else {
+      // loginMethod inválido ou ausente
+      return NextResponse.json({ error: 'Credenciais inválidas' }, { status: 401 });
     }
 
-    const token = await signSessionToken(user);
+    if (!user) {
+      return NextResponse.json({ error: 'Credenciais inválidas' }, { status: 401 });
+    }
 
-    const response = NextResponse.json({ success: true, user });
-    response.cookies.set('pcpe_session', token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
-      path: '/',
-      maxAge: SESSION_MAX_AGE,
-    });
+    const { token, exp } = await signSessionToken(user);
+
+    const response = NextResponse.json({ success: true, user, expiresAt: exp * 1000 });
+    setSessionCookie(response, token, SESSION_MAX_AGE);
 
     return response;
   } catch {

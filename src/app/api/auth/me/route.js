@@ -1,12 +1,17 @@
+/** @typedef {import('../../../types').AppUser} AppUser */
+/** @typedef {import('../../../types').MeResponse} MeResponse */
 import { NextResponse } from 'next/server';
 import { jwtVerify } from 'jose';
+import { JWT_SECRET, JWT_ISSUER, SESSION_COOKIE } from '../../../../lib/jwt-config';
 
-const JWT_SECRET = new TextEncoder().encode(process.env.JWT_SECRET || 'fallback-dev-secret-do-not-use-in-prod');
-const JWT_ISSUER = 'pcpe-flashcards';
-
+/**
+ * GET /api/auth/me — valida JWT e retorna usuário
+ * @param {import('next/server').NextRequest} request
+ * @returns {Promise<NextResponse>}
+ */
 export async function GET(request) {
   try {
-    const token = request.cookies.get('pcpe_session')?.value;
+    const token = request.cookies.get(SESSION_COOKIE)?.value;
     if (!token) {
       return NextResponse.json({ authenticated: false }, { status: 401 });
     }

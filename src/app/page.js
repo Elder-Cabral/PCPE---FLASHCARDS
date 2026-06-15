@@ -1,10 +1,25 @@
 "use client";
-import { useState, useEffect, useCallback, useMemo, useRef } from "react";
+/** @typedef {import('../types').Flashcard} Flashcard */
+/** @typedef {import('../types').Materia} Materia */
+/** @typedef {import('../types').AppUser} AppUser */
+/** @typedef {import('../types').SM2State} SM2State */
+/** @typedef {import('../types').SRSData} SRSData */
+/** @typedef {import('../types').AnswerEntry} AnswerEntry */
+/** @typedef {import('../types').UserSettings} UserSettings */
+/** @typedef {import('../types').UserMeta} UserMeta */
+/** @typedef {import('../types').AppStats} AppStats */
+/** @typedef {import('../types').MateriaStats} MateriaStats */
+/** @typedef {import('../types').PomodoroTick} PomodoroTick */
+import React, { useState, useEffect, useCallback, useMemo, useRef } from "react";
+import { ErrorBoundary } from "../components/ErrorBoundary";
+import { useAsyncError } from "../hooks/useAsyncError";
+import { safeCall } from "../lib/api";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, AreaChart, Area } from "recharts";
 import { createClient } from '@supabase/supabase-js';
 import BANCO from "../data/banco.json";
 import { supabase } from "../lib/supabase";
 import PomodoroBar from "./PomodoroBar";
+import { SESSION_COOKIE } from "../lib/jwt-config";
 
 // Cache for a runtime-created Supabase client, so we never lose the auth session
 // (which is held in-memory by the client instance after signInWithPassword).
@@ -58,6 +73,10 @@ const MATERIAS = [
 ];
 
 // ── UTILS: HIGHLIGHT FALSO / VERDADEIRO ──────────────────────────────────────
+/**
+ * @param {string|null|undefined} text
+ * @returns {Array<string|React.ReactElement>|null|undefined}
+ */
 function highlightFalso(text) {
   if (!text) return text;
   const parts = text.split(/\b(FALSO|VERDADEIRO)\b/);
@@ -69,6 +88,14 @@ function highlightFalso(text) {
 }
 
 // ── UTILS: ALGORITMO SM-2 ──────────────────────────────────────────────────
+/**
+ * Algoritmo SM-2 modificado para spaced repetition.
+ * @param {0|1|2|3} q    0=erro, 1=difícil, 2=bom, 3=fácil
+ * @param {number} [interval=1]    Dias desde último review
+ * @param {number} [repetition=0]  Repetições consecutivas
+ * @param {number} [ef=2.5]        Fator de facilidade
+ * @returns {SM2State}
+ */
 function calculateSM2(q, interval = 1, repetition = 0, ef = 2.5) {
   let newInterval = 1;
   let newRepetition = 0;
@@ -106,14 +133,31 @@ function calculateSM2(q, interval = 1, repetition = 0, ef = 2.5) {
   };
 }
 
-// ── UTILS: STREAK & DATA ────────────────────────────────────────────────────
+// ── UTILS: STORAGE, STREAK & DATA ────────────────────────────────────────────
+function getLocalJSON(key, fallback = "null") {
+  try { return JSON.parse(localStorage.getItem(key) || fallback); }
+  catch { return JSON.parse(fallback); }
+}
+
+
+/**
+ * @param {Date} date
+ * @returns {string} "YYYY-MM-DD"
+ */
 function getLocalDateString(date) {
   return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
 }
+
+/** @returns {string} "YYYY-MM-DD" */
 function getTodayStr() {
   return new Date().toISOString().slice(0, 10);
 }
 
+/**
+ * Calcula streak de dias consecutivos de estudo.
+ * @param {SRSData} srsData
+ * @returns {number}
+ */
 function calculateStreak(srsData) {
   const dates = new Set();
   for (const id in srsData) {
@@ -146,6 +190,12 @@ function calculateStreak(srsData) {
   return streak;
 }
 
+/**
+ * Merge bidirecional de SRS: local sobrescreve remote se tiver lastReviewed mais recente.
+ * @param {SRSData} local
+ * @param {SRSData} remote
+ * @returns {SRSData}
+ */
 function mergeSRSData(local, remote) {
   const merged = { ...remote };
   for (const id in local) {
@@ -160,6 +210,11 @@ function mergeSRSData(local, remote) {
   return merged;
 }
 
+/**
+ * @param {string[]|undefined} local
+ * @param {string[]|undefined} remote
+ * @returns {string[]}
+ */
 function mergeFavorites(local, remote) {
   if (!local?.length) return remote || [];
   if (!remote?.length) return local || [];
@@ -167,6 +222,10 @@ function mergeFavorites(local, remote) {
   return Array.from(set);
 }
 
+/**
+ * @param {number|undefined} timestamp  ms
+ * @returns {boolean}
+ */
 const isReviewedToday = (timestamp) => {
   if (!timestamp) return false;
   return getLocalDateString(new Date(timestamp)) === getLocalDateString(new Date());
@@ -174,39 +233,65 @@ const isReviewedToday = (timestamp) => {
 
 // ── COMPONENTE PRINCIPAL ───────────────────────────────────────────────────
 export default function App() {
-  // Keep a client-only local users array. We will load the optional fixture inside
-  // the login component when in development, so server-side builds remain unaffected.
-  const [usersLocal, setUsersLocal] = useState([]);
+  /** @type {AppUser|null} */
   const [currentUser, setCurrentUser] = useState(null);
+  /** @type {SRSData} */
   const [srsData, setSrsData] = useState({});
+  /** @type {string|null} */
   const [selectedMateria, setSelectedMateria] = useState(null);
+  /** @type {boolean} */
   const [showTopicSelector, setShowTopicSelector] = useState(false);
+  /** @type {boolean} */
   const [showFavoritesMateriaSelector, setShowFavoritesMateriaSelector] = useState(false);
+  /** @type {string[]} */
   const [selectedTopics, setSelectedTopics] = useState([]);
-  const [studyMode, setStudyMode] = useState(null); // 'srs', 'all', 'topic' ou 'favorites'
+  /** @type {'srs'|'all'|'topic'|'favorites'|null} */
+  const [studyMode, setStudyMode] = useState(null);
+  /** @type {Flashcard[]} */
   const [studyQueue, setStudyQueue] = useState([]);
+  /** @type {number} */
   const [currentQueueIndex, setCurrentQueueIndex] = useState(0);
-  const [isFlipped, setIsFlipped] = useState(false);
+  /** @type {boolean} */
   const [sessionCompleted, setSessionCompleted] = useState(false);
+  /** @type {{studied:number, gotWrong:number, gotEasy:number}} */
   const [sessionStats, setSessionStats] = useState({ studied: 0, gotWrong: 0, gotEasy: 0 });
-  const [reviewOrder, setReviewOrder] = useState("random"); // 'random', 'easy_first', 'hard_first'
+  /** @type {'random'|'easy_first'|'hard_first'} */
+  const [reviewOrder, setReviewOrder] = useState("random");
+  /** @type {string} */
   const [globalReviewMessage, setGlobalReviewMessage] = useState("");
+  /** @type {string[]} */
   const [favorites, setFavorites] = useState([]);
+  /** @type {Set<string>} */
   const [answeredSessionIds, setAnsweredSessionIds] = useState(new Set());
+  /** @type {string} */
   const [toastMessage, setToastMessage] = useState("");
+  /** @type {AnswerEntry[]} */
   const [answerHistory, setAnswerHistory] = useState([]);
+  /** @type {boolean} */
   const [showDesempenho, setShowDesempenho] = useState(false);
+  /** @type {string} */
   const [graphPeriod, setGraphPeriod] = useState("30d");
+  /** @type {string} */
   const [graphCustomStart, setGraphCustomStart] = useState("");
+  /** @type {string} */
   const [graphCustomEnd, setGraphCustomEnd] = useState("");
+  /** @type {Object<string,number>} */
   const [cardSnapshot, setCardSnapshot] = useState({});
+  /** @type {UserMeta|null} */
   const [userMeta, setUserMeta] = useState(null);
+  /** @type {boolean} */
   const [showShieldBanner, setShowShieldBanner] = useState(false);
   const feedbackInProgressCardId = useRef(null);
   const saveQueueRef = useRef(Promise.resolve());
   const isSavingRef = useRef(false);
   const toggleFavTimeoutRef = useRef(null);
-  const srsDataRef = useRef(srsData);
+  const { setError, ErrorToast } = useAsyncError();
+
+  const resetSessionState = useCallback(() => {
+    setSessionCompleted(false);
+    setSessionStats({ studied: 0, gotWrong: 0, gotEasy: 0 });
+    setAnsweredSessionIds(new Set());
+  }, []);
 
   // Estilos globais e de responsividade injetados
   useEffect(() => {
@@ -475,6 +560,11 @@ export default function App() {
 
   // Salvar progresso no Supabase com mesclagem inteligente
   // ── HISTÓRICO DE RESPOSTAS ────────────────────────────────────────────────
+  /**
+   * @param {AnswerEntry[]} local
+   * @param {AnswerEntry[]} remote
+   * @returns {AnswerEntry[]}
+   */
   const mergeAnswerHistory = (local, remote) => {
     if (!local?.length) return remote || [];
     if (!remote?.length) return local || [];
@@ -487,18 +577,23 @@ export default function App() {
     return Array.from(localMap.values()).sort((a, b) => a.timestamp - b.timestamp);
   };
 
-  const loadAnswerHistory = (username) => {
-    try {
-      return JSON.parse(localStorage.getItem("pcpe_history_" + username) || "[]");
-    } catch { return []; }
-  };
+  // useAsyncError hook already defined above
 
+  /**
+   * @param {string} username
+   * @param {AnswerEntry[]} history
+   */
   const saveAnswerHistoryLocally = (username, history) => {
     try {
       localStorage.setItem("pcpe_history_" + username, JSON.stringify(history));
     } catch {}
   };
 
+  /**
+   * @param {string} cardId
+   * @param {string} materia
+   * @param {0|1|2|3} resultado
+   */
   const recordAnswer = (cardId, materia, resultado) => {
     const entry = { cardId, materia, resultado, timestamp: Date.now() };
     setAnswerHistory(prev => {
@@ -510,26 +605,28 @@ export default function App() {
     });
   };
 
+  /**
+   * Persiste SRS + settings + answer_history no Supabase e localStorage.
+   * @param {string} username
+   * @param {SRSData} srs
+   * @param {UserSettings} currentSettings
+   * @returns {Promise<void>}
+   */
   const saveSRSData = async (username, srs, currentSettings) => {
     const doSave = async () => {
       isSavingRef.current = true;
       try {
         const client = getSupabase();
 
-        const currentHistory = (() => {
-          try { return JSON.parse(localStorage.getItem("pcpe_history_" + username) || "[]"); }
-          catch { return []; }
-        })();
+        const currentHistory = getLocalJSON("pcpe_history_" + username, "[]");
+        const localSRSFromStorage = getLocalJSON("pcpe_srs_" + username, "{}");
 
-        const localSRSFromStorage = (() => {
-          try { return JSON.parse(localStorage.getItem("pcpe_srs_" + username) || "{}"); }
-          catch { return {}; }
-        })();
-
-        const { data, error } = await client
-          .from("user_progress")
-          .select("srs_data, settings, answer_history")
-          .eq("username", username);
+          const { data, error } = await safeCall(() =>
+            client
+              .from("user_progress")
+              .select("srs_data, settings, answer_history")
+              .eq("username", username)
+          );
 
         let latestSRS = {};
         let latestSettings = currentSettings;
@@ -549,13 +646,13 @@ export default function App() {
         const mergedSRS = mergeSRSData(localSRS, latestSRS);
         const mergedHistory = mergeAnswerHistory(currentHistory, remoteHistory);
 
-        await client.from("user_progress").upsert({
-          username,
-          srs_data: mergedSRS,
-          settings: latestSettings,
-          answer_history: mergedHistory,
-          updated_at: new Date().toISOString(),
-        });
+          await safeCall(() => client.from("user_progress").upsert({
+            username,
+            srs_data: mergedSRS,
+            settings: latestSettings,
+            answer_history: mergedHistory,
+            updated_at: new Date().toISOString(),
+          }));
 
         setSrsData(mergedSRS);
         setAnswerHistory(mergedHistory);
@@ -568,9 +665,10 @@ export default function App() {
           setFavorites(latestSettings.favorites);
         }
         localStorage.setItem("pcpe_settings_" + username, JSON.stringify(latestSettings));
-      } catch (e) {
-        console.error("Erro ao salvar no Supabase:", e);
-      } finally {
+        } catch (e) {
+          console.error("Erro ao salvar no Supabase:", e);
+          setError("Falha ao salvar progresso. Tente novamente.");
+        } finally {
         isSavingRef.current = false;
       }
     };
@@ -580,15 +678,20 @@ export default function App() {
     return result;
   };
 
+  /**
+   * Carrega streak + shields do Supabase.
+   * @param {string} username
+   * @returns {Promise<void>}
+   */
   const loadUserMeta = useCallback(async (username) => {
     if (!username) return;
     const client = getSupabase();
     try {
-      const { data, error } = await client
-        .from("user_meta")
-        .select("*")
-        .eq("username", username)
-        .maybeSingle();
+          const { data, error } = await safeCall(() => client
+            .from("user_meta")
+            .select("*")
+            .eq("username", username)
+            .maybeSingle());
 
       const today = getTodayStr();
 
@@ -602,7 +705,7 @@ export default function App() {
           shields_available: 2,
           updated_at: new Date().toISOString(),
         };
-        await client.from("user_meta").upsert(meta);
+          await safeCall(() => client.from("user_meta").upsert(meta));
         setUserMeta(meta);
         return;
       }
@@ -635,22 +738,28 @@ export default function App() {
       }
 
       if (needsUpdate) {
-        await client.from("user_meta").upsert({
-          ...meta,
-          updated_at: new Date().toISOString(),
-        });
+          await safeCall(() => client.from("user_meta").upsert({
+            ...meta,
+            updated_at: new Date().toISOString(),
+          }));
       }
 
       setUserMeta(meta);
       if (shieldActivated) setShowShieldBanner(true);
     } catch (e) {
       console.error("Erro ao carregar user_meta:", e);
+      setError("Erro ao carregar metas do usuário.");
       // Fallback: usa streak calculado do SRS
       setUserMeta({ current_streak: calculateStreak(srsDataRef.current), shields_available: 2 });
     }
   }, []);
 
   // Carregar progresso do Supabase com mesclagem inteligente
+  /**
+   * Carrega SRS + settings + answer_history do Supabase e localStorage, faz merge.
+   * @param {string} username
+   * @returns {Promise<void>}
+   */
   const loadUserData = async (username) => {
     try {
       const client = getSupabase();
@@ -708,6 +817,8 @@ export default function App() {
       // Merge remote data with local: remote (Supabase) fills the base,
       // local overwrites any cards with newer timestamps.
       const mergedSRS = mergeSRSData(localSRS, combinedSRS);
+      // Preserve in-memory state (most recent user answers) that hasn't been flushed yet
+      const finalSRS = mergeSRSData(srsDataRef.current, mergedSRS);
       const mergedSettings = {
         ...localSettings,
         ...combinedSettings,
@@ -715,30 +826,30 @@ export default function App() {
       };
       const mergedHistory = mergeAnswerHistory(localHistory, combinedHistory);
 
-      setSrsData(mergedSRS);
+      setSrsData(finalSRS);
       setAnswerHistory(mergedHistory);
       if (mergedSettings.reviewOrder) setReviewOrder(mergedSettings.reviewOrder);
       if (mergedSettings.favorites) setFavorites(mergedSettings.favorites || []);
 
       if (!isSavingRef.current) {
-        localStorage.setItem("pcpe_srs_" + resolvedUsername, JSON.stringify(mergedSRS));
+        localStorage.setItem("pcpe_srs_" + resolvedUsername, JSON.stringify(finalSRS));
         localStorage.setItem("pcpe_settings_" + resolvedUsername, JSON.stringify(mergedSettings));
         localStorage.setItem("pcpe_history_" + resolvedUsername, JSON.stringify(mergedHistory));
 
-        await client.from("user_progress").upsert({
-          username: resolvedUsername,
-          srs_data: mergedSRS,
-          settings: mergedSettings,
-          answer_history: mergedHistory,
-          updated_at: new Date().toISOString(),
-        });
+          await safeCall(() => client.from("user_progress").upsert({
+            username: resolvedUsername,
+            srs_data: finalSRS,
+            settings: mergedSettings,
+            answer_history: mergedHistory,
+            updated_at: new Date().toISOString(),
+          }));
       }
 
       // Clean up legacy rows that have been merged
       for (const key of queryKeys) {
         if (key !== resolvedUsername) {
           try {
-            await client.from("user_progress").delete().eq("username", key);
+            await safeCall(() => client.from("user_progress").delete().eq("username", key));
           } catch (e) { /* ignore cleanup errors */ }
         }
       }
@@ -746,30 +857,59 @@ export default function App() {
       // Update the stored session to use the canonical key
       if (emailKey) {
         try {
-          const session = JSON.parse(localStorage.getItem("pcpe_session") || "{}");
+          const session = getLocalJSON(SESSION_COOKIE, "{}");
           session.username = emailKey;
-          localStorage.setItem("pcpe_session", JSON.stringify(session));
+          localStorage.setItem(SESSION_COOKIE, JSON.stringify(session));
         } catch (e) { /* ignore */ }
       }
     } catch (e) {
       console.error("Erro no loadUserData:", e);
+      setError("Erro ao carregar dados do usuário.");
     }
   };
 
   // Carregar sessão e SRS do localStorage e Supabase
   useEffect(() => {
     try {
-      const savedSession = localStorage.getItem("pcpe_session");
+      const savedSession = localStorage.getItem(SESSION_COOKIE);
       if (savedSession) {
         const user = JSON.parse(savedSession);
         if (user && user.username) {
+          // Validar expiração da sessão
+          if (user.expiresAt && Date.now() > user.expiresAt) {
+            localStorage.removeItem(SESSION_COOKIE);
+            fetch('/api/auth/logout', { method: 'POST' }).catch(() => {});
+            return;
+          }
           setCurrentUser(user);
           loadUserData(user.username);
         }
       }
     } catch (e) {
       console.error(e);
+      setError("Erro ao restaurar sessão do usuário.");
     }
+  }, []);
+
+  // Verificar expiração ao retornar à aba (tab focus)
+  useEffect(() => {
+    const handleVisibility = () => {
+      if (document.visibilityState === 'visible') {
+        const savedSession = localStorage.getItem(SESSION_COOKIE);
+        if (savedSession) {
+          try {
+            const user = JSON.parse(savedSession);
+            if (user && user.expiresAt && Date.now() > user.expiresAt) {
+              localStorage.removeItem(SESSION_COOKIE);
+              fetch('/api/auth/logout', { method: 'POST' }).catch(() => {});
+              setCurrentUser(null);
+            }
+          } catch {}
+        }
+      }
+    };
+    document.addEventListener('visibilitychange', handleVisibility);
+    return () => document.removeEventListener('visibilitychange', handleVisibility);
   }, []);
 
   // Carregar user_meta (streak/shields) quando o usuario logar
@@ -828,6 +968,7 @@ export default function App() {
     let lastDateStr = getLocalDateString(new Date());
 
     const interval = setInterval(() => {
+      if (isSavingRef.current) return;
       const todayStr = getLocalDateString(new Date());
       if (todayStr !== lastDateStr) {
         lastDateStr = todayStr;
@@ -857,26 +998,32 @@ export default function App() {
       };
       try {
         const client = getSupabase();
-        await client.from("user_meta").upsert(updated);
+         await safeCall(() => client.from("user_meta").upsert(updated));
         setUserMeta(updated);
-      } catch (e) {
-        console.error("Erro ao atualizar streak:", e);
-      }
+        } catch (e) {
+          console.error("Erro ao atualizar streak:", e);
+          setError("Erro ao atualizar sua sequência.");
+        }
     };
     updateMeta();
   }, [sessionCompleted]);
 
+  /**
+   * @param {AppUser} user
+   * @returns {Promise<void>}
+   */
   const handleLogin = async (user) => {
     try {
-      localStorage.setItem("pcpe_session", JSON.stringify(user));
+      localStorage.setItem(SESSION_COOKIE, JSON.stringify(user));
       setCurrentUser(user);
       loadUserData(user.username);
     } catch {}
   };
 
+  /** @returns {Promise<void>} */
   const handleLogout = async () => {
     try {
-      localStorage.removeItem("pcpe_session");
+      localStorage.removeItem(SESSION_COOKIE);
       try {
         await fetch('/api/auth/logout', { method: 'POST' });
       } catch {}
@@ -896,9 +1043,10 @@ export default function App() {
           "pcpe_settings_" + currentUser.username,
           JSON.stringify({ reviewOrder: order, favorites })
         );
-      } catch (e) {
-        console.error(e);
-      }
+        } catch (e) {
+          console.error(e);
+          setError("Erro ao salvar preferências de revisão.");
+        }
       saveSRSData(currentUser.username, srsData, { reviewOrder: order, favorites });
     }
   };
@@ -912,7 +1060,7 @@ export default function App() {
 
       try {
         localStorage.setItem("pcpe_settings_" + currentUser.username, JSON.stringify({ reviewOrder, favorites: updated }));
-      } catch (e) { console.error(e); }
+        } catch (e) { console.error(e); setError("Erro ao atualizar favoritos."); }
 
       if (toggleFavTimeoutRef.current) clearTimeout(toggleFavTimeoutRef.current);
       toggleFavTimeoutRef.current = setTimeout(() => {
@@ -938,18 +1086,14 @@ export default function App() {
     const sortedQueue = sortQueue(queue);
     setStudyQueue(sortedQueue);
     setCurrentQueueIndex(0);
-    setIsFlipped(false);
     setStudyMode("favorites");
     setSelectedMateria(materiaId || null);
     setShowFavoritesMateriaSelector(false);
-    setSessionCompleted(false);
-    setSessionStats({ studied: 0, gotWrong: 0, gotEasy: 0 });
-    setAnsweredSessionIds(new Set());
+    resetSessionState();
   };
 
   const goToNextCard = () => {
     if (currentQueueIndex + 1 < studyQueue.length) {
-      setIsFlipped(false);
       setTimeout(() => {
         setCurrentQueueIndex(prev => prev + 1);
       }, 200);
@@ -962,7 +1106,6 @@ export default function App() {
 
   const goToPrevCard = () => {
     if (currentQueueIndex > 0) {
-      setIsFlipped(false);
       setTimeout(() => {
         setCurrentQueueIndex(prev => prev - 1);
       }, 200);
@@ -1017,12 +1160,9 @@ export default function App() {
     const sortedQueue = sortQueue(selectedDue);
     setStudyQueue(sortedQueue);
     setCurrentQueueIndex(0);
-    setIsFlipped(false);
     setStudyMode("global_srs");
     setSelectedMateria(null);
-    setSessionCompleted(false);
-    setSessionStats({ studied: 0, gotWrong: 0, gotEasy: 0 });
-    setAnsweredSessionIds(new Set());
+    resetSessionState();
   };
 
   const handleGlobalReviewClick = () => {
@@ -1107,12 +1247,9 @@ export default function App() {
 
     setStudyQueue(sortedQueue);
     setCurrentQueueIndex(0);
-    setIsFlipped(false);
     setStudyMode(mode);
     setSelectedMateria(materiaId);
-    setSessionCompleted(false);
-    setSessionStats({ studied: 0, gotWrong: 0, gotEasy: 0 });
-    setAnsweredSessionIds(new Set());
+    resetSessionState();
   };
 
   // Preparar fila de estudos por Tópicos
@@ -1124,12 +1261,9 @@ export default function App() {
 
     setStudyQueue(sortedQueue);
     setCurrentQueueIndex(0);
-    setIsFlipped(false);
     setStudyMode("topic");
-    setSessionCompleted(false);
-    setSessionStats({ studied: 0, gotWrong: 0, gotEasy: 0 });
+    resetSessionState();
     setShowTopicSelector(false);
-    setAnsweredSessionIds(new Set());
   };
 
   // Responder a um card no modo SRS / Tópicos
@@ -1164,11 +1298,6 @@ export default function App() {
       };
 
       setSrsData(updatedSRS);
-      try {
-        localStorage.setItem("pcpe_srs_" + currentUser.username, JSON.stringify(updatedSRS));
-      } catch (e) {
-        console.error(e);
-      }
       saveSRSData(currentUser.username, updatedSRS, { reviewOrder, favorites });
       
       setAnsweredSessionIds(prev => {
@@ -1208,11 +1337,8 @@ export default function App() {
         startWeakStudy={(cards) => {
           setStudyQueue(cards);
           setCurrentQueueIndex(0);
-          setIsFlipped(false);
           setStudyMode("topic");
-          setSessionCompleted(false);
-          setSessionStats({ studied: 0, gotWrong: 0, gotEasy: 0 });
-          setAnsweredSessionIds(new Set());
+          resetSessionState();
           setShowDesempenho(false);
         }}
       />
@@ -1221,333 +1347,33 @@ export default function App() {
 
   // Se estiver estudando
   if (studyMode && studyQueue.length > 0 && !sessionCompleted) {
-    const currentCard = studyQueue[currentQueueIndex];
-    const currentCardWasAnswered = answeredSessionIds.has(currentCard.id);
-    const isGlobal = studyMode === "global_srs";
-    const matInfo = !isGlobal ? MATERIAS.find(m => m.id === selectedMateria) : null;
-    const themeColor = isGlobal ? "#3b82f6" : (matInfo?.color || "#3b82f6");
-    const labelText = isGlobal ? "Revisão Geral" : (matInfo?.label || "");
-    const emojiText = isGlobal ? "⚡" : (matInfo?.emoji || "");
-
     return (
-      <Shell user={currentUser} stats={stats} onLogout={handleLogout} centered userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)} srsData={srsData} hidePomodoro={true}>
-        {toastMessage && (
-          <div style={{
-            position: "fixed",
-            top: 24,
-            left: "50%",
-            transform: "translateX(-50%)",
-            background: "rgba(239,68,68,0.95)",
-            border: "1px solid rgba(239,68,68,0.2)",
-            color: "#fff",
-            padding: "12px 24px",
-            borderRadius: 12,
-            fontSize: 13,
-            fontWeight: 600,
-            boxShadow: "0 10px 25px rgba(239,68,68,0.2)",
-            zIndex: 9999,
-            backdropFilter: "blur(4px)",
-            transition: "all 0.3s ease"
-          }}>
-            ⚠️ {toastMessage}
-          </div>
-        )}
-        <div style={{ display: "flex", flexDirection: "column", gap: 20, width: "100%", maxWidth: 640, margin: "0 auto", boxSizing: "border-box", flex: 1, minHeight: 0, padding: "0 4px" }}>
-          {/* Header do Estudo */}
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexShrink: 0, padding: "0 8px" }}>
-            <button
-              onClick={() => {
-                setStudyMode(null);
-                setShowTopicSelector(false);
-                setShowFavoritesMateriaSelector(false);
-              }}
-              className="btn-hover"
-              style={{
-                background: "rgba(255,255,255,0.05)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                color: "#94a3b8",
-                borderRadius: 12,
-                padding: "8px 14px",
-                cursor: "pointer",
-                fontSize: 13,
-                fontWeight: 500,
-                outline: "none"
-              }}
-            >
-              ← Voltar
-            </button>
-            <div style={{ textAlign: "center", padding: "0 8px" }}>
-              <span style={{ color: themeColor, fontSize: 11, fontWeight: 600, letterSpacing: 2, textTransform: "uppercase" }}>
-                {emojiText} {labelText}
-              </span>
-              <div style={{ fontSize: 10, color: "#64748b", fontWeight: 500, marginTop: 2 }}>
-                {studyMode === "global_srs"
-                  ? "REVISÃO DIÁRIA GLOBAL"
-                  : studyMode === "srs"
-                    ? "ESTUDO INTELIGENTE (SM-2)"
-                    : studyMode === "topic"
-                      ? "ESTUDO POR TÓPICOS"
-                      : studyMode === "favorites"
-                        ? "CONSULTA DE FAVORITOS"
-                        : "MODO COMPLETO"}
-              </div>
-            </div>
-            <div style={{ fontSize: 13, color: "#64748b", fontFamily: "monospace" }}>
-              {currentQueueIndex + 1}/{studyQueue.length}
-            </div>
-          </div>
-
-          {/* Barra de Progresso */}
-          <div style={{ width: "100%", height: 6, background: "rgba(255,255,255,0.03)", borderRadius: 3, overflow: "hidden", border: "1px solid rgba(255,255,255,0.05)", flexShrink: 0 }}>
-            <div
-              style={{
-                width: `${((currentQueueIndex + 1) / studyQueue.length) * 100}%`,
-                height: "100%",
-                background: `linear-gradient(90deg, ${themeColor}, #ffffff)`,
-                transition: "width 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
-              }}
-            />
-          </div>
-
-          {/* Flashcard 3D */}
-          <div
-            style={{
-              width: "100%",
-              flex: 1,
-              minHeight: 200,
-              position: "relative"
-            }}
-          >
-            <div
-              onClick={() => setIsFlipped(prev => !prev)}
-              style={{
-                width: "100%",
-                height: "100%",
-                cursor: "pointer",
-                perspective: 1000
-              }}
-            >
-              <div
-                style={{
-                  position: "relative",
-                  width: "100%",
-                  height: "100%",
-                  transformStyle: "preserve-3d",
-                  transition: "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                  transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)"
-                }}
-              >
-                {/* Frente */}
-                <div className="flashcard-box flashcard-front-style">
-                  <div style={{ fontSize: 10, color: "#3b82f6", fontWeight: 600, letterSpacing: 3, marginBottom: 20 }}>✦ PERGUNTA ✦</div>
-                  <p className="flashcard-question-text" style={{ color: "#f1f5f9", fontSize: 18, lineHeight: 1.65, textAlign: "center", margin: 0, fontWeight: 400, fontFamily: "Georgia, serif" }}>
-                    {currentCard?.pergunta}
-                  </p>
-                  <div style={{ marginTop: 28, color: "rgba(255,255,255,0.2)", fontSize: 11, letterSpacing: 1, fontWeight: 500 }}>
-                    Clique para revelar a resposta
-                  </div>
-                </div>
-
-                {/* Verso */}
-                <div className="custom-scrollbar flashcard-box flashcard-back-style" style={{ border: `1px solid ${themeColor}40` }}>
-                  <div style={{ fontSize: 10, color: themeColor, fontWeight: 600, letterSpacing: 3, marginBottom: 14 }}>✦ RESPOSTA ✦</div>
-                  
-                  <p className="flashcard-answer-text" style={{ color: "#e2e8f0", fontSize: 15, lineHeight: 1.65, textAlign: "center", margin: "0 0 16px 0", fontFamily: "Georgia, serif" }}>
-                    {currentCard?.resposta}
-                  </p>
-
-                  {/* Dica do Professor */}
-                  {currentCard?.dica && (
-                    <div style={{
-                      background: "rgba(234,179,8,0.04)",
-                      border: "1px solid rgba(234,179,8,0.12)",
-                      borderRadius: 14,
-                      padding: "12px 16px",
-                      width: "100%",
-                      boxSizing: "border-box",
-                      marginTop: "auto"
-                    }}>
-                      <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#eab308", fontSize: 11, fontWeight: 600, letterSpacing: 1, marginBottom: 4 }}>
-                        <span>🎓</span> DICA DO PROFESSOR (CEBRASPE)
-                      </div>
-                      <p style={{ color: "#d1d5db", fontSize: 11, lineHeight: 1.5, margin: 0 }}>
-                        {highlightFalso(currentCard?.dica)}
-                      </p>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-
-            {/* Botão Favoritar ÚNICO — fora do flip container, sempre no canto superior direito */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                toggleFavorite(currentCard.id);
-              }}
-              style={{
-                position: "absolute",
-                top: 16,
-                right: 16,
-                background: "transparent",
-                border: "none",
-                color: favorites.includes(currentCard.id) ? "#eab308" : "#475569",
-                cursor: "pointer",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: 2,
-                zIndex: 20,
-                outline: "none",
-                pointerEvents: "auto"
-              }}
-            >
-              <span style={{ fontSize: 18 }}>{favorites.includes(currentCard.id) ? "★" : "☆"}</span>
-              <span style={{ fontSize: 9, fontWeight: 500, opacity: 0.6, letterSpacing: 0.5, color: "#94a3b8" }}>
-                {favorites.includes(currentCard.id) ? "favoritado" : "favoritar"}
-              </span>
-            </button>
-          </div>
-
-          {/* Botões de Ação */}
-          <div style={{ minHeight: 70, flexShrink: 0 }}>
-            {isFlipped ? (
-              studyMode === "srs" || studyMode === "topic" || studyMode === "global_srs" ? (
-                // 4 Botões SM-2 com classe responsiva
-                <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                {currentCardWasAnswered && (
-                  <div style={{ color: "#fbbf24", fontSize: 12, fontWeight: 600, textAlign: "center" }}>
-                    Opção foi selecionada anteriormente.
-                  </div>
-                )}
-                <div className="srs-buttons-grid">
-                  <button
-                    onClick={() => handleCardFeedback(0)}
-                    disabled={currentCardWasAnswered}
-                    className="btn-hover"
-                    style={{ background: "#ef4444", color: "#fff", border: "none", borderRadius: 14, padding: "14px 10px", cursor: currentCardWasAnswered ? "not-allowed" : "pointer", fontWeight: 600, fontSize: 12, opacity: currentCardWasAnswered ? 0.55 : 1 }}
-                  >
-                    ❌ Errei
-                  </button>
-                  <button
-                    onClick={() => handleCardFeedback(1)}
-                    disabled={currentCardWasAnswered}
-                    className="btn-hover"
-                    style={{ background: "#f59e0b", color: "#fff", border: "none", borderRadius: 14, padding: "14px 10px", cursor: currentCardWasAnswered ? "not-allowed" : "pointer", fontWeight: 600, fontSize: 12, opacity: currentCardWasAnswered ? 0.55 : 1 }}
-                  >
-                    ⚠️ Difícil
-                  </button>
-                  <button
-                    onClick={() => handleCardFeedback(2)}
-                    disabled={currentCardWasAnswered}
-                    className="btn-hover"
-                    style={{ background: "#3b82f6", color: "#fff", border: "none", borderRadius: 14, padding: "14px 10px", cursor: currentCardWasAnswered ? "not-allowed" : "pointer", fontWeight: 600, fontSize: 12, opacity: currentCardWasAnswered ? 0.55 : 1 }}
-                  >
-                    👍 Bom
-                  </button>
-                  <button
-                    onClick={() => handleCardFeedback(3)}
-                    disabled={currentCardWasAnswered}
-                    className="btn-hover"
-                    style={{ background: "#10b981", color: "#fff", border: "none", borderRadius: 14, padding: "14px 10px", cursor: currentCardWasAnswered ? "not-allowed" : "pointer", fontWeight: 600, fontSize: 12, opacity: currentCardWasAnswered ? 0.55 : 1 }}
-                  >
-                    ⚡ Fácil
-                  </button>
-                </div>
-                </div>
-              ) : (
-                // Botão Próximo Simples para favoritos ou outros modos
-                <button
-                  onClick={goToNextCard}
-                  className="btn-hover"
-                  style={{
-                    width: "100%",
-                    background: studyMode === "favorites"
-                      ? "linear-gradient(135deg, #eab308, #ca8a04)"
-                      : "linear-gradient(135deg, #3b82f6, #2563eb)",
-                    color: "#fff",
-                    border: "none",
-                    borderRadius: 14,
-                    padding: "16px",
-                    cursor: "pointer",
-                    fontWeight: 600,
-                    fontSize: 14
-                  }}
-                >
-                  PRÓXIMO CARD →
-                </button>
-              )
-            ) : (
-              // Botão Revelar
-              <button
-                onClick={() => setIsFlipped(true)}
-                className="btn-hover"
-                style={{
-                  width: "100%",
-                  background: "rgba(255,255,255,0.06)",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  color: "#f1f5f9",
-                  borderRadius: 14,
-                  padding: "16px",
-                  cursor: "pointer",
-                  fontWeight: 600,
-                  fontSize: 14
-                }}
-              >
-                REVELAR RESPOSTA
-              </button>
-            )}
-          </div>
-
-          {/* Navegação Manual Inferior */}
-          <div style={{ display: "flex", justifyContent: "space-between", gap: 14, width: "100%", flexShrink: 0 }}>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                goToPrevCard();
-              }}
-              disabled={currentQueueIndex === 0}
-              className="btn-hover"
-              style={{
-                flex: 1,
-                background: "rgba(255,255,255,0.03)",
-                border: "1px solid rgba(255,255,255,0.06)",
-                borderRadius: 14,
-                padding: "12px 14px",
-                color: currentQueueIndex === 0 ? "#475569" : "#94a3b8",
-                fontSize: 12,
-                fontWeight: 600,
-                cursor: currentQueueIndex === 0 ? "default" : "pointer",
-                outline: "none"
-              }}
-            >
-              ← Card Anterior
-            </button>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                goToNextCard();
-              }}
-              disabled={currentQueueIndex === studyQueue.length - 1}
-              className="btn-hover"
-              style={{
-                flex: 1,
-                background: "rgba(255,255,255,0.03)",
-                border: "1px solid rgba(255,255,255,0.06)",
-                borderRadius: 14,
-                padding: "12px 14px",
-                color: currentQueueIndex === studyQueue.length - 1 ? "#475569" : "#94a3b8",
-                fontSize: 12,
-                fontWeight: 600,
-                cursor: currentQueueIndex === studyQueue.length - 1 ? "default" : "pointer",
-                outline: "none"
-              }}
-            >
-              Card Seguinte →
-            </button>
-          </div>
-        </div>
-      </Shell>
+      <StudySession
+        studyQueue={studyQueue}
+        currentQueueIndex={currentQueueIndex}
+        studyMode={studyMode}
+        selectedMateria={selectedMateria}
+        favorites={favorites}
+        toastMessage={toastMessage}
+        currentUser={currentUser}
+        stats={stats}
+        userMeta={userMeta}
+        showShieldBanner={showShieldBanner}
+        srsData={srsData}
+        MATERIAS={MATERIAS}
+        answeredSessionIds={answeredSessionIds}
+        onBack={() => {
+          setStudyMode(null);
+          setShowTopicSelector(false);
+          setShowFavoritesMateriaSelector(false);
+        }}
+        onCardFeedback={handleCardFeedback}
+        onToggleFav={toggleFavorite}
+        onNextCard={goToNextCard}
+        onPrevCard={goToPrevCard}
+        onDismissShield={() => setShowShieldBanner(false)}
+        onLogout={handleLogout}
+      />
     );
   }
 
@@ -1616,23 +1442,7 @@ export default function App() {
     return (
       <Shell user={currentUser} stats={stats} onLogout={handleLogout} userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)} srsData={srsData}>
         <div style={{ width: "100%", maxWidth: 560, margin: "0 auto", display: "flex", flexDirection: "column", gap: 20, boxSizing: "border-box" }}>
-          <button
-            onClick={() => setShowFavoritesMateriaSelector(false)}
-            className="btn-hover"
-            style={{
-              alignSelf: "flex-start",
-              background: "rgba(255,255,255,0.05)",
-              border: "1px solid rgba(255,255,255,0.08)",
-              color: "#94a3b8",
-              borderRadius: 12,
-              padding: "8px 16px",
-              cursor: "pointer",
-              fontSize: 13,
-              fontWeight: 500
-            }}
-          >
-            ← Voltar
-          </button>
+          <BackButton onClick={() => setShowFavoritesMateriaSelector(false)} />
 
           <div style={{ textAlign: "center" }}>
             <div style={{ fontSize: 44, marginBottom: 8 }}>⭐</div>
@@ -1705,23 +1515,7 @@ export default function App() {
       return (
         <Shell user={currentUser} stats={stats} onLogout={handleLogout} userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)} srsData={srsData}>
           <div style={{ width: "100%", maxWidth: 560, margin: "0 auto", display: "flex", flexDirection: "column", gap: 20, boxSizing: "border-box" }}>
-            <button
-              onClick={() => setShowTopicSelector(false)}
-              className="btn-hover"
-              style={{
-                alignSelf: "flex-start",
-                background: "rgba(255,255,255,0.05)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                color: "#94a3b8",
-                borderRadius: 12,
-                padding: "8px 16px",
-                cursor: "pointer",
-                fontSize: 13,
-                fontWeight: 500
-              }}
-            >
-              ← Voltar
-            </button>
+            <BackButton onClick={() => setShowTopicSelector(false)} />
 
             <div style={{ textAlign: "center" }}>
               <div style={{ fontSize: 44, marginBottom: 8 }}>🔍</div>
@@ -1842,30 +1636,15 @@ export default function App() {
               ⚡ Iniciar Estudo por Tópicos ({selectedCardsCount} cards)
             </button>
           </div>
-        </Shell>
+      <ErrorToast />
+    </Shell>
       );
     }
 
     return (
       <Shell user={currentUser} stats={stats} onLogout={handleLogout} userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)} srsData={srsData}>
         <div style={{ width: "100%", maxWidth: 560, margin: "0 auto", display: "flex", flexDirection: "column", gap: 24, boxSizing: "border-box" }}>
-          <button
-            onClick={() => setSelectedMateria(null)}
-            className="btn-hover"
-            style={{
-              alignSelf: "flex-start",
-              background: "rgba(255,255,255,0.05)",
-              border: "1px solid rgba(255,255,255,0.08)",
-              color: "#94a3b8",
-              borderRadius: 12,
-              padding: "8px 16px",
-              cursor: "pointer",
-              fontSize: 13,
-              fontWeight: 500
-            }}
-          >
-            ← Voltar
-          </button>
+          <BackButton onClick={() => setSelectedMateria(null)} />
 
           <div style={{ textAlign: "center" }}>
             <div style={{ fontSize: 56, marginBottom: 12 }}>{mat.emoji}</div>
@@ -2203,7 +1982,316 @@ export default function App() {
   );
 }
 
+// ── COMPONENTE: SESSÃO DE ESTUDO ──────────────────────────────────────────
+/**
+ * @param {{
+ *   studyQueue: Flashcard[],
+ *   currentQueueIndex: number,
+ *   studyMode: string,
+ *   selectedMateria: string,
+ *   favorites: string[],
+ *   toastMessage: string,
+ *   currentUser: AppUser,
+ *   stats: AppStats,
+ *   userMeta: any,
+ *   showShieldBanner: boolean,
+ *   srsData: SRSData,
+ *   MATERIAS: { id: string, label: string, color: string, emoji: string }[],
+ *   answeredSessionIds: Set<string>,
+ *   onBack: () => void,
+ *   onCardFeedback: (q: number) => void,
+ *   onToggleFav: (id: string) => void,
+ *   onNextCard: () => void,
+ *   onPrevCard: () => void,
+ *   onDismissShield: () => void,
+ *   onLogout: () => void
+ * }} props
+ */
+const SRS_BUTTONS = [
+  { label: "\u274C Errei",   value: 0, bg: "#ef4444" },
+  { label: "\u26A0\uFE0F Dif\u00EDcil", value: 1, bg: "#f59e0b" },
+  { label: "\U0001F44D Bom",  value: 2, bg: "#3b82f6" },
+  { label: "\u26A1 F\u00E1cil", value: 3, bg: "#10b981" },
+];
+
+function StudySession({
+  studyQueue,
+  currentQueueIndex,
+  studyMode,
+  selectedMateria,
+  favorites,
+  toastMessage,
+  currentUser,
+  stats,
+  userMeta,
+  showShieldBanner,
+  srsData,
+  MATERIAS,
+  answeredSessionIds,
+  onBack,
+  onCardFeedback,
+  onToggleFav,
+  onNextCard,
+  onPrevCard,
+  onDismissShield,
+  onLogout
+}) {
+  const currentCard = studyQueue[currentQueueIndex];
+  const currentCardWasAnswered = answeredSessionIds.has(currentCard.id);
+  const isGlobal = studyMode === "global_srs";
+  const matInfo = !isGlobal ? MATERIAS.find(m => m.id === selectedMateria) : null;
+  const themeColor = isGlobal ? "#3b82f6" : (matInfo?.color || "#3b82f6");
+  const labelText = isGlobal ? "Revisão Geral" : (matInfo?.label || "");
+  const emojiText = isGlobal ? "⚡" : (matInfo?.emoji || "");
+
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  useEffect(() => {
+    setIsFlipped(false);
+  }, [currentQueueIndex]);
+
+  return (
+    <Shell user={currentUser} stats={stats} onLogout={onLogout} centered userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={onDismissShield} srsData={srsData} hidePomodoro={true}>
+      {toastMessage && (
+        <div style={{
+          position: "fixed",
+          top: 24,
+          left: "50%",
+          transform: "translateX(-50%)",
+          background: "rgba(239,68,68,0.95)",
+          border: "1px solid rgba(239,68,68,0.2)",
+          color: "#fff",
+          padding: "12px 24px",
+          borderRadius: 12,
+          fontSize: 13,
+          fontWeight: 600,
+          boxShadow: "0 10px 25px rgba(239,68,68,0.2)",
+          zIndex: 9999,
+          backdropFilter: "blur(4px)",
+          transition: "all 0.3s ease"
+        }}>
+          ⚠️ {toastMessage}
+        </div>
+      )}
+      <div style={{ display: "flex", flexDirection: "column", gap: 20, width: "100%", maxWidth: 640, margin: "0 auto", boxSizing: "border-box", flex: 1, minHeight: 0, padding: "0 4px" }}>
+        {/* Header do Estudo */}
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexShrink: 0, padding: "0 8px" }}>
+          <BackButton onClick={onBack} />
+          <div style={{ textAlign: "center", padding: "0 8px" }}>
+            <span style={{ color: themeColor, fontSize: 11, fontWeight: 600, letterSpacing: 2, textTransform: "uppercase" }}>
+              {emojiText} {labelText}
+            </span>
+            <div style={{ fontSize: 10, color: "#64748b", fontWeight: 500, marginTop: 2 }}>
+              {studyMode === "global_srs"
+                ? "REVISÃO DIÁRIA GLOBAL"
+                : studyMode === "srs"
+                  ? "ESTUDO INTELIGENTE (SM-2)"
+                  : studyMode === "topic"
+                    ? "ESTUDO POR TÓPICOS"
+                    : studyMode === "favorites"
+                      ? "CONSULTA DE FAVORITOS"
+                      : "MODO COMPLETO"}
+            </div>
+          </div>
+          <div style={{ fontSize: 13, color: "#64748b", fontFamily: "monospace" }}>
+            {currentQueueIndex + 1}/{studyQueue.length}
+          </div>
+        </div>
+
+        {/* Barra de Progresso */}
+        <div style={{ width: "100%", height: 6, background: "rgba(255,255,255,0.03)", borderRadius: 3, overflow: "hidden", border: "1px solid rgba(255,255,255,0.05)", flexShrink: 0 }}>
+          <div
+            style={{
+              width: `${((currentQueueIndex + 1) / studyQueue.length) * 100}%`,
+              height: "100%",
+              background: `linear-gradient(90deg, ${themeColor}, #ffffff)`,
+              transition: "width 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+            }}
+          />
+        </div>
+
+        {/* Flashcard 3D */}
+        <div
+          style={{
+            width: "100%",
+            flex: 1,
+            minHeight: 200,
+            position: "relative"
+          }}
+        >
+          <div
+            onClick={() => setIsFlipped(prev => !prev)}
+            style={{
+              width: "100%",
+              height: "100%",
+              cursor: "pointer",
+              perspective: 1000
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                height: "100%",
+                transformStyle: "preserve-3d",
+                transition: "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)"
+              }}
+            >
+              {/* Frente */}
+              <div className="flashcard-box flashcard-front-style">
+                <div style={{ fontSize: 10, color: "#3b82f6", fontWeight: 600, letterSpacing: 3, marginBottom: 20 }}>✦ PERGUNTA ✦</div>
+                <p className="flashcard-question-text" style={{ color: "#f1f5f9", fontSize: 18, lineHeight: 1.65, textAlign: "center", margin: 0, fontWeight: 400, fontFamily: "Georgia, serif" }}>
+                  {currentCard?.pergunta}
+                </p>
+                <div style={{ marginTop: 28, color: "rgba(255,255,255,0.2)", fontSize: 11, letterSpacing: 1, fontWeight: 500 }}>
+                  Clique para revelar a resposta
+                </div>
+              </div>
+
+              {/* Verso */}
+              <div className="custom-scrollbar flashcard-box flashcard-back-style" style={{ border: `1px solid ${themeColor}40` }}>
+                <div style={{ fontSize: 10, color: themeColor, fontWeight: 600, letterSpacing: 3, marginBottom: 14 }}>✦ RESPOSTA ✦</div>
+                
+                <p className="flashcard-answer-text" style={{ color: "#e2e8f0", fontSize: 15, lineHeight: 1.65, textAlign: "center", margin: "0 0 16px 0", fontFamily: "Georgia, serif" }}>
+                  {currentCard?.resposta}
+                </p>
+
+                {/* Dica do Professor */}
+                {currentCard?.dica && (
+                  <div style={{
+                    background: "rgba(234,179,8,0.04)",
+                    border: "1px solid rgba(234,179,8,0.12)",
+                    borderRadius: 14,
+                    padding: "12px 16px",
+                    width: "100%",
+                    boxSizing: "border-box",
+                    marginTop: "auto"
+                  }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#eab308", fontSize: 11, fontWeight: 600, letterSpacing: 1, marginBottom: 4 }}>
+                      <span>🎓</span> DICA DO PROFESSOR (CEBRASPE)
+                    </div>
+                    <p style={{ color: "#d1d5db", fontSize: 11, lineHeight: 1.5, margin: 0 }}>
+                      {highlightFalso(currentCard?.dica)}
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Botão Favoritar */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onToggleFav(currentCard.id);
+            }}
+            style={{
+              position: "absolute",
+              top: 16,
+              right: 16,
+              background: "transparent",
+              border: "none",
+              color: favorites.includes(currentCard.id) ? "#eab308" : "#475569",
+              cursor: "pointer",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 2,
+              zIndex: 20,
+              outline: "none",
+              pointerEvents: "auto"
+            }}
+          >
+            <span style={{ fontSize: 18 }}>{favorites.includes(currentCard.id) ? "★" : "☆"}</span>
+            <span style={{ fontSize: 9, fontWeight: 500, opacity: 0.6, letterSpacing: 0.5, color: "#94a3b8" }}>
+              {favorites.includes(currentCard.id) ? "favoritado" : "favoritar"}
+            </span>
+          </button>
+        </div>
+
+        {/* Botões de Ação */}
+        <div style={{ minHeight: 70, flexShrink: 0 }}>
+          {isFlipped ? (
+            studyMode === "srs" || studyMode === "topic" || studyMode === "global_srs" ? (
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              {currentCardWasAnswered && (
+                <div style={{ color: "#fbbf24", fontSize: 12, fontWeight: 600, textAlign: "center" }}>
+                  Opção foi selecionada anteriormente.
+                </div>
+              )}
+              <div className="srs-buttons-grid">
+                {SRS_BUTTONS.map(btn => (
+                  <button
+                    key={btn.value}
+                    onClick={() => onCardFeedback(btn.value)}
+                    disabled={currentCardWasAnswered}
+                    className="btn-hover"
+                    style={{ background: btn.bg, color: "#fff", border: "none", borderRadius: 14, padding: "14px 10px", cursor: currentCardWasAnswered ? "not-allowed" : "pointer", fontWeight: 600, fontSize: 12, opacity: currentCardWasAnswered ? 0.55 : 1 }}
+                  >
+                    {btn.label}
+                  </button>
+                ))}
+              </div>
+              </div>
+            ) : (
+              <button
+                onClick={onNextCard}
+                className="btn-hover"
+                style={{
+                  width: "100%",
+                  background: studyMode === "favorites"
+                    ? "linear-gradient(135deg, #eab308, #ca8a04)"
+                    : "linear-gradient(135deg, #3b82f6, #2563eb)",
+                  color: "#fff",
+                  border: "none",
+                  borderRadius: 14,
+                  padding: "16px",
+                  cursor: "pointer",
+                  fontWeight: 600,
+                  fontSize: 14
+                }}
+              >
+                PRÓXIMO CARD →
+              </button>
+            )
+          ) : (
+            <button
+              onClick={() => setIsFlipped(true)}
+              className="btn-hover"
+              style={{
+                width: "100%",
+                background: "rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.1)",
+                color: "#f1f5f9",
+                borderRadius: 14,
+                padding: "16px",
+                cursor: "pointer",
+                fontWeight: 600,
+                fontSize: 14
+              }}
+            >
+              REVELAR RESPOSTA
+            </button>
+          )}
+        </div>
+
+        {/* Navegação Manual Inferior */}
+        <NavButtons
+          onPrev={onPrevCard}
+          onNext={onNextCard}
+          hasPrev={currentQueueIndex > 0}
+          hasNext={currentQueueIndex < studyQueue.length - 1}
+        />
+      </div>
+    </Shell>
+  );
+}
+
 // ── COMPONENTE: TELA DE LOGIN ──────────────────────────────────────────────
+/**
+ * @param {{ onLogin: (user: AppUser) => void }} props
+ */
 function TelaLogin({ onLogin }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -2243,15 +2331,18 @@ function TelaLogin({ onLogin }) {
               const u = data.user;
               const name = (u.user_metadata && u.user_metadata.name) || u.email || uname;
               // Sign JWT cookie server-side
+              let expiresAt = Date.now() + 30 * 24 * 60 * 60 * 1000;
               try {
-                await fetch('/api/auth/login', {
+                const loginRes = await fetch('/api/auth/login', {
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json' },
                   body: JSON.stringify({ username: u.email || uname, role: 'user', name, loginMethod: 'supabase' }),
                 });
+                const loginData = await loginRes.json();
+                if (loginData.expiresAt) expiresAt = loginData.expiresAt;
               } catch {}
               setErro("");
-              onLogin({ username: u.email || uname, role: 'user', name });
+              onLogin({ username: u.email || uname, role: 'user', name, expiresAt });
               return;
             }
           }
@@ -2269,7 +2360,7 @@ function TelaLogin({ onLogin }) {
           const data = await res.json();
           if (res.ok && data.user) {
             setErro("");
-            onLogin({ username: data.user.username, role: data.user.role, name: data.user.name });
+            onLogin({ username: data.user.username, role: data.user.role, name: data.user.name, expiresAt: data.expiresAt || (Date.now() + 30 * 24 * 60 * 60 * 1000) });
             return;
           }
           if (res.status === 429) {
@@ -2292,7 +2383,7 @@ function TelaLogin({ onLogin }) {
     <div style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px 16px", boxSizing: "border-box", width: "100%", overflow: "hidden" }}>
       {/* Composite background (hero + grid) placed as a single fixed element to ensure images show */}
       <div className="login-hero-composite" />
-      <div style={{ position: "fixed", top: -200, left: "50%", transform: "translateX(-50%)", width: 600, height: 400, borderRadius: "50%", background: "radial-gradient(ellipse,rgba(59,130,246,0.05) 0%,transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
+      <div style={{ ...RADIAL_GLOW_BASE, background: "radial-gradient(ellipse,rgba(59,130,246,0.05) 0%,transparent 70%)" }} />
 
       <div className="login-fade-in" style={{ position: "relative", zIndex: 1, background: "rgba(17,24,39,0.7)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 24, width: "100%", maxWidth: 360, boxShadow: "0 24px 64px rgba(0,0,0,0.6)", boxSizing: "border-box", padding: "28px 24px" }}>
         <div style={{ textAlign: "center", marginBottom: 20 }}>
@@ -2303,25 +2394,23 @@ function TelaLogin({ onLogin }) {
 
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <div>
-            <input
+            <LoginInput
               type="text"
               value={username}
               onChange={e => setUsername(e.target.value)}
               onKeyDown={e => e.key === "Enter" && handleFormSubmit()}
               placeholder="Usuário"
-              style={{ width: "100%", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, padding: "10px 12px", color: "#f1f5f9", fontSize: 14, boxSizing: "border-box", outline: "none", transition: "border 0.2s, box-shadow 0.2s", fontFamily: "inherit" }}
               onFocus={e => { e.target.style.borderColor = "rgba(59,130,246,0.5)"; e.target.style.boxShadow = "0 0 0 3px rgba(59,130,246,0.08)" }}
               onBlur={e => { e.target.style.borderColor = "rgba(255,255,255,0.08)"; e.target.style.boxShadow = "none" }}
             />
           </div>
           <div>
-            <input
+            <LoginInput
               type="password"
               value={password}
               onChange={e => setPassword(e.target.value)}
               onKeyDown={e => e.key === "Enter" && handleFormSubmit()}
               placeholder="Senha"
-              style={{ width: "100%", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, padding: "10px 12px", color: "#f1f5f9", fontSize: 14, boxSizing: "border-box", outline: "none", transition: "border 0.2s, box-shadow 0.2s", fontFamily: "inherit" }}
               onFocus={e => { e.target.style.borderColor = "rgba(59,130,246,0.5)"; e.target.style.boxShadow = "0 0 0 3px rgba(59,130,246,0.08)" }}
               onBlur={e => { e.target.style.borderColor = "rgba(255,255,255,0.08)"; e.target.style.boxShadow = "none" }}
             />
@@ -2399,9 +2488,26 @@ function LoginBadge() {
 }
 
 // ── COMPONENTE: TELA DESEMPENHO ─────────────────────────────────────────────
+/**
+ * @param {{
+ *   user: AppUser|null,
+ *   stats: AppStats,
+ *   srsData: SRSData,
+ *   answerHistory: AnswerEntry[],
+ *   BANCO: Object<string, Flashcard[]>,
+ *   MATERIAS: Materia[],
+ *   graphPeriod: string, setGraphPeriod: (p:string)=>void,
+ *   graphCustomStart: string, setGraphCustomStart: (s:string)=>void,
+ *   graphCustomEnd: string, setGraphCustomEnd: (s:string)=>void,
+ *   onBack: ()=>void, onLogout: ()=>void,
+ *   startWeakStudy: (matId:string)=>void,
+ *   userMeta: UserMeta|null,
+ *   showShieldBanner: boolean, setShowShieldBanner: (v:boolean)=>void
+ * }} props
+ */
 function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, graphPeriod, setGraphPeriod, graphCustomStart, setGraphCustomStart, graphCustomEnd, setGraphCustomEnd, onBack, onLogout, startWeakStudy, userMeta, showShieldBanner, setShowShieldBanner }) {
 
-  const getFilteredHistory = () => {
+  const filteredHistory = useMemo(() => {
     const now = Date.now();
     let startMs = 0;
     if (graphPeriod === "7d") startMs = now - 7 * 86400000;
@@ -2412,9 +2518,7 @@ function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, 
       else startMs = 0;
     }
     return answerHistory.filter(e => e.timestamp >= startMs);
-  };
-
-  const filteredHistory = getFilteredHistory();
+  }, [answerHistory, graphPeriod, graphCustomStart]);
   const allCardsTotal = MATERIAS.reduce((sum, m) => sum + ((BANCO[m.id] || []).length), 0);
   const totalStudiedCards = Object.keys(srsData).length;
 
@@ -2532,23 +2636,7 @@ function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, 
   return (
     <Shell user={user} stats={stats} onLogout={onLogout} userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)} srsData={srsData}>
       <div style={{ width: "100%", maxWidth: 640, margin: "0 auto", display: "flex", flexDirection: "column", gap: 20, boxSizing: "border-box" }}>
-        <button
-          onClick={onBack}
-          className="btn-hover"
-          style={{
-            alignSelf: "flex-start",
-            background: "rgba(255,255,255,0.05)",
-            border: "1px solid rgba(255,255,255,0.08)",
-            color: "#94a3b8",
-            borderRadius: 12,
-            padding: "8px 16px",
-            cursor: "pointer",
-            fontSize: 13,
-            fontWeight: 500
-          }}
-        >
-          ← Voltar
-        </button>
+        <BackButton onClick={onBack} />
 
         <div style={{ textAlign: "center" }}>
           <div style={{ fontSize: 44, marginBottom: 4 }}>📊</div>
@@ -2819,7 +2907,21 @@ function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, 
 }
 
 // ── COMPONENTE: SHELL / LAYOUT ──────────────────────────────────────────────
-function Shell({ children, user, stats, onLogout, centered, userMeta = null, showShieldBanner = false, onDismissShield = () => {}, srsData = {}, hidePomodoro = false }) {
+/**
+ * @param {{
+ *   children: React.ReactNode,
+ *   user: AppUser|null,
+ *   stats?: AppStats,
+ *   onLogout: ()=>void,
+ *   centered?: boolean,
+ *   userMeta?: UserMeta|null,
+ *   showShieldBanner?: boolean,
+ *   onDismissShield?: ()=>void,
+ *   srsData?: SRSData,
+ *   hidePomodoro?: boolean
+ * }} props
+ */
+const Shell = React.memo(function Shell({ children, user, stats, onLogout, centered, userMeta = null, showShieldBanner = false, onDismissShield = () => {}, srsData = {}, hidePomodoro = false }) {
   const [showPomodoro, setShowPomodoro] = useState(!hidePomodoro);
   const [pomodoroInfo, setPomodoroInfo] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
@@ -2840,7 +2942,7 @@ function Shell({ children, user, stats, onLogout, centered, userMeta = null, sho
   return (
       <div style={{ height: "100vh", overflow: "hidden", background: "#030712", boxSizing: "border-box", position: "relative", width: "100%", display: "flex", flexDirection: "column" }}>
       <div className="shell-hero-composite" />
-      <div style={{ position: "fixed", top: -200, left: "50%", transform: "translateX(-50%)", width: 600, height: 400, borderRadius: "50%", background: "radial-gradient(ellipse,rgba(59,130,246,0.03) 0%,transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
+      <div style={{ ...RADIAL_GLOW_BASE, background: "radial-gradient(ellipse,rgba(59,130,246,0.03) 0%,transparent 70%)" }} />
 
       <div style={{ position: "relative", zIndex: 1, width: "100%", maxWidth: 800, margin: "0 auto", boxSizing: "border-box", flex: 1, display: "flex", flexDirection: "column", minHeight: 0, padding: isMobile ? "0 10px" : "0 16px" }}>
         {/* ── CARD PRINCIPAL (ocupa todo o espaço vertical) ── */}
@@ -2960,4 +3062,128 @@ function Shell({ children, user, stats, onLogout, centered, userMeta = null, sho
       </div>
     </div>
   );
+});
+
+// ── COMPONENTES REUTILIZÁVEIS ──────────────────────────────────────────────
+
+function BackButton({ onClick }) {
+  return (
+    <button
+      onClick={onClick}
+      className="btn-hover"
+      style={{
+        alignSelf: "flex-start",
+        background: "rgba(255,255,255,0.05)",
+        border: "1px solid rgba(255,255,255,0.08)",
+        color: "#94a3b8",
+        borderRadius: 12,
+        padding: "8px 16px",
+        cursor: "pointer",
+        fontSize: 13,
+        fontWeight: 500
+      }}
+    >
+      ← Voltar
+    </button>
+  );
 }
+
+function StatCard({ value, label, color, icon, style: extStyle }) {
+  return (
+    <div style={{
+      background: "rgba(255,255,255,0.02)",
+      border: "1px solid rgba(255,255,255,0.05)",
+      borderRadius: 16,
+      padding: "16px 14px",
+      textAlign: "center",
+      ...extStyle
+    }}>
+      {icon && <div style={{ fontSize: 24, marginBottom: 4 }}>{icon}</div>}
+      <div style={{ fontSize: 22, fontWeight: 700, color: color || "#fff" }}>
+        {value}
+      </div>
+      <div style={{ fontSize: 10, color: "#64748b", marginTop: 4, fontWeight: 600, letterSpacing: 0.5 }}>
+        {label}
+      </div>
+    </div>
+  );
+}
+
+function NavButtons({ onPrev, onNext, hasPrev, hasNext }) {
+  return (
+    <div style={{ display: "flex", justifyContent: "space-between", gap: 14, width: "100%", flexShrink: 0 }}>
+      <button
+        onClick={(e) => { e.stopPropagation(); onPrev(); }}
+        disabled={!hasPrev}
+        className="btn-hover"
+        style={{
+          flex: 1,
+          background: "rgba(255,255,255,0.03)",
+          border: "1px solid rgba(255,255,255,0.06)",
+          borderRadius: 14,
+          padding: "12px 14px",
+          color: hasPrev ? "#94a3b8" : "#475569",
+          fontSize: 12,
+          fontWeight: 600,
+          cursor: hasPrev ? "pointer" : "default",
+          outline: "none"
+        }}
+      >
+        ← Card Anterior
+      </button>
+      <button
+        onClick={(e) => { e.stopPropagation(); onNext(); }}
+        disabled={!hasNext}
+        className="btn-hover"
+        style={{
+          flex: 1,
+          background: "rgba(255,255,255,0.03)",
+          border: "1px solid rgba(255,255,255,0.06)",
+          borderRadius: 14,
+          padding: "12px 14px",
+          color: hasNext ? "#94a3b8" : "#475569",
+          fontSize: 12,
+          fontWeight: 600,
+          cursor: hasNext ? "pointer" : "default",
+          outline: "none"
+        }}
+      >
+        Card Seguinte →
+      </button>
+    </div>
+  );
+}
+
+function LoginInput(props) {
+  return (
+    <input
+      style={{
+        width: "100%",
+        background: "rgba(255,255,255,0.04)",
+        border: "1px solid rgba(255,255,255,0.08)",
+        borderRadius: 10,
+        padding: "10px 12px",
+        color: "#f1f5f9",
+        fontSize: 14,
+        boxSizing: "border-box",
+        outline: "none",
+        transition: "border 0.2s, box-shadow 0.2s",
+        fontFamily: "inherit"
+      }}
+      {...props}
+    />
+  );
+}
+
+// ── CONSTANTES DE ESTILO ────────────────────────────────────────────────────
+const RADIAL_GLOW_BASE = {
+  position: "fixed",
+  top: -200,
+  left: "50%",
+  transform: "translateX(-50%)",
+  width: 600,
+  height: 400,
+  borderRadius: "50%",
+  pointerEvents: "none",
+  zIndex: 0
+};
