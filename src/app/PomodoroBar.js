@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { supabase } from "../lib/supabase";
+import AmbientSound from "./AmbientSound";
 
 function playBeep() {
   try {
@@ -243,6 +244,10 @@ export default function PomodoroBar({ username }) {
       >
         ↺ Reset
       </button>
+
+      <div style={{ width: 1, height: 20, background: "rgba(255,255,255,0.08)", flexShrink: 0 }} />
+
+      <AmbientSound />
 
       {status === "running" && (
         <span
