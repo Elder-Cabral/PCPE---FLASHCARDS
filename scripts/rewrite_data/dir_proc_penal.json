@@ -1,32 +1,552 @@
-{"rewrites": [
-  ["dir_proc_penal_0", "O que é o inquérito policial (IP) e quais suas características?", "Procedimento administrativo preparatório, presidido pelo Delegado, para apurar infrações penais. Características: inquisitivo, sigiloso, escrito, indisponível, oficioso.", "CARACTERÍSTICAS: (1) INQUISITIVO (sem contraditório pleno); (2) SIGILOSO (art. 20 CPP, mas advogado tem acesso - SV 14); (3) ESCRITO; (4) INDISPONÍVEL (art. 17 CPP); (5) OFICIOSO. CESPE: 'IP tem contraditório' -> FALSO."],
-  ["dir_proc_penal_1", "O inquérito policial é obrigatório para o ajuizamento da ação penal?", "Não. O IP é dispensável. MP pode denunciar com base em outras peças de informação (art. 12, 39 §5º CPP).", "CESPE: 'IP é indispensável para ação penal pública' -> FALSO (art. 12 CPP). Arquivamento do IP não prejudica ação penal se MP já denunciou."],
-  ["dir_proc_penal_3", "Qual o prazo do inquérito policial para indiciado preso e solto?", "Preso: 10 dias (prorrogável +10). Solto: 30 dias (prorrogável).", "PRAZOS: PRESO: 10+10 dias. SOLTO: 30 dias sem limite de prorrogação. Descumprimento = constrangimento ilegal se preso (HC). Súmula 21 STJ: solto, excesso não gera constrangimento."],
-  ["dir_proc_penal_4", "O que é o exame de corpo de delito (art. 158-162 CPP)?", "Prova pericial obrigatória quando a infração deixa vestígios. Confissão não supre o exame (art. 158 CPP).", "Se há vestígios, exame é OBRIGATÓRIO. Confissão não substitui. Se vestígios desapareceram = exame INDIRETO (art. 167). CESPE: 'lesão corporal leve dispensa exame' -> FALSO."],
-  ["dir_proc_penal_9", "O que é busca domiciliar (art. 240-250 CPP)?", "Invasão do domicílio para apreender objetos ou prender pessoas. Exige mandado judicial (regra) ou flagrante/desastre/socorro.", "DIURNA: com ou sem mandado. NOTURNA: só sem mandado (flagrante/desastre/socorro). Mandado NÃO autoriza entrada à noite. CESPE: 'busca à noite é vedada em qualquer hipótese' -> FALSO."],
-  ["dir_proc_penal_11", "O que é prisão em flagrante e quais suas espécies?", "Prisão cautelar no momento ou logo após o crime. Espécies: próprio (art. 302, I), quase-flagrante (II), presumido (III), ficto (IV).", "FLAGRANTE PROPRIO (praticando), QUASE (acabou), PRESUMIDO (perseguido), FICTO (encontrado com objetos). CESPE: flagrante ESPERADO = válido. PREPARADO = crime impossível (Súmula 145 STF)."],
-  ["dir_proc_penal_13", "O que é prisão preventiva (arts. 311-316 CPP)?", "Prisão cautelar decretada pelo juiz. Requisitos: prova do crime + indícios de autoria + fundamento do art. 312.", "REQUISITOS: (1) materialidade; (2) indícios; (3) fundamento (ordem pública/econômica, instrução, aplicação penal). Lei 13.964/19: juiz pode decretar de ofício só se réu solto e flagrante."],
-  ["dir_proc_penal_14", "O que é prisão temporária (Lei 7.960/89)?", "Prisão cautelar investigativa. Prazo: 5+5 dias (regra) ou 30+30 dias (hediondos). Exige requerimento do MP/Delegado.", "PRAZOS: regra 5+5; hediondos 30+30. CESPE: 'PT exige ordem judicial' -> SIM. 'PT pode ser decretada de ofício' -> NÃO (depende de provocação)."],
-  ["dir_proc_penal_17", "Quais os crimes inafiançáveis na CF/88?", "Racismo, tortura, tráfico, hediondos e grupos armados (art. 5º, XLII e XLIII).", "MNEMÔNICO: R-T-T-H-G. Inafiançável != impossibilidade de soltura. Cabe liberdade provisória SEM fiança (STF HC 82.959). CESPE adora essa distinção."],
-  ["dir_proc_penal_18", "Quais as medidas cautelares diversas da prisão (art. 319 CPP)?", "Comparecimento periódico, proibição de acesso/contato, proibição de ausentar, recolhimento domiciliar, suspensão de função, monitoração eletrônica, fiança.", "9 MEDIDAS (art. 319, I-IX). Monitoração eletrônica incluída pela Lei 12.403/11. CESPE: 'cautelares podem ser aplicadas cumulativamente' -> SIM (art. 282, §1º)."],
-  ["dir_proc_penal_19", "O que é a audiência de custódia?", "Direito do preso de ser apresentado ao juiz em 24h. Visa verificar legalidade e evitar tortura. Art. 7º, 5 CADH e Lei 13.964/19.", "PACOTE ANTICRIME: positivou no art. 310, §4º CPP. Prazo: 24h. CESPE: 'na AC, juiz decide conversão em preventiva, liberdade provisória ou relaxamento' -> SIM."],
-  ["dir_proc_penal_20", "O que é o Juizado Especial Criminal (Lei 9.099/95)?", "Órgão do Judiciário para infrações de menor potencial ofensivo (pena até 2 anos - art. 61). Princípios: oralidade, informalidade, celeridade.", "Após Lei 11.313/06: pena máxima ATÉ 2 ANOS. CESPE: 'JECRIM admite prisão em flagrante' -> NÃO (lavra-se termo circunstanciado - art. 69, parágrafo único)."],
-  ["dir_proc_penal_23", "O que é o princípio da obrigatoriedade da ação penal pública?", "MP é obrigado a denunciar quando presentes as condições da ação. Exceção: ANPP (art. 28-A CPP - discricionariedade regrada).", "MP não pode arquivar diretamente (art. 17 CPP). ANPP (art. 28-A) é exceção. CESPE: 'ação penal pública é sempre obrigatória' -> FALSO (ANPP é exceção)."],
-  ["dir_proc_penal_26", "O que dispõe a Lei 12.830/13 sobre a investigação criminal pelo Delegado?", "Delegado preside a investigação com exclusividade (art. 2º). Autonomia funcional. MP pode requisitar, mas não presidir.", "Art. 2º: 'O Delegado preside a investigação criminal com exclusividade'. Art. 2º, §2º: 'primeiro garantidor dos direitos humanos'. Remoção sem fundamentação viola a lei."],
-  ["dir_proc_penal_28", "O que é indiciamento no inquérito policial?", "Ato formal pelo qual o Delegado atribui a alguém a autoria de infração penal. Exige fundamentação (Lei 12.830/13, art. 2º, §6º).", "Quem INDICIA é o Delegado (juiz e MP não indiciam). Exige FUNDAMENTAÇÃO. SV 14: indiciado tem direito a advogado e acesso aos autos. CESPE: 'indiciar sem prova' -> FALSO."],
-  ["dir_proc_penal_32", "O que são provas ilícitas e qual seu tratamento no processo penal?", "Provas obtidas com violação a normas de direito material. Inadmissíveis (art. 5º, LVI CF/88). Teoria dos frutos da árvore envenenada (art. 157 CPP).", "ILÍCITA = viola direito material. ILEGÍTIMA = viola norma processual. Ambas inadmissíveis. EXCEÇÕES: fonte independente, descoberta inevitável. CESPE: 'prova ilícita pro reo' -> STF admite (HC 96.122)."],
-  ["dir_proc_penal_42", "O que é cadeia de custódia da prova (arts. 158-A a 158-F CPP)?", "Procedimentos para garantir integridade e rastreabilidade da prova desde coleta até descarte. Incluída pela Lei 13.964/19.", "ETAPAS (art. 158-B): preservação, isolamento, identificação, coleta, acondicionamento, transporte, recebimento, armazenamento, análise, descarte. Quebra pode levar à nulidade."],
-  ["dir_proc_penal_49", "O que é o Acordo de Não Persecução Penal (ANPP) - art. 28-A CPP?", "Acordo pré-processual entre MP e investigado para evitar ação penal. Exige crime sem violência, pena mínima < 4 anos e confissão.", "REQUISITOS: (1) sem violência; (2) pena mínima < 4 anos; (3) confissão; (4) não reincidente. CESPE: 'ANPP exige homologação judicial' -> SIM. 'ANPP é direito subjetivo' -> NÃO (faculdade do MP)."],
-  ["dir_proc_penal_50", "O que a Lei 13.964/19 (Pacote Anticrime) alterou no processo penal?", "ANPP, juiz das garantias, cadeia de custódia, alterações na preventiva, HC contra decisão denegatória.", "Juiz das garantias: separa juiz investigatório do instrutor. Implementação SUSPENSA pelo STF (ADI 6.298, 6.299, 6.300). CESPE: 'juiz das garantias é obrigatório' -> NÃO (suspenso)."],
-  ["dir_proc_penal_53", "O que é interceptação telefônica (Lei 9.296/96)?", "Captação de conversas telefônicas por terceiro sem conhecimento dos interlocutores, autorizada judicialmente. Prazo: 15 dias.", "REQUISITOS: (1) ordem judicial; (2) investigação criminal; (3) indícios de autoria; (4) imprescindível. GRAVAÇÃO TELEFÔNICA (um interlocutor) != INTERCEPTAÇÃO (terceiro). CESPE adora."],
-  ["dir_proc_penal_59", "O que é reconstituição do crime?", "Reprodução simulada dos fatos para verificar possibilidade de ocorrência (art. 7º CPP). Exige autorização do juiz.", "RECONSTITUIÇÃO != RECONHECIMENTO. Reconstituição = reprodução dos fatos. Reconhecimento = identificação de pessoas/coisas (arts. 226-228). CESPE: 'reconstituição depende de autorização' -> SIM."],
-  ["dir_proc_penal_63", "Como funciona o arquivamento do IP após a Lei 13.964/19?", "MP requer ao juiz. Se juiz discorda, remete ao PGJ, que pode denunciar, designar outro promotor ou insistir no arquivamento.", "Lei 13.964/19 alterou art. 28 CPP: juiz NÃO pode determinar arquivamento contra vontade do MP. CESPE: 'juiz pode arquivar independentemente do MP' -> FALSO."],
-  ["dir_proc_penal_67", "O que é o Delegado de Polícia segundo a Lei 12.830/13?", "Autoridade que preside investigação com exclusividade. Autonomia funcional. Primeiro garantidor dos direitos humanos (art. 2º, §2º).", "Art. 2º, §2º: 'primeiro garantidor dos direitos humanos'. Autonomia: não subordinado na atividade investigativa. CESPE: 'Delegado pode ser removido sem fundamentação' -> FALSO (art. 3º)."],
-  ["dir_proc_penal_73", "O que é o juiz das garantias (Lei 13.964/19)?", "Juiz responsável pelo controle da legalidade da investigação. Não profere sentença. Eficácia suspensa pelo STF.", "FUNÇÕES: autorizar medidas cautelares, decidir sobre prisões, homologar ANPP. SUSPENSO (ADI 6.298, 6.299, 6.300). CESPE: 'juiz das garantias é o mesmo que sentencia' -> FALSO."],
-  ["dir_proc_penal_74", "O que é a teoria da descoberta inevitável (art. 157, §1º CPP)?", "Exceção à inadmissibilidade da prova derivada da ilícita. Admite-se se a prova seria obtida por fonte independente.", "Art. 157, §1º: 'não evidenciado o nexo causal ou quando puderem ser obtidas por fonte independente'. CESPE adora essa exceção."],
-  ["dir_proc_penal_5", "O que são provas em espécie no processo penal?", "Prova testemunhal, documental, pericial, interrogatório, confissão, reconhecimento, acareação, busca e apreensão.", "MEIOS DE PROVA (arts. 155-239 CPP): perícia, interrogatório, confissão, testemunha, reconhecimento, acareação, documento, indício. CESPE: 'indício é prova indireta' -> VERDADEIRO."],
-  ["dir_proc_penal_7", "O que é o princípio do juiz natural?", "Ninguém pode ser processado senão por autoridade competente determinada pela lei anterior. Art. 5º, LIII e XXXVII CF/88.", "VEDA: (1) juízo de exceção; (2) tribunais de exceção. Exige: juiz PREEXISTENTE, INDEPENDENTE e COMPETENTE. CESPE: 'juiz natural é o previsto em lei anterior ao fato' -> VERDADEIRO."],
-  ["dir_proc_penal_8", "O que é a ação penal privada?", "Ação proposta pelo ofendido ou representante legal através de queixa-crime. Prazo: 6 meses (art. 38 CPP).", "Prazo DECADENCIAL de 6 meses (contado do conhecimento da autoria). Se MP não age na pública subsidiária (ação privada subsidiária - art. 29 CPP). CESPE: 'prazo é prescricional' -> FALSO (decadencial)."],
-  ["dir_proc_penal_10", "O que é liberdade provisória?", "Direito do preso em flagrante de aguardar o processo em liberdade, com ou sem fiança. Art. 321 CPP.", "Cabe liberdade provisória SEM fiança (crimes inafiançáveis). CESPE: 'crimes inafiançáveis impedem liberdade provisória' -> FALSO (impedem FIANÇA, mas cabe liberdade sem fiança)."],
-  ["dir_proc_penal_12", "O que é a Lei 12.850/13 (Organizações Criminosas)?", "Define organização criminosa (4+ pessoas, estrutura ordenada, visando infrações com pena > 4 anos). Meios de obtenção de prova: colaboração premiada, interceptação.", "DEFINIÇÃO: 4+ pessoas, estrutura ordenada, infrações com pena máxima > 4 anos. Colaboração premiada: direitos do colaborador (redução de pena, perdão judicial). CESPE adora."]
-], "removes": [], "merges": {}}
+{
+  "rewrites": [
+    [
+      "dir_proc_penal_0",
+      "O que é o inquérito policial (IP) e quais suas características?",
+      "Procedimento administrativo preparatório, presidido pelo Delegado, para apurar infrações penais. Características: inquisitivo, sigiloso, escrito, indisponível, oficioso.",
+      "CARACTERÍSTICAS: (1) INQUISITIVO (sem contraditório pleno); (2) SIGILOSO (art. 20 CPP, mas advogado tem acesso - SV 14); (3) ESCRITO; (4) INDISPONÍVEL (art. 17 CPP); (5) OFICIOSO. CESPE: 'IP tem contraditório' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_1",
+      "O inquérito policial é obrigatório para o ajuizamento da ação penal?",
+      "Não. O IP é dispensável. MP pode denunciar com base em outras peças de informação (art. 12, 39 §5º CPP).",
+      "CESPE: 'IP é indispensável para ação penal pública' -> FALSO (art. 12 CPP). Arquivamento do IP não prejudica ação penal se MP já denunciou."
+    ],
+    [
+      "dir_proc_penal_3",
+      "Qual o prazo do inquérito policial para indiciado preso e solto?",
+      "Preso: 10 dias (prorrogável +10). Solto: 30 dias (prorrogável).",
+      "PRAZOS: PRESO: 10+10 dias. SOLTO: 30 dias sem limite de prorrogação. Descumprimento = constrangimento ilegal se preso (HC). Súmula 21 STJ: solto, excesso não gera constrangimento."
+    ],
+    [
+      "dir_proc_penal_4",
+      "O que é o exame de corpo de delito (art. 158-162 CPP)?",
+      "Prova pericial obrigatória quando a infração deixa vestígios. Confissão não supre o exame (art. 158 CPP).",
+      "Se há vestígios, exame é OBRIGATÓRIO. Confissão não substitui. Se vestígios desapareceram = exame INDIRETO (art. 167). CESPE: 'lesão corporal leve dispensa exame' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_9",
+      "O que é busca domiciliar (art. 240-250 CPP)?",
+      "Invasão do domicílio para apreender objetos ou prender pessoas. Exige mandado judicial (regra) ou flagrante/desastre/socorro.",
+      "DIURNA: com ou sem mandado. NOTURNA: só sem mandado (flagrante/desastre/socorro). Mandado NÃO autoriza entrada à noite. CESPE: 'busca à noite é vedada em qualquer hipótese' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_11",
+      "O que é prisão em flagrante e quais suas espécies?",
+      "Prisão cautelar no momento ou logo após o crime. Espécies: próprio (art. 302, I), quase-flagrante (II), presumido (III), ficto (IV).",
+      "FLAGRANTE PROPRIO (praticando), QUASE (acabou), PRESUMIDO (perseguido), FICTO (encontrado com objetos). CESPE: flagrante ESPERADO = válido. PREPARADO = crime impossível (Súmula 145 STF)."
+    ],
+    [
+      "dir_proc_penal_13",
+      "O que é prisão preventiva (arts. 311-316 CPP)?",
+      "Prisão cautelar decretada pelo juiz. Requisitos: prova do crime + indícios de autoria + fundamento do art. 312.",
+      "REQUISITOS: (1) materialidade; (2) indícios; (3) fundamento (ordem pública/econômica, instrução, aplicação penal). Lei 13.964/19: juiz pode decretar de ofício só se réu solto e flagrante."
+    ],
+    [
+      "dir_proc_penal_14",
+      "O que é prisão temporária (Lei 7.960/89)?",
+      "Prisão cautelar investigativa. Prazo: 5+5 dias (regra) ou 30+30 dias (hediondos). Exige requerimento do MP/Delegado.",
+      "PRAZOS: regra 5+5; hediondos 30+30. CESPE: 'PT exige ordem judicial' -> SIM. 'PT pode ser decretada de ofício' -> NÃO (depende de provocação)."
+    ],
+    [
+      "dir_proc_penal_17",
+      "Quais os crimes inafiançáveis na CF/88?",
+      "Racismo, tortura, tráfico, hediondos e grupos armados (art. 5º, XLII e XLIII).",
+      "MNEMÔNICO: R-T-T-H-G. Inafiançável != impossibilidade de soltura. Cabe liberdade provisória SEM fiança (STF HC 82.959). CESPE adora essa distinção."
+    ],
+    [
+      "dir_proc_penal_18",
+      "Quais as medidas cautelares diversas da prisão (art. 319 CPP)?",
+      "Comparecimento periódico, proibição de acesso/contato, proibição de ausentar, recolhimento domiciliar, suspensão de função, monitoração eletrônica, fiança.",
+      "9 MEDIDAS (art. 319, I-IX). Monitoração eletrônica incluída pela Lei 12.403/11. CESPE: 'cautelares podem ser aplicadas cumulativamente' -> SIM (art. 282, §1º)."
+    ],
+    [
+      "dir_proc_penal_19",
+      "O que é a audiência de custódia?",
+      "Direito do preso de ser apresentado ao juiz em 24h. Visa verificar legalidade e evitar tortura. Art. 7º, 5 CADH e Lei 13.964/19.",
+      "PACOTE ANTICRIME: positivou no art. 310, §4º CPP. Prazo: 24h. CESPE: 'na AC, juiz decide conversão em preventiva, liberdade provisória ou relaxamento' -> SIM."
+    ],
+    [
+      "dir_proc_penal_20",
+      "O que é o Juizado Especial Criminal (Lei 9.099/95)?",
+      "Órgão do Judiciário para infrações de menor potencial ofensivo (pena até 2 anos - art. 61). Princípios: oralidade, informalidade, celeridade.",
+      "Após Lei 11.313/06: pena máxima ATÉ 2 ANOS. CESPE: 'JECRIM admite prisão em flagrante' -> NÃO (lavra-se termo circunstanciado - art. 69, parágrafo único)."
+    ],
+    [
+      "dir_proc_penal_23",
+      "O que é o princípio da obrigatoriedade da ação penal pública?",
+      "MP é obrigado a denunciar quando presentes as condições da ação. Exceção: ANPP (art. 28-A CPP - discricionariedade regrada).",
+      "MP não pode arquivar diretamente (art. 17 CPP). ANPP (art. 28-A) é exceção. CESPE: 'ação penal pública é sempre obrigatória' -> FALSO (ANPP é exceção)."
+    ],
+    [
+      "dir_proc_penal_26",
+      "O que dispõe a Lei 12.830/13 sobre a investigação criminal pelo Delegado?",
+      "Delegado preside a investigação com exclusividade (art. 2º). Autonomia funcional. MP pode requisitar, mas não presidir.",
+      "Art. 2º: 'O Delegado preside a investigação criminal com exclusividade'. Art. 2º, §2º: 'primeiro garantidor dos direitos humanos'. Remoção sem fundamentação viola a lei."
+    ],
+    [
+      "dir_proc_penal_28",
+      "O que é indiciamento no inquérito policial?",
+      "Ato formal pelo qual o Delegado atribui a alguém a autoria de infração penal. Exige fundamentação (Lei 12.830/13, art. 2º, §6º).",
+      "Quem INDICIA é o Delegado (juiz e MP não indiciam). Exige FUNDAMENTAÇÃO. SV 14: indiciado tem direito a advogado e acesso aos autos. CESPE: 'indiciar sem prova' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_32",
+      "O que são provas ilícitas e qual seu tratamento no processo penal?",
+      "Provas obtidas com violação a normas de direito material. Inadmissíveis (art. 5º, LVI CF/88). Teoria dos frutos da árvore envenenada (art. 157 CPP).",
+      "ILÍCITA = viola direito material. ILEGÍTIMA = viola norma processual. Ambas inadmissíveis. EXCEÇÕES: fonte independente, descoberta inevitável. CESPE: 'prova ilícita pro reo' -> STF admite (HC 96.122)."
+    ],
+    [
+      "dir_proc_penal_42",
+      "O que é cadeia de custódia da prova (arts. 158-A a 158-F CPP)?",
+      "Procedimentos para garantir integridade e rastreabilidade da prova desde coleta até descarte. Incluída pela Lei 13.964/19.",
+      "ETAPAS (art. 158-B): preservação, isolamento, identificação, coleta, acondicionamento, transporte, recebimento, armazenamento, análise, descarte. Quebra pode levar à nulidade."
+    ],
+    [
+      "dir_proc_penal_49",
+      "O que é o Acordo de Não Persecução Penal (ANPP) - art. 28-A CPP?",
+      "Acordo pré-processual entre MP e investigado para evitar ação penal. Exige crime sem violência, pena mínima < 4 anos e confissão.",
+      "REQUISITOS: (1) sem violência; (2) pena mínima < 4 anos; (3) confissão; (4) não reincidente. CESPE: 'ANPP exige homologação judicial' -> SIM. 'ANPP é direito subjetivo' -> NÃO (faculdade do MP)."
+    ],
+    [
+      "dir_proc_penal_50",
+      "O que a Lei 13.964/19 (Pacote Anticrime) alterou no processo penal?",
+      "ANPP, juiz das garantias, cadeia de custódia, alterações na preventiva, HC contra decisão denegatória.",
+      "Juiz das garantias: separa juiz investigatório do instrutor. Implementação SUSPENSA pelo STF (ADI 6.298, 6.299, 6.300). CESPE: 'juiz das garantias é obrigatório' -> NÃO (suspenso)."
+    ],
+    [
+      "dir_proc_penal_53",
+      "O que é interceptação telefônica (Lei 9.296/96)?",
+      "Captação de conversas telefônicas por terceiro sem conhecimento dos interlocutores, autorizada judicialmente. Prazo: 15 dias.",
+      "REQUISITOS: (1) ordem judicial; (2) investigação criminal; (3) indícios de autoria; (4) imprescindível. GRAVAÇÃO TELEFÔNICA (um interlocutor) != INTERCEPTAÇÃO (terceiro). CESPE adora."
+    ],
+    [
+      "dir_proc_penal_59",
+      "O que é reconstituição do crime?",
+      "Reprodução simulada dos fatos para verificar possibilidade de ocorrência (art. 7º CPP). Exige autorização do juiz.",
+      "RECONSTITUIÇÃO != RECONHECIMENTO. Reconstituição = reprodução dos fatos. Reconhecimento = identificação de pessoas/coisas (arts. 226-228). CESPE: 'reconstituição depende de autorização' -> SIM."
+    ],
+    [
+      "dir_proc_penal_63",
+      "Como funciona o arquivamento do IP após a Lei 13.964/19?",
+      "MP requer ao juiz. Se juiz discorda, remete ao PGJ, que pode denunciar, designar outro promotor ou insistir no arquivamento.",
+      "Lei 13.964/19 alterou art. 28 CPP: juiz NÃO pode determinar arquivamento contra vontade do MP. CESPE: 'juiz pode arquivar independentemente do MP' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_67",
+      "O que é o Delegado de Polícia segundo a Lei 12.830/13?",
+      "Autoridade que preside investigação com exclusividade. Autonomia funcional. Primeiro garantidor dos direitos humanos (art. 2º, §2º).",
+      "Art. 2º, §2º: 'primeiro garantidor dos direitos humanos'. Autonomia: não subordinado na atividade investigativa. CESPE: 'Delegado pode ser removido sem fundamentação' -> FALSO (art. 3º)."
+    ],
+    [
+      "dir_proc_penal_73",
+      "O que é o juiz das garantias (Lei 13.964/19)?",
+      "Juiz responsável pelo controle da legalidade da investigação. Não profere sentença. Eficácia suspensa pelo STF.",
+      "FUNÇÕES: autorizar medidas cautelares, decidir sobre prisões, homologar ANPP. SUSPENSO (ADI 6.298, 6.299, 6.300). CESPE: 'juiz das garantias é o mesmo que sentencia' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_74",
+      "O que é a teoria da descoberta inevitável (art. 157, §1º CPP)?",
+      "Exceção à inadmissibilidade da prova derivada da ilícita. Admite-se se a prova seria obtida por fonte independente.",
+      "Art. 157, §1º: 'não evidenciado o nexo causal ou quando puderem ser obtidas por fonte independente'. CESPE adora essa exceção."
+    ],
+    [
+      "dir_proc_penal_5",
+      "O que são provas em espécie no processo penal?",
+      "Prova testemunhal, documental, pericial, interrogatório, confissão, reconhecimento, acareação, busca e apreensão.",
+      "MEIOS DE PROVA (arts. 155-239 CPP): perícia, interrogatório, confissão, testemunha, reconhecimento, acareação, documento, indício. CESPE: 'indício é prova indireta' -> VERDADEIRO."
+    ],
+    [
+      "dir_proc_penal_7",
+      "O que é o princípio do juiz natural?",
+      "Ninguém pode ser processado senão por autoridade competente determinada pela lei anterior. Art. 5º, LIII e XXXVII CF/88.",
+      "VEDA: (1) juízo de exceção; (2) tribunais de exceção. Exige: juiz PREEXISTENTE, INDEPENDENTE e COMPETENTE. CESPE: 'juiz natural é o previsto em lei anterior ao fato' -> VERDADEIRO."
+    ],
+    [
+      "dir_proc_penal_8",
+      "O que é a ação penal privada?",
+      "Ação proposta pelo ofendido ou representante legal através de queixa-crime. Prazo: 6 meses (art. 38 CPP).",
+      "Prazo DECADENCIAL de 6 meses (contado do conhecimento da autoria). Se MP não age na pública subsidiária (ação privada subsidiária - art. 29 CPP). CESPE: 'prazo é prescricional' -> FALSO (decadencial)."
+    ],
+    [
+      "dir_proc_penal_10",
+      "O que é liberdade provisória?",
+      "Direito do preso em flagrante de aguardar o processo em liberdade, com ou sem fiança. Art. 321 CPP.",
+      "Cabe liberdade provisória SEM fiança (crimes inafiançáveis). CESPE: 'crimes inafiançáveis impedem liberdade provisória' -> FALSO (impedem FIANÇA, mas cabe liberdade sem fiança)."
+    ],
+    [
+      "dir_proc_penal_12",
+      "O que é a Lei 12.850/13 (Organizações Criminosas)?",
+      "Define organização criminosa (4+ pessoas, estrutura ordenada, visando infrações com pena > 4 anos). Meios de obtenção de prova: colaboração premiada, interceptação.",
+      "DEFINIÇÃO: 4+ pessoas, estrutura ordenada, infrações com pena máxima > 4 anos. Colaboração premiada: direitos do colaborador (redução de pena, perdão judicial). CESPE adora."
+    ],
+    [
+      "dir_proc_penal_2",
+      "O IP é indispensável para o ajuizamento da ação penal?",
+      "Não; o MP pode oferecer denúncia com base em outras peças de informação sem IP.",
+      "IP é dispensável para ação penal (art. 12 CPP). O MP pode denunciar com base em peças de informação. CESPE: 'IP é indispensável' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_6",
+      "O que é confissão no processo penal?",
+      "Declaração do acusado admitindo a prática do fato; é divisível, retratável e de valor relativo.",
+      "CONFISSÃO: divisível (art. 200 CPP), retratável a qualquer tempo, valor relativo (art. 197 CPP). CESPE: 'confissão é prova absoluta' -> FALSO (deve ser cotejada com outras provas)."
+    ],
+    [
+      "dir_proc_penal_16",
+      "O que é fiança?",
+      "Garantia financeira para responder ao processo em liberdade; a autoridade policial pode arbitrá-la para crimes com pena máxima de até 4 anos.",
+      "FIANÇA: art. 322 CPP. Autoridade policial pode arbitrar para pena máxima até 4 anos. Vedada para hediondos e racismo. CESPE: 'Delegado pode arbitrar fiança para qualquer crime' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_21",
+      "O que é transação penal (Lei 9.099/95)?",
+      "Acordo entre MP e autor do fato para aplicação imediata de pena restritiva ou multa, evitando a ação penal.",
+      "TRANSAÇÃO PENAL (art. 76 Lei 9.099/95): acordo pré-processual. NÃO importa confissão. NÃO gera reincidência. CESPE: 'transação penal gera maus antecedentes' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_22",
+      "O que é a suspensão condicional do processo (sursis processual)?",
+      "Suspensão da ação penal por 2 a 4 anos mediante condições; crimes com pena mínima de até 1 ano (art. 89 Lei 9.099/95).",
+      "SURSIS PROCESSUAL (art. 89 Lei 9.099/95): pena mínima até 1 ano. Período de prova: 2 a 4 anos. CESPE: 'suspensão condicional exige confissão' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_24",
+      "O que é ação penal pública condicionada?",
+      "Depende de representação da vítima ou requisição do Ministro da Justiça para que o MP possa oferecer denúncia.",
+      "AÇÃO PENAL PÚBLICA CONDICIONADA: depende de representação (vítima) ou requisição (MJ). Prazo: 6 meses decadencial para representar. CESPE: 'ação condicionada independe de representação' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_25",
+      "O que é ação penal privada?",
+      "Proposta pelo ofendido mediante queixa-crime; sujeita à renúncia, perempção e decadência (prazo de 6 meses).",
+      "AÇÃO PENAL PRIVADA: queixa-crime no prazo de 6 meses. Sujeita a decadência, perempção, renúncia. CESPE: 'ação privada pode ser proposta a qualquer tempo' -> FALSO (6 meses)."
+    ],
+    [
+      "dir_proc_penal_27",
+      "O que é o relatório do inquérito policial?",
+      "Peça final do IP elaborada pelo Delegado, relatando as diligências realizadas e os indícios colhidos.",
+      "RELATÓRIO DO IP: peça final do Delegado. NÃO vincula o MP (pode pedir diligências ou arquivar). Art. 10 CPP. CESPE: 'relatório do IP vincula o MP' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_29",
+      "O indiciamento depende de autorização judicial?",
+      "Não; é ato privativo do Delegado de Polícia, baseado em análise técnico-jurídica dos indícios colhidos (Lei 12.830/13).",
+      "INDICIAMENTO: ato privativo do Delegado (Lei 12.830/13). NÃO depende de autorização judicial. CESPE: 'indiciamento depende de autorização do MP' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_30",
+      "O que é prova indiciária?",
+      "Circunstância conhecida que, por indução ou dedução, leva à conclusão sobre fato desconhecido; deve ser grave, precisa e concordante.",
+      "PROVA INDICIÁRIA: grave, precisa e concordante (art. 239 CPP). NÃO é prova plena. CESPE: 'indício é sinônimo de suspeita' -> FALSO (circunstância conhecida)."
+    ],
+    [
+      "dir_proc_penal_31",
+      "O que é o princípio da livre apreciação da prova (livre convencimento motivado)?",
+      "O juiz aprecia livremente as provas, mas deve fundamentar sua decisão (art. 155 CPP).",
+      "LIVRE CONVENCIMENTO MOTIVADO (art. 155 CPP): juiz aprecia provas livremente, mas deve fundamentar. NÃO é livre arbítrio. CESPE: 'livre convencimento dispensa fundamentação' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_33",
+      "O que é a teoria dos frutos da árvore envenenada?",
+      "As provas derivadas de prova ilícita são também ilícitas e inadmissíveis, salvo exceções (fonte independente, descoberta inevitável).",
+      "FRUTOS DA ÁRVORE ENVENENADA: prova ilícita contamina as derivadas. Exceções: fonte independente, descoberta inevitável. Art. 157 CPP. CESPE adora."
+    ],
+    [
+      "dir_proc_penal_34",
+      "O que é a denúncia anônima e seus efeitos no IP?",
+      "Pode instaurar diligências preliminares, mas não serve, por si só, para fundamentar a instauração do IP ou o indiciamento.",
+      "DENÚNCIA ANÔNIMA: não serve para instaurar IP (pode gerar diligências preliminares). CESPE: 'denúncia anônima autoriza indiciamento' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_35",
+      "O que é o habeas corpus como instrumento de controle da prisão?",
+      "Remédio constitucional para sanar ilegalidade em prisões; pode ser preventivo (salvo-conduto) ou liberatório.",
+      "HABEAS CORPUS (art. 5, LXVIII CF): preventivo (salvo-conduto) ou liberatório. Gratuito. NÃO exige advogado. CESPE: 'HC exige advogado' -> FALSO (qualquer pessoa pode impetrar)."
+    ],
+    [
+      "dir_proc_penal_36",
+      "O que é o auto de prisão em flagrante (APF)?",
+      "Documento lavrado pela autoridade policial formalizando a prisão em flagrante; deve ser remetido ao juiz em 24 horas.",
+      "AUTO DE PRISÃO EM FLAGRANTE (APF): documento formal da prisão. Remetido ao juiz em 24h (art. 306 CPP). Não é decisão judicial. CESPE: 'APF é decisão judicial' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_37",
+      "Quem pode efetuar prisão em flagrante?",
+      "Qualquer pessoa do povo pode prender em flagrante; a autoridade policial tem o dever legal de efetuar a prisão.",
+      "PRISÃO EM FLAGRANTE: qualquer do povo pode (faculdade); autoridade policial DEVE (dever legal). Art. 301 CPP. CESPE adora essa distinção."
+    ],
+    [
+      "dir_proc_penal_38",
+      "O que é o ne bis in idem no processo penal?",
+      "Ninguém pode ser processado ou punido duas vezes pelo mesmo fato; a absolvição definitiva ou condenação produz coisa julgada.",
+      "NE BIS IN IDEM: ninguém pode ser processado/punido duas vezes pelo mesmo fato. Princípio implícito no contraditório. CESPE: 'ne bis in idem é expresso na CF' -> Art. 5, XXXVI não cobre diretamente."
+    ],
+    [
+      "dir_proc_penal_39",
+      "O que é o relaxamento de prisão?",
+      "Decisão judicial que determina a soltura do preso quando a prisão for ilegal (art. 5º, LXV CF/88).",
+      "RELAXAMENTO DE PRISÃO: prisão ILEGAL (art. 5, LXV CF). Difere de revogação (que pressupõe legalidade mas fim dos requisitos). CESPE adora diferenciar."
+    ],
+    [
+      "dir_proc_penal_40",
+      "O que é a revogação da prisão preventiva?",
+      "Cessação da prisão preventiva quando desaparecerem os fundamentos que a autorizaram (art. 316 CPP).",
+      "REVOGAÇÃO DA PREVENTIVA: art. 316 CPP. Quando cessam os fundamentos do art. 312. Pode ser substituída por cautelares diversas. CESPE: 'revogação = relaxamento' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_41",
+      "O que é o prazo da prisão temporária para crimes hediondos?",
+      "30 dias prorrogável por mais 30, mediante representação fundamentada da autoridade policial ou requerimento do MP.",
+      "PRISÃO TEMPORÁRIA (Lei 7.960/89): 30 dias + 30 hediondos. 5 dias + 5 regra geral. Exige representação ou requerimento (juiz NÃO decreta de ofício). CESPE adora."
+    ],
+    [
+      "dir_proc_penal_43",
+      "Quais são as hipóteses de decretação de prisão preventiva (art. 312 CPP)?",
+      "Garantia da ordem pública, ordem econômica, conveniência da instrução criminal ou para assegurar a aplicação da lei penal.",
+      "PRISÃO PREVENTIVA (art. 312 CPP): 4 hipóteses: ordem pública, ordem econômica, instrução criminal, aplicação da lei penal. Requer + periculum libertatis. CESPE adora."
+    ],
+    [
+      "dir_proc_penal_44",
+      "O que é o interrogatório policial do suspeito?",
+      "Oitiva do suspeito na fase de IP; deve ser informado do direito ao silêncio e à assistência de advogado.",
+      "INTERROGATÓRIO POLICIAL: direito ao silêncio (art. 5, LXIII CF), assistência de advogado (SV 14 STF). Último ato do IP (art. 6, V CPP). CESPE: 'interrogatório é meio de prova apenas' -> FALSO (também defesa)."
+    ],
+    [
+      "dir_proc_penal_45",
+      "O que é o controle externo da atividade policial pelo MP?",
+      "Atribuição constitucional do MP de fiscalizar o cumprimento da lei pela polícia judiciária, especialmente na condução do IP.",
+      "CONTROLE EXTERNO DO MP (art. 129, VII CF): fiscaliza a atividade policial. NÃO subordina o Delegado. CESPE: 'MP subordina a polícia' -> FALSO (hierarquia administrativa é interna)."
+    ],
+    [
+      "dir_proc_penal_46",
+      "O que é a restituição de coisas apreendidas no IP?",
+      "Devolução de objetos apreendidos ao legítimo proprietário quando não mais necessários ao processo (art. 118 CPP).",
+      "RESTITUIÇÃO DE COISAS APREENDIDAS (art. 118 CPP): ao legítimo proprietário quando não mais necessárias ao processo. CESPE: 'restituição depende de trânsito em julgado' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_47",
+      "O que é a aplicação da lei processual penal no tempo?",
+      "Aplica-se imediatamente (tempus regit actum), sem retroatividade; ressalvados os atos já praticados e a proteção ao réu.",
+      "LEI PROCESSUAL NO TEMPO: tempus regit actum (art. 2 CPP). Aplicação imediata, sem retroatividade. CESPE: 'lei processual pode retroagir para prejudicar o réu' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_48",
+      "O que é o sistema acusatório adotado pelo CPP?",
+      "Separação entre as funções de acusar (MP), defender (advogado/DP) e julgar (juiz); o juiz deve ser imparcial.",
+      "SISTEMA ACUSATÓRIO (art. 3-A CPP): acusação (MP), defesa (advogado/DP), julgamento (juiz). Juiz NÃO produz prova de ofício na investigação. CESPE: 'sistema acusatório permite juiz investigar' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_51",
+      "O que é ação controlada prevista na Lei 12.850/13º",
+      "Retardamento da intervenção policial para colher informações sobre a organização criminosa, mediante autorização judicial.",
+      "AÇÃO CONTROLADA (Lei 12.850/13, art. 8): retardamento da intervenção policial, com autorização judicial. CESPE: 'ação controlada dispensa autorização judicial' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_52",
+      "O que é infiltração de agentes (Lei 12.850/13)?",
+      "Técnica especial de investigação em que policial atua infiltrado em organização criminosa, com autorização judicial.",
+      "INFILTRAÇÃO DE AGENTES (Lei 12.850/13): com autorização judicial. Agente não pratica crime no exercício da função (causa de exclusão de ilicitude). CESPE adora."
+    ],
+    [
+      "dir_proc_penal_54",
+      "Quais os requisitos para a interceptação telefônica?",
+      "Ordem judicial fundamentada, crime punido com reclusão, indícios razoáveis de autoria/participação e outros meios insuficientes.",
+      "INTERCEPTAÇÃO TELEFÔNICA (Lei 9.296/96): requisitos: ordem judicial, crime com reclusão, indícios de autoria, outros meios insuficientes. Prazo: 15 dias + 15. CESPE adora."
+    ],
+    [
+      "dir_proc_penal_55",
+      "O que é o ofendido no processo penal?",
+      "A vítima do crime; tem direito a ser ouvida no IP e no processo, e pode constituir assistente de acusação.",
+      "OFENDIDO (vítima): tem direito a ser ouvido, pode ser assistente de acusação (art. 268 CPP). NÃO tem compromisso de verdade. CESPE: 'vítima tem dever de verdade como testemunha' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_56",
+      "O que é decadência na ação penal privada?",
+      "Perda do direito de oferecer queixa pelo decurso do prazo de 6 meses do conhecimento da autoria; extingue a punibilidade.",
+      "DECADÊNCIA (ação privada): 6 meses do conhecimento da autoria (art. 38 CPP). Causa extintiva da punibilidade. CESPE: 'decadência é prescrição' -> FALSO (são institutos distintos)."
+    ],
+    [
+      "dir_proc_penal_57",
+      "O que é perempção na ação penal privada?",
+      "Extinção da punibilidade pela inércia do querelante no processo (deixar de promover o andamento por 30 dias, não comparecer a atos, etc.).",
+      "PEREMPÇÃO: inércia do querelante. Causas: art. 60 CPP. Só na ação privada. CESPE: 'perempção ocorre na ação pública' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_58",
+      "O que é o assistente de acusação?",
+      "Ofendido ou seus representantes que atuam ao lado do MP na ação penal pública, podendo arrolar testemunhas e recorrer.",
+      "ASSISTENTE DE ACUSAÇÃO (art. 268 CPP): ofendido ou representante. Atua ao lado do MP, pode arrolar testemunhas e recorrer. CESPE: 'assistente tem os mesmos poderes do MP' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_60",
+      "O que é o prazo para o MP oferecer denúncia?",
+      "5 dias se o réu estiver preso; 15 dias se estiver solto (art. 46 CPP).",
+      "PRAZO PARA DENÚNCIA (art. 46 CPP): preso: 5 dias; solto: 15 dias. Prazo dobra se for órgão colegiado (MP junto a Tribunal). CESPE adora."
+    ],
+    [
+      "dir_proc_penal_61",
+      "O que é a queixa-crime?",
+      "Petição inicial da ação penal privada, proposta pelo ofendido ou seu representante, no prazo decadencial de 6 meses.",
+      "QUEIXA-CRIME: petição inicial da ação privada. Prazo: 6 meses decadenciais. Requer advogado com procuração com poderes especiais. CESPE: 'queixa pode ser verbal' -> FALSO (deve ser escrita)."
+    ],
+    [
+      "dir_proc_penal_62",
+      "O que é incidente de insanidade mental no IP?",
+      "Procedimento para apurar a capacidade mental do indiciado; suspende o IP e é realizado por peritos médicos.",
+      "INCIDENTE DE INSANIDADE MENTAL (art. 149 CPP): suspende o IP. Perícia por peritos médicos. CESPE: 'incidente de insanidade não suspende o IP' -> FALSO (suspende)."
+    ],
+    [
+      "dir_proc_penal_64",
+      "O que é o princípio da publicidade dos atos processuais?",
+      "Os atos processuais são públicos, salvo quando a intimidade ou o interesse social exigirem sigilo (art. 5º, LX CF/88).",
+      "PUBLICIDADE DOS ATOS (art. 5, LX CF): regra: atos públicos. Exceção: sigilo processual (intimidade ou interesse social). IP tem sigilo externo (art. 20 CPP). CESPE adora."
+    ],
+    [
+      "dir_proc_penal_65",
+      "O que é o princípio da presunção de inocência no processo penal?",
+      "O acusado é presumido inocente até o trânsito em julgado da sentença condenatória; o ônus da prova é da acusação.",
+      "PRESUNÇÃO DE INOCÊNCIA (art. 5, LVII CF): até trânsito em julgado. Ônus da prova é da acusação. STF: execução provisória só após esgotamento de recursos. CESPE adora."
+    ],
+    [
+      "dir_proc_penal_66",
+      "O que é a prova testemunhal e seus limites?",
+      "Depoimento de quem tem conhecimento sobre os fatos; as testemunhas têm dever de comparecer e dizer a verdade, sob pena de falso testemunho.",
+      "PROVA TESTEMUNHAL: dever de comparecer (condução coercitiva) e dizer a verdade (falso testemunho é crime). Exceções: parentes, advogado, etc. (art. 206 CPP). CESPE: 'testemunha pode mentir' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_68",
+      "O que é a audiência una de instrução e julgamento?",
+      "Audiência em que se concentram os atos de instrução (oitiva de testemunhas, interrogatório) e as alegações finais orais.",
+      "AUDIÊNCIA UNA (art. 400 CPP): concentra oitiva, interrogatório e alegações orais. Prazo: 60 dias. CESPE: 'audiência una separa instrução e julgamento' -> FALSO (concentra)."
+    ],
+    [
+      "dir_proc_penal_69",
+      "O que é o princípio da identidade física do juiz?",
+      "O juiz que presidiu a instrução deve, em regra, proferir a sentença (art. 399, §2º CPP).",
+      "IDENTIDADE FÍSICA DO JUIZ (art. 399, §2 CPP): juiz que instruiu deve sentenciar. Exceções: convocação, licença, promoção. CESPE adora."
+    ],
+    [
+      "dir_proc_penal_70",
+      "O que é o indício em contraponto à prova plena?",
+      "Indício é circunstância conhecida que leva a conclusão por dedução; prova plena é direta e estabelece o fato com certeza.",
+      "INDÍCIO (art. 239 CPP): circunstância conhecida que leva a conclusão por dedução. Prova plena: estabelece o fato diretamente. CESPE: 'indício é prova plena' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_71",
+      "O que é a oitiva do ofendido e sua importância?",
+      "Depoimento da vítima coletado no IP e no processo; crucial para a reconstituição dos fatos, embora não tenha compromisso de dizer a verdade como testemunha.",
+      "OITIVA DO OFENDIDO (art. 201 CPP): primeiro ato da instrução. NÃO tem compromisso de verdade. CESPE: 'vítima tem dever de dizer a verdade como testemunha' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_72",
+      "O que é o princípio da ampla defesa no processo penal?",
+      "Garante ao acusado o direito de defesa técnica (advogado) e autodefesa (direito de ser ouvido, direito de presença).",
+      "AMPLA DEFESA (art. 5, LV CF): defesa técnica (advogado obrigatório) + autodefesa (interrogatório, presença). CESPE: 'ampla defesa dispensa advogado' -> FALSO (defesa técnica é obrigatória)."
+    ],
+    [
+      "dir_proc_penal_75",
+      "O que é a fonte independente de prova ilícita?",
+      "Exceção que admite prova derivada de ilicitude quando ela teria sido obtida por fonte autônoma, independentemente da prova ilícita original.",
+      "FONTE INDEPENDENTE DE PROVA ILÍCITA (art. 157, §1 CPP): prova derivada é admissível se obtida por fonte autônoma. CESPE: 'fonte independente não aproveita prova ilícita' -> FALSO (aproveita)."
+    ],
+    [
+      "dir_proc_penal_76",
+      "O que é o princípio do in dubio pro reo?",
+      "Na dúvida sobre os fatos, o juiz deve decidir em favor do réu; decorre da presunção de inocência.",
+      "IN DUBIO PRO REO: na dúvida, favor do réu. Corolário da presunção de inocência. CESPE: 'in dubio pro reo se aplica na investigação' -> discutível (no IP não há acusação formal)."
+    ],
+    [
+      "dir_proc_penal_new_77",
+      "Como se aplica a lei processual penal no tempo?",
+      "Aplica-se imediatamente, independentemente da época do fato, preservando-se a validade dos atos já praticados sob a lei anterior (princípio do tempus regit actum processual).",
+      "TEMPUS REGIT ACTUM (art. 2 CPP): lei nova se aplica imediatamente. Atos já praticados são válidos. CESPE: 'lei processual retroage' -> FALSO (aplicação imediata, não retroativa)."
+    ],
+    [
+      "dir_proc_penal_new_78",
+      "O que estabelecem as disposições preliminares do CPP quanto às fontes do direito processual penal?",
+      "Admite-se a aplicação subsidiária dos tratados, convenções e regras de direito internacional, além dos princípios gerais de direito, à falta de disposições expressas.",
+      "FONTES DO DIREITO PROCESSUAL PENAL (art. 3 CPP): lei, tratados, princípios gerais. Analogia é admitida (diferente do Direito Penal material). CESPE adora essa diferença."
+    ],
+    [
+      "dir_proc_penal_new_79",
+      "Quais são as principais características do Inquérito Policial?",
+      "Procedimento administrativo, inquisitorial, sigiloso, escrito, indisponível para a autoridade policial, dispensável para a ação penal e de natureza informativa.",
+      "CARACTERÍSTICAS DO IP: administrativo, inquisitorial (não contraditório), sigiloso (externo), escrito, indisponível, dispensável (MP pode denunciar sem IP). CESPE adora."
+    ],
+    [
+      "dir_proc_penal_new_80",
+      "O que é exame de corpo de delito e quando é obrigatório?",
+      "É a perícia que constata a materialidade de infrações que deixam vestígios, sendo indispensável nos crimes que deixam vestígios (delicta facti permanentis), podendo ser suprido por prova testemunhal apenas se os vestígios desaparecerem.",
+      "EXAME DE CORPO DE DELITO (art. 158 CPP): obrigatório em crimes que deixam vestígios. NÃO pode ser suprido pela confissão. CESPE: 'confissão dispensa exame de corpo de delito' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_new_81",
+      "O interrogatório do acusado é considerado meio de prova ou de defesa?",
+      "Tem natureza mista: é meio de prova e principal meio de autodefesa, sendo direito do acusado permanecer em silêncio sem prejuízo (art. 5º, LXIII, CF).",
+      "INTERROGATÓRIO: natureza mista (meio de prova + defesa). Direito ao silêncio (art. 5, LXIII CF). CESPE: 'interrogatório é só meio de defesa' -> FALSO (também é meio de prova)."
+    ],
+    [
+      "dir_proc_penal_new_82",
+      "Qual o valor probatório da confissão no processo penal?",
+      "É um meio de prova relativo e divisível, devendo ser confrontada com as demais provas dos autos (art. 197, CPP), podendo ser retratada.",
+      "CONFISSÃO (art. 197 CPP): relativa, divisível e retratável. Deve ser cotejada com outras provas. CESPE: 'confissão é prova absoluta' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_new_83",
+      "Quais são os deveres da testemunha no processo penal?",
+      "Comparecer quando intimada, prestar compromisso de dizer a verdade (salvo exceções) e responder às perguntas formuladas, sob pena de condução coercitiva e responsabilização por falso testemunho.",
+      "DEVERES DA TESTEMUNHA (arts. 206-219 CPP): comparecer (condução coercitiva), compromisso de verdade, responder perguntas. Exceções: parentes, inimigos, profissão (sigilo). CESPE adora."
+    ],
+    [
+      "dir_proc_penal_new_84",
+      "Em que consiste o reconhecimento de pessoas e coisas no CPP?",
+      "É o procedimento formal pelo qual a vítima ou testemunha identifica o autor do crime ou objeto relacionado, devendo seguir o rito do art. 226 do CPP (descrição prévia, colocação ao lado de outras pessoas semelhantes).",
+      "RECONHECIMENTO (art. 226 CPP): descrição prévia, colocação ao lado de outras pessoas, formalidade. Nulidade se não seguido o rito. CESPE: 'reconhecimento dispensa descrição prévia' -> FALSO."
+    ],
+    [
+      "dir_proc_penal_new_85",
+      "O que é acareação e quando é cabível?",
+      "É o procedimento de confronto entre depoimentos divergentes de duas ou mais pessoas (acusados, vítimas, testemunhas) sobre fato relevante, colocando-as frente a frente.",
+      "ACAREAÇÃO (arts. 229-230 CPP): confronto entre depoimentos divergentes sobre fato relevante. CESPE: 'acareação é entre acusado e vítima' -> VERDADEIRO (pode ser)."
+    ],
+    [
+      "dir_proc_penal_new_86",
+      "Qual a diferença entre busca domiciliar e busca pessoal?",
+      "Busca domiciliar exige, em regra, mandado judicial (salvo flagrante delito, desastre ou para prestar socorro); busca pessoal pode ser realizada sem mandado quando houver fundada suspeita de posse de objeto relacionado ao crime.",
+      "BUSCA DOMICILIAR (art. 5, XI CF): regra: mandado judicial. Exceções: flagrante, desastre, socorro. Busca pessoal: fundada suspeita (art. 244 CPP). CESPE adora."
+    ],
+    [
+      "dir_proc_penal_new_87",
+      "Quais são as medidas cautelares diversas da prisão previstas no art. 319 do CPP?",
+      "Comparecimento periódico em juízo, proibição de acesso a determinados lugares, monitoração eletrônica, recolhimento domiciliar noturno, suspensão do exercício de função pública, entre outras.",
+      "MEDIDAS CAUTELARES DIVERSAS (art. 319 CPP): 9 incisos. Fumus commissi delicti + periculum libertatis. Proporcionalidade e adequação (art. 282 CPP). CESPE: 'medidas cautelares substituem a preventiva' -> em parte sim."
+    ],
+    [
+      "dir_proc_penal_new_88",
+      "O que caracteriza a prisão temporária prevista na Lei nº 7.960/1989º",
+      "Prisão cautelar cabível na fase de inquérito, por prazo de 5 dias (prorrogáveis por mais 5), ou 30 dias (prorrogáveis por mais 30) em crimes hediondos, exigindo fundamentação e decisão judicial.",
+      "PRISÃO TEMPORÁRIA (Lei 7.960/89): cautelar na fase investigativa. Exige representação ou requerimento (juiz NÃO decreta de ofício). Prazos: 5+5 ou 30+30. CESPE adora."
+    ],
+    [
+      "dir_proc_penal_expand_5",
+      "Como se aplica a lei processual penal em navios é aeronaves?",
+      "Navios é aeronaves públicos brasileiros sao extensao do territorio. Privados seguem lei da bandeira, salvo em aguas/territorio brasileiros (art. 1, 1 CPP c/c art. 5 CP).",
+      "ALERTA CEBRASPE: Navio privado em alto-mar segue lei da bandeira. Aeronave privada sobre o Brasil aplica lei brasileira."
+    ],
+    [
+      "dir_proc_penal_expand_22",
+      "Em que situacoes o juiz decreta de oficio medidas cautelares?",
+      "Apos Lei 13.964/19, NÃO pode na fase investigatoria (art. 3-A CPP). Durante o processo, pode nos casos expressos (art. 311 CPP).",
+      "Art. 311 CPP: prisao preventiva de oficio apenas no curso da ação penal. Na investigacao: NAO."
+    ],
+    [
+      "dir_proc_penal_expand_30",
+      "A prisao temporaria cabe para crimes culposos ou contravenções?",
+      "Nao. So para crimes DOLOSOS do art. 1, III Lei 7.960/89. Não se aplica a contravencoes.",
+      "ALERTA: NÃO se aplica a contravenções penais. Art. 1, III exige crimes dolosos especificos."
+    ]
+  ],
+  "removes": [],
+  "merges": {}
+}

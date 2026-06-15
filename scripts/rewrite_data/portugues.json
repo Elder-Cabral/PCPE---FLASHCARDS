@@ -1,1 +1,722 @@
-{"rewrites": [["portugues_0", "O que é coesão textual e quais seus tipos?", "Mecanismo linguístico que estabelece ligação entre os elementos do texto. Tipos: coesão referencial (anáfora, catáfora), lexical (sinônimos) e sequencial (conectores).", "COESÃO != COERÊNCIA. Coesão = CONEXÃO (forma). Coerência = SENTIDO (conteúdo). Frase coesa mas incoerente: 'O céu é azul porque a bactéria comeu o gato'. CESPE adora."], ["portugues_1", "O que é coerência textual?", "Propriedade que garante o sentido lógico do texto, não contradição e adequação ao contexto.", "A coerência NÃO está no texto, mas na CONSTRUÇÃO DE SENTIDO pelo leitor. Texto sem nexo aparente pode ser coerente para quem conhece o contexto. CESPE: 'coerência é exclusivamente textual' -> FALSO."], ["portugues_4", "Quando ocorre crase (regra geral)?", "Fusão da preposição 'a' com artigo 'a(s)' ou 'a' inicial de pronomes (aquele, aquela, aquilo).", "REGRa PRÁTICA: substitua por palavra masculina. Se aparecer 'ao', tem crase. Ex: 'Fui à escola' -> 'Fui AO colégio'. CESPE adora essa regra."], ["portugues_6", "O que é concordância verbal?", "Verbo flexiona para concordar com o sujeito. Casos especiais: 'mais de um' (singular), 'um dos que' (plural ou singular), 'a maioria' (singular/plural).", "CESPE adora casos especiais: 'Mais de um aluno PASSOU' (singular). 'Um dos que PASSARAM' (plural, admite singular). 'A maioria dos alunos PASSOU/PASSARAM' (ambos)."], ["portugues_9", "O verbo 'obedecer' é transitivo direto ou indireto?", "Transitivo INDIRETO. Exige preposição 'a'. Ex: 'Devemos obedecer ÀS leis'.", "VerbOS de obediência (obedecer, desobedecer, responder, pagar) + A. CESPE: 'Obedeci o regulamento' -> FALSO (correto: 'obedeci AO regulamento' com crase se feminino)."], ["portugues_11", "O que é sujeito oculto (elíptico)?", "Sujeito identificável pela desinência verbal. Ex: 'Fomos à festa' (nós).", "SUJEITO OCULTO: identificável pela desinência (-MOS = nós). SUJEITO INDETERMINADO: (1) 3ª plural sem referente; (2) + SE. CESPE confunde os dois."], ["portugues_14", "Qual a diferença entre 'porque', 'por que', 'por quê' e 'porquê'?", "PORQUE (junto/sem acento) = causa. POR QUE (separado/sem acento) = pergunta. POR QUÊ (separado/com acento) = final de frase. PORQUÊ (junto/com acento) = substantivo.", "JUNTO/SEM = resposta. SEPARADO/SEM = pergunta. JUNTO/COM = motivo. SEPARADO/COM = final da frase. CESPE ADORA."], ["portugues_16", "Quando se usa próclise na colocação pronominal?", "Pronome antes do verbo com palavras atrativas: negação, advérbios, relativos, interrogativos, subordinativos.", "Palavras 'MAGNÉTICAS': negação, advérbio, relativo, interrogativo, subordinativo, indefinido. CESPE: 'Em início de frase próclise é proibida' -> FALSO ('Não me diga')."], ["portugues_18", "Qual a diferença entre 'mal' e 'mau'?", "MAL = oposto de BEM (advérbio/substantivo). MAU = oposto de BOM (adjetivo).", "TESTE: se couber BEM = MAL. Se couber BOM = MAU. Ex: 'passou MAL' (bem). 'É MAU aluno' (bom). PEGADINHA: MAL como conjunção temporal ('MAL chegou, saiu')."], ["portugues_19", "Quando se usa o ponto e vírgula?", "Separar orações coordenadas extensas, itens de enumeração, orações com vírgulas internas.", "Pausa maior que a vírgula e menor que o ponto. Usado em enumerações de leis. NÃO separa orações subordinadas."], ["portugues_24", "O que é paralelismo sintático?", "Elementos de mesma função gramatical devem ter a mesma estrutura. Ex (errado): 'gosta de nadar e da leitura'.", "CESPE: 'ter dedicação e ser persistente' -> ERRO (substantivo + verbo). Correto: 'ter dedicação e persistência'. Reescrita de frases exige paralelismo."], ["portugues_26", "O que é o Manual de Redação da Presidência da República?", "Normas para redação oficial. 3ª edição (2018). Princípios: clareza, concisão, formalidade, impessoalidade, padrão culto.", "PRINCÍPIOS: C-C-F-I-U (Clareza, Concisão, Formalidade, Impessoalidade, Uso do padrão culto). CESPE cobra literalidade."], ["portugues_27", "Quais os expedientes oficiais mais comuns?", "Ofício (externo), Memorando (interno), Exposição de Motivos (ao Presidente), Mensagem (ao Congresso).", "Ofício = EXTERNO. Memorando = INTERNO. Exposição de Motivos = Ministro ao Presidente. Mensagem = Executivo ao Legislativo. E-mail oficial é admitido."], ["portugues_29", "Quais os princípios da redação oficial?", "Clareza, concisão, impessoalidade, formalidade, padrão culto. Não admite linguagem pessoal ou coloquial.", "IMPESSOALIDADE: evita opinião pessoal. FORMALIDADE: pronomes de tratamento adequados. Fechamento: 'Respeitosamente' (superior), 'Atenciosamente' (igual/inferior)."], ["portugues_31", "O que são pronomes relativos?", "Retomam termo anterior. São: QUE (universal), QUEM (pessoa), CUJO (posse), ONDE (lugar).", "CESPE: QUE = universal (substituível por o qual). CUJO = posse, NÃO admite artigo após si ('cujo carro', não 'cujo o carro'). ONDE = lugar físico."], ["portugues_33", "O que é denotação e conotação?", "Denotação = sentido literal. Conotação = sentido figurado.", "Texto literário = predomina conotação. Científico/oficial = denotação. Ex: 'CORAÇÃO de pedra' = conotativo. 'A pedra CAIU' = denotativo."], ["portugues_36", "O que é hipônimo e hiperônimo?", "HIPÔNIMO: sentido específico (rosa é hipônimo de flor). HIPERÔNIMO: sentido geral (flor é hiperônimo de rosa).", "HIPER = geral (superior). HIPO = específico (subordinado). CESPE usa na coesão lexical para evitar repetições."], ["portugues_41", "Qual a diferença entre 'há' e 'a' na indicação de tempo?", "HÁ = passado (faz). A = futuro (distância).", "HÁ = FAZ (passado). A = futuro. Ex: 'HÁ 10 anos' (atrás). 'Daqui A 10 anos' (frente). PEGADINHA: 'Chegou HÁ cinco minutos' (passado)."], ["portugues_50", "O que é intertextualidade?", "Relação entre textos: citação, paráfrase, paródia, epígrafe.", "TIPOS: citação (aspas), paráfrase (mesmas ideias), paródia (crítica/irônica). CESPE: 'paródia sempre homenageia' -> FALSO (pode criticar)."], ["portugues_55", "O que é homonímia?", "Palavras com mesma grafia/som mas significados diferentes. Ex: 'manga' (fruta/roupa).", "HOMONÍMIA (mesma grafia, significados diferentes) != POLISSEMIA (mesma palavra, vários sentidos). CESPE adora distinguir."], ["portugues_62", "O que é predicado verbal, nominal e verbo-nominal?", "VERBAL: verbo significativo. NOMINAL: verbo de ligação + predicativo. VERBO-NOMINAL: verbo significativo + predicativo.", "MÉTODO: (1) VL (ser, estar) = NOMINAL; (2) VS sem predicativo = VERBAL; (3) VS + predicativo = VERBO-NOMINAL. CESPE: 'Ele ficou em casa' -> 'ficou' = verbo nocional (não VL)."], ["portugues_70", "Qual a diferença entre tipo textual e gênero textual?", "TIPO = estrutura linguística (narração, descrição, dissertação). GÊNERO = função social (carta, artigo, ofício).", "TIPO = aspecto LINGUÍSTICO. GÊNERO = aspecto COMUNICATIVO. Um gênero pode conter vários tipos."], ["portugues_76", "O que é o Acordo Ortográfico de 1990?", "Uniformizou ortografia do português. Principais mudanças: fim do trema, novas regras de hífen, acentuação.", "TREMA abolido. 'pára', 'vôo', 'enjôo' perderam acento. Ditongo 'éi'/'ói' em paroxítonas perdeu acento (ideia, jiboia). 'creem', 'leem' sem acento."], ["portugues_84", "O que é função referencial da linguagem?", "Centrada no referente (assunto). Linguagem denotativa, impessoal. Predomina em textos científicos.", "6 FUNÇÕES (Jakobson): REFERENCIAL (assunto), EMOTIVA (emissor), CONATIVA (receptor), FÁTICA (canal), METALINGUÍSTICA (código), POÉTICA (mensagem)."], ["portugues_2", "O que são vícios de linguagem?", "Desvios da norma culta: barbarismo, solecismo, ambiguidade, pleonasmo vicioso, cacofonia, eco.", "EXEMPLOS: barbarismo = erro de pronúncia/grafia. Solecismo = erro de sintaxe. Ambiguidade = duplo sentido. Pleonasmo vicioso = redundância ('subir para cima')."], ["portugues_3", "O que é regência nominal?", "Relação entre o nome e seu complemento (preposição). Ex: 'apto A', 'capacidade DE', 'respeito A/COM/PARA'.", "CESPE: decorar regências mais comuns. 'Estou apto A' (preposição A). 'Ele é capaz DE'. 'Médico assistente DO paciente' (preposição DE)."], ["portugues_5", "Quando NÃO ocorre crase?", "Antes de: verbo, pronomes pessoais, palavras masculinas, 'casa' (sem especificador), 'terra' (sentido de chão), numerais (exceto horas).", "NÃO ocorre crase antes de verbo ('a partir'), pronome ('a ela'), palavra masculina ('a cavalo'), casa ('a casa'), terra ('a terra'), numeral ('a duas quadras'). CESPE adora."], ["portugues_7", "O que é concordância nominal?", "Artigo, adjetivo, pronome e numeral concordam em gênero e número com o substantivo. Regras especiais: 'é proibido entrada' (sem artigo = invariável).", "CASOS ESPECIAIS: 'é proibido entrada' (sem artigo = invariável). 'É proibida A entrada' (com artigo = variável). 'anexo', 'obrigado', 'quite', 'mesmo' concordam com o referente."], ["portugues_8", "O que é colocação pronominal (ênclise, próclise, mesóclise)?", "ÊNCLISE: pronome após verbo (regra no português brasileiro). PRÓCLISE: antes (com palavras atrativas). MESÓCLISE: no meio (futuro do presente/passado).", "Regra geral: ÊNCLISE. Exceções (próclise): negação, advérbio, relativo, subordinativo. MESÓCLISE: 'dar-lhe-ei' (futuro). CESPE: 'Iniciar frase com pronome' -> FALSO (exceto com atrativa)."], ["portugues_10", "O que é período composto por coordenação?", "Orações independentes ligadas por conjunções coordenativas (aditivas, adversativas, alternativas, conclusivas, explicativas).", "5 TIPOS: aditivas (e, nem), adversativas (mas, porém), alternativas (ou, ora), conclusivas (logo, portanto), explicativas (porque, pois). CESPE: 'mas' é adversativa, 'portanto' é conclusiva."]], "removes": [], "merges": {"portugues_expand_10": "portugues_14"}}
+{
+  "rewrites": [
+    [
+      "portugues_0",
+      "O que é coesão textual e quais seus tipos?",
+      "Mecanismo linguístico que estabelece ligação entre os elementos do texto. Tipos: coesão referencial (anáfora, catáfora), lexical (sinônimos) e sequencial (conectores).",
+      "COESÃO != COERÊNCIA. Coesão = CONEXÃO (forma). Coerência = SENTIDO (conteúdo). Frase coesa mas incoerente: 'O céu é azul porque a bactéria comeu o gato'. CESPE adora."
+    ],
+    [
+      "portugues_1",
+      "O que é coerência textual?",
+      "Propriedade que garante o sentido lógico do texto, não contradição e adequação ao contexto.",
+      "A coerência NÃO está no texto, mas na CONSTRUÇÃO DE SENTIDO pelo leitor. Texto sem nexo aparente pode ser coerente para quem conhece o contexto. CESPE: 'coerência é exclusivamente textual' -> FALSO."
+    ],
+    [
+      "portugues_4",
+      "Quando ocorre crase (regra geral)?",
+      "Fusão da preposição 'a' com artigo 'a(s)' ou 'a' inicial de pronomes (aquele, aquela, aquilo).",
+      "REGRa PRÁTICA: substitua por palavra masculina. Se aparecer 'ao', tem crase. Ex: 'Fui à escola' -> 'Fui AO colégio'. CESPE adora essa regra."
+    ],
+    [
+      "portugues_6",
+      "O que é concordância verbal?",
+      "Verbo flexiona para concordar com o sujeito. Casos especiais: 'mais de um' (singular), 'um dos que' (plural ou singular), 'a maioria' (singular/plural).",
+      "CESPE adora casos especiais: 'Mais de um aluno PASSOU' (singular). 'Um dos que PASSARAM' (plural, admite singular). 'A maioria dos alunos PASSOU/PASSARAM' (ambos)."
+    ],
+    [
+      "portugues_9",
+      "O verbo 'obedecer' é transitivo direto ou indireto?",
+      "Transitivo INDIRETO. Exige preposição 'a'. Ex: 'Devemos obedecer ÀS leis'.",
+      "VerbOS de obediência (obedecer, desobedecer, responder, pagar) + A. CESPE: 'Obedeci o regulamento' -> FALSO (correto: 'obedeci AO regulamento' com crase se feminino)."
+    ],
+    [
+      "portugues_11",
+      "O que é sujeito oculto (elíptico)?",
+      "Sujeito identificável pela desinência verbal. Ex: 'Fomos à festa' (nós).",
+      "SUJEITO OCULTO: identificável pela desinência (-MOS = nós). SUJEITO INDETERMINADO: (1) 3ª plural sem referente; (2) + SE. CESPE confunde os dois."
+    ],
+    [
+      "portugues_14",
+      "Qual a diferença entre 'porque', 'por que', 'por quê' e 'porquê'?",
+      "PORQUE (junto/sem acento) = causa. POR QUE (separado/sem acento) = pergunta. POR QUÊ (separado/com acento) = final de frase. PORQUÊ (junto/com acento) = substantivo.",
+      "JUNTO/SEM = resposta. SEPARADO/SEM = pergunta. JUNTO/COM = motivo. SEPARADO/COM = final da frase. CESPE ADORA."
+    ],
+    [
+      "portugues_16",
+      "Quando se usa próclise na colocação pronominal?",
+      "Pronome antes do verbo com palavras atrativas: negação, advérbios, relativos, interrogativos, subordinativos.",
+      "Palavras 'MAGNÉTICAS': negação, advérbio, relativo, interrogativo, subordinativo, indefinido. CESPE: 'Em início de frase próclise é proibida' -> FALSO ('Não me diga')."
+    ],
+    [
+      "portugues_18",
+      "Qual a diferença entre 'mal' e 'mau'?",
+      "MAL = oposto de BEM (advérbio/substantivo). MAU = oposto de BOM (adjetivo).",
+      "TESTE: se couber BEM = MAL. Se couber BOM = MAU. Ex: 'passou MAL' (bem). 'É MAU aluno' (bom). PEGADINHA: MAL como conjunção temporal ('MAL chegou, saiu')."
+    ],
+    [
+      "portugues_19",
+      "Quando se usa o ponto e vírgula?",
+      "Separar orações coordenadas extensas, itens de enumeração, orações com vírgulas internas.",
+      "Pausa maior que a vírgula e menor que o ponto. Usado em enumerações de leis. NÃO separa orações subordinadas."
+    ],
+    [
+      "portugues_24",
+      "O que é paralelismo sintático?",
+      "Elementos de mesma função gramatical devem ter a mesma estrutura. Ex (errado): 'gosta de nadar e da leitura'.",
+      "CESPE: 'ter dedicação e ser persistente' -> ERRO (substantivo + verbo). Correto: 'ter dedicação e persistência'. Reescrita de frases exige paralelismo."
+    ],
+    [
+      "portugues_26",
+      "O que é o Manual de Redação da Presidência da República?",
+      "Normas para redação oficial. 3ª edição (2018). Princípios: clareza, concisão, formalidade, impessoalidade, padrão culto.",
+      "PRINCÍPIOS: C-C-F-I-U (Clareza, Concisão, Formalidade, Impessoalidade, Uso do padrão culto). CESPE cobra literalidade."
+    ],
+    [
+      "portugues_27",
+      "Quais os expedientes oficiais mais comuns?",
+      "Ofício (externo), Memorando (interno), Exposição de Motivos (ao Presidente), Mensagem (ao Congresso).",
+      "Ofício = EXTERNO. Memorando = INTERNO. Exposição de Motivos = Ministro ao Presidente. Mensagem = Executivo ao Legislativo. E-mail oficial é admitido."
+    ],
+    [
+      "portugues_29",
+      "Quais os princípios da redação oficial?",
+      "Clareza, concisão, impessoalidade, formalidade, padrão culto. Não admite linguagem pessoal ou coloquial.",
+      "IMPESSOALIDADE: evita opinião pessoal. FORMALIDADE: pronomes de tratamento adequados. Fechamento: 'Respeitosamente' (superior), 'Atenciosamente' (igual/inferior)."
+    ],
+    [
+      "portugues_31",
+      "O que são pronomes relativos?",
+      "Retomam termo anterior. São: QUE (universal), QUEM (pessoa), CUJO (posse), ONDE (lugar).",
+      "CESPE: QUE = universal (substituível por o qual). CUJO = posse, NÃO admite artigo após si ('cujo carro', não 'cujo o carro'). ONDE = lugar físico."
+    ],
+    [
+      "portugues_33",
+      "O que é denotação e conotação?",
+      "Denotação = sentido literal. Conotação = sentido figurado.",
+      "Texto literário = predomina conotação. Científico/oficial = denotação. Ex: 'CORAÇÃO de pedra' = conotativo. 'A pedra CAIU' = denotativo."
+    ],
+    [
+      "portugues_36",
+      "O que é hipônimo e hiperônimo?",
+      "HIPÔNIMO: sentido específico (rosa é hipônimo de flor). HIPERÔNIMO: sentido geral (flor é hiperônimo de rosa).",
+      "HIPER = geral (superior). HIPO = específico (subordinado). CESPE usa na coesão lexical para evitar repetições."
+    ],
+    [
+      "portugues_41",
+      "Qual a diferença entre 'há' e 'a' na indicação de tempo?",
+      "HÁ = passado (faz). A = futuro (distância).",
+      "HÁ = FAZ (passado). A = futuro. Ex: 'HÁ 10 anos' (atrás). 'Daqui A 10 anos' (frente). PEGADINHA: 'Chegou HÁ cinco minutos' (passado)."
+    ],
+    [
+      "portugues_50",
+      "O que é intertextualidade?",
+      "Relação entre textos: citação, paráfrase, paródia, epígrafe.",
+      "TIPOS: citação (aspas), paráfrase (mesmas ideias), paródia (crítica/irônica). CESPE: 'paródia sempre homenageia' -> FALSO (pode criticar)."
+    ],
+    [
+      "portugues_55",
+      "O que é homonímia?",
+      "Palavras com mesma grafia/som mas significados diferentes. Ex: 'manga' (fruta/roupa).",
+      "HOMONÍMIA (mesma grafia, significados diferentes) != POLISSEMIA (mesma palavra, vários sentidos). CESPE adora distinguir."
+    ],
+    [
+      "portugues_62",
+      "O que é predicado verbal, nominal e verbo-nominal?",
+      "VERBAL: verbo significativo. NOMINAL: verbo de ligação + predicativo. VERBO-NOMINAL: verbo significativo + predicativo.",
+      "MÉTODO: (1) VL (ser, estar) = NOMINAL; (2) VS sem predicativo = VERBAL; (3) VS + predicativo = VERBO-NOMINAL. CESPE: 'Ele ficou em casa' -> 'ficou' = verbo nocional (não VL)."
+    ],
+    [
+      "portugues_70",
+      "Qual a diferença entre tipo textual e gênero textual?",
+      "TIPO = estrutura linguística (narração, descrição, dissertação). GÊNERO = função social (carta, artigo, ofício).",
+      "TIPO = aspecto LINGUÍSTICO. GÊNERO = aspecto COMUNICATIVO. Um gênero pode conter vários tipos."
+    ],
+    [
+      "portugues_76",
+      "O que é o Acordo Ortográfico de 1990?",
+      "Uniformizou ortografia do português. Principais mudanças: fim do trema, novas regras de hífen, acentuação.",
+      "TREMA abolido. 'pára', 'vôo', 'enjôo' perderam acento. Ditongo 'éi'/'ói' em paroxítonas perdeu acento (ideia, jiboia). 'creem', 'leem' sem acento."
+    ],
+    [
+      "portugues_84",
+      "O que é função referencial da linguagem?",
+      "Centrada no referente (assunto). Linguagem denotativa, impessoal. Predomina em textos científicos.",
+      "6 FUNÇÕES (Jakobson): REFERENCIAL (assunto), EMOTIVA (emissor), CONATIVA (receptor), FÁTICA (canal), METALINGUÍSTICA (código), POÉTICA (mensagem)."
+    ],
+    [
+      "portugues_2",
+      "O que são vícios de linguagem?",
+      "Desvios da norma culta: barbarismo, solecismo, ambiguidade, pleonasmo vicioso, cacofonia, eco.",
+      "EXEMPLOS: barbarismo = erro de pronúncia/grafia. Solecismo = erro de sintaxe. Ambiguidade = duplo sentido. Pleonasmo vicioso = redundância ('subir para cima')."
+    ],
+    [
+      "portugues_3",
+      "O que é regência nominal?",
+      "Relação entre o nome e seu complemento (preposição). Ex: 'apto A', 'capacidade DE', 'respeito A/COM/PARA'.",
+      "CESPE: decorar regências mais comuns. 'Estou apto A' (preposição A). 'Ele é capaz DE'. 'Médico assistente DO paciente' (preposição DE)."
+    ],
+    [
+      "portugues_5",
+      "Quando NÃO ocorre crase?",
+      "Antes de: verbo, pronomes pessoais, palavras masculinas, 'casa' (sem especificador), 'terra' (sentido de chão), numerais (exceto horas).",
+      "NÃO ocorre crase antes de verbo ('a partir'), pronome ('a ela'), palavra masculina ('a cavalo'), casa ('a casa'), terra ('a terra'), numeral ('a duas quadras'). CESPE adora."
+    ],
+    [
+      "portugues_7",
+      "O que é concordância nominal?",
+      "Artigo, adjetivo, pronome e numeral concordam em gênero e número com o substantivo. Regras especiais: 'é proibido entrada' (sem artigo = invariável).",
+      "CASOS ESPECIAIS: 'é proibido entrada' (sem artigo = invariável). 'É proibida A entrada' (com artigo = variável). 'anexo', 'obrigado', 'quite', 'mesmo' concordam com o referente."
+    ],
+    [
+      "portugues_8",
+      "O que é colocação pronominal (ênclise, próclise, mesóclise)?",
+      "ÊNCLISE: pronome após verbo (regra no português brasileiro). PRÓCLISE: antes (com palavras atrativas). MESÓCLISE: no meio (futuro do presente/passado).",
+      "Regra geral: ÊNCLISE. Exceções (próclise): negação, advérbio, relativo, subordinativo. MESÓCLISE: 'dar-lhe-ei' (futuro). CESPE: 'Iniciar frase com pronome' -> FALSO (exceto com atrativa)."
+    ],
+    [
+      "portugues_10",
+      "O que é período composto por coordenação?",
+      "Orações independentes ligadas por conjunções coordenativas (aditivas, adversativas, alternativas, conclusivas, explicativas).",
+      "5 TIPOS: aditivas (e, nem), adversativas (mas, porém), alternativas (ou, ora), conclusivas (logo, portanto), explicativas (porque, pois). CESPE: 'mas' é adversativa, 'portanto' é conclusiva."
+    ],
+    [
+      "portugues_12",
+      "O que é sujeito indeterminado?",
+      "Sujeito não identificado nem identificável; usa-se verbo na 3ª pessoa do plural sem pronome ou verbo + 'se'.",
+      "Verbo 3ª plural s/ pronome ou (índice indeterminação). CESPE: difere de sujeito oculto (pronome reto)."
+    ],
+    [
+      "portugues_13",
+      "O que é oração sem sujeito?",
+      "Verbo impessoal: verbos de fenômenos naturais (chover, ventar), 'haver' (existir), 'fazer' (tempo).",
+      "Verbos impessoais: fenômenos, haver (existir), fazer (tempo). CESPE: verbo HAVER é sempre impessoal quando substitui EXISTIR."
+    ],
+    [
+      "portugues_15",
+      "O que é colocação pronominal?",
+      "Posição do pronome átono em relação ao verbo: próclise (antes), ênclise (depois) e mesóclise (no meio — futuro/condicional).",
+      "PRÓCLISE: palavras atrativas (não, nunca, que). ÈNCLISE: início frase. MESÓCLISE: futuro/condicional. CESPE: énclise com verbo no particípio é vedada."
+    ],
+    [
+      "portugues_17",
+      "O que é mesóclise e quando ocorreç?",
+      "Pronome inserido no meio do verbo; obrigatória nos futuros do indicativo sem palavra atrativa. Ex: 'Dir-te-ei a verdade.'",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_21",
+      "O que é período composto por subordinação?",
+      "Oração principal com oração(ões) subordinada(s) dependente(s), que exercem função sintática na principal.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_22",
+      "O que são orações subordinadas adverbiais?",
+      "Exercem função de adjunto adverbial; classificam-se em causais, consecutivas, concessivas, condicionais, conformativas, etc.",
+      "Subordinadas: substantivas, adjetivas, adverbiais. CESPE: adjetiva explicativa (vírgula) X restritiva (sem vírgula)."
+    ],
+    [
+      "portugues_23",
+      "O que é a conjunção 'embora' e que tipo de oração introduz?",
+      "Conjunção concessiva; introduz oração subordinada adverbial concessiva, indicando obstáculo que não impede a ação principal.",
+      "Conjunções: aditivas, adversativas, alternativas, conclusivas, explicativas. CESPE: MAS = adversão; POIS = conclusão (após verbo) ou explicação (antes)."
+    ],
+    [
+      "portugues_25",
+      "O que é ambiguidade no texto?",
+      "Duplo sentido causado por estrutura sintática ou semântica deficiente; deve ser evitada na redação oficial.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_28",
+      "O que é o padrão ofício segundo o Manual de Redação?",
+      "Formato único para ofícios e memorandos; inclui timbre, número, data, destinatário, vocativo, texto, fechamento e assinatura.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_30",
+      "Qual o fechamento correto de um ofício dirigido a autoridade superior?",
+      "'Respeitosamente,' — para autoridades de hierarquia superior. 'Atenciosamente,' — para de mesma hierarquia ou inferior.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_32",
+      "O pronome relativo 'cujo' indica qual relação?",
+      "Posse; concorda com o substantivo que o segue (não com o antecedente). Ex: 'O policial cujo depoimento foi aceito.'",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_34",
+      "O que é polissemia?",
+      "Capacidade de uma palavra ter vários sentidos. Ex: 'manga' (fruta, parte da roupa, região geográfica).",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_35",
+      "O que é sinonímia e antonímia?",
+      "Sinonímia: palavras com sentido semelhante (rápido/veloz). Antonímia: palavras com sentido oposto (claro/escuro).",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_37",
+      "O que é o aposto?",
+      "Termo que explica, resume ou nomeia o termo anterior; separado por vírgulas, travessão ou parênteses.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_38",
+      "O que é vocativo?",
+      "Termo que chama ou interpela alguém; sempre separado por vírgulas e sem função sintática na oração.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_39",
+      "O que é adjunto adverbial?",
+      "Termo que modifica o verbo, adjetivo ou outro advérbio, indicando circunstância (tempo, lugar, modo, causa, etc.).",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_40",
+      "O que é predicativo do sujeito?",
+      "Termo ligado ao sujeito por verbo de ligação, atribuindo-lhe uma qualidade. Ex: 'O agente é dedicado.'",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_42",
+      "O que é catáfora e anáfora como elementos de coesão?",
+      "Anáfora: retoma elemento já mencionado. Catáfora: antecipa elemento a ser mencionado adiante.",
+      "Coesão: elementos de ligação (pronomes, conjunções). CESPE: coesão REFERENCIAL (retomada) X SEQUENCIAL (conectivos)."
+    ],
+    [
+      "portugues_43",
+      "O que é o 'se' como índice de indeterminação do sujeito?",
+      "Usa-se com verbo intransitivo ou transitivo indireto, no singular. Ex: 'Precisa-se de agentes.'",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_44",
+      "O que é o 'se' apassivador?",
+      "Forma a voz passiva sintética com verbo transitivo direto; o verbo concorda com o sujeito paciente. Ex: 'Vendem-se casas.'",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_45",
+      "Qual a diferença entre 'ao invés de' e 'em vez de'?",
+      "'Ao invés de' = em sentido contrário/oposto. 'Em vez de' = em lugar de, substituição.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_46",
+      "O que é pleonasmo vicioso e pleonasmo literário?",
+      "Vicioso: redundância desnecessária (subir para cima). Literário: redundância intencional para dar ênfase (ver com os próprios olhos).",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_48",
+      "O que é o modo subjuntivo e quando se usa?",
+      "Modo que exprime dúvida, hipótese, desejo ou concessão; usado em orações subordinadas após certas conjunções e verbos.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_49",
+      "O que é o modo imperativo e suas formas?",
+      "Modo que expressa ordem, pedido ou conselho. Afirmativo: presente do indicativo (3ª pessoa) ou subjuntivo. Negativo: sempre do subjuntivo.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_51",
+      "O que é discurso direto e indireto?",
+      "Direto: reproduz as palavras literalmente entre aspas/dois-pontos. Indireto: reproduz o conteúdo com adaptações verbais.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_52",
+      "O que é o texto dissertativo-argumentativo?",
+      "Texto em prosa que defende um ponto de vista com tese, argumentos e conclusão; o tipo mais cobrado em provas.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_53",
+      "Qual o papel das conjunções adversativas?",
+      "Exprimem oposição, contraste ou restrição. Ex: 'mas', 'porém', 'contudo', 'entretanto', 'todavia', 'no entanto'.",
+      "Conjunções: aditivas, adversativas, alternativas, conclusivas, explicativas. CESPE: MAS = adversão; POIS = conclusão (após verbo) ou explicação (antes)."
+    ],
+    [
+      "portugues_54",
+      "Qual o papel das conjunções conclusivas?",
+      "Exprimem conclusão em relação à oração anterior. Ex: 'logo', 'portanto', 'por isso', 'assim', 'pois' (posposto ao verbo).",
+      "Conjunções: aditivas, adversativas, alternativas, conclusivas, explicativas. CESPE: MAS = adversão; POIS = conclusão (após verbo) ou explicação (antes)."
+    ],
+    [
+      "portugues_56",
+      "O que é paronímia?",
+      "Palavras de pronúncia e grafia parecidas, mas significados diferentes. Ex: 'comprimento' (medida) vs 'cumprimento' (saudação).",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_57",
+      "O que é o uso da vírgula com orações adjetivas?",
+      "Explicativa: separada por vírgulas (acrescenta informação). Restritiva: sem vírgulas (delimita o sentido do antecedente).",
+      "Vírgula: separa termos, isola aposto, orção adjetiva explicativa. CESPE: vírgula entre sujeito e verbo é PROIBIDA."
+    ],
+    [
+      "portugues_58",
+      "O que é a elipse e sua função?",
+      "Omissão de termo facilmente subentendido; torna o texto mais econômico e elegante, evitando repetições.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_59",
+      "O que são conectivos de conclusão?",
+      "Indicam resultado ou conclusão: 'portanto', 'logo', 'assim', 'por conseguinte', 'em suma', 'em conclusão'.",
+      "Conjunções: aditivas, adversativas, alternativas, conclusivas, explicativas. CESPE: MAS = adversão; POIS = conclusão (após verbo) ou explicação (antes)."
+    ],
+    [
+      "portugues_60",
+      "O que são conectivos de causalidade?",
+      "Indicam causa ou razão: 'porque', 'pois', 'visto que', 'já que', 'uma vez que', 'dado que'.",
+      "Conjunções: aditivas, adversativas, alternativas, conclusivas, explicativas. CESPE: MAS = adversão; POIS = conclusão (após verbo) ou explicação (antes)."
+    ],
+    [
+      "portugues_61",
+      "O que são conectivos de concessão?",
+      "Indicam obstáculo superado: 'embora', 'ainda que', 'mesmo que', 'apesar de que', 'conquanto'.",
+      "Conjunções: aditivas, adversativas, alternativas, conclusivas, explicativas. CESPE: MAS = adversão; POIS = conclusão (após verbo) ou explicação (antes)."
+    ],
+    [
+      "portugues_63",
+      "O que é o complemento nominal?",
+      "Completa o sentido de um nome com preposição obrigatória. Ex: 'necessidade de água'.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_64",
+      "O que é metáfora?",
+      "Comparação implícita (sem conectivo) entre dois elementos por semelhança. Ex: 'A delegacia é um ninho de problemas.'",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_65",
+      "O que é metonímia?",
+      "Substituição de um nome por outro com relação lógica (parte/todo, causa/efeito, autor/obra). Ex: 'Li Machado de Assis.'",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_66",
+      "O que é hipérbole?",
+      "Exagero intencional para dar ênfase. Ex: 'Já te disse um milhão de vezes.'",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_67",
+      "O que é eufemismo?",
+      "Substituição de palavra desagradável por outra mais suave. Ex: 'Passou desta para melhor' (= morreu).",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_68",
+      "O que é antítese?",
+      "Aproximação de ideias ou palavras de sentido oposto para criar contraste.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_69",
+      "O que é o texto narrativo e seus elementos?",
+      "Conta uma história; elementos: narrador, personagens, enredo, tempo, espaço e conflito.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_71",
+      "O que é a voz passiva analítica?",
+      "Formada por verbo auxiliar (ser/estar/ficar) + particípio do verbo principal. Ex: 'O suspeito foi preso pelos agentes.'",
+      "Analítica: ser + particípio. Sintética: verbo + SE (partícula apassivadora). CESPE: VTD + SE = voz passiva. VI + SE = índice indet."
+    ],
+    [
+      "portugues_72",
+      "O que é a voz passiva sintética?",
+      "Formada por verbo transitivo direto + pronome 'se' apassivador. Ex: 'Prendeu-se o suspeito.'",
+      "Analítica: ser + particípio. Sintética: verbo + SE (partícula apassivadora). CESPE: VTD + SE = voz passiva. VI + SE = índice indet."
+    ],
+    [
+      "portugues_73",
+      "O que é o uso da norma culta na redação oficial?",
+      "A redação oficial exige concordância, regência, ortografia e pontuação corretas, sem gírias ou coloquialismos.",
+      "Manual da Presidência. Padrão ofício: vocativo + texto + fecho. CESPE: aviso e ofício têm mesma forma (difere destinatário)."
+    ],
+    [
+      "portugues_74",
+      "O que é o período simples?",
+      "Período formado por apenas uma oração (um só verbo ou locução verbal).",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_75",
+      "O que é zeugma?",
+      "Omissão de termo já expresso anteriormente para evitar repetição. Ex: 'Ele gosta de música; ela, de cinema.'",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_77",
+      "Qual a regra de acentuação para monossílabos tônicos?",
+      "Acentuam-se os monossílabos tônicos terminados em -a(s), -e(s), -o(s). Ex: pá, pé, pó, más, três, nós.",
+      "Proparoxítonas: todas. Paroxítonas: -l, -r, -ps, -x, -um, -us, -n, -ão. CESPE: Nova ortografia: ideia, assembleia (sem acento)."
+    ],
+    [
+      "portugues_78",
+      "O que é o sujeito composto e como o verbo concorda?",
+      "Formado por dois ou mais núcleos; o verbo vai para o plural. Se os núcleos vierem pospostos ao verbo, pode concordar com o mais próximo.",
+      "Verbo: ação, estado, fenômeno. Flexões: modo, tempo, número, pessoa, voz. CESPE: voz passiva analítica X sintética."
+    ],
+    [
+      "portugues_79",
+      "O que é o texto injuntivo?",
+      "Orienta, instrui ou ordena ações; usa verbos no imperativo ou infinitivo. Ex: receitas, manuais, regulamentos, leis.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_80",
+      "O que é a partícula expletiva ou de realce?",
+      "Termo acrescentado apenas para dar ênfase, sem alterar o sentido; pode ser retirado sem comprometer a frase.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_81",
+      "O que é o uso de 'mesmo' como pronome anafórico na redação oficial?",
+      "Deve ser evitado; substituir por pronome pessoal ou repetição do substantivo. Ex: evitar 'o veículo... o mesmo...'",
+      "Manual da Presidência. Padrão ofício: vocativo + texto + fecho. CESPE: aviso e ofício têm mesma forma (difere destinatário)."
+    ],
+    [
+      "portugues_82",
+      "O que é ironia como figura de linguagem?",
+      "Afirmar o oposto do que se pensa com intenção crítica ou humorística. Ex: 'Que pontualidade exemplar!' (para quem chegou atrasado).",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_83",
+      "O que é o texto expositivo?",
+      "Apresenta e explica informações sobre um tema de forma objetiva, sem necessariamente defender um ponto de vista.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_85",
+      "O que é a função apelativa/conativa da linguagem?",
+      "Procura influenciar o receptor; usa vocativo e imperativo. Ex: propagandas, discursos políticos, textos injuntivos.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_86",
+      "O que é a função emotiva/expressiva da linguagem?",
+      "Transmite emoções e sentimentos do emissor; uso de primeira pessoa, exclamações e interjeições.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_87",
+      "O que é a norma culta e a norma popular?",
+      "Norma culta: variedade de prestígio social, usada em situações formais. Norma popular: variedade cotidiana e informal.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_88",
+      "O que é a anáfora como figura de linguagem?",
+      "Repetição intencional de palavras no início de versos ou orações para criar ênfase rítmica.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_89",
+      "O que são conectivos de adição?",
+      "Ligam orações de sentido aditivo: 'e', 'nem', 'não só... mas também', 'além disso', 'ademais', 'outrossim'.",
+      "Conjunções: aditivas, adversativas, alternativas, conclusivas, explicativas. CESPE: MAS = adversão; POIS = conclusão (após verbo) ou explicação (antes)."
+    ],
+    [
+      "portugues_90",
+      "O que é o uso do gerúndio e o 'gerundismo'?",
+      "Gerúndio indica ação em curso. 'Gerundismo': uso inadequado na linguagem formal como 'vou estar enviando', em vez de 'enviarei' ou 'vou enviar'.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_91",
+      "O que é polissíndeto e assíndeto?",
+      "Polissíndeto: repetição de conjunções. Ex: 'E chora, e ri, e canta.' Assíndeto: ausência de conjunções. Ex: 'Vim, vi, venci.'",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_92",
+      "O que é o nível de formalidade na linguagem?",
+      "Grau de adequação da linguagem ao contexto: formal (situações oficiais), coloquial (situações informais). A redação oficial exige nível formal.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_new_95",
+      "O que envolve a compreensão e interpretação de textos de gêneros variados?",
+      "Identificar o sentido global, ideias principais e secundárias, intenção comunicativa, e relações implícitas/explícitas entre as partes do texto.",
+      "Interpretação textual. CESPE: infere-se X depreende-se X deduz-se. NÃO confundir opinião do autor com fato."
+    ],
+    [
+      "portugues_new_96",
+      "Como diferenciar tipo textual de gênero textual?",
+      "Tipo textual refere-se à estrutura/forma composicional (narração, descrição, dissertação, injunção, exposição); gênero textual refere-se ao formato social do texto (e-mail, notícia, crônica, ofício).",
+      "Narrativo, descritivo, dissertativo, injuntivo, expositivo. CESPE: manual de instrução = injuntivo (orienta ação)."
+    ],
+    [
+      "portugues_new_97",
+      "O que é ortografia oficial e qual sua principal referência atual?",
+      "É o conjunto de regras que regula a forma escrita correta das palavras, atualmente regido pelo Acordo Ortográfico da Língua Portuguesa de 1990.",
+      "Novo AO: ditongos abertos EI/OI em paroxítonas perderam acento. CESPE: hífen após prefixo: regra geral só se vogal igual ou H."
+    ],
+    [
+      "portugues_new_98",
+      "O que são elementos de referenciação, substituição e repetição na coesão textual?",
+      "Referenciação retoma elementos por pronomes/expressões (anáfora/catáfora); substituição troca um termo por outro equivalente; repetição reitera o mesmo termo para reforçar coesão.",
+      "Coesão: elementos de ligação (pronomes, conjunções). CESPE: coesão REFERENCIAL (retomada) X SEQUENCIAL (conectivos)."
+    ],
+    [
+      "portugues_new_99",
+      "O que são conectores e elementos de sequenciação textual?",
+      "São palavras ou expressões (conjunções, advérbios, locuções) que estabelecem relações lógicas entre orações/parágrafos, como adição, oposição, causa, conclusão e tempo.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_new_100",
+      "Qual a importância do emprego correto de tempos e modos verbais na coesão textual?",
+      "Garante a correta indicação temporal e a coerência entre as ações narradas, evitando ambiguidades e quebras de sentido no texto.",
+      "Coesão: elementos de ligação (pronomes, conjunções). CESPE: coesão REFERENCIAL (retomada) X SEQUENCIAL (conectivos)."
+    ],
+    [
+      "portugues_new_101",
+      "O que são as classes de palavras (classes gramaticais)?",
+      "São as categorias morfológicas: substantivo, adjetivo, artigo, numeral, pronome, verbo, advérbio, preposição, conjunção e interjeição.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_new_102",
+      "O que são relações de coordenação entre orações?",
+      "São relações de independência sintática entre orações, ligadas por conjunções coordenativas (aditivas, adversativas, alternativas, conclusivas, explicativas).",
+      "Coordenadas: sindéticas (conectivo) X assindéticas. CESPE: coordenada sindética adversativa (= MAS, PORÉM)."
+    ],
+    [
+      "portugues_new_103",
+      "O que são relações de subordinação entre orações?",
+      "São relações de dependência sintática, em que uma oração (subordinada) exerce função sintática em relação à outra (principal): substantivas, adjetivas e adverbiais.",
+      "Subordinadas: substantivas, adjetivas, adverbiais. CESPE: adjetiva explicativa (vírgula) X restritiva (sem vírgula)."
+    ],
+    [
+      "portugues_new_104",
+      "Quais são as principais regras de uso da vírgula?",
+      "Separar termos de mesma função sintática (enumeração), isolar aposto e vocativo, separar orações coordenadas e subordinadas (geralmente antes da principal), e não separar sujeito do predicado.",
+      "Vírgula: separa termos, isola aposto, orção adjetiva explicativa. CESPE: vírgula entre sujeito e verbo é PROIBIDA."
+    ],
+    [
+      "portugues_new_105",
+      "O que rege a concordância verbal e nominal?",
+      "Concordância verbal: o verbo concorda em número e pessoa com o sujeito; concordância nominal: artigos, adjetivos, pronomes e numerais concordam em gênero e número com o substantivo a que se referem.",
+      "Verbo concorda com núcleo sujeito. CESPE: sujeito coletivo: verbo singular ou plural antes do adjunto."
+    ],
+    [
+      "portugues_new_106",
+      "O que é regência verbal e nominal?",
+      "Regência verbal trata da relação entre o verbo e seus complementos (com ou sem preposição); regência nominal trata da relação entre nomes (substantivos, adjetivos, advérbios) e seus complementos preposicionados.",
+      "Verbo + preposição. Assistir (ver = A). Assistir (ajudar = sem prep). CESPE: assistir O filme? Errado. Assistir AO filme."
+    ],
+    [
+      "portugues_new_107",
+      "Quando ocorre o emprego do sinal indicativo de crase?",
+      "Ocorre na fusão da preposição \"a\" com o artigo feminino \"a(s)\" ou com pronomes demonstrativos (aquela, aquilo), geralmente antes de palavras femininas que admitem o artigo \"a\".",
+      "À = a + a. Regra prática: trocar por AO. CESPE: crase antes de palavra masculina? Só em expressões (à moda de)."
+    ],
+    [
+      "portugues_new_108",
+      "Quais são as regras gerais de colocação dos pronomes átonos?",
+      "Próclise (antes do verbo) com palavras atrativas (negação, advérbios, conjunções subordinativas); ênclise (depois do verbo) em início de frase ou após verbo no imperativo afirmativo; mesóclise em casos de futuro do presente/pretérito sem atrativo.",
+      "Átonos: me, te, se, nos, vos, o, a, lhe, os, as, lhes. CESPE: LHE não pode ser usado como objeto direto (só indireto)."
+    ],
+    [
+      "portugues_new_109",
+      "O que envolve a reescrita de frases e parágrafos do texto?",
+      "Reformular o texto mantendo seu sentido original, alterando estrutura sintática, vocabulário ou nível de formalidade, sem perda de coerência.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_new_110",
+      "O que se avalia na \"significação das palavras\"?",
+      "Conhecimento de sinônimos, antônimos, polissemia, denotação e conotação, e o sentido das palavras conforme o contexto.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_new_111",
+      "Em que consiste a substituição de palavras ou trechos de texto sem alteração de sentido?",
+      "Trocar termos por sinônimos ou expressões equivalentes, mantendo a correção gramatical e o sentido original da frase.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_new_112",
+      "O que envolve a reorganização da estrutura de orações e períodos do texto?",
+      "Alterar a ordem dos termos/orações (ex: de ordem direta para inversa) sem comprometer a coesão, coerência e correção gramatical.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_new_113",
+      "O que significa reescrever textos em diferentes gêneros e níveis de formalidade?",
+      "Adaptar um texto para outro gênero (ex: notícia para resumo) ou alterar seu registro (formal/informal), preservando a informação essencial.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_new_114",
+      "O que caracteriza a correspondência oficial segundo o Manual de Redação da Presidência da República?",
+      "Comunicação formal entre órgãos públicos ou entre estes e particulares, regida por princípios de impessoalidade, formalidade, padronização, concisão e clareza.",
+      "Manual da Presidência. Padrão ofício: vocativo + texto + fecho. CESPE: aviso e ofício têm mesma forma (difere destinatário)."
+    ],
+    [
+      "portugues_new_115",
+      "Quais são os principais aspectos gerais da redação oficial?",
+      "Impessoalidade, uso do padrão culto da língua, clareza, concisão, formalidade e uniformidade de tratamento.",
+      "Manual da Presidência. Padrão ofício: vocativo + texto + fecho. CESPE: aviso e ofício têm mesma forma (difere destinatário)."
+    ],
+    [
+      "portugues_new_116",
+      "Quais são os principais expedientes oficiais e suas finalidades?",
+      "Ofício (comunicação externa), Memorando (comunicação interna), e-Mail oficial, Mensagem (entre Poderes) — cada um com finalidade específica de comunicação administrativa.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_95",
+      "Quais as características da linguagem na redação oficial segundo o Manual de Redação da Presidência?",
+      "Formal, impessoal, clara, concisa, objetiva e padronizada, com uso do padrão culto da língua portuguesa, precisão e uniformidade de tratamento.",
+      "Manual da Presidência. Padrão ofício: vocativo + texto + fecho. CESPE: aviso e ofício têm mesma forma (difere destinatário)."
+    ],
+    [
+      "portugues_96",
+      "Qual a diferença entre aviso, ofício e memorando quanto ao uso e destinatário?",
+      "Aviso: expedido exclusivamente por Ministro de Estado para autoridades superiores. Ofício: comunicação externa entre órgãos públicos ou com particulares. Memorando: comunicação interna entre setores do mesmo órgão.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_97",
+      "Como variam os pronomes de tratamento e os fechos conforme o destinatário no padrão ofício?",
+      "Vossa Excelência para altas autoridades; Vossa Senhoria para demais autoridades. Fecho: \"Respeitosamente\" para superior hierárquico; \"Atenciosamente\" para igual ou inferior.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_98",
+      "Quais são as partes obrigatórias do padrão ofício?",
+      "Cabeçalho (brasão da República), número do documento e ano, local e data, destinatário (cargo e nome), assunto, vocativo, texto, fecho e assinatura (nome e cargo do signatário).",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_99",
+      "Qual a formatação exigida para o padrão ofício?",
+      "Fonte Calibri ou Carlito, tamanho 11 (corpo do texto) e 9 (citações); margem esquerda 3 cm e direita 1,5 cm; parágrafos numerados, alinhamento justificado, espaçamento simples entre linhas e 6 pt após cada parágrafo.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ],
+    [
+      "portugues_100",
+      "Como deve ser feita a numeração de páginas no padrão ofício?",
+      "A numeração é centralizada no rodapé, iniciando-se a partir da segunda página. A primeira página não é numerada.",
+      "ÁREA: Língua Portuguesa. CESPE prioriza concordância, regência e crase. Interpretação textual é essencial para a prova."
+    ]
+  ],
+  "removes": [],
+  "merges": {
+    "portugues_expand_10": "portugues_14"
+  }
+}

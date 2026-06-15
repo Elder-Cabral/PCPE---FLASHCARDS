@@ -1,32 +1,1608 @@
-{"rewrites": [
-  ["informatica_15", "O que é o Microsoft Excel e para que serve?", "Software de planilha eletrônica que permite criar, organizar e analisar dados numéricos em células (linhas x colunas). Suporta fórmulas, funções, gráficos.", "CESPE: 'Excel é editor de texto' -> FALSO (é planilha). Arquivos: .xlsx (padrão), .xls (legado), .xlsm (com macros)."],
-  ["informatica_17", "O que é referência absoluta no Excel?", "Referência que NÃO é ajustada ao copiar a fórmula. Indicada por $ (ex: $A$1). Atalho F4 alterna entre os tipos.", "TRÊS TIPOS: ABSOLUTA ($A$1), RELATIVA (A1), MISTA ($A1 ou A$1). F4 alterna. CESPE adora: F4 = alternar referência."],
-  ["informatica_26", "O que é a função SOMA no Excel?", "Soma intervalo de células. Sintaxe: =SOMA(núm1; núm2...).", "Função MAIS COBRADA. Atalho: Alt+= insere SOMA automaticamente. =SOMA(A1:A10) soma intervalo. =SOMA(A1;A3;A5) soma células específicas."],
-  ["informatica_27", "O que é a função MÉDIA no Excel?", "Calcula média aritmética. Sintaxe: =MÉDIA(núm1; núm2...). Ignora células vazias, considera zeros.", "MÉDIA vs MÉDIAA: MÉDIA (só números). MÉDIAA (texto=0, V=1, F=0). Células vazias ignoradas, ZERO considerado. CESPE adora essa diferença."],
-  ["informatica_35", "O que é a função SE no Excel?", "Função lógica: =SE(teste; valor_se_verdadeiro; valor_se_falso).", "3 argumentos. Até 64 níveis de SE aninhado. CESPE: =SE(A1>10; 'Alto'; 'Baixo') retorna 'Alto' se A1>10."],
-  ["informatica_47", "O que é a função CONT.SE no Excel?", "Conta células que atendem a um critério. Sintaxe: =CONT.SE(intervalo; critérios).", "CONT.SE (1 critério) != CONT.SES (múltiplos). Critérios: número, texto, expressão. CESPE: 'cont.se conta valores lógicos' -> SIM."],
-  ["informatica_59", "O que é a função PROCV no Excel?", "Procura valor na primeira coluna e retorna valor na mesma linha de outra coluna. =PROCV(valor; matriz; índice; [procurar_intervalo]).", "PROCV (Vertical) != PROCH (Horizontal). 4º arg: FALSO = exata, VERDADEIRO = aproximada. 1ª coluna precisa estar ORDENADA para aproximada. CESPE adora."],
-  ["informatica_68", "O que é a função SOMASE no Excel?", "Soma células que atendem a um critério. =SOMASE(intervalo; critério; [intervalo_soma]).", "SOMASE (1 condição) != SOMASES (múltiplas). Ex: =SOMASE(B1:B10; '>100'; C1:C10). Aceita curingas (*, ?)."],
-  ["informatica_75", "O que são Tabelas Dinâmicas no Excel?", "Ferramenta interativa para resumir/agrupar dados. 4 áreas: FILTROS, COLUNAS, LINHAS, VALORES.", "NÃO é gráfico (é tabela). Dados precisam estar em formato de LISTA. CESPE: 'Tabela Dinâmica permite atualizar' -> SIM (Atualizar > Atualizar Tudo)."],
-  ["informatica_79", "O que são layouts de slides no PowerPoint?", "Modelos pré-definidos que organizam o conteúdo. Slide Mestre controla os layouts.", "Layout != Slide Mestre. Layout = posição dos placeholders. Slide Mestre = design global. Alterações no mestre refletem em todos os slides."],
-  ["informatica_54", "O que é a função CONCATENAR (CONCAT) no Excel?", "Junta textos de várias células. =CONCATENAR(texto1; texto2...) ou operador &.", "CONCATENAR (versões antigas) vs CONCAT/TEXTUNIR (novas). & faz o mesmo. PEGADINHA: CONCATENAR não aceita intervalo (A1:A10), CONCAT aceita."],
-  ["informatica_88", "O que é segurança da informação e seus pilares?", "Proteção de dados. Pilares (CID): Confidencialidade, Integridade, Disponibilidade. LGPD (Lei 13.709/18).", "MNEMÔNICO: CID. CESPE adiciona: Autenticidade e Não Repúdio. LGPD = dados pessoais. CESPE: 'abrange apenas dados digitais' -> FALSO."],
-  ["informatica_93", "O que são firewalls?", "Sistema que controla tráfego de rede baseado em regras. Hardware, software ou ambos.", "Filtro de Pacotes, Proxy, Stateful Inspection. CESPE: 'Firewall impede totalmente invasões' -> FALSO (é uma camada, não infalível)."],
-  ["informatica_98", "O que são certificados digitais?", "Documento eletrônico que associa identidade a chave criptográfica. Padrão ICP-Brasil.", "TIPOS: A1 (arquivo, 1 ano), A3 (cartão/token, 3-5 anos). CESPE: 'certificado garante integridade e autenticidade' -> VERDADEIRO. e-CPF e e-CNPJ são A3."],
-  ["informatica_101", "O que é backup e seus tipos?", "Cópia de segurança. Tipos: Completo (tudo), Incremental (desde último backup), Diferencial (desde último completo).", "RESTAURAÇÃO: Completo + Diferencial = 2 passos. Completo + Incremental = vários passos. Regra 3-2-1: 3 cópias, 2 mídias, 1 offsite."],
-  ["informatica_105", "O que é criptografia simétrica e assimétrica?", "SIMÉTRICA: mesma chave para cifrar/decifrar (AES, DES). Rápida. ASSIMÉTRICA: par de chaves pública/privada (RSA). Mais segura.", "SIMÉTRICA: mesma chave, rápida, problema de distribuição. ASSIMÉTRICA: duas chaves, mais lenta. CESPE: 'criptografia assimétrica é mais segura' -> em geral sim."],
-  ["informatica_110", "O que é malware (programa malicioso)?", "Software com intenção maliciosa. Tipos: vírus, worm, trojan, ransomware, spyware, adware, rootkit.", "VÍRUS: precisa de hospedeiro. WORM: autorreplicável (independente). TROJAN: parece legítimo. RANSOMWARE: sequestra dados. ANTIVÍRUS detecta e remove."],
-  ["informatica_115", "O que é phishing?", "Técnica de engenharia social para obter dados (senhas, cartão) simulando comunicação legítima.", "Phishing = 'pescaria' de dados. Spear phishing = direcionado a alguém. Smishing = SMS. Vishing = telefone. CESPE: 'phishing é ataque técnico' -> FALSO (é engenharia social)."],
-  ["informatica_118", "O que é autenticação em dois fatores (2FA)?", "Método que exige dois fatores diferentes para autenticação: algo que você sabe (senha), tem (token) ou é (biometria).", "3 FATORES: (1) conhecimento (senha); (2) posse (token); (3) inerência (digital/rosto). CESPE: '2FA elimina totalmente riscos' -> FALSO (reduz, não elimina)."],
-  ["informatica_120", "O que é computação em nuvem (Cloud Computing)?", "Modelo de TI com recursos sob demanda via internet. Modelos: IaaS, PaaS, SaaS. Tipos: pública, privada, híbrida.", "IaaS = infraestrutura. PaaS = plataforma. SaaS = software. CESPE: 'nuvem privada é mais segura que a pública' -> depende da implementação."],
-  ["informatica_125", "O que são Redes de Computadores?", "Conjunto de dispositivos conectados para compartilhar recursos. Classificação: LAN (local), MAN (metropolitana), WAN (geograficamente distribuída).", "LAN = curta distância (escritório). WAN = longa (internet). Topologias: barramento, estrela, anel, malha. CESPE: 'a internet é uma WAN' -> VERDADEIRO."],
-  ["informatica_130", "O que é o protocolo TCP/IP?", "Conjunto de protocolos da internet. TCP (confiável, orientado à conexão) + IP (roteamento de pacotes).", "TCP: confiável, verifica erros. UDP: não confiável, mais rápido (streaming). IP: endereçamento. Portas: HTTP=80, HTTPS=443, FTP=21."],
-  ["informatica_132", "O que diferencia Deep Web de Dark Web?", "Deep Web: conteúdo NÃO indexado por buscadores (bancos, e-mails). Dark Web: parte criptografada da Deep Web acessível por Tor/I2P.", "Deep Web = não indexado (ex: Google Drive privado). Dark Web = exige software específico (Tor). CESPE: 'Deep Web é ilegal' -> FALSO (a maioria é legal). Dark Web pode abrigar atividades ilegais."],
-  ["informatica_0", "O que é sistema operacional?", "Software que gerencia recursos de hardware/software, fornecendo interface entre usuário e máquina. Ex: Windows, Linux, macOS.", "SO é software BÁSICO/SISTEMA (não aplicativo). Kernel = núcleo do SO. CESPE: 'SO é software aplicativo' -> FALSO."],
-  ["informatica_4", "O que faz o atalho Ctrl+C no Windows?", "Copia o item selecionado para a área de transferência, mantendo o original.", "Ctrl+C = COPIA (mantém original). Ctrl+X = RECORTA (remove original). Ctrl+V = COLAR. Mnemônico: C = Copy."],
-  ["informatica_6", "O que faz o atalho Ctrl+Z no Windows?", "Desfaz a última ação (undo). Pode ser usado repetidamente.", "Ctrl+Z = DESFAZER (undo). Ctrl+Y = REFAZER (redo). CESPE: 'Ctrl+Z refaz a ação' -> FALSO (quem refaz é Ctrl+Y)."],
-  ["informatica_8", "O que é a Área de Trabalho do Windows?", "Interface principal do Windows, exibindo ícones de programas, arquivos, pastas e a Barra de Tarefas.", "Elementos: ícones, barra de tarefas, área de notificação (system tray), botão Iniciar. CESPE: 'a Área de Trabalho é uma pasta do sistema' -> VERDADEIRO (C:\\Users\\nome\\Desktop)."],
-  ["informatica_12", "O que é o Windows Explorer (Explorador de Arquivos)?", "Gerenciador de arquivos e pastas do Windows. Permite navegar, copiar, mover, renomear e excluir arquivos.", "Atalho: Win+E. Modos de exibição: ícones, lista, detalhes, conteúdo. Acesso Rápido: pastas fixadas e frequentes. CESPE: 'Explorer gerencia hardware' -> FALSO (gerencia arquivos)."],
-  ["informatica_14", "O que é o Microsoft Word e para que serve?", "Software processador de texto para criar e editar documentos (cartas, relatórios, ofícios). Arquivos: .docx (padrão), .doc (legado), .dotx (modelo).", "Word é EDITOR DE TEXTO (não planilha). .docx = XML + ZIP. CESPE: 'Word é software de planilha' -> FALSO (é processador de texto)."],
-  ["informatica_20", "O que é formatação condicional no Excel?", "Recurso que aplica formatação automática a células que atendem a condições específicas (cores, ícones, barras).", "Acessível em Página Inicial > Formatação Condicional. Regras: destacar células, valores duplicados, escalas de cor. CESPE: 'formatação condicional altera valores' -> FALSO (só aparência)."]
-], "removes": [], "merges": {}}
+{
+  "rewrites": [
+    [
+      "informatica_15",
+      "O que é o Microsoft Excel e para que serve?",
+      "Software de planilha eletrônica que permite criar, organizar e analisar dados numéricos em células (linhas x colunas). Suporta fórmulas, funções, gráficos.",
+      "CESPE: 'Excel é editor de texto' -> FALSO (é planilha). Arquivos: .xlsx (padrão), .xls (legado), .xlsm (com macros)."
+    ],
+    [
+      "informatica_17",
+      "O que é referência absoluta no Excel?",
+      "Referência que NÃO é ajustada ao copiar a fórmula. Indicada por $ (ex: $A$1). Atalho F4 alterna entre os tipos.",
+      "TRÊS TIPOS: ABSOLUTA ($A$1), RELATIVA (A1), MISTA ($A1 ou A$1). F4 alterna. CESPE adora: F4 = alternar referência."
+    ],
+    [
+      "informatica_26",
+      "O que é a função SOMA no Excel?",
+      "Soma intervalo de células. Sintaxe: =SOMA(núm1; núm2...).",
+      "Função MAIS COBRADA. Atalho: Alt+= insere SOMA automaticamente. =SOMA(A1:A10) soma intervalo. =SOMA(A1;A3;A5) soma células específicas."
+    ],
+    [
+      "informatica_27",
+      "O que é a função MÉDIA no Excel?",
+      "Calcula média aritmética. Sintaxe: =MÉDIA(núm1; núm2...). Ignora células vazias, considera zeros.",
+      "MÉDIA vs MÉDIAA: MÉDIA (só números). MÉDIAA (texto=0, V=1, F=0). Células vazias ignoradas, ZERO considerado. CESPE adora essa diferença."
+    ],
+    [
+      "informatica_35",
+      "O que é a função SE no Excel?",
+      "Função lógica: =SE(teste; valor_se_verdadeiro; valor_se_falso).",
+      "3 argumentos. Até 64 níveis de SE aninhado. CESPE: =SE(A1>10; 'Alto'; 'Baixo') retorna 'Alto' se A1>10."
+    ],
+    [
+      "informatica_47",
+      "O que é a função CONT.SE no Excel?",
+      "Conta células que atendem a um critério. Sintaxe: =CONT.SE(intervalo; critérios).",
+      "CONT.SE (1 critério) != CONT.SES (múltiplos). Critérios: número, texto, expressão. CESPE: 'cont.se conta valores lógicos' -> SIM."
+    ],
+    [
+      "informatica_59",
+      "O que é a função PROCV no Excel?",
+      "Procura valor na primeira coluna e retorna valor na mesma linha de outra coluna. =PROCV(valor; matriz; índice; [procurar_intervalo]).",
+      "PROCV (Vertical) != PROCH (Horizontal). 4º arg: FALSO = exata, VERDADEIRO = aproximada. 1ª coluna precisa estar ORDENADA para aproximada. CESPE adora."
+    ],
+    [
+      "informatica_68",
+      "O que é a função SOMASE no Excel?",
+      "Soma células que atendem a um critério. =SOMASE(intervalo; critério; [intervalo_soma]).",
+      "SOMASE (1 condição) != SOMASES (múltiplas). Ex: =SOMASE(B1:B10; '>100'; C1:C10). Aceita curingas (*, ?)."
+    ],
+    [
+      "informatica_75",
+      "O que são Tabelas Dinâmicas no Excel?",
+      "Ferramenta interativa para resumir/agrupar dados. 4 áreas: FILTROS, COLUNAS, LINHAS, VALORES.",
+      "NÃO é gráfico (é tabela). Dados precisam estar em formato de LISTA. CESPE: 'Tabela Dinâmica permite atualizar' -> SIM (Atualizar > Atualizar Tudo)."
+    ],
+    [
+      "informatica_79",
+      "O que são layouts de slides no PowerPoint?",
+      "Modelos pré-definidos que organizam o conteúdo. Slide Mestre controla os layouts.",
+      "Layout != Slide Mestre. Layout = posição dos placeholders. Slide Mestre = design global. Alterações no mestre refletem em todos os slides."
+    ],
+    [
+      "informatica_54",
+      "O que é a função CONCATENAR (CONCAT) no Excel?",
+      "Junta textos de várias células. =CONCATENAR(texto1; texto2...) ou operador &.",
+      "CONCATENAR (versões antigas) vs CONCAT/TEXTUNIR (novas). & faz o mesmo. PEGADINHA: CONCATENAR não aceita intervalo (A1:A10), CONCAT aceita."
+    ],
+    [
+      "informatica_88",
+      "O que é segurança da informação e seus pilares?",
+      "Proteção de dados. Pilares (CID): Confidencialidade, Integridade, Disponibilidade. LGPD (Lei 13.709/18).",
+      "MNEMÔNICO: CID. CESPE adiciona: Autenticidade e Não Repúdio. LGPD = dados pessoais. CESPE: 'abrange apenas dados digitais' -> FALSO."
+    ],
+    [
+      "informatica_93",
+      "O que são firewalls?",
+      "Sistema que controla tráfego de rede baseado em regras. Hardware, software ou ambos.",
+      "Filtro de Pacotes, Proxy, Stateful Inspection. CESPE: 'Firewall impede totalmente invasões' -> FALSO (é uma camada, não infalível)."
+    ],
+    [
+      "informatica_98",
+      "O que são certificados digitais?",
+      "Documento eletrônico que associa identidade a chave criptográfica. Padrão ICP-Brasil.",
+      "TIPOS: A1 (arquivo, 1 ano), A3 (cartão/token, 3-5 anos). CESPE: 'certificado garante integridade e autenticidade' -> VERDADEIRO. e-CPF e e-CNPJ são A3."
+    ],
+    [
+      "informatica_101",
+      "O que é backup e seus tipos?",
+      "Cópia de segurança. Tipos: Completo (tudo), Incremental (desde último backup), Diferencial (desde último completo).",
+      "RESTAURAÇÃO: Completo + Diferencial = 2 passos. Completo + Incremental = vários passos. Regra 3-2-1: 3 cópias, 2 mídias, 1 offsite."
+    ],
+    [
+      "informatica_105",
+      "O que é criptografia simétrica e assimétrica?",
+      "SIMÉTRICA: mesma chave para cifrar/decifrar (AES, DES). Rápida. ASSIMÉTRICA: par de chaves pública/privada (RSA). Mais segura.",
+      "SIMÉTRICA: mesma chave, rápida, problema de distribuição. ASSIMÉTRICA: duas chaves, mais lenta. CESPE: 'criptografia assimétrica é mais segura' -> em geral sim."
+    ],
+    [
+      "informatica_110",
+      "O que é malware (programa malicioso)?",
+      "Software com intenção maliciosa. Tipos: vírus, worm, trojan, ransomware, spyware, adware, rootkit.",
+      "VÍRUS: precisa de hospedeiro. WORM: autorreplicável (independente). TROJAN: parece legítimo. RANSOMWARE: sequestra dados. ANTIVÍRUS detecta e remove."
+    ],
+    [
+      "informatica_115",
+      "O que é phishing?",
+      "Técnica de engenharia social para obter dados (senhas, cartão) simulando comunicação legítima.",
+      "Phishing = 'pescaria' de dados. Spear phishing = direcionado a alguém. Smishing = SMS. Vishing = telefone. CESPE: 'phishing é ataque técnico' -> FALSO (é engenharia social)."
+    ],
+    [
+      "informatica_118",
+      "O que é autenticação em dois fatores (2FA)?",
+      "Método que exige dois fatores diferentes para autenticação: algo que você sabe (senha), tem (token) ou é (biometria).",
+      "3 FATORES: (1) conhecimento (senha); (2) posse (token); (3) inerência (digital/rosto). CESPE: '2FA elimina totalmente riscos' -> FALSO (reduz, não elimina)."
+    ],
+    [
+      "informatica_120",
+      "O que é computação em nuvem (Cloud Computing)?",
+      "Modelo de TI com recursos sob demanda via internet. Modelos: IaaS, PaaS, SaaS. Tipos: pública, privada, híbrida.",
+      "IaaS = infraestrutura. PaaS = plataforma. SaaS = software. CESPE: 'nuvem privada é mais segura que a pública' -> depende da implementação."
+    ],
+    [
+      "informatica_125",
+      "O que são Redes de Computadores?",
+      "Conjunto de dispositivos conectados para compartilhar recursos. Classificação: LAN (local), MAN (metropolitana), WAN (geograficamente distribuída).",
+      "LAN = curta distância (escritório). WAN = longa (internet). Topologias: barramento, estrela, anel, malha. CESPE: 'a internet é uma WAN' -> VERDADEIRO."
+    ],
+    [
+      "informatica_130",
+      "O que é o protocolo TCP/IP?",
+      "Conjunto de protocolos da internet. TCP (confiável, orientado à conexão) + IP (roteamento de pacotes).",
+      "TCP: confiável, verifica erros. UDP: não confiável, mais rápido (streaming). IP: endereçamento. Portas: HTTP=80, HTTPS=443, FTP=21."
+    ],
+    [
+      "informatica_132",
+      "O que diferencia Deep Web de Dark Web?",
+      "Deep Web: conteúdo NÃO indexado por buscadores (bancos, e-mails). Dark Web: parte criptografada da Deep Web acessível por Tor/I2P.",
+      "Deep Web = não indexado (ex: Google Drive privado). Dark Web = exige software específico (Tor). CESPE: 'Deep Web é ilegal' -> FALSO (a maioria é legal). Dark Web pode abrigar atividades ilegais."
+    ],
+    [
+      "informatica_0",
+      "O que é sistema operacional?",
+      "Software que gerencia recursos de hardware/software, fornecendo interface entre usuário e máquina. Ex: Windows, Linux, macOS.",
+      "SO é software BÁSICO/SISTEMA (não aplicativo). Kernel = núcleo do SO. CESPE: 'SO é software aplicativo' -> FALSO."
+    ],
+    [
+      "informatica_4",
+      "O que faz o atalho Ctrl+C no Windows?",
+      "Copia o item selecionado para a área de transferência, mantendo o original.",
+      "Ctrl+C = COPIA (mantém original). Ctrl+X = RECORTA (remove original). Ctrl+V = COLAR. Mnemônico: C = Copy."
+    ],
+    [
+      "informatica_6",
+      "O que faz o atalho Ctrl+Z no Windows?",
+      "Desfaz a última ação (undo). Pode ser usado repetidamente.",
+      "Ctrl+Z = DESFAZER (undo). Ctrl+Y = REFAZER (redo). CESPE: 'Ctrl+Z refaz a ação' -> FALSO (quem refaz é Ctrl+Y)."
+    ],
+    [
+      "informatica_8",
+      "O que é a Área de Trabalho do Windows?",
+      "Interface principal do Windows, exibindo ícones de programas, arquivos, pastas e a Barra de Tarefas.",
+      "Elementos: ícones, barra de tarefas, área de notificação (system tray), botão Iniciar. CESPE: 'a Área de Trabalho é uma pasta do sistema' -> VERDADEIRO (C:\\Users\\nome\\Desktop)."
+    ],
+    [
+      "informatica_12",
+      "O que é o Windows Explorer (Explorador de Arquivos)?",
+      "Gerenciador de arquivos e pastas do Windows. Permite navegar, copiar, mover, renomear e excluir arquivos.",
+      "Atalho: Win+E. Modos de exibição: ícones, lista, detalhes, conteúdo. Acesso Rápido: pastas fixadas e frequentes. CESPE: 'Explorer gerencia hardware' -> FALSO (gerencia arquivos)."
+    ],
+    [
+      "informatica_14",
+      "O que é o Microsoft Word e para que serve?",
+      "Software processador de texto para criar e editar documentos (cartas, relatórios, ofícios). Arquivos: .docx (padrão), .doc (legado), .dotx (modelo).",
+      "Word é EDITOR DE TEXTO (não planilha). .docx = XML + ZIP. CESPE: 'Word é software de planilha' -> FALSO (é processador de texto)."
+    ],
+    [
+      "informatica_20",
+      "O que é formatação condicional no Excel?",
+      "Recurso que aplica formatação automática a células que atendem a condições específicas (cores, ícones, barras).",
+      "Acessível em Página Inicial > Formatação Condicional. Regras: destacar células, valores duplicados, escalas de cor. CESPE: 'formatação condicional altera valores' -> FALSO (só aparência)."
+    ],
+    [
+      "informatica_1",
+      "O que é a Área de Trabalho (Desktop) no Windows?",
+      "Tela inicial do sistema com ícones de programas, pastas e atalhos; é a interface principal do usuário.",
+      "Área de Trabalho: interface principal. CESPE: área de trabalho NÃO é pasta do sistema (embora exista como pasta do usuário)."
+    ],
+    [
+      "informatica_2",
+      "O que é a Barra de Tarefas no Windows?",
+      "Barra horizontal (geralmente na parte inferior) com o Menu Iniciar, programas abertos, área de notificação e relógio.",
+      "Barra de Tarefas: Iniciar + programas abertos + área de notificação. CESPE: pode ser movida (não é fixa na inferior)."
+    ],
+    [
+      "informatica_3",
+      "O que é a Lixeira no Windows?",
+      "Local temporário para arquivos excluídos; permite recuperar ou excluir permanentemente. Shift+Del exclui sem passar pela Lixeira.",
+      "Lixeira: armazenamento temporário. CESPE: arquivos excluídos do pendrive/rede NÃO vão para a Lixeira."
+    ],
+    [
+      "informatica_5",
+      "O que faz o atalho Ctrl+V?",
+      "Cola o conteúdo da área de transferência no local indicado.",
+      "Atalho: link para arquivo/pasta. CESPE: atalho NÃO é cópia; deletar atalho não deleta o original."
+    ],
+    [
+      "informatica_7",
+      "O que faz o atalho Ctrl+X?",
+      "Recorta o conteúdo selecionado (remove e coloca na área de transferência).",
+      "Atalho: link para arquivo/pasta. CESPE: atalho NÃO é cópia; deletar atalho não deleta o original."
+    ],
+    [
+      "informatica_9",
+      "O que é extensão de arquivo?",
+      "Sufixo após o ponto no nome do arquivo que indica o formato. Ex: .docx (Word), .xlsx (Excel), .pdf (Acrobat), .jpg (imagem).",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_10",
+      "O que é o Microsoft Word?",
+      "Processador de textos da Microsoft; permite criar, editar e formatar documentos de texto com recursos de estilos, tabelas e revisão.",
+      "Word: processador de texto. CESPE cobra atalhos (Ctrl+N, I, S, B) e guias da Faixa de Opções."
+    ],
+    [
+      "informatica_11",
+      "O que é a formatação de parágrafo no Word?",
+      "Configuração de recuo, espaçamento entre linhas, alinhamento (esquerda, direita, centralizado, justificado) e espaçamento antes/depois.",
+      "Alinhamento: esquerda, centro, direita, justificado. Espaçamento: antes/depois do parágrafo. CESPE: justificado pode gerar espaçamento irregular."
+    ],
+    [
+      "informatica_13",
+      "O que é cabeçalho e rodapé no Word?",
+      "Áreas no topo e base das páginas para informações repetidas (número de página, título, data); editadas em seção separada.",
+      "Inserir > Cabeçalho/Rodapé. Número de página. CESPE: diferente para primeira página é configurável."
+    ],
+    [
+      "informatica_16",
+      "O que é uma célula no Excel?",
+      "Intersecção de uma linha com uma coluna; identificada por letra da coluna + número da linha. Ex: A1, B3, C10.",
+      "Célula = coluna+linha (ex: A1). Referência: relativa (A1), absoluta ($A$1), mista ($A1 ou A$1). CESPE: F4 alterna entre tipos."
+    ],
+    [
+      "informatica_18",
+      "O que é referência relativa no Excel?",
+      "Referência que se ajusta automaticamente ao copiar a fórmula. Ex: A1 vira B1 ao copiar para a coluna B.",
+      "Célula = coluna+linha (ex: A1). Referência: relativa (A1), absoluta ($A$1), mista ($A1 ou A$1). CESPE: F4 alterna entre tipos."
+    ],
+    [
+      "informatica_19",
+      "O que faz a função SOMA no Excel?",
+      "Soma os valores de um intervalo. Sintaxe: =SOMA(A1:A10) — soma todos os valores de A1 até A10.",
+      "=SOMA(intervalo). Atalho: Alt+=. CESPE: SOMA ignora texto e células vazias."
+    ],
+    [
+      "informatica_21",
+      "O que faz a função SE no Excel?",
+      "Retorna um valor se a condição for verdadeira e outro se for falsa. =SE(condição; valor_verdadeiro; valor_falso).",
+      "=SE(teste_lógico; valor_verdadeiro; valor_falso). CESPE: SE aninhado: até 64 níveis."
+    ],
+    [
+      "informatica_22",
+      "O que faz a função PROCV no Excel?",
+      "Pesquisa um valor na primeira coluna de uma tabela e retorna o valor de uma coluna especificada na mesma linha.",
+      "=PROCV(valor; tabela; col; falso). CESPE: PROCV procura na 1ª coluna. PROCH: na 1ª linha."
+    ],
+    [
+      "informatica_23",
+      "O que faz a função CONT.SE no Excel?",
+      "Conta o número de células que atendem a um critério. Ex: =CONT.SE(A1:A10;\">5\") — conta células maiores que 5.",
+      "=CONT.SE(intervalo; critério). =CONT.SES(intervalo1; crit1; intervalo2; crit2). CESPE: critério entre aspas."
+    ],
+    [
+      "informatica_24",
+      "O que fazem as funções MÍNIMO e MÁXIMO no Excel?",
+      "MÍNIMO: retorna o menor valor do intervalo. MÁXIMO: retorna o maior valor. Ex: =MÍNIMO(A1:A10).",
+      "=MÁXIMO(intervalo). =MÍNIMO para menor valor. CESPE: =MAIOR(array;k) retorna o k-ésimo maior."
+    ],
+    [
+      "informatica_25",
+      "O que é o Microsoft PowerPoint?",
+      "Software de apresentação da Microsoft; permite criar slides com textos, imagens, gráficos, animações e transições.",
+      "PowerPoint: apresentação de slides. CESPE cobra Slide Mestre, transições, modos de exibição (F5)."
+    ],
+    [
+      "informatica_28",
+      "O que é transição de slides no PowerPoint?",
+      "Efeito visual que ocorre ao passar de um slide para outro durante a apresentação.",
+      "Transição: entre slides. Animação: dentro do slide. CESPE: painel de animação controla ordem/tempo."
+    ],
+    [
+      "informatica_29",
+      "O que é a internet?",
+      "Rede mundial de computadores interligados que permite comunicação, acesso à informação e troca de dados em escala global.",
+      "Internet: TCP/IP, HTTP/HTTPS, DNS, navegadores. CESPE: difere Internet (pública) de Intranet (privada)."
+    ],
+    [
+      "informatica_30",
+      "O que é a intranet?",
+      "Rede privada de computadores com tecnologia similar à internet, restrita ao ambiente interno de uma organização.",
+      "Intranet = rede INTERNA corporativa. CESPE: usa mesma tecnologia da Internet, mas acesso restrito."
+    ],
+    [
+      "informatica_31",
+      "O que é protocolo HTTP e HTTPS?",
+      "HTTP: transferência de hipertexto (sem criptografia). HTTPS: versão segura com criptografia SSL/TLS; indicado pelo cadeado no navegador.",
+      "HTTP (porta 80) e HTTPS (porta 443). HTTPS = HTTP + SSL/TLS. CESPE: cadeado no navegador = HTTPS ativo."
+    ],
+    [
+      "informatica_32",
+      "O que é phishing?",
+      "Golpe virtual que tenta enganar o usuário para obter dados confidenciais (senhas, dados bancários), geralmente via e-mail ou sites falsos.",
+      "Engenharia social: manipulação humana. Phishing: e-mail falso. CESPE: não depende de tecnologia."
+    ],
+    [
+      "informatica_33",
+      "O que é malware?",
+      "Software malicioso que causa danos ao sistema; inclui vírus, worms, trojans, ransomware, spyware, adware, entre outros.",
+      "Malware: vírus, worm, trojan, ransomware, spyware. CESPE: ransomware sequestra dados e exige resgate."
+    ],
+    [
+      "informatica_34",
+      "O que é vírus de computador?",
+      "Programa malicioso que se replica e se espalha embutido em arquivos; pode causar danos aos dados e ao sistema.",
+      "Malware: vírus, worm, trojan, ransomware, spyware. CESPE: ransomware sequestra dados e exige resgate."
+    ],
+    [
+      "informatica_36",
+      "O que é antivírus?",
+      "Software de segurança que detecta, bloqueia e remove programas maliciosos do sistema; deve ser mantido atualizado.",
+      "Malware: vírus, worm, trojan, ransomware, spyware. CESPE: ransomware sequestra dados e exige resgate."
+    ],
+    [
+      "informatica_37",
+      "O que é firewall?",
+      "Barreira de segurança (hardware ou software) que monitora e controla o tráfego de rede, bloqueando acessos não autorizados.",
+      "Firewall: controla tráfego de rede. Hardware X Software. CESPE: regras de entrada e saída."
+    ],
+    [
+      "informatica_38",
+      "O que é backup?",
+      "Cópia de segurança dos dados para prevenir perda em caso de falha, ataque ou exclusão acidental; deve ser feito regularmente.",
+      "Backup: cópia de segurança. Completo, incremental, diferencial. CESPE: backup incremental é mais rápido que completo."
+    ],
+    [
+      "informatica_39",
+      "O que é computação em nuvem (cloud computing)?",
+      "Fornecimento de recursos computacionais (armazenamento, processamento) via internet, sem infraestrutura local. Ex: Google Drive, OneDrive.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_40",
+      "O que é spam?",
+      "Mensagem eletrônica não solicitada, enviada em massa; frequentemente usada para golpes, publicidade ou disseminação de malware.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_41",
+      "O que é criptografia?",
+      "Técnica de transformar dados em formato ilegível para proteger a confidencialidade; só quem tem a chave pode decifrar.",
+      "Internet: TCP/IP, HTTP/HTTPS, DNS, navegadores. CESPE: difere Internet (pública) de Intranet (privada)."
+    ],
+    [
+      "informatica_42",
+      "O que é assinatura digital?",
+      "Mecanismo eletrônico que autentica a identidade do emissor e garante a integridade do documento; tem validade jurídica.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_43",
+      "O que é rede LAN e WAN?",
+      "LAN (Local Area Network): rede local de curto alcance (escritório, prédio). WAN (Wide Area Network): rede de longa distância.",
+      "Internet: TCP/IP, HTTP/HTTPS, DNS, navegadores. CESPE: difere Internet (pública) de Intranet (privada)."
+    ],
+    [
+      "informatica_44",
+      "O que é Wi-Fi?",
+      "Tecnologia de rede sem fio (wireless) para conectar dispositivos à internet ou a uma rede local sem cabos.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_45",
+      "O que é endereço IP?",
+      "Número único que identifica cada dispositivo em uma rede; pode ser IPv4 (ex: 192.168.0.1) ou IPv6.",
+      "Internet: TCP/IP, HTTP/HTTPS, DNS, navegadores. CESPE: difere Internet (pública) de Intranet (privada)."
+    ],
+    [
+      "informatica_46",
+      "O que é DNS?",
+      "Domain Name System; sistema que traduz nomes de domínio (www.google.com) em endereços IP numéricos.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_48",
+      "O que é a Dark Web?",
+      "Subconjunto da Deep Web, acessível via softwares especiais (ex: Tor); usada frequentemente para atividades ilegais.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_49",
+      "O que é engenharia social em segurança da informação?",
+      "Técnica de manipulação psicológica para induzir usuários a revelar informações confidenciais ou realizar ações inseguras.",
+      "Engenharia social: manipulação humana. Phishing: e-mail falso. CESPE: não depende de tecnologia."
+    ],
+    [
+      "informatica_50",
+      "O que é autenticação de dois fatores (2FA)?",
+      "Segurança que exige dois elementos: algo que o usuário sabe (senha) + algo que ele tem (token, SMS) ou é (biometria).",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_51",
+      "O que é compactação de arquivos?",
+      "Redução do tamanho de arquivos para facilitar armazenamento e transferência; formatos comuns: ZIP, RAR, 7z.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_52",
+      "O que é memória RAM?",
+      "Memória de acesso aleatório; armazena temporariamente os dados dos programas em execução; é volátil (perde dados sem energia).",
+      "RAM (volátil) X ROM (não volátil). CESPE: RAM armazena temporariamente; ROM armazena firmware."
+    ],
+    [
+      "informatica_53",
+      "O que é HD e SSD?",
+      "HD (Hard Disk): armazenamento magnético, mais lento e barato. SSD (Solid State Drive): armazenamento em flash, mais rápido e durável.",
+      "HD (mecânico) X SSD (eletrônico, mais rápido). CESPE: SSD não tem partes móveis."
+    ],
+    [
+      "informatica_55",
+      "O que é o atalho Alt+F4 no Windows?",
+      "Fecha a janela ou programa ativo. Na área de trabalho, abre a caixa de diálogo de desligamento do sistema.",
+      "Ctrl+C (copiar), Ctrl+V (colar), Ctrl+X (recortar), Ctrl+Z (desfazer). CESPE: Ctrl+Shift+Esc abre Gerenciador de Tarefas."
+    ],
+    [
+      "informatica_56",
+      "O que é o atalho Windows+L?",
+      "Bloqueia a sessão do Windows, exibindo a tela de bloqueio; útil para segurança ao se afastar do computador.",
+      "Ctrl+C (copiar), Ctrl+V (colar), Ctrl+X (recortar), Ctrl+Z (desfazer). CESPE: Ctrl+Shift+Esc abre Gerenciador de Tarefas."
+    ],
+    [
+      "informatica_57",
+      "O que é impressão e configuração de página no Word?",
+      "Definição de margens, orientação (retrato/paisagem), tamanho do papel e área de impressão antes de enviar à impressora.",
+      "Inserir > Imagens. Layout: quadrado, estreito, atrás, na frente. CESPE: imagem NÃO é anexada (incorporada)."
+    ],
+    [
+      "informatica_58",
+      "O que é protocolo POP3 e IMAP?",
+      "POP3: baixa e-mails para o dispositivo local (remove do servidor). IMAP: sincroniza e-mails entre dispositivo e servidor (mantém no servidor).",
+      "TCP/IP, HTTP(S), FTP, SMTP, POP3, IMAP, DNS, DHCP. CESPE: FTP (21), SSH (22), HTTP (80), HTTPS (443)."
+    ],
+    [
+      "informatica_60",
+      "O que é download e upload?",
+      "Download: transferência de dados da internet para o dispositivo. Upload: transferência do dispositivo para a internet.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_61",
+      "O que é tabela dinâmica (pivot table) no Excel?",
+      "Ferramenta para resumir, analisar e explorar grandes volumes de dados; permite agrupar, filtrar e calcular totais rapidamente.",
+      "Tabela Dinâmica (Inserir > Tabela Dinâmica). Resumo interativo. CESPE: arrastar campos para linhas, colunas, valores."
+    ],
+    [
+      "informatica_62",
+      "O que é gráfico no Excel e seus principais tipos?",
+      "Representação visual de dados; tipos: colunas, barras, linhas, pizza (setores), dispersão. Cada tipo serve para um tipo de análise.",
+      "=SE(teste_lógico; valor_verdadeiro; valor_falso). CESPE: SE aninhado: até 64 níveis."
+    ],
+    [
+      "informatica_63",
+      "O que é o AutoFiltro no Excel?",
+      "Recurso que permite filtrar linhas de uma planilha com base em critérios definidos pelo usuário.",
+      "Excel: planilha eletrônica. CESPE prioriza fórmulas (=SE, =PROCV, =SOMASE) e referências (relativa X absoluta)."
+    ],
+    [
+      "informatica_64",
+      "O que é hiperlink?",
+      "Elemento clicável em um documento ou página web que redireciona para outro recurso (página, arquivo, e-mail ou local no mesmo documento).",
+      "Internet: TCP/IP, HTTP/HTTPS, DNS, navegadores. CESPE: difere Internet (pública) de Intranet (privada)."
+    ],
+    [
+      "informatica_65",
+      "O que é licença de software?",
+      "Autorização legal para uso do software; pode ser proprietária (paga, com restrições) ou livre/open source (código aberto).",
+      "Software proprietário (pago, restrito) X livre (código aberto). CESPE: freeware é gratuito mas NÃO é open source."
+    ],
+    [
+      "informatica_66",
+      "O que é IoT (Internet das Coisas)?",
+      "Objetos do cotidiano (eletrodomésticos, câmeras, sensores) conectados à internet para coletar e trocar dados.",
+      "Internet: TCP/IP, HTTP/HTTPS, DNS, navegadores. CESPE: difere Internet (pública) de Intranet (privada)."
+    ],
+    [
+      "informatica_67",
+      "O que é big data?",
+      "Conjunto de dados de grande volume, variedade e velocidade que exige tecnologias especiais para armazenamento, processamento e análise.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_69",
+      "O que é o sistema de arquivos NTFS?",
+      "Sistema de arquivos padrão do Windows; suporta permissões de acesso, criptografia, compressão e arquivos grandes.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_70",
+      "O que é cloud pública, privada e híbrida?",
+      "Pública: recursos compartilhados por múltiplos usuários (AWS, Azure). Privada: uso exclusivo de uma organização. Híbrida: combinação das duas.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_71",
+      "O que é processador (CPU)?",
+      "Unidade Central de Processamento; componente que executa instruções dos programas; velocidade medida em GHz.",
+      "CPU = unidade central de processamento. CESPE: clock medido em GHz. Não confundir com núcleos."
+    ],
+    [
+      "informatica_72",
+      "O que é desfragmentação de disco?",
+      "Reorganiza fragmentos de arquivos no HD para melhorar a velocidade de acesso; não é necessário em SSDs.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_73",
+      "O que é limpeza de disco no Windows?",
+      "Ferramenta que remove arquivos temporários, cache e outros arquivos desnecessários para liberar espaço em disco.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_74",
+      "O que é memória ROM?",
+      "Memória somente de leitura; armazena permanentemente o firmware do sistema (BIOS/UEFI); não volátil.",
+      "RAM (volátil) X ROM (não volátil). CESPE: RAM armazena temporariamente; ROM armazena firmware."
+    ],
+    [
+      "informatica_76",
+      "O que é nuvem pública e seus exemplos?",
+      "Infraestrutura de TI disponibilizada por provedores externos a múltiplos usuários via internet. Ex: Google Cloud, Microsoft Azure, Amazon AWS.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_77",
+      "O que é worm?",
+      "Tipo de malware que se propaga automaticamente pela rede, explorando vulnerabilidades, sem precisar ser executado pelo usuário.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_78",
+      "O que é trojan (cavalo de Troia)?",
+      "Malware disfarçado de software legítimo; permite acesso remoto ao sistema da vítima sem seu conhecimento.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_80",
+      "O que é keylogger?",
+      "Programa que registra as teclas digitadas pelo usuário, capturando senhas e outras informações confidenciais.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_81",
+      "O que é certificado digital?",
+      "Arquivo eletrônico que associa a identidade de uma pessoa ou entidade a uma chave criptográfica; emitido por autoridade certificadora.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_82",
+      "O que é o protocolo SMTP?",
+      "Simple Mail Transfer Protocol; protocolo usado para envio de e-mails entre servidores de correio eletrônico.",
+      "TCP/IP, HTTP(S), FTP, SMTP, POP3, IMAP, DNS, DHCP. CESPE: FTP (21), SSH (22), HTTP (80), HTTPS (443)."
+    ],
+    [
+      "informatica_83",
+      "O que é VPN (Virtual Private Network)?",
+      "Rede privada virtual que cria um canal criptografado sobre a internet, garantindo privacidade e segurança na comunicação.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_84",
+      "O que é QR Code?",
+      "Código de barras bidimensional que armazena informações legíveis por câmeras de smartphones; usado para links, pagamentos e identificação.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_85",
+      "O que é inteligência artificial no contexto de informática?",
+      "Tecnologia que simula capacidades humanas de raciocínio, aprendizado e tomada de decisão em máquinas e sistemas computacionais.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_86",
+      "O que é resolução de problemas no Windows: desfragmentação vs limpeza de disco?",
+      "Desfragmentação: reorganiza fragmentos de arquivos para melhorar a velocidade. Limpeza de disco: remove arquivos temporários e desnecessários.",
+      "Windows: Home (doméstico), Pro (empresas), Enterprise (grandes). CESPE: Windows 11: TPM 2.0 + processador compatível."
+    ],
+    [
+      "informatica_87",
+      "O que é o Painel de Controle do Windows?",
+      "Interface centralizada para gerenciar configurações do sistema: impressoras, redes, usuários, data/hora, programas instalados, etc.",
+      "Painel de Controle (config clássica) X Configurações (Windows 10+). CESPE: atalho Win+I abre Configurações."
+    ],
+    [
+      "informatica_89",
+      "O que é o modo de exibição no Word?",
+      "Formas de visualizar o documento: Layout de Impressão (padrão), Leitura, Layout da Web, Estrutura de Tópicos e Rascunho.",
+      "Word: processador de texto. CESPE cobra atalhos (Ctrl+N, I, S, B) e guias da Faixa de Opções."
+    ],
+    [
+      "informatica_90",
+      "O que é o recuo de parágrafo no Word?",
+      "Deslocamento do texto em relação à margem; pode ser à esquerda, à direita ou deslocamento especial (primeira linha ou deslocamento).",
+      "Alinhamento: esquerda, centro, direita, justificado. Espaçamento: antes/depois do parágrafo. CESPE: justificado pode gerar espaçamento irregular."
+    ],
+    [
+      "informatica_91",
+      "O que é o espaçamento entre linhas no Word?",
+      "Distância vertical entre as linhas de um parágrafo; pode ser simples, 1,5 linhas, duplo ou valor exato definido pelo usuário.",
+      "Alinhamento: esquerda, centro, direita, justificado. Espaçamento: antes/depois do parágrafo. CESPE: justificado pode gerar espaçamento irregular."
+    ],
+    [
+      "informatica_92",
+      "O que é tabela no Word e suas operações básicas?",
+      "Grade de linhas e colunas para organizar dados; operações: inserir, excluir, mesclar células, ajustar largura/altura, formatar bordas.",
+      "Inserir > Tabela. Linhas e colunas. CESPE: converter texto em tabela é possível (Inserir > Tabela > Converter)."
+    ],
+    [
+      "informatica_94",
+      "O que é a função CONCATENAR (ou &) no Excel?",
+      "Une dois ou mais textos em uma célula. Ex: =A1&\" \"&B1 ou =CONCATENAR(A1;\" \";B1).",
+      "Excel: planilha eletrônica. CESPE prioriza fórmulas (=SE, =PROCV, =SOMASE) e referências (relativa X absoluta)."
+    ],
+    [
+      "informatica_95",
+      "O que é classificação de dados no Excel?",
+      "Organização dos dados de uma planilha em ordem crescente ou decrescente com base em uma ou mais colunas.",
+      "Excel: planilha eletrônica. CESPE prioriza fórmulas (=SE, =PROCV, =SOMASE) e referências (relativa X absoluta)."
+    ],
+    [
+      "informatica_96",
+      "O que é o modo de exibição Normal, Classificação de Slides e Apresentação no PowerPoint?",
+      "Normal: edição slide a slide. Classificação de Slides: visão geral de todos os slides. Apresentação: exibe os slides em tela cheia.",
+      "Modos: Normal, Classificação de Slides, Apresentação (F5). CESPE: apresentação do slide atual: Shift+F5."
+    ],
+    [
+      "informatica_new_99",
+      "Quais são os fundamentos básicos do Windows quanto a janelas, menus e barra de tarefas?",
+      "Janelas são áreas retangulares que exibem programas/arquivos; menus oferecem comandos organizados; a barra de tarefas exibe programas abertos, atalhos e a área de notificação.",
+      "Barra de Tarefas: Iniciar + programas abertos + área de notificação. CESPE: pode ser movida (não é fixa na inferior)."
+    ],
+    [
+      "informatica_new_100",
+      "Como localizar arquivos e pastas no Windows?",
+      "Por meio do Windows Explorer (Gerenciador de Arquivos), usando a barra de pesquisa, navegação pela árvore de diretórios ou comandos de busca por nome/extensão/data.",
+      "Pastas: organizam arquivos. Biblioteca: agrupa pastas de locais diferentes. CESPE: mover arquivo = recortar + colar."
+    ],
+    [
+      "informatica_new_101",
+      "Como mover e copiar arquivos e pastas no Windows?",
+      "Mover: recortar (Ctrl+X) e colar (Ctrl+V) ou arrastar segurando o botão do mouse; Copiar: copiar (Ctrl+C) e colar (Ctrl+V) ou arrastar segurando Ctrl.",
+      "Pastas: organizam arquivos. Biblioteca: agrupa pastas de locais diferentes. CESPE: mover arquivo = recortar + colar."
+    ],
+    [
+      "informatica_new_102",
+      "Como criar e excluir arquivos/pastas no Windows?",
+      "Criar: botão direito > Novo > escolher tipo; Excluir: selecionar e pressionar Delete (vai para a Lixeira) ou Shift+Delete (exclusão permanente).",
+      "Pastas: organizam arquivos. Biblioteca: agrupa pastas de locais diferentes. CESPE: mover arquivo = recortar + colar."
+    ],
+    [
+      "informatica_new_103",
+      "Quais configurações básicas podem ser ajustadas no Windows quanto à exibição?",
+      "Resolução de tela, cores, fontes, impressoras padrão, aparência da interface, plano de fundo (wallpaper) e protetor de tela, via Configurações/Painel de Controle.",
+      "Painel de Controle (config clássica) X Configurações (Windows 10+). CESPE: atalho Win+I abre Configurações."
+    ],
+    [
+      "informatica_new_104",
+      "Qual a função do Windows Explorer?",
+      "É o gerenciador de arquivos do Windows, permitindo navegar, organizar, copiar, mover, renomear e excluir arquivos e pastas.",
+      "Windows Explorer (Explorador de Arquivos). CESPE: atalho Win+E abre Explorador. Exibe pastas e arquivos."
+    ],
+    [
+      "informatica_new_105",
+      "Quais elementos compõem a área de trabalho do Word?",
+      "Faixa de opções (ribbon) com guias e grupos de comandos, barra de ferramentas de acesso rápido, régua, barra de status e área de edição do documento.",
+      "Faixa de Opções: Página Inicial, Inserir, Layout, Revisão, Exibição. CESPE: guias contextuais aparecem conforme seleção."
+    ],
+    [
+      "informatica_new_106",
+      "Quais recursos de formatação de documentos são oferecidos no Word?",
+      "Margens, tabulação, recuo, espaçamento horizontal/vertical, fontes e destaques (negrito, itálico, sublinhado, subscrito, sobrescrito).",
+      "Word: processador de texto. CESPE cobra atalhos (Ctrl+N, I, S, B) e guias da Faixa de Opções."
+    ],
+    [
+      "informatica_new_107",
+      "Como organizar texto em listas e colunas no Word?",
+      "Listas: usando marcadores ou numeração automática (guia Página Inicial); Colunas: através da guia Layout > Colunas, dividindo o texto em múltiplas colunas.",
+      "Word: processador de texto. CESPE cobra atalhos (Ctrl+N, I, S, B) e guias da Faixa de Opções."
+    ],
+    [
+      "informatica_new_108",
+      "Como inserir e formatar tabelas no Word?",
+      "Pela guia Inserir > Tabela, definindo número de linhas/colunas; a formatação (bordas, sombreamento, mesclagem de células) é feita pelas guias Design e Layout de Tabela.",
+      "Formatação: Negrito (Ctrl+N), Itálico (Ctrl+I), Sublinhado (Ctrl+S). CESPE: Ctrl+Shift+> aumenta fonte."
+    ],
+    [
+      "informatica_new_109",
+      "O que são estilos e modelos no Word?",
+      "Estilos são conjuntos predefinidos de formatação (fonte, tamanho, cor) aplicáveis a textos; modelos (templates) são arquivos-base com estrutura e formatação predefinidas para criação de novos documentos.",
+      "Estilos (Título 1, 2, 3) geram Sumário automaticamente. CESPE: Alt+Ctrl+1 aplica Título 1."
+    ],
+    [
+      "informatica_new_110",
+      "Como inserir cabeçalhos e rodapés no Word?",
+      "Pela guia Inserir > Cabeçalho ou Rodapé, podendo incluir números de página, data, logotipos e textos repetidos em todas as páginas.",
+      "Inserir > Cabeçalho/Rodapé. Número de página. CESPE: diferente para primeira página é configurável."
+    ],
+    [
+      "informatica_new_111",
+      "O que envolve a configuração de página no Word?",
+      "Definição de tamanho do papel, orientação (retrato/paisagem), margens e layout, acessível pela guia Layout > Configurar Página.",
+      "Inserir > Imagens. Layout: quadrado, estreito, atrás, na frente. CESPE: imagem NÃO é anexada (incorporada)."
+    ],
+    [
+      "informatica_new_112",
+      "Como é organizada a área de trabalho do Excel?",
+      "Composta por células organizadas em linhas (números) e colunas (letras), formando uma planilha; possui faixa de opções, barra de fórmulas e abas de planilhas.",
+      "Excel: planilha eletrônica. CESPE prioriza fórmulas (=SE, =PROCV, =SOMASE) e referências (relativa X absoluta)."
+    ],
+    [
+      "informatica_new_113",
+      "Como navegar e selecionar células, linhas e colunas no Excel?",
+      "Usando o mouse (clicar e arrastar) ou teclado (setas, Shift+setas para seleção, Ctrl+barra de espaço para coluna inteira, Shift+espaço para linha inteira).",
+      "Célula = coluna+linha (ex: A1). Referência: relativa (A1), absoluta ($A$1), mista ($A1 ou A$1). CESPE: F4 alterna entre tipos."
+    ],
+    [
+      "informatica_new_114",
+      "Como introduzir números, textos, fórmulas e datas em uma planilha Excel?",
+      "Digitando diretamente na célula; fórmulas iniciam com \"=\"; datas são reconhecidas automaticamente pelo formato (dd/mm/aaaa); textos são alinhados à esquerda por padrão.",
+      "=SOMA, =MÉDIA, =MÁXIMO, =MÍNIMO, =CONT.NÚM, =SE. CESPE: =SE(teste; verd; falso) é a mais cobrada."
+    ],
+    [
+      "informatica_new_115",
+      "Qual a diferença entre referência absoluta e relativa no Excel?",
+      "Relativa (ex: A1) muda automaticamente ao copiar a fórmula; absoluta (ex: $A$1) permanece fixa, não se alterando ao copiar.",
+      "Célula = coluna+linha (ex: A1). Referência: relativa (A1), absoluta ($A$1), mista ($A1 ou A$1). CESPE: F4 alterna entre tipos."
+    ],
+    [
+      "informatica_new_116",
+      "Cite exemplos de funções matemáticas e estatísticas do Excel.",
+      "Matemáticas: SOMA, ARRED, ABS; Estatísticas: MÉDIA, MÁXIMO, MÍNIMO, CONT.SE, MED (mediana).",
+      "Excel: planilha eletrônica. CESPE prioriza fórmulas (=SE, =PROCV, =SOMASE) e referências (relativa X absoluta)."
+    ],
+    [
+      "informatica_new_117",
+      "Cite exemplos de funções de data-hora e financeiras do Excel.",
+      "Data-hora: HOJE(), AGORA(), DIAS360(); Financeiras: VP (valor presente), VF (valor futuro), PGTO (pagamento de empréstimo).",
+      "Excel: planilha eletrônica. CESPE prioriza fórmulas (=SE, =PROCV, =SOMASE) e referências (relativa X absoluta)."
+    ],
+    [
+      "informatica_new_118",
+      "Cite exemplos de funções de texto do Excel.",
+      "CONCATENAR (ou CONCAT), MAIÚSCULA, MINÚSCULA, ESQUERDA, DIREITA, PROCV (procura valores).",
+      "Excel: planilha eletrônica. CESPE prioriza fórmulas (=SE, =PROCV, =SOMASE) e referências (relativa X absoluta)."
+    ],
+    [
+      "informatica_new_119",
+      "Quais opções de formatação de planilha o Excel oferece?",
+      "Formatação de número (moeda, porcentagem, data), alinhamento, bordas, cor/estilo de fonte e padrões de preenchimento de células.",
+      "Excel: planilha eletrônica. CESPE prioriza fórmulas (=SE, =PROCV, =SOMASE) e referências (relativa X absoluta)."
+    ],
+    [
+      "informatica_new_120",
+      "Quais operações de edição básicas são realizadas em planilhas Excel?",
+      "Copiar, colar, recortar, limpar conteúdo/formatação, e marcar (selecionar) células ou intervalos.",
+      "Excel: planilha eletrônica. CESPE prioriza fórmulas (=SE, =PROCV, =SOMASE) e referências (relativa X absoluta)."
+    ],
+    [
+      "informatica_new_121",
+      "Como classificar dados em uma planilha Excel?",
+      "Selecionando o intervalo e usando Dados > Classificar, podendo organizar em ordem crescente/decrescente por uma ou mais colunas.",
+      "Classificar (crescente/decrescente). Filtrar (autofiltro). CESPE: classificação personalizada vários níveis."
+    ],
+    [
+      "informatica_new_122",
+      "Como criar gráficos no Excel?",
+      "Selecionando os dados e acessando a guia Inserir > Gráficos, escolhendo o tipo (coluna, pizza, linha, etc.) adequado à visualização desejada.",
+      "Inserir > Gráficos. Colunas, barras, pizza, linhas. CESPE: pizza mostra proporção de um TODO."
+    ],
+    [
+      "informatica_new_123",
+      "Como é organizada a área de trabalho do PowerPoint?",
+      "Composta por painel de slides (miniaturas), área de edição do slide atual, faixa de opções e painel de anotações.",
+      "PowerPoint: apresentação de slides. CESPE cobra Slide Mestre, transições, modos de exibição (F5)."
+    ],
+    [
+      "informatica_new_124",
+      "Como criar apresentações e inserir slides no PowerPoint?",
+      "Pela guia Página Inicial > Novo Slide, escolhendo o layout desejado (título, conteúdo, dois conteúdos, etc.).",
+      "PowerPoint: apresentação de slides. CESPE cobra Slide Mestre, transições, modos de exibição (F5)."
+    ],
+    [
+      "informatica_new_125",
+      "Quais são os modos de visualização disponíveis no PowerPoint?",
+      "Normal, Classificação de Slides, Anotações, Modo de Exibição de Leitura e Apresentação de Slides.",
+      "PowerPoint: apresentação de slides. CESPE cobra Slide Mestre, transições, modos de exibição (F5)."
+    ],
+    [
+      "informatica_new_126",
+      "Como formatar, mover, copiar e excluir objetos de texto no PowerPoint?",
+      "Selecionando a caixa de texto, usando alças para redimensionar/mover, Ctrl+C/Ctrl+V para copiar, Delete para excluir, e a guia Formatar para estilo.",
+      "PowerPoint: apresentação de slides. CESPE cobra Slide Mestre, transições, modos de exibição (F5)."
+    ],
+    [
+      "informatica_new_127",
+      "Como inserir tabelas, gráficos e organogramas no PowerPoint?",
+      "Pela guia Inserir > Tabela/Gráfico/SmartArt (organogramas), permitindo personalização visual posterior.",
+      "PowerPoint: apresentação de slides. CESPE cobra Slide Mestre, transições, modos de exibição (F5)."
+    ],
+    [
+      "informatica_new_128",
+      "O que define o slide mestre no PowerPoint?",
+      "É um modelo que controla a formatação padrão (fontes, cores, layout, plano de fundo) aplicada a todos os slides da apresentação.",
+      "Slide Mestre: Exibição > Slide Mestre. CESPE: mudança no mestre afeta TODOS os slides."
+    ],
+    [
+      "informatica_new_129",
+      "Quais conceitos básicos diferenciam Internet, Intranet e Extranet?",
+      "Internet é a rede mundial de computadores aberta ao público; Intranet é uma rede privada interna de uma organização; Extranet é uma extensão da intranet que permite acesso controlado a usuários externos autorizados.",
+      "Intranet = rede INTERNA corporativa. CESPE: usa mesma tecnologia da Internet, mas acesso restrito."
+    ],
+    [
+      "informatica_new_130",
+      "O que são grupos de discussão e redes sociais como ferramentas de internet?",
+      "Grupos de discussão são espaços virtuais para troca de mensagens sobre temas comuns (fóruns, listas); redes sociais são plataformas que conectam usuários para interação, compartilhamento de conteúdo e comunicação.",
+      "Internet: TCP/IP, HTTP/HTTPS, DNS, navegadores. CESPE: difere Internet (pública) de Intranet (privada)."
+    ],
+    [
+      "informatica_new_131",
+      "O que caracteriza a Computação na Nuvem (Cloud Computing)?",
+      "É o modelo de disponibilização de recursos de TI (armazenamento, processamento, software) sob demanda pela internet, com modelos de serviço como SaaS, PaaS e IaaS.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_new_132",
+      "O que diferencia Deep Web de Dark Web?",
+      "Deep Web é o conjunto de conteúdos não indexados por buscadores comuns (ex: bancos de dados privados); Dark Web é uma parte específica da Deep Web que requer softwares especiais (como Tor) para acesso e é frequentemente associada a atividades anônimas.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_new_133",
+      "Como funciona o correio eletrônico quanto a endereços e recursos típicos?",
+      "O endereço de e-mail segue o formato usuário@domínio; recursos típicos incluem envio/recebimento de mensagens, anexos, cópia (CC), cópia oculta (CCO), pastas e filtros.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_new_134",
+      "O que são sítios de busca e pesquisa na Internet?",
+      "São ferramentas (ex: Google, Bing) que indexam páginas da web e retornam resultados relevantes a partir de palavras-chave digitadas pelo usuário.",
+      "Internet: TCP/IP, HTTP/HTTPS, DNS, navegadores. CESPE: difere Internet (pública) de Intranet (privada)."
+    ],
+    [
+      "informatica_new_135",
+      "Quais são os principais procedimentos de segurança e tipos de programas maliciosos?",
+      "Procedimentos: senhas fortes, autenticação em dois fatores e atualizações; programas maliciosos (malwares): vírus, worms, trojans, ransomware, spyware e adware.",
+      "Internet: TCP/IP, HTTP/HTTPS, DNS, navegadores. CESPE: difere Internet (pública) de Intranet (privada)."
+    ],
+    [
+      "informatica_new_136",
+      "O que são ferramentas antivírus e criptografia, e qual sua função na segurança da informação?",
+      "Antivírus detectam e removem softwares maliciosos; criptografia transforma dados em código para garantir confidencialidade, sendo usada em comunicações e armazenamento seguro.",
+      "=SE(teste_lógico; valor_verdadeiro; valor_falso). CESPE: SE aninhado: até 64 níveis."
+    ],
+    [
+      "informatica_new_137",
+      "Quais são os procedimentos de backup e armazenamento de dados na nuvem?",
+      "Backup: cópia de segurança periódica de dados (local, externo ou em nuvem), podendo ser completo, incremental ou diferencial; armazenamento em nuvem permite acesso remoto e redundância dos dados (ex: Google Drive, OneDrive).",
+      "Backup: cópia de segurança. Completo, incremental, diferencial. CESPE: backup incremental é mais rápido que completo."
+    ],
+    [
+      "informatica_expand_0",
+      "Como renomear um arquivo ou pasta no Windows?",
+      "Clique com o botão direito > Renomear, ou selecione e pressione F2, ou clique duas vezes lentamente sobre o nome.",
+      "Pastas: organizam arquivos. Biblioteca: agrupa pastas de locais diferentes. CESPE: mover arquivo = recortar + colar."
+    ],
+    [
+      "informatica_expand_1",
+      "O que é o caminho (path) de um arquivo no Windows?",
+      "É a sequência de pastas que indica a localização exata do arquivo no sistema.",
+      "Pastas: organizam arquivos. Biblioteca: agrupa pastas de locais diferentes. CESPE: mover arquivo = recortar + colar."
+    ],
+    [
+      "informatica_expand_2",
+      "Quais são os modos de exibição de pastas no Windows Explorer?",
+      "Ícones (muito grandes, grandes, médios, pequenos), Lista, Detalhes, Conteúdo e Lado a Lado.",
+      "Pastas: organizam arquivos. Biblioteca: agrupa pastas de locais diferentes. CESPE: mover arquivo = recortar + colar."
+    ],
+    [
+      "informatica_expand_3",
+      "Como selecionar múltiplos arquivos não consecutivos no Windows?",
+      "Segure Ctrl e clique em cada arquivo. Para intervalo consecutivo, use Shift.",
+      "Pastas: organizam arquivos. Biblioteca: agrupa pastas de locais diferentes. CESPE: mover arquivo = recortar + colar."
+    ],
+    [
+      "informatica_expand_4",
+      "O que são atalhos (shortcuts) no Windows?",
+      "Ícones com seta que apontam para o arquivo original; excluir o atalho não remove o original.",
+      "Ctrl+C (copiar), Ctrl+V (colar), Ctrl+X (recortar), Ctrl+Z (desfazer). CESPE: Ctrl+Shift+Esc abre Gerenciador de Tarefas."
+    ],
+    [
+      "informatica_expand_5",
+      "Qual atalho de teclado cria uma nova pasta no Windows?",
+      "Ctrl+Shift+N no local desejado.",
+      "Ctrl+C (copiar), Ctrl+V (colar), Ctrl+X (recortar), Ctrl+Z (desfazer). CESPE: Ctrl+Shift+Esc abre Gerenciador de Tarefas."
+    ],
+    [
+      "informatica_expand_6",
+      "O que são os botões 'Copiar para' e 'Mover para' no Windows Explorer?",
+      "Botões na faixa de opções (guia Página Inicial) que copiam ou movem o item selecionado para uma pasta de destino.",
+      "Windows Explorer (Explorador de Arquivos). CESPE: atalho Win+E abre Explorador. Exibe pastas e arquivos."
+    ],
+    [
+      "informatica_expand_7",
+      "Como ajustar data e hora no Windows?",
+      "Configurações > Hora e Idioma > Data e Hora; ative o ajuste automático ou defina manualmente o fuso horário.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_8",
+      "Como gerenciar impressoras no Windows?",
+      "Configurações > Bluetooth e Dispositivos > Impressoras e Scanners; permite adicionar, remover e definir impressora padrão.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_9",
+      "Como alterar o plano de fundo da Área de Trabalho?",
+      "Clique direito na Área de Trabalho > Personalizar > Plano de Fundo; escolha imagem, cor sólida ou apresentação de slides.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_10",
+      "Como configurar o protetor de tela no Windows?",
+      "Configurações > Personalização > Tela de Bloqueio > Protetor de Tela; escolha tipo, tempo de espera e se exige login ao retornar.",
+      "Windows: Home (doméstico), Pro (empresas), Enterprise (grandes). CESPE: Windows 11: TPM 2.0 + processador compatível."
+    ],
+    [
+      "informatica_expand_11",
+      "Como alterar a resolução da tela no Windows?",
+      "Clique direito na Área de Trabalho > Configurações de Exibição > Resolução da Tela; escolha a resolução recomendada.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_12",
+      "Como gerenciar contas de usuário no Windows?",
+      "Configurações > Contas > Família e outros usuários; permite criar, alterar tipo e remover contas.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_13",
+      "Como configurar opções de energia no Windows?",
+      "Configurações > Sistema > Energia e Suspensão; define tempo para desligar tela e suspender o computador.",
+      "Painel de Controle (config clássica) X Configurações (Windows 10+). CESPE: atalho Win+I abre Configurações."
+    ],
+    [
+      "informatica_expand_14",
+      "O que são as Configurações de Acessibilidade no Windows?",
+      "Configurações > Acessibilidade; inclui Lupa, Narrador, Teclado Virtual, Alto Contraste e legendas.",
+      "Painel de Controle (config clássica) X Configurações (Windows 10+). CESPE: atalho Win+I abre Configurações."
+    ],
+    [
+      "informatica_expand_15",
+      "Como ajustar o idioma e o layout do teclado no Windows?",
+      "Configurações > Hora e Idioma > Idioma e Região; adicione idiomas e altere o layout do teclado.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_16",
+      "O que é a Barra de Endereços do Windows Explorer?",
+      "Exibe o caminho completo da pasta atual e permite navegar digitando o caminho ou clicando nos segmentos.",
+      "Windows Explorer (Explorador de Arquivos). CESPE: atalho Win+E abre Explorador. Exibe pastas e arquivos."
+    ],
+    [
+      "informatica_expand_17",
+      "O que é o Painel de Navegação no Windows Explorer?",
+      "Painel à esquerda com atalhos para Acesso Rápido, OneDrive, Este Computador e Bibliotecas.",
+      "Painel de Controle (config clássica) X Configurações (Windows 10+). CESPE: atalho Win+I abre Configurações."
+    ],
+    [
+      "informatica_expand_18",
+      "Como exibir arquivos e pastas ocultos no Windows?",
+      "No Windows Explorer, Exibir > Mostrar > Itens Ocultos; arquivos ocultos aparecem semitransparentes.",
+      "Pastas: organizam arquivos. Biblioteca: agrupa pastas de locais diferentes. CESPE: mover arquivo = recortar + colar."
+    ],
+    [
+      "informatica_expand_19",
+      "Como exibir extensões de arquivos no Windows Explorer?",
+      "Exibir > Mostrar > Extensões de Nomes de Arquivo; extensões como .docx, .pdf, .exe ficam visíveis.",
+      "Pastas: organizam arquivos. Biblioteca: agrupa pastas de locais diferentes. CESPE: mover arquivo = recortar + colar."
+    ],
+    [
+      "informatica_expand_20",
+      "O que é o Acesso Rápido no Windows Explorer?",
+      "Seção que reúne pastas fixadas e usadas frequentemente; substitui o Favoritos.",
+      "Windows Explorer (Explorador de Arquivos). CESPE: atalho Win+E abre Explorador. Exibe pastas e arquivos."
+    ],
+    [
+      "informatica_expand_21",
+      "Como agrupar arquivos por tipo ou data no Windows Explorer?",
+      "Clique direito na área > Agrupar por > Tipo, Data, Tamanho etc.",
+      "Pastas: organizam arquivos. Biblioteca: agrupa pastas de locais diferentes. CESPE: mover arquivo = recortar + colar."
+    ],
+    [
+      "informatica_expand_22",
+      "Qual a função das bibliotecas no Windows?",
+      "Agrupam pastas de diferentes locais em uma única visualização virtual.",
+      "Pastas: organizam arquivos. Biblioteca: agrupa pastas de locais diferentes. CESPE: mover arquivo = recortar + colar."
+    ],
+    [
+      "informatica_expand_23",
+      "Como classificar arquivos no Windows Explorer?",
+      "Clique no cabeçalho da coluna (Nome, Data, Tipo, Tamanho) no modo Detalhes.",
+      "Pastas: organizam arquivos. Biblioteca: agrupa pastas de locais diferentes. CESPE: mover arquivo = recortar + colar."
+    ],
+    [
+      "informatica_expand_24",
+      "Qual atalho abre o Windows Explorer?",
+      "Windows + E abre o Explorador de Arquivos diretamente.",
+      "Ctrl+C (copiar), Ctrl+V (colar), Ctrl+X (recortar), Ctrl+Z (desfazer). CESPE: Ctrl+Shift+Esc abre Gerenciador de Tarefas."
+    ],
+    [
+      "informatica_expand_25",
+      "O que é a verificação ortográfica e gramatical no Word?",
+      "Ferramenta na guia Revisão que sublinha erros (vermelho ortografia, azul gramática) e sugere correções.",
+      "Word: processador de texto. CESPE cobra atalhos (Ctrl+N, I, S, B) e guias da Faixa de Opções."
+    ],
+    [
+      "informatica_expand_26",
+      "Como usar Localizar e Substituir no Word?",
+      "Atalho Ctrl+U (Localizar) ou Ctrl+Alt+U (Substituir); localiza palavras e as substitui por outro texto.",
+      "Word: processador de texto. CESPE cobra atalhos (Ctrl+N, I, S, B) e guias da Faixa de Opções."
+    ],
+    [
+      "informatica_expand_27",
+      "O que é a régua no Word?",
+      "Réguas horizontal e vertical para alinhar margens, tabulações e recuos; ativadas em Exibir > Régua.",
+      "Word: processador de texto. CESPE cobra atalhos (Ctrl+N, I, S, B) e guias da Faixa de Opções."
+    ],
+    [
+      "informatica_expand_28",
+      "O que são quebras de página e de seção no Word?",
+      "Quebra de página (Ctrl+Enter) inicia nova página; quebra de seção separa o documento em partes com formatação independente.",
+      "Word: processador de texto. CESPE cobra atalhos (Ctrl+N, I, S, B) e guias da Faixa de Opções."
+    ],
+    [
+      "informatica_expand_29",
+      "O que é a Barra de Status no Word?",
+      "Barra inferior que exibe número da página, total de palavras, idioma e zoom; personalizável.",
+      "Word: processador de texto. CESPE cobra atalhos (Ctrl+N, I, S, B) e guias da Faixa de Opções."
+    ],
+    [
+      "informatica_expand_30",
+      "Como inserir símbolos e caracteres especiais no Word?",
+      "Inserir > Símbolos > Símbolo; escolha símbolos comuns ou 'Mais Símbolos' para caracteres Unicode.",
+      "Word: processador de texto. CESPE cobra atalhos (Ctrl+N, I, S, B) e guias da Faixa de Opções."
+    ],
+    [
+      "informatica_expand_31",
+      "O que são tabulações no Word?",
+      "Marcadores na régua que definem pontos de parada para alinhar texto; tipos: esquerda, direita, centralizada, decimal e barra.",
+      "Word: processador de texto. CESPE cobra atalhos (Ctrl+N, I, S, B) e guias da Faixa de Opções."
+    ],
+    [
+      "informatica_expand_32",
+      "Como configurar margens personalizadas no Word?",
+      "Layout > Margens > Margens Personalizadas; defina valores para superior, inferior, esquerda e direita.",
+      "Inserir > Imagens. Layout: quadrado, estreito, atrás, na frente. CESPE: imagem NÃO é anexada (incorporada)."
+    ],
+    [
+      "informatica_expand_33",
+      "Quais são os efeitos de fonte disponíveis no Word?",
+      "Negrito, itálico, sublinhado, tachado, subscrito, sobrescrito, relevo, gravação, versalete e cor.",
+      "Formatação: Negrito (Ctrl+N), Itálico (Ctrl+I), Sublinhado (Ctrl+S). CESPE: Ctrl+Shift+> aumenta fonte."
+    ],
+    [
+      "informatica_expand_34",
+      "O que é o efeito letra capitular no Word?",
+      "Amplia a primeira letra de um parágrafo ocupando várias linhas; Inserir > Letra Capitular.",
+      "Inserir > Letra Capitular. Primeira letra ampliada (2-3 linhas). CESPE: opção: margem ou incorporada."
+    ],
+    [
+      "informatica_expand_35",
+      "Como alternar maiúsculas e minúsculas no Word?",
+      "Selecione o texto e pressione Shift+F3; ou Página Inicial > Alterar Maiúsculas e Minúsculas.",
+      "Word: processador de texto. CESPE cobra atalhos (Ctrl+N, I, S, B) e guias da Faixa de Opções."
+    ],
+    [
+      "informatica_expand_36",
+      "O que é espaçamento entre parágrafos no Word?",
+      "Distância vertical antes e depois de cada parágrafo; em Página Inicial > Parágrafo > Espaçamento.",
+      "Alinhamento: esquerda, centro, direita, justificado. Espaçamento: antes/depois do parágrafo. CESPE: justificado pode gerar espaçamento irregular."
+    ],
+    [
+      "informatica_expand_37",
+      "Como criar lista numerada personalizada no Word?",
+      "Página Inicial > Numeração > Definir Novo Formato de Número; escolha estilo (1, I, a, A, i).",
+      "Word: processador de texto. CESPE cobra atalhos (Ctrl+N, I, S, B) e guias da Faixa de Opções."
+    ],
+    [
+      "informatica_expand_38",
+      "Como criar lista com marcadores personalizados?",
+      "Página Inicial > Marcadores > Definir Novo Marcador; escolha símbolo, imagem ou fonte.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_39",
+      "O que é lista multinível no Word?",
+      "Lista com níveis hierárquicos numerados ou com marcadores; Página Inicial > Lista Multinível.",
+      "Word: processador de texto. CESPE cobra atalhos (Ctrl+N, I, S, B) e guias da Faixa de Opções."
+    ],
+    [
+      "informatica_expand_40",
+      "Como ajustar largura e espaçamento entre colunas?",
+      "Layout > Colunas > Mais Colunas; defina largura e espaçamento de cada coluna.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_41",
+      "O que é quebra de coluna no Word?",
+      "Força o texto a ir para o início da próxima coluna; Layout > Quebras > Coluna ou Ctrl+Shift+Enter.",
+      "Word: processador de texto. CESPE cobra atalhos (Ctrl+N, I, S, B) e guias da Faixa de Opções."
+    ],
+    [
+      "informatica_expand_42",
+      "Como criar lista com numeração automática?",
+      "Digite '1.' e espaço, ou clique em Numeração; o Word continua ao pressionar Enter.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_43",
+      "Como reiniciar ou continuar numeração de lista?",
+      "Clique direito no número > 'Reiniciar do 1' ou 'Continuar Numeração'.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_44",
+      "Como criar colunas com larguras diferentes?",
+      "Layout > Colunas > Mais Colunas; desmarque 'Colunas de mesma largura'.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_45",
+      "Como aplicar lista de definições no Word?",
+      "Estilo em que o termo fica à esquerda e a definição recuada; via Lista Multinível.",
+      "Word: processador de texto. CESPE cobra atalhos (Ctrl+N, I, S, B) e guias da Faixa de Opções."
+    ],
+    [
+      "informatica_expand_46",
+      "Como alinhar texto verticalmente em célula de tabela?",
+      "Selecione a célula, Layout (Ferramentas de Tabela) > Alinhamento; superior, centralizado ou inferior.",
+      "Célula = coluna+linha (ex: A1). Referência: relativa (A1), absoluta ($A$1), mista ($A1 ou A$1). CESPE: F4 alterna entre tipos."
+    ],
+    [
+      "informatica_expand_47",
+      "Como classificar dados em tabela no Word?",
+      "Selecione a tabela, Layout > Classificar; escolha coluna, tipo e ordem crescente/decrescente.",
+      "Inserir > Tabela. Linhas e colunas. CESPE: converter texto em tabela é possível (Inserir > Tabela > Converter)."
+    ],
+    [
+      "informatica_expand_48",
+      "Como inserir fórmulas em tabelas no Word?",
+      "Layout > Dados > Fórmula; funções: SOMA, MÉDIA, CONT.NÚM, MÍNIMO, MÁXIMO.",
+      "Inserir > Tabela. Linhas e colunas. CESPE: converter texto em tabela é possível (Inserir > Tabela > Converter)."
+    ],
+    [
+      "informatica_expand_49",
+      "Como repetir linha de cabeçalho em todas as páginas?",
+      "Selecione a(s) linha(s) e Layout > Repetir Linhas de Cabeçalho.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_50",
+      "Como converter texto em tabela no Word?",
+      "Selecione o texto separado por tabulações/vírgulas; Inserir > Tabela > Converter Texto em Tabela.",
+      "Inserir > Tabela. Linhas e colunas. CESPE: converter texto em tabela é possível (Inserir > Tabela > Converter)."
+    ],
+    [
+      "informatica_expand_51",
+      "O que é o AutoAjuste de tabela no Word?",
+      "Recurso que ajusta largura ao conteúdo ou à janela; em Layout > AutoAjuste.",
+      "Inserir > Tabela. Linhas e colunas. CESPE: converter texto em tabela é possível (Inserir > Tabela > Converter)."
+    ],
+    [
+      "informatica_expand_52",
+      "Como criar um novo estilo no Word?",
+      "Página Inicial > Estilos > Criar um Estilo, ou pelo Painel de Estilos > Novo Estilo.",
+      "Estilos (Título 1, 2, 3) geram Sumário automaticamente. CESPE: Alt+Ctrl+1 aplica Título 1."
+    ],
+    [
+      "informatica_expand_53",
+      "Como modificar um estilo existente?",
+      "Clique direito no estilo > Modificar; altere fonte, tamanho, cor e outros atributos.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_54",
+      "O que é o Painel de Estilos no Word?",
+      "Janela lateral listando todos os estilos; atalho Alt+Ctrl+Shift+S.",
+      "Estilos (Título 1, 2, 3) geram Sumário automaticamente. CESPE: Alt+Ctrl+1 aplica Título 1."
+    ],
+    [
+      "informatica_expand_55",
+      "O que são Conjuntos de Estilos no Word?",
+      "Grupos de estilos coordenados aplicáveis ao documento inteiro; Design > Formatação de Documento.",
+      "Estilos (Título 1, 2, 3) geram Sumário automaticamente. CESPE: Alt+Ctrl+1 aplica Título 1."
+    ],
+    [
+      "informatica_expand_56",
+      "O que é a Galeria de Estilos Rápidos?",
+      "Conjunto de estilos pré-definidos na Página Inicial > Estilos.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_57",
+      "O que é o modelo Normal.dotm?",
+      "Modelo global padrão que define a formatação básica de novos documentos em branco.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_58",
+      "Como criar um template no Word?",
+      "Arquivo > Salvar Como > tipo 'Modelo do Word (*.dotx)' ou 'Modelo Habilitado para Macro (*.dotm)'.",
+      "Word: processador de texto. CESPE cobra atalhos (Ctrl+N, I, S, B) e guias da Faixa de Opções."
+    ],
+    [
+      "informatica_expand_59",
+      "O que é anexar um modelo no Word?",
+      "Vincular um template diferente ao documento para usar seus estilos; Desenvolvedor > Modelos > Anexar.",
+      "Word: processador de texto. CESPE cobra atalhos (Ctrl+N, I, S, B) e guias da Faixa de Opções."
+    ],
+    [
+      "informatica_expand_60",
+      "Como criar cabeçalho diferente na primeira página?",
+      "Ao editar o cabeçalho, marque 'Diferente na Primeira Página' na guia Design.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_61",
+      "Como criar cabeçalhos diferentes em pares/ímpares?",
+      "Marque 'Diferentes em Páginas Pares e Ímpares' na guia Design.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_62",
+      "Como inserir numeração com formato personalizado?",
+      "Inserir > Número de Página > Formatar Números de Página; escolha formato e número inicial.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_63",
+      "Como inserir data e hora automáticas no cabeçalho?",
+      "Ao editar, Design > Data e Hora e marque 'Atualizar automaticamente'.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_64",
+      "O que são Elementos Rápidos no cabeçalho/rodapé?",
+      "Atalhos que inserem Propriedade do Documento, Campos ou Blocos de Construção.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_65",
+      "Como fazer numeração 'Página X de Y'?",
+      "Use campos { PAGE } e { NUMPAGES } com Ctrl+F9.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_66",
+      "Como vincular/desvincular cabeçalhos entre seções?",
+      "Botão 'Vincular ao Anterior' na guia Design.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_67",
+      "Como remover cabeçalho de seção específica?",
+      "Edite, selecione tudo e Delete; ou Design > Cabeçalho > Remover Cabeçalho.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_68",
+      "O que é impressão frente e verso no Word?",
+      "Arquivo > Imprimir > Impressão dos Dois Lados; opção de virar pelo lado curto ou longo.",
+      "Arquivo > Imprimir (Ctrl+P). Opções: cópias, intervalos, frente/verso. CESPE: visualizar impressão antes."
+    ],
+    [
+      "informatica_expand_69",
+      "O que são bordas de página no Word?",
+      "Linhas decorativas contornando a página; Design > Bordas de Página.",
+      "Word: processador de texto. CESPE cobra atalhos (Ctrl+N, I, S, B) e guias da Faixa de Opções."
+    ],
+    [
+      "informatica_expand_70",
+      "Como aplicar orientação diferente por seção?",
+      "Insira quebra de seção, depois Layout > Orientação para aquela seção.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_71",
+      "O que são margens espelho no Word?",
+      "Para impressão frente e verso; margens internas e externas diferentes. Layout > Margens > Margens Espelho.",
+      "Word: processador de texto. CESPE cobra atalhos (Ctrl+N, I, S, B) e guias da Faixa de Opções."
+    ],
+    [
+      "informatica_expand_72",
+      "Como ajustar alinhamento vertical do texto?",
+      "Layout > Configurar Página > Guia Layout > Alinhamento Vertical.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_73",
+      "Como configurar papel personalizado?",
+      "Layout > Tamanho > Mais Tamanhos de Papel; defina largura e altura.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_74",
+      "Como inserir marca d'água no Word?",
+      "Design > Marca d'Água; escolha texto (Confidencial, Rascunho) ou imagem.",
+      "Word: processador de texto. CESPE cobra atalhos (Ctrl+N, I, S, B) e guias da Faixa de Opções."
+    ],
+    [
+      "informatica_expand_75",
+      "Como definir páginas por folha na impressão?",
+      "Arquivo > Imprimir > altere de '1 página por folha' para 2, 4, 6, 8 ou 16.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_76",
+      "O que é a barra de fórmulas no Excel?",
+      "Barra acima da planilha que exibe o conteúdo da célula ativa; permite digitar e editar fórmulas.",
+      "=SOMA, =MÉDIA, =MÁXIMO, =MÍNIMO, =CONT.NÚM, =SE. CESPE: =SE(teste; verd; falso) é a mais cobrada."
+    ],
+    [
+      "informatica_expand_77",
+      "O que é a alça de preenchimento no Excel?",
+      "Quadrado no canto inferior direito da célula; arrastá-la copia ou completa séries automaticamente.",
+      "Excel: planilha eletrônica. CESPE prioriza fórmulas (=SE, =PROCV, =SOMASE) e referências (relativa X absoluta)."
+    ],
+    [
+      "informatica_expand_78",
+      "Como gerenciar planilhas no Excel?",
+      "Clique no '+' para inserir; botão direito na aba > Renomear, Excluir, Mover ou Copiar.",
+      "Excel: planilha eletrônica. CESPE prioriza fórmulas (=SE, =PROCV, =SOMASE) e referências (relativa X absoluta)."
+    ],
+    [
+      "informatica_expand_79",
+      "O que são guias de planilha no Excel?",
+      "Abas na parte inferior que identificam cada planilha; permitem navegar e gerenciar.",
+      "Excel: planilha eletrônica. CESPE prioriza fórmulas (=SE, =PROCV, =SOMASE) e referências (relativa X absoluta)."
+    ],
+    [
+      "informatica_expand_80",
+      "Qual a ordem de precedência de operadores no Excel?",
+      "1º Parênteses, 2º Exponenciação (^), 3º Multiplicação e Divisão (*, /), 4º Adição e Subtração (+, -).",
+      "Excel: planilha eletrônica. CESPE prioriza fórmulas (=SE, =PROCV, =SOMASE) e referências (relativa X absoluta)."
+    ],
+    [
+      "informatica_expand_81",
+      "O que é referência mista no Excel?",
+      " trava a coluna mas a linha muda; A trava a linha mas a coluna muda.",
+      "Célula = coluna+linha (ex: A1). Referência: relativa (A1), absoluta ($A$1), mista ($A1 ou A$1). CESPE: F4 alterna entre tipos."
+    ],
+    [
+      "informatica_expand_82",
+      "Como o Excel armazena datas internamente?",
+      "Datas são números seriais: 1 = 01/01/1900. Subtraia datas para obter dias entre elas.",
+      "Excel: planilha eletrônica. CESPE prioriza fórmulas (=SE, =PROCV, =SOMASE) e referências (relativa X absoluta)."
+    ],
+    [
+      "informatica_expand_83",
+      "O que é referência 3D no Excel?",
+      "Mesma célula em várias planilhas. Ex: =SOMA(Plan1:Plan3!A1).",
+      "Célula = coluna+linha (ex: A1). Referência: relativa (A1), absoluta ($A$1), mista ($A1 ou A$1). CESPE: F4 alterna entre tipos."
+    ],
+    [
+      "informatica_expand_84",
+      "O que são funções aninhadas no Excel?",
+      "Uma função dentro de outra. Ex: =SE(MÉDIA(A1:A10)>7;'Aprovado';'Reprovado').",
+      "Função dentro de função. Ex: =SE(MÉDIA(A1)>7;\"OK\";\"RE\"). CESPE: cada função abre/fecha parênteses."
+    ],
+    [
+      "informatica_expand_85",
+      "O que ocorre quando número é digitado como texto?",
+      "Fica alinhado à esquerda e não é reconhecido em cálculos; converta para número.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_86",
+      "O que é o formato de número no Excel?",
+      "Botão direito > Formatar Células > Número; categorias: número, moeda, data, porcentagem, texto.",
+      "Excel: planilha eletrônica. CESPE prioriza fórmulas (=SE, =PROCV, =SOMASE) e referências (relativa X absoluta)."
+    ],
+    [
+      "informatica_expand_87",
+      "Como exibir separador de milhares e casas decimais?",
+      "Formatar Células > Número > Número; marque 'Separador de Milhares'.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_88",
+      "Diferença entre formato Moeda e Contábil?",
+      "Moeda: símbolo junto ao número. Contábil: símbolo à esquerda, número à direita, negativos entre parênteses.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_89",
+      "Como aplicar formato de porcentagem?",
+      "Selecione e clique em '%' na Página Inicial; multiplica o valor por 100.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_90",
+      "Como formatar fonte no Excel?",
+      "Página Inicial > Fonte; altere tipo, tamanho, cor, negrito, itálico.",
+      "Excel: planilha eletrônica. CESPE prioriza fórmulas (=SE, =PROCV, =SOMASE) e referências (relativa X absoluta)."
+    ],
+    [
+      "informatica_expand_91",
+      "Como mesclar células e centralizar?",
+      "Selecione as células > Página Inicial > Mesclar e Centralizar.",
+      "Célula = coluna+linha (ex: A1). Referência: relativa (A1), absoluta ($A$1), mista ($A1 ou A$1). CESPE: F4 alterna entre tipos."
+    ],
+    [
+      "informatica_expand_92",
+      "Como aplicar bordas nas células?",
+      "Página Inicial > Borda; escolha pré-definidas ou 'Mais Bordas' para personalizar.",
+      "Célula = coluna+linha (ex: A1). Referência: relativa (A1), absoluta ($A$1), mista ($A1 ou A$1). CESPE: F4 alterna entre tipos."
+    ],
+    [
+      "informatica_expand_93",
+      "Como aplicar preenchimento em células?",
+      "Página Inicial > Cor de Preenchimento; ou Formatar Células > Preenchimento para gradiente.",
+      "Célula = coluna+linha (ex: A1). Referência: relativa (A1), absoluta ($A$1), mista ($A1 ou A$1). CESPE: F4 alterna entre tipos."
+    ],
+    [
+      "informatica_expand_94",
+      "O que são estilos de célula no Excel?",
+      "Combinações pré-definidas de formato; Página Inicial > Estilos de Célula.",
+      "Célula = coluna+linha (ex: A1). Referência: relativa (A1), absoluta ($A$1), mista ($A1 ou A$1). CESPE: F4 alterna entre tipos."
+    ],
+    [
+      "informatica_expand_95",
+      "O que é Colar Especial no Excel?",
+      "Colar com opções: valores, fórmulas, formatação, transpor. Atalho: Ctrl+Alt+V.",
+      "Excel: planilha eletrônica. CESPE prioriza fórmulas (=SE, =PROCV, =SOMASE) e referências (relativa X absoluta)."
+    ],
+    [
+      "informatica_expand_96",
+      "Como usar Transpor?",
+      "Copie o intervalo, Colar Especial > marcar 'Transpor'; linhas viram colunas e vice-versa.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_97",
+      "Como preencher série no Excel?",
+      "Digite o primeiro valor e arraste a alça; ou Página Inicial > Preencher > Série.",
+      "Excel: planilha eletrônica. CESPE prioriza fórmulas (=SE, =PROCV, =SOMASE) e referências (relativa X absoluta)."
+    ],
+    [
+      "informatica_expand_98",
+      "Como copiar conteúdo para células adjacentes?",
+      "Arraste a alça; ou Ctrl+D (abaixo) e Ctrl+R (direita).",
+      "Célula = coluna+linha (ex: A1). Referência: relativa (A1), absoluta ($A$1), mista ($A1 ou A$1). CESPE: F4 alterna entre tipos."
+    ],
+    [
+      "informatica_expand_99",
+      "Como localizar e substituir no Excel?",
+      "Ctrl+L (Localizar) ou Ctrl+Alt+L (Substituir); busca valores, fórmulas ou comentários.",
+      "Excel: planilha eletrônica. CESPE prioriza fórmulas (=SE, =PROCV, =SOMASE) e referências (relativa X absoluta)."
+    ],
+    [
+      "informatica_expand_100",
+      "O que é 'Ir para' (Go To)?",
+      "Atalho F5; navega para célula específica ou seleciona células especiais.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_101",
+      "Como inserir comentários no Excel?",
+      "Botão direito > Inserir Comentário ou Revisão > Novo Comentário.",
+      "=SE(teste_lógico; valor_verdadeiro; valor_falso). CESPE: SE aninhado: até 64 níveis."
+    ],
+    [
+      "informatica_expand_102",
+      "O que é validação de dados?",
+      "Restringe tipo de dado inserido; Dados > Validação de Dados.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_103",
+      "Opções do menu Limpar?",
+      "Limpar Tudo, Limpar Formatos, Limpar Conteúdo (Del), Limpar Comentários, Limpar Hiperlinks.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_104",
+      "Como classificar por múltiplos níveis?",
+      "Dados > Classificar > Adicionar Nível; defina primeiro e segundo critério.",
+      "Internet: TCP/IP, HTTP/HTTPS, DNS, navegadores. CESPE: difere Internet (pública) de Intranet (privada)."
+    ],
+    [
+      "informatica_expand_105",
+      "Como classificar por cor da fonte ou preenchimento?",
+      "Dados > Classificar; em 'Classificar Em' escolha 'Cor da Fonte' ou 'Cor da Célula'.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_106",
+      "O que é classificação por lista personalizada?",
+      "Ordem não alfabética (dias da semana, cargos); Dados > Classificar > Ordem > Lista Personalizada.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_107",
+      "Como classificar linhas em vez de colunas?",
+      "Dados > Classificar > Opções > 'Classificar da esquerda para a direita'.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_108",
+      "O que é Filtro Avançado?",
+      "Dados > Avançado; filtra com critérios complexos e copia resultado para outro local.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_109",
+      "Como classificar por valor calculado?",
+      "Crie coluna auxiliar com a fórmula, classifique por ela e depois oculte/exclua.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_110",
+      "Como desfazer classificação?",
+      "Ctrl+Z imediatamente; coluna de índice sequencial antes de classificar.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_111",
+      "O que é filtrar por cor ou ícone?",
+      "No AutoFiltro, clique na seta > 'Filtrar por Cor'.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_112",
+      "Quais elementos compõem um gráfico?",
+      "Título, eixos (categoria/valor), título dos eixos, legenda, rótulos de dados, grade e área de plotagem.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_113",
+      "Como criar gráfico combinado?",
+      "Inserir > Gráficos Combinados; ex: colunas e linha com eixo secundário.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_114",
+      "Como adicionar linha de tendência?",
+      "Clique no gráfico > '+' > Linha de Tendência; linear, exponencial, média móvel.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_115",
+      "Como formatar eixos do gráfico?",
+      "Clique direito no eixo > Formatar Eixo; ajuste limites, unidade, escala e formato.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_116",
+      "O que são rótulos de dados?",
+      "Valores exibidos junto aos pontos do gráfico; '+' > Rótulos de Dados.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_117",
+      "O que é gráfico dinâmico (pivot chart)?",
+      "Gráfico interativo vinculado a tabela dinâmica; Inserir > Gráfico Dinâmico.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_118",
+      "Como alterar dados de gráfico existente?",
+      "Clique direito > Selecionar Dados; altere intervalo ou inverta linhas/colunas.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_119",
+      "O que são minigráficos (sparklines)?",
+      "Gráficos miniatura dentro de uma célula; Inserir > Minigráficos.",
+      "Informática PCPE: Windows, Word, Excel, PowerPoint, Internet, Segurança. CESPE cobra atalhos e funções práticas."
+    ],
+    [
+      "informatica_expand_120",
+      "Como inserir áudio ou vídeo no PowerPoint?",
+      "Inserir > Áudio ou Vídeo; escolha 'Este Dispositivo' ou online; o arquivo é incorporado ao slide.",
+      "Inserir > Áudio/Vídeo. CESPE: vídeo pode ser incorporado ou linkado (linkado exige manter arquivo)."
+    ]
+  ],
+  "removes": [],
+  "merges": {}
+}

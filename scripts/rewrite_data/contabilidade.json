@@ -20,21 +20,21 @@
     ],
     [
       "contabilidade_3",
-      "O que são bens em contabilidade?",
+      "O que s? bens em contabilidade?",
       "Coisas capazes de satisfazer necessidades e avaliáveis monetariamente. Tangíveis (imóveis) ou intangíveis (marcas).",
       "BENS = ativos. Tangíveis (corpóreos): máquinas, prédios. Intangíveis (incorpóreos): patentes, softwares. CESPE: 'bem é tudo que tem valor econômico' -> VERDADEIRO."
     ],
     [
       "contabilidade_4",
-      "O que são direitos em contabilidade?",
+      "O que s? direitos em contabilidade?",
       "Valores a receber pela entidade (contas a receber, duplicatas). Compõem o Ativo.",
-      "DIREITOS = Ativo (algo a RECEBER). Ex: clientes, duplicatas, aluguéis a receber. CESPE: 'direitos são contas do passivo' -> FALSO (são do ativo)."
+      "DIREITOS = Ativo (algo a RECEBER). Ex: clientes, duplicatas, aluguéis a receber. CESPE: 'direitos s? contas do passivo' -> FALSO (s? do ativo)."
     ],
     [
       "contabilidade_5",
-      "O que são obrigações em contabilidade?",
+      "O que s? obrigações em contabilidade?",
       "Dívidas e compromissos a pagar (fornecedores, salários, impostos). Compõem o Passivo.",
-      "OBRIGAÇÕES = Passivo (algo a PAGAR). CESPE: 'obrigações são contas do ativo' -> FALSO (são do passivo)."
+      "OBRIGAÇÕES = Passivo (algo a PAGAR). CESPE: 'obrigações s? contas do ativo' -> FALSO (s? do passivo)."
     ],
     [
       "contabilidade_6",
@@ -63,20 +63,20 @@
     [
       "contabilidade_10",
       "O que é ato administrativo em contabilidade?",
-      "Movimentos que NÃO alteram o PL, apenas reorganizam a administração. Não são registrados como fatos contábeis.",
-      "ATO ADMINISTRATIVO: não altera o patrimônio. FATO CONTÁBIL: altera o patrimônio. CESPE adora essa distinção."
+      "Movimentos que NÃO alteram o PL, apenas reorganizam a administração. N? s? registrados como fatos contábeis.",
+      "ATO ADMINISTRATIVO: n? altera o patrimônio. FATO CONTÁBIL: altera o patrimônio. CESPE adora essa distinção."
     ],
     [
       "contabilidade_11",
       "O que é fato contábil?",
       "Evento que altera qualitativa ou quantitativamente o patrimônio. Todo fato contábil deve ser registrado.",
-      "FATO CONTÁBIL = altera o patrimônio. ATOS = não alteram. CESPE: 'todo fato contábil altera o PL' -> FALSO (permutativos não alteram o PL)."
+      "FATO CONTÁBIL = altera o patrimônio. ATOS = n? alteram. CESPE: 'todo fato contábil altera o PL' -> FALSO (permutativos n? alteram o PL)."
     ],
     [
       "contabilidade_12",
       "O que é fato permutativo?",
       "Altera a composição do patrimônio sem modificar o PL. Ex: compra de estoque à vista (troca caixa por estoque).",
-      "PERMUTATIVO: troca entre contas do ativo/passivo, PL não muda. CESPE: 'compra de máquina à vista é fato permutativo' -> VERDADEIRO."
+      "PERMUTATIVO: troca entre contas do ativo/passivo, PL n? muda. CESPE: 'compra de máquina à vista é fato permutativo' -> VERDADEIRO."
     ],
     [
       "contabilidade_13",
@@ -100,7 +100,7 @@
       "contabilidade_16",
       "O que é débito e crédito em contabilidade?",
       "Débito: lado esquerdo da conta T. Crédito: lado direito. Método das partidas dobradas: todo débito corresponde a um crédito.",
-      "PARTIDAS DOBRADAS (Pacioli): não há débito sem crédito. TOTAL DÉBITOS = TOTAL CRÉDITOS. CESPE adora."
+      "PARTIDAS DOBRADAS (Pacioli): n? há débito sem crédito. TOTAL DÉBITOS = TOTAL CRÉDITOS. CESPE adora."
     ],
     [
       "contabilidade_17",
@@ -130,19 +130,19 @@
       "contabilidade_22",
       "O que é escrituração contábil?",
       "Registro cronológico e sistemático de todos os fatos contábeis nos livros Diário e Razão.",
-      "ESCRITURAÇÃO = registro dos fatos. Método: partidas dobradas. Livros: Diário (cronológico) e Razão (por conta)."
+      "ESCRITURAÇÃO = registro dos fatos. Método: partidas dobradas. Livros: Diário (cronológico) e Raz? (por conta)."
     ],
     [
       "contabilidade_23",
       "O que é o Livro Diário?",
-      "Livro obrigatório onde os fatos são registrados em ordem cronológica (dia/mês/ano). Contém histórico e conta debitada/creditada.",
+      "Livro obrigatório onde os fatos s? registrados em ordem cronológica (dia/mês/ano). Contém histórico e conta debitada/creditada.",
       "DIÁRIO = cronológico. RAZÃO = sistemático (por conta). Ambos obrigatórios. CESPE: 'Diário registra em ordem alfabética' -> FALSO (cronológico)."
     ],
     [
       "contabilidade_24",
       "O que é o Livro Razão?",
       "Livro que agrupa lançamentos por conta, permitindo ver o saldo de cada uma individualmente.",
-      "RAZÃO = conta T. Saldo = débitos - créditos. CESPE: 'Razão é dispensável' -> FALSO (é obrigatório)."
+      "RAZÃO = conta T. Saldo = débitos - créditos. CESPE: 'Raz? é dispensável' -> FALSO (é obrigatório)."
     ],
     [
       "contabilidade_25",
@@ -159,7 +159,7 @@
     [
       "contabilidade_31",
       "Como se divide o Ativo no Balanço Patrimonial?",
-      "Ativo Circulante (realizável até 12 meses) e Ativo Não Circulante (Realizável LP, Investimentos, Imobilizado, Intangível).",
+      "Ativo Circulante (realizável até 12 meses) e Ativo N? Circulante (Realizável LP, Investimentos, Imobilizado, Intangível).",
       "CIRCULANTE: até 12 meses. NÃO CIRCULANTE: > 12 meses. Subdivisões do NC: Realizável LP, Investimentos, Imobilizado, Intangível."
     ],
     [
@@ -176,9 +176,507 @@
     ],
     [
       "contabilidade_42",
-      "O que são Normas Brasileiras de Contabilidade (NBC)?",
-      "Normas emitidas pelo CFC que regulam a profissão contábil. Hierarquia: NBC TG (técnicas gerais), NBC TSP (público), NBC PA (profissional).",
+      "O que s? Normas Brasileiras de Contabilidade (NBC)?",
+      "Normas emitidas pelo CFC que regulam a profiss? contábil. Hierarquia: NBC TG (técnicas gerais), NBC TSP (público), NBC PA (profissional).",
       "NBC = regras do CFC. CPC = pronunciamentos do Comitê. NBCs incorporam CPCs. CESPE: 'NBCs substituem a lei' -> FALSO (complementam)."
+    ],
+    [
+      "contabilidade_21",
+      "O que é o Plano de Contas?",
+      "Relação ordenada de todas as contas utilizadas pela entidade, com função e funcionamento definidos; base para a escrituração.",
+      "PLANO DE CONTAS = conjunto de contas padronizado. NÃO existe plano único obrigatório (exceto setores regulados). CESPE: 'plano de contas é facultativo' -> VERDADEIRO (cada entidade adota o seu)."
+    ],
+    [
+      "contabilidade_26",
+      "Quais s? as fórmulas de lançamento contábil?",
+      "1ª: 1D e 1C. 2ª: 1D e 2 ou mais C. 3ª: 2 ou mais D e 1C. 4ª: 2 ou mais D e 2 ou mais C.",
+      "1ª: 1D-1C (simples). 2ª: 1D-2+C. 3ª: 2+D-1C. 4ª: 2+D-2+C. CESPE: 'lançamento de 2ª fórmula tem 2 créditos' -> VERDADEIRO."
+    ],
+    [
+      "contabilidade_27",
+      "O que é regime de competência?",
+      "Receitas e despesas s? reconhecidas no período de ocorrência do fato gerador, independentemente do pagamento/recebimento.",
+      "COMPETÊNCIA = fato gerador (independente de recebimento). CAIXA = efetivo pagamento/recebimento. CESPE adora: 'competência é usado no setor público' -> FALSO (setor público usa caixa; privado usa competência)."
+    ],
+    [
+      "contabilidade_28",
+      "O que é regime de caixa?",
+      "Receitas e despesas reconhecidas somente no momento do efetivo recebimento ou pagamento em dinheiro.",
+      "REGIME DE CAIXA: reconhece no pagamento/recebimento. Usado no setor público (Lei 4.320/64). CESPE: 'empresas usam regime de caixa' -> FALSO (usam competência)."
+    ],
+    [
+      "contabilidade_29",
+      "O que é o balancete de verificação?",
+      "Demonstração que lista todas as contas com seus saldos devedores e credores, verificando o equilíbrio dos lançamentos.",
+      "BALANCETE = lista de contas com saldos (devedores e credores). Verifica: total débitos = total créditos. NÃO é obrigatório por lei, mas é boa prática. CESPE: 'balancete substitui o balanço' -> FALSO."
+    ],
+    [
+      "contabilidade_32",
+      "Como se divide o Passivo no Balanço Patrimonial?",
+      "Passivo Circulante (exigível até 12 meses) e Passivo N? Circulante (exigível após 12 meses).",
+      "PASSIVO CIRCULANTE: até 12 meses (fornecedores, salários, impostos). PASSIVO NÃO CIRCULANTE: > 12 meses (financiamentos de LP). CESPE: 'exigível a LP é passivo circulante' -> FALSO."
+    ],
+    [
+      "contabilidade_33",
+      "O que compõe o Patrimônio Líquido (PL)?",
+      "Capital social, reservas de capital, ajustes de avaliação patrimonial, reservas de lucros, ações em tesouraria e prejuízos acumulados.",
+      "PL = Capital + Reservas + Ajustes + Lucros/Prejuízos Acumulados - Ações em Tesouraria. CESPE: 'capital social é conta do passivo' -> FALSO (é do PL)."
+    ],
+    [
+      "contabilidade_35",
+      "Como se calcula o lucro líquido na DRE?",
+      "Receita bruta − deduções = Receita líquida − CMV = Lucro bruto − despesas operacionais − IR e CSLL = Lucro líquido.",
+      "DRE em cascata: RB → Deduções → RL → CMV → LB → Desp Op → LAIR → IR → LL. CESPE: 'IR é deduzido antes do CMV' -> FALSO (depois das despesas operacionais)."
+    ],
+    [
+      "contabilidade_36",
+      "O que é CMV (Custo das Mercadorias Vendidas)?",
+      "CMV = Estoque Inicial + Compras − Estoque Final; representa o custo das mercadorias efetivamente vendidas.",
+      "CMV = EI + Compras - EF. Ex: EI=10k, Compras=50k, EF=15k → CMV=45k. CESPE: 'CMV inclui despesas de vendas' -> FALSO (só custo da mercadoria)."
+    ],
+    [
+      "contabilidade_38",
+      "Como se calcula a depreciação pelo método linear?",
+      "Depreciação anual = Valor do bem / Vida útil em anos. Ex: bem de R$10.000 com vida útil de 5 anos: R$2.000/ano.",
+      "Depreciação linear = (Custo - Valor Residual) / Vida Útil. Ex: R$10.000 / 5 anos = R$2.000/ano. CESPE adota método linear como regra geral."
+    ],
+    [
+      "contabilidade_39",
+      "O que é provis? em contabilidade?",
+      "Reconhecimento antecipado de um passivo provável com valor estimável. Ex: PDD (Provis? para Devedores Duvidosos).",
+      "PROVISÃO = passivo provável com valor estimável. NBC TG 25. Requer: (a) obrigação presente; (b) provável saída de recursos; (c) estimativa confiável. CESPE: 'provis? é conta retificadora' -> FALSO (é passivo)."
+    ],
+    [
+      "contabilidade_40",
+      "O que é PDD (Provis? para Devedores Duvidosos)?",
+      "Estimativa de parcela dos créditos a receber que provavelmente n? será recebida; retificadora do Ativo Circulante.",
+      "PDD (ou PECLD): retificadora do Ativo. Débito: Despesa com PDD. Crédito: PDD. CESPE: 'PDD é conta do passivo' -> FALSO (redutora do ativo, saldo credor)."
+    ],
+    [
+      "contabilidade_41",
+      "O que s? operações com juros no registro contábil?",
+      "Juros recebidos: Receita (aumenta PL). Juros pagos: Despesa (diminui PL). Juros a receber/pagar: Ativo/Passivo.",
+      "JUROS ATIVOS = receita financeira (aumenta PL). JUROS PASSIVOS = despesa financeira (diminui PL). CESPE: 'juros recebidos s? despesa' -> FALSO."
+    ],
+    [
+      "contabilidade_43",
+      "O que é o CPC (Comitê de Pronunciamentos Contábeis)?",
+      "Órg? que emite pronunciamentos técnicos alinhados às normas internacionais (IFRS), adotados no Brasil.",
+      "CPC = Comitê de Pronunciamentos Contábeis. Emite pronunciamentos técnicos baseados no IFRS. CFC incorpora CPCs às NBCs. CESPE: 'CPC substitui o CFC' -> FALSO."
+    ],
+    [
+      "contabilidade_44",
+      "O que é capital de giro líquido (CGL)?",
+      "CGL = Ativo Circulante − Passivo Circulante; indica a folga financeira de curto prazo da entidade.",
+      "CGL (ou Capital de Giro Líquido) = AC - PC. Indica folga financeira de curto prazo. CGL positivo = AC > PC. CGL negativo = AC < PC (risco de liquidez)."
+    ],
+    [
+      "contabilidade_45",
+      "O que é índice de liquidez corrente?",
+      "Ativo Circulante / Passivo Circulante; mede a capacidade de pagar obrigações de curto prazo. Se > 1, situação favorável.",
+      "LIQUIDEZ CORRENTE = AC / PC. Ideal: > 1. Se = 1,5 → para cada R$1 de PC, R$1,50 de AC. CESPE: 'LC > 1 indica insolvência' -> FALSO (indica liquidez)."
+    ],
+    [
+      "contabilidade_46",
+      "O que é liquidez seca?",
+      "(Ativo Circulante − Estoques) / Passivo Circulante; exclui estoques por serem menos líquidos.",
+      "LIQUIDEZ SECA = (AC - Estoques) / PC. Exclui estoques (menos líquidos). Mais rigorosa que a corrente. CESPE: 'liquidez seca inclui estoques' -> FALSO."
+    ],
+    [
+      "contabilidade_47",
+      "O que é liquidez imediata?",
+      "Disponibilidades / Passivo Circulante; mede a capacidade de pagar obrigações com recursos imediatamente disponíveis.",
+      "LIQUIDEZ IMEDIATA = Disponibilidades / PC. Só caixa, bancos e aplicações. Geralmente < 1. CESPE: 'liquidez imediata mede capacidade de LP' -> FALSO (curto prazo)."
+    ],
+    [
+      "contabilidade_48",
+      "O que s? disponibilidades?",
+      "Recursos de liquidez imediata: caixa, banco conta movimento e aplicações financeiras de curto prazo.",
+      "DISPONIBILIDADES: caixa, bancos conta movimento, aplicações financeiras de liquidez imediata. Maior liquidez do ativo. CESPE: 'aplicações de LP s? disponibilidades' -> FALSO."
+    ],
+    [
+      "contabilidade_49",
+      "O que é capital social?",
+      "Recurso aportado pelos sócios/acionistas para a empresa; primeira conta do Patrimônio Líquido.",
+      "CAPITAL SOCIAL = recurso dos sócios. 1ª conta do PL. Aumenta com integralizações. CESPE: 'capital social é despesa' -> FALSO (é PL)."
+    ],
+    [
+      "contabilidade_50",
+      "O que é reserva de lucros?",
+      "Parcela do lucro do período retida na entidade para fins específicos (expansão, contingências), compondo o PL.",
+      "RESERVA DE LUCROS: parcela do lucro retida para fins específicos (expansão, contingências, incentivos fiscais). Compõe o PL. CESPE: 'reserva de lucros é passivo' -> FALSO (é PL)."
+    ],
+    [
+      "contabilidade_51",
+      "O que é resultado do exercício?",
+      "Lucro ou prejuízo apurado pela DRE no período; se lucro, é transferido para reservas ou distribuído como dividendos.",
+      "RESULTADO DO EXERCÍCIO: lucro → reservas ou dividendos. Prejuízo → reduz o PL. Transferido da DRE para o BP. CESPE: 'resultado é conta patrimonial' -> FALSO (é de resultado, depois vai ao PL)."
+    ],
+    [
+      "contabilidade_52",
+      "O que é conta retificadora?",
+      "Conta que reduz o saldo de outra conta do mesmo grupo. Ex: depreciação acumulada (retifica o imobilizado), PDD (retifica clientes).",
+      "CONTA RETIFICADORA: natureza inversa à conta principal. Ativo retificado: saldo CREDOR (ex: Depreciação Acumulada). PL retificado: saldo DEVEDOR (ex: Ações em Tesouraria). CESPE adora."
+    ],
+    [
+      "contabilidade_53",
+      "O que é amortização em contabilidade?",
+      "Redução do valor de ativo intangível (patentes, marcas, softwares) pelo uso ou pelo decurso do tempo.",
+      "AMORTIZAÇÃO: redução de intangíveis (patentes, marcas, softwares). Diferença de depreciação: depreciação = tangível; amortização = intangível. CESPE: 'amortização se aplica a imóveis' -> FALSO (depreciação)."
+    ],
+    [
+      "contabilidade_54",
+      "O que é exaustão?",
+      "Redução do valor de recursos naturais extraídos (mineração, petróleo, florestas) em função da exploração.",
+      "EXAUSTÃO: recursos naturais (mineração, petróleo, florestas). Diferença: depreciação (uso/desgaste), amortização (prazo legal/econômico), exaust? (extração). CESPE adora essa tríade."
+    ],
+    [
+      "contabilidade_55",
+      "O que é o princípio da prudência (conservadorismo)?",
+      "Adotar o menor valor para ativos e maiores valores para passivos em situações de incerteza; antecipar perdas, n? ganhos.",
+      "PRUDÊNCIA (conservadorismo): menor valor para ativos, maior para passivos. NBC atualizou: agora é 'neutralidade' (sem viés). CESPE: 'prudência foi substituída na EC 2019' -> VERDADEIRO (por neutralidade)."
+    ],
+    [
+      "contabilidade_56",
+      "O que é o princípio da continuidade?",
+      "Presume-se que a entidade continuará em operação por tempo indeterminado; base para avaliação dos ativos.",
+      "CONTINUIDADE: entidade operará indefinidamente. Se n? houver continuidade, usa-se valor de liquidação. CESPE: 'continuidade é presumida salvo evidência em contrário' -> VERDADEIRO."
+    ],
+    [
+      "contabilidade_57",
+      "O que é o princípio da entidade?",
+      "O patrimônio da entidade n? se confunde com o dos sócios; as contas devem refletir apenas os fatos da pessoa jurídica.",
+      "ENTIDADE: patrimônio da PJ ≠ PF dos sócios. Evita confus? patrimonial. CESPE: 'princípio da entidade permite misturar bens' -> FALSO."
+    ],
+    [
+      "contabilidade_58",
+      "O que é o princípio da oportunidade?",
+      "Os fatos devem ser registrados imediatamente e simultaneamente à sua ocorrência, sem atrasos.",
+      "OPORTUNIDADE: registro imediato e simultâneo dos fatos. Integridade + tempestividade. CESPE: 'oportunidade significa registrar quando for conveniente' -> FALSO (deve ser imediato)."
+    ],
+    [
+      "contabilidade_59",
+      "O que é conciliação bancária?",
+      "Comparação entre o saldo do extrato bancário e o saldo da conta banco nos livros contábeis, ajustando as diferenças.",
+      "CONCILIAÇÃO BANCÁRIA: ajusta diferenças entre extrato e contabilidade. Itens: cheques n? compensados, tarifas, juros. CESPE: 'conciliação é facultativa' -> FALSO."
+    ],
+    [
+      "contabilidade_60",
+      "O que é resultado bruto?",
+      "Receita líquida de vendas menos o CMV; indica o resultado antes das despesas operacionais.",
+      "RESULTADO BRUTO = Receita Líquida - CMV. Indica eficiência da atividade-fim. CESPE: 'resultado bruto considera despesas operacionais' -> FALSO (só deduz CMV)."
+    ],
+    [
+      "contabilidade_61",
+      "O que é variação monetária em contabilidade?",
+      "Atualização do valor de ativos e passivos em moeda estrangeira ou indexados; gera receita ou despesa financeira.",
+      "VARIAÇÃO MONETÁRIA: atualização de ativos/passivos em moeda estrangeira ou indexados. Ativa (receita) ou passiva (despesa). CESPE: 'variação cambial ativa é despesa' -> FALSO."
+    ],
+    [
+      "contabilidade_62",
+      "O que é folha de pagamento e seus reflexos contábeis?",
+      "Demonstrativo dos salários e encargos; gera despesa de pessoal (débito) e obrigações a pagar (crédito: INSS, FGTS, IRRF, salários).",
+      "FOLHA DE PAGAMENTO: 3 etapas: 1) apropriação (D-Despesa / C-Salários a Pagar); 2) encargos (D-Despesa INSS/FGTS / C-INSS/FGTS a Recolher); 3) pagamento (D-Salários a Pagar / C-Caixa). CESPE: 'FGTS é descontado do empregado' -> FALSO (é do empregador, 8%)."
+    ],
+    [
+      "contabilidade_63",
+      "O que é o método PEPS de avaliação de estoques?",
+      "Primeiro a Entrar, Primeiro a Sair (FIFO); os primeiros itens comprados s? os primeiros vendidos.",
+      "PEPS (FIFO): primeiros itens a entrar s? os primeiros a sair. Estoque final = custos mais recentes. CMV = custos mais antigos. CESPE: 'PEPS é igual ao UEPS' -> FALSO (UEPS é proibido no Brasil desde 2008)."
+    ],
+    [
+      "contabilidade_64",
+      "O que é o método do Custo Médio Ponderado?",
+      "Calcula o custo médio dos estoques após cada entrada; saldo reflete a média ponderada dos custos.",
+      "CUSTO MÉDIO PONDERADO MÓVEL: recalcula o custo médio após cada entrada. Suaviza oscilações de preço. Método mais usado no Brasil. CESPE: 'custo médio é calculado só no fim do período' -> FALSO (móvel = a cada entrada)."
+    ],
+    [
+      "contabilidade_65",
+      "O que é o ativo intangível?",
+      "Ativo n? monetário, sem substância física: marcas, patentes, softwares, fundo de comércio (goodwill), licenças.",
+      "ATIVO INTANGÍVEL: sem substância física, n? monetário. Ex: marcas, patentes, softwares, goodwill, licenças. CESPE: 'marcas s? ativo imobilizado' -> FALSO (s? intangíveis)."
+    ],
+    [
+      "contabilidade_66",
+      "O que é o goodwill (ágio por expectativa de rentabilidade futura)?",
+      "Diferença paga a mais pelo adquirente em relação ao valor justo dos ativos líquidos adquiridos; reconhecido no intangível.",
+      "GOODWILL: ágio por expectativa de rentabilidade futura. Reconhecido no intangível. N? é amortizado — testado por impairment. CESPE: 'goodwill é despesa' -> FALSO (é ativo intangível)."
+    ],
+    [
+      "contabilidade_67",
+      "O que é o Custo de Aquisição de um bem?",
+      "Preço pago + fretes + seguros + tributos n? recuperáveis − descontos incondicionais. Todas as despesas necessárias para colocar o bem em uso.",
+      "CUSTO DE AQUISIÇÃO = preço + fretes + seguros + tributos n? recuperáveis - descontos. CESPE: 'ICMS recuperável integra o custo' -> FALSO (n? recuperável é que integra)."
+    ],
+    [
+      "contabilidade_68",
+      "O que é EBITDA?",
+      "Lucro antes de juros, impostos, depreciação e amortização; mede a capacidade operacional de gerar caixa.",
+      "EBITDA (LAJIDA): Lucro Antes de Juros, Impostos, Depreciação e Amortização. Mede geração operacional de caixa. CESPE: 'EBITDA é o lucro líquido' -> FALSO (é antes de juros, IR, depreciação e amortização)."
+    ],
+    [
+      "contabilidade_69",
+      "O que é a DFC (Demonstração dos Fluxos de Caixa)?",
+      "Demonstra as entradas e saídas de caixa classificadas em atividades operacionais, de investimento e de financiamento.",
+      "DFC: fluxos de caixa. 3 atividades: Operacional (atividade-fim), Investimento (imobilizado, intangíveis), Financiamento (empréstimos, dividendos, capital). CESPE: 'DFC substitui a DRE' -> FALSO."
+    ],
+    [
+      "contabilidade_70",
+      "O que s? atividades operacionais na DFC?",
+      "Fluxos relacionados às atividades principais: recebimentos de clientes, pagamentos a fornecedores, salários, impostos.",
+      "OPERACIONAL na DFC: recebimentos de clientes, pagamentos a fornecedores/salários/impostos. Método direto (recebimentos e pagamentos) ou indireto (ajusta lucro líquido)."
+    ],
+    [
+      "contabilidade_71",
+      "O que s? atividades de investimento na DFC?",
+      "Aquisição e venda de ativos de longo prazo: imobilizado, investimentos, intangíveis.",
+      "INVESTIMENTO na DFC: compra/venda de imobilizado, intangíveis, investimentos de LP. CESPE: 'compra de estoque é atividade de investimento' -> FALSO (operacional)."
+    ],
+    [
+      "contabilidade_72",
+      "O que s? atividades de financiamento na DFC?",
+      "Captação e amortização de empréstimos, integralização de capital, pagamento de dividendos.",
+      "FINANCIAMENTO na DFC: captação/amortização de empréstimos, integralização de capital, pagamento de dividendos. CESPE: 'pagamento de fornecedor é financiamento' -> FALSO."
+    ],
+    [
+      "contabilidade_73",
+      "O que é a DMPL (Demonstração de Mutações do Patrimônio Líquido)?",
+      "Evidencia todas as alterações ocorridas nas contas do PL durante o exercício.",
+      "DMPL: evidencia alterações no PL (capital, reservas, lucros acumulados, ajustes, ações em tesouraria). Mais completa que a DLPA. CESPE: 'DMPL substitui a DLPA' -> VERDADEIRO."
+    ],
+    [
+      "contabilidade_74",
+      "O que é a DVA (Demonstração do Valor Adicionado)?",
+      "Apresenta o valor gerado pela empresa e como foi distribuído entre empregados, governo, financiadores e sócios.",
+      "DVA: riqueza gerada pela empresa e sua distribuição (empregados, governo, financiadores, sócios). CESPE: 'DVA é obrigatória para empresas de capital aberto' -> VERDADEIRO."
+    ],
+    [
+      "contabilidade_75",
+      "O que é arrendamento mercantil financeiro (leasing financeiro)?",
+      "Contrato em que o arrendatário reconhece o bem como ativo e a obrigação como passivo; equivale a uma compra financiada.",
+      "LEASING FINANCEIRO: reconhece bem como ativo + obrigação como passivo. Risco e controle transferidos ao arrendatário. CESPE: 'leasing é despesa de aluguel' -> FALSO (é aquisição financiada)."
+    ],
+    [
+      "contabilidade_76",
+      "O que é desconto comercial?",
+      "Desconto sobre o valor nominal de um título por antecipação do vencimento; calculado sobre o valor nominal (desconto por fora).",
+      "DESCONTO COMERCIAL (por fora): calculado sobre o valor nominal. Diferença do racional: comercial usa valor futuro, racional usa valor presente. CESPE adora distinguir."
+    ],
+    [
+      "contabilidade_77",
+      "O que é INSS patronal e como é contabilizado?",
+      "Encargo do empregador sobre a folha de pagamento; lançado como despesa (débito) e passivo a pagar (crédito).",
+      "INSS PATRONAL: encargo do empregador (20% sobre a folha). Lançamento: D-Despesa / C-INSS a Recolher. CESPE: 'INSS patronal é descontado do empregado' -> FALSO."
+    ],
+    [
+      "contabilidade_78",
+      "O que é o Balanço de Abertura?",
+      "Primeiro balanço elaborado pela entidade, registrando o patrimônio inicial antes do início das operações.",
+      "BALANÇO DE ABERTURA: primeiro balanço da entidade. Registra o patrimônio inicial. A = P + PL. Base para todos os balanços seguintes."
+    ],
+    [
+      "contabilidade_79",
+      "Qual a diferença entre ativo circulante e n? circulante?",
+      "Circulante: realizável ou conversível em caixa em até 12 meses. N? circulante: realizável após 12 meses.",
+      "CIRCULANTE: até 12 meses (caixa, bancos, estoques, contas a receber). NÃO CIRCULANTE: > 12 meses (imobilizado, intangível, investimentos). CESPE: 'contas a receber de LP s? circulantes' -> FALSO."
+    ],
+    [
+      "contabilidade_80",
+      "Qual a diferença entre passivo circulante e n? circulante?",
+      "Circulante: exigível em até 12 meses. N? circulante: exigível após 12 meses (dívidas de longo prazo).",
+      "PASSIVO CIRCULANTE: até 12 meses (fornecedores, salários, impostos). NÃO CIRCULANTE: > 12 meses (financiamentos de LP). CESPE: 'empréstimo de 36 meses é circulante' -> FALSO."
+    ],
+    [
+      "contabilidade_81",
+      "O que é nota fiscal e sua importância contábil?",
+      "Documento fiscal que comprova a operação de compra/venda; é o documento hábil para o lançamento contábil.",
+      "NOTA FISCAL: documento hábil para lançamento contábil. Comprova a operação. CESPE: 'nota fiscal é facultativa' -> FALSO."
+    ],
+    [
+      "contabilidade_82",
+      "O que é o princípio da denominação pecuniária (unidade monetária)?",
+      "Os elementos patrimoniais devem ser expressos em moeda nacional (real no Brasil).",
+      "DENOMINAÇÃO PECUNIÁRIA: patrimônio expresso em moeda nacional (Real). CESPE: 'ativos podem ser registrados em dólar' -> FALSO (devem ser convertidos)."
+    ],
+    [
+      "contabilidade_83",
+      "O que é resultado operacional?",
+      "Lucro ou prejuízo proveniente das atividades principais da empresa, antes de resultados financeiros e tributos.",
+      "RESULTADO OPERACIONAL: lucro/prejuízo das atividades principais (antes de resultado financeiro e tributos). CESPE: 'resultado operacional inclui receitas financeiras' -> FALSO."
+    ],
+    [
+      "contabilidade_84",
+      "O que é imposto diferido (ativo/passivo fiscal diferido)?",
+      "Diferença temporária entre o resultado contábil e o fiscal; gera ativo ou passivo diferido a ser realizado em períodos futuros.",
+      "IMPOSTO DIFERIDO: diferença temporária entre resultado contábil e fiscal. Ativo (despesa futura dedutível) ou passivo (receita futura tributável). NBC TG 32."
+    ],
+    [
+      "contabilidade_85",
+      "O que é a conta 'Caixa' e seu funcionamento?",
+      "Conta do ativo circulante que registra entradas (débitos) e saídas (créditos) de dinheiro em espécie; saldo devedor.",
+      "CAIXA: ativo circulante, natureza devedora. Débito = entrada, Crédito = saída. Saldo NUNCA pode ser credor. CESPE: 'caixa pode ter saldo credor' -> FALSO (excepcionalmente em ajustes)."
+    ],
+    [
+      "contabilidade_86",
+      "O que é a conta 'Fornecedores' e seu funcionamento?",
+      "Conta do passivo circulante que registra compras a prazo (créditos); saldo credor; zerada ao pagar o fornecedor.",
+      "FORNECEDORES: passivo circulante, natureza credora. Débito = pagamento, Crédito = compra a prazo. CESPE: 'fornecedores é conta do ativo' -> FALSO (é passivo)."
+    ],
+    [
+      "contabilidade_87",
+      "O que é a conta 'Capital Social' e seu funcionamento?",
+      "Conta do PL que registra o valor aportado pelos sócios; saldo credor; aumenta com novos aportes, diminui com reduções formais.",
+      "CAPITAL SOCIAL: PL, natureza credora. Aumenta a crédito (integralizações). Diminui a débito (redução formal). CESPE: 'capital social é passivo exigível' -> FALSO."
+    ],
+    [
+      "contabilidade_88",
+      "O que é balancete e qual sua diferença do balanço?",
+      "Balancete: lista de contas com saldos para verificação periódica. Balanço: demonstração formal e obrigatória da posição patrimonial numa data.",
+      "BALANCETE: lista de contas com saldos (periódico, facultativo). BALANÇO: demonstração formal (obrigatória). CESPE: 'balancete e balanço s? sinônimos' -> FALSO."
+    ],
+    [
+      "contabilidade_89",
+      "O que é o custo histórico como critério de avaliação?",
+      "Registrar os ativos pelo valor original de aquisição; é o critério básico das NBC, podendo ser ajustado por redução ao valor recuperável.",
+      "CUSTO HISTÓRICO: valor original de aquisição. Base das NBCs. Ajustável por impairment. CESPE: 'custo histórico nunca é ajustado' -> FALSO (impairment)."
+    ],
+    [
+      "contabilidade_90",
+      "O que é o valor justo (fair value) em contabilidade?",
+      "Preço que seria recebido pela venda de um ativo ou pago pela transferência de um passivo em uma transação ordenada no mercado.",
+      "VALOR JUSTO (fair value): preço de venda do ativo em transação ordenada (IFRS 13). CESPE: 'valor justo é o custo histórico' -> FALSO."
+    ],
+    [
+      "contabilidade_91",
+      "O que é a conta 'Clientes' (ou contas a receber) e seu funcionamento?",
+      "Conta do ativo circulante que registra vendas a prazo (débitos); saldo devedor; zerada ao receber o pagamento.",
+      "CLIENTES (contas a receber): ativo circulante, natureza devedora. Débito = venda a prazo, Crédito = recebimento. CESPE: 'clientes é conta do passivo' -> FALSO."
+    ],
+    [
+      "contabilidade_92",
+      "O que s? deduções da receita bruta na DRE?",
+      "Valores subtraídos da receita bruta: devoluções, abatimentos, impostos sobre vendas (ICMS, PIS, COFINS). Resultado: receita líquida.",
+      "DEDUÇÕES DA RB: devoluções, abatimentos, ICMS/PIS/COFINS sobre vendas. CESPE: 'deduções s? despesas operacionais' -> FALSO (s? abatimentos na DRE)."
+    ],
+    [
+      "contabilidade_93",
+      "O que é a conta 'Estoques' e como é classificada?",
+      "Conta do ativo circulante que registra mercadorias para venda ou matérias-primas; avaliada pelo custo de aquisição.",
+      "ESTOQUES: ativo circulante, natureza devedora. PEPS, Custo Médio ou UEPS (proibido). Débito = compras, Crédito = CMV. CESPE: 'estoques s? ANC' -> FALSO."
+    ],
+    [
+      "contabilidade_94",
+      "O que é o regime de competência em contraposição ao regime de caixa?",
+      "Competência reconhece o fato no período de ocorrência; caixa reconhece no momento do pagamento/recebimento. NBC exige competência.",
+      "COMPETÊNCIA: reconhece pelo fato gerador (NBC exige). CAIXA: pelo recebimento/pagamento. Privado: competência. Público: caixa (Lei 4.320/64)."
+    ],
+    [
+      "contabilidade_95",
+      "O que é dividendo e como é registrado?",
+      "Parcela do lucro distribuída aos sócios/acionistas; débito na conta de lucros acumulados (PL) e crédito em dividendos a pagar (passivo).",
+      "DIVIDENDO: D - Lucros Acumulados (PL) / C - Dividendos a Pagar (Passivo). CESPE: 'dividendo é despesa' -> FALSO (é distribuição de resultado)."
+    ],
+    [
+      "contabilidade_96",
+      "O que é integralização do capital social?",
+      "Efetivo pagamento pelos sócios do capital subscrito; pode ser em dinheiro, bens ou direitos.",
+      "INTEGRALIZAÇÃO DE CAPITAL: pagamento do capital subscrito (dinheiro, bens ou direitos). D - Caixa/Bens / C - Capital Social. CESPE: 'integralização é receita' -> FALSO."
+    ],
+    [
+      "contabilidade_97",
+      "O que é o patrimônio líquido negativo?",
+      "Quando o passivo é maior que o ativo; indica que os sócios têm déficit patrimonial; situação de insolvência técnica.",
+      "PL NEGATIVO (passivo a descoberto): A < P. Insolvência técnica. CESPE: 'se PL for negativo, A = P + PL negativo' -> VERDADEIRO."
+    ],
+    [
+      "contabilidade_new_100",
+      "Quais s? os conceitos, objetivos e finalidades da Contabilidade?",
+      "A Contabilidade é a ciência que estuda e controla o patrimônio das entidades, com o objetivo de fornecer informações úteis para a tomada de decisões dos usuários (gestores, investidores, governo).",
+      "CONTABILIDADE = ciência que estuda o patrimônio. Objeto = patrimônio. Finalidade = informar usuários. CESPE: 'contabilidade é arte' -> FALSO (é ciência)."
+    ],
+    [
+      "contabilidade_new_101",
+      "O que compõe o patrimônio e qual a equação fundamental?",
+      "O patrimônio é composto por bens, direitos (Ativo) e obrigações (Passivo); a equação fundamental é Ativo = Passivo + Patrimônio Líquido (PL = Ativo - Passivo).",
+      "ATIVO = PASSIVO + PL. PL = A - P. Bens + Direitos = Ativo. Obrigações = Passivo. CESPE adora a equação fundamental."
+    ],
+    [
+      "contabilidade_new_102",
+      "O que é situação líquida patrimonial?",
+      "É o resultado da diferença entre o Ativo e o Passivo (Patrimônio Líquido), podendo ser positiva (superavitária), nula ou negativa (passivo a descoberto).",
+      "SITUAÇÃO LÍQUIDA: positiva (A > P), negativa (A < P), nula (A = P). CESPE: 'situação líquida é sempre positiva' -> FALSO."
+    ],
+    [
+      "contabilidade_new_103",
+      "Diferencie atos administrativos de fatos administrativos na contabilidade.",
+      "Atos administrativos n? alteram imediatamente o patrimônio (ex: assinatura de contrato); fatos administrativos provocam alterações efetivas no patrimônio (permutativos, modificativos ou mistos).",
+      "ATOS: não alteram patrimônio (ex: assinar contrato). FATOS: alteram patrimônio (ex: comprar à vista). CESPE adora distinção."
+    ],
+    [
+      "contabilidade_new_104",
+      "O que s? fatos contábeis permutativos, modificativos e mistos?",
+      "Permutativos alteram a composição do ativo/passivo sem mudar o PL; modificativos alteram o valor do PL (aumentando ou diminuindo); mistos combinam características de ambos.",
+      "PERMUTATIVO: não altera PL. MODIFICATIVO: altera PL (receita/despesa). MISTO: permuta + modificação. CESPE: 'compra com desconto é misto' -> VERDADEIRO."
+    ],
+    [
+      "contabilidade_new_105",
+      "O que s? contas de débito e crédito na contabilidade?",
+      "Débito representa entradas em contas de Ativo/Despesa ou saídas em Passivo/PL/Receita; crédito representa o inverso — entradas em Passivo/PL/Receita ou saídas em Ativo/Despesa.",
+      "DÉBITO: esquerda. CRÉDITO: direita. Ativo/Despesa: aumentam a débito. Passivo/PL/Receita: aumentam a crédito. Partidas dobradas."
+    ],
+    [
+      "contabilidade_new_106",
+      "O que é escrituração contábil e quais seus elementos essenciais?",
+      "É o registro cronológico dos fatos contábeis nos livros contábeis (Diário e Razão), contendo data, contas debitadas/creditadas, valor e histórico do lançamento.",
+      "ESCRITURAÇÃO: registro cronológico no Diário e Razão. 5 elem: data, débito, crédito, histórico, valor. CESPE: 'escrituração é facultativa' -> FALSO."
+    ],
+    [
+      "contabilidade_new_107",
+      "Diferencie regime de competência e regime de caixa na contabilização de operações.",
+      "Regime de competência reconhece receitas/despesas no período em que ocorrem, independente do pagamento; regime de caixa reconhece apenas quando há efetivo recebimento/pagamento.",
+      "COMPETÊNCIA: fato gerador (empresas). CAIXA: pagamento/recebimento (setor público). CESPE: 'competência no orçamento público' -> FALSO (caixa)."
+    ],
+    [
+      "contabilidade_new_108",
+      "O que é o Balancete de Verificação e qual sua finalidade?",
+      "É um demonstrativo que lista todas as contas com seus saldos devedores e credores, usado para verificar a exatid? dos lançamentos antes da elaboração das demonstrações finais.",
+      "BALANCETE: saldos D e C. Verifica total D = C. NÃO substitui Balanço. CESPE: 'balancete obrigatório' -> FALSO (facultativo)."
+    ],
+    [
+      "contabilidade_new_109",
+      "O que s? o Balanço Patrimonial e a DRE?",
+      "Balanço Patrimonial demonstra a posição patrimonial (Ativo, Passivo e PL) em determinada data; a Demonstração do Resultado do Exercício (DRE) apresenta receitas, custos e despesas, evidenciando o lucro ou prejuízo do período.",
+      "BP = FOTO (estática). DRE = FILME (dinâmica). Lucro líquido da DRE aumenta o PL no BP. CESPE: 'BP é demonstração dinâmica' -> FALSO."
+    ],
+    [
+      "contabilidade_expand_007",
+      "Como a CESPE/CEBRASPE costuma cobrar atos e fatos administrativos em provas anteriores?",
+      "Principais pegadinhas da banca: 1) Afirmar que 'todo ato administrativo é contabilizado' → FALSO (apenas fatos). 2) Dizer que 'fato permutativo altera o PL' → FALSO. 3) Classificar 'assinatura de contrato' como fato contábil → FALSO (é ato). 4) Chamar fato modificativo de 'fato quantitativo' e pedir exemplo. 5) Misturar contas de resultado em lançamento de fato permutativo — lá só entram contas patrimoniais.",
+      "REGRA DE OURO: veio 'receita' ou 'despesa' no lançamento → o PL está sendo alterado. Só aí pode ser fato modificativo ou misto."
+    ],
+    [
+      "contabilidade_expand_010",
+      "O que s? saldos devedor, credor e nulo? Como s? apurados?",
+      "SALDO DEVEDOR: total de débitos > total de créditos na conta. Ex: Caixa com R$ 10.000 de débitos e R$ 4.000 de créditos → saldo devedor R$ 6.000. SALDO CREDOR: total de créditos > total de débitos. Ex: Fornecedores com R$ 5.000 de créditos e R$ 2.000 de débitos → saldo credor R$ 3.000. SALDO NULO: débitos = créditos (conta zerada). REGRA: contas de Ativo e Despesa têm NATUREZA DEVEDORA; Passivo, PL e Receita têm NATUREZA CREDORA.",
+      "Pegadinha CESPE: 'Uma conta do Ativo pode ter saldo credor?' EM REGRA não, mas pode em situações excepcionais (ex: saldo negativo de caixa, ou conta retificadora). A banca costuma perguntar a regra geral."
+    ],
+    [
+      "contabilidade_expand_015",
+      "O que é Plano de Contas? Qual sua finalidade e estrutura básica?",
+      "PLANO DE CONTAS é o conjunto de contas contábeis padronizado que uma entidade utiliza para registrar suas operações. Finalidade: atender às necessidades de informação, padronizar registros, facilitar a elaboração das demonstrações contábeis. ESTRUTURA: 1) Ativo (Circulante e N? Circulante); 2) Passivo (Circulante e N? Circulante); 3) Patrimônio Líquido; 4) Receitas; 5) Despesas; 6) Contas de Apuração (Custo, CMV, etc.). O plano é codificado (níveis: 1. Ativo, 1.1 Ativo Circulante, 1.1.1 Disponível, etc.).",
+      "CESPE cobra: 'O plano de contas é facultativo para cada entidade, mas deve seguir a NBC TG Estrutura Conceitual.' N? existe um plano único obrigatório para todas as empresas (exceto setores regulados)."
+    ],
+    [
+      "contabilidade_expand_016",
+      "Como se contabilizam juros ativos e juros passivos?",
+      "JUROS ATIVOS (receita financeira): ocorrem quando a entidade recebe juros por aplicações ou atraso de terceiros. Lançamento: D – Caixa/Bancos / C – Receita de Juros (Resultado). JUROS PASSIVOS (despesa financeira): quando a entidade paga juros sobre empréstimos, financiamentos ou atraso próprio. Lançamento: D – Despesa de Juros (Resultado) / C – Caixa/Bancos ou Conta a Pagar. REGRA: juros NÃO integram o custo de aquisição de estoques ou imobilizado (exceto juros capitalizáveis — NBC TG 20).",
+      "Pegadinha CESPE: 'Juros sobre capital próprio' NÃO é despesa financeira — é distribuição de resultado (PL). Juros passivos de empréstimo SÃO despesa financeira na DRE."
+    ],
+    [
+      "contabilidade_expand_021",
+      "Como se contabilizam provisões (passivas) contábeis?",
+      "PROVISÃO é um passivo de prazo ou valor incertos, reconhecido quando: (a) há obrigação presente (legal ou n? formalizada) decorrente de evento passado; (b) é provável a saída de recursos; (c) o valor pode ser estimado com confiança (NBC TG 25). Lançamento: D – Despesa com Provis? (Resultado) / C – Provis? p/ Riscos Trabalhistas, Fiscais, Cíveis (Passivo). EXEMPLO: provis? para garantia de produtos: D – Despesa com Garantia / C – Provis? para Garantia. A provis? é REVERTIDA se o risco n? se concretizar: D – Provis? / C – Revers? de Provis? (Receita).",
+      "ALERTA CESPE: 'Provis?' é passivo (exigível). 'Reserva' é PL. N? confunda! A banca adora trocar os conceitos. NBC TG 25 regula provisões, passivos contingentes e ativos contingentes."
     ]
   ],
   "removes": [],

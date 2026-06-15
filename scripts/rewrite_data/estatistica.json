@@ -1,35 +1,659 @@
 {
   "rewrites": [
-    ["estatistica_0", "O que é estatística descritiva?", "Conjunto de técnicas para organizar, resumir e descrever dados por meio de tabelas, gráficos e medidas descritivas (posição, dispersão).", "DESCRITIVA: descreve a amostra. INFERENCIAL: conclui sobre a população. CESPE: 'descritiva permite conclusões sobre a população' -> FALSO (quem faz é a inferencial)."],
-    ["estatistica_1", "O que é população e amostra?", "População: todos os elementos de interesse. Amostra: subconjunto representativo. Parâmetro descreve população; estatística descreve amostra.", "POPULAÇÃO = todos. AMOSTRA = parte. PARÂMETRO = medida da população. ESTATÍSTICA = medida da amostra. CESPE adora."],
-    ["estatistica_2", "O que é variável estatística?", "Característica observada nos elementos. Qualitativa (nominal/ordinal) ou quantitativa (discreta/contínua).", "QUALITATIVA: atributos (sexo, cor). QUANTITATIVA: números (altura, idade). NOMINAL: sem ordem. ORDINAL: com ordem. DISCRETA: inteiros. CONTÍNUA: qualquer valor."],
-    ["estatistica_3", "O que é variável qualitativa nominal?", "Categoria sem ordem natural. Ex: cor dos olhos, estado civil, profissão.", "NOMINAL = NOME (sem hierarquia). CESPE: 'escolaridade é nominal' -> FALSO (é ordinal, tem ordem)."],
-    ["estatistica_4", "O que é variável qualitativa ordinal?", "Categoria com ordem natural. Ex: escolaridade (fundamental, médio, superior), classe social.", "ORDINAL = ORDEM. CESPE: 'classificação de policiais por patente' -> ordinal. 'Cor da pele' -> nominal."],
-    ["estatistica_5", "O que é variável quantitativa discreta?", "Assume valores inteiros, geralmente contagens. Ex: número de filhos, número de prisões.", "DISCRETA = CONTAGEM (valores inteiros). CESPE: 'número de policiais em uma delegacia' -> discreta. 'Altura' -> contínua."],
-    ["estatistica_6", "O que é variável quantitativa contínua?", "Pode assumir qualquer valor em um intervalo real. Ex: altura, peso, temperatura, tempo.", "CONTÍNUA = MEDIÇÃO (valores reais). CESPE: 'idade é contínua ou discreta?' -> AMBAS (em anos = discreta; em dias = contínua)."],
-    ["estatistica_7", "O que é tabela de frequência?", "Organização dos dados em classes com frequências: absoluta (fi), relativa (fr), acumulada (Fa).", "FREQ. ABSOLUTA = contagem. RELATIVA = fi/n (percentual). ACUMULADA = soma até o ponto. CESPE adora."],
-    ["estatistica_8", "O que é frequência absoluta?", "Número de vezes que um valor ou classe ocorre no conjunto de dados.", "Somatório de todas as fi = n (total). CESPE: 'frequência absoluta é sempre expressa em porcentagem' -> FALSO (relativa é porcentagem)."],
-    ["estatistica_9", "O que é frequência relativa?", "Razão entre frequência absoluta e total: fr = fi/n. Expressa em decimal, fração ou porcentagem.", "Somatório de fr = 1 (ou 100%). CESPE: 'frequência relativa é fi/n' -> VERDADEIRO."],
-    ["estatistica_11", "O que é média aritmética?", "Soma de todos os valores dividida pelo número de observações: x̄ = Σxi/n.", "MÉDIA = centro de gravidade. Sensível a outliers. CESPE: 'média é influenciada por valores extremos' -> VERDADEIRO."],
-    ["estatistica_12", "O que é mediana?", "Valor central do rol ordenado. Se n ímpar: termo do meio. Se n par: média dos dois centrais.", "MEDIANA = resistente a outliers. CESPE: 'mediana sofre menos influência de valores extremos que a média' -> VERDADEIRO."],
-    ["estatistica_13", "O que é moda?", "Valor que ocorre com maior frequência. Pode ser amodal, unimodal, bimodal ou multimodal.", "MODA = mais frequente. CESPE: 'moda sempre existe' -> FALSO (pode ser amodal)."],
-    ["estatistica_14", "Qual a relação entre média, mediana e moda em distribuições assimétricas?", "Assimetria positiva (cauda à direita): Moda < Mediana < Média. Assimetria negativa (cauda à esquerda): Média < Mediana < Moda.", "POSITIVA: Mo < Md < x̄ (cauda direita). NEGATIVA: x̄ < Md < Mo (cauda esquerda). Normal: Mo = Md = x̄. CESPE adora essa relação."],
-    ["estatistica_15", "O que é variância?", "Média dos quadrados dos desvios em relação à média. Mede a dispersão. σ² = Σ(xi - x̄)²/n.", "VARIÂNCIA: quadrado da unidade dos dados. Populacional: σ² (divide por N). Amostral: s² (divide por n-1)."],
-    ["estatistica_16", "O que é desvio padrão?", "Raiz quadrada da variância. Mede a dispersão na mesma unidade dos dados. σ = √σ².", "DESVIO PADRÃO = variância na unidade original. CESPE: 'desvio padrão é sempre positivo' -> VERDADEIRO (raiz quadrada)."],
-    ["estatistica_17", "O que é coeficiente de variação (CV)?", "CV = (σ/x̄)*100%. Mede a dispersão relativa. Permite comparar variabilidades de conjuntos com unidades diferentes.", "CV = dispersão relativa (percentual). Quanto menor o CV, mais homogêneo. CESPE: 'CV permite comparar alturas e pesos' -> VERDADEIRO."],
-    ["estatistica_18", "O que é amplitude total?", "Diferença entre o maior e o menor valor do conjunto. Medida simples mas limitada de dispersão.", "AMPLITUDE = Max - Min. Instável (sofre com outliers). CESPE: 'amplitude total é a melhor medida de dispersão' -> FALSO (é a mais simples, mas menos robusta)."],
-    ["estatistica_19", "O que é quartil?", "Valores que dividem o rol ordenado em 4 partes iguais. Q1 (25%), Q2 = mediana (50%), Q3 (75%).", "QUARTIS: Q1 = 1º quartil (P25). Q2 = mediana (P50). Q3 = 3º quartil (P75). IIQ = Q3 - Q1 (medida robusta)."],
-    ["estatistica_22", "O que é histograma?", "Gráfico de barras adjacentes para variáveis contínuas. Base = classes; altura = frequência.", "HISTOGRAMA: barras JUNTAS (sem espaço). Polígono de frequência: linhas. Ogiva: frequência acumulada. CESPE: 'histograma é para variáveis qualitativas' -> FALSO."],
-    ["estatistica_26", "O que é probabilidade e seus axiomas?", "Medida de chance de ocorrência. Axiomas (Kolmogorov): (1) P(A) ≥ 0; (2) P(Ω) = 1; (3) P(A∪B) = P(A)+P(B) se A e B mutuamente exclusivos.", "AXIOMAS: não negatividade, normalização, aditividade. CESPE: 'probabilidade pode ser negativa' -> FALSO."],
-    ["estatistica_27", "O que é espaço amostral?", "Conjunto de todos os resultados possíveis de um experimento aleatório. Representado por Ω.", "ESPAÇO AMOSTRAL = Ω (todas possibilidades). Ex: dado = {1,2,3,4,5,6}. CESPE: 'o espaço amostral é sempre finito' -> FALSO (pode ser infinito)."],
-    ["estatistica_28", "O que são eventos mutuamente exclusivos?", "Eventos que não podem ocorrer simultaneamente. P(A ∩ B) = 0.", "MUTUAMENTE EXCLUSIVOS = disjuntos. CESPE: 'se A e B são mutuamente exclusivos, P(A∪B) = P(A)+P(B)' -> VERDADEIRO."],
-    ["estatistica_29", "O que são eventos independentes?", "A ocorrência de um não afeta a probabilidade do outro. P(A∩B) = P(A)*P(B).", "INDEPENDENTES: P(A∩B)=P(A)P(B). CESPE: 'eventos mutuamente exclusivos são independentes' -> FALSO (ME nunca são independentes)."],
-    ["estatistica_31", "O que é o Teorema de Bayes?", "P(B|A) = P(A|B)*P(B)/P(A). Atualiza probabilidades com novas evidências.", "BAYES = probabilidade 'reversa' (causa à luz do efeito). CESPE adora. Fórmula-chave para atualização de crenças."],
-    ["estatistica_32", "O que é distribuição binomial?", "Modela número de sucessos em n tentativas independentes com prob. p. P(X=k) = C(n,k)*p^k*(1-p)^(n-k).", "BINOMIAL: n tentativas, 2 resultados (sucesso/fracasso), p constante. E(X)=np. Var(X)=np(1-p). CESPE: 'binomial = Bernoulli repetido' -> VERDADEIRO."],
-    ["estatistica_33", "O que é distribuição normal?", "Distribuição em forma de sino, simétrica em torno da média. Caracterizada por μ e σ. Curva padrão: Z = (X-μ)/σ.", "NORMAL = curva de Gauss. Média=moda=mediana. 68-95-99,7. Padronização Z. CESPE: 'normal é assimétrica' -> FALSO (simétrica)."],
-    ["estatistica_34", "O que é a regra empírica (68-95-99,7) da normal?", "68% dos dados em μ±1σ; 95% em μ±2σ; 99,7% em μ±3σ.", "68% (±1σ), 95% (±2σ), 99,7% (±3σ). CESPE adora: '95% dos dados estão a 1 desvio padrão da média' -> FALSO (68% está a 1σ; 95% a 2σ)."],
-    ["estatistica_35", "O que é padronização (escore Z)?", "Z = (X-μ)/σ. Transforma qualquer normal em normal padrão (μ=0, σ=1).", "Z = quantos desvios padrão X está da média. Z > 0 = acima da média. Z < 0 = abaixo. CESPE: 'Z é adimensional' -> VERDADEIRO."],
-    ["estatistica_36", "O que é amostragem aleatória simples (AAS)?", "Cada elemento tem a mesma probabilidade de ser selecionado. Pode ser com ou sem reposição.", "AAS = sorteio puro. CESPE: 'AAS exige que a população seja homogênea' -> FALSO (não exige, mas é desejável)."]
+    [
+      "estatistica_0",
+      "O que é estatística descritiva?",
+      "Estatística descritiva é o ramo da estatística que organiza, resume e apresenta dados de forma clara e objetiva, utilizando tabelas, gráficos e medidas descritivas (posição, dispersão, assimetria e curtose). Diferencia-se da estatística inferencial, que faz generalizações sobre a população a partir da amostra.",
+      "CESPE cobra a distinção: descritiva -> descreve dados (tabelas, gráficos, medidas); inferencial -> generaliza (testes de hipótese, intervalos de confiança). Exemplo clássico: Qual ramo calcula a média amostral? -> Estatística descritiva."
+    ],
+    [
+      "estatistica_1",
+      "O que é população e amostra?",
+      "População: todos os elementos de interesse. Amostra: subconjunto representativo. Parâmetro descreve população; estatística descreve amostra.",
+      "POPULAÇÃO = todos. AMOSTRA = parte. PARÂMETRO = medida da população. ESTATÍSTICA = medida da amostra. CESPE adora."
+    ],
+    [
+      "estatistica_10",
+      "O que é frequência acumulada?",
+      "Frequência acumulada (Fac) é a soma das frequências (absolutas ou relativas) de todas as classes até o ponto considerado, incluindo a classe atual. A frequência acumulada da última classe é sempre igual ao tamanho total da amostra (n).",
+      "CESPE: frequência acumulada é sempre CRESCENTE. A Fac da última classe = n (para absoluta) ou 1/100% (para relativa). Questão clássica: Qual a frequência acumulada da 3ª classe? -> Soma das frequências das classes 1, 2 e 3."
+    ],
+    [
+      "estatistica_11",
+      "O que é média aritmética?",
+      "Soma de todos os valores dividida pelo número de observações: x̄ = Σxi/n.",
+      "MÉDIA = centro de gravidade. Sensível a outliers. CESPE: 'média é influenciada por valores extremos' -> VERDADEIRO."
+    ],
+    [
+      "estatistica_12",
+      "O que é mediana?",
+      "Valor central dos dados ordenados (rol). Se n é ímpar: termo na posição (n+1)/2. Se n é par: média aritmética dos dois termos centrais (posições n/2 e n/2 + 1). A mediana é resistente a outliers, ao contrário da média.",
+      "CESPE: mediana é MENOS sensível a valores extremos que a média. Em distribuições assimétricas, a mediana é mais representativa. Relação: em assimetria positiva, média > mediana > moda; em negativa, moda > mediana > média."
+    ],
+    [
+      "estatistica_13",
+      "O que é moda?",
+      "Moda (Mo) é o valor ou categoria que aparece com maior frequência no conjunto de dados. A distribuição pode ser: unimodal (uma moda), bimodal (duas modas), multimodal (três ou mais modas) ou amodal (nenhuma moda, todos os valores com mesma frequência). A moda é a única medida de posição que pode ser usada para variáveis qualitativas nominais.",
+      "CESPE: moda é a única medida de posição que se aplica a variáveis QUALITATIVAS. Se a questão disser distribuição bimodal, significa que há DOIS valores com maior frequência. Não confundir: moda em dados agrupados = ponto médio da classe de maior frequência (classe modal)."
+    ],
+    [
+      "estatistica_14",
+      "Qual a relação entre média, mediana e moda em distribuições assimétricas?",
+      "Assimetria positiva (cauda à direita): Moda < Mediana < Média. Assimetria negativa (cauda à esquerda): Média < Mediana < Moda.",
+      "POSITIVA: Mo < Md < x̄ (cauda direita). NEGATIVA: x̄ < Md < Mo (cauda esquerda). Normal: Mo = Md = x̄. CESPE adora essa relação."
+    ],
+    [
+      "estatistica_15",
+      "O que é variância?",
+      "Média dos quadrados dos desvios em relação à média. Mede a dispersão. σ² = Σ(xi - x̄)²/n.",
+      "VARIÂNCIA: quadrado da unidade dos dados. Populacional: σ² (divide por N). Amostral: s² (divide por n-1)."
+    ],
+    [
+      "estatistica_16",
+      "O que é desvio padrão?",
+      "Raiz quadrada da variância. Mede a dispersão na mesma unidade dos dados. σ = √σ².",
+      "DESVIO PADRÃO = variância na unidade original. CESPE: 'desvio padrão é sempre positivo' -> VERDADEIRO (raiz quadrada)."
+    ],
+    [
+      "estatistica_17",
+      "O que é coeficiente de variação (CV)?",
+      "Coeficiente de variação (CV) é uma medida relativa de dispersão calculada pela fórmula: CV = (desvio padrão / média) × 100 (em percentual). É adimensional, permitindo comparar a variabilidade de conjuntos de dados com unidades ou médias diferentes.",
+      "CESPE: CV é útil quando as médias são muito diferentes ou as unidades são distintas. Ex: comparar dispersão de peso (kg) e altura (m). CV alto (> 30% a 50%) indica alta dispersão relativa. CV = 0 significa dados homogêneos (sem dispersão)."
+    ],
+    [
+      "estatistica_18",
+      "O que é amplitude total?",
+      "Amplitude total (A ou R) é a diferença entre o maior e o menor valor do conjunto de dados: A = Xmáx - Xmín. É a medida de dispersão mais simples de calcular, mas muito sensível a outliers, pois considera apenas os valores extremos, ignorando a distribuição interna dos dados.",
+      "CESPE: amplitude total NÃO é resistente a outliers (diferente do IIQ). É facilmente influenciada por um único valor extremo. Se a questão pedir uma medida de dispersão ROBUSTA, NÃO escolha amplitude total."
+    ],
+    [
+      "estatistica_19",
+      "O que é quartil?",
+      "Quartil é um valor que divide o conjunto de dados ordenados em 4 partes iguais. Q1 (primeiro quartil) corresponde a 25% dos dados, Q2 (segundo quartil) corresponde a 50% (mediana) e Q3 (terceiro quartil) corresponde a 75% dos dados. O intervalo interquartil (IIQ) é Q3 - Q1.",
+      "CESPE: Q2 = MEDIANA = 50º percentil. Q1 = 25º percentil. Q3 = 75º percentil. O IIQ (Q3 - Q1) contém os 50% centrais dos dados e é resistente a outliers. Método do boxplot: outlier é valor < Q1 - 1,5×IIQ ou > Q3 + 1,5×IIQ."
+    ],
+    [
+      "estatistica_2",
+      "O que é variável estatística?",
+      "Variável é a característica que se deseja estudar em uma pesquisa, podendo ser qualitativa (nominal ou ordinal) ou quantitativa (discreta ou contínua). A classificação correta determina o tipo de gráfico e a medida estatística adequada.",
+      "CESPE: variável qualitativa NÃO admite operações aritméticas (média de sexo não faz sentido). Quantitativa discreta: valores inteiros e contáveis (ex: nº de filhos). Contínua: valores em intervalo real (ex: peso)."
+    ],
+    [
+      "estatistica_21",
+      "O que é outlier (valor discrepante)?",
+      "Outlier (ou valor discrepante) é uma observação que se distancia significativamente das demais na distribuição. Pode ser identificado por dois métodos principais: (1) critério do IIQ: valor < Q1 - 1,5×IIQ ou > Q3 + 1,5×IIQ; (2) critério do escore Z: |Z| > 3 (valores além de 3 desvios padrão da média).",
+      "CESPE: outliers podem indicar erros de medição, valores atípicos genuínos ou problemas na coleta. O método do IIQ é mais robusto (usa mediana e quartis), enquanto o escore Z é influenciado por outliers (já que usa média e desvio padrão, que são sensíveis a extremos)."
+    ],
+    [
+      "estatistica_22",
+      "O que é histograma?",
+      "Gráfico de barras adjacentes para variáveis contínuas. Base = classes; altura = frequência.",
+      "HISTOGRAMA: barras JUNTAS (sem espaço). Polígono de frequência: linhas. Ogiva: frequência acumulada. CESPE: 'histograma é para variáveis qualitativas' -> FALSO."
+    ],
+    [
+      "estatistica_23",
+      "O que é o gráfico de setores (pizza)?",
+      "Gráfico de setores, também chamado de gráfico de pizza, é um gráfico circular dividido em setores (fatias) cujos ângulos são proporcionais às frequências ou percentuais de cada categoria. É ideal para variáveis qualitativas nominais, especialmente quando se deseja mostrar a proporção de cada parte em relação ao todo.",
+      "CESPE: gráfico de pizza é INADEQUADO para muitos dados (mais de 5-6 categorias, fica poluído). Não é recomendado para comparar diferenças pequenas entre categorias. A soma dos percentuais deve ser 100%. Cada setor = (frequência relativa) × 360°."
+    ],
+    [
+      "estatistica_24",
+      "O que é assimetria em estatística?",
+      "Assimetria (skewness) é uma medida do grau de distorção da distribuição em relação à curva simétrica. Pode ser: positiva (cauda à direita, média > mediana > moda), negativa (cauda à esquerda, média < mediana < moda) ou nula (distribuição simétrica, média = mediana = moda).",
+      "CESPE: assimetria POSITIVA = cauda à DIREITA (valores altos). Assimetria NEGATIVA = cauda à ESQUERDA (valores baixos). Coeficiente de assimetria de Pearson: As = 3(média - mediana) / desvio padrão. Se As = 0 -> simétrica. Se As > 0 -> positiva. Se As < 0 -> negativa."
+    ],
+    [
+      "estatistica_26",
+      "O que é probabilidade e quais são seus axiomas?",
+      "Probabilidade é uma função P que associa a cada evento A um número entre 0 e 1, medindo a chance de ocorrência. Os três axiomas de Kolmogorov são: (1) P(A) ≥ 0 para todo evento A; (2) P(Ω) = 1, onde Ω é o espaço amostral; (3) Para eventos mutuamente exclusivos (A ∩ B = ∅), P(A ∪ B) = P(A) + P(B).",
+      "CESPE: consequências dos axiomas: P(∅) = 0; P(A) + P(Ac) = 1; P(A ∪ B) = P(A) + P(B) - P(A ∩ B) para eventos NÃO exclusivos. Atenção: a soma das probabilidades de todos os eventos elementares é 1 (decorre do axioma 2)."
+    ],
+    [
+      "estatistica_27",
+      "O que é espaço amostral?",
+      "Espaço amostral (Ω) é o conjunto de todos os resultados possíveis de um experimento aleatório. Cada resultado individual é chamado de ponto amostral. O espaço amostral pode ser finito (ex: faces de um dado), infinito enumerável (ex: número de tentativas até o primeiro sucesso) ou infinito não enumerável (ex: intervalo de tempo).",
+      "CESPE: a probabilidade do espaço amostral é sempre 1: P(Ω) = 1. Evento é um subconjunto do espaço amostral. Se o espaço amostral tem n elementos igualmente prováveis, P(A) = |A| / |Ω| (definição clássica de probabilidade)."
+    ],
+    [
+      "estatistica_28",
+      "O que são eventos mutuamente exclusivos?",
+      "Eventos mutuamente exclusivos (ou disjuntos) são aqueles que não podem ocorrer simultaneamente, ou seja, a intersecção entre eles é vazia: A ∩ B = ∅. Consequentemente, P(A ∩ B) = 0 e P(A ∪ B) = P(A) + P(B) (regra da soma para eventos exclusivos).",
+      "CESPE: MUTUAMENTE EXCLUSIVOS ≠ INDEPENDENTES. Eventos exclusivos NUNCA são independentes (exceto se P(A) ou P(B) = 0). Se A e B são exclusivos e P(A) > 0 e P(B) > 0, então P(A|B) = 0, logo P(A|B) ≠ P(A), violando a definição de independência."
+    ],
+    [
+      "estatistica_29",
+      "O que são eventos independentes?",
+      "A ocorrência de um não afeta a probabilidade do outro. P(A∩B) = P(A)*P(B).",
+      "INDEPENDENTES: P(A∩B)=P(A)P(B). CESPE: 'eventos mutuamente exclusivos são independentes' -> FALSO (ME nunca são independentes)."
+    ],
+    [
+      "estatistica_3",
+      "O que é variável qualitativa nominal?",
+      "Variável qualitativa nominal é aquela cujas categorias não seguem uma ordem natural ou hierarquia. Exemplos: sexo (masculino/feminino), estado civil (solteiro/casado/divorciado/viúvo), cor dos olhos, profissão, religião.",
+      "CESPE: na nominal, NÃO há ordenação entre as categorias. Se a questão disser ordem natural ou hierarquia, é ORDINAL, não nominal. Ex: escolaridade NÃO é nominal, é ordinal."
+    ],
+    [
+      "estatistica_31",
+      "O que é o Teorema de Bayes?",
+      "O Teorema de Bayes permite calcular a probabilidade condicional P(A|B) a partir da probabilidade inversa P(B|A): P(A|B) = P(B|A) × P(A) / P(B). É usado para revisar ou atualizar probabilidades quando se obtém novas informações (evidências).",
+      "CESPE: Teorema de Bayes = probabilidade reversa ou atualização de crenças. O denominador P(B) é a probabilidade total de B (soma das probabilidades de todos os caminhos que levam a B). Decore: P(A|B) = [P(B|A) × P(A)] / P(B). Exemplo clássico: testes de doenças e falsos positivos."
+    ],
+    [
+      "estatistica_32",
+      "O que é distribuição binomial?",
+      "A distribuição binomial modela experimentos com n tentativas independentes e idênticas, cada uma com dois resultados possíveis (sucesso/fracasso) e probabilidade p de sucesso constante. A função de probabilidade é: P(X = k) = C(n,k) × p^k × (1-p)^(n-k). Média = np. Variância = np(1-p).",
+      "CESPE: pressupostos da binomial: (1) n fixo; (2) independentes; (3) dois resultados; (4) p constante. Desvio padrão = √(np(1-p)). Se n é grande e p próximo de 0,5, a binomial se aproxima da normal. Cuidado: C(n,k) = n! / [k!(n-k)!]."
+    ],
+    [
+      "estatistica_33",
+      "O que é distribuição normal?",
+      "Distribuição em forma de sino, simétrica em torno da média. Caracterizada por μ e σ. Curva padrão: Z = (X-μ)/σ.",
+      "NORMAL = curva de Gauss. Média=moda=mediana. 68-95-99,7. Padronização Z. CESPE: 'normal é assimétrica' -> FALSO (simétrica)."
+    ],
+    [
+      "estatistica_34",
+      "O que é a regra empírica (68-95-99,7) da distribuição normal?",
+      "A regra empírica estabelece que na distribuição normal: aproximadamente 68% dos dados estão a 1 desvio padrão da média (μ ± 1σ), 95% a 2 desvios (μ ± 2σ) e 99,7% a 3 desvios (μ ± 3σ) da média.",
+      "CESPE: essa regra vale APENAS para a distribuição NORMAL. Para qualquer distribuição (sem suposição de normalidade), vale o Teorema de Chebyshev: pelo menos 1 - 1/k² dos dados estão a k desvios padrão da média. Ex: k=2 -> 1 - 1/4 = 75% dos dados em μ ± 2σ (mínimo, para qualquer distribuição)."
+    ],
+    [
+      "estatistica_35",
+      "O que é padronização (escore Z)?",
+      "Escore Z (ou padronização) é a transformação Z = (X - μ) / σ, que converte um valor X de qualquer distribuição normal em um valor na distribuição normal padrão (média 0, desvio padrão 1). Permite comparar valores de diferentes distribuições e calcular probabilidades usando a tabela Z.",
+      "CESPE: Z = (X - μ) / σ. O escore Z indica quantos desvios padrão o valor X está acima (Z > 0) ou abaixo (Z < 0) da média. Z = 0 significa valor igual à média. Quanto maior |Z|, mais extremo é o valor. |Z| > 3 geralmente indica outlier."
+    ],
+    [
+      "estatistica_36",
+      "O que é amostragem aleatória simples (AAS)?",
+      "Amostragem aleatória simples (AAS) é a técnica em que todos os elementos da população têm igual probabilidade de serem selecionados. Pode ser realizada com reposição (um elemento pode ser sorteado mais de uma vez) ou sem reposição (cada elemento é sorteado uma única vez). É a técnica mais básica e serve como referência para as demais.",
+      "CESPE: AAS exige que a população seja homogênea ou que não haja subgrupos relevantes. Na AAS com reposição, as extrações são INDEPENDENTES. Na AAS sem reposição, são DEPENDENTES (mas para população grande, a diferença é desprezível). Vantagem: simplicidade. Desvantagem: requer lista completa da população."
+    ],
+    [
+      "estatistica_37",
+      "O que é amostragem estratificada?",
+      "Amostragem estratificada divide a população em subgrupos homogêneos chamados estratos (com base em características relevantes), e seleciona amostras independentes de cada estrato. Pode ser proporcional (tamanho da amostra proporcional ao tamanho do estrato) ou uniforme (mesmo número de elementos por estrato).",
+      "CESPE: ESTRATIFICADA = estratos HOMOGÊNEOS internamente (baixa variabilidade intra-estrato). Diferente de CONGLOMERADOS, que são HETEROGÊNEOS internamente. Objetivo da estratificada: reduzir a variância amostral. Ex: por faixa de renda, por região, por gênero."
+    ],
+    [
+      "estatistica_38",
+      "O que é amostragem sistemática?",
+      "Amostragem sistemática seleciona elementos da população seguindo um intervalo fixo de seleção k = N/n (onde N é o tamanho da população e n o tamanho da amostra). O primeiro elemento é sorteado aleatoriamente entre 1 e k, e a partir dele, seleciona-se a cada k elementos. Ex: k = 10, sorteia o 7º, depois 17º, 27º...",
+      "CESPE: amostragem sistemática é prática e de fácil execução, mas pode introduzir viés se houver periodicidade oculta na população (ex: amostrar a cada 7 dias pode pegar sempre o mesmo dia da semana). Vantagem: não exige lista completa numerada, apenas ordem."
+    ],
+    [
+      "estatistica_39",
+      "O que é amostragem por conglomerados?",
+      "Amostragem por conglomerados divide a população em grupos heterogêneos chamados conglomerados (clusters), sorteia aleatoriamente alguns desses conglomerados e analisa todos os elementos (ou uma subamostra) dos conglomerados sorteados. Difere da estratificada: nos conglomerados, a diversidade está DENTRO de cada grupo (heterogêneos internamente), enquanto nos estratos a homogeneidade está dentro e a diversidade entre grupos.",
+      "CESPE: CONGLOMERADOS = heterogêneos internamente (cada grupo reflete a diversidade da população). ESTRATIFICADA = homogêneos internamente. Conglomerados é útil quando não há lista completa da população, mas é possível listar grupos. Ex: sortear escolas e entrevistar todos os alunos."
+    ],
+    [
+      "estatistica_4",
+      "O que é variável qualitativa ordinal?",
+      "Variável qualitativa ordinal é aquela cujas categorias possuem uma ordem natural ou hierárquica. Exemplos: escolaridade (fundamental, médio, superior), classe social (A, B, C, D), estágio de doença (leve, moderado, grave), satisfação (ruim, regular, bom, ótimo).",
+      "CESPE: se a variável tem hierarquia/ordem, é ORDINAL, não nominal. Cuidado: faixa etária (criança, adolescente, adulto, idoso) é ordinal, pois há ordem implícita."
+    ],
+    [
+      "estatistica_40",
+      "O que é tamanho amostral e como é determinado?",
+      "Tamanho amostral (n) é o número de elementos selecionados da população para compor a amostra. Depende de três fatores principais: (1) nível de confiança desejado (quanto maior, maior n); (2) margem de erro aceitável (quanto menor, maior n); (3) variabilidade populacional (quanto maior a variância, maior n).",
+      "CESPE: n → ∞ reduz a MARGEM DE ERRO, mas NÃO elimina o VIÉS amostral. Quanto MAIOR a variabilidade populacional, MAIOR o tamanho amostral necessário. Quanto MENOR a margem de erro, MAIOR n."
+    ],
+    [
+      "estatistica_41",
+      "O que é nível de confiança em amostragem?",
+      "Nível de confiança é a probabilidade (expressa em percentual) de que o intervalo de confiança construído contenha o verdadeiro parâmetro populacional. É representado por (1 - α) × 100%, onde α é o nível de significância. Os níveis mais comuns são 90% (Z = 1,645), 95% (Z = 1,96) e 99% (Z = 2,576).",
+      "CESPE: nível de confiança de 95% significa: se repetíssemos o experimento muitas vezes, em 95% dos casos o intervalo conteria o parâmetro. NÃO significa 95% de chance de o parâmetro estar no intervalo (interpretação bayesiana incorreta). O valor crítico Z aumenta com o nível de confiança."
+    ],
+    [
+      "estatistica_42",
+      "O que é margem de erro (erro amostral)?",
+      "Diferença máxima esperada entre a estimativa amostral e o parâmetro populacional verdadeiro, ao nível de confiança estabelecido. É o raio do intervalo de confiança: E = z × σ/√n (para média, população infinita).",
+      "CESPE: margem de erro depende do nível de confiança (z), da variabilidade (σ) e do tamanho amostral (n). Aumentar n reduz a margem de erro. NÃO confundir com erro padrão (σ/√n): erro padrão é o desvio da distribuição amostral; margem de erro é o erro padrão × valor crítico."
+    ],
+    [
+      "estatistica_43",
+      "O que é estimativa pontual?",
+      "Valor único calculado a partir dos dados amostrais para estimar um parâmetro populacional. Ex: média amostral (x̄) como estimativa da média populacional (μ); proporção amostral (p̂) para a proporção populacional (p).",
+      "CESPE: estimativa pontual NÃO tem margem de erro associada (por isso o intervalo de confiança é preferível). A média amostral é estimador não viesado da média populacional. Decore: x̄ estima μ; s² estima σ²; p̂ estima p."
+    ],
+    [
+      "estatistica_46",
+      "O que é erro tipo I em teste de hipótese?",
+      "Rejeitar a hipótese nula (H0) quando ela é verdadeira. A probabilidade máxima de erro tipo I é o nível de significância α, fixado pelo pesquisador antes do teste.",
+      "CESPE: α é o nível de significância. α = 0,05 significa 5% de chance de erro tipo I. Mnemônico: Tipo I = falso positivo (rejeitar H0 verdadeira). Lembre: a justiça condena um inocente (rejeitar inocência verdadeira)."
+    ],
+    [
+      "estatistica_47",
+      "O que é erro tipo II em teste de hipótese?",
+      "NÃO rejeitar a hipótese nula (H0) quando ela é falsa. A probabilidade de erro tipo II é β. O poder do teste é 1 − β (probabilidade de rejeitar H0 falsa corretamente).",
+      "CESPE: erro tipo II = falso negativo (deixar de rejeitar H0 falsa). β depende de α, tamanho amostral e magnitude do efeito. Mnemônico: Tipo II = deixar passar (absolver um culpado). α e β são inversamente relacionados (para n fixo)."
+    ],
+    [
+      "estatistica_49",
+      "O que é coeficiente de correlação de Pearson?",
+      "Mede a intensidade e direção da relação linear entre duas variáveis quantitativas, variando de -1 a +1. r = +1 indica correlação linear perfeita positiva; r = -1, perfeita negativa; r = 0, ausência de relação linear.",
+      "CESPE: Pearson mede relação LINEAR apenas. Pode haver r = 0 e existir relação não linear forte (ex: parabólica). Fórmula: r = Cov(X,Y) / (σX × σY). Atenção: correlação NÃO implica causalidade (falácia cum hoc ergo propter hoc)."
+    ],
+    [
+      "estatistica_5",
+      "O que é variável quantitativa discreta?",
+      "Variável quantitativa discreta é aquela que assume valores inteiros, resultantes de contagem. Exemplos: número de filhos, número de carros em uma residência, quantidade de alunos em uma turma, número de ocorrências policiais.",
+      "CESPE: discreta = valores INTEIROS e CONTÁVEIS. Contínua = valores em INTERVALO REAL. Pergunta clássica: Número de pessoas em uma fila é variável... -> discreta. Peso das pessoas -> contínua."
+    ],
+    [
+      "estatistica_50",
+      "O que é regressão linear simples?",
+      "Modelo que descreve a relação linear entre uma variável dependente (Y) e uma variável independente (X): Y = a + bX + ε, onde a é o intercepto, b é o coeficiente angular (inclinação) e ε é o erro aleatório.",
+      "CESPE: b (inclinação) = Cov(X,Y) / Var(X). a (intercepto) = Ȳ − bX̄. A regressão minimiza a soma dos quadrados dos resíduos (MQO). b é a variação esperada em Y para cada unidade de variação em X."
+    ],
+    [
+      "estatistica_52",
+      "O que é um boxplot (diagrama de caixa)?",
+      "Gráfico que resume a distribuição por meio de cinco números: mínimo, 1º quartil (Q1), mediana (Q2), 3º quartil (Q3) e máximo. Outliers são pontos além de 1,5 × IIQ (distância interquartílica: Q3 − Q1).",
+      "CESPE: a caixa contém 50% dos dados centrais (entre Q1 e Q3). Outliers moderados: além de 1,5×IIQ. Outliers extremos: além de 3×IIQ. O boxplot é útil para comparar distribuições e identificar assimetria."
+    ],
+    [
+      "estatistica_53",
+      "O que é esperança matemática (valor esperado)?",
+      "Média ponderada dos valores de uma variável aleatória, usando as probabilidades como pesos. Para variável discreta: E(X) = Σ xi × P(X = xi). Para contínua: E(X) = ∫ x × f(x) dx.",
+      "CESPE: a esperança é o primeiro momento da distribuição. Propriedades: E(c) = c; E(aX + b) = aE(X) + b; E(X + Y) = E(X) + E(Y) (sempre, sem independência). E(XY) = E(X)E(Y) apenas se X e Y são independentes. NÃO confundir com mediana."
+    ],
+    [
+      "estatistica_55",
+      "O que é desvio padrão amostral (s)?",
+      "Raiz quadrada da variância amostral: s = √[ Σ(Xi − x̄)² / (n − 1) ]. Usa-se n − 1 (correção de Bessel) no denominador para que s² seja um estimador não viesado da variância populacional σ².",
+      "CESPE: desvio padrão está na MESMA unidade dos dados (diferente da variância). Para população: σ = √[ Σ(Xi − μ)² / N ]. O desvio padrão é sensível a outliers. Atenção: a correção de Bessel (n−1) é para que s² seja não viesado, mas s ainda é viesado."
+    ],
+    [
+      "estatistica_56",
+      "Qual a diferença entre parâmetro e estatística?",
+      "Parâmetro é uma medida descritiva da POPULAÇÃO (valor fixo, geralmente desconhecido, representado por letras gregas: μ, σ, π). Estatística é uma medida descritiva da AMOSTRA (valor conhecido, varia entre amostras, representado por letras latinas: x̄, s, p̂).",
+      "CESPE: a estatística é usada para ESTIMAR o parâmetro. Ex: x̄ (estatística) estima μ (parâmetro). A distribuição amostral da estatística permite fazer inferência. Mnemônico: grego = população; latim = amostra."
+    ],
+    [
+      "estatistica_57",
+      "O que é o princípio da adição de probabilidades?",
+      "P(A ∪ B) = P(A) + P(B) − P(A ∩ B). Se os eventos são mutuamente exclusivos (A ∩ B = ∅), então P(A ∪ B) = P(A) + P(B), pois P(A ∩ B) = 0.",
+      "CESPE: a SUBTRAÇÃO da interseção é OBRIGATÓRIA quando os eventos não são mutuamente exclusivos. Erro comum: somar sem subtrair a interseção. Para três eventos: P(A ∪ B ∪ C) = P(A)+P(B)+P(C) − P(A∩B) − P(A∩C) − P(B∩C) + P(A∩B∩C)."
+    ],
+    [
+      "estatistica_58",
+      "O que é o evento complementar?",
+      "Evento complementar de A (denotado Aᶜ ou A̅) é o conjunto de todos os resultados do espaço amostral que NÃO estão em A. P(A) + P(Aᶜ) = 1, logo P(Aᶜ) = 1 − P(A).",
+      "CESPE: a probabilidade do complementar é útil para calcular pelo menos um ou nenhum. Ex: P(pelo menos um sucesso) = 1 − P(nenhum sucesso). O complementar do complementar é o próprio evento: (Aᶜ)ᶜ = A."
+    ],
+    [
+      "estatistica_59",
+      "O que é distribuição de Poisson?",
+      "Distribuição discreta que modela o número de eventos raros que ocorrem em um intervalo fixo de tempo ou espaço, com taxa média λ. P(X = k) = (e⁻λ × λᵏ) / k!. Média = Variância = λ.",
+      "CESPE: Poisson = eventos raros e independentes. A média É IGUAL à variância (equidispersão). Se a variância for maior que a média, há superdispersão (não Poisson). Aproximação: Poisson(λ) ≈ Binomial(n,p) quando n grande e p pequeno (λ = np)."
+    ],
+    [
+      "estatistica_6",
+      "O que é variável quantitativa contínua?",
+      "Variável quantitativa contínua é aquela que assume valores em um intervalo real, resultantes de medição. Exemplos: altura (1,75 m), peso (72,3 kg), temperatura (36,5 °C), tempo de reação (0,45 s), velocidade (120,5 km/h).",
+      "CESPE: contínua = valores DECIMAIS possíveis, resultantes de MEDIÇÃO. Se a questão permite qualquer valor em um intervalo, é contínua. Ex: tempo gasto no percurso é contínuo (pode ser 15,3 min)."
+    ],
+    [
+      "estatistica_60",
+      "O que é percentil?",
+      "Valor que divide os dados ordenados em 100 partes iguais. O k-ésimo percentil (Pk) é o valor abaixo do qual k% dos dados se encontram. Ex: P50 = mediana; P25 = Q1; P75 = Q3.",
+      "CESPE: existem diferentes métodos de cálculo (a CEBRASPE costuma usar o método de interpolação). Não confundir percentil com porcentagem: percentil é uma medida de posição. Quartis (4 partes), decis (10 partes) e percentis (100 partes) são quantis."
+    ],
+    [
+      "estatistica_61",
+      "O que é análise exploratória de dados (AED)?",
+      "Abordagem que utiliza gráficos e medidas descritivas para explorar os dados antes de análises formais, identificando padrões, outliers, assimetrias, tendências e possíveis relações entre variáveis. É a primeira etapa de qualquer análise estatística.",
+      "CESPE: AED usa estatística descritiva (não inferencial). Ferramentas comuns: histograma, boxplot, scatter plot, medidas de posição e dispersão. Tukey foi o pioneiro da AED. O objetivo é gerar hipóteses, não testá-las."
+    ],
+    [
+      "estatistica_62",
+      "O que é o gráfico de dispersão (scatter plot)?",
+      "Gráfico bidimensional que mostra a relação entre duas variáveis quantitativas, com cada ponto representando um par de valores (X,Y). Permite visualizar correlação, tendência, outliers e agrupamentos.",
+      "CESPE: útil para verificar a suposição de linearidade antes de aplicar regressão linear. Se os pontos formam uma nuvem sem padrão, r ≈ 0. Se formam uma reta crescente, r > 0. Cuidado: outliers podem distorcer visualmente a percepção da correlação."
+    ],
+    [
+      "estatistica_63",
+      "O que é distribuição uniforme discreta?",
+      "Distribuição de probabilidade em que todos os valores possíveis têm a mesma probabilidade de ocorrência. Ex: lançamento de um dado honesto (P(X = k) = 1/6 para k = 1,...,6). E(X) = (a+b)/2 para valores entre a e b.",
+      "CESPE: na uniforme discreta, todos os resultados são equiprováveis. Não confundir com uniforme CONTÍNUA (intervalo real). Exemplo clássico: dado não viciado, roleta. Função de probabilidade: P(X = xi) = 1/n para n valores."
+    ],
+    [
+      "estatistica_64",
+      "O que é inferência estatística?",
+      "Processo de fazer generalizações sobre a população com base nos dados amostrais. Divide-se em estimação (pontual e intervalar) e testes de hipóteses. Fundamenta-se na teoria das probabilidades e na distribuição amostral.",
+      "CESPE: inferência estatística SÓ é possível com amostragem probabilística. Amostragem não probabilística não permite inferência. A margem de erro e o nível de confiança são usados para quantificar a incerteza da inferência."
+    ],
+    [
+      "estatistica_65",
+      "O que é número índice em estatística?",
+      "Medida relativa que compara valores de uma variável (ou conjunto de variáveis) em diferentes períodos ou localidades. Ex: IPCA, INPC, IGPM. Pode ser simples (um item) ou composto (múltiplos itens).",
+      "CESPE: números-índice podem ser de preço, quantidade ou valor. Fórmulas comuns: Laspeyres (ponderação fixa no período base), Paasche (ponderação fixa no período atual), Fisher (média geométrica de Laspeyres e Paasche). Período base é a referência."
+    ],
+    [
+      "estatistica_67",
+      "O que é análise de séries temporais?",
+      "Análise de dados coletados ao longo do tempo para identificar padrões como tendência (longo prazo), sazonalidade (padrões periódicos fixos), ciclo (flutuações não fixas) e ruído (variações aleatórias).",
+      "CESPE: séries temporais têm dependência temporal (observações não independentes). Componentes: T (tendência), S (sazonalidade), C (ciclo), R (ruído). Modelos: aditivo (Y = T+S+C+R) ou multiplicativo (Y = T×S×C×R). Suavização exponencial e ARIMA são métodos comuns."
+    ],
+    [
+      "estatistica_68",
+      "O que é o IBGE e sua relação com a estatística?",
+      "O IBGE (Instituto Brasileiro de Geografia e Estatística) é o principal órgão de estatística do Brasil, responsável por censos demográficos, pesquisas amostrais (PNAD, PNAD Contínua) e índices de preços (IPCA, INPC), além de dados geográficos e socioeconômicos.",
+      "CESPE: o IPCA é o índice oficial de inflação do Brasil (metas do CMN). PNAD Contínua substituiu a PNAD tradicional desde 2016. O Censo Demográfico é decenal (realizado a cada 10 anos). IBGE também define o método de cálculo da contagem da população."
+    ],
+    [
+      "estatistica_69",
+      "O que é variância populacional versus amostral?",
+      "Variância populacional: σ² = Σ(Xi − μ)² / N (média dos desvios quadráticos, N no denominador). Variância amostral: s² = Σ(Xi − x̄)² / (n − 1) (n−1 no denominador = correção de Bessel para ser estimador não viesado de σ²).",
+      "CESPE: a correção de Bessel (n−1) é usada porque a média amostral x̄ é estimada a partir dos dados, consumindo 1 grau de liberdade. Se a população for finita e a amostra for censitária, usa-se N. Atenção: s² é não viesado, mas s (desvio padrão) é viesado."
+    ],
+    [
+      "estatistica_7",
+      "O que é tabela de frequência?",
+      "Tabela de frequência é uma ferramenta que organiza dados em classes ou categorias, apresentando a frequência absoluta (contagem), frequência relativa (percentual/proporção), frequência acumulada (soma progressiva) e frequência relativa acumulada de cada valor ou classe.",
+      "CESPE cobra: frequência relativa = frequência absoluta / total. Frequência acumulada = soma das frequências das classes anteriores + classe atual. Atenção: frequência relativa acumulada da última classe é sempre 100% (ou 1)."
+    ],
+    [
+      "estatistica_70",
+      "O que é a ogiva (polígono de frequências acumuladas)?",
+      "Gráfico de linha que representa as frequências acumuladas (absolutas ou relativas) de uma distribuição. No eixo X: limites superiores das classes. No eixo Y: frequência acumulada. É sempre crescente (monotônica não decrescente).",
+      "CESPE: a ogiva NUNCA decresce (sempre não decrescente). Útil para estimar percentis graficamente. Existem dois tipos: ogiva menos que (frequência acumulada crescente) e mais que (frequência acumulada decrescente). Ogiva é diferente do histograma."
+    ],
+    [
+      "estatistica_72",
+      "O que é o rol em estatística?",
+      "Rol é a ordenação dos dados brutos em ordem crescente ou decrescente. É o primeiro passo para organizar os dados, permitindo construir tabelas de frequência, calcular medianas, quartis e identificar valores extremos.",
+      "CESPE: dados brutos → rol → tabela de frequência → gráficos. O rol é essencial para calcular a mediana (valor central do rol). Dados não ordenados geram erros no cálculo de medidas de posição. Rol é sinônimo de dados ordenados."
+    ],
+    [
+      "estatistica_73",
+      "O que é censo estatístico?",
+      "Levantamento que coleta dados de TODOS os elementos da população, sem amostragem. Ex: Censo Demográfico do IBGE. É a abordagem mais precisa (sem erro amostral), porém mais cara, demorada e de difícil operacionalização.",
+      "CESPE: censo NÃO tem erro amostral (pois não há amostra), mas pode ter erros não amostrais (medição, não resposta). Censo é inviável para populações infinitas. Apenas a amostragem permite inferência com margem de erro controlada."
+    ],
+    [
+      "estatistica_74",
+      "O que é o índice de assimetria de Pearson (1ª fórmula)?",
+      "As = (média − moda) / desvio padrão. As = 0 indica distribuição simétrica (média = moda). As > 0: assimetria positiva (cauda à direita, média > moda). As < 0: assimetria negativa (cauda à esquerda, média < moda).",
+      "CESPE: 2ª fórmula de Pearson: As = 3(média − mediana) / desvio padrão. Decore: 1ª fórmula usa MODA; 2ª fórmula usa MEDIANA. Assimetria nula (As=0) não garante normalidade (pode ser simétrica não normal)."
+    ],
+    [
+      "estatistica_75",
+      "O que é a medida de posição relativa (escore Z)?",
+      "Escore Z = (X − μ) / σ. Indica quantos desvios padrão um valor X está acima (Z > 0) ou abaixo (Z < 0) da média. É adimensional, permitindo comparar posições relativas em diferentes distribuições.",
+      "CESPE: escore Z é usado para identificar outliers (|Z| > 3). Distribuição normal padrão Z tem μ = 0 e σ = 1. Z é diferente do coeficiente de variação (CV = σ/μ, que mede dispersão relativa)."
+    ],
+    [
+      "estatistica_76",
+      "O que é a tabela de contingência (cruzamento)?",
+      "Tabela que cruza duas variáveis qualitativas (categóricas), mostrando a frequência conjunta (contagem) de cada combinação de categorias. Útil para analisar associação ou dependência entre as variáveis (ex: teste Qui-Quadrado).",
+      "CESPE: tabela de contingência pode ter frequências absolutas, relativas (%) ou esperadas. O teste Qui-Quadrado de independência usa a tabela de contingência. Uma tabela 2×2 é o caso mais comum (duas variáveis com duas categorias cada)."
+    ],
+    [
+      "estatistica_78",
+      "O que é amostra aleatória simples com reposição?",
+      "Cada elemento sorteado é devolvido à população antes do próximo sorteio, mantendo a probabilidade de seleção constante. As extrações são INDEPENDENTES entre si. A probabilidade de cada elemento é sempre 1/N.",
+      "CESPE: AAS com reposição → extrações independentes. AAS sem reposição → extrações dependentes (mas para N grande, a diferença é desprezível). Na prática, amostragem sem reposição é mais comum. Fator de correção para população finita: √((N−n)/(N−1))."
+    ],
+    [
+      "estatistica_79",
+      "O que é o decil em estatística?",
+      "Valor que divide os dados ordenados em 10 partes iguais. D1 = 10% dos dados abaixo (1º decil), D5 = 50% (mediana = 5º decil), D9 = 90% (9º decil). Os decis são um caso particular de quantis.",
+      "CESPE: decis, quartis e percentis são QUANTIS. D1 = P10 (10º percentil). D5 = P50 (mediana). D9 = P90 (90º percentil). Existem 9 decis (D1 a D9) que dividem os dados em 10 partes."
+    ],
+    [
+      "estatistica_8",
+      "O que é frequência absoluta?",
+      "Frequência absoluta (fi) é o número de vezes que um determinado valor ou categoria aparece no conjunto de dados. É a contagem simples das ocorrências. A soma de todas as frequências absolutas é igual ao tamanho da amostra (n).",
+      "CESPE: frequência absoluta total = n (tamanho da amostra). Ex: em uma pesquisa com 100 pessoas, 30 preferem café -> frequência absoluta = 30. Não confundir com frequência relativa (30/100 = 30%)."
+    ],
+    [
+      "estatistica_80",
+      "O que é a função de distribuição acumulada (FDA)?",
+      "Função F(x) = P(X ≤ x) que retorna a probabilidade de a variável aleatória X assumir um valor menor ou igual a x. É crescente (monotônica não decrescente), varia de 0 (quando x → −∞) a 1 (quando x → +∞).",
+      "CESPE: para variável discreta, a FDA é uma função escada (saltos nos valores possíveis). Para variável contínua, a FDA é contínua. P(a < X ≤ b) = F(b) − F(a). A FDA é a integral da função densidade de probabilidade (fdp)."
+    ],
+    [
+      "estatistica_81",
+      "O que é o coeficiente de correlação de Spearman?",
+      "Mede a relação MONOTÔNICA (não necessariamente linear) entre duas variáveis, baseada nos postos (ranks) dos dados. Varia de -1 a +1. É uma alternativa não paramétrica ao coeficiente de Pearson.",
+      "CESPE: Pearson mede relação LINEAR. Spearman mede relação MONOTÔNICA (crescente ou decrescente, não precisa ser reta). Spearman é menos sensível a outliers que Pearson. Fórmula: ρ = 1 − (6Σdᵢ²)/(n(n²−1)), onde dᵢ é a diferença entre os postos."
+    ],
+    [
+      "estatistica_83",
+      "O que é o intervalo de classe em estatística?",
+      "Faixa de valores utilizada para agrupar dados contínuos em uma distribuição de frequências. Cada classe possui: limite inferior (Li), limite superior (Ls), amplitude (h = Ls − Li) e ponto médio (PM = (Li + Ls)/2).",
+      "CESPE: as classes devem ser mutuamente exclusivas e exaustivas (todo dado pertence a alguma classe). A amplitude do intervalo pode ser constante ou variável. Ponto médio representa a classe. Número de classes: regra de Sturges (k = 1 + 3,3 log n)."
+    ],
+    [
+      "estatistica_84",
+      "O que é a mediana em uma distribuição de frequências agrupadas?",
+      "Md = Li + [(n/2 - Fac_ant) / f_md] × h, onde Li = limite inferior da classe mediana, n = total de observações, Fac_ant = frequência acumulada anterior, f_md = frequência absoluta da classe mediana, h = amplitude da classe. A classe mediana é a primeira com Fac ≥ n/2.",
+      "CESPE: a classe mediana é a primeira cuja frequência acumulada ultrapassa n/2. f_md é a frequência ABSOLUTA, não a acumulada. A mediana é resistente a outliers."
+    ],
+    [
+      "estatistica_85",
+      "O que é o ponto médio de uma classe em estatística?",
+      "Valor que representa a classe, calculado como (limite inferior + limite superior) / 2. Usado para calcular a média em dados agrupados, assumindo que os valores se distribuem uniformemente na classe.",
+      "CESPE: o ponto médio é uma aproximação. A média calculada com pontos médios é uma estimativa, não o valor exato. Atenção: usar o ponto médio presume distribuição uniforme dentro da classe."
+    ],
+    [
+      "estatistica_86",
+      "O que é a distribuição de frequências e para que serve?",
+      "Organização dos dados em classes ou categorias com suas respectivas frequências. Tipos: absoluta (freq. simples), relativa (freq. absoluta / total), acumulada (soma das frequências anteriores até a classe), acumulada relativa. Serve para resumir, visualizar e analisar a distribuição dos dados.",
+      "CESPE: frequência relativa = f_i / n. Frequência acumulada (Fac) é usada para calcular mediana, quartis e percentis em dados agrupados. A Fac da última classe é sempre n."
+    ],
+    [
+      "estatistica_87",
+      "O que é o coeficiente de variação e quando é útil?",
+      "CV = (σ / x̄) × 100%. Medida de dispersão relativa, adimensional (unitless). Útil para comparar variabilidade entre conjuntos com médias ou unidades diferentes (ex: kg e cm).",
+      "CESPE: CV é adimensional — permite comparar dispersão de conjuntos com unidades distintas. CV > desvio padrão quando a média é < 1. Quanto menor o CV, mais homogêneo o conjunto. CV = 0 → dados constantes."
+    ],
+    [
+      "estatistica_88",
+      "Como estimar o tamanho da amostra para estimação de uma proporção?",
+      "n = (Z² × p × q) / E², onde Z = valor crítico (nível de confiança), p = proporção estimada, q = 1 − p, E = margem de erro. Para população finita: n_finito = (n_inf × N) / (n_inf + N − 1).",
+      "CESPE: quando p é desconhecido, usa-se p = 0,5 (máxima variabilidade → maior n, conservador). Quanto maior o nível de confiança (↑ Z) ou menor a margem de erro (↓ E), maior o n necessário."
+    ],
+    [
+      "estatistica_9",
+      "O que é frequência relativa?",
+      "Frequência relativa (fr) é a proporção ou percentual que cada valor ou categoria representa em relação ao total de dados. Calcula-se dividindo a frequência absoluta pelo total de observações: fr = fi / n. Pode ser expressa em decimal (0 a 1) ou percentual (0% a 100%).",
+      "CESPE: a soma de TODAS as frequências relativas é 1 (ou 100%). A frequência relativa acumulada da ÚLTIMA classe é sempre 1 (ou 100%). Cuidado para não confundir frequência relativa com frequência absoluta."
+    ],
+    [
+      "estatistica_expand_1",
+      "O que é a definição frequencial (empírica) de probabilidade?",
+      "P(A) = limite da frequência relativa de A quando n → ∞. Baseia-se na repetição do experimento muitas vezes sob condições idênticas. É a base da lei dos grandes números.",
+      "CESPE: a definição frequencial exige REPETIÇÕES INDEPENDENTES. Difere da clássica (que exige equiprobabilidade). A lei dos grandes números garante que a frequência relativa converge para a probabilidade teórica."
+    ],
+    [
+      "estatistica_expand_10",
+      "O que é experimento de Bernoulli e distribuição binomial?",
+      "Bernoulli: experimento com dois resultados (sucesso/fracasso), P(sucesso) = p. Binomial: n repetições independentes de Bernoulli com mesma probabilidade p. P(X=k) = C(n,k) × p^k × (1−p)^{n−k}, para k = 0,1,...,n. E(X) = np, Var(X) = np(1−p).",
+      "CESPE: a binomial pressupõe: (1) n fixo, (2) independentes, (3) mesma p, (4) dois resultados. E(X) = np. Var(X) = np(1−p). Se n = 1, a binomial se reduz a Bernoulli."
+    ],
+    [
+      "estatistica_expand_11",
+      "Defina: experimento aleatório, espaço amostral, evento e evento elementar.",
+      "Experimento aleatório: processo cujo resultado não pode ser previsto com certeza, mas pode ser descrito probabilisticamente. Espaço amostral (Ω): conjunto de todos os resultados possíveis. Evento: subconjunto de Ω. Evento elementar: resultado único e indivisível (ponto amostral).",
+      "CESPE: Ω pode ser finito, infinito enumerável ou não enumerável. Evento é QUALQUER subconjunto de Ω (em espaços discretos). Evento certo = Ω; evento impossível = ∅. Espaço amostral equiprovável: todos os elementos têm mesma chance."
+    ],
+    [
+      "estatistica_expand_12",
+      "Quais as consequências imediatas dos axiomas de Kolmogorov?",
+      "(a) P(∅) = 0; (b) P(A^c) = 1 − P(A); (c) P(A) ≤ 1 ∀ A; (d) P(A ∪ B) = P(A) + P(B) − P(A ∩ B) — regra geral da adição; (e) Se A ⊆ B, então P(A) ≤ P(B) — monotonicidade; (f) P(B − A) = P(B) − P(A∩B).",
+      "CESPE: P(A) ≤ 1 decorre de P(A) + P(A^c) = 1 e P(A^c) ≥ 0. A monotonicidade (A ⊆ B ⇒ P(A) ≤ P(B)) é muito cobrada: Todo subconjunto tem probabilidade menor ou igual ao conjunto que o contém."
+    ],
+    [
+      "estatistica_expand_13",
+      "O que é partição do espaço amostral? Dê um exemplo.",
+      "Conjunto de eventos {A1, A2, ..., An} que são: (1) mutuamente exclusivos (Ai ∩ Aj = ∅ para i ≠ j) e (2) exaustivos (∪_{i=1}^{n} Ai = Ω). Ex: em uma população, os eventos masculino e feminino formam uma partição. Outro exemplo: A e A^c sempre formam uma partição.",
+      "CESPE: toda partição é composta por eventos MUTUAMENTE EXCLUSIVOS e EXAUSTIVOS. A e A^c formam a partição mais simples. O Teorema de Bayes exige uma partição do espaço amostral."
+    ],
+    [
+      "estatistica_expand_14",
+      "Defina probabilidade condicional de A dado B.",
+      "P(A|B) = P(A ∩ B) / P(B), com P(B) > 0. É a probabilidade de A ocorrer sabendo-se que B ocorreu. Condicionar a B equivale a reduzir o espaço amostral de Ω para B.",
+      "CESPE: a condição P(B) > 0 é essencial — não existe probabilidade condicional para evento de probabilidade zero. P(A|B) redefine a probabilidade no subespaço B, renormalizando por P(B). Se A e B são independentes, P(A|B) = P(A)."
+    ],
+    [
+      "estatistica_expand_15",
+      "Enuncie o Teorema do Produto generalizado para n eventos.",
+      "P(A1 ∩ A2 ∩ ... ∩ An) = P(A1) × P(A2|A1) × P(A3|A1∩A2) × ... × P(An|A1∩...∩An−1). É a regra da cadeia para probabilidades, aplicável a qualquer sequência de eventos.",
+      "CESPE: a ordem dos eventos importa na fórmula geral. Se todos os eventos forem independentes, o produto se reduz a P(A1)×P(A2)×...×P(An). Para 2 eventos: P(A∩B) = P(A) × P(B|A) = P(B) × P(A|B)."
+    ],
+    [
+      "estatistica_expand_16",
+      "Quando dois eventos A e B são independentes? Quais as condições equivalentes?",
+      "A e B são independentes se a ocorrência de um não afeta a probabilidade do outro. Condições equivalentes: (1) P(A∩B) = P(A) × P(B); (2) P(A|B) = P(A); (3) P(B|A) = P(B). Qualquer uma das três implica as outras (desde que P > 0 para as condicionais).",
+      "CESPE: eventos independentes com P>0 SEMPRE têm intersecção não vazia (P(A∩B) = P(A)P(B) > 0). Logo, eventos mutuamente exclusivos com P>0 NUNCA são independentes! Essa é a pegadinha mais clássica da CESPE em probabilidade."
+    ],
+    [
+      "estatistica_expand_17",
+      "Enuncie o Teorema de Bayes.",
+      "P(A_i|B) = [P(A_i) × P(B|A_i)] / Σ_j [P(A_j) × P(B|A_j)]. Permite atualizar a probabilidade de uma causa A_i dada a evidência B. O denominador é a probabilidade total de B (Teorema da Probabilidade Total).",
+      "CESPE: P(A_i) é a probabilidade a priori (antes da evidência). P(A_i|B) é a probabilidade a posteriori (após a evidência). O Teorema de Bayes inverte a condicional: de P(B|A_i) obtém-se P(A_i|B). Exige partição do espaço amostral."
+    ],
+    [
+      "estatistica_expand_18",
+      "O que é uma variável aleatória? Diferencie discreta de contínua.",
+      "Variável aleatória: função X: Ω → ℝ que associa um número real a cada resultado do espaço amostral. Discreta: assume valores em um conjunto finito ou enumerável (ex: nº de sucessos em n tentativas). Contínua: assume valores em um intervalo real não enumerável (ex: altura, peso, tempo).",
+      "CESPE: V.A. discreta = função de probabilidade (f.p.) ou massa de probabilidade. V.A. contínua = função densidade de probabilidade (f.d.p.) — a probabilidade em um ponto é ZERO. P(a ≤ X ≤ b) = ∫_a^b f(x)dx."
+    ],
+    [
+      "estatistica_expand_19",
+      "O que é amostragem aleatória simples (AAS) e quais as variações?",
+      "AAS: todos os elementos da população têm igual probabilidade de serem selecionados. Variações: com reposição (seleções independentes — mesmo elemento pode ser sorteado mais de uma vez) e sem reposição (seleções dependentes — cada elemento sorteado é removido da população).",
+      "CESPE: na AAS sem reposição, as seleções são DEPENDENTES (a probabilidade condicional muda a cada retirada). Na AAS com reposição, as seleções são INDEPENDENTES. AAS pressupõe que a população seja homogênea."
+    ],
+    [
+      "estatistica_expand_2",
+      "Quais são os três axiomas de Kolmogorov?",
+      "(1) P(A) ≥ 0 para todo evento A; (2) P(Ω) = 1; (3) Para eventos mutuamente exclusivos dois a dois: P(∪_{i=1}^{∞} Ai) = Σ_{i=1}^{∞} P(Ai). Esses três axiomas fundamentam toda a teoria da probabilidade.",
+      "CESPE: o 3º axioma só vale para eventos MUTUAMENTE EXCLUSIVOS. Se A e B não são exclusivos, P(A∪B) = P(A) + P(B) − P(A∩B). O axioma é a base para a aditividade finita e contável."
+    ],
+    [
+      "estatistica_expand_20",
+      "O que é amostragem estratificada e quais os tipos de alocação?",
+      "Divide a população em estratos homogêneos (internamente) e heterogêneos entre si. Alocação proporcional: tamanho da amostra em cada estrato é proporcional ao tamanho do estrato na população (n_h = n × N_h / N). Alocação uniforme (constante): mesmo número de elementos por estrato (n_h = n / k).",
+      "CESPE: estratificada = homogeneidade DENTRO dos estratos, heterogeneidade ENTRE estratos. A alocação proporcional é a mais comum. A alocação uniforme é usada quando os estratos têm tamanhos similares ou quando se quer comparar os estratos."
+    ],
+    [
+      "estatistica_expand_21",
+      "O que é amostragem sistemática e qual seu principal risco?",
+      "Seleciona elementos a cada intervalo fixo k = N/n (população ordenada). Ex: k = 10 → sorteia um início entre 1 e 10 e depois soma 10 sucessivamente. Principal risco: periodicidade oculta na população (ex: amostrar a cada 7 dias sempre pega o mesmo dia da semana — viés).",
+      "CESPE: a amostragem sistemática é mais prática que a AAS quando a população está ordenada, mas o risco de periodicidade é sua maior desvantagem. Se a ordenação for aleatória, equivale à AAS."
+    ],
+    [
+      "estatistica_expand_24",
+      "Qual a fórmula para calcular o tamanho amostral para estimação de uma proporção (população infinita)?",
+      "n = (Z² × p × q) / E², onde Z = valor crítico do nível de confiança, p = proporção estimada, q = 1 − p, E = margem de erro. Quando p é desconhecido, usa-se p = 0,5 (n máximo conservador).",
+      "CESPE: a fórmula supõe população infinita. Para população finita, aplica-se correção: n_finito = (n_inf × N) / (n_inf + N − 1). Quanto menor E (mais precisão) ou maior Z (mais confiança), maior o n."
+    ],
+    [
+      "estatistica_expand_25",
+      "Qual a fórmula para tamanho amostral com correção para população finita?",
+      "n_finito = (n_infinito × N) / (n_infinito + N − 1), onde N = tamanho da população, n_infinito = tamanho amostral calculado sem correção (fórmula de população infinita).",
+      "CESPE: a correção para população finita é usada quando n/N > 0,05 (amostra > 5% da população). Quanto menor N, maior o efeito da correção. Se N é muito grande, n_finito ≈ n_infinito."
+    ],
+    [
+      "estatistica_expand_26",
+      "O que é a fórmula de Slovin e quando é usada?",
+      "n = N / (1 + N × e²), onde N = tamanho da população, e = margem de erro (em decimal). Usada quando não se conhece a variabilidade populacional, assumindo p = 0,5 (máxima variabilidade, caso mais conservador). É uma aproximação prática.",
+      "CESPE: a fórmula de Slovin DERIVA de n = (Z² × 0,5 × 0,5) / e² com correção para população finita, assumindo Z = 2 (aproximação para 95% de confiança). Não é preciso usar Z explícito — já está embutido na aproximação."
+    ],
+    [
+      "estatistica_expand_27",
+      "Qual a fórmula para calcular o tamanho amostral para estimação de uma média?",
+      "n = (Z² × σ²) / E², onde Z = valor crítico do nível de confiança, σ² = variância populacional, E = margem de erro (precisão desejada). Quando σ é desconhecido, usa-se uma estimativa (desvio padrão amostral s ou de estudos anteriores).",
+      "CESPE: a fórmula exige CONHECER σ, o que raramente ocorre na prática. Solução: usar s (desvio padrão amostral) como estimativa, ou conduzir amostra-piloto. Quanto maior σ² (mais heterogeneidade), maior o n necessário."
+    ],
+    [
+      "estatistica_expand_28",
+      "Quais fatores influenciam o tamanho amostral e de que forma?",
+      "(1) Nível de confiança (↑ → n ↑): maior confiança exige maior Z, logo maior n; (2) Margem de erro (↓ → n ↑): mais precisão exige maior n; (3) Variabilidade populacional (↑ → n ↑): mais heterogeneidade exige maior n; (4) Tamanho da população (↑ → n ↑ até certo ponto): para N grande, n converge para o valor da fórmula infinita.",
+      "CESPE: a relação é: n ∝ Z² × σ² / E². Dobrar a precisão (E/2) quadruplica n. Aumentar o nível de confiança de 95% (Z≈1,96) para 99% (Z≈2,58) aumenta n em ≈73%. A variabilidade é o fator que o pesquisador menos controla."
+    ],
+    [
+      "estatistica_expand_29",
+      "O que é esperança matemática e variância de uma variável aleatória discreta?",
+      "E(X) = Σ [x_i × P(X = x_i)] — média ponderada pelos valores e suas probabilidades. Var(X) = Σ [(x_i − μ)² × P(X = x_i)] = E(X²) − [E(X)]² — medida de dispersão. Desvio padrão = √Var(X).",
+      "CESPE: Var(X) = E(X²) − [E(X)]² é a fórmula computacional (mais prática). A esperança é um operador LINEAR: E(aX + b) = aE(X) + b. A variância NÃO é linear: Var(aX + b) = a²Var(X). CESPE adora testar essas propriedades."
+    ],
+    [
+      "estatistica_expand_3",
+      "Qual a probabilidade do evento complementar e como deduzir P(∅) = 0?",
+      "P(A^c) = 1 − P(A). Dedução de P(∅) = 0: como Ω = Ω ∪ ∅ e Ω ∩ ∅ = ∅, temos P(Ω) = P(Ω) + P(∅) → P(∅) = 0. Alternativa: ∅ = Ω^c, logo P(∅) = 1 − P(Ω) = 0.",
+      "CESPE: o complementar de A (A^c) é o conjunto de elementos de Ω que NÃO estão em A. P(A) + P(A^c) = 1. ∅ e Ω são complementares. P(∅) = 0 é consequência do 2º axioma."
+    ],
+    [
+      "estatistica_expand_30",
+      "Qual a esperança e variância de uma variável binomial?",
+      "Se X ~ Binomial(n, p): E(X) = np, Var(X) = np(1 − p), desvio padrão = √[np(1 − p)]. São consequências diretas da soma de n variáveis de Bernoulli independentes com parâmetro p.",
+      "CESPE: a binomial é a SOMA de n Bernoulli independentes. E(X) = np, Var(X) = npq (q = 1−p). A variância é máxima quando p = 0,5 (máxima incerteza). A proporção amostral p̂ = X/n tem E(p̂) = p e Var(p̂) = p(1−p)/n."
+    ],
+    [
+      "estatistica_expand_4",
+      "Qual a fórmula da probabilidade da união de dois eventos?",
+      "P(A ∪ B) = P(A) + P(B) − P(A ∩ B). Se A e B são mutuamente exclusivos (A ∩ B = ∅), então P(A ∩ B) = 0 e P(A ∪ B) = P(A) + P(B).",
+      "CESPE: a fórmula geral SEMPRE subtrai a intersecção. A forma simplificada (só soma) só vale se P(A∩B) = 0, ou seja, eventos mutuamente exclusivos. CESPE adora testar: P(A∪B) = P(A) + P(B) − P(A∩B) é sempre verdade → VERDADEIRO (fórmula geral)."
+    ],
+    [
+      "estatistica_expand_5",
+      "Qual a fórmula da probabilidade da união de três eventos?",
+      "P(A ∪ B ∪ C) = P(A) + P(B) + P(C) − P(A∩B) − P(A∩C) − P(B∩C) + P(A∩B∩C). Este é o princípio da inclusão-exclusão para 3 eventos.",
+      "CESPE: para n eventos, alterna-se soma das probabilidades individuais (−) soma das intersecções duplas (+) soma das triplas (−) soma das quádruplas... até ± P(intersecção de todos). O sinal do último termo é (−1)^{n+1}."
+    ],
+    [
+      "estatistica_expand_6",
+      "Qual a fórmula da probabilidade da intersecção (regra do produto)?",
+      "P(A ∩ B) = P(A) × P(B|A) = P(B) × P(A|B). Se A e B são independentes, P(B|A) = P(B) e P(A ∩ B) = P(A) × P(B).",
+      "CESPE: a regra do produto geral NÃO exige independência — usa probabilidade condicional. A forma simplificada P(A)P(B) só vale se A e B forem independentes. Para n eventos: P(∩Ai) = P(A1) × P(A2|A1) × P(A3|A1∩A2) × ..."
+    ],
+    [
+      "estatistica_expand_8",
+      "Enuncie o Teorema da Probabilidade Total.",
+      "P(B) = Σ_i P(A_i) × P(B|A_i), onde {A_i} é uma partição do espaço amostral (eventos mutuamente exclusivos e exaustivos). Permite calcular a probabilidade de um evento B considerando todos os cenários possíveis (as causas A_i).",
+      "CESPE: o teorema da probabilidade total SÓ vale se {Ai} formar uma PARTIÇÃO (mutuamente exclusivos E exaustivos). É a base para o Teorema de Bayes: P(Ai|B) = P(Ai)P(B|Ai) / Σ P(Aj)P(B|Aj)."
+    ],
+    [
+      "estatistica_expand_9",
+      "O que são eventos exaustivos e o que é uma partição do espaço amostral?",
+      "Eventos exaustivos: a união deles cobre todo o espaço amostral (∪Ai = Ω). Partição: conjunto de eventos mutuamente exclusivos (Ai ∩ Aj = ∅ para i ≠ j) e exaustivos (∪Ai = Ω), ou seja, dividem Ω sem sobreposição e sem deixar lacunas.",
+      "CESPE: partição = quebra do Ω em pedaços que não se sobrepõem e cuja união é o total. Exemplo clássico: A e A^c formam uma partição de Ω. O TPT e Bayes exigem partição."
+    ],
+    [
+      "estatistica_new_89",
+      "O que abrange a estatística descritiva e a análise exploratória de dados?",
+      "Abrange a organização, o resumo e a apresentação dos dados por meio de tabelas, gráficos (histograma, boxplot, ramo-e-folhas, barras, setores) e medidas descritivas (posição, dispersão, assimetria e curtose). O objetivo é descrever e explorar as características dos dados.",
+      "CESPE: o boxplot visualiza mediana (linha interna), quartis (caixas), intervalo interquartil (IIQ) e outliers (pontos além dos limites). Assimetria e curtose complementam a análise descritiva."
+    ],
+    [
+      "estatistica_new_91",
+      "O que são assimetria e curtose em uma distribuição de dados?",
+      "Assimetria mede o grau de distorção da curva: positiva (cauda à direita, média > mediana > moda), negativa (cauda à esquerda, moda > mediana > média) ou nula (simétrica, média = mediana = moda). Curtose mede o achatamento: mesocúrtica (curtose = 3, normal), leptocúrtica (> 3, caudas pesadas), platicúrtica (< 3, caudas leves).",
+      "CESPE: excesso de curtose = curtose − 3. Excesso = 0 → mesocúrtica; > 0 → leptocúrtica; < 0 → platicúrtica. Assimetria positiva = cauda longa à direita = valores extremos superiores."
+    ],
+    [
+      "estatistica_new_92",
+      "O que são definições básicas e axiomas de probabilidade?",
+      "Probabilidade é uma função P que associa a cada evento A um número entre 0 e 1. Os três axiomas de Kolmogorov: (1) P(A) ≥ 0 para todo A; (2) P(Ω) = 1; (3) Para eventos mutuamente exclusivos dois a dois: P(∪Ai) = ΣP(Ai). Desses axiomas derivam-se todas as propriedades da probabilidade.",
+      "CESPE: o 3º axioma exige que os eventos sejam MUTUAMENTE EXCLUSIVOS (A ∩ B = ∅). CESPE adora testar: P(A∪B) = P(A) + P(B) sempre? — FALSO! Só vale se A e B forem mutuamente exclusivos."
+    ],
+    [
+      "estatistica_new_93",
+      "O que é probabilidade condicional e independência de eventos?",
+      "Probabilidade condicional: P(A|B) = P(A∩B) / P(B), com P(B) > 0. Independência: A e B são independentes se P(A∩B) = P(A) × P(B). Condições equivalentes: P(A|B) = P(A) ou P(B|A) = P(B).",
+      "CESPE: se P(A∩B) = 0 e P(A), P(B) > 0, então A e B são MUTUAMENTE EXCLUSIVOS, NÃO independentes. De fato, P(A|B) = 0 ≠ P(A). Eventos independentes com P>0 SEMPRE têm intersecção não vazia."
+    ],
+    [
+      "estatistica_new_94",
+      "Quais são as principais técnicas de amostragem e o que é tamanho amostral?",
+      "AAS (todos com igual probabilidade), estratificada (população dividida em estratos homogêneos), sistemática (k = N/n), por conglomerados (grupos heterogêneos sorteados). Tamanho amostral (n) depende: nível de confiança, margem de erro, variabilidade populacional e tamanho da população.",
+      "CESPE: estratificada = homogeneidade DENTRO dos estratos, sorteia elementos de TODOS os estratos. Conglomerados = heterogeneidade DENTRO dos grupos, sorteia GRUPOS inteiros. AAS com reposição gera amostras independentes; sem reposição, dependentes."
+    ]
   ],
   "removes": [],
   "merges": {}

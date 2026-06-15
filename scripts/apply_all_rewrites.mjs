@@ -11,9 +11,9 @@ const banco = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 // ══════════════════════════════════════════════════════════════════════════════
 const dataDir = path.resolve(__dirname, 'rewrite_data');
 const matSubj = [
-  'leg_estadual', 'dir_const', 'dir_adm',
+  'leg_estadual', 'dir_const', 'dir_adm', 'dir_penal',
   'dir_proc_penal', 'portugues', 'informatica',
-  'raciocinio', 'contabilidade', 'estatistica'
+  'raciocinio', 'contabilidade', 'estatistica', 'jurisprudencias'
 ];
 let totalUpdated = 0, totalRemoved = 0;
 

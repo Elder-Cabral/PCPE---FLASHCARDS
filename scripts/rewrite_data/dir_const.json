@@ -257,6 +257,426 @@
       "O que são direitos fundamentais de 1ª, 2ª e 3ª dimensão?",
       "1ª: liberdades individuais (direitos civis/políticos); 2ª: igualdade (direitos sociais, trabalhistas); 3ª: fraternidade (meio ambiente, consumidor).",
       "DIMENSÕES: 1ª = LIBERDADE (Estado ABSENTEísta). 2ª = IGUALDADE (Estado PRESTACIONISTA). 3ª = FRATERNIDADE (difusos). CESPE: 'direitos de 1ª dimensão são positivos' -> FALSO (são negativos/abstenção)."
+    ],
+    [
+      "dir_const_5",
+      "O que são normas constitucionais de eficácia plena?",
+      "Produzem todos os efeitos imediatamente, sem lei regulamentadora. Ex: art. 5º, I (igualdade entre homens e mulheres).",
+      "Art. 5º, §1º, CF. Normas eficácia plena: aplicabilidade direta, imediata e integral. CESPE: direito greve servidor militar é VEDADO."
+    ],
+    [
+      "dir_const_11",
+      "Para que serve o habeas data?",
+      "Garantir acesso a informações sobre o impetrante em registros governamentais ou de caráter público, e retificá-las.",
+      "Art. 5º, LXXII, CF. Habeas data: acesso a informações pessoais em bancos públicos. CESPE: NÃO cabe para retificar dados de terceiros."
+    ],
+    [
+      "dir_const_12",
+      "Para que serve a ação popular?",
+      "Anular ato lesivo ao patrimônio público, moralidade, meio ambiente ou patrimônio histórico; proposta por qualquer cidadão.",
+      "Art. 5º, LXXIII, CF. Ação popular anula ato lesivo ao patrimônio público. CESPE: pessoa jurídica NÃO pode ajuizar — apenas cidadão eleitor."
+    ],
+    [
+      "dir_const_18",
+      "O que é o devido processo legal (art. 5º, LIV CF/88)?",
+      "Ninguém será privado da liberdade ou de seus bens sem o devido processo legal.",
+      "Art. 5º, LIV, CF. Devido processo legal: ninguém privado de bens/liberdade sem processo. CESPE: aplica-se ao processo administrativo disciplinar."
+    ],
+    [
+      "dir_const_19",
+      "O que são os direitos sociais (art. 6º CF/88)?",
+      "Educação, saúde, alimentação, trabalho, moradia, transporte, lazer, segurança, previdência, proteção à maternidade/infância e assistência aos desamparados.",
+      "Art. 6º, CF. Direitos sociais: educação, saúde, trabalho, moradia, lazer, segurança. CESPE: moradia pela EC 26/2000."
+    ],
+    [
+      "dir_const_21",
+      "O concurso público é exigido para qual cargo (art. 37, II CF/88)?",
+      "Para cargo ou emprego público de provimento efetivo, ressalvadas as nomeações para cargo em comissão.",
+      "Art. 37, II, CF. Concurso para cargo efetivo/emprego público. CESPE: cargo em comissão (art. 37, V) NÃO exige concurso."
+    ],
+    [
+      "dir_const_25",
+      "Qual é a função típica do Poder Judiciário?",
+      "Exercer a função jurisdicional: aplicar o direito ao caso concreto, com definitividade (coisa julgada).",
+      "Art. 92, CF. Função típica do Judiciário é jurisdicional. CESPE: STF julgar ADI é função jurisdicional típica."
+    ],
+    [
+      "dir_const_27",
+      "O que é a Defensoria Pública (art. 134 CF/88)?",
+      "Instituição permanente que presta orientação jurídica e defesa dos necessitados, de forma integral e gratuita.",
+      "Art. 134, CF. Defensoria Pública: defesa dos necessitados. CESPE: EC 80/2014 deu autonomia funcional e administrativa."
+    ],
+    [
+      "dir_const_29",
+      "O que é o controle concentrado de constitucionalidade?",
+      "Exercido exclusivamente pelo STF (ou TJ para leis estaduais), via ADI, ADC, ADPF e ADO; efeitos erga omnes.",
+      "Art. 102, I, a, CF. Controle concentrado: STF via ADI, ADC, ADO, ADPF. CESPE: ADPF é privativa do STF."
+    ],
+    [
+      "dir_const_31",
+      "O que é ADPF?",
+      "Arguição de Descumprimento de Preceito Fundamental; cabível quando não há outro meio eficaz para sanar a lesividade.",
+      "Art. 102, §1º, CF. ADPF é subsidiária: só quando não há outro meio eficaz. CESPE: subsidiariedade."
+    ],
+    [
+      "dir_const_32",
+      "O que é a súmula vinculante (art. 103-A CF/88)?",
+      "Enunciado aprovado pelo STF com efeito vinculante para o Judiciário e a Administração Pública.",
+      "Art. 103-A, CF. Súmula vinculante: STF, efeito vinculante. CESPE: NÃO vincula o Legislativo na função típica."
+    ],
+    [
+      "dir_const_33",
+      "O que é o CNJ (art. 103-B CF/88)?",
+      "Conselho Nacional de Justiça; controla a atuação administrativa e financeira do Poder Judiciário.",
+      "Art. 103-B, CF. CNJ controla administração do Judiciário. CESPE: CNJ NÃO julga causas."
+    ],
+    [
+      "dir_const_35",
+      "O que é o princípio da separação dos poderes?",
+      "As funções legislativa, executiva e judiciária são atribuídas a órgãos distintos, com sistema de freios e contrapesos (art. 2º CF/88).",
+      "Art. 2º, CF. Separação dos Poderes: independentes e harmônicos. CESPE: cláusula pétrea (art. 60, §4º, III)."
+    ],
+    [
+      "dir_const_36",
+      "O que é a competência legislativa privativa da União (art. 22 CF/88)?",
+      "Matérias que só a União pode legislar: direito civil, penal, processual, trabalhista, eleitoral, comercial, etc.",
+      "Art. 22, CF. Unão legisla privativamente sobre direito civil, penal, processual. LC pode autorizar estados."
+    ],
+    [
+      "dir_const_37",
+      "O que é a competência legislativa concorrente (art. 24 CF/88)?",
+      "União fixa normas gerais; estados suplementam. Se não houver norma federal, estados exercem competência plena.",
+      "Art. 24, CF. Concorrente: Unão normas gerais; estados suplementam. Lei federal superveniente SUSPENDE eficácia."
+    ],
+    [
+      "dir_const_39",
+      "O que é estado de sítio (art. 137 CF/88)?",
+      "Medida mais grave, decretada com autorização do Congresso, para situações de comoção grave ou guerra.",
+      "Art. 137, CF. Estado de sítio: comoção grave, guerra, autorização do Congresso. Presidente depende de aprovação."
+    ],
+    [
+      "dir_const_40",
+      "O que é iniciativa popular de lei (art. 61, §2º CF/88)?",
+      "1% do eleitorado nacional, em pelo menos 5 estados, com mínimo de 0,3% de eleitores em cada um.",
+      "Art. 61, §2º, CF. Iniciativa popular: 1% eleitorado, 5 estados. NÃO cabe para leis de iniciativa privativa do Presidente."
+    ],
+    [
+      "dir_const_42",
+      "O que é a vedação à tortura (art. 5º, III CF/88)?",
+      "Ninguém será submetido à tortura nem a tratamento desumano ou degradante; crime inafiançável e insuscetível de graça.",
+      "Art. 5º, XLIII, CF. Tortura: inafiançável, insuscetível graça/anistia. CF NÃO diz insuscetível de INDULTO."
+    ],
+    [
+      "dir_const_44",
+      "Qual o status dos tratados de direitos humanos com quórum especial (art. 5º, §3º CF/88)?",
+      "Equivalência de emenda constitucional, se aprovados em cada Casa por 3/5 dos votos em dois turnos.",
+      "Art. 5º, §3º, CF (EC 45/2004). Tratados DH com 3/5 equivalem a EC. Sem quórum: status supralegal (RE 466.343)."
+    ],
+    [
+      "dir_const_45",
+      "O que é a aplicabilidade imediata dos direitos fundamentais (art. 5º, §1º CF/88)?",
+      "As normas definidoras dos direitos e garantias fundamentais têm aplicação imediata, independentemente de lei.",
+      "Art. 5º, §1º, CF. DF têm aplicação imediata. NÃO confundir: nem todo DF é de eficácia plena."
+    ],
+    [
+      "dir_const_48",
+      "O que é o mandado de segurança coletivo (art. 5º, LXX CF/88)?",
+      "Impetrado por partido com representação no CN, organização sindical, entidade de classe ou associação, em defesa de seus membros.",
+      "Art. 5º, LXX, CF. MS coletivo: partido (representação CN), sindicato, associação (1 ano). Partido não precisa de 1 ano."
+    ],
+    [
+      "dir_const_49",
+      "O que é a extradição de brasileiros segundo a CF/88º",
+      "Vedada para brasileiros natos. Para naturalizados, admitida em crime comum anterior à naturalização ou tráfico de drogas.",
+      "Art. 5º, LI/LII, CF. Brasileiro nato: jamais extraditado. Naturalizado: crime anterior ou tráfico. Brasileiro nato pode ser EXPULSO."
+    ],
+    [
+      "dir_const_50",
+      "O que é o princípio da proporcionalidade no direito constitucional",
+      "Exige que as limitações aos direitos fundamentais sejam adequadas, necessárias e proporcionais ao fim almejado.",
+      "Proporcionalidade: adequação, necessidade, proporcionalidade estrita. Razoabilidade é equivalente."
+    ],
+    [
+      "dir_const_51",
+      "O que é a dignidade da pessoa humana como fundamento da República?",
+      "Valor supremo que impõe ao Estado o dever de respeito e proteção à condição humana em todas as dimensões (art. 1º, III CF/88).",
+      "Art. 1º, III, CF. Dignidade humana é fundamento da República. Cláusula pétrea implícita."
+    ],
+    [
+      "dir_const_52",
+      "O que é o controle preventivo de constitucionalidade?",
+      "Realizado antes da promulgação: veto do Executivo e análise pelas CCJs do Legislativo.",
+      "Controle preventivo: CCJ e veto legislativo. Judiciário pode controlar via MS de parlamentar."
+    ],
+    [
+      "dir_const_53",
+      "O que é a isonomia tributária (art. 150, II CF/88)?",
+      "Veda tratamento desigual entre contribuintes em situação equivalente; proibição de distinção arbitrária.",
+      "Art. 150, II, CF. Isonomia tributária: igualdade entre contribuintes. Vedado diferenciar por profissão, salvo CF."
+    ],
+    [
+      "dir_const_54",
+      "O que é a anterioridade tributária (art. 150, III, b CF/88)?",
+      "Veda cobrar tributo no mesmo exercício financeiro em que foi publicada a lei que o instituiu ou majorou.",
+      "Art. 150, III, b, CF. Anterioridade: não cobrar no mesmo exercício. Exceções: II, IE, IOF, IPI, guerra."
+    ],
+    [
+      "dir_const_56",
+      "O que é o CNMP (art. 130-A CF/88)?",
+      "Conselho Nacional do MP; controla a atuação administrativa e financeira do Ministério Público.",
+      "Art. 130-A, CF. CNMP controla administração do MP. NÃO interfere na opinião delicti."
+    ],
+    [
+      "dir_const_57",
+      "O que é a República como forma de governo?",
+      "Caracterizada por eletividade, temporariedade e responsabilidade dos governantes; princípio imutável na CF/88.",
+      "Art. 1º, caput, CF. República: eletividade, temporariedade, responsabilidade. Forma de GOVERNO."
+    ],
+    [
+      "dir_const_58",
+      "O que é a soberania como fundamento da República (art. 1º, I CF/88)?",
+      "Poder supremo do Estado no plano interno e externo, não subordinado a nenhum outro poder.",
+      "Art. 1º, I, CF. Soberania: poder supremo do Estado. É da RFB, NÃO dos estados."
+    ],
+    [
+      "dir_const_59",
+      "O que é o direito de resposta proporcional (art. 5º, V CF/88)?",
+      "Direito de réplica ao ofendido por matéria divulgada em qualquer veículo de comunicação, proporcional ao agravo.",
+      "Art. 5º, V, CF. Direito de resposta proporcional. É AUTÔNOMO — não depende de indenização."
+    ],
+    [
+      "dir_const_61",
+      "O que é o princípio da moralidade administrativa (art. 37 CF/88)?",
+      "A Administração deve agir com boa-fé, probidade e ética; sua violação gera nulidade do ato.",
+      "Art. 37, caput, CF. Moralidade: probidade, boa-fé. Ato legal pode ser imoral (nepotismo antes SV 13)."
+    ],
+    [
+      "dir_const_62",
+      "O que é o princípio da eficiência inserido pela EC 19/98º",
+      "Impõe ao agente público a obrigação de realizar atribuições com qualidade, presteza, economicidade e resultado favorável.",
+      "Art. 37 (EC 19/98). Eficiência: qualidade, economicidade. NÃO se sobrepõe à legalidade."
+    ],
+    [
+      "dir_const_63",
+      "O que é o juiz natural (art. 5º, XXXVII CF/88)?",
+      "Garantia de que ninguém será julgado por tribunal de exceção; o juiz deve ser previamente estabelecido em lei.",
+      "Art. 5º, XXXVII/LIII, CF. Juiz natural: vedado tribunal de exceção. Vara especializada não viola."
+    ],
+    [
+      "dir_const_64",
+      "O que é a regra da não-autoincriminação (nemo tenetur se detegere)?",
+      "Ninguém é obrigado a produzir prova contra si mesmo; o direito ao silêncio está implícito no art. 5º CF/88.",
+      "Art. 5º, LXIII, CF. Nemo tenetur: direito ao silêncio. Recusar padrão gráfico não é desobediência."
+    ],
+    [
+      "dir_const_66",
+      "O que é a garantia de prisão somente em flagrante ou por ordem judicial (art. 5º, LXI CF/88)?",
+      "Ninguém será preso senão em flagrante delito ou por ordem escrita e fundamentada de autoridade judiciária competente.",
+      "Art. 5º, LXI, CF. Prisão: flagrante ou ordem judicial. Exceção: transgressão militar."
+    ],
+    [
+      "dir_const_67",
+      "O que é o HC preventivo (salvo-conduto)?",
+      "Impetrado quando há ameaça de violação à liberdade de locomoção; concede-se antes de qualquer restrição.",
+      "Art. 5º, LXVIII, CF. HC preventivo: ameaça de prisão. NÃO exige advogado."
+    ],
+    [
+      "dir_const_68",
+      "O que é a garantia de comunicação imediata da prisão (art. 5º, LXII CF/88)?",
+      "A prisão deve ser comunicada imediatamente ao juiz competente e à família do preso ou pessoa por ele indicada.",
+      "Art. 5º, LXII, CF. Prisão comunicada ao juiz e família. Sem comunicação gera ilegalidade."
+    ],
+    [
+      "dir_const_69",
+      "O que é a EC 41/2003 (Reforma da Previdência)?",
+      "Alterou as regras de aposentadoria dos servidores públicos, criando contribuição dos inativos e novas exigências.",
+      "EC 41/2003. Contribuição de inativos. Não extinguiu paridade para servidores anteriores."
+    ],
+    [
+      "dir_const_70",
+      "O que é o pluralismo político como fundamento da República?",
+      "Reconhecimento e proteção da diversidade de partidos e correntes ideológicas na vida política nacional.",
+      "Art. 1º, V, CF. Pluralismo político: diversidade. NÃO é só pluripartidarismo."
+    ],
+    [
+      "dir_const_72",
+      "O que é a proibição do retrocesso social?",
+      "Princípio implícito que veda reduzir o nível de proteção já concretizado nos direitos sociais e fundamentais.",
+      "Proibição do retrocesso: implícito, decorre da dignidade humana. Núcleo essencial intocável."
+    ],
+    [
+      "dir_const_73",
+      "O que é a assistência jurídica integral gratuita (art. 5º, LXXIV CF/88)?",
+      "O Estado prestará assistência jurídica integral e gratuita aos que comprovarem insuficiência de recursos.",
+      "Art. 5º, LXXIV, CF. Assistência jurídica gratuita. Declaração de hipossuficiência basta (presunção relativa)."
+    ],
+    [
+      "dir_const_74",
+      "O que é o asilo político (art. 4º, X CF/88)?",
+      "O Brasil concederá asilo político, protegendo estrangeiros perseguidos por motivos políticos em seus países.",
+      "Art. 4º, X, CF. Asilo político: ato discricionário. Difere de refúgio (Lei 9.474/97, vinculado)."
+    ],
+    [
+      "dir_const_75",
+      "O que é o princípio federativo segundo a CF/88º",
+      "A República Federativa do Brasil é composta por entes autônomos com repartição constitucional de competências.",
+      "Arts. 1º e 18, CF. Federação: União, estados, DF, municípios. Territórios não são entes federativos."
+    ],
+    [
+      "dir_const_76",
+      "O que é o princípio da simetria federativa?",
+      "Os estados devem observar, nas suas constituições, o modelo federal fixado pela CF/88, especialmente quanto à estrutura dos poderes.",
+      "Simetria federativa: estados seguem modelo federal. Obrigatória para reprodução."
+    ],
+    [
+      "dir_const_77",
+      "O que é o Supremo Tribunal Federal (STF)?",
+      "Órgão de cúpula do Judiciário; guarda da Constituição, composto por 11 ministros nomeados pelo Presidente com aprovação do Senado.",
+      "Art. 102, CF. STF guarda da Constituição, 11 ministros. Julga ADI e RE."
+    ],
+    [
+      "dir_const_78",
+      "O que é o Superior Tribunal de Justiça (STJ)?",
+      "Tribunal responsável pela uniformização da interpretação da lei federal infraconstitucional no território nacional.",
+      "Art. 105, CF. STJ guardião da lei federal, 33 ministros. Julga REsp, não RE."
+    ],
+    [
+      "dir_const_79",
+      "O que é o contraditório e ampla defesa (art. 5º, LV CF/88)?",
+      "Garantia de que litigantes e acusados têm direito ao contraditório e à ampla defesa, com os meios a ela inerentes.",
+      "Art. 5º, LV, CF. Contraditório e ampla defesa. Não impede cautelares urgentes (inaudita altera parte)."
+    ],
+    [
+      "dir_const_82",
+      "O que é a garantia de acesso à informação (art. 5º, XXXIII CF/88)?",
+      "Todos têm direito a receber dos órgãos públicos informações de interesse particular, coletivo ou geral, salvo segurança do Estado.",
+      "Art. 5º, XXXIII, CF. Acesso à informação. Exceções: sigilo de segurança."
+    ],
+    [
+      "dir_const_83",
+      "O que é a inviolabilidade do domicílio para fins de flagrante?",
+      "A polícia pode entrar em residência sem mandado judicial em caso de flagrante delito, a qualquer hora do dia ou da noite.",
+      "Art. 5º, XI, CF. Inviolabilidade domiciliar. Noite: só flagrante ou consentimento."
+    ],
+    [
+      "dir_const_84",
+      "O que é a proteção da propriedade privada (art. 5º, XXII CF/88)?",
+      "É garantido o direito de propriedade, que deve atender à função social; a desapropriação exige indenização justa e prévia.",
+      "Art. 5º, XXII, CF. Função social da propriedade. CESPE: propriedade não é direito absoluto."
+    ],
+    [
+      "dir_const_85",
+      "O que são direitos e garantias fundamentais implícitos?",
+      "Direitos não listados no art. 5º, mas decorrentes do regime e dos princípios constitucionais ou de tratados internacionais (art. 5º, §2º).",
+      "Art. 5º, §2º, CF. Direitos decorrentes do regime e princípios. CESPE: tratados internacionais com quórum de EC viram direito implícito."
+    ],
+    [
+      "dir_const_87",
+      "O que é o devido processo legal substantivo?",
+      "Além do aspecto formal, o Estado deve atuar de forma razoável e proporcional; limita o conteúdo das leis e atos normativos.",
+      "Art. 5º, LIV, CF. Aspectos FORMAL (procedimento) e SUBSTANTIVO (razoabilidade da lei). CESPE: ambos decorrem do devido processo legal."
+    ],
+    [
+      "dir_const_88",
+      "O que é o princípio da vedação ao confisco tributário (art. 150, IV CF/88)?",
+      "Veda utilizar tributo com efeito de confisco; o imposto não pode ser tão elevado a ponto de inviabilizar a atividade econômica.",
+      "ÁREA: Direito Constitucional. CESPE adora cobrar a literalidade do texto constitucional e as diferenças entre remédios constitucionais. Atenção às exceções de cada norma."
+    ],
+    [
+      "dir_const_new_92",
+      "O que são princípios fundamentais na Constituição de 1988º",
+      "São os valores estruturantes do Estado brasileiro previstos nos arts. 1º a 4º da CF/88: soberania, cidadania, dignidade da pessoa humana, separação de poderes, objetivos e princípios das relações internacionais.",
+      "ÁREA: Direito Constitucional. CESPE adora cobrar a literalidade do texto constitucional e as diferenças entre remédios constitucionais. Atenção às exceções de cada norma."
+    ],
+    [
+      "dir_const_new_93",
+      "Quais são os três Poderes Constituintes e suas funções?",
+      "Originário (cria uma nova ordem constitucional, ilimitado), Derivado (reforma a Constituição via emendas, limitado) e Decorrente (organiza as Constituições estaduais, com observância à CF).",
+      "ÁREA: Direito Constitucional. CESPE adora cobrar a literalidade do texto constitucional e as diferenças entre remédios constitucionais. Atenção às exceções de cada norma."
+    ],
+    [
+      "dir_const_new_94",
+      "O que significa \"aplicabilidade das normas constitucionais\"?",
+      "Refere-se à classificação das normas quanto à sua eficácia e aplicabilidade: normas de eficácia plena, contida e limitada (classificação de José Afonso da Silva).",
+      "ÁREA: Direito Constitucional. CESPE adora cobrar a literalidade do texto constitucional e as diferenças entre remédios constitucionais. Atenção às exceções de cada norma."
+    ],
+    [
+      "dir_const_new_95",
+      "O que são direitos e garantias fundamentais?",
+      "Conjunto de direitos individuais, coletivos, sociais, políticos e de nacionalidade assegurados pela CF/88, com proteção especial (cláusulas pétreas).",
+      "ÁREA: Direito Constitucional. CESPE adora cobrar a literalidade do texto constitucional e as diferenças entre remédios constitucionais. Atenção às exceções de cada norma."
+    ],
+    [
+      "dir_const_new_96",
+      "O que caracteriza a organização político-administrativa do Estado brasileiro?",
+      "A divisão do território nacional em entes federativos autônomos (União, Estados, DF e Municípios), cada um com competências próprias.",
+      "Arts. 1-18 CF. Federação, tripartição poderes. CESPE: Brasil é República Federativa (forma de governo: república; forma de estado: federação)."
+    ],
+    [
+      "dir_const_new_97",
+      "Quem compõe o Estado Federal brasileiro?",
+      "União, Estados-membros, Distrito Federal, Municípios e (constitucionalmente previstos, mas atualmente sem existência) Territórios Federais.",
+      "Arts. 18 e 19 CF. Indissolubilidade. Repartição de competências (arts. 21-24). CESPE: União, estados, DF, municípios — todos autônomos."
+    ],
+    [
+      "dir_const_new_98",
+      "O que tratam as disposições gerais da Administração Pública na CF/88º",
+      "Os princípios constitucionais (art. 37): legalidade, impessoalidade, moralidade, publicidade e eficiência (LIMPE).",
+      "ÁREA: Direito Constitucional. CESPE adora cobrar a literalidade do texto constitucional e as diferenças entre remédios constitucionais. Atenção às exceções de cada norma."
+    ],
+    [
+      "dir_const_new_99",
+      "Quais são as garantias e regime jurídico básico dos servidores públicos previstos na CF?",
+      "Acesso por concurso público, estabilidade, regime de subsídios/remuneração, vedação de acumulação (salvo exceções) e regime previdenciário próprio.",
+      "ÁREA: Direito Constitucional. CESPE adora cobrar a literalidade do texto constitucional e as diferenças entre remédios constitucionais. Atenção às exceções de cada norma."
+    ],
+    [
+      "dir_const_new_100",
+      "Quem exerce o Poder Executivo nas esferas federal, estadual e municipal?",
+      "Presidente da República (federal), Governador (estadual) e Prefeito (municipal), auxiliados por Ministros/Secretários.",
+      "Arts. 18 e 19 CF. Indissolubilidade. Repartição de competências (arts. 21-24). CESPE: União, estados, DF, municípios — todos autônomos."
+    ],
+    [
+      "dir_const_new_101",
+      "Como é estruturado o Poder Legislativo no âmbito federal?",
+      "É bicameral, composto pela Câmara dos Deputados (representação do povo) e pelo Senado Federal (representação dos Estados), formando o Congresso Nacional.",
+      "Arts. 18 e 19 CF. Indissolubilidade. Repartição de competências (arts. 21-24). CESPE: União, estados, DF, municípios — todos autônomos."
+    ],
+    [
+      "dir_const_new_102",
+      "Qual o princípio que rege a estrutura do Poder Judiciário?",
+      "O princípio da inafastabilidade da jurisdição (art. 5º, XXXV) e a organização hierárquica dos órgãos judiciais, com garantias de independência (vitaliciedade, inamovibilidade, irredutibilidade de subsídio).",
+      "ÁREA: Direito Constitucional. CESPE adora cobrar a literalidade do texto constitucional e as diferenças entre remédios constitucionais. Atenção às exceções de cada norma."
+    ],
+    [
+      "dir_const_new_103",
+      "O que são \"funções essenciais à justiça\"?",
+      "São órgãos que, embora não integrem o Poder Judiciário, são essenciais ao seu funcionamento: Ministério Público, Advocacia Pública, Defensoria Pública e Advocacia.",
+      "ÁREA: Direito Constitucional. CESPE adora cobrar a literalidade do texto constitucional e as diferenças entre remédios constitucionais. Atenção às exceções de cada norma."
+    ],
+    [
+      "dir_const_new_104",
+      "Qual a função institucional do Ministério Público segundo a CF/88º",
+      "Defender a ordem jurídica, o regime democrático e os interesses sociais e individuais indisponíveis (art. 127), incluindo o controle externo da atividade policial.",
+      "ÁREA: Direito Constitucional. CESPE adora cobrar a literalidade do texto constitucional e as diferenças entre remédios constitucionais. Atenção às exceções de cada norma."
+    ],
+    [
+      "dir_const_new_105",
+      "Qual o papel da Advocacia Pública?",
+      "Representar judicial e extrajudicialmente os entes federativos e prestar consultoria/assessoramento jurídico ao Poder Executivo (AGU, PGE, PGM).",
+      "ÁREA: Direito Constitucional. CESPE adora cobrar a literalidade do texto constitucional e as diferenças entre remédios constitucionais. Atenção às exceções de cada norma."
+    ],
+    [
+      "dir_const_new_106",
+      "Qual a missão constitucional da Defensoria Pública?",
+      "Prestar orientação jurídica e defesa dos necessitados, em todos os graus, de forma integral e gratuita (art. 134, CF).",
+      "HC, MS, HD, MI, AP, DP (art. 5º). CESPE: HC não exige advogado; MS exige direito líquido e certo."
+    ],
+    [
+      "dir_const_new_107",
+      "O que compreende a \"Defesa do Estado e das Instituições Democráticas\" na CF?",
+      "O sistema de segurança nacional composto pelo estado de defesa, estado de sítio e as Forças Armadas, voltados à preservação da ordem constitucional.",
+      "Art. 136-141 CF. Estado de DEFESA: crise institucional. Só Presidente, oitiva CN. CESPE: é menos grave que estado de sítio."
     ]
   ],
   "removes": [],

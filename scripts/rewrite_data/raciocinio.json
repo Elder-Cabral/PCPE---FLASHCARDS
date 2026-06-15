@@ -1,1 +1,636 @@
-{"rewrites": [["raciocinio_0", "O que é proposição na lógica?", "Declaração que pode ser valorada como verdadeira ou falsa (princípio do terceiro excluído). Não pode ser interrogativa, exclamativa nem imperativa.", "CESPE: 'Que horas são?' é proposição? -> NÃO (interrogativa). 'Vá embora!' -> NÃO (imperativa). 'Ele é inocente' -> SIM (declarativa). Princípios: identidade, não contradição, terceiro excluído."], ["raciocinio_1", "O que é conjunção lógica (E) e sua tabela-verdade?", "P ^ Q (E) é verdadeira SOMENTE quando P e Q são ambas verdadeiras. Basta uma falsa para a conjunção ser falsa.", "MNEMÔNICO: 'E' = EXIGENTE (exige tudo verdadeiro). Tabela: V^V=V; V^F=F; F^V=F; F^V=F. CESPE: 'conjunção é verdadeira quando ao menos uma é verdadeira' -> FALSO."], ["raciocinio_2", "O que é disjunção lógica (OU) e sua tabela-verdade?", "P v Q (OU inclusivo) é falsa SOMENTE quando P e Q são ambas falsas. Basta uma verdadeira.", "MNEMÔNICO: 'OU' = OURO (basta um verdadeiro). OU EXCLUSIVO (xor): verdadeiro quando valores são DIFERENTES. CESPE: 'OU' da linguagem natural é ambíguo (inclusivo x exclusivo)."], ["raciocinio_3", "O que é negação lógica?", "¬P inverte o valor lógico: V vira F, F vira V. Dupla negação (¬¬P) equivale a P.", "NEGAÇÃO = operador UNÁRIO. ¬¬P = P (equivalência). CESPE: 'a negação de \"todo policial é honesto\" é \"nenhum policial é honesto\"' -> FALSO (é 'algum policial NÃO é honesto')."], ["raciocinio_4", "O que é condicional (SE...ENTÃO) e sua tabela-verdade?", "P -> Q é falsa SOMENTE quando P é V e Q é F (Vera Fischer). Verdadeira nos demais casos.", "PEGADINHA: Só é FALSO no caso V->F (Vera Fischer). Quando P é F, o condicional é SEMPRE verdadeiro (princípio da inexistência de falsidade). CESPE: 'se P é falso, P->Q é falso' -> FALSO (é verdadeiro)."], ["raciocinio_5", "O que é bicondicional (SE E SOMENTE SE)?", "P <-> Q é verdadeira quando P e Q têm mesmo valor lógico (VV ou FF).", "P <-> Q equivale a (P->Q) ^ (Q->P). CESPE: 'bicondicional exige que ambos sejam verdadeiros' -> FALSO (ambos falsos também é verdadeiro)."], ["raciocinio_6", "O que são as Leis de De Morgan?", "¬(P ^ Q) = ¬P v ¬Q; ¬(P v Q) = ¬P ^ ¬Q. A negação distribui invertendo o conectivo.", "NEGAÇÃO do 'E' vira 'OU' com partes negadas. NEGAÇÃO do 'OU' vira 'E' com partes negadas. CESPE: '¬(P ^ Q) = ¬P ^ ¬Q' -> FALSO (é ¬P v ¬Q)."], ["raciocinio_7", "O que é a contrapositiva de P -> Q?", "¬Q -> ¬P. É logicamente equivalente ao condicional original (P -> Q = ¬Q -> ¬P).", "P -> Q equivale a ¬Q -> ¬P (contrapositiva). NÃO equivale a Q -> P (recíproca). CESPE: 'contrapositiva é a recíproca' -> FALSO."], ["raciocinio_8", "O que é tautologia?", "Proposição sempre verdadeira, independentemente dos valores das variáveis. Tabela-verdade com apenas V.", "TAUTOLOGIA = sempre V. CONTRADIÇÃO = sempre F. CONTINGÊNCIA = V e F. CESPE: 'P v ¬P é tautologia' -> SIM (princípio do terceiro excluído)."], ["raciocinio_9", "O que é contradição lógica?", "Proposição sempre falsa, independentemente dos valores das variáveis. Tabela-verdade com apenas F.", "CONTRADIÇÃO = sempre F. Ex: P ^ ¬P. CESPE: 'P ^ ¬P é tautologia' -> FALSO (é contradição)."], ["raciocinio_10", "O que é modus ponens?", "Forma válida: P -> Q; P; logo Q. (Se condicional e antecedente são verdadeiros, conclui-se o consequente).", "MODUS PONENS: afirma o antecedente. MODUS TOLLENS: nega o consequente. CESPE: modus ponens é argumento VÁLIDO."], ["raciocinio_11", "O que é modus tollens?", "Forma válida: P -> Q; ¬Q; logo ¬P. (Se condicional e negação do consequente, conclui-se negação do antecedente).", "MODUS TOLLENS: nega o consequente. CESPE: modus tollens é argumento VÁLIDO."], ["raciocinio_12", "O que são quantificadores lógicos?", "Universal (∀ - para todo) e existencial (∃ - existe pelo menos um). Transformam proposições abertas em fechadas.", "NEGAÇÃO: ¬∀x P(x) = ∃x ¬P(x). ¬∃x P(x) = ∀x ¬P(x). CESPE: 'negação de \"todo\" é \"nenhum\"' -> FALSO (é \"algum não\")."], ["raciocinio_13", "Como se nega 'Todo A é B'?", "'Algum A não é B' (existe pelo menos um A que não é B).", "NEGAÇÃO de TODO: algum/algum... não/existe... que não. CESPE: 'A negação de \"todos passaram\" é \"nenhum passou\"' -> FALSO (é 'alguém não passou')."], ["raciocinio_14", "Como se nega 'Algum A é B'?", "'Nenhum A é B' (todo A não é B).", "NEGAÇÃO de ALGUM: nenhum/todo... não. CESPE: 'algum A é B' = 'existe A que é B'. Negação: 'não existe A que é B' = 'todo A não é B'."], ["raciocinio_15", "O que é diagrama de Venn?", "Representação gráfica com círculos sobrepostos para visualizar relações entre conjuntos e validar argumentos.", "Usado para silogismos. Ex: 'Todo A é B, todo B é C, logo todo A é C' (válido). CESPE adora questões com diagrama."], ["raciocinio_16", "O que é razão e proporção?", "Razão: quociente a/b. Proporção: igualdade de razões a/b = c/d. Propriedade fundamental: a*d = b*c.", "PROPORÇÃO: produto dos meios = produto dos extremos (a*d = b*c). CESPE: 'em a/b = c/d, a*d = b*c' -> VERDADEIRO."], ["raciocinio_17", "O que é regra de três simples direta?", "Grandezas diretamente proporcionais: uma aumenta, a outra aumenta na mesma proporção. Multiplicação cruzada.", "DIRETA: A/B = C/D (multiplica cruzado). CESPE: 'mais tempo = mais produção' -> SIM (diretamente proporcional)."], ["raciocinio_18", "O que é regra de três simples inversa?", "Grandezas inversamente proporcionais: uma aumenta, a outra diminui. Multiplicação em linha reta.", "INVERSA: A*B = C*D (multiplica em linha). CESPE: 'mais velozes = menos tempo' -> SIM (inversamente proporcional)."], ["raciocinio_19", "Como calcular aumento percentual de X%?", "Multiplicar o valor original por (1 + X/100). Ex: aumento de 20% em 100 = 100*(1+0,2) = 120.", "AUMENTO: × (1 + i). DESCONTO: × (1 - i). CESPE: 'aumento de 10% seguido de 10% = 21%' -> SIM (1,1*1,1=1,21)."], ["raciocinio_20", "Como calcular desconto percentual de X%?", "Multiplicar por (1 - X/100). Ex: 20% de desconto em 100 = 100*0,8 = 80.", "DESCONTO: × (1 - i). CESPE: 'desconto de 10% + 10% = 20%' -> FALSO (1*0,9*0,9 = 0,81 = 19% de desconto)."], ["raciocinio_21", "O que é progressão aritmética (PA)?", "Sequência com diferença constante (r) entre termos. Termo geral: an = a1 + (n-1)*r.", "PA: SOMA constante (r). Fórmulas: termo geral an = a1+(n-1)r. Soma Sn = n*(a1+an)/2. CESPE adora interpolação."], ["raciocinio_22", "Como calcular a soma dos termos de uma PA finita?", "Sn = n*(a1+an)/2, onde n = número de termos, a1 = primeiro, an = último.", "Soma PA = (primeiro + último)*n/2. CESPE: 'soma de 1 a 100' = 100*(1+100)/2 = 5050."], ["raciocinio_23", "O que é progressão geométrica (PG)?", "Sequência com razão (q) constante entre termos. Termo geral: an = a1*q^(n-1). Soma finita: Sn = a1*(q^n-1)/(q-1).", "PG: MULTIPLICA constante (q). Soma infinita (q<1): S∞ = a1/(1-q). CESPE: 'PG com q entre -1 e 1 é convergente' -> VERDADEIRO."], ["raciocinio_24", "O que é fatorial?", "n! = n*(n-1)*...*2*1. Por definição, 0! = 1. Usado em análise combinatória.", "FATORIAL: 5! = 120. DECORE: 0! = 1 (definição). CESPE: '0! = 0' -> FALSO (0! = 1)."], ["raciocinio_25", "O que é arranjo simples?", "Agrupamento ORDENADO de p elementos entre n, sem repetição. Fórmula: A(n,p) = n!/(n-p)!.", "ARRANJO: ordem IMPORTA. Ex: senhas, filas. CESPE: 'arranjo difere de combinação pela ordem' -> VERDADEIRO."], ["raciocinio_26", "O que é combinação simples?", "Agrupamento NÃO ORDENADO de p elementos entre n. Fórmula: C(n,p) = n!/[p!*(n-p)!].", "COMBINAÇÃO: ordem NÃO importa. Ex: comissões, grupos. CESPE: 'C(n,p) = A(n,p)/p!' -> VERDADEIRO."], ["raciocinio_27", "O que é permutação simples?", "Arranjo de todos os n elementos: Pn = n!. Número de formas de ordenar n objetos distintos.", "PERMUTAÇÃO = todos os elementos, ordem importa. Pn = n!. CESPE: 'permutação é caso particular de arranjo' -> SIM (A(n,n) = n!)."], ["raciocinio_28", "O que é probabilidade?", "P(A) = casos favoráveis / total de casos possíveis. Valor entre 0 e 1. Probabilidade de evento certo = 1; impossível = 0.", "P(A) = n(A)/n(Ω). CESPE: 'probabilidade pode ser maior que 1' -> FALSO (0 ≤ P ≤ 1). P = 0 = impossível; P = 1 = certo."], ["raciocinio_29", "O que é probabilidade de evento complementar?", "P(A') = 1 - P(A). A probabilidade de A não ocorrer é o complemento.", "Útil quando P(A) é mais fácil de calcular. CESPE: 'P(A') = 1 - P(A)' -> VERDADEIRO. Ex: 'probabilidade de não sair 6 no dado' = 1 - 1/6 = 5/6."]], "removes": [], "merges": {}}
+{
+  "rewrites": [
+    [
+      "raciocinio_0",
+      "O que é proposição na lógica?",
+      "Declaração que pode ser valorada como verdadeira ou falsa (princípio do terceiro excluído). Não pode ser interrogativa, exclamativa nem imperativa.",
+      "CESPE: 'Que horas são?' é proposição? -> NÃO (interrogativa). 'Vá embora!' -> NÃO (imperativa). 'Ele é inocente' -> SIM (declarativa). Princípios: identidade, não contradição, terceiro excluído."
+    ],
+    [
+      "raciocinio_1",
+      "O que é conjunção lógica (E) e sua tabela-verdade?",
+      "P ^ Q (E) é verdadeira SOMENTE quando P e Q são ambas verdadeiras. Basta uma falsa para a conjunção ser falsa.",
+      "MNEMÔNICO: 'E' = EXIGENTE (exige tudo verdadeiro). Tabela: V^V=V; V^F=F; F^V=F; F^V=F. CESPE: 'conjunção é verdadeira quando ao menos uma é verdadeira' -> FALSO."
+    ],
+    [
+      "raciocinio_2",
+      "O que é disjunção lógica (OU) e sua tabela-verdade?",
+      "P v Q (OU inclusivo) é falsa SOMENTE quando P e Q são ambas falsas. Basta uma verdadeira.",
+      "MNEMÔNICO: 'OU' = OURO (basta um verdadeiro). OU EXCLUSIVO (xor): verdadeiro quando valores são DIFERENTES. CESPE: 'OU' da linguagem natural é ambíguo (inclusivo x exclusivo)."
+    ],
+    [
+      "raciocinio_3",
+      "O que é negação lógica?",
+      "¬P inverte o valor lógico: V vira F, F vira V. Dupla negação (¬¬P) equivale a P.",
+      "NEGAÇÃO = operador UNÁRIO. ¬¬P = P (equivalência). CESPE: 'a negação de \"todo policial é honesto\" é \"nenhum policial é honesto\"' -> FALSO (é 'algum policial NÃO é honesto')."
+    ],
+    [
+      "raciocinio_4",
+      "O que é condicional (SE...ENTÃO) e sua tabela-verdade?",
+      "P -> Q é falsa SOMENTE quando P é V e Q é F (Vera Fischer). Verdadeira nos demais casos.",
+      "PEGADINHA: Só é FALSO no caso V->F (Vera Fischer). Quando P é F, o condicional é SEMPRE verdadeiro (princípio da inexistência de falsidade). CESPE: 'se P é falso, P->Q é falso' -> FALSO (é verdadeiro)."
+    ],
+    [
+      "raciocinio_5",
+      "O que é bicondicional (SE E SOMENTE SE)?",
+      "P <-> Q é verdadeira quando P e Q têm mesmo valor lógico (VV ou FF).",
+      "P <-> Q equivale a (P->Q) ^ (Q->P). CESPE: 'bicondicional exige que ambos sejam verdadeiros' -> FALSO (ambos falsos também é verdadeiro)."
+    ],
+    [
+      "raciocinio_6",
+      "O que são as Leis de De Morgan?",
+      "¬(P ^ Q) = ¬P v ¬Q; ¬(P v Q) = ¬P ^ ¬Q. A negação distribui invertendo o conectivo.",
+      "NEGAÇÃO do 'E' vira 'OU' com partes negadas. NEGAÇÃO do 'OU' vira 'E' com partes negadas. CESPE: '¬(P ^ Q) = ¬P ^ ¬Q' -> FALSO (é ¬P v ¬Q)."
+    ],
+    [
+      "raciocinio_7",
+      "O que é a contrapositiva de P -> Q?",
+      "¬Q -> ¬P. É logicamente equivalente ao condicional original (P -> Q = ¬Q -> ¬P).",
+      "P -> Q equivale a ¬Q -> ¬P (contrapositiva). NÃO equivale a Q -> P (recíproca). CESPE: 'contrapositiva é a recíproca' -> FALSO."
+    ],
+    [
+      "raciocinio_8",
+      "O que é tautologia?",
+      "Proposição sempre verdadeira, independentemente dos valores das variáveis. Tabela-verdade com apenas V.",
+      "TAUTOLOGIA = sempre V. CONTRADIÇÃO = sempre F. CONTINGÊNCIA = V e F. CESPE: 'P v ¬P é tautologia' -> SIM (princípio do terceiro excluído)."
+    ],
+    [
+      "raciocinio_9",
+      "O que é contradição lógica?",
+      "Proposição sempre falsa, independentemente dos valores das variáveis. Tabela-verdade com apenas F.",
+      "CONTRADIÇÃO = sempre F. Ex: P ^ ¬P. CESPE: 'P ^ ¬P é tautologia' -> FALSO (é contradição)."
+    ],
+    [
+      "raciocinio_10",
+      "O que é modus ponens?",
+      "Forma válida: P -> Q; P; logo Q. (Se condicional e antecedente são verdadeiros, conclui-se o consequente).",
+      "MODUS PONENS: afirma o antecedente. MODUS TOLLENS: nega o consequente. CESPE: modus ponens é argumento VÁLIDO."
+    ],
+    [
+      "raciocinio_11",
+      "O que é modus tollens?",
+      "Forma válida: P -> Q; ¬Q; logo ¬P. (Se condicional e negação do consequente, conclui-se negação do antecedente).",
+      "MODUS TOLLENS: nega o consequente. CESPE: modus tollens é argumento VÁLIDO."
+    ],
+    [
+      "raciocinio_12",
+      "O que são quantificadores lógicos?",
+      "Universal (∀ - para todo) e existencial (∃ - existe pelo menos um). Transformam proposições abertas em fechadas.",
+      "NEGAÇÃO: ¬∀x P(x) = ∃x ¬P(x). ¬∃x P(x) = ∀x ¬P(x). CESPE: 'negação de \"todo\" é \"nenhum\"' -> FALSO (é \"algum não\")."
+    ],
+    [
+      "raciocinio_13",
+      "Como se nega 'Todo A é B'?",
+      "'Algum A não é B' (existe pelo menos um A que não é B).",
+      "NEGAÇÃO de TODO: algum/algum... não/existe... que não. CESPE: 'A negação de \"todos passaram\" é \"nenhum passou\"' -> FALSO (é 'alguém não passou')."
+    ],
+    [
+      "raciocinio_14",
+      "Como se nega 'Algum A é B'?",
+      "'Nenhum A é B' (todo A não é B).",
+      "NEGAÇÃO de ALGUM: nenhum/todo... não. CESPE: 'algum A é B' = 'existe A que é B'. Negação: 'não existe A que é B' = 'todo A não é B'."
+    ],
+    [
+      "raciocinio_15",
+      "O que é diagrama de Venn?",
+      "Representação gráfica com círculos sobrepostos para visualizar relações entre conjuntos e validar argumentos.",
+      "Usado para silogismos. Ex: 'Todo A é B, todo B é C, logo todo A é C' (válido). CESPE adora questões com diagrama."
+    ],
+    [
+      "raciocinio_16",
+      "O que é razão e proporção?",
+      "Razão: quociente a/b. Proporção: igualdade de razões a/b = c/d. Propriedade fundamental: a*d = b*c.",
+      "PROPORÇÃO: produto dos meios = produto dos extremos (a*d = b*c). CESPE: 'em a/b = c/d, a*d = b*c' -> VERDADEIRO."
+    ],
+    [
+      "raciocinio_17",
+      "O que é regra de três simples direta?",
+      "Grandezas diretamente proporcionais: uma aumenta, a outra aumenta na mesma proporção. Multiplicação cruzada.",
+      "DIRETA: A/B = C/D (multiplica cruzado). CESPE: 'mais tempo = mais produção' -> SIM (diretamente proporcional)."
+    ],
+    [
+      "raciocinio_18",
+      "O que é regra de três simples inversa?",
+      "Grandezas inversamente proporcionais: uma aumenta, a outra diminui. Multiplicação em linha reta.",
+      "INVERSA: A*B = C*D (multiplica em linha). CESPE: 'mais velozes = menos tempo' -> SIM (inversamente proporcional)."
+    ],
+    [
+      "raciocinio_19",
+      "Como calcular aumento percentual de X%?",
+      "Multiplicar o valor original por (1 + X/100). Ex: aumento de 20% em 100 = 100*(1+0,2) = 120.",
+      "AUMENTO: × (1 + i). DESCONTO: × (1 - i). CESPE: 'aumento de 10% seguido de 10% = 21%' -> SIM (1,1*1,1=1,21)."
+    ],
+    [
+      "raciocinio_20",
+      "Como calcular desconto percentual de X%?",
+      "Multiplicar por (1 - X/100). Ex: 20% de desconto em 100 = 100*0,8 = 80.",
+      "DESCONTO: × (1 - i). CESPE: 'desconto de 10% + 10% = 20%' -> FALSO (1*0,9*0,9 = 0,81 = 19% de desconto)."
+    ],
+    [
+      "raciocinio_21",
+      "O que é progressão aritmética (PA)?",
+      "Sequência com diferença constante (r) entre termos. Termo geral: an = a1 + (n-1)*r.",
+      "PA: SOMA constante (r). Fórmulas: termo geral an = a1+(n-1)r. Soma Sn = n*(a1+an)/2. CESPE adora interpolação."
+    ],
+    [
+      "raciocinio_22",
+      "Como calcular a soma dos termos de uma PA finita?",
+      "Sn = n*(a1+an)/2, onde n = número de termos, a1 = primeiro, an = último.",
+      "Soma PA = (primeiro + último)*n/2. CESPE: 'soma de 1 a 100' = 100*(1+100)/2 = 5050."
+    ],
+    [
+      "raciocinio_23",
+      "O que é progressão geométrica (PG)?",
+      "Sequência com razão (q) constante entre termos. Termo geral: an = a1*q^(n-1). Soma finita: Sn = a1*(q^n-1)/(q-1).",
+      "PG: MULTIPLICA constante (q). Soma infinita (q<1): S∞ = a1/(1-q). CESPE: 'PG com q entre -1 e 1 é convergente' -> VERDADEIRO."
+    ],
+    [
+      "raciocinio_24",
+      "O que é fatorial?",
+      "n! = n*(n-1)*...*2*1. Por definição, 0! = 1. Usado em análise combinatória.",
+      "FATORIAL: 5! = 120. DECORE: 0! = 1 (definição). CESPE: '0! = 0' -> FALSO (0! = 1)."
+    ],
+    [
+      "raciocinio_25",
+      "O que é arranjo simples?",
+      "Agrupamento ORDENADO de p elementos entre n, sem repetição. Fórmula: A(n,p) = n!/(n-p)!.",
+      "ARRANJO: ordem IMPORTA. Ex: senhas, filas. CESPE: 'arranjo difere de combinação pela ordem' -> VERDADEIRO."
+    ],
+    [
+      "raciocinio_26",
+      "O que é combinação simples?",
+      "Agrupamento NÃO ORDENADO de p elementos entre n. Fórmula: C(n,p) = n!/[p!*(n-p)!].",
+      "COMBINAÇÃO: ordem NÃO importa. Ex: comissões, grupos. CESPE: 'C(n,p) = A(n,p)/p!' -> VERDADEIRO."
+    ],
+    [
+      "raciocinio_27",
+      "O que é permutação simples?",
+      "Arranjo de todos os n elementos: Pn = n!. Número de formas de ordenar n objetos distintos.",
+      "PERMUTAÇÃO = todos os elementos, ordem importa. Pn = n!. CESPE: 'permutação é caso particular de arranjo' -> SIM (A(n,n) = n!)."
+    ],
+    [
+      "raciocinio_28",
+      "O que é probabilidade?",
+      "P(A) = casos favoráveis / total de casos possíveis. Valor entre 0 e 1. Probabilidade de evento certo = 1; impossível = 0.",
+      "P(A) = n(A)/n(Ω). CESPE: 'probabilidade pode ser maior que 1' -> FALSO (0 ≤ P ≤ 1). P = 0 = impossível; P = 1 = certo."
+    ],
+    [
+      "raciocinio_29",
+      "O que é probabilidade de evento complementar?",
+      "P(A') = 1 - P(A). A probabilidade de A não ocorrer é o complemento.",
+      "Útil quando P(A) é mais fácil de calcular. CESPE: 'P(A') = 1 - P(A)' -> VERDADEIRO. Ex: 'probabilidade de não sair 6 no dado' = 1 - 1/6 = 5/6."
+    ],
+    [
+      "raciocinio_30",
+      "O que é probabilidade condicional?",
+      "P(A|B) = P(A ∩ B) / P(B); probabilidade de A ocorrer dado que B já ocorreu.",
+      "Fórmula: P(A|B)=P(A∩B)/P(B). CESPE adora trocar P(A|B) por P(B|A) — são diferentes! Ex: qual a chance de chover dado que está nublado ≠ nublado dado que choveu."
+    ],
+    [
+      "raciocinio_31",
+      "O que é equação de 1º grau?",
+      "Equação do tipo ax + b = 0, com a ≠ 0; solução: x = −b/a.",
+      "Forma: ax+b=0 com a≠0. CESPE cobra que a incógnita pode estar em qualquer termo. Pegadinha: lembrar de inverter sinal ao passar termo p/ outro lado. Solução: x=−b/a."
+    ],
+    [
+      "raciocinio_32",
+      "O que é equação de 2º grau?",
+      "ax² + bx + c = 0; resolvida pela fórmula de Bhaskara: x = (−b ± √Δ) / 2a, onde Δ = b² − 4ac.",
+      "Bhaskara: x=(−b±√Δ)/2a. CESPE cobra → saber que a≠0 sempre. Se a=0 vira 1º grau. Pegadinha comum: esquecer o sinal de ± ou errar o 2a no denominador."
+    ],
+    [
+      "raciocinio_33",
+      "O que é discriminante (Δ) e o que indica?",
+      "Δ = b² − 4ac. Δ > 0: duas raízes reais distintas. Δ = 0: duas raízes iguais. Δ < 0: sem raízes reais.",
+      "Δ=b²−4ac. Δ>0: 2 raízes reais distintas; Δ=0: 2 raízes reais iguais (raiz dupla); Δ<0: nenhuma raiz real. CESPE adora cobrar Δ<0 como 'não há solução real', V ou F."
+    ],
+    [
+      "raciocinio_34",
+      "O que é sistema de equações lineares?",
+      "Conjunto de equações com as mesmas incógnitas; pode ter solução única, infinitas soluções ou nenhuma.",
+      "Sistema linear = duas ou mais equações com as mesmas incógnitas. CESPE cobra que uma solução deve satisfazer TODAS simultaneamente. Pegadinha: sistema possível determinado × indeterminado."
+    ],
+    [
+      "raciocinio_35",
+      "O que é função do 1º grau?",
+      "f(x) = ax + b, com a ≠ 0; gráfico é uma reta. Se a > 0, crescente; se a < 0, decrescente.",
+      "f(x)=ax+b. a>0 → crescente; a<0 → decrescente; a=0 → função constante. CESPE cobra o gráfico: reta oblíqua. Pegadinha: confundir inclinação com intercepto (b)."
+    ],
+    [
+      "raciocinio_36",
+      "O que é função do 2º grau?",
+      "f(x) = ax² + bx + c, com a ≠ 0; gráfico é uma parábola. Se a > 0, abre para cima; se a < 0, para baixo.",
+      "f(x)=ax²+bx+c, a≠0. a>0 → parábola c/ concavidade p/ cima; a<0 → p/ baixo. CESPE cobra vértice xv=−b/2a. Pegadinha: a=0 não é 2º grau, vira reta!"
+    ],
+    [
+      "raciocinio_37",
+      "O que é o Princípio Multiplicativo (contagem)?",
+      "Se um evento pode ocorrer de m formas e outro de n formas, juntos ocorrem de m × n formas.",
+      "Eventos independentes e sucessivos: m × n possibilidades. Ex: 3 camisas × 4 calças = 12 looks. CESPE cobra se ordem importa (arranjo) ou não (combinação). Pegadinha: esquecer eventos dependentes!"
+    ],
+    [
+      "raciocinio_38",
+      "O que é o Princípio Aditivo (contagem)?",
+      "Se um evento pode ocorrer de m OU n formas (mutuamente exclusivas), ocorre de m + n formas.",
+      "Eventos mutuamente exclusivos: m + n possibilidades. Ex: 3 cursos de exatas + 5 de humanas = 8 opções. CESPE cobra: só vale se A∩B=∅. Pegadinha: somar quando há interseção (aí é inclusão-exclusão)."
+    ],
+    [
+      "raciocinio_39",
+      "O que é média aritmética simples?",
+      "Soma dos valores dividida pela quantidade. Ex: média de 4, 6 e 8 = (4+6+8)/3 = 6.",
+      "Média = (x₁+x₂+…+xₙ)/n. CESPE cobra: se somar uma constante a todos os valores, a média sofre o mesmo acréscimo. Pegadinha: confundir com mediana ou moda."
+    ],
+    [
+      "raciocinio_40",
+      "O que é média ponderada?",
+      "Soma dos produtos de cada valor pelo seu peso, dividida pela soma dos pesos.",
+      "Mp=(Σ valor×peso)/(Σ pesos). CESPE cobra que pesos diferentes alteram a média. Ex: nota final com prova peso 3 e trabalho peso 2. Pegadinha: usar média simples quando há pesos diferentes."
+    ],
+    [
+      "raciocinio_42",
+      "O que é mediana?",
+      "Valor central de um conjunto ordenado; se n é par, é a média dos dois valores centrais.",
+      "Valor central após ordenar. n ímpar → termo central; n par → média dos 2 centrais. CESPE cobra: ordenar SEMPRE antes! Pegadinha: dados não ordenados → resultado errado."
+    ],
+    [
+      "raciocinio_43",
+      "O que é divisão proporcional?",
+      "Dividir um valor em partes proporcionais a números dados. Ex: dividir 120 em 2:3:4 → partes = 120×2/9; 120×3/9; 120×4/9.",
+      "Divisão em partes proporcionais: valor/k = parte/coeficiente. CESPE cobra regra de três composta. Pegadinha: confundir proporção direta (crescem juntos) com inversa (um sobe, outro desce)."
+    ],
+    [
+      "raciocinio_44",
+      "O que é aumento percentual acumulado?",
+      "Para dois aumentos sucessivos de a% e b%, o total NÃO é (a+b)%; é: [(1+a/100)×(1+b/100) − 1] × 100%.",
+      "Fórmula: [(1+a/100)×(1+b/100)−1]×100. CESPE adora: 'dois aumentos de 10% dão 20%' — FALSO! Dá 21% (1,1×1,1=1,21). Pegadinha clássica da banca!"
+    ],
+    [
+      "raciocinio_45",
+      "O que é o princípio da inclusão-exclusão para dois conjuntos?",
+      "|A ∪ B| = |A| + |B| − |A ∩ B|. Evita contar os elementos comuns duas vezes.",
+      "|A∪B| = |A|+|B|−|A∩B|. CESPE cobra: subtrai a interseção p/ não contar duas vezes. Pegadinha: três conjuntos → |A∪B∪C| = soma − pares + tripla interseção."
+    ],
+    [
+      "raciocinio_46",
+      "O que é raciocínio dedutivo?",
+      "Parte de premissas gerais para uma conclusão particular; se as premissas são verdadeiras, a conclusão necessariamente o é.",
+      "Silogismo: premissa geral → conclusão particular. Ex: Todo homem é mortal; Sócrates é homem → Sócrates é mortal. CESPE cobra: conclusão NECESSÁRIA, não provável. Pegadinha: confundir com indução."
+    ],
+    [
+      "raciocinio_47",
+      "O que é raciocínio indutivo?",
+      "Parte de casos particulares para uma conclusão geral; a conclusão é provável, não necessariamente certa.",
+      "Observação particular → generalização. Ex: vi 3 cisnes brancos → 'todo cisne é branco' (provável, mas não certo). CESPE cobra: conclusão PROVÁVEL, não necessária. Pegadinha: tratar indução como dedução."
+    ],
+    [
+      "raciocinio_48",
+      "O que é argumento válido?",
+      "Argumento em que a conclusão se segue necessariamente das premissas; validade é formal, não depende da veracidade.",
+      "Válido = se premissas verdadeiras, conclusão necessariamente verdadeira. CESPE cobra: validade é formal, não factual. Pegadinha: argumento válido pode ter premissas falsas e conclusão falsa!"
+    ],
+    [
+      "raciocinio_49",
+      "O que é MMC (Mínimo Múltiplo Comum)?",
+      "Menor número positivo que é múltiplo de dois ou mais números. Usado em problemas de ciclos e divisibilidade.",
+      "MMC(a,b) = menor múltiplo comum entre a e b. CESPE cobra MMC em problemas de encontro periódico (ex: a cada 6 e 8 dias → MMC=24). Pegadinha: confundir com MDC."
+    ],
+    [
+      "raciocinio_50",
+      "O que é MDC (Máximo Divisor Comum)?",
+      "Maior número que divide exatamente dois ou mais números; usado para simplificar frações e em problemas de distribuição.",
+      "MDC(a,b) = maior divisor comum. CESPE cobra em divisão de terrenos, cortes iguais. Pegadinha: MDC de números consecutivos é sempre 1. Método: decomposição simultânea ou algoritmo de Euclides."
+    ],
+    [
+      "raciocinio_51",
+      "O que é a propriedade fundamental da proporção?",
+      "Em a/b = c/d, o produto dos extremos é igual ao produto dos meios: a × d = b × c.",
+      "a/b = c/d → a×d = b×c (multiplicação cruzada). CESPE cobra regra de três. Pegadinha: inverter meios ou extremos. Ex: 2/3 = 4/6 → 2×6 = 3×4 = 12. Válida sempre."
+    ],
+    [
+      "raciocinio_52",
+      "O que é a soma dos ângulos internos de um polígono?",
+      "SI = (n − 2) × 180°, onde n é o número de lados. Ex: triângulo: 180°; quadrilátero: 360°.",
+      "SI = (n−2)×180°. CESPE cobra: triângulo (3)→180°, quadrilátero (4)→360°, pentágono (5)→540°. Pegadinha: n é número de lados, não de vértices (são iguais, mas confunde). Cada ângulo interno regular = SI/n."
+    ],
+    [
+      "raciocinio_53",
+      "O que é o Teorema de Pitágoras?",
+      "Em triângulo retângulo: hipotenusa² = cateto1² + cateto2². Ex: 3² + 4² = 5².",
+      "a²=b²+c² (a = hipotenusa, lado oposto ao ângulo reto). CESPE cobra: só vale em triângulo retângulo! Pegadinha: aplicar em triângulo que NÃO tem ângulo de 90° → erro certo."
+    ],
+    [
+      "raciocinio_54",
+      "Como converter km/h para m/s?",
+      "Dividir por 3,6. Ex: 72 km/h = 72/3,6 = 20 m/s.",
+      "km/h → m/s: ÷3,6. Ex: 72 km/h = 20 m/s. m/s → km/h: ×3,6. CESPE cobra relação: 36 km/h = 10 m/s. Pegadinha: confundir o fator (3,6 é fixo, não depende do valor)."
+    ],
+    [
+      "raciocinio_55",
+      "O que é lógica proposicional (sentencial)?",
+      "Ramo da lógica que estuda proposições simples e compostas, conectivos lógicos e relações de validade entre elas.",
+      "Proposição = sentença declarativa com valor V ou F (exclusivo). CESPE adora: 'x>5' NÃO é proposição (variável livre). Pegadinha: frases interrogativas, exclamativas ou imperativas NÃO são proposições."
+    ],
+    [
+      "raciocinio_56",
+      "Qual a negação de 'P → Q'?",
+      "A negação de P → Q é P ∧ ¬Q (P é verdadeiro E Q é falso).",
+      "¬(P→Q) ≡ P ∧ ¬Q. CESPE cobra: a negação do 'se...então' é manter a 1ª E negar a 2ª. Pegadinha: NÃO é 'se P então não Q' nem 'P→¬Q'. Decore: MANE (MAntém a 1ª, NEga a 2ª)."
+    ],
+    [
+      "raciocinio_57",
+      "O que é argumento por redução ao absurdo?",
+      "Prova-se a verdade de uma proposição assumindo sua negação e chegando a uma contradição.",
+      "Técnica: assume-se a negação da tese e deriva-se uma contradição lógica. CESPE cobra em provas de validade de argumentos. Pegadinha: não confundir com indução ou dedução direta."
+    ],
+    [
+      "raciocinio_58",
+      "O que é raciocínio matricial?",
+      "Problemas que organizam informações em uma tabela com linhas e colunas, deduzindo quem é quem por eliminação.",
+      "Tabela N×N com linhas/colunas representando elementos; elimina-se por restrições. CESPE adora em questões de 'quem mora onde, quem dirige o quê'. Pegadinha: preencher com X e ✓ sem pular restrições."
+    ],
+    [
+      "raciocinio_59",
+      "O que é juros simples?",
+      "J = C × i × t; o juro incide sempre sobre o capital inicial. Montante: M = C(1 + it).",
+      "Juros simples: J=C×i×t (juros iguais todo período). M=C(1+it). CESPE cobra: i e t na mesma unidade de tempo! Pegadinha: i ao ano e t em meses → converter t ou i."
+    ],
+    [
+      "raciocinio_60",
+      "O que é juros compostos?",
+      "Juro calculado sobre o montante acumulado; M = C × (1+i)^t. Os juros se capitalizam (juros sobre juros).",
+      "M=C×(1+i)^t. Juros compostos = 'juros sobre juros'. CESPE cobra: crescimento exponencial. Pegadinha: NÃO confundir com simples; em compostos, montante cresce mais rápido. Dica: (1+i)^t é fator de acumulação."
+    ],
+    [
+      "raciocinio_61",
+      "O que é equivalência lógica?",
+      "Duas proposições são equivalentes quando têm os mesmos valores lógicos em todas as situações (mesma tabela-verdade).",
+      "Equivalência lógica = mesma tabela-verdade. CESPE adora: p→q ≡ ¬q→¬p (contrapositiva). NUNCA confunda com recíproca (q→p)."
+    ],
+    [
+      "raciocinio_62",
+      "O que é negação de proposição composta com 'e' (De Morgan)?",
+      "¬(P ∧ Q) = ¬P ∨ ¬Q. A negação do 'e' vira 'ou' com as partes negadas.",
+      "1ª Lei De Morgan: ¬(P∧Q) = ¬P ∨ ¬Q. CESPE: negação de P e Q NÃO é não P e não Q. O conectivo AND vira OR. Mnemônico: nega tudo, troca E por OU."
+    ],
+    [
+      "raciocinio_63",
+      "O que é negação de proposição composta com 'ou' (De Morgan)?",
+      "¬(P ∨ Q) = ¬P ∧ ¬Q. A negação do 'ou' vira 'e' com as partes negadas.",
+      "2ª Lei De Morgan: ¬(P∨Q) = ¬P ∧ ¬Q. CESPE cobra troca do conectivo: OU vira E. Pegadinha clássica: manter o mesmo conectivo na negação."
+    ],
+    [
+      "raciocinio_64",
+      "O que é analogia lógica?",
+      "Raciocínio que compara dois pares de termos com a mesma relação. Ex: Policial : Delegacia :: Médico : Hospital.",
+      "Analogia: A está para B assim como C para D. CESPE exige identificar a RELAÇÃO entre os dois primeiros. Pegadinha: relação inversa (A:B::C:D vs A:B::D:C)."
+    ],
+    [
+      "raciocinio_65",
+      "Quantas diagonais tem um polígono de n lados?",
+      "D = n(n−3)/2. Ex: hexágono (n=6): 6×3/2 = 9 diagonais.",
+      "D = n(n−3)/2. CESPE: n = nº lados. Não confunda com soma ângulos internos: S = (n−2)×180°. Para n=3 (triângulo), D=0 — não há diagonais."
+    ],
+    [
+      "raciocinio_66",
+      "O que é regra de três composta?",
+      "Envolve três ou mais grandezas; analisa-se a proporcionalidade de cada par e monta-se a proporção composta.",
+      "Regra de três composta: 3+ grandezas. CESPE adota método das setas: diretas → mesmo sentido; inversas → invertido. Pegadinha: identificar ERRADO se é direta ou inversa."
+    ],
+    [
+      "raciocinio_67",
+      "O que são números inteiros e suas operações?",
+      "Incluem positivos, negativos e zero (ℤ); operações: soma, subtração, multiplicação, divisão, potenciação e radiciação.",
+      "ℤ = {... −2, −1, 0, 1, 2...}. CESPE: ℤ inclui NEGATIVOS e ZERO. Pegadinha: −3 é inteiro (V). Zero é inteiro mas não é positivo. Todo natural é inteiro (ℕ ⊂ ℤ)."
+    ],
+    [
+      "raciocinio_68",
+      "O que são números racionais?",
+      "Números expressáveis como fração p/q (q≠0); incluem inteiros, decimais finitos e dízimas periódicas.",
+      "ℚ = {p/q | p,q∈ℤ, q≠0}. CESPE pega: dízimas periódicas (0,333...=1/3) SÃO racionais. π e √2 NÃO. Pegadinha: √4 é irracional — FALSO (é 2, inteiro)."
+    ],
+    [
+      "raciocinio_69",
+      "O que são números reais?",
+      "Incluem racionais e irracionais (√2, π, etc.); formam a reta numérica completa.",
+      "ℝ = ℚ ∪ 𝔒 (racionais + irracionais). CESPE: ℝ contém ℚ, ℤ e ℕ. Pegadinha: Todo número real é racional — FALSO, irracionais são reais mas não racionais."
+    ],
+    [
+      "raciocinio_70",
+      "O que é o sistema legal de medidas (SI)?",
+      "Sistema Internacional de Unidades; unidades básicas: metro (comprimento), quilograma (massa), segundo (tempo).",
+      "SI: metro (m), kg, segundo (s). CESPE deriva: N = kg·m/s², J = N·m, W = J/s. Pegadinha: confundir kg (massa) com N (peso/força)."
+    ],
+    [
+      "raciocinio_71",
+      "O que é compreensão de estruturas lógicas?",
+      "Capacidade de identificar o padrão ou regra que rege uma sequência ou conjunto de proposições para deduzir o próximo elemento.",
+      "Estrutura lógica = padrão em sequências/proposições. CESPE: encontrar REGRA DE FORMAÇÃO. Sequências numéricas (diferença, razão, Fibonacci), figuras (rotação, espelho). Teste diferenças entre consecutivos."
+    ],
+    [
+      "raciocinio_72",
+      "O que é silogismo?",
+      "Raciocínio dedutivo com duas premissas e uma conclusão. Ex: Todo A é B; Todo B é C; logo, Todo A é C.",
+      "Silogismo: 2 premissas + conclusão. CESPE: se premissas V, conclusão OBRIGATÓRIA. Pegadinha: Todo A é B. Todo B é C. Logo todo C é A — INVÁLIDO! (inverteu)."
+    ],
+    [
+      "raciocinio_73",
+      "Como negar 'Todos os policiais são honestos'?",
+      "'Existe pelo menos um policial que não é honesto.' (negação do universal = existencial com predicado negado).",
+      "Negação de Todo A é B = Existe A que não é B (Algum A não é B). CESPE: NUNCA negue com Nenhum A é B. Mnemônico: PEA + não (todo/nenhum vira algum/existe + negar)."
+    ],
+    [
+      "raciocinio_74",
+      "Como negar 'Nenhum suspeito foi preso'?",
+      "'Existe pelo menos um suspeito que foi preso.' (negação do 'nenhum' = 'algum').",
+      "Negação de Nenhum A é B = Existe A que é B (Algum A é B). CESPE: pegadinha negar com Todo A é B — ERRADO! Mnemônico: PEA (troca todo/nenhum por algum/existe)."
+    ],
+    [
+      "raciocinio_75",
+      "O que é o diagrama lógico de silogismo?",
+      "Representação visual usando círculos (Euler/Venn) para verificar se a conclusão do silogismo é válida.",
+      "Diagrama Venn-Euler. CESPE: Todo A é B = A dentro de B. Nenhum A é B = círculos separados. Algum A é B = interseção. Desenhe para testar validade do silogismo."
+    ],
+    [
+      "raciocinio_76",
+      "O que é porcentagem de desconto em cascata?",
+      "Descontos sucessivos aplicados sobre o valor resultante anterior; não equivalem à soma simples dos percentuais.",
+      "Descontos em cascata NÃO somam. CESPE: dois descontos de 10% = 0,9×0,9 = 0,81 → 19% (não 20%). Fórmula: fator = (1−d₁)×(1−d₂). Ordem não altera o resultado."
+    ],
+    [
+      "raciocinio_77",
+      "O que é a propriedade distributiva dos conjuntos?",
+      "A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C); A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C).",
+      "A∩(B∪C) = (A∩B)∪(A∩C). CESPE cobra distributividade dupla: A∪(B∩C) = (A∪B)∩(A∪C). Analogia com álgebra: interseção distribui sobre união."
+    ],
+    [
+      "raciocinio_78",
+      "O que é lógica de primeira ordem?",
+      "Estende a lógica proposicional com quantificadores (∀ e ∃) e predicados para formalizar afirmações sobre objetos.",
+      "Lógica 1ª ordem: ∀ (todo) e ∃ (existe). CESPE: ¬(∀x Px) ≡ ∃x ¬Px. ¬(∃x Px) ≡ ∀x ¬Px. Pegadinha: esquecer de negar o predicado ao trocar o quantificador."
+    ],
+    [
+      "raciocinio_79",
+      "O que é porcentagem?",
+      "Razão com denominador 100; indica uma parte de um todo dividido em 100 partes iguais. Ex: 25% = 25/100 = 0,25.",
+      "Porcentagem = fração /100. CESPE: 10% de 20% = 2% (multiplica). Pegadinha: 200% de 10 = 20, mesmo que 10% de 200. A base de cálculo é diferente!"
+    ],
+    [
+      "raciocinio_80",
+      "O que é o raciocínio lógico envolvendo problemas geométricos?",
+      "Aplicação de conceitos de geometria (áreas, perímetros, ângulos, semelhança) para resolver problemas quantitativos.",
+      "Geometria CESPE: diagonal do quadrado = L√2; altura triângulo equilátero = L√3/2. Pegadinha clássica: confundir PERÍMETRO com ÁREA (unidades: cm vs cm²)."
+    ],
+    [
+      "raciocinio_81",
+      "O que é conjunto e suas operações básicas?",
+      "Coleção de elementos. Operações: união (∪), interseção (∩), diferença (A−B), complementar (A').",
+      "União (∪), interseção (∩), diferença (A−B), complementar (U−A). CESPE: n(A∪B) = n(A)+n(B)−n(A∩B). Pegadinha: esquecer de subtrair a interseção."
+    ],
+    [
+      "raciocinio_82",
+      "O que é a negação da proposição 'P ou Q'?",
+      "Pela Lei de De Morgan: ¬(P ∨ Q) = ¬P ∧ ¬Q. 'Não P e não Q.'",
+      "¬(P∨Q) = ¬P ∧ ¬Q (2ª De Morgan). CESPE: NUNCA mantenha o mesmo conectivo. Negar Chuva ou neve = Não chove E não neva. Troque OU por E."
+    ],
+    [
+      "raciocinio_83",
+      "O que é a negação da proposição 'P e Q'?",
+      "Pela Lei de De Morgan: ¬(P ∧ Q) = ¬P ∨ ¬Q. 'Não P ou não Q.'",
+      "¬(P∧Q) = ¬P ∨ ¬Q (1ª De Morgan). CESPE: negação de e vira ou. Basta negar UM termo. Ex: Rico e famoso = Não é rico OU não é famoso."
+    ],
+    [
+      "raciocinio_84",
+      "O que é a propriedade comutativa das operações lógicas?",
+      "P ∧ Q ≡ Q ∧ P (conjunção); P ∨ Q ≡ Q ∨ P (disjunção). A ordem dos operandos não altera o resultado.",
+      "Comutativa: P∧Q ≡ Q∧P e P∨Q ≡ Q∨P. CESPE: CONDICIONAL (→) NÃO é comutativa! p→q ≠ q→p. Se chove, rua molhada ≠ Se rua molhada, chove."
+    ],
+    [
+      "raciocinio_85",
+      "O que é raciocínio lógico envolvendo problemas aritméticos em concursos?",
+      "Problemas de idade, mistura, trabalho, velocidade, divisibilidade e sequências numéricas que exigem equações e proporções.",
+      "Problemas CESPE: idade (diferença constante), trabalho (1/t = 1/t₁+1/t₂). Ex: A em 3h + B em 6h = 1/3+1/6 = 1/2 → 2h juntos. Pegadinha: somar tempos."
+    ],
+    [
+      "raciocinio_new_88",
+      "O que são os conjuntos numéricos: inteiros, racionais e reais?",
+      "Inteiros (Z): números positivos, negativos e zero, sem casas decimais; Racionais (Q): podem ser expressos como fração de inteiros; Reais (R): incluem racionais e irracionais (como π e √2).",
+      "Hierarquia: ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ ⊂ ℂ. CESPE: −2 é natural? NÃO. 1/2 é inteiro? NÃO. √9 é irracional? NÃO (é 3). Dízima periódica é racional."
+    ],
+    [
+      "raciocinio_new_89",
+      "O que compreende o sistema legal de medidas?",
+      "É o Sistema Internacional de Unidades (SI) adotado oficialmente no Brasil, abrangendo medidas de comprimento, massa, tempo, volume e área, com suas conversões.",
+      "SI no Brasil (Lei 12.545/2011). CESPE: k=10³, M=10⁶, G=10⁹; m=10⁻³, μ=10⁻⁶, n=10⁻⁹. Cuidado: 1 km² = 1.000.000 m² (não 1.000). 1 m³ = 1.000 L."
+    ],
+    [
+      "raciocinio_new_90",
+      "O que são razões e proporções?",
+      "Razão é a comparação entre duas grandezas (a/b); proporção é a igualdade entre duas razões (a/b = c/d), usada para resolver problemas de relação entre grandezas.",
+      "Proporção: a/b = c/d → a×d = b×c. CESPE: direta (divisão constante) vs inversa (multiplicação constante). Pegadinha: x cresce, y cresce = direta. x cresce, y decresce = inversa."
+    ],
+    [
+      "raciocinio_new_91",
+      "Como funcionam as regras de três simples e compostas?",
+      "Regra de três simples relaciona duas grandezas (diretamente ou inversamente proporcionais); regra de três composta envolve três ou mais grandezas relacionadas simultaneamente.",
+      "Regra de três: 2 grandezas (simples); 3+ (composta). CESPE: grandezas inversas = INVERTA a fração. Pegadinha: confundir direta com inversa — se uma aumenta e outra diminui, é inversa."
+    ],
+    [
+      "raciocinio_new_92",
+      "Como calcular porcentagens e qual sua aplicação prática?",
+      "Porcentagem representa uma fração de denominador 100 (ex: 20% = 20/100 = 0,2); aplicada para calcular acréscimos, descontos, juros e proporções.",
+      "Fator de aumento: (1+i). Desconto: (1−i). CESPE: 10% + 10% = 1,1×1,1 = 21% (não 20%). Pegadinha: 10% desconto + 10% aumento NÃO volta ao original (0,9×1,1 = 0,99)."
+    ],
+    [
+      "raciocinio_new_93",
+      "Como resolver equações e inequações de 1º e 2º graus?",
+      "Equações de 1º grau (ax+b=0) isolam a incógnita; de 2º grau (ax²+bx+c=0) usam fatoração ou fórmula de Bhaskara; inequações seguem regras semelhantes, atentando para inversão do sinal ao multiplicar/dividir por número negativo.",
+      "1º: ax+b=0 → x=−b/a. 2º: ax²+bx+c=0 → Δ=b²−4ac. CESPE: inequação × negativo INVERTE o sinal. Ex: −2x > 4 → x < −2."
+    ],
+    [
+      "raciocinio_new_94",
+      "O que são sistemas lineares e como podem ser resolvidos?",
+      "São conjuntos de duas ou mais equações lineares com as mesmas incógnitas, resolvidos por substituição, adição (eliminação) ou métodos matriciais (regra de Cramer).",
+      "Sistema linear: substituição, adição ou matrizes. CESPE classifica: SPD (solução única), SPI (infinitas), SI (nenhuma). Escalonar: 0=0 → SPI. 0=k → SI."
+    ],
+    [
+      "raciocinio_new_95",
+      "O que são funções e como interpretar seus gráficos?",
+      "Função é uma relação entre dois conjuntos onde cada elemento do domínio corresponde a um único elemento da imagem; o gráfico representa visualmente essa relação (ex: reta para função afim, parábola para função quadrática).",
+      "Função: cada x → um y (teste reta vertical). CESPE: 1º (reta), 2º (parábola). Pegadinha: constante é função? SIM. Curva que cruza vertical em 2+ pontos NÃO."
+    ],
+    [
+      "raciocinio_new_96",
+      "O que são princípios de contagem?",
+      "São técnicas para determinar o número de possibilidades de um evento, incluindo o princípio fundamental da contagem (multiplicativo) e o aditivo.",
+      "Multiplicativo: a×b. CESPE adora anagramas: n! com repetições (divide!). Combinação: ordem irrelevante C(n,p). Arranjo: ordem relevante A(n,p). Pergunte: a ordem importa?"
+    ],
+    [
+      "raciocinio_new_97",
+      "O que diferencia progressões aritméticas (PA) de progressões geométricas (PG)?",
+      "PA: cada termo é obtido somando uma razão constante (r) ao anterior; PG: cada termo é obtido multiplicando o anterior por uma razão constante (q).",
+      "PA: aₙ=a₁+(n−1)r. PG: aₙ=a₁×q⁻¹. CESPE: diferença constante = PA. Quociente constante = PG. Pegadinha: (2,4,6,8) PA vs (2,4,8,16) PG. Não confunda!"
+    ],
+    [
+      "raciocinio_new_98",
+      "O que significa \"compreensão de estruturas lógicas\"?",
+      "É a capacidade de identificar e analisar a forma e a validade de argumentos e proposições, independentemente do conteúdo específico.",
+      "Argumento válido: conclusão OBRIGATÓRIA se premissas V. CESPE: conclusão pode ser falsa e o argumento ser VÁLIDO. Foco na FORMA, não no conteúdo."
+    ],
+    [
+      "raciocinio_new_99",
+      "O que são analogias, inferências, deduções e conclusões na lógica de argumentação?",
+      "Analogias comparam situações semelhantes; inferências derivam novas informações a partir de premissas; deduções partem do geral para o particular; conclusões são o resultado lógico de um raciocínio.",
+      "Dedução: geral→particular (certeza). Indução: particular→geral (probabilidade). CESPE: Todo mamífero respira; baleia é mamífero; baleia respira = dedução válida."
+    ],
+    [
+      "raciocinio_new_100",
+      "Qual a diferença entre proposições simples e compostas na lógica sentencial?",
+      "Proposição simples expressa uma única ideia (sem conectivos); proposição composta combina duas ou mais proposições simples por meio de conectivos lógicos (e, ou, se...então, etc.).",
+      "Simples: sem conectivos. Composta: com conectivos. CESPE: frases sem verbo, interrogativas e exclamativas NÃO são proposições. Ele passou porque estudou é causal, não condicional."
+    ],
+    [
+      "raciocinio_new_101",
+      "O que são tabelas-verdade?",
+      "São representações que mostram todos os possíveis valores lógicos (V/F) de uma proposição composta, conforme os valores de suas proposições simples.",
+      "Nº linhas = 2ⁿ (n prop). CESPE: condicional p→q só falsa em V→F. Bicondicional p↔q é V quando ambos iguais. Disjunção exclusiva: V quando DIFERENTES."
+    ],
+    [
+      "raciocinio_new_102",
+      "O que são equivalências lógicas?",
+      "São proposições compostas que possuem a mesma tabela-verdade, ainda que estruturalmente diferentes, podendo ser substituídas uma pela outra sem alterar o valor lógico.",
+      "Equivalências CESPE: p→q ≡ ¬q→¬p (contrapositiva). p→q ≡ ¬p∨q. Negação: p∧¬q (MANÉ). NUNCA confunda p→q com q→p (recíproca)."
+    ],
+    [
+      "raciocinio_new_103",
+      "O que estabelecem as Leis de Morgan?",
+      "~(p∧q) ≡ (~p∨~q) e ~(p∨q) ≡ (~p∧~q), ou seja, a negação de uma conjunção/disjunção equivale à disjunção/conjunção das negações.",
+      "¬(p∧q) ≡ ¬p∨¬q. ¬(p∨q) ≡ ¬p∧¬q. CESPE: negação NUNCA mantém o conectivo. Mnemônico: nega tudo e troca os sinais."
+    ],
+    [
+      "raciocinio_new_104",
+      "O que são diagramas lógicos e para que servem?",
+      "São representações gráficas (diagramas de Venn) usadas para visualizar relações entre conjuntos e verificar a validade de silogismos e argumentos.",
+      "Venn: Todo A é B = A⊂B. Nenhum A é B = disjuntos. Algum A é B = interseção. CESPE: desenhe círculos para testar validade do argumento. 3 círculos para 3 conjuntos."
+    ],
+    [
+      "raciocinio_new_105",
+      "Como se aplicam princípios de contagem e probabilidade conjuntamente?",
+      "Princípios de contagem determinam o número total de casos possíveis e favoráveis; a probabilidade é calculada pela razão entre casos favoráveis e o total de casos possíveis (P = casos favoráveis/casos possíveis).",
+      "P = favoráveis/possíveis. CESPE: independentes → P(A∩B)=P(A)×P(B). Mutuamente exclusivos → P(A∪B)=P(A)+P(B). e = multiplica (com reposição); sem reposição = condicional."
+    ],
+    [
+      "raciocinio_new_106",
+      "Quais são as principais operações com conjuntos?",
+      "União (∪), interseção (∩), diferença (-) e complementar, usadas para combinar ou comparar elementos entre conjuntos.",
+      "∪, ∩, −, complementar. CESPE: n(A∪B) = n(A)+n(B)−n(A∩B). Pegadinha: esquecer de subtrair interseção. Três conjuntos: soma − pares + tripla."
+    ],
+    [
+      "raciocinio_new_107",
+      "O que envolve o raciocínio lógico aplicado a problemas aritméticos, geométricos e matriciais?",
+      "Aplicação de conceitos lógico-matemáticos para resolver questões que envolvem sequências numéricas, figuras geométricas e disposição/análise de elementos em matrizes (tabelas).",
+      "CESPE adora sequências: PA, PG, Fibonacci, rotação de figuras, matrizes. Estratégia: calcule diferenças entre consecutivos. Se constante = PA. Se razão constante = PG. Teste sempre!"
+    ]
+  ],
+  "removes": [],
+  "merges": {}
+}

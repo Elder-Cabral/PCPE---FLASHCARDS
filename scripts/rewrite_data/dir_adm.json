@@ -191,6 +191,528 @@
       "O que é a Lei de Acesso à Informação (Lei 12.527/11)?",
       "Regula o acesso a informações públicas. Princípios: transparência ativa (divulgação espontânea) e passiva (resposta a pedidos). Prazo: 20 dias prorrogável por 10.",
       "LAI: informações de interesse público devem ser divulgadas independentemente de solicitação. Exceções: informações sigilosas (classificadas em ultrassecreta, secreta, reservada). CESPE: 'LAI se aplica a todos os entes' -> VERDADEIRO."
+    ],
+    [
+      "dir_adm_1",
+      "O que é Administração Pública em sentido objetivo?",
+      "Atividade concreta que o Estado desenvolve para o interesse público: fomento, polícia administrativa e serviço público.",
+      "Sentido OBJETIVO (material): atividade. Sentido SUBJETIVO (formal): agentes/pessoas. CESPE inverte!"
+    ],
+    [
+      "dir_adm_3",
+      "O que é competência no ato administrativo?",
+      "Poder legal atribuído ao agente para praticar o ato; decorre de lei, é irrenunciável e imprescritível.",
+      "Competência é elemento do ato administrativo. Decorrente de lei, irrenunciável, imprescritível. CESPE: delegação é possível (art. 11-14 Lei 9.784/99)."
+    ],
+    [
+      "dir_adm_4",
+      "O que é finalidade no ato administrativo?",
+      "Resultado previsto em lei como objetivo do ato; deve ser sempre o interesse público. Desvio gera nulidade.",
+      "Finalidade é elemento VINCULADO do ato. Desvio de finalidade = nulidade. CESPE: dolo é necessário para caracterizar desvio."
+    ],
+    [
+      "dir_adm_5",
+      "O que é motivo no ato administrativo?",
+      "Situação de fato e de direito que determina ou autoriza a prática do ato; deve existir e ser verdadeiro.",
+      "Elementos: COMPETÊNCIA, FINALIDADE, FORMA, MOTIVO, OBJETO (CFFMO). CESPE: motivo e objeto podem ser discricionários."
+    ],
+    [
+      "dir_adm_6",
+      "O que é objeto no ato administrativo?",
+      "Efeito jurídico imediato produzido pelo ato; deve ser lícito, possível, determinado ou determinável e moral.",
+      "Elementos: COMPETÊNCIA, FINALIDADE, FORMA, MOTIVO, OBJETO (CFFMO). CESPE: motivo e objeto podem ser discricionários."
+    ],
+    [
+      "dir_adm_9",
+      "O que é a presunção de legitimidade dos atos administrativos?",
+      "Presunção relativa (juris tantum) de que o ato foi praticado conforme a lei; inverte o ônus da prova ao particular.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_10",
+      "O que é imperatividade no ato administrativo?",
+      "Poder de impor obrigações aos particulares independentemente de sua concordância (ius imperii).",
+      "Elementos: COMPETÊNCIA, FINALIDADE, FORMA, MOTIVO, OBJETO (CFFMO). CESPE: motivo e objeto podem ser discricionários."
+    ],
+    [
+      "dir_adm_11",
+      "O que é autoexecutoriedade?",
+      "Poder de executar materialmente o ato sem autorização judicial prévia, quando previsto em lei ou em situação de urgência.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_12",
+      "O que é o poder hierárquico?",
+      "Poder de organizar, comandar, controlar e revisar a atuação de agentes e órgãos subordinados, com delegação e avocação.",
+      "Poder HIERÁRQUICO: ordenar, coordenar, controlar, delegar. CESPE: hierarquia NÃO existe entre Poderes."
+    ],
+    [
+      "dir_adm_13",
+      "O que é o poder disciplinar?",
+      "Poder de punir internamente os servidores e sujeitos submetidos à disciplina da Administração por infrações funcionais.",
+      "Poder DISCIPLINAR: apura infrações e aplica sanções. CESPE: poder disciplinar NÃO abrange particulares não contratados."
+    ],
+    [
+      "dir_adm_14",
+      "O que é o poder regulamentar?",
+      "Poder do Executivo de editar decretos e regulamentos para fiel execução das leis, sem criar direitos ou obrigações não previstos em lei.",
+      "Poder REGULAMENTAR: detalhar lei. Decreto executivo (CF art. 84, IV). CESPE: decreto autônomo é exceção."
+    ],
+    [
+      "dir_adm_16",
+      "Quais são os atributos do poder de polícia?",
+      "Discricionariedade, autoexecutoriedade e coercibilidade.",
+      "Poder de POLÍCIA: condiciona/limita direitos. Atributos: discricionariedade, autoexecutoriedade, coercibilidade. CESPE: pode ser delegado a particular? Só atos de execução material."
+    ],
+    [
+      "dir_adm_18",
+      "O que é abuso de poder?",
+      "Ocorre quando o agente age além de sua competência (excesso de poder) ou com finalidade diversa da legal (desvio de poder).",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_19",
+      "O que é desvio de poder?",
+      "Modalidade de abuso em que o agente usa competência legal para atingir fim diverso do interesse público previsto em lei.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_21",
+      "Quais são as 'pedras de toque' do regime administrativo?",
+      "Supremacia do interesse público sobre o privado e indisponibilidade do interesse público.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_23",
+      "Quando se aplica a teoria subjetiva de responsabilidade do Estado?",
+      "Em casos de omissão estatal; exige comprovação de culpa ou dolo do agente para responsabilizar o Estado.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_24",
+      "O que é a Administração direta?",
+      "Conjunto de órgãos integrantes da estrutura da Presidência, ministérios e equivalentes nos estados e municípios.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_25",
+      "O que é a Administração indireta?",
+      "Entidades com personalidade jurídica própria criadas por lei: autarquias, fundações públicas, empresas públicas e SEM.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_26",
+      "O que é autarquia?",
+      "Pessoa jurídica de direito público criada por lei para exercer atividade típica de Estado, com autonomia patrimonial e administrativa.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_27",
+      "O que é empresa pública?",
+      "Pessoa jurídica de direito privado com capital exclusivamente público, criada por lei autorizada, para explorar atividade econômica ou prestar serviço público.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_28",
+      "O que é sociedade de economia mista?",
+      "Pessoa jurídica de direito privado com capital público e privado (Estado detém maioria das ações votantes), criada por lei autorizada.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_30",
+      "O que é desconcentração administrativa?",
+      "Distribuição interna de competências dentro da mesma pessoa jurídica, criando órgãos subordinados (ministérios, departamentos).",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_31",
+      "O que é serviço público?",
+      "Atividade material que a lei atribui ao Estado para exercer diretamente ou por delegação, visando satisfazer necessidades coletivas.",
+      "Serviço público: concedido, permitido, autorizado. CESPE: serviço delegado continua sendo público."
+    ],
+    [
+      "dir_adm_33",
+      "O que é concessão de serviço público?",
+      "Delegação da prestação de serviço público a pessoa jurídica privada por prazo determinado, mediante licitação na modalidade concorrência.",
+      "Serviço público: concedido, permitido, autorizado. CESPE: serviço delegado continua sendo público."
+    ],
+    [
+      "dir_adm_34",
+      "O que é permissão de serviço público?",
+      "Delegação precária por licitação a pessoa física ou jurídica para prestar serviço público; rescindível unilateralmente.",
+      "Serviço público: concedido, permitido, autorizado. CESPE: serviço delegado continua sendo público."
+    ],
+    [
+      "dir_adm_35",
+      "O que é controle judicial da Administração?",
+      "Controle de legalidade e constitucionalidade pelo Poder Judiciário sobre os atos administrativos, inclusive os discricionários.",
+      "Controle ADMINISTRATIVO: autotutela. JUDICIÁRIO: legalidade. LEGISLATIVO: político-financeiro. CESPE: Judiciário não controla mérito."
+    ],
+    [
+      "dir_adm_36",
+      "O que é autotutela administrativa?",
+      "Poder-dever da Administração de anular atos ilegais e revogar atos inconvenientes/inoportunos (Súmulas 346 e 473 STF).",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_40",
+      "O que é pregão (Lei 14.133/21)?",
+      "Modalidade para aquisição de bens e serviços comuns, com disputa por lances; preferencialmente eletrônico.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_42",
+      "O que é inexigibilidade de licitação?",
+      "Hipótese em que a competição é inviável: fornecedor único, notória especialização ou artista consagrado.",
+      "Lei 14.133/2021. Modalidades: concorrência, pregão, concurso, leilão, diálogo competitivo. CESPE: convite e tomada de preços EXTINTOS."
+    ],
+    [
+      "dir_adm_44",
+      "O que é cargo público?",
+      "Conjunto de atribuições criado por lei, com denominação própria e vencimento, integrando a estrutura organizacional.",
+      "Cargo: efetivo (concurso) ou comissão (confiança). CESPE: cargo em comissão é para direção/assessoramento."
+    ],
+    [
+      "dir_adm_46",
+      "Atos vinculados podem ser revogados?",
+      "Não; a revogação é exclusiva dos atos discricionários. Atos vinculados ilegais são anulados.",
+      "REVOGAÇÃO: oportunidade e conveniência (discricionário). Efeitos ex nunc. CESPE: Judiciário NÃO revoga."
+    ],
+    [
+      "dir_adm_48",
+      "Qual o prazo para anular atos com efeitos favoráveis ao particular (Lei 9.784/99)?",
+      "5 anos, salvo comprovada má-fé do beneficiário (art. 54, Lei 9.784/99).",
+      "ANULAÇÃO: Administração (autotutela) ou Judiciário. Efeitos ex tunc. CESPE: prazo decadencial (Lei 9.784/99)."
+    ],
+    [
+      "dir_adm_50",
+      "O que é a desapropriação?",
+      "Intervenção supressiva do Estado na propriedade, transferindo-a ao poder público mediante prévia e justa indenização em dinheiro.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_51",
+      "O que é o tombamento?",
+      "Intervenção restritiva que preserva o patrimônio histórico, cultural e paisagístico sem transferência de propriedade.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_52",
+      "O que é a requisição administrativa?",
+      "Intervenção em situação de perigo público iminente, com indenização posterior se houver dano.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_53",
+      "O que é servidão administrativa?",
+      "Direito real público sobre bem particular para uso da Administração em prol do interesse público, com indenização por dano.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_55",
+      "O que é avocação de competência?",
+      "Atração pela autoridade superior de competência normalmente exercida por subordinado, em casos excepcionais.",
+      "Competência é elemento do ato administrativo. Decorrente de lei, irrenunciável, imprescritível. CESPE: delegação é possível (art. 11-14 Lei 9.784/99)."
+    ],
+    [
+      "dir_adm_57",
+      "O que é equilíbrio econômico-financeiro do contrato?",
+      "Relação entre encargos do contratado e remuneração pactuada que deve ser mantida durante toda a execução.",
+      "Contrato administrativo: cláusulas exorbitantes, alteração unilateral. CESPE: equilíbrio econômico deve ser mantido."
+    ],
+    [
+      "dir_adm_58",
+      "O que é o convênio administrativo?",
+      "Ajuste entre entidades públicas (ou público-privado) para objetivos comuns, sem caráter contratual oneroso.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_59",
+      "O que é o controle social da Administração?",
+      "Mecanismos de participação popular: ouvidorias, audiências públicas, conselhos gestores e portal da transparência.",
+      "Controle ADMINISTRATIVO: autotutela. JUDICIÁRIO: legalidade. LEGISLATIVO: político-financeiro. CESPE: Judiciário não controla mérito."
+    ],
+    [
+      "dir_adm_60",
+      "O que é o princípio da segurança jurídica na Administração?",
+      "Protege a confiança legítima dos administrados; veda aplicação retroativa de nova interpretação mais gravosa.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_61",
+      "O que é o princípio da motivação do ato administrativo?",
+      "Obrigação de fundamentar as razões de fato e de direito da decisão administrativa; é exigência constitucional implícita.",
+      "Elementos: COMPETÊNCIA, FINALIDADE, FORMA, MOTIVO, OBJETO (CFFMO). CESPE: motivo e objeto podem ser discricionários."
+    ],
+    [
+      "dir_adm_63",
+      "O TCU tem natureza jurisdicional?",
+      "Não; exerce controle administrativo-contábil; suas decisões têm eficácia de título executivo mas não fazem coisa julgada.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_65",
+      "Qual a diferença entre ato discricionário e vinculado?",
+      "Vinculado: todos os elementos fixados em lei, sem margem de escolha. Discricionário: lei confere margem de conveniência e oportunidade no motivo e objeto.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_66",
+      "O que é o princípio da impessoalidade?",
+      "Os atos devem ser praticados em nome da Administração, sem favoritismos ou perseguições pessoais, visando o interesse público.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_68",
+      "O que são bens dominicais?",
+      "Bens públicos sem destinação específica; podem ser alienados, observados os requisitos legais.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_69",
+      "O que é a afetação e desafetação dos bens públicos?",
+      "Afetação: destinação ao uso público. Desafetação: retirada da destinação, tornando o bem dominical e passível de alienação.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_72",
+      "O que é emprego público?",
+      "Vínculo de trabalho regido pela CLT, típico das empresas públicas e SEM; admitido por concurso.",
+      "Emprego público: celetista (CLT). CESPE: empregado público NÃO tem estabilidade."
+    ],
+    [
+      "dir_adm_74",
+      "O que é a Lei de Acesso à Informação (Lei 12.527/11)?",
+      "Garante o acesso dos cidadãos a informações públicas; estabelece prazos, procedimentos e hipóteses de sigilo.",
+      "FORMA: elemento vinculado. Regra: escrita. Exceção: ordens verbais. CESPE: forma é requisito de validade."
+    ],
+    [
+      "dir_adm_75",
+      "O que é medida provisória?",
+      "Ato normativo do Presidente com força de lei em caso de relevância e urgência; prazo de 60 dias prorrogável por mais 60 (art. 62 CF/88).",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_77",
+      "O que é ato administrativo composto?",
+      "Formado por dois atos: um principal e outro acessório (aprovação, ratificação ou homologação).",
+      "Elementos: COMPETÊNCIA, FINALIDADE, FORMA, MOTIVO, OBJETO (CFFMO). CESPE: motivo e objeto podem ser discricionários."
+    ],
+    [
+      "dir_adm_78",
+      "O que é o poder normativo da Administração?",
+      "Capacidade de editar atos normativos infralegais (decretos, regulamentos, portarias, resoluções) para organizar a própria atuação.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_79",
+      "O que é a fundação pública?",
+      "Entidade dotada de personalidade jurídica, criada por lei, para desenvolver atividades não lucrativas de interesse público.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_80",
+      "O que é o silêncio administrativo?",
+      "Omissão da Administração em se pronunciar no prazo legal; pode gerar presunção de deferimento ou indeferimento, conforme a lei.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_81",
+      "O que é o controle interno da Administração?",
+      "Autotutela; a própria Administração revisa seus atos, podendo anulá-los por ilegalidade ou revogá-los por conveniência.",
+      "Controle ADMINISTRATIVO: autotutela. JUDICIÁRIO: legalidade. LEGISLATIVO: político-financeiro. CESPE: Judiciário não controla mérito."
+    ],
+    [
+      "dir_adm_82",
+      "O que é o registro do ato de aposentadoria pelo TCU?",
+      "Ato de aposentadoria de servidor federal depende de registro pelo TCU para produzir efeitos definitivos.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_83",
+      "O que é a função pública?",
+      "Atribuição criada por lei, sem cargo permanente; exercida por agentes temporários ou em comissão.",
+      "Função pública: encargo sem cargo (ex: jurado, mesário). CESPE: função de confiança é privativa de servidor efetivo."
+    ],
+    [
+      "dir_adm_85",
+      "O que é a ANATEL e que tipo de entidade é?",
+      "Agência Nacional de Telecomunicações; autarquia de regime especial (agência reguladora) com autonomia ampliada.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_87",
+      "O que é contrato de gestão?",
+      "Acordo entre Administração e entidade pública ou privada, com metas e contrapartidas, para ampliar a autonomia gerencial da entidade.",
+      "Contrato administrativo: cláusulas exorbitantes, alteração unilateral. CESPE: equilíbrio econômico deve ser mantido."
+    ],
+    [
+      "dir_adm_88",
+      "O que é organização social (OS)?",
+      "Entidade privada sem fins lucrativos, habilitada pelo poder público, que celebra contrato de gestão para gerir serviços sociais.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_89",
+      "O que é OSCIP?",
+      "Organização da Sociedade Civil de Interesse Público; celebra termo de parceria com o poder público para desenvolver atividades de interesse social.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_91",
+      "O que é a Lei de Responsabilidade Fiscal (LC 101/2000)?",
+      "Estabelece normas de finanças públicas voltadas à responsabilidade na gestão fiscal; limites de gastos, dívida e transparência.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_92",
+      "O que é o princípio da publicidade dos atos administrativos?",
+      "Obrigação de divulgar os atos para dar transparência à gestão; condição de eficácia, com exceções legais.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_new_95",
+      "O que diferencia Estado, Governo e Administração Pública?",
+      "Estado é a pessoa jurídica de direito público; Governo é o conjunto de órgãos que exercem o poder político (função política/discricionária); Administração Pública é o conjunto de órgãos e agentes que executam as atividades administrativas.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_new_96",
+      "Como o Direito Administrativo é definido como ramo do Direito?",
+      "É o ramo do direito público que disciplina a função administrativa e os órgãos que a exercem, regendo as relações entre a Administração e os administrados.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_new_97",
+      "O que é ato administrativo e quais seus elementos/requisitos?",
+      "É a manifestação unilateral de vontade da Administração que produz efeitos jurídicos. Seus elementos são: competência, finalidade, forma, motivo e objeto.",
+      "Elementos: COMPETÊNCIA, FINALIDADE, FORMA, MOTIVO, OBJETO (CFFMO). CESPE: motivo e objeto podem ser discricionários."
+    ],
+    [
+      "dir_adm_new_98",
+      "Quais são os poderes da Administração Pública?",
+      "Poder vinculado, discricionário, hierárquico, disciplinar, regulamentar e de polícia.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_new_99",
+      "O que caracteriza o poder hierárquico e o poder disciplinar?",
+      "Poder hierárquico permite organizar, distribuir e escalonar funções entre os órgãos; poder disciplinar permite apurar infrações e aplicar sanções aos servidores subordinados.",
+      "Poder DISCIPLINAR: apura infrações e aplica sanções. CESPE: poder disciplinar NÃO abrange particulares não contratados."
+    ],
+    [
+      "dir_adm_new_100",
+      "O que são poder regulamentar e poder de polícia?",
+      "Poder regulamentar permite à Administração editar atos gerais (decretos, regulamentos) para fiel execução das leis; poder de polícia permite restringir/condicionar direitos individuais em prol do interesse coletivo.",
+      "Poder REGULAMENTAR: detalhar lei. Decreto executivo (CF art. 84, IV). CESPE: decreto autônomo é exceção."
+    ],
+    [
+      "dir_adm_new_101",
+      "Quando ocorre uso ou abuso de poder pelo agente público?",
+      "Uso é o exercício regular da competência; abuso ocorre por excesso de poder (extrapola limites) ou desvio de finalidade (atende a interesse diverso do público).",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_new_103",
+      "Quais são os princípios expressos da Administração Pública previstos no art. 37 da CF?",
+      "Legalidade, Impessoalidade, Moralidade, Publicidade e Eficiência (LIMPE).",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_new_104",
+      "Cite exemplos de princípios implícitos da Administração Pública.",
+      "Razoabilidade, proporcionalidade, supremacia do interesse público, continuidade do serviço público, autotutela e segurança jurídica.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_new_105",
+      "Em que consiste a responsabilidade civil do Estado e qual a teoria adotada pela CF/88º",
+      "É a obrigação do Estado de indenizar danos causados a terceiros por seus agentes; adota-se a teoria da responsabilidade objetiva (risco administrativo), independentemente de culpa.",
+      "Responsabilidade OBJETIVA do Estado (art. 37, §6º). Risco administrativo. CESPE: culpa exclusiva da vítima exclui responsabilidade."
+    ],
+    [
+      "dir_adm_new_106",
+      "O que são serviços públicos?",
+      "São atividades prestadas pela Administração ou por seus delegatários, sob regime de direito público, para satisfazer necessidades coletivas essenciais.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_new_107",
+      "O que é organização administrativa?",
+      "É a estruturação dos órgãos e entidades que compõem a Administração Pública, podendo ser direta ou indireta.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_new_108",
+      "Diferencie centralização e descentralização administrativa.",
+      "Centralização é quando o Estado executa diretamente suas atividades; descentralização é a transferência da execução para outra pessoa jurídica (ex: autarquias, concessionárias).",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_new_109",
+      "Diferencie concentração e desconcentração administrativa.",
+      "Concentração é quando as competências ficam reunidas em poucos órgãos; desconcentração é a distribuição interna de competências entre vários órgãos da mesma pessoa jurídica.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_new_110",
+      "O que compõe a Administração Direta e a Indireta?",
+      "Direta: órgãos integrados à estrutura da própria pessoa política (União, Estados, DF, Municípios); Indireta: autarquias, fundações públicas, empresas públicas e sociedades de economia mista.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_new_111",
+      "O que é controle da Administração Pública?",
+      "É o conjunto de mecanismos de fiscalização e correção da atuação administrativa, podendo ser interno (autotutela) ou externo (Legislativo, Judiciário, Tribunais de Contas).",
+      "Controle ADMINISTRATIVO: autotutela. JUDICIÁRIO: legalidade. LEGISLATIVO: político-financeiro. CESPE: Judiciário não controla mérito."
+    ],
+    [
+      "dir_adm_new_112",
+      "Em que consiste o controle exercido pela própria Administração Pública (autotutela)?",
+      "É o poder-dever da Administração de rever seus próprios atos, anulando os ilegais e revogando os inconvenientes/inoportunos (Súmulas 346 e 473 do STF).",
+      "Controle ADMINISTRATIVO: autotutela. JUDICIÁRIO: legalidade. LEGISLATIVO: político-financeiro. CESPE: Judiciário não controla mérito."
+    ],
+    [
+      "dir_adm_new_113",
+      "Em que consiste o controle judicial da Administração Pública?",
+      "É a possibilidade de o Poder Judiciário examinar a legalidade dos atos administrativos, podendo anulá-los, mas sem adentrar no mérito administrativo (discricionariedade).",
+      "Controle ADMINISTRATIVO: autotutela. JUDICIÁRIO: legalidade. LEGISLATIVO: político-financeiro. CESPE: Judiciário não controla mérito."
+    ],
+    [
+      "dir_adm_new_114",
+      "Em que consiste o controle legislativo da Administração Pública?",
+      "É o controle político e financeiro exercido pelo Poder Legislativo, com auxílio do Tribunal de Contas, sobre os atos do Executivo (fiscalização contábil, financeira, orçamentária).",
+      "Controle ADMINISTRATIVO: autotutela. JUDICIÁRIO: legalidade. LEGISLATIVO: político-financeiro. CESPE: Judiciário não controla mérito."
+    ],
+    [
+      "dir_adm_new_115",
+      "O que caracteriza a improbidade administrativa segundo a Lei nº 8.429/1992º",
+      "São atos que causam enriquecimento ilícito, prejuízo ao erário ou violam princípios da Administração, sujeitando o agente a sanções como perda de função, ressarcimento e suspensão de direitos políticos.",
+      "Lei 8.429/92. Ações: enriquecimento, dano ao erário, viola princípios. CESPE: dolo é necessário (não pune culpa)."
+    ],
+    [
+      "dir_adm_new_116",
+      "O que é processo administrativo?",
+      "É a sequência ordenada de atos e formalidades necessários à formação, manifestação e execução da vontade administrativa, garantindo contraditório e ampla defesa.",
+      "Lei 9.784/99. Princípios: oficialidade, verdade material, ampla defesa. CESPE: prazo decisão: 30 dias (prorrogável)."
+    ],
+    [
+      "dir_adm_99",
+      "Em quais hipóteses a CF/88 admite acumulação de cargos públicosão (Art. 37, XVI)",
+      "Dois cargos de professor; um de professor com outro técnico ou científico; dois de saúde ou privativos de profissional de saúde, desde que haja compatibilidade de horários.",
+      "Cargo: efetivo (concurso) ou comissão (confiança). CESPE: cargo em comissão é para direção/assessoramento."
+    ],
+    [
+      "dir_adm_100",
+      "O que estabelece o art. 41 da CF/88 sobre a estabilidade do servidor público?",
+      "Servidor nomeado para cargo efetivo por concurso adquire estabilidade após 3 anos de efetivo exercício. Perde o cargo por sentença judicial transitada em julgado, PAD ou avaliação periódica insuficiente.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
+    ],
+    [
+      "dir_adm_101",
+      "Qual o tratamento constitucional ao servidor público investido em mandato eletivo? (Art. 38, CF/88)",
+      "Mandato federal/estadual/distrital: afastamento obrigatório. Prefeito: afasta-se e pode optar pela remuneração. Vereador: se houver compatibilidade de horários, acumula; senão, afasta-se sem remuneração do cargo efetivo.",
+      "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos."
     ]
   ],
   "removes": [],

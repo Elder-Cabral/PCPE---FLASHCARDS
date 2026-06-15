@@ -1,0 +1,376 @@
+{
+  "rewrites": [
+    [
+      "dir_penal_0",
+      "Quais são os princípios básicos do Direito Penal?",
+      "Legalidade, anterioridade, culpabilidade, proporcionalidade, humanidade, lesividade, intervenção mínima e fragmentariedade.",
+      "Legalidade (art. 1º CP), anterioridade, culpabilidade, proporcionalidade, humanidade, lesividade, fragmentariedade. CESPE: legalidade = reserva legal + anterioridade."
+    ],
+    [
+      "dir_penal_2",
+      "O que é o princípio da anterioridade no Direito Penal?",
+      "A lei penal incriminadora deve ser anterior ao fato; lei posterior mais gravosa não retroage.",
+      "Art. 1º CP: não há crime sem lei anterior. CESPE: lei mais benéfica RETROAGE (art. 2º CP)."
+    ],
+    [
+      "dir_penal_3",
+      "O que é crime no conceito analítico?",
+      "Fato típico, ilícito (antijurídico) e culpável; concepção tripartida adotada majoritariamente no Brasil.",
+      "Concepção TRIPARTIDA: fato típico + ilícito + culpável. BIPARTIDA: fato típico + ilícito (culpabilidade = dosimetria). CESPE adota tripartida."
+    ],
+    [
+      "dir_penal_4",
+      "O que é contravenção penal?",
+      "Infração penal de menor potencial ofensivo; pena de prisão simples, de menor gravidade que o crime.",
+      "Decreto-Lei 3.688/41. Pena: prisão simples ou multa. CESPE: contravenção NÃO é crime, mas é infração penal."
+    ],
+    [
+      "dir_penal_5",
+      "O que é a lei penal mais benéfica (lex mitior)?",
+      "A lei penal mais benéfica retroage para beneficiar o réu, mesmo após o trânsito em julgado (art. 5º, XL CF/88).",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_6",
+      "O que é a lei penal temporária?",
+      "Tem prazo de vigência fixado; ultraativa: aplica-se aos fatos cometidos durante sua vigência mesmo após sua expiração.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_7",
+      "O que é a lei penal excepcional?",
+      "Editada para situação anormal (guerra, calamidade); também ultraativa.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_8",
+      "O que é o lugar do crime segundo o CP (art. 6º)?",
+      "Teoria da ubiquidade: onde ocorreu a ação/omissão OU onde se produziu/deveria produzir o resultado.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_9",
+      "O que é o tempo do crime segundo o CP (art. 4º)?",
+      "Teoria da atividade: o crime é praticado no momento da ação ou omissão, ainda que outro seja o momento do resultado.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_10",
+      "O que é homicídio simples (art. 121 CP)?",
+      "Matar alguém; pena de 6 a 20 anos de reclusão (doloso) ou 1 a 3 anos de detenção (culposo).",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_11",
+      "Quais são as qualificadoras do homicídio (art. 121, §2º CP)?",
+      "Motivo torpe, fútil, meio cruel, emboscada, dissimulação, impossibilidade de defesa, contra autoridades. ATENÇÃO: Feminicídio deixou de ser qualificadora (inciso VI revogado pela Lei 14.994/2024), passando a crime autônomo no art. 121-A CP.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_13",
+      "O que é lesão corporal grave (art. 129, §1º CP)?",
+      "Incapacidade para ocupações habituais por mais de 30 dias, perigo de vida, debilidade permanente ou aceleração de parto.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_16",
+      "O que é extorsão (art. 158 CP)?",
+      "Constranger alguém mediante violência ou grave ameaça para obter vantagem econômica indevida; pena de 4 a 10 anos.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_19",
+      "O que é estupro (art. 213 CP)?",
+      "Constranger alguém mediante violência ou grave ameaça a ter conjunção carnal ou praticar ato libidinoso; pena de 6 a 10 anos.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_20",
+      "O que é estupro de vulnerável (art. 217-A CP)?",
+      "Ter conjunção carnal ou praticar ato libidinoso com menor de 14 anos ou vulnerável; pena de 8 a 15 anos; presunção absoluta.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_23",
+      "O que é corrupção ativa (art. 333 CP)?",
+      "Oferecer ou prometer vantagem indevida a funcionário público; pena de 2 a 12 anos de reclusão e multa.",
+      "Art. 317 (passiva) + 333 (ativa) CP. CESPE: corrupção consuma-se com o ato de solicitar/oferecer, independe de vantagem efetiva."
+    ],
+    [
+      "dir_penal_24",
+      "O que é prevaricação (art. 319 CP)?",
+      "Retardar ou deixar de praticar ato de ofício para satisfazer interesse pessoal; pena de 3 meses a 1 ano e multa.",
+      "Art. 319 CP: retardar/deixar ato de ofício para satisfazer interesse pessoal. CESPE: é crime formal, não exige dano."
+    ],
+    [
+      "dir_penal_26",
+      "O que prevê a Lei 7.716/89 (racismo)?",
+      "Tipifica crimes de preconceito de raça, cor, etnia, religião ou procedência nacional; crime inafiançável e imprescritível.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_27",
+      "O que é injúria racial e sua diferença do racismo?",
+      "Injúria racial (art. 140, §3º CP): ofensa a pessoa determinada. Racismo (Lei 7.716): discriminação genérica contra grupo.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_30",
+      "Quais as características da tortura como crime?",
+      "Inafiançável, insuscetível de graça ou anistia; o condenado fica sem direitos políticos durante a execução da pena.",
+      "Lei 9.455/97. Constranger com sofrimento. CESPE: tortura-própria, imprópria, omissão. Inafiançável."
+    ],
+    [
+      "dir_penal_31",
+      "O que é o ECA (Lei 8.069/90)?",
+      "Estatuto da Criança e do Adolescente; estabelece proteção integral a pessoas até 18 anos e tipifica crimes contra elas.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_32",
+      "O que é ato infracional segundo o ECA?",
+      "Conduta descrita como crime ou contravenção praticada por criança ou adolescente, sujeita a medidas socioeducativas.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_33",
+      "Quais as medidas socioeducativas do ECA?",
+      "Advertência, reparação do dano, prestação de serviços à comunidade, liberdade assistida, semiliberdade e internação.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_36",
+      "O que é embriaguez ao volante (art. 306 CTB)?",
+      "Conduzir veículo com capacidade psicomotora alterada por álcool ou substância psicoativa; pena de 6 meses a 3 anos e multa.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_37",
+      "O que é a Lei Maria da Penha (Lei 11.340/06)?",
+      "Lei de proteção à mulher vítima de violência doméstica; prevê medidas protetivas, tipifica formas de violência e agrava penas.",
+      "Lei 11.340/2006. Violência doméstica. CESPE: medida protetiva independe de BO ou inquérito."
+    ],
+    [
+      "dir_penal_38",
+      "Quais as formas de violência doméstica segundo a Lei 11.340/06º",
+      "Violência física, psicológica, sexual, patrimonial e moral praticadas no âmbito doméstico ou familiar.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_40",
+      "O que prevê a Lei 14.344/2022º",
+      "Mecanismos para combater violência doméstica contra crianças e adolescentes; cria Casa da Criança e medidas protetivas.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_41",
+      "A pessoa jurídica pode ser responsabilizada criminalmente por crimes ambientais?",
+      "Sim; a Lei 9.605/98 e o art. 225, §3º CF/88 preveem responsabilidade penal da pessoa jurídica em crimes ambientais.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_42",
+      "O que é o Estatuto do Desarmamento (Lei 10.826/03)?",
+      "Dispõe sobre registro, posse e comercialização de armas de fogo; tipifica porte ilegal, disparo em local habitado e tráfico de armas.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_43",
+      "O que é o porte ilegal de arma de fogo (art. 14 Lei 10.826/03)?",
+      "Portar arma de fogo sem autorização; pena de 2 a 4 anos de reclusão e multa.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_51",
+      "O que é prescrição da pretensão punitiva?",
+      "Perda do direito estatal de punir pelo decurso do tempo antes do trânsito em julgado da condenação.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_53",
+      "O que é crime permanente?",
+      "Consumação se prolonga no tempo pela vontade do agente (ex: sequestro); flagrante possível a qualquer momento.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_54",
+      "Quais são as espécies de flagrante delito?",
+      "Próprio (real), impróprio (quase flagrante/perseguição), presumido (ficto/encontrado logo após) e preparado (crime provocado — ilícito).",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_59",
+      "Os menores de 18 anos são inimputáveis?",
+      "Sim; são penalmente inimputáveis, sujeitos ao ECA (art. 27 CP e art. 228 CF/88); cláusula pétrea.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_64",
+      "O que é a Súmula 711 do STF?",
+      "A lei penal mais grave aplica-se ao crime continuado ou permanente se sua vigência é anterior à cessação da continuidade/permanência.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_65",
+      "O que é imputabilidade penal?",
+      "Capacidade de entender o caráter ilícito do fato e de determinar-se de acordo com esse entendimento; pressuposto da culpabilidade.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_67",
+      "O que é o crime de resistência (art. 329 CP)?",
+      "Opor-se à execução de ato legal mediante violência ou grave ameaça ao funcionário público; pena de 2 meses a 2 anos.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_68",
+      "O que é o crime de desacato (art. 331 CP)?",
+      "Desacatar funcionário público no exercício da função ou em razão dela; pena de 6 meses a 2 anos de detenção.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_70",
+      "O que é a imprudência como modalidade de culpa?",
+      "Ação arriscada; o agente faz o que não deveria fazer, assumindo risco desnecessário.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_71",
+      "O que é a imperícia como modalidade de culpa?",
+      "Falta de aptidão técnica ou científica para o exercício de arte, ofício ou profissão.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_72",
+      "O que é concussão (art. 316 CP)?",
+      "Exigir, para si ou para outrem, direta ou indiretamente, vantagem indevida em razão da função; pena de 2 a 12 anos.",
+      "Art. 316 CP: exigir vantagem indevida (exige = força). CESPE: difere de corrupção passiva (solicitar)."
+    ],
+    [
+      "dir_penal_74",
+      "O que é o crime omissivo próprio?",
+      "Tipo penal que descreve apenas uma omissão (ex: omissão de socorro, art. 135 CP); não exige posição de garante.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_75",
+      "O que é o crime omissivo impróprio (comissivo por omissão)?",
+      "O agente garante tem o dever de agir e, ao omitir-se, responde pelo resultado como se o tivesse causado (art. 13, §2º CP).",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_76",
+      "Quais são as funções da pena segundo o CP?",
+      "Retributiva (punir), preventiva geral (inibir a sociedade), preventiva especial (ressocializar o condenado).",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_77",
+      "O que é a suspensão condicional da pena (sursis)?",
+      "Substituição do cumprimento da pena privativa por período de prova com condições; aplicável a condenações até 2 anos (art. 77 CP).",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_78",
+      "O que são penas restritivas de direito?",
+      "Substituem a pena privativa de liberdade em crimes menos graves; incluem prestação de serviços, interdição de direitos e multa.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_79",
+      "O que é reincidência penal?",
+      "Prática de novo crime após condenação definitiva anterior por crime, dentro de 5 anos do cumprimento/extinção da pena.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_80",
+      "O que é o perdão judicial?",
+      "Causa extintiva da punibilidade em que o juiz deixa de aplicar a pena em razão de consequências especialmente graves ao próprio agente.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_81",
+      "O que é o princípio da humanidade das penas?",
+      "Veda penas cruéis, tortura, trabalhos forçados, prisão perpétua e pena de morte (salvo guerra declarada); CF/88, art. 5º, XLVII.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_82",
+      "O que é o tipo penal e seus elementos?",
+      "Descrição legal da conduta criminosa; composto por elementos objetivos (conduta, resultado, nexo) e subjetivos (dolo ou culpa).",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_83",
+      "O que é bem jurídico tutelado pelo Direito Penal?",
+      "Valor social relevante que a norma penal protege: vida, patrimônio, dignidade sexual, administração pública, etc.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_84",
+      "O que é o princípio da intervenção mínima?",
+      "O Direito Penal só deve ser usado como último recurso (ultima ratio), quando outros ramos do direito forem insuficientes.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_85",
+      "O que é o princípio da fragmentariedade?",
+      "O Direito Penal não protege todos os bens jurídicos, apenas os mais relevantes e apenas contra as formas mais graves de lesão.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_86",
+      "O que é o princípio da ofensividade (lesividade)?",
+      "Só há crime quando há efetiva lesão ou ameaça concreta de lesão a bem jurídico alheio; exclui crimes de mera desobediência.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_new_98",
+      "Qual a diferença entre crime e contravenção penal?",
+      "Crime é punido com reclusão ou detenção (cumulada ou não com multa); contravenção é punida apenas com prisão simples e/ou multa, sendo infração de menor gravidade (Lei de Introdução ao Código Penal, Decreto-Lei nº 3.914/41).",
+      "Decreto-Lei 3.688/41. Pena: prisão simples ou multa. CESPE: contravenção NÃO é crime, mas é infração penal."
+    ],
+    [
+      "dir_penal_new_99",
+      "O que estabelecem a aplicação da lei penal no tempo e no espaço?",
+      "No tempo, aplica-se a lei vigente à época do fato (tempus regit actum), salvo retroatividade benéfica; no espaço, vigora o princípio da territorialidade, com exceções de extraterritorialidade.",
+      "Art. 2º CP: lei posterior mais benéfica retroage. Art. 3º: lei excepcional/temporária ultrativa. CESPE: lex mitior retroage mesmo com trânsito julgado."
+    ],
+    [
+      "dir_penal_new_100",
+      "Qual a teoria adotada pelo Código Penal para definir tempo do crime?",
+      "Teoria da atividade — considera-se praticado o crime no momento da ação ou omissão, ainda que outro seja o momento do resultado.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_new_101",
+      "Qual a teoria adotada pelo Código Penal para definir o lugar do crime?",
+      "Teoria da ubiquidade (mista) — considera-se praticado o crime tanto no local da conduta quanto no local do resultado.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_new_102",
+      "O que é lei penal excepcional, especial e temporária?",
+      "Excepcional é editada para vigorar em situações anormais (guerra, calamidade); temporária tem prazo de vigência predeterminado; especial é a que possui dispositivos próprios, distintos da regra geral, regendo casos específicos.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_new_103",
+      "O que significam territorialidade e extraterritorialidade da lei penal?",
+      "Territorialidade aplica a lei brasileira aos crimes cometidos no território nacional; extraterritorialidade permite aplicar a lei brasileira a crimes cometidos no exterior, em hipóteses previstas no art. 7º do CP.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_new_104",
+      "Como se conta o prazo penal segundo o Código Penal?",
+      "Inclui-se o dia do começo no cômputo do prazo (art. 10, CP), diferentemente do prazo processual, que exclui o dia do início e inclui o do vencimento.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_new_105",
+      "O que é irretroatividade da lei penal e qual sua exceção?",
+      "Regra geral, a lei penal não retroage para prejudicar o réu; exceção: a lei penal mais benéfica (abolitio criminis ou novatio legis in mellius) retroage para beneficiar o réu, mesmo após o trânsito em julgado.",
+      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ]
+  ]
+}
