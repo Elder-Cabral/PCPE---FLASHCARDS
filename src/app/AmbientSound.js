@@ -271,7 +271,7 @@ export default function AmbientSound({ isMobile }) {
   const loading = playerMode === null;
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 8, width: "100%" }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 8, width: "100%", position: "relative" }}>
       <div
         onClick={() => setExpanded((v) => !v)}
         className="btn-hover"

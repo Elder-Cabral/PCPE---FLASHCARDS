@@ -447,7 +447,8 @@ export default function App() {
       }
       @media (max-width: 640px) {
         .pomodoro-floating-btn {
-          bottom: 12px !important;
+          top: 12px !important;
+          bottom: auto !important;
           right: 12px !important;
           padding: 8px 12px !important;
           border-radius: 20px !important;
@@ -463,8 +464,10 @@ export default function App() {
         .shell-padding-bottom {
           padding-bottom: env(safe-area-inset-bottom, 0px);
         }
-        .pomodoro-floating-btn {
-          padding-bottom: calc(env(safe-area-inset-bottom) + 8px) !important;
+        @media (max-width: 640px) {
+          .pomodoro-floating-btn {
+            padding-top: calc(env(safe-area-inset-top) + 8px) !important;
+          }
         }
       }
     `;
