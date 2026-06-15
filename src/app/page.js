@@ -65,6 +65,17 @@ const MATERIAS = [
   { id: "jurisprudencias", label: "Jurisprudências",       emoji: "⚖️",  color: "#f43f5e" },
 ];
 
+// ── UTILS: HIGHLIGHT FALSO / VERDADEIRO ──────────────────────────────────────
+function highlightFalso(text) {
+  if (!text) return text;
+  const parts = text.split(/\b(FALSO|VERDADEIRO)\b/);
+  return parts.map((part, i) => {
+    if (part === "FALSO") return <span key={i} style={{ color: "#f87171", fontWeight: 600 }}>FALSO</span>;
+    if (part === "VERDADEIRO") return <span key={i} style={{ color: "#4ade80", fontWeight: 600 }}>VERDADEIRO</span>;
+    return part;
+  });
+}
+
 // ── UTILS: ALGORITMO SM-2 ──────────────────────────────────────────────────
 function calculateSM2(q, interval = 1, repetition = 0, ef = 2.5) {
   let newInterval = 1;
@@ -1244,7 +1255,7 @@ export default function App() {
                         <span>🎓</span> DICA DO PROFESSOR (CEBRASPE)
                       </div>
                       <p style={{ color: "#d1d5db", fontSize: 11, lineHeight: 1.5, margin: 0 }}>
-                        {currentCard?.dica}
+                        {highlightFalso(currentCard?.dica)}
                       </p>
                     </div>
                   )}
