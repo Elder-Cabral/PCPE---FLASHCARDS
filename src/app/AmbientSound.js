@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const YT_VIDEOS = {
   natureza: "vgqQSVFch44",
@@ -65,65 +65,64 @@ export default function AmbientSound() {
   const [subcategory, setSubcategory] = useState(null);
   const [playing, setPlaying] = useState(false);
   const [volume, setVolume] = useState(50);
-  const [ytReady, setYtReady] = useState(false);
+  const [playerMode, setPlayerMode] = useState(null);
   const playerRef = useRef(null);
   const containerRef = useRef(null);
   const volumeRef = useRef(volume);
   volumeRef.current = volume;
 
+  // ── Carrega YouTube IFrame API com fallback para embed ──
   useEffect(() => {
-    if (typeof window.YT !== "undefined" && window.YT.Player) {
-      setYtReady(true);
+    let cancelled = false;
+    let poll;
+    const timeout = setTimeout(() => {
+      if (poll) clearInterval(poll);
+      if (!cancelled && !playerMode) setPlayerMode("embed");
+    }, 10000);
+
+    function onApiReady() {
+      if (!cancelled) setPlayerMode("api");
+    }
+
+    if (typeof window.YT !== "undefined" && typeof window.YT.Player === "function") {
+      clearTimeout(timeout);
+      onApiReady();
       return;
     }
-    window.onYouTubeIframeAPIReady = () => {
-      setYtReady(true);
-    };
+
+    window.onYouTubeIframeAPIReady = onApiReady;
+
+    poll = setInterval(() => {
+      if (typeof window.YT !== "undefined" && typeof window.YT.Player === "function") {
+        clearInterval(poll);
+        clearTimeout(timeout);
+        onApiReady();
+      }
+    }, 300);
+
     if (!document.querySelector('script[src*="youtube.com/iframe_api"]')) {
       const tag = document.createElement("script");
       tag.src = "https://www.youtube.com/iframe_api";
       document.body.appendChild(tag);
     }
-  }, []);
 
-  const destroyPlayer = useCallback(() => {
-    if (playerRef.current) {
-      try { playerRef.current.destroy(); } catch {}
-      playerRef.current = null;
-    }
-    setPlaying(false);
-  }, []);
+    return () => {
+      cancelled = true;
+      if (poll) clearInterval(poll);
+      clearTimeout(timeout);
+    };
+  }, [playerMode]);
 
-  const getTrackId = useCallback(() => {
-    if (!category) return null;
-    if (category === "natureza" || category === "chuva") return category;
-    if ((category === "foco" || category === "urbano") && subcategory) return subcategory;
-    return null;
-  }, [category, subcategory]);
-
-  const handlePlay = () => {
-    const trackId = getTrackId();
-    if (!trackId) return;
-    const videoId = YT_VIDEOS[trackId];
-    if (!videoId) return;
-
-    if (playerRef.current && playerRef.current.__trackId === trackId) {
-      try { playerRef.current.playVideo(); } catch {}
-      setPlaying(true);
-      return;
-    }
-
-    destroyPlayer();
-
+  // ── Cria player via YT.Player ──
+  function createApiPlayer(trackId, videoId) {
     const container = containerRef.current;
-    if (!container) return;
+    if (!container) return null;
     container.innerHTML = "";
     const divId = "yt-player-" + trackId + "-" + Date.now();
     const div = document.createElement("div");
     div.id = divId;
     container.appendChild(div);
 
-    // Player criado sincronamente dentro do click handler (autoplay permitido)
     const p = new window.YT.Player(divId, {
       videoId,
       height: "0",
@@ -150,14 +149,81 @@ export default function AmbientSound() {
       },
     });
     p.__trackId = trackId;
-    playerRef.current = p;
-  };
+    return p;
+  }
 
-  const handlePause = () => {
-    if (playerRef.current && typeof playerRef.current.pauseVideo === "function") {
-      playerRef.current.pauseVideo();
+  // ── Cria player via iframe embed (fallback sem API) ──
+  function createEmbedPlayer(trackId, videoId) {
+    const container = containerRef.current;
+    if (!container) return null;
+    container.innerHTML = "";
+    const iframe = document.createElement("iframe");
+    iframe.src =
+      "https://www.youtube.com/embed/" +
+      videoId +
+      "?autoplay=1&controls=0&loop=1&playlist=" +
+      videoId +
+      "&modestbranding=1&fs=0";
+    iframe.allow = "autoplay; encrypted-media";
+    iframe.style.display = "none";
+    iframe.__trackId = trackId;
+    container.appendChild(iframe);
+    return iframe;
+  }
+
+  function destroyPlayer() {
+    if (playerRef.current) {
+      try {
+        if (typeof playerRef.current.destroy === "function") playerRef.current.destroy();
+        else playerRef.current.remove();
+      } catch {}
+      playerRef.current = null;
     }
-  };
+    setPlaying(false);
+  }
+
+  function handlePlay() {
+    const trackId = getTrackId();
+    if (!trackId) return;
+    const videoId = YT_VIDEOS[trackId];
+    if (!videoId) return;
+
+    if (playerRef.current && playerRef.current.__trackId === trackId) {
+      if (typeof playerRef.current.playVideo === "function") {
+        try { playerRef.current.playVideo(); } catch {}
+      } else {
+        destroyPlayer();
+        playerRef.current = null;
+      }
+      setPlaying(true);
+      return;
+    }
+
+    destroyPlayer();
+
+    let p;
+    if (playerMode === "api") {
+      p = createApiPlayer(trackId, videoId);
+    } else {
+      p = createEmbedPlayer(trackId, videoId);
+    }
+
+    if (p) {
+      playerRef.current = p;
+      if (playerMode !== "api") setPlaying(true);
+    }
+  }
+
+  function handlePause() {
+    if (!playerRef.current) return;
+    if (typeof playerRef.current.pauseVideo === "function") {
+      try { playerRef.current.pauseVideo(); } catch {}
+    } else if (playerRef.current.remove) {
+      playerRef.current.remove();
+      playerRef.current = null;
+    }
+    setPlaying(false);
+  }
 
   useEffect(() => {
     if (playerRef.current && typeof playerRef.current.setVolume === "function") {
@@ -165,7 +231,7 @@ export default function AmbientSound() {
     }
   }, [volume]);
 
-  const selectCategory = (catId) => {
+  function selectCategory(catId) {
     const cat = CATEGORIES.find((c) => c.id === catId);
     if (!cat) return;
     if (category === catId) {
@@ -176,21 +242,21 @@ export default function AmbientSound() {
       setCategory(catId);
       setSubcategory(null);
     }
-  };
+  }
 
-  const selectSub = (subId) => {
+  function selectSub(subId) {
     destroyPlayer();
     setSubcategory(subId);
-  };
+  }
 
   const trackId = getTrackId();
   const resolvedCat = CATEGORIES.find((c) => c.id === category);
   const needsSub = resolvedCat?.subs && !subcategory;
   const showPlayback = !!trackId;
+  const loading = playerMode === null;
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 8, width: "100%" }}>
-      {/* Cabecalho colapsavel */}
       <div
         onClick={() => setExpanded((v) => !v)}
         className="btn-hover"
@@ -214,7 +280,6 @@ export default function AmbientSound() {
 
       {expanded && (
         <>
-          {/* Categorias */}
           <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
             {CATEGORIES.map((cat) => {
               const isActive = category === cat.id;
@@ -241,7 +306,6 @@ export default function AmbientSound() {
             })}
           </div>
 
-          {/* Subcategorias */}
           {needsSub && (
             <div style={{ display: "flex", gap: 6, paddingLeft: 4 }}>
               {resolvedCat.subs.map((s) => (
@@ -262,16 +326,15 @@ export default function AmbientSound() {
             </div>
           )}
 
-          {/* Playback */}
           {showPlayback && (
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
               <button
                 onClick={playing ? handlePause : handlePlay}
-                disabled={!ytReady}
+                disabled={loading}
                 className="btn-hover"
                 style={{
                   ...btnCat,
-                  opacity: ytReady ? 1 : 0.5,
+                  opacity: loading ? 0.5 : 1,
                   background: playing ? "rgba(239,68,68,0.12)" : "rgba(34,197,94,0.12)",
                   border: playing ? "1px solid rgba(239,68,68,0.2)" : "1px solid rgba(34,197,94,0.25)",
                   color: playing ? "#f87171" : "#4ade80",
@@ -279,30 +342,38 @@ export default function AmbientSound() {
                   padding: "4px 10px",
                 }}
               >
-                {!ytReady ? "⏳" : playing ? "⏸ Pausar" : "▶ Tocar"}
+                {loading ? "⏳" : playing ? "⏸ Pausar" : "▶ Tocar"}
               </button>
 
               <span style={{ color: "#94a3b8", fontSize: 11, fontWeight: 500 }}>
                 {getTrackLabel(trackId)}
               </span>
 
-              {!ytReady && (
+              {loading && (
                 <span style={{ color: "#f59e0b", fontSize: 9, fontWeight: 500 }}>
                   Carregando player...
                 </span>
               )}
 
-              <div style={{ display: "flex", alignItems: "center", gap: 4, marginLeft: "auto" }}>
-                <span style={{ color: "#64748b", fontSize: 9 }}>🔉</span>
-                <input
-                  type="range"
-                  min="0"
-                  max="100"
-                  value={volume}
-                  onChange={(e) => setVolume(Number(e.target.value))}
-                  style={{ width: 56, height: 4, cursor: "pointer", accentColor: "#3b82f6" }}
-                />
-              </div>
+              {playerMode === "embed" && !loading && (
+                <span style={{ color: "#64748b", fontSize: 8, fontWeight: 400 }}>
+                  (embed)
+                </span>
+              )}
+
+              {playerMode === "api" && (
+                <div style={{ display: "flex", alignItems: "center", gap: 4, marginLeft: "auto" }}>
+                  <span style={{ color: "#64748b", fontSize: 9 }}>🔉</span>
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value={volume}
+                    onChange={(e) => setVolume(Number(e.target.value))}
+                    style={{ width: 56, height: 4, cursor: "pointer", accentColor: "#3b82f6" }}
+                  />
+                </div>
+              )}
             </div>
           )}
         </>
