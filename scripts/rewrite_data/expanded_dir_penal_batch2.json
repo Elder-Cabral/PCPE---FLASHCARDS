@@ -1,0 +1,277 @@
+{
+  "rewrites": [
+    {
+      "id": "dir_penal_expand_55",
+      "pergunta": "O que é importunação sexual e qual sua pena (art. 215-A CP)?",
+      "resposta": "Importunação sexual (art. 215-A CP, incluído pela Lei 13.718/2018) é praticar ato libidinoso contra alguém sem sua anuência, com o fim de satisfazer a própria lascívia ou a de terceiro. Pena: reclusão de 1 a 5 anos. Diferencia-se do estupro por não exigir violência ou grave ameaça. A ação penal é pública incondicionada. CESPE cobra que a pena é RECLUSÃO, não detenção. O toque íntimo não autorizado em transporte coletivo é a hipótese clássica.",
+      "dica": "Lei 13.718/2018. Pena: RECLUSÃO 1-5a. Ação pública incondicionada. Crime sem violência ou grave ameaça.",
+      "dificuldade": "medio"
+    },
+    {
+      "id": "dir_penal_expand_56",
+      "pergunta": "O que é assédio sexual e qual sua pena (art. 216-A CP)?",
+      "resposta": "Assédio sexual (art. 216-A CP) é constranger alguém com o intuito de obter vantagem ou favorecimento sexual, prevalecendo-se o agente de sua condição de superior hierárquico ou ascendência inerentes ao exercício de emprego, cargo ou função. Pena: detenção de 1 a 2 anos. Exige HIERARQUIA entre agente e vítima. Ação penal: pública condicionada à representação. CESPE: a pena é DETENÇÃO, diferentemente da importunação sexual (reclusão).",
+      "dica": "Exige HIERARQUIA (superior hierárquico ou ascendência). Pena: DETENÇÃO 1-2a. Ação pública condicionada à representação.",
+      "dificuldade": "medio"
+    },
+    {
+      "id": "dir_penal_expand_57",
+      "pergunta": "A presunção de violência no estupro de vulnerável (art. 217-A CP) é relativa?",
+      "resposta": "NÃO. A Súmula 593 do STJ consolidou que a presunção é ABSOLUTA, sendo irrelevante o consentimento da vítima menor de 14 anos, sua experiência sexual anterior ou a existência de relacionamento amoroso com o agente. O crime de estupro de vulnerável configura-se independentemente desses fatores. CESPE: se a questão disser que a presunção é relativa (pode ser afastada), está ERRADA. A banca já cobrou este tópico em múltiplas provas policiais.",
+      "dica": "Súmula 593 STJ: presunção ABSOLUTA. Irrelevante: consentimento, experiência sexual, relacionamento amoroso.",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_expand_58",
+      "pergunta": "Quais as frações de aumento no estupro (arts. 213 e 217-A CP) quando resultam em lesão grave ou morte?",
+      "resposta": "Se do estupro (art. 213 §1o) ou estupro de vulnerável (art. 217-A §3o) resulta lesão corporal grave, a pena é aumentada de METADE (1/2). Se resulta morte (art. 213 §2o e 217-A §4o), a pena é aumentada de DOIS TERÇOS (2/3). A mesma proporção aplica-se a ambos os tipos penais. CESPE: a fração de lesão grave é 1/2 e de morte é 2/3. Não confunda com o roubo (art. 157 §3o), que é crime autônomo (latrocínio), não mera majorante.",
+      "dica": "Art. 213 §1o/§2o e art. 217-A §3o/§4o CP. Lesão grave: +1/2. Morte: +2/3. Não confundir com o latrocínio.",
+      "dificuldade": "medio"
+    },
+    {
+      "id": "dir_penal_expand_59",
+      "pergunta": "Qual a diferença de pena entre produzir e divulgar conteúdo íntimo sem autorização (art. 216-B CP)?",
+      "resposta": "O art. 216-B CP (Lei 13.718/2018) criminaliza o registro não autorizado de conteúdo íntimo. PRODUZIR ou captar (caput): detenção de 6 meses a 1 ano. DIVULGAR (parágrafo único): reclusão de 1 a 5 anos, pena mais grave. Há aumento de 1/3 a 2/3 se a divulgação for de cena de estupro ou de sexo com vulnerável. CESPE cobra: divulgar tem pena maior que produzir, e são naturezas distintas (detenção vs reclusão).",
+      "dica": "Produzir: DETENÇÃO 6m-1a. Divulgar: RECLUSÃO 1-5a. Aumento 1/3-2/3 se cena de estupro ou vulnerável.",
+      "dificuldade": "medio"
+    },
+    {
+      "id": "dir_penal_expand_62",
+      "pergunta": "O que configura o crime de estupro de vulnerável e qual sua pena (art. 217-A CP)?",
+      "resposta": "O art. 217-A CP tipifica: ter conjunção carnal ou praticar ato libidinoso com menor de 14 anos, ou com alguém que, por enfermidade ou deficiência mental, não tem o necessário discernimento para a prática do ato, ou que não pode oferecer resistência. Pena: reclusão de 8 a 15 anos. A presunção de violência é ABSOLUTA (Súmula 593 STJ). CESPE: se a vítima tem 13 anos, é crime independentemente de consentimento. A pena é a mesma para conjunção carnal ou ato libidinoso.",
+      "dica": "Art. 217-A CP. Pena: RECLUSÃO 8-15a. Menor 14a ou vulnerável (sem discernimento ou incapaz de resistir).",
+      "dificuldade": "medio"
+    },
+    {
+      "id": "dir_penal_expand_92",
+      "pergunta": "O consentimento de menor de 14 anos é relevante para a configuração do crime de estupro de vulnerável (art. 217-A CP)?",
+      "resposta": "NÃO. A Súmula 593 do STJ consolidou que o consentimento da vítima menor de 14 anos é IRRELEVANTE para a configuração do crime de estupro de vulnerável. A presunção de violência é ABSOLUTA, não admitindo prova em contrário. Também é irrelevante a experiência sexual anterior da vítima ou a existência de relacionamento amoroso com o agente. CESPE: se a questão disser que a presunção é relativa ou que o consentimento voluntário afasta o crime, está ERRADA.",
+      "dica": "Súmula 593 STJ: presunção ABSOLUTA. Irrelevante: consentimento, experiência sexual, relacionamento amoroso.",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_expand_60",
+      "pergunta": "O crime de estupro (art. 213 CP) e o estupro de vulnerável (art. 217-A CP) são hediondos?",
+      "resposta": "SIM. Ambos são expressamente listados como crimes hediondos no art. 1o, V da Lei 8.072/90. Por serem hediondos, são inafiançáveis, insuscetíveis de anistia, graça e indulto, e o regime inicial de cumprimento de pena é o fechado. CESPE: a banca cobra que TODAS as formas de estupro (simples, qualificado, de vulnerável) são hediondas. Não há exceção para o estupro de vulnerável, ele está no mesmo inciso V do art. 1o.",
+      "dica": "Lei 8.072/90 art. 1o, V. Estupro (213) e estupro de vulnerável (217-A) são hediondos. Inafiançáveis.",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_expand_65",
+      "pergunta": "Qual o percentual para progressão de regime nos crimes hediondos (art. 112 LEP)?",
+      "resposta": "Com a Lei 13.964/2019 (Pacote Anticrime), o art. 112 da LEP exige para progressão em crimes hediondos: 40% da pena se o apenado for primário (não reincidente em crime hediondo), e 60% se for reincidente em crime hediondo ou equiparado. Além do requisito objetivo (lapso temporal), exige-se requisito subjetivo (bom comportamento carcerário). CESPE: 40% primário, 60% reincidente em hediondo. Não confunda com o livramento condicional (art. 83 CP).",
+      "dica": "Art. 112 LEP (Lei 13.964/2019). Primário: 40%. Reincidente em hediondo: 60%. + requisito subjetivo.",
+      "dificuldade": "medio"
+    },
+    {
+      "id": "dir_penal_expand_66",
+      "pergunta": "Os crimes hediondos admitem fiança?",
+      "resposta": "NÃO. A CF/88 (art. 5o, XLIII) e a Lei 8.072/90 (art. 2o) estabelecem que os crimes hediondos e equiparados são insuscetíveis de fiança, anistia, graça e indulto. A proibição de fiança decorre diretamente da Constituição. CESPE: a banca cobra que são insuscetíveis de anistia, graça e indulto, mas o LIVRAMENTO CONDICIONAL é possível (art. 83, V CP).",
+      "dica": "CF/88 art. 5o XLIII. Inafiançáveis. Insuscetíveis: anistia, graça, indulto. Livramento condicional: SIM.",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_expand_67",
+      "pergunta": "O latrocínio (art. 157 §3o CP) é crime hediondo?",
+      "resposta": "SIM. O latrocínio (roubo seguido de morte) é expressamente listado como crime hediondo no art. 1o, II da Lei 8.072/90. A Súmula 610 do STF confirma essa classificação. CESPE: o latrocínio é HEDIONDO, mas NÃO é crime doloso contra a vida para fins de competência do Tribunal do Júri. O STF entende que o bem jurídico principal é o patrimônio, não a vida. Latrocínio é hediondo (sim), mas não vai a júri (não).",
+      "dica": "Lei 8.072/90 art. 1o, II. Súmula 610 STF. Hediondo (sim). Crime doloso contra a vida (não) -> não vai a júri.",
+      "dificuldade": "medio"
+    },
+    {
+      "id": "dir_penal_expand_68",
+      "pergunta": "Qual o regime inicial de cumprimento de pena para crimes hediondos?",
+      "resposta": "O art. 2o §1o da Lei 8.072/90 determina que o regime inicial de cumprimento de pena para os crimes hediondos e equiparados é o FECHADO, independentemente da quantidade de pena aplicada. O STF já declarou a constitucionalidade dessa exigência, entendendo que não viola o princípio da individualização da pena. CESPE: mesmo que o réu seja primário e a pena seja inferior a 8 anos, o regime inicial será o fechado.",
+      "dica": "Art. 2o §1o Lei 8.072/90. Regime inicial FECHADO. STF: constitucional. Não viola individualização da pena.",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_expand_69",
+      "pergunta": "Quais crimes são equiparados a hediondos pela Constituição Federal?",
+      "resposta": "A CF/88, art. 5o, XLIII, equipara aos crimes hediondos: a TORTURA, o TRÁFICO ILÍCITO DE ENTORPECENTES e o TERRORISMO. Esses crimes equiparados recebem o mesmo tratamento dos hediondos: inafiançabilidade, vedação de anistia, graça e indulto, regime inicial fechado. CESPE: a banca diferencia crimes hediondos (rol da Lei 8.072/90) de crimes EQUIPARADOS a hediondos (rol da CF/88). O terrorismo não está na Lei 8.072/90, mas é equiparado pela CF.",
+      "dica": "CF/88 art. 5o, XLIII: tortura, tráfico, terrorismo. Equiparados aos hediondos. Todos inafiançáveis.",
+      "dificuldade": "medio"
+    },
+    {
+      "id": "dir_penal_expand_64",
+      "pergunta": "O tráfico privilegiado (art. 33 §4o Lei 11.343/06) é crime hediondo?",
+      "resposta": "NÃO. O STF, no HC 118.533, firmou que o tráfico privilegiado (art. 33 §4o Lei 11.343/06), destinado ao agente primário, com bons antecedentes, que não se dedica a atividades criminosas nem integra organização criminosa, não é considerado crime hediondo ou equiparado. A hediondez recai sobre o caput do art. 33, não sobre sua forma privilegiada. CESPE: o Pacote Anticrime (Lei 13.964/2019) vedou a conversão em penas restritivas no §4o.",
+      "dica": "STF HC 118.533. Tráfico privilegiado NÃO é hediondo. Vedada conversão em restritivas (Lei 13.964/2019).",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_71",
+      "pergunta": "A discriminação por orientação sexual e identidade de gênero é crime no Brasil?",
+      "resposta": "SIM. O STF, na ADO 26 e no MI 4733, equiparou a homotransfobia ao crime de RACISMO (Lei 7.716/89), até que o Congresso edite lei específica sobre o tema. Isso significa que a discriminação por orientação sexual ou identidade de gênero é considerada crime de racismo, sendo INAFIANÇÁVEL e IMPRESCRITÍVEL. CESPE: a banca cobra que a homotransfobia foi equiparada ao racismo por decisão do STF, aplicando-se as mesmas consequências.",
+      "dica": "STF ADO 26 + MI 4733. Homotransfobia = racismo. Inafiançável e imprescritível. Aplica-se a Lei 7.716/89.",
+      "dificuldade": "medio"
+    },
+    {
+      "id": "dir_penal_expand_72",
+      "pergunta": "O crime de racismo admite fiança?",
+      "resposta": "NÃO. A CF/88, art. 5o, XLII, estabelece que o racismo é crime INAFIANÇÁVEL e IMPRESCRITÍVEL, sujeito à pena de reclusão. É uma exceção constitucional ao princípio da prescritibilidade penal, que é a regra geral. Além disso, o racismo é crime de ação penal pública incondicionada. CESPE: a banca cobra as duas características excepcionais: inafiançável E imprescritível. Nenhum outro crime comum (não equiparado) tem essas duas características simultaneamente.",
+      "dica": "CF/88 art. 5o, XLII: inafiançável + imprescritível. Exceção constitucional à prescritibilidade. Ação pública incondicionada.",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_expand_73",
+      "pergunta": "Qual a diferença entre injúria racial e racismo após a Lei 14.532/2023?",
+      "resposta": "A injúria racial (art. 140 §3o CP) ofende a honra de pessoa DETERMINADA por elemento referente à raça, cor, etnia, religião ou origem. O racismo (Lei 7.716/89) atinge a COLETIVIDADE indistinta, sem pessoa determinada. A Lei 14.532/2023 tornou a injúria racial imprescritível e de ação penal pública incondicionada (antes era privada). CESPE: a diferença é INDIVÍDUO x COLETIVIDADE. Ambas agora são imprescritíveis.",
+      "dica": "Lei 14.532/2023. Injúria racial: art. 140 §3o CP (indivíduo determinado). Racismo: Lei 7.716/89 (coletividade). Ambas imprescritíveis.",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_74",
+      "pergunta": "Quais são as principais condutas tipificadas como crime na Lei 7.716/89 (racismo)?",
+      "resposta": "A Lei 7.716/89, arts. 3o a 14, pune diversas condutas discriminatórias: negar acesso a estabelecimento comercial; negar hospedagem em hotel; impedir acesso a transporte público; recusar emprego; obstar matrícula escolar; impedir acesso a cargo público; recusar prestação de serviço público ou privado, entre outras, por motivo de raça, cor, etnia, religião ou procedência nacional. CESPE: todas as formas de segregação são punidas.",
+      "dica": "Arts. 3o-14 Lei 7.716/89. Negar acesso, hospedagem, emprego, transporte, matrícula por discriminação.",
+      "dificuldade": "medio"
+    },
+    {
+      "id": "dir_penal_expand_75",
+      "pergunta": "Qual a natureza da ação penal nos crimes de racismo (Lei 7.716/89)?",
+      "resposta": "A ação penal nos crimes de racismo (Lei 7.716/89) é PÚBLICA INCONDICIONADA. O Ministério Público pode oferecer denúncia de ofício, independentemente de representação da vítima ou requisição de qualquer autoridade. Por ser inafiançável e imprescritível, o racismo admite todas as medidas cautelares exceto fiança. CESPE: a banca pergunta se é pública condicionada, a resposta é NÃO, é pública INCONDICIONADA.",
+      "dica": "Lei 7.716/89. Ação penal: PÚBLICA INCONDICIONADA. Não depende de representação. MP age de ofício.",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_expand_76",
+      "pergunta": "Qual a natureza da ação penal na injúria racial após a Lei 14.532/2023?",
+      "resposta": "A Lei 14.532/2023 alterou o art. 140 §3o do CP, transformando a ação penal da injúria racial de PÚBLICA CONDICIONADA à representação (e antes, ação penal privada) para PÚBLICA INCONDICIONADA. Agora, o Ministério Público pode denunciar de ofício. A injúria racial também passou a ser considerada crime de racismo para todos os fins, inclusive imprescritibilidade. CESPE: antes era ação privada, agora é pública incondicionada.",
+      "dica": "Lei 14.532/2023. Antes: ação privada. Agora: PÚBLICA INCONDICIONADA e imprescritível.",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_78",
+      "pergunta": "Quais as penas previstas na Lei de Abuso de Autoridade (Lei 13.869/19)?",
+      "resposta": "A Lei 13.869/2019, art. 1o §4o, prevê pena de DETENÇÃO de 6 meses a 2 anos para os crimes de abuso de autoridade. As penas admitem substituição por penas restritivas de direitos (quando preenchidos os requisitos do art. 44 CP) e suspensão condicional do processo (sursis processual). CESPE: a banca cobra que a pena é de DETENÇÃO (nunca reclusão) e que, por ter pena máxima de 2 anos, o crime é de menor potencial ofensivo.",
+      "dica": "DETENÇÃO 6m-2a. Admite restritivas e sursis processual. Crime de menor potencial ofensivo.",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_expand_79",
+      "pergunta": "A Lei de Abuso de Autoridade prevê inabilitação para cargo público?",
+      "resposta": "SIM. O art. 10 da Lei 13.869/19 prevê como efeito específico da condenação a inabilitação para o exercício de cargo, mandato ou função pública de NATUREZA ELETIVA pelo período de até 5 anos. É um efeito extrapenal automático da condenação. CESPE: a inabilitação é para cargo ELETIVO (não qualquer cargo público) e pelo prazo de até 5 ANOS. Não confundir com a perda do cargo, que é efeito genérico da condenação penal (art. 92 CP).",
+      "dica": "Art. 10 Lei 13.869/19. Inabilitação cargo ELETIVO até 5 anos. Efeito extrapenal automático da condenação.",
+      "dificuldade": "medio"
+    },
+    {
+      "id": "dir_penal_expand_80",
+      "pergunta": "A Lei de Abuso de Autoridade se aplica a agentes de quais Poderes?",
+      "resposta": "O art. 2o da Lei 13.869/19 estabelece que a lei se aplica a QUALQUER AGENTE PÚBLICO, independentemente do Poder ou esfera administrativa. Inclui Executivo, Legislativo, Judiciário, Ministério Público, Tribunais de Contas e administração direta e indireta. CESPE: não há reserva a um Poder específico. Aplica-se a todos os agentes públicos, inclusive militares, policiais, juízes, promotores e parlamentares, desde que no exercício da função pública.",
+      "dica": "Art. 2o Lei 13.869/19. Aplica-se a QUALQUER agente público de qualquer Poder.",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_expand_81",
+      "pergunta": "Os crimes de abuso de autoridade exigem resultado naturalístico para sua consumação?",
+      "resposta": "NÃO. Os crimes da Lei 13.869/19 são, em sua maioria, CRIMES FORMAIS, consumando-se com a mera conduta acompanhada da finalidade específica de prejudicar outrem, beneficiar a si mesmo ou a terceiro, ou por mero capricho ou satisfação pessoal. Não se exige resultado naturalístico ou dano efetivo. CESPE: basta a conduta mais finalidade específica (dolo específico). Mesmo que não haja prejuízo concreto, o crime está consumado.",
+      "dica": "Crime FORMAL. Basta conduta + finalidade específica (prejudicar, beneficiar ou capricho). Não exige dano.",
+      "dificuldade": "medio"
+    },
+    {
+      "id": "dir_penal_expand_82",
+      "pergunta": "Qual a natureza da ação penal nos crimes da Lei de Abuso de Autoridade (Lei 13.869/19)?",
+      "resposta": "A ação penal nos crimes da Lei 13.869/19 é, em regra, PÚBLICA CONDICIONADA À REPRESENTAÇÃO (art. 16). A vítima ou seu representante legal deve oferecer representação para que o Ministério Público possa denunciar. Exceção: se houver INTERESSE PÚBLICO, o MP pode agir de ofício. CESPE: a banca cobra a regra (condicionada à representação) e a exceção (interesse público).",
+      "dica": "Art. 16 Lei 13.869/19. Regra: pública condicionada à representação. Exceção: MP age de ofício se interesse público.",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_85",
+      "pergunta": "A tortura (Lei 9.455/97) é considerada crime hediondo?",
+      "resposta": "SIM. A CF/88, art. 5o, XLIII, expressamente equipara a TORTURA aos crimes hediondos, sendo INAFIANÇÁVEL. A Lei 9.455/97 regula o crime de tortura, e a Lei 8.072/90 também a inclui como crime equiparado a hediondo. Por isso, aplicam-se as mesmas restrições: vedação de fiança, anistia, graça e indulto, regime inicial fechado. CESPE: a tortura é EQUIPARADA a hediondo pela CF/88.",
+      "dica": "CF/88 art. 5o XLIII: tortura EQUIPARADA a hediondo. Inafiançável. Lei 9.455/97. Veda anistia, graça, indulto.",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_expand_86",
+      "pergunta": "Quais são as modalidades do crime de tortura (art. 1o Lei 9.455/97)?",
+      "resposta": "O art. 1o da Lei 9.455/97 prevê três modalidades no inciso I: (a) constranger alguém com violência ou grave ameaça para obter confissão ou informação; (b) submeter alguém a intenso sofrimento físico ou mental como forma de castigo pessoal; (c) submeter alguém a sofrimento em razão de discriminação racial ou religiosa. O inciso II pune a OMISSÃO do agente público que tinha o dever de evitar a tortura. CESPE: crime COMUM, mas com majorante para agente público.",
+      "dica": "Art. 1o, I: confissão (a), castigo (b), discriminação (c). II: omissão de agente público. Crime comum.",
+      "dificuldade": "medio"
+    },
+    {
+      "id": "dir_penal_expand_87",
+      "pergunta": "Qual a natureza da ação penal no crime de tortura (Lei 9.455/97)?",
+      "resposta": "A ação penal no crime de tortura (Lei 9.455/97, art. 1o §7o) é PÚBLICA INCONDICIONADA. O Ministério Público pode oferecer denúncia de ofício, independentemente de representação da vítima ou requisição de autoridade. CESPE: a banca cobra que é pública incondicionada. Não confunda com a ação penal dos crimes de abuso de autoridade (Lei 13.869/19), que é condicionada à representação.",
+      "dica": "Art. 1o §7o Lei 9.455/97. PÚBLICA INCONDICIONADA. Sem representação. MP age de ofício.",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_expand_88",
+      "pergunta": "Quais são as causas de aumento de pena no crime de tortura (art. 1o §4o Lei 9.455/97)?",
+      "resposta": "O art. 1o §4o da Lei 9.455/97 prevê aumento de 1/6 a 1/3 se a tortura é cometida: por AGENTE PÚBLICO (inciso I); contra CRIANÇA, GESTANTE, IDOSO ou DEFICIENTE (inciso II); mediante SEQUESTRO ou cárcere privado (inciso III). CESPE: o aumento é de 1/6 a 1/3 e, mesmo sendo crime comum, a condição de agente público é majorante, não elementar.",
+      "dica": "Art. 1o §4o Lei 9.455/97. Aumento 1/6 a 1/3: agente público, criança/gestante/idoso/deficiente, sequestro.",
+      "dificuldade": "medio"
+    },
+    {
+      "id": "dir_penal_expand_89",
+      "pergunta": "O crime de tortura admite liberdade provisória?",
+      "resposta": "NÃO, nos termos da fiança. O art. 5o, XLIII da CF/88 estabelece que a tortura é INAFIANÇÁVEL. Por ser inafiançável, não se admite a concessão de liberdade provisória mediante fiança. Contudo, a vedação de fiança não impede a concessão de outras MEDIDAS CAUTELARES DIVERSAS DA PRISÃO (art. 319 CPP). CESPE: a tortura é inafiançável, mas o juiz pode aplicar cautelares alternativas.",
+      "dica": "CF/88 art. 5o XLIII: inafiançável. Vedada fiança, mas admite medidas cautelares diversas da prisão (art. 319 CPP).",
+      "dificuldade": "medio"
+    },
+    {
+      "id": "dir_penal_expand_90",
+      "pergunta": "Qual o prazo máximo da internação do adolescente infrator e a periodicidade de reavaliação (art. 121 ECA)?",
+      "resposta": "O art. 121 do ECA estabelece que a internação do adolescente infrator não pode exceder o prazo máximo de 3 ANOS. A cada 6 MESES, a autoridade judiciária deve reavaliar, mediante relatório da equipe técnica, a necessidade de manutenção da medida. A internação é a medida socioeducativa mais grave, aplicada em caráter excepcional e por prazo indeterminado (limitado a 3 anos). CESPE: prazo máximo 3 anos, reavaliação a cada 6 meses.",
+      "dica": "Art. 121 ECA. Prazo máximo: 3 ANOS. Reavaliação obrigatória a cada 6 meses. Medida excepcional.",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_expand_91",
+      "pergunta": "Quais são os principais crimes previstos no ECA (arts. 228 a 244-B)?",
+      "resposta": "O ECA, arts. 228 a 244-B, tipifica diversos crimes contra crianças e adolescentes: vexame ou constrangimento (art. 232), pornografia infantil (arts. 240 a 241-E), corrupção de menores (art. 244-B), venda de bebida alcoólica a menor (art. 243), descumprimento de dever de assistência (arts. 228-230), omissão de informação sobre crime (art. 231), entre outros. CESPE: destaque para o art. 243 (perigo abstrato) e art. 244-B (corrupção de menores).",
+      "dica": "Arts. 228-244-B ECA. Destaque: art. 243 (venda bebida), arts. 240-241-E (pornografia), art. 244-B (corrupção).",
+      "dificuldade": "medio"
+    },
+    {
+      "id": "dir_penal_expand_93",
+      "pergunta": "Qual a responsabilidade penal do adolescente menor de 18 anos no Brasil?",
+      "resposta": "O menor de 18 anos é INIMPUTÁVEL penalmente, conforme o art. 228 da CF/88 e o art. 27 do CP. A imputabilidade aos 18 anos é CLÁUSULA PÉTREA (art. 60 §4o, IV da CF/88), não podendo ser alterada por Emenda Constitucional. Ao praticar conduta descrita como crime ou contravenção, o adolescente pratica ATO INFRACIONAL, sujeito a medidas socioeducativas (art. 112 ECA). CESPE: cláusula pétrea, nem PEC pode reduzir a maioridade penal.",
+      "dica": "Art. 228 CF/88 + art. 27 CP. CLÁUSULA PÉTREA. 18 anos. Ato infracional = medidas socioeducativas.",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_expand_94",
+      "pergunta": "O que é remissão no Estatuto da Criança e do Adolescente (arts. 126 a 128)?",
+      "resposta": "A remissão (arts. 126 a 128 ECA) é um instituto que permite ao Ministério Público, antes de oferecer representação, ou ao juiz, no curso do processo, EXCLUIR ou SUSPENDER o processo contra o adolescente infrator. Pode ser cumulativa com medida socioeducativa não privativa de liberdade (exceto internação e semiliberdade). A remissão NÃO IMPLICA RECONHECIMENTO DE CULPA e não gera antecedentes. CESPE: não implica culpa e pode ser cumulada com medidas.",
+      "dica": "Arts. 126-128 ECA. Exclusão/suspensão do processo. NÃO implica culpa. Pode ser cumulada com medida socioeducativa.",
+      "dificuldade": "medio"
+    },
+    {
+      "id": "dir_penal_expand_95",
+      "pergunta": "Vender bebida alcoólica a menor de 18 anos é crime no ECA (art. 243)?",
+      "resposta": "SIM. O art. 243 do ECA criminaliza a venda, oferta, fornecimento ou entrega de bebida alcoólica a criança ou adolescente. Pena: detenção de 2 a 4 anos. É crime de PERIGO ABSTRATO, ou seja, não exige prova de que o menor efetivamente ingeriu a bebida, basta a conduta de vender ou fornecer. CESPE: perigo abstrato (não precisa comprovar ingestão) e pena de DETENÇÃO.",
+      "dica": "Art. 243 ECA. Detenção 2-4a. Perigo ABSTRATO (não exige ingestão). Vender, ofertar, fornecer ou entregar.",
+      "dificuldade": "medio"
+    },
+    {
+      "id": "dir_penal_expand_96",
+      "pergunta": "Quais são as medidas socioeducativas previstas no art. 112 do ECA?",
+      "resposta": "O art. 112 do ECA prevê seis medidas socioeducativas: I, ADVERTÊNCIA; II, OBRIGAÇÃO DE REPARAR O DANO; III, PRESTAÇÃO DE SERVIÇOS À COMUNIDADE; IV, LIBERDADE ASSISTIDA; V, SEMILIBERDADE; VI, INTERNAÇÃO. As medidas podem ser aplicadas isolada ou cumulativamente (exceto semiliberdade e internação com outras privativas). CESPE: a banca cobra o ROL TAXATIVO do art. 112. Internação é a mais grave, prazo máximo 3 anos.",
+      "dica": "Art. 112 ECA: advertência, reparação, serviços, liberdade assistida, semiliberdade, internação. Rol taxativo.",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_expand_97",
+      "pergunta": "Qual a idade mínima para imputabilidade penal no Brasil e qual seu fundamento constitucional?",
+      "resposta": "A imputabilidade penal no Brasil inicia-se aos 18 ANOS, conforme o art. 228 da CF/88 e o art. 27 do CP. Trata-se de CLÁUSULA PÉTREA (art. 60 §4o, IV da CF/88), não podendo ser alterada por Emenda Constitucional. Menores de 18 anos são inimputáveis, sujeitos a medidas socioeducativas (ECA). CESPE: cláusula pétrea, nem PEC pode reduzir a maioridade penal. STF já confirmou.",
+      "dica": "Art. 228 CF/88 + art. 27 CP. 18 anos. CLÁUSULA PÉTREA: nem PEC pode reduzir. Inimputáveis = medidas socioeducativas.",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_expand_99",
+      "pergunta": "O crime de organização criminosa (art. 2o Lei 12.850/2013) admite tentativa?",
+      "resposta": "NÃO. O crime de organização criminosa (art. 2o Lei 12.850/2013) é crime FORMAL, consumando-se com a mera associação de 4 ou mais pessoas estruturalmente ordenada e com divisão de tarefas, ainda que não pratique qualquer ato de execução criminosa. Pena: reclusão de 3 a 8 anos. Não admite tentativa: ou o agente integra a organização (consumação) ou não (ato preparatório impunível). CESPE: crime formal, não admite tentativa, consuma-se com a associação.",
+      "dica": "Art. 2o Lei 12.850/2013. Crime FORMAL. Não admite tentativa. Consuma-se com a associação. Pena: 3-8a reclusão.",
+      "dificuldade": "medio"
+    },
+    {
+      "id": "dir_penal_expand_100",
+      "pergunta": "Quais os benefícios da colaboração premiada na Lei de Organizações Criminosas (art. 4o Lei 12.850/2013)?",
+      "resposta": "O art. 4o da Lei 12.850/2013 prevê como benefícios ao colaborador: PERDÃO JUDICIAL (extinção da punibilidade); redução da pena de até 2/3; substituição da pena privativa de liberdade por restritiva de direitos; e progressão de regime mais benéfica. A redução máxima de 2/3 ocorre se o colaborador é primário e a colaboração é efetiva. CESPE: redução máxima é 2/3, não 1/3 ou 1/2. Perdão judicial é possível.",
+      "dica": "Art. 4o Lei 12.850/2013. Perdão judicial, redução até 2/3, substituição, progressão. Máximo: 2/3.",
+      "dificuldade": "medio"
+    }
+  ]
+}

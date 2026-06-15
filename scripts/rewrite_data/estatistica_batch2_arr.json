@@ -1,0 +1,269 @@
+[
+  {
+    "id": "estatistica_42",
+    "status": "REVISADO",
+    "pergunta": "O que é margem de erro (erro amostral)?",
+    "resposta": "Diferença máxima esperada entre a estimativa amostral e o parâmetro populacional verdadeiro, ao nível de confiança estabelecido. É o raio do intervalo de confiança: E = z × σ/√n (para média, população infinita).",
+    "dica": "CESPE: margem de erro depende do nível de confiança (z), da variabilidade (σ) e do tamanho amostral (n). Aumentar n reduz a margem de erro. NÃO confundir com erro padrão (σ/√n): erro padrão é o desvio da distribuição amostral; margem de erro é o erro padrão × valor crítico."
+  },
+  {
+    "id": "estatistica_43",
+    "status": "REVISADO",
+    "pergunta": "O que é estimativa pontual?",
+    "resposta": "Valor único calculado a partir dos dados amostrais para estimar um parâmetro populacional. Ex: média amostral (x̄) como estimativa da média populacional (μ); proporção amostral (p̂) para a proporção populacional (p).",
+    "dica": "CESPE: estimativa pontual NÃO tem margem de erro associada (por isso o intervalo de confiança é preferível). A média amostral é estimador não viesado da média populacional. Decore: x̄ estima μ; s² estima σ²; p̂ estima p."
+  },
+  {
+    "id": "estatistica_44",
+    "status": "APROVADO"
+  },
+  {
+    "id": "estatistica_45",
+    "status": "APROVADO"
+  },
+  {
+    "id": "estatistica_46",
+    "status": "REVISADO",
+    "pergunta": "O que é erro tipo I em teste de hipótese?",
+    "resposta": "Rejeitar a hipótese nula (H0) quando ela é verdadeira. A probabilidade máxima de erro tipo I é o nível de significância α, fixado pelo pesquisador antes do teste.",
+    "dica": "CESPE: α é o nível de significância. α = 0,05 significa 5% de chance de erro tipo I. Mnemônico: Tipo I = falso positivo (rejeitar H0 verdadeira). Lembre: a justiça condena um inocente (rejeitar inocência verdadeira)."
+  },
+  {
+    "id": "estatistica_47",
+    "status": "REVISADO",
+    "pergunta": "O que é erro tipo II em teste de hipótese?",
+    "resposta": "NÃO rejeitar a hipótese nula (H0) quando ela é falsa. A probabilidade de erro tipo II é β. O poder do teste é 1 − β (probabilidade de rejeitar H0 falsa corretamente).",
+    "dica": "CESPE: erro tipo II = falso negativo (deixar de rejeitar H0 falsa). β depende de α, tamanho amostral e magnitude do efeito. Mnemônico: Tipo II = deixar passar (absolver um culpado). α e β são inversamente relacionados (para n fixo)."
+  },
+  {
+    "id": "estatistica_48",
+    "status": "APROVADO"
+  },
+  {
+    "id": "estatistica_49",
+    "status": "REVISADO",
+    "pergunta": "O que é coeficiente de correlação de Pearson?",
+    "resposta": "Mede a intensidade e direção da relação linear entre duas variáveis quantitativas, variando de -1 a +1. r = +1 indica correlação linear perfeita positiva; r = -1, perfeita negativa; r = 0, ausência de relação linear.",
+    "dica": "CESPE: Pearson mede relação LINEAR apenas. Pode haver r = 0 e existir relação não linear forte (ex: parabólica). Fórmula: r = Cov(X,Y) / (σX × σY). Atenção: correlação NÃO implica causalidade (falácia cum hoc ergo propter hoc)."
+  },
+  {
+    "id": "estatistica_50",
+    "status": "REVISADO",
+    "pergunta": "O que é regressão linear simples?",
+    "resposta": "Modelo que descreve a relação linear entre uma variável dependente (Y) e uma variável independente (X): Y = a + bX + ε, onde a é o intercepto, b é o coeficiente angular (inclinação) e ε é o erro aleatório.",
+    "dica": "CESPE: b (inclinação) = Cov(X,Y) / Var(X). a (intercepto) = Ȳ − bX̄. A regressão minimiza a soma dos quadrados dos resíduos (MQO). b é a variação esperada em Y para cada unidade de variação em X."
+  },
+  {
+    "id": "estatistica_51",
+    "status": "APROVADO"
+  },
+  {
+    "id": "estatistica_52",
+    "status": "REVISADO",
+    "pergunta": "O que é um boxplot (diagrama de caixa)?",
+    "resposta": "Gráfico que resume a distribuição por meio de cinco números: mínimo, 1º quartil (Q1), mediana (Q2), 3º quartil (Q3) e máximo. Outliers são pontos além de 1,5 × IIQ (distância interquartílica: Q3 − Q1).",
+    "dica": "CESPE: a caixa contém 50% dos dados centrais (entre Q1 e Q3). Outliers moderados: além de 1,5×IIQ. Outliers extremos: além de 3×IIQ. O boxplot é útil para comparar distribuições e identificar assimetria."
+  },
+  {
+    "id": "estatistica_53",
+    "status": "REVISADO",
+    "pergunta": "O que é esperança matemática (valor esperado)?",
+    "resposta": "Média ponderada dos valores de uma variável aleatória, usando as probabilidades como pesos. Para variável discreta: E(X) = Σ xi × P(X = xi). Para contínua: E(X) = ∫ x × f(x) dx.",
+    "dica": "CESPE: a esperança é o primeiro momento da distribuição. Propriedades: E(c) = c; E(aX + b) = aE(X) + b; E(X + Y) = E(X) + E(Y) (sempre, sem independência). E(XY) = E(X)E(Y) apenas se X e Y são independentes. NÃO confundir com mediana."
+  },
+  {
+    "id": "estatistica_54",
+    "status": "APROVADO"
+  },
+  {
+    "id": "estatistica_55",
+    "status": "REVISADO",
+    "pergunta": "O que é desvio padrão amostral (s)?",
+    "resposta": "Raiz quadrada da variância amostral: s = √[ Σ(Xi − x̄)² / (n − 1) ]. Usa-se n − 1 (correção de Bessel) no denominador para que s² seja um estimador não viesado da variância populacional σ².",
+    "dica": "CESPE: desvio padrão está na MESMA unidade dos dados (diferente da variância). Para população: σ = √[ Σ(Xi − μ)² / N ]. O desvio padrão é sensível a outliers. Atenção: a correção de Bessel (n−1) é para que s² seja não viesado, mas s ainda é viesado."
+  },
+  {
+    "id": "estatistica_56",
+    "status": "REVISADO",
+    "pergunta": "Qual a diferença entre parâmetro e estatística?",
+    "resposta": "Parâmetro é uma medida descritiva da POPULAÇÃO (valor fixo, geralmente desconhecido, representado por letras gregas: μ, σ, π). Estatística é uma medida descritiva da AMOSTRA (valor conhecido, varia entre amostras, representado por letras latinas: x̄, s, p̂).",
+    "dica": "CESPE: a estatística é usada para ESTIMAR o parâmetro. Ex: x̄ (estatística) estima μ (parâmetro). A distribuição amostral da estatística permite fazer inferência. Mnemônico: grego = população; latim = amostra."
+  },
+  {
+    "id": "estatistica_57",
+    "status": "REVISADO",
+    "pergunta": "O que é o princípio da adição de probabilidades?",
+    "resposta": "P(A ∪ B) = P(A) + P(B) − P(A ∩ B). Se os eventos são mutuamente exclusivos (A ∩ B = ∅), então P(A ∪ B) = P(A) + P(B), pois P(A ∩ B) = 0.",
+    "dica": "CESPE: a SUBTRAÇÃO da interseção é OBRIGATÓRIA quando os eventos não são mutuamente exclusivos. Erro comum: somar sem subtrair a interseção. Para três eventos: P(A ∪ B ∪ C) = P(A)+P(B)+P(C) − P(A∩B) − P(A∩C) − P(B∩C) + P(A∩B∩C)."
+  },
+  {
+    "id": "estatistica_58",
+    "status": "REVISADO",
+    "pergunta": "O que é o evento complementar?",
+    "resposta": "Evento complementar de A (denotado Aᶜ ou A̅) é o conjunto de todos os resultados do espaço amostral que NÃO estão em A. P(A) + P(Aᶜ) = 1, logo P(Aᶜ) = 1 − P(A).",
+    "dica": "CESPE: a probabilidade do complementar é útil para calcular pelo menos um ou nenhum. Ex: P(pelo menos um sucesso) = 1 − P(nenhum sucesso). O complementar do complementar é o próprio evento: (Aᶜ)ᶜ = A."
+  },
+  {
+    "id": "estatistica_59",
+    "status": "REVISADO",
+    "pergunta": "O que é distribuição de Poisson?",
+    "resposta": "Distribuição discreta que modela o número de eventos raros que ocorrem em um intervalo fixo de tempo ou espaço, com taxa média λ. P(X = k) = (e⁻λ × λᵏ) / k!. Média = Variância = λ.",
+    "dica": "CESPE: Poisson = eventos raros e independentes. A média É IGUAL à variância (equidispersão). Se a variância for maior que a média, há superdispersão (não Poisson). Aproximação: Poisson(λ) ≈ Binomial(n,p) quando n grande e p pequeno (λ = np)."
+  },
+  {
+    "id": "estatistica_60",
+    "status": "REVISADO",
+    "pergunta": "O que é percentil?",
+    "resposta": "Valor que divide os dados ordenados em 100 partes iguais. O k-ésimo percentil (Pk) é o valor abaixo do qual k% dos dados se encontram. Ex: P50 = mediana; P25 = Q1; P75 = Q3.",
+    "dica": "CESPE: existem diferentes métodos de cálculo (a CEBRASPE costuma usar o método de interpolação). Não confundir percentil com porcentagem: percentil é uma medida de posição. Quartis (4 partes), decis (10 partes) e percentis (100 partes) são quantis."
+  },
+  {
+    "id": "estatistica_61",
+    "status": "REVISADO",
+    "pergunta": "O que é análise exploratória de dados (AED)?",
+    "resposta": "Abordagem que utiliza gráficos e medidas descritivas para explorar os dados antes de análises formais, identificando padrões, outliers, assimetrias, tendências e possíveis relações entre variáveis. É a primeira etapa de qualquer análise estatística.",
+    "dica": "CESPE: AED usa estatística descritiva (não inferencial). Ferramentas comuns: histograma, boxplot, scatter plot, medidas de posição e dispersão. Tukey foi o pioneiro da AED. O objetivo é gerar hipóteses, não testá-las."
+  },
+  {
+    "id": "estatistica_62",
+    "status": "REVISADO",
+    "pergunta": "O que é o gráfico de dispersão (scatter plot)?",
+    "resposta": "Gráfico bidimensional que mostra a relação entre duas variáveis quantitativas, com cada ponto representando um par de valores (X,Y). Permite visualizar correlação, tendência, outliers e agrupamentos.",
+    "dica": "CESPE: útil para verificar a suposição de linearidade antes de aplicar regressão linear. Se os pontos formam uma nuvem sem padrão, r ≈ 0. Se formam uma reta crescente, r > 0. Cuidado: outliers podem distorcer visualmente a percepção da correlação."
+  },
+  {
+    "id": "estatistica_63",
+    "status": "REVISADO",
+    "pergunta": "O que é distribuição uniforme discreta?",
+    "resposta": "Distribuição de probabilidade em que todos os valores possíveis têm a mesma probabilidade de ocorrência. Ex: lançamento de um dado honesto (P(X = k) = 1/6 para k = 1,...,6). E(X) = (a+b)/2 para valores entre a e b.",
+    "dica": "CESPE: na uniforme discreta, todos os resultados são equiprováveis. Não confundir com uniforme CONTÍNUA (intervalo real). Exemplo clássico: dado não viciado, roleta. Função de probabilidade: P(X = xi) = 1/n para n valores."
+  },
+  {
+    "id": "estatistica_64",
+    "status": "REVISADO",
+    "pergunta": "O que é inferência estatística?",
+    "resposta": "Processo de fazer generalizações sobre a população com base nos dados amostrais. Divide-se em estimação (pontual e intervalar) e testes de hipóteses. Fundamenta-se na teoria das probabilidades e na distribuição amostral.",
+    "dica": "CESPE: inferência estatística SÓ é possível com amostragem probabilística. Amostragem não probabilística não permite inferência. A margem de erro e o nível de confiança são usados para quantificar a incerteza da inferência."
+  },
+  {
+    "id": "estatistica_65",
+    "status": "REVISADO",
+    "pergunta": "O que é número índice em estatística?",
+    "resposta": "Medida relativa que compara valores de uma variável (ou conjunto de variáveis) em diferentes períodos ou localidades. Ex: IPCA, INPC, IGPM. Pode ser simples (um item) ou composto (múltiplos itens).",
+    "dica": "CESPE: números-índice podem ser de preço, quantidade ou valor. Fórmulas comuns: Laspeyres (ponderação fixa no período base), Paasche (ponderação fixa no período atual), Fisher (média geométrica de Laspeyres e Paasche). Período base é a referência."
+  },
+  {
+    "id": "estatistica_66",
+    "status": "APROVADO"
+  },
+  {
+    "id": "estatistica_67",
+    "status": "REVISADO",
+    "pergunta": "O que é análise de séries temporais?",
+    "resposta": "Análise de dados coletados ao longo do tempo para identificar padrões como tendência (longo prazo), sazonalidade (padrões periódicos fixos), ciclo (flutuações não fixas) e ruído (variações aleatórias).",
+    "dica": "CESPE: séries temporais têm dependência temporal (observações não independentes). Componentes: T (tendência), S (sazonalidade), C (ciclo), R (ruído). Modelos: aditivo (Y = T+S+C+R) ou multiplicativo (Y = T×S×C×R). Suavização exponencial e ARIMA são métodos comuns."
+  },
+  {
+    "id": "estatistica_68",
+    "status": "REVISADO",
+    "pergunta": "O que é o IBGE e sua relação com a estatística?",
+    "resposta": "O IBGE (Instituto Brasileiro de Geografia e Estatística) é o principal órgão de estatística do Brasil, responsável por censos demográficos, pesquisas amostrais (PNAD, PNAD Contínua) e índices de preços (IPCA, INPC), além de dados geográficos e socioeconômicos.",
+    "dica": "CESPE: o IPCA é o índice oficial de inflação do Brasil (metas do CMN). PNAD Contínua substituiu a PNAD tradicional desde 2016. O Censo Demográfico é decenal (realizado a cada 10 anos). IBGE também define o método de cálculo da contagem da população."
+  },
+  {
+    "id": "estatistica_69",
+    "status": "REVISADO",
+    "pergunta": "O que é variância populacional versus amostral?",
+    "resposta": "Variância populacional: σ² = Σ(Xi − μ)² / N (média dos desvios quadráticos, N no denominador). Variância amostral: s² = Σ(Xi − x̄)² / (n − 1) (n−1 no denominador = correção de Bessel para ser estimador não viesado de σ²).",
+    "dica": "CESPE: a correção de Bessel (n−1) é usada porque a média amostral x̄ é estimada a partir dos dados, consumindo 1 grau de liberdade. Se a população for finita e a amostra for censitária, usa-se N. Atenção: s² é não viesado, mas s (desvio padrão) é viesado."
+  },
+  {
+    "id": "estatistica_70",
+    "status": "REVISADO",
+    "pergunta": "O que é a ogiva (polígono de frequências acumuladas)?",
+    "resposta": "Gráfico de linha que representa as frequências acumuladas (absolutas ou relativas) de uma distribuição. No eixo X: limites superiores das classes. No eixo Y: frequência acumulada. É sempre crescente (monotônica não decrescente).",
+    "dica": "CESPE: a ogiva NUNCA decresce (sempre não decrescente). Útil para estimar percentis graficamente. Existem dois tipos: ogiva menos que (frequência acumulada crescente) e mais que (frequência acumulada decrescente). Ogiva é diferente do histograma."
+  },
+  {
+    "id": "estatistica_71",
+    "status": "APROVADO"
+  },
+  {
+    "id": "estatistica_72",
+    "status": "REVISADO",
+    "pergunta": "O que é o rol em estatística?",
+    "resposta": "Rol é a ordenação dos dados brutos em ordem crescente ou decrescente. É o primeiro passo para organizar os dados, permitindo construir tabelas de frequência, calcular medianas, quartis e identificar valores extremos.",
+    "dica": "CESPE: dados brutos → rol → tabela de frequência → gráficos. O rol é essencial para calcular a mediana (valor central do rol). Dados não ordenados geram erros no cálculo de medidas de posição. Rol é sinônimo de dados ordenados."
+  },
+  {
+    "id": "estatistica_73",
+    "status": "REVISADO",
+    "pergunta": "O que é censo estatístico?",
+    "resposta": "Levantamento que coleta dados de TODOS os elementos da população, sem amostragem. Ex: Censo Demográfico do IBGE. É a abordagem mais precisa (sem erro amostral), porém mais cara, demorada e de difícil operacionalização.",
+    "dica": "CESPE: censo NÃO tem erro amostral (pois não há amostra), mas pode ter erros não amostrais (medição, não resposta). Censo é inviável para populações infinitas. Apenas a amostragem permite inferência com margem de erro controlada."
+  },
+  {
+    "id": "estatistica_74",
+    "status": "REVISADO",
+    "pergunta": "O que é o índice de assimetria de Pearson (1ª fórmula)?",
+    "resposta": "As = (média − moda) / desvio padrão. As = 0 indica distribuição simétrica (média = moda). As > 0: assimetria positiva (cauda à direita, média > moda). As < 0: assimetria negativa (cauda à esquerda, média < moda).",
+    "dica": "CESPE: 2ª fórmula de Pearson: As = 3(média − mediana) / desvio padrão. Decore: 1ª fórmula usa MODA; 2ª fórmula usa MEDIANA. Assimetria nula (As=0) não garante normalidade (pode ser simétrica não normal)."
+  },
+  {
+    "id": "estatistica_75",
+    "status": "REVISADO",
+    "pergunta": "O que é a medida de posição relativa (escore Z)?",
+    "resposta": "Escore Z = (X − μ) / σ. Indica quantos desvios padrão um valor X está acima (Z > 0) ou abaixo (Z < 0) da média. É adimensional, permitindo comparar posições relativas em diferentes distribuições.",
+    "dica": "CESPE: escore Z é usado para identificar outliers (|Z| > 3). Distribuição normal padrão Z tem μ = 0 e σ = 1. Z é diferente do coeficiente de variação (CV = σ/μ, que mede dispersão relativa)."
+  },
+  {
+    "id": "estatistica_76",
+    "status": "REVISADO",
+    "pergunta": "O que é a tabela de contingência (cruzamento)?",
+    "resposta": "Tabela que cruza duas variáveis qualitativas (categóricas), mostrando a frequência conjunta (contagem) de cada combinação de categorias. Útil para analisar associação ou dependência entre as variáveis (ex: teste Qui-Quadrado).",
+    "dica": "CESPE: tabela de contingência pode ter frequências absolutas, relativas (%) ou esperadas. O teste Qui-Quadrado de independência usa a tabela de contingência. Uma tabela 2×2 é o caso mais comum (duas variáveis com duas categorias cada)."
+  },
+  {
+    "id": "estatistica_77",
+    "status": "APROVADO"
+  },
+  {
+    "id": "estatistica_78",
+    "status": "REVISADO",
+    "pergunta": "O que é amostra aleatória simples com reposição?",
+    "resposta": "Cada elemento sorteado é devolvido à população antes do próximo sorteio, mantendo a probabilidade de seleção constante. As extrações são INDEPENDENTES entre si. A probabilidade de cada elemento é sempre 1/N.",
+    "dica": "CESPE: AAS com reposição → extrações independentes. AAS sem reposição → extrações dependentes (mas para N grande, a diferença é desprezível). Na prática, amostragem sem reposição é mais comum. Fator de correção para população finita: √((N−n)/(N−1))."
+  },
+  {
+    "id": "estatistica_79",
+    "status": "REVISADO",
+    "pergunta": "O que é o decil em estatística?",
+    "resposta": "Valor que divide os dados ordenados em 10 partes iguais. D1 = 10% dos dados abaixo (1º decil), D5 = 50% (mediana = 5º decil), D9 = 90% (9º decil). Os decis são um caso particular de quantis.",
+    "dica": "CESPE: decis, quartis e percentis são QUANTIS. D1 = P10 (10º percentil). D5 = P50 (mediana). D9 = P90 (90º percentil). Existem 9 decis (D1 a D9) que dividem os dados em 10 partes."
+  },
+  {
+    "id": "estatistica_80",
+    "status": "REVISADO",
+    "pergunta": "O que é a função de distribuição acumulada (FDA)?",
+    "resposta": "Função F(x) = P(X ≤ x) que retorna a probabilidade de a variável aleatória X assumir um valor menor ou igual a x. É crescente (monotônica não decrescente), varia de 0 (quando x → −∞) a 1 (quando x → +∞).",
+    "dica": "CESPE: para variável discreta, a FDA é uma função escada (saltos nos valores possíveis). Para variável contínua, a FDA é contínua. P(a < X ≤ b) = F(b) − F(a). A FDA é a integral da função densidade de probabilidade (fdp)."
+  },
+  {
+    "id": "estatistica_81",
+    "status": "REVISADO",
+    "pergunta": "O que é o coeficiente de correlação de Spearman?",
+    "resposta": "Mede a relação MONOTÔNICA (não necessariamente linear) entre duas variáveis, baseada nos postos (ranks) dos dados. Varia de -1 a +1. É uma alternativa não paramétrica ao coeficiente de Pearson.",
+    "dica": "CESPE: Pearson mede relação LINEAR. Spearman mede relação MONOTÔNICA (crescente ou decrescente, não precisa ser reta). Spearman é menos sensível a outliers que Pearson. Fórmula: ρ = 1 − (6Σdᵢ²)/(n(n²−1)), onde dᵢ é a diferença entre os postos."
+  },
+  {
+    "id": "estatistica_82",
+    "status": "APROVADO"
+  },
+  {
+    "id": "estatistica_83",
+    "status": "REVISADO",
+    "pergunta": "O que é o intervalo de classe em estatística?",
+    "resposta": "Faixa de valores utilizada para agrupar dados contínuos em uma distribuição de frequências. Cada classe possui: limite inferior (Li), limite superior (Ls), amplitude (h = Ls − Li) e ponto médio (PM = (Li + Ls)/2).",
+    "dica": "CESPE: as classes devem ser mutuamente exclusivas e exaustivas (todo dado pertence a alguma classe). A amplitude do intervalo pode ser constante ou variável. Ponto médio representa a classe. Número de classes: regra de Sturges (k = 1 + 3,3 log n)."
+  }
+]

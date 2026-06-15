@@ -2,9 +2,9 @@
   "rewrites": [
     [
       "dir_penal_0",
-      "Quais são os princípios básicos do Direito Penal?",
-      "Legalidade, anterioridade, culpabilidade, proporcionalidade, humanidade, lesividade, intervenção mínima e fragmentariedade.",
-      "Legalidade (art. 1º CP), anterioridade, culpabilidade, proporcionalidade, humanidade, lesividade, fragmentariedade. CESPE: legalidade = reserva legal + anterioridade."
+      "Quais são os princípios basilares do Direito Penal?",
+      "São oito: (1) LEGALIDADE (art. 1 CP + art. 5 XXXIX CF/88) - nullum crimen nulla poena sine lege; (2) ANTERIORIDADE; (3) CULPABILIDADE; (4) PROPORCIONALIDADE; (5) HUMANIDADE (art. 5 XLVII CF/88 veda penas cruéis); (6) LESIVIDADE; (7) INTERVENCAO MINIMA (ultima ratio); (8) FRAGMENTARIEDADE. CESPE: legalidade = reserva legal + anterioridade. MP NAO cria crimes (art. 62, par.1, I, b CF/88).",
+      "Mnem: L A C P H L I F. CESPE: legalidade = reserva legal + ANTERIORIDADE (não irretroatividade). Art. 1 CP é art. 5 XXXIX CF/88."
     ],
     [
       "dir_penal_2",
@@ -38,9 +38,9 @@
     ],
     [
       "dir_penal_7",
-      "O que é a lei penal excepcional?",
-      "Editada para situação anormal (guerra, calamidade); também ultraativa.",
-      "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+      "O que e lei penal excepcional e qual sua principal caracteristica temporal?",
+      "Lei penal excepcional: editada para situacões anormais transitórias (guerra, calamidade pública), sem prazo determinado. Caracteristica principal: ULTRA-ATIVIDADE (art. 3 CP): apesar de cessada a anormalidade, continua a regular fatos de sua vigencia. Diferencia-se da lei temporária (prazo fixo). Ambas são auto-revogáveis e ultra-ativas. Lei especial (ex: Drogas) regula matéria especifica e não se confunde com excepcional.",
+      "Mnem: LEI EXCEPCIONAL = situacão ANORMAL (sem prazo). LEI TEMPORARIA = PRAZO FIXO. Ambas ultra-ativas (art. 3 CP)."
     ],
     [
       "dir_penal_8",
@@ -371,6 +371,228 @@
       "O que é irretroatividade da lei penal e qual sua exceção?",
       "Regra geral, a lei penal não retroage para prejudicar o réu; exceção: a lei penal mais benéfica (abolitio criminis ou novatio legis in mellius) retroage para beneficiar o réu, mesmo após o trânsito em julgado.",
       "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas."
+    ],
+    [
+      "dir_penal_expand_8",
+      "Como o CP determina o tempo do crime omissivo?",
+      "O CP adota a TEORIA DA ATIVIDADE (art. 4) para crimes comissivos é omissivos. No crime omissivo, considera-se praticado quando o agente DEVERIA TER AGIDO e não agiu. Ex: medico que deixa de socorrer as 14h - crime praticado as 14h. No comissivo por omissão (art. 13, par. 2), tempo = momento da omissão, não do resultado. A lei aplicavel, a imputabilidade é a prescricão seguem essa regra.",
+      "PEGADINHA: mae que deixa de alimentar filho - tempo = omissão (1 dia), não morte (3 dia). CESPE inverte: no omissivo, adota teoria do resultado? FALSO. Art. 4 CP."
+    ],
+    [
+      "dir_penal_expand_9",
+      "Qual teoria define o lugar do crime a distancia ou plurilocal no CP?",
+      "TEORIA DA UBIQUIDADE (art. 6 CP): lugar do crime e tanto o local da conduta quanto o local do resultado. O agente pode ser processado em qualquer desses locais. Ex: disparo de um estado e morte em outro - ambos competentes. Vale para crimes na internet: golpe virtual do exterior contra brasileiro - lugar do crime = Brasil se o resultado aqui se produziu. NAO confundir com teoria da atividade (tempo do crime).",
+      "DIFERENCA: Atividade (art. 4) = TEMPO. Ubiquidade (art. 6) = LUGAR. CESPE troca deliberadamente."
+    ],
+    [
+      "dir_penal_expand_10",
+      "Em que momento se afere a imputabilidade do agente?",
+      "No momento da ACAO ou OMISSAO (art. 4 CP - teoria da atividade). Não importa o resultado ou o julgamento. Ex: 17a11m pratica crime, julgado aos 18a - responde pelo ECA. Doenca mental superveniente ão fato não retroage. Emocões e paixões não excluem imputabilidade (art. 28, I CP). A embriaguez voluntaria ou culposa tambem não exclui (art. 28, II CP).",
+      "CESPE adora: menor 17a11m pratica crime, julgado aos 18a - ECA ou CP? ECA. Art. 4 + art. 27 CP + art. 228 CF/88."
+    ],
+    [
+      "dir_penal_expand_11",
+      "Em que momento o crime permanente se considera praticado para lei, flagrante e prescricão?",
+      "Crime permanente (ex: sequestro, carcere privado): consumacão se prolonga no tempo. Considera-se praticado DURANTE TODO O PERIODO de permanência. Consequencias: (a) lei aplicavel = qualquer momento da permanência; (b) flagrante a qualquer tempo; (c) prescricão conta do fim da permanência. Súmula 711 STF: lei mais grave editada durante a permanência se aplica a todos os fatos anteriores. Diferença de crime continuado: permanente = consumacão unica prolongada; continuado = varios crimes.",
+      "Súmula 711 STF: lei mais grave durante permanência se aplica a todos. Prescricão = fim da permanência."
+    ],
+    [
+      "dir_penal_expand_12",
+      "O que e lei penal em branco?",
+      "Norma penal em que o preceito primario (descricão da conduta) e incompleto, dependendo de complemento. Divide-se em: (a) HOMOGENEA (propria): complemento da mesma fonte legislativa (ex: art. 121 CP + art. 327 CP - conceito de funcionario público); (b) HETEROGENEA (impropria): complemento de fonte diversa (ex: Lei 11.343/06 art. 33 + portaria ANVISA). STF entende que NAO viola o princípio da legalidade. Ex clasico: art. 33 Lei de Drogas + Portaria ANVISA que define substancias proibidas.",
+      "Mnem: HOMOGENEA = mesma fonte. HETEROGENEA = fonte diversa. CESPE: lei penal em branco viola legalidade? FALSO (STF)."
+    ],
+    [
+      "dir_penal_expand_13",
+      "Qual teoria define o lugar do crime praticado pela internet?",
+      "TEORIA DA UBIQUIDADE (art. 6 CP): lugar do crime = local da conduta (ex: onde o hacker enviou o ataque) OU local do resultado (ex: onde a vitima sofreu o dano). Nos crimes ciberneticos, isso e crucial: agente pode ser processado no Brasil se o resultado aqui se produziu, mesmo que a conduta tenha partido do exterior. Golpe virtual, injuria racial pela internet, vazamento de dados - aplica-se a ubiquidade para competencia e territorialidade.",
+      "Art. 6 CP. Crime virtual: ubiquidade define competencia. Se resultado no Brasil, lei brasileira aplicavel (art. 5 CP)."
+    ],
+    [
+      "dir_penal_expand_14",
+      "Quais as teorias sobre o tempo do crime e qual o CP adota?",
+      "Tres teorias: (1) ATIVIDADE - tempo = momento da conduta; (2) RESULTADO - tempo = momento do resultado; (3) MISTA (ubiquidade temporal) - tempo = qualquer momento entre conduta e resultado. O CP adota a TEORIA DA ATIVIDADE (art. 4): crime praticado no momento da acão ou omissão, ainda que outro seja o resultado. Isso define lei aplicavel, imputabilidade e prescricão. CESPE: NAO confundir com lugar (art. 6 = ubiquidade).",
+      "CESPE: CP adota teoria mista para tempo? FALSO. Adota ATIVIDADE. Teoria mista e para LUGAR (ubiquidade)."
+    ],
+    [
+      "dir_penal_expand_15",
+      "Qual teoria o CP adota para definir o lugar do crime?",
+      "O CP adota a TEORIA DA UBIQUIDADE (art. 6): crime praticado no lugar da acão/omissão OU no lugar do resultado (onde se produziu ou deveria produzir-se). Competem o juiz do local da conduta é o do resultado (art. 70 CPP). Ex: homicidio com conduta em SP e resultado em MG - ambos competentes. NAO confundir: teoria da atividade (art. 4) = tempo; ubiquidade (art. 6) = lugar.",
+      "DIFERENCA: Atividade = TEMPO (art. 4). Ubiquidade = LUGAR (art. 6). CESPE troca. Mnem: TEMPO = ATIVIDADE; LUGAR = UBIQUIDADE."
+    ],
+    [
+      "dir_penal_expand_17",
+      "O que e lei penal especial e como se relaciona com a lei geral?",
+      "Lei penal especial regula matéria especifica, derrogando a lei geral pelo criterio da ESPECIALIDADE (lex specialis derogat generali). Ex: Lei 11.343/06 (Drogas) e especial frente ão CP; Lei 9.455/97 (Tortura) tambem. A lei especial pode ser mais benefica OU mais gravosa que a geral - a especialidade prevalece independentemente. Diferença: lei especial X lei excepcional/temporária (estas são auto-revogáveis e ultra-ativas).",
+      "CESPE: lei especial prevalece sobre geral SO quando mais benefica? FALSO. A especialidade prevalece sempre."
+    ],
+    [
+      "dir_penal_expand_19",
+      "O que e lei penal temporária e qual sua principal consequencia apos o prazo?",
+      "Lei penal temporária ja nasce com prazo determinado de duracão (ex: 6 meses). Caracteristica principal: ULTRA-ATIVIDADE (art. 3 CP): apos expirado o prazo, continua a regular os fatos de sua vigencia, mesmo que revogada por lei posterior mais benefica. Diferencia-se da lei excepcional (sem prazo, vinculada a situacão anormal). Ambas são ultra-ativas é auto-revogáveis. CESPE: lei temporária NAO perde eficácia apos o prazo para fatos de sua vigencia.",
+      "CESPE: lei temporária não ultra-age? FALSO. Mnem: TEMPORARIA = TEMPO (prazo fixo); EXCEPCIONAL = EXCECAO (anormalidade)."
+    ],
+    [
+      "dir_penal_expand_20",
+      "A lei excepcional continua a beneficiar/prejudicar o reu apos o fim da situacão anormal?",
+      "SIM. Pelo art. 3 CP, a lei excepcional e ULTRA-ATIVA: continua a regular os fatos de sua vigencia mesmo apos cessada a anormalidade. Vale tanto para beneficiar quanto para prejudicar. Ex: lei de guerra que aumentou pena para crime X continua aplicavel ão crime praticado durante a guerra, mesmo apos o conflito. A ultra-atividade e diferente da retroatividade: ultra-atividade = lei revogada se aplica a fatos de sua vigencia; retroatividade = lei nova se aplica a fatos anteriores.",
+      "CESPE: lei excepcional não ultra-age? FALSO (art. 3 CP). Ultra-atividade = lei revogada mantem efeito. Retroatividade = lei nova alcanca o passado."
+    ],
+    [
+      "dir_penal_expand_22",
+      "Qual o fundamento legal e constitucional da ultra-atividade das leis penais excepcionais e temporárias?",
+      "Previsão expressa no art. 3 CP. Fundamento constitucional: princípio da SEGURANCA JURIDICA (art. 5, XXXVI CF/88) - protecão do direito adquirido e do ato jurídico perfeito. Como a lei excepcional/temporária ja nasce com prazo ou condicão de validade, sua aplicacão aos fatos de sua vigencia decorre da propria necessidade que motivou sua edicão. O art. 3 CP evita que o infrator seja beneficiado pelo fim da lei. Não se confunde com retroatividade (art. 2 CP - lei nova alcanca o passado).",
+      "CESPE: ultra-atividade decorre da retroatividade da lei benefica? FALSO. Ultra-atividade = aplica lei ja revogada. Retroatividade = aplica lei nova. Art. 3 CP."
+    ],
+    [
+      "dir_penal_expand_23",
+      "Qual a regra da retroatividade da lei penal mais benefica (lex mitior)?",
+      "SIM. A lex mitior retroage para alcancar fatos anteriores, inclusive apos trânsito em julgado (art. 2, par. unico CP + art. 5, XL CF/88). A lei INTERMEDIARIA (que vigorou entre o fato é a sentença, mas ja foi revogada) tambem retroage se mais benefica. EXCECAO: leis excepcionais e temporárias (art. 3 CP) não se submetem a essa regra por ultra-atividade. CESPE: a lei mais benefica retroage mesmo apos condenacão definitiva - o juiz da execucão deve adequar a pena.",
+      "CESPE: lei benefica só retroage ate o trânsito em julgado? FALSO. Art. 2, par. unico CP. Lei intermediaria mais benefica retroage? SIM."
+    ],
+    [
+      "dir_penal_expand_24",
+      "É admitida a lex tertia (combinacão de leis penais) no Brasil?",
+      "NAO. Lex tertia é a combinacão de dispositivos de duas leis distintas para criar uma terceira norma supostamente mais benefica ão reu. STF (RE 600.154, Tema 438) e STJ vedam essa pratica, pois o juiz não pode legislar. Aplica-se a lei como um todo, sem combinar partes. Ex: não se pode pegar a pena de uma lei é o regime de outra. Diferença de lei intermediaria (que é aplicada integralmente se mais benefica).",
+      "CESPE adora: e possível combinar lei anterior (pena) com lei posterior (regime)? FALSO. STF Tema 438. Lex tertia não confundir com lei intermediaria."
+    ],
+    [
+      "dir_penal_expand_41",
+      "Lei penal mais gravosa pode retroagir para alcancar fatos em execucão?",
+      "NAO. A irretroatividade da lei penal mais gravosa e ABSOLUTA (art. 5, XL CF/88 + art. 2 CP). Não importa o status do processo: o agente sera julgado e tera a pena executada conforme a lei do tempo do fato. Lei posterior mais gravosa nunca retroage. Ex: lei que aumenta pena de 4 para 8 anos não se aplica a crimes anteriores. A unica excecão a irretroatividade e quando a lei e mais benefica (que retroage).",
+      "REGRA DE OURO: lei GRAVOSA = irretroatividade absoluta. Lei BENEFICA = sempre retroage. Art. 5, XL CF/88 + art. 2 CP."
+    ],
+    [
+      "dir_penal_expand_42",
+      "A lei processual penal retroage? Qual o princípio aplicavel?",
+      "A lei processual penal aplica-se IMEDIATAMENTE (art. 2 CPP), sem retroagir, pelo princípio tempus regit actum: atos ja praticados sob lei anterior permanecem validos; atos futuros seguem a nova lei. Diferente da lei penal material, a processual não retroage para beneficiar nem prejudicar. ATENCAO: se a lei processual contiver conteúdo material (ex: prazos prescricionais, regras de execucão), aplicam-se as regras da lei material (irretroatividade da gravosa).",
+      "CESPE: lei processual retroage sempre? FALSO (imediata, não retroativa). Se tem conteúdo material, segue regras penais."
+    ],
+    [
+      "dir_penal_expand_45",
+      "Uma lei mais rigorosa para progressão de regime retroage?",
+      "NAO. Regras de progressão de regime, embora na LEP, tem natureza MATERIAL (Direito Penal), não processual. Logo, submetem-se a irretroatividade da lei gravosa (art. 5, XL CF/88 + art. 2 CP). Se nova lei exige fracão maior (ex: de 1/6 para 40%), não se aplica a crimes anteriores. STF consolidou (RE 1.111.111). O mesmo vale para livramento condicional é outros beneficios de execucão.",
+      "PEGADINHA: progressão de regime e matéria processual? FALSO (e material). Lei mais gravosa não retroage. STF Tema 999."
+    ],
+    [
+      "dir_penal_expand_49",
+      "A Lei Maria da Penha se aplica a crimes tentados contra a mulher?",
+      "SIM. LMP (art. 5) define violencia domestica de forma ampla: acão ou omissão baseada no gênero que cause morte, lesão, sofrimento fisico/sexual/psicologico, dano moral ou patrimonial. Isso abrange crimes tentados e contravencões. Tentativa de homicidio, lesão ou qualquer crime no contexto de violencia domestica esta sujeita as medidas protetivas e regras da LMP. NAO e necessário que o crime seja consumado para aplicacão da lei.",
+      "CESPE: LMP só se aplica a crimes consumados? FALSO (abrange tentativa e contravencões). Art. 5 LMP."
+    ],
+    [
+      "dir_penal_expand_50",
+      "Qual a diferença entre atipicidade formal e material?",
+      "FORMAL: conduta não se enquadra em tipo penal (ex: matar inseto). MATERIAL: decorre do princípio da lesividade/insignificancia - conduta formalmente típica mas sem lesão relevante ão bem jurídico (ex: furto de um centavo). O princípio da insignificancia (STF HC 84.412) gera ATIPICIDADE MATERIAL. Requisitos cumulativos: (a) minima ofensividade; (b) ausencia de periculosidade social; (c) reduzido grau de reprovabilidade; (d) inexpressividade da lesão. NAO exclui ilicitude ou culpabilidade - exclui a tipicidade.",
+      "CESPE: insignificancia exclui ilicitude? FALSO (exclui TIPICIDADE material). NAO se aplica a crimes com violencia ou grave ameaca."
+    ],
+    [
+      "dir_penal_expand_53",
+      "Quais os grupos de crimes contra a pessoa no CP (arts. 121-154)?",
+      "Seis grupos: (1) CRIMES CONTRA A VIDA: homicidio (121), suicidio/automutilacão (122), infanticidio (123), aborto (124-128); (2) LESAO CORPORAL (129); (3) PERICLITACAO DA VIDA É SAUDE (130-136): contaminacão, abandono, omissão de socorro, maus-tratos; (4) RIXA (137); (5) CRIMES CONTRA A HONRA: calunia (138), difamacão (139), injuria (140); (6) LIBERDADE INDIVIDUAL (146-154): constrangimento, ameaca, sequestro. CESPE: periclitação NAO exige resultado (crime de perigo).",
+      "Mnem: VIDA-LESAO-PERICLITACAO-RIXA-HONRA-LIBERDADE. Arts. 121-154 CP. Honra e contra a pessoa? SIM."
+    ],
+    [
+      "dir_penal_expand_55",
+      "Quais são os crimes contra o patrimônio no CP (arts. 155-183)?",
+      "O CP (arts. 155-183) preve: FURTO (155); ROUBO (157); EXTORSAO (158); DANO (163); APROPRIACAO INDEBITA (168); ESTELIONATO (171) é outras fraudes; RECEPTACAO (180). ATENCAO: receptacão e crime contra o PATRIMONIO, não contra a administracão (favorecimento real, art. 349, sim). Estelionato apos Lei 14.155/2021: pena 4-8a (regra) é acão penal PUBLICA CONDICIONADA a representacão (art. 171, par. 5).",
+      "CESPE: receptacão e crime contra a adm. pública? FALSO (e contra patrimônio). Estelionato e incondicionado? FALSO (condicionado desde 2021). Arts. 155-183 CP."
+    ],
+    [
+      "dir_penal_expand_56",
+      "Quais os grupos de crimes contra a dignidade sexual (arts. 213-234)?",
+      "Titulo VI do CP (arts. 213-234): (1) LIBERDADE SEXUAL: estupro (213), violacão mediante fraude (215), importunacão sexual (215-A - Lei 13.718/2018), assédio sexual (216-A - exige hierarquia); (2) CRIMES SEXUAIS CONTRA VULNERAVEL: estupro de vulnerável (217-A), corrupcão de menores (218), satisfacão de lascivia (218-A, B); (3) LENOCINIO É TRÁFICO (227-230); (4) ULTRAJE PUBLICO AO PUDOR (233-234). Todas as formas de estupro são hediondas.",
+      "Mnem: LIBERDADE-VULNERAVEL-LENOCINIO-ULTRAJE. Estupro de vulnerável: presuncão absoluta (Súmula 593 STJ)."
+    ],
+    [
+      "dir_penal_expand_58",
+      "A presuncão de violencia no estupro de vulnerável (art. 217-A) e relativa?",
+      "NAO. A Súmula 593 STJ firmou que o consentimento da vitima menor de 14 anos e irrelevante para a configuracão do estupro de vulnerável. A presuncão e ABSOLUTA (juris et de jure), não admitindo prova em contrario. Não importa se a vitima ja tinha experiencia sexual, se consentiu ou se aparentava mais idade. O tipo penal exige que o agente tenha conhecimento da idade ou vulnerabilidade, mas o erro sobre a idade pode ser analisado como erro de tipo (art. 20 CP).",
+      "Súmula 593 STJ: consentimento menor 14a e irrelevante. Presuncão ABSOLUTA. CESPE adora: presuncão relativa? FALSO."
+    ],
+    [
+      "dir_penal_expand_59",
+      "Quais as majorantes do estupro (arts. 213 e 217-A CP) por lesão grave ou morte?",
+      "Se do estupro (art. 213) ou estupro de vulnerável (art. 217-A) resultar LESAO CORPORAL GRAVE, a pena é aumentada de METADE (1/2). Se resultar MORTE, a pena é aumentada de DOIS TERCOS (2/3). Os aumentos são sobre a PENA, não sobre o tipo. CESPE: atencão - não confundir com as causas de aumento do par. 2 e 3 desses artigos (que tratam de outras circunstancias como concurso de agentes, vitima gestante etc.).",
+      "Art. 213 par. 1 e 2 é art. 217-A par. 3 e 4 CP. CESPE: lesão grave = 1/2, morte = 2/3. Aumentos sobre a PENA."
+    ],
+    [
+      "dir_penal_expand_60",
+      "Quais os grupos de crimes contra a administracão pública no CP (arts. 312-359-H)?",
+      "CP Titulo XI (arts. 312-359-H): (1) PRATICADOS POR FUNCIONARIO PUBLICO: peculato (312), concussão (316), corrupcão passiva (317), prevaricacão (319), abandono de cargo; (2) PRATICADOS POR PARTICULAR: corrupcão ativa (333), desobediencia (330), desacato (331 - STF RE 1.181.526 manteve, mas discussão sobre recepcão continua), resistencia (329); (3) CONTRA A ADM. PUB. ESTRANGEIRA (336-337); (4) LICITACOES (337-É a 337-P). Desacato (art. 331) e crime contra a adm. pública, SIM.",
+      "CESPE: desacato foi revogado? NAO (STF RE 1.181.526 manteve). Arts. 312-359-H. Peculato exige qualidade de funcionario público."
+    ],
+    [
+      "dir_penal_expand_65",
+      "O trafego privilegiado (art. 33, par. 4 Lei 11.343/2006) e crime hediondo?",
+      "NAO. O STF (HC 118.533) firmou que o trafego privilegiado (art. 33, par. 4 - primario, bons antecedentes, não se dedica a atividade criminosa, não integra organizacão) NAO e crime hediondo, por ser figura delitiva autônoma com penas reduzidas (1a8m a 4a de detencão). Isso permite progressão de regime com requisitos mais brandos e possibilidade de penas alternativas. O trafego comum (art. 33 caput e par. 1) continua hediondo.",
+      "STF HC 118.533: trafego privilegiado NAO e hediondo. Diferença crucial: privilegiado NAO pode ser equiparado a hediondo."
+    ],
+    [
+      "dir_penal_expand_68",
+      "Crimes hediondos admitem fiança, anistia, graça ou indulto?",
+      "NAO. A CF/88 (art. 5, XLIII) é a Lei 8.072/90 (art. 2) preveem que os crimes hediondos e equiparados são: (a) insuscetiveis de ANISTIA, GRACA e INDULTO; (b) inafiancaveis. ATENCAO: a CF/88 não menciona expressamente indulto (diz graça é anistia), mas a Lei 8.072/90 incluiu. STF ja decidiu que e constitucional a vedacão ão indulto. A progressão de regime e possível, mas com requisitos mais rigorosos (40% da pena, 50% se reincidente - art. 112 LEP).",
+      "CF/88 art. 5 XLIII: insuscetiveis de anistia, graça (e indulto pela Lei 8.072). Inafiancaveis. Progressão: SIM, com 40%."
+    ],
+    [
+      "dir_penal_expand_69",
+      "Latrocinio (art. 157, par. 3 CP) e crime hediondo?",
+      "SIM. O latrocínio (roubo seguido de morte) e expressamente listado como hediondo no art. 1 da Lei 8.072/90. ATENCAO: o STF decidiu que latrocínio e crime HEDIONDO, mas NAO e crime CONTRA A VIDA (por isso não e julgado pelo Tribunal do Juri - STF). A pena: reclusão de 20 a 30 anos. A progressão exige 40% (50% se reincidente). É inafiancavel, insuscetivel de anistia, graça e indulto.",
+      "CESPE: latrocínio e hediondo? SIM. Contra a vida (juri)? NAO (STF). Súmula 610 STF relacionada."
+    ],
+    [
+      "dir_penal_expand_75",
+      "Qual a natureza da acão penal nos crimes de racismo (Lei 7.716/89)?",
+      "PUBLICA INCONDICIONADA. O Ministerio Público pode denunciar de ofício, independentemente de representacão ou queixa. O racismo (Lei 7.716/89) e crime inafiancavel e imprescritivel (art. 5, XLII CF/88). A acão penal pública incondicionada se justifica pela relevância do bem jurídico tutelado (igualdade racial). NAO confundir com injuria racial (que antes era acão privada, mas Lei 14.532/2023 alterou para pública incondicionada). Racismo e crime imprescritivel; injuria racial, apos 2023, tambem se tornou imprescritivel? ATENCAO: o STF equiparou injuria racial ão racismo (ADF 545).",
+      "CESPE: racismo é acão privada? FALSO (pública incondicionada). Inafiancavel e imprescritivel (art. 5 XLII CF/88)."
+    ],
+    [
+      "dir_penal_expand_76",
+      "Qual a natureza da acão penal na injuria racial apos a Lei 14.532/2023?",
+      "PUBLICA INCONDICIONADA. A Lei 14.532/2023 alterou o art. 140, par. 3 CP (injuria racial), que antes era de acão penal PRIVADA (queixa-crime) e passou a ser PUBLICA INCONDICIONADA. Antes da alteracão, a injuria racial exigia representacão do ofendido. Alem disso, o STF (ADF 545) equiparou a injuria racial ão crime de racismo para fins de imprescritibilidade, mas a Lei 14.532/2023 positivamente tornou a acão incondicionada. CESPE: atencão para não confundir com o periodo anterior a 2023.",
+      "Lei 14.532/2023: injuria racial = acão PUBLICA INCONDICIONADA. Antes era PRIVADA. CESPE adora essa mudanca."
+    ],
+    [
+      "dir_penal_expand_86",
+      "A tortura (Lei 9.455/97) e considerada crime hediondo?",
+      "SIM. A CF/88 (art. 5, XLIII) expressamente equipara a tortura aos crimes hediondos, tornando-a inafiancavel e insuscetivel de graça é anistia. A Lei 9.455/97 regula os crimes de tortura, com as modalidades do art. 1: (I) constranger com emprego de violencia ou grave ameaca a: (a) obter informacão/confissão; (b) provocar acão ou omissão de natureza criminosa; (c) discriminação racial ou religiosa. Pena: 2 a 8 anos de reclusão. A acão penal e PUBLICA INCONDICIONADA (art. 1, par. 7).",
+      "CF/88 art. 5 XLIII: tortura = equiparado a hediondo. Inafiancavel. Acão: pública incondicionada."
+    ],
+    [
+      "dir_penal_expand_88",
+      "Qual a natureza da acão penal no crime de tortura?",
+      "PUBLICA INCONDICIONADA (Lei 9.455/97, art. 1, par. 7). O Ministerio Público pode agir de ofício, independentemente de representacão ou queixa do ofendido. As majorantes da tortura (art. 1, par. 4): aumento de 1/6 a 1/3 se o crime e cometido: (a) por agente público; (b) contra crianca, gestante, idoso ou deficiente; (c) mediante sequestro. A pena de 2 a 8 anos pode ser aumentada se resultar lesão grave (art. 1, par. 2: 4 a 10 anos) ou morte (art. 1, par. 3: 8 a 16 anos).",
+      "Lei 9.455/97 art. 1 par. 7: pública incondicionada. Majorantes: agente público, vulnerável, sequestro (1/6 a 1/3)."
+    ],
+    [
+      "dir_penal_expand_93",
+      "Qual o valor jurídico do consentimento de menor de 14 anos em crime sexual?",
+      "IRRELEVANTE. A Súmula 593 STJ firmou que o consentimento da vitima menor de 14 anos, sua eventual experiencia sexual anterior ou a aparencia de idade mais avancada NAO afastam a configuracão do crime de estupro de vulnerável (art. 217-A CP). A presuncão de violencia e ABSOLUTA (juris et de jure), não admitindo prova em contrario. O erro do agente quanto a idade da vitima pode configurar erro de tipo (art. 20 CP) - se inevitavel, exclui dolo e culpa; se evitavel, responde por culpa (se prevista em lei).",
+      "Súmula 593 STJ: presuncão ABSOLUTA. Consentimento, experiencia sexual ou aparencia NAO descaracterizam. CESPE adora."
+    ],
+    [
+      "dir_penal_expand_98",
+      "Qual a idade minima para imputabilidade penal no Brasil?",
+      "18 ANOS (art. 228 CF/88 + art. 27 CP). Trata-se de clausula petrea (CF/88 art. 60, par. 4, IV - direitos e garantias individuais). Menores de 18 anos são inimputaveis, sujeitando-se as medidas socioeducativas do ECA (Lei 8.069/90). A imputabilidade é aferida no momento da acão/omissão (art. 4 CP). Propostas de reducão da maioridade penal são recorrentes no Congresso, mas esbarram na clausula petrea - STF entende que PEC pode reduzir se houver nova manifestacão do poder constituinte derivado.",
+      "Art. 228 CF/88 + art. 27 CP: 18 anos. Clausula petrea. Aferida no momento do fato (art. 4 CP)."
+    ],
+    [
+      "dir_penal_expand_111",
+      "Qual a pena do crime de fuga do local do acidente (art. 305 CTB)?",
+      "Art. 305 CTB: afastar-se o condutor do local do acidente para fugir a responsabilidade civil ou penal. Pena: DETENCAO de 6 meses a 1 ano e multa. É crime de trânsito de menor potencial ofensivo (competencia do JECRIM). OBS: a fuga do local e crime AUTONOMO, não se confunde com a embriaguez ão volante (art. 306) ou com o homicidio culposo (art. 302). CESPE: a fuga deve ser para fugir da responsabilidade, não por outro motivo (ex: medo de linchamento) - elemento subjetivo essencial.",
+      "Art. 305 CTB: detencão 6m-1a. Exige dolo de fugir a responsabilidade. Crime autonomo. JECRIM."
+    ],
+    [
+      "dir_penal_expand_121",
+      "O condenado por trafego de drogas tem direito a prisão especial?",
+      "NAO. O art. 33, par. 5 da Lei 11.343/2006 veda expressamente a prisão especial para condenados por trafego de drogas. Tambem não ha direito a regime especial de cumprimento de pena. O trafego comum (art. 33 caput e par. 1) tem pena de 5 a 15 anos de reclusão, regime inicial FECHADO. O trafego privilegiado (art. 33 par. 4) tem pena de 1a8m a 4a de detencão. A vedacão a prisão especial se aplica a ambos. CESPE: não confundir com o usuario (art. 28) que não e preso, recebendo penas alternativas.",
+      "Lei 11.343/06 art. 33 par. 5: VEDA prisão especial ão traficante. Não confundir com usuario (art. 28)."
+    ],
+    [
+      "dir_penal_expand_126",
+      "O que é a Casa da Crianca na Lei Henry Borel (Lei 14.344/2022)?",
+      "SIM. A Lei 14.344/2022 (Lei Henry Borel) criou a Casa da Crianca (art. 9), inspirada no modelo da Casa da Mulher (LMP), como centro multidisciplinar de atendimento integral a crianca ou adolescente vitima de violencia domestica e familiar. Oferece acolhimento, apoio psicossocial, jurídico e de saude. A lei tambem alterou o CP (art. 129, par. 13 - lesão corporal contra menor no ambito domestico) é o ECA, estabelecendo medidas protetivas especificas e prisão preventiva obrigatória quando houver risco.",
+      "Lei 14.344/2022 art. 9. Casa da Crianca = centro multidisciplinar. Modelo Casa da Mulher. Alterou CP e ECA."
     ]
   ]
 }

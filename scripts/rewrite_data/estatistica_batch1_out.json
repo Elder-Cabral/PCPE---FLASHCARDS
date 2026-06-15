@@ -1,0 +1,212 @@
+[
+  {
+    "id": "estatistica_0",
+    "status": "REVISADO",
+    "pergunta": "O que é estatística descritiva?",
+    "resposta": "Estatística descritiva é o ramo da estatística que organiza, resume e apresenta dados de forma clara e objetiva, utilizando tabelas, gráficos e medidas descritivas (posição, dispersão, assimetria e curtose). Diferencia-se da estatística inferencial, que faz generalizações sobre a população a partir da amostra.",
+    "dica": "CESPE cobra a distinção: descritiva -> descreve dados (tabelas, gráficos, medidas); inferencial -> generaliza (testes de hipótese, intervalos de confiança). Exemplo clássico: Qual ramo calcula a média amostral? -> Estatística descritiva."
+  },
+  {
+    "id": "estatistica_2",
+    "status": "REVISADO",
+    "pergunta": "O que é variável estatística?",
+    "resposta": "Variável é a característica que se deseja estudar em uma pesquisa, podendo ser qualitativa (nominal ou ordinal) ou quantitativa (discreta ou contínua). A classificação correta determina o tipo de gráfico e a medida estatística adequada.",
+    "dica": "CESPE: variável qualitativa NÃO admite operações aritméticas (média de sexo não faz sentido). Quantitativa discreta: valores inteiros e contáveis (ex: nº de filhos). Contínua: valores em intervalo real (ex: peso)."
+  },
+  {
+    "id": "estatistica_3",
+    "status": "REVISADO",
+    "pergunta": "O que é variável qualitativa nominal?",
+    "resposta": "Variável qualitativa nominal é aquela cujas categorias não seguem uma ordem natural ou hierarquia. Exemplos: sexo (masculino/feminino), estado civil (solteiro/casado/divorciado/viúvo), cor dos olhos, profissão, religião.",
+    "dica": "CESPE: na nominal, NÃO há ordenação entre as categorias. Se a questão disser ordem natural ou hierarquia, é ORDINAL, não nominal. Ex: escolaridade NÃO é nominal, é ordinal."
+  },
+  {
+    "id": "estatistica_4",
+    "status": "REVISADO",
+    "pergunta": "O que é variável qualitativa ordinal?",
+    "resposta": "Variável qualitativa ordinal é aquela cujas categorias possuem uma ordem natural ou hierárquica. Exemplos: escolaridade (fundamental, médio, superior), classe social (A, B, C, D), estágio de doença (leve, moderado, grave), satisfação (ruim, regular, bom, ótimo).",
+    "dica": "CESPE: se a variável tem hierarquia/ordem, é ORDINAL, não nominal. Cuidado: faixa etária (criança, adolescente, adulto, idoso) é ordinal, pois há ordem implícita."
+  },
+  {
+    "id": "estatistica_5",
+    "status": "REVISADO",
+    "pergunta": "O que é variável quantitativa discreta?",
+    "resposta": "Variável quantitativa discreta é aquela que assume valores inteiros, resultantes de contagem. Exemplos: número de filhos, número de carros em uma residência, quantidade de alunos em uma turma, número de ocorrências policiais.",
+    "dica": "CESPE: discreta = valores INTEIROS e CONTÁVEIS. Contínua = valores em INTERVALO REAL. Pergunta clássica: Número de pessoas em uma fila é variável... -> discreta. Peso das pessoas -> contínua."
+  },
+  {
+    "id": "estatistica_6",
+    "status": "REVISADO",
+    "pergunta": "O que é variável quantitativa contínua?",
+    "resposta": "Variável quantitativa contínua é aquela que assume valores em um intervalo real, resultantes de medição. Exemplos: altura (1,75 m), peso (72,3 kg), temperatura (36,5 °C), tempo de reação (0,45 s), velocidade (120,5 km/h).",
+    "dica": "CESPE: contínua = valores DECIMAIS possíveis, resultantes de MEDIÇÃO. Se a questão permite qualquer valor em um intervalo, é contínua. Ex: tempo gasto no percurso é contínuo (pode ser 15,3 min)."
+  },
+  {
+    "id": "estatistica_7",
+    "status": "REVISADO",
+    "pergunta": "O que é tabela de frequência?",
+    "resposta": "Tabela de frequência é uma ferramenta que organiza dados em classes ou categorias, apresentando a frequência absoluta (contagem), frequência relativa (percentual/proporção), frequência acumulada (soma progressiva) e frequência relativa acumulada de cada valor ou classe.",
+    "dica": "CESPE cobra: frequência relativa = frequência absoluta / total. Frequência acumulada = soma das frequências das classes anteriores + classe atual. Atenção: frequência relativa acumulada da última classe é sempre 100% (ou 1)."
+  },
+  {
+    "id": "estatistica_8",
+    "status": "REVISADO",
+    "pergunta": "O que é frequência absoluta?",
+    "resposta": "Frequência absoluta (fi) é o número de vezes que um determinado valor ou categoria aparece no conjunto de dados. É a contagem simples das ocorrências. A soma de todas as frequências absolutas é igual ao tamanho da amostra (n).",
+    "dica": "CESPE: frequência absoluta total = n (tamanho da amostra). Ex: em uma pesquisa com 100 pessoas, 30 preferem café -> frequência absoluta = 30. Não confundir com frequência relativa (30/100 = 30%)."
+  },
+  {
+    "id": "estatistica_9",
+    "status": "REVISADO",
+    "pergunta": "O que é frequência relativa?",
+    "resposta": "Frequência relativa (fr) é a proporção ou percentual que cada valor ou categoria representa em relação ao total de dados. Calcula-se dividindo a frequência absoluta pelo total de observações: fr = fi / n. Pode ser expressa em decimal (0 a 1) ou percentual (0% a 100%).",
+    "dica": "CESPE: a soma de TODAS as frequências relativas é 1 (ou 100%). A frequência relativa acumulada da ÚLTIMA classe é sempre 1 (ou 100%). Cuidado para não confundir frequência relativa com frequência absoluta."
+  },
+  {
+    "id": "estatistica_10",
+    "status": "REVISADO",
+    "pergunta": "O que é frequência acumulada?",
+    "resposta": "Frequência acumulada (Fac) é a soma das frequências (absolutas ou relativas) de todas as classes até o ponto considerado, incluindo a classe atual. A frequência acumulada da última classe é sempre igual ao tamanho total da amostra (n).",
+    "dica": "CESPE: frequência acumulada é sempre CRESCENTE. A Fac da última classe = n (para absoluta) ou 1/100% (para relativa). Questão clássica: Qual a frequência acumulada da 3ª classe? -> Soma das frequências das classes 1, 2 e 3."
+  },
+  {
+    "id": "estatistica_13",
+    "status": "REVISADO",
+    "pergunta": "O que é moda?",
+    "resposta": "Moda (Mo) é o valor ou categoria que aparece com maior frequência no conjunto de dados. A distribuição pode ser: unimodal (uma moda), bimodal (duas modas), multimodal (três ou mais modas) ou amodal (nenhuma moda, todos os valores com mesma frequência). A moda é a única medida de posição que pode ser usada para variáveis qualitativas nominais.",
+    "dica": "CESPE: moda é a única medida de posição que se aplica a variáveis QUALITATIVAS. Se a questão disser distribuição bimodal, significa que há DOIS valores com maior frequência. Não confundir: moda em dados agrupados = ponto médio da classe de maior frequência (classe modal)."
+  },
+  {
+    "id": "estatistica_17",
+    "status": "REVISADO",
+    "pergunta": "O que é coeficiente de variação (CV)?",
+    "resposta": "Coeficiente de variação (CV) é uma medida relativa de dispersão calculada pela fórmula: CV = (desvio padrão / média) × 100 (em percentual). É adimensional, permitindo comparar a variabilidade de conjuntos de dados com unidades ou médias diferentes.",
+    "dica": "CESPE: CV é útil quando as médias são muito diferentes ou as unidades são distintas. Ex: comparar dispersão de peso (kg) e altura (m). CV alto (> 30% a 50%) indica alta dispersão relativa. CV = 0 significa dados homogêneos (sem dispersão)."
+  },
+  {
+    "id": "estatistica_18",
+    "status": "REVISADO",
+    "pergunta": "O que é amplitude total?",
+    "resposta": "Amplitude total (A ou R) é a diferença entre o maior e o menor valor do conjunto de dados: A = Xmáx - Xmín. É a medida de dispersão mais simples de calcular, mas muito sensível a outliers, pois considera apenas os valores extremos, ignorando a distribuição interna dos dados.",
+    "dica": "CESPE: amplitude total NÃO é resistente a outliers (diferente do IIQ). É facilmente influenciada por um único valor extremo. Se a questão pedir uma medida de dispersão ROBUSTA, NÃO escolha amplitude total."
+  },
+  {
+    "id": "estatistica_19",
+    "status": "REVISADO",
+    "pergunta": "O que é quartil?",
+    "resposta": "Quartil é um valor que divide o conjunto de dados ordenados em 4 partes iguais. Q1 (primeiro quartil) corresponde a 25% dos dados, Q2 (segundo quartil) corresponde a 50% (mediana) e Q3 (terceiro quartil) corresponde a 75% dos dados. O intervalo interquartil (IIQ) é Q3 - Q1.",
+    "dica": "CESPE: Q2 = MEDIANA = 50º percentil. Q1 = 25º percentil. Q3 = 75º percentil. O IIQ (Q3 - Q1) contém os 50% centrais dos dados e é resistente a outliers. Método do boxplot: outlier é valor < Q1 - 1,5×IIQ ou > Q3 + 1,5×IIQ."
+  },
+  {
+    "id": "estatistica_21",
+    "status": "REVISADO",
+    "pergunta": "O que é outlier (valor discrepante)?",
+    "resposta": "Outlier (ou valor discrepante) é uma observação que se distancia significativamente das demais na distribuição. Pode ser identificado por dois métodos principais: (1) critério do IIQ: valor < Q1 - 1,5×IIQ ou > Q3 + 1,5×IIQ; (2) critério do escore Z: |Z| > 3 (valores além de 3 desvios padrão da média).",
+    "dica": "CESPE: outliers podem indicar erros de medição, valores atípicos genuínos ou problemas na coleta. O método do IIQ é mais robusto (usa mediana e quartis), enquanto o escore Z é influenciado por outliers (já que usa média e desvio padrão, que são sensíveis a extremos)."
+  },
+  {
+    "id": "estatistica_23",
+    "status": "REVISADO",
+    "pergunta": "O que é o gráfico de setores (pizza)?",
+    "resposta": "Gráfico de setores, também chamado de gráfico de pizza, é um gráfico circular dividido em setores (fatias) cujos ângulos são proporcionais às frequências ou percentuais de cada categoria. É ideal para variáveis qualitativas nominais, especialmente quando se deseja mostrar a proporção de cada parte em relação ao todo.",
+    "dica": "CESPE: gráfico de pizza é INADEQUADO para muitos dados (mais de 5-6 categorias, fica poluído). Não é recomendado para comparar diferenças pequenas entre categorias. A soma dos percentuais deve ser 100%. Cada setor = (frequência relativa) × 360°."
+  },
+  {
+    "id": "estatistica_24",
+    "status": "REVISADO",
+    "pergunta": "O que é assimetria em estatística?",
+    "resposta": "Assimetria (skewness) é uma medida do grau de distorção da distribuição em relação à curva simétrica. Pode ser: positiva (cauda à direita, média > mediana > moda), negativa (cauda à esquerda, média < mediana < moda) ou nula (distribuição simétrica, média = mediana = moda).",
+    "dica": "CESPE: assimetria POSITIVA = cauda à DIREITA (valores altos). Assimetria NEGATIVA = cauda à ESQUERDA (valores baixos). Coeficiente de assimetria de Pearson: As = 3(média - mediana) / desvio padrão. Se As = 0 -> simétrica. Se As > 0 -> positiva. Se As < 0 -> negativa."
+  },
+  {
+    "id": "estatistica_26",
+    "status": "REVISADO",
+    "pergunta": "O que é probabilidade e quais são seus axiomas?",
+    "resposta": "Probabilidade é uma função P que associa a cada evento A um número entre 0 e 1, medindo a chance de ocorrência. Os três axiomas de Kolmogorov são: (1) P(A) ≥ 0 para todo evento A; (2) P(Ω) = 1, onde Ω é o espaço amostral; (3) Para eventos mutuamente exclusivos (A ∩ B = ∅), P(A ∪ B) = P(A) + P(B).",
+    "dica": "CESPE: consequências dos axiomas: P(∅) = 0; P(A) + P(Ac) = 1; P(A ∪ B) = P(A) + P(B) - P(A ∩ B) para eventos NÃO exclusivos. Atenção: a soma das probabilidades de todos os eventos elementares é 1 (decorre do axioma 2)."
+  },
+  {
+    "id": "estatistica_27",
+    "status": "REVISADO",
+    "pergunta": "O que é espaço amostral?",
+    "resposta": "Espaço amostral (Ω) é o conjunto de todos os resultados possíveis de um experimento aleatório. Cada resultado individual é chamado de ponto amostral. O espaço amostral pode ser finito (ex: faces de um dado), infinito enumerável (ex: número de tentativas até o primeiro sucesso) ou infinito não enumerável (ex: intervalo de tempo).",
+    "dica": "CESPE: a probabilidade do espaço amostral é sempre 1: P(Ω) = 1. Evento é um subconjunto do espaço amostral. Se o espaço amostral tem n elementos igualmente prováveis, P(A) = |A| / |Ω| (definição clássica de probabilidade)."
+  },
+  {
+    "id": "estatistica_28",
+    "status": "REVISADO",
+    "pergunta": "O que são eventos mutuamente exclusivos?",
+    "resposta": "Eventos mutuamente exclusivos (ou disjuntos) são aqueles que não podem ocorrer simultaneamente, ou seja, a intersecção entre eles é vazia: A ∩ B = ∅. Consequentemente, P(A ∩ B) = 0 e P(A ∪ B) = P(A) + P(B) (regra da soma para eventos exclusivos).",
+    "dica": "CESPE: MUTUAMENTE EXCLUSIVOS ≠ INDEPENDENTES. Eventos exclusivos NUNCA são independentes (exceto se P(A) ou P(B) = 0). Se A e B são exclusivos e P(A) > 0 e P(B) > 0, então P(A|B) = 0, logo P(A|B) ≠ P(A), violando a definição de independência."
+  },
+  {
+    "id": "estatistica_31",
+    "status": "REVISADO",
+    "pergunta": "O que é o Teorema de Bayes?",
+    "resposta": "O Teorema de Bayes permite calcular a probabilidade condicional P(A|B) a partir da probabilidade inversa P(B|A): P(A|B) = P(B|A) × P(A) / P(B). É usado para revisar ou atualizar probabilidades quando se obtém novas informações (evidências).",
+    "dica": "CESPE: Teorema de Bayes = probabilidade reversa ou atualização de crenças. O denominador P(B) é a probabilidade total de B (soma das probabilidades de todos os caminhos que levam a B). Decore: P(A|B) = [P(B|A) × P(A)] / P(B). Exemplo clássico: testes de doenças e falsos positivos."
+  },
+  {
+    "id": "estatistica_32",
+    "status": "REVISADO",
+    "pergunta": "O que é distribuição binomial?",
+    "resposta": "A distribuição binomial modela experimentos com n tentativas independentes e idênticas, cada uma com dois resultados possíveis (sucesso/fracasso) e probabilidade p de sucesso constante. A função de probabilidade é: P(X = k) = C(n,k) × p^k × (1-p)^(n-k). Média = np. Variância = np(1-p).",
+    "dica": "CESPE: pressupostos da binomial: (1) n fixo; (2) independentes; (3) dois resultados; (4) p constante. Desvio padrão = √(np(1-p)). Se n é grande e p próximo de 0,5, a binomial se aproxima da normal. Cuidado: C(n,k) = n! / [k!(n-k)!]."
+  },
+  {
+    "id": "estatistica_34",
+    "status": "REVISADO",
+    "pergunta": "O que é a regra empírica (68-95-99,7) da distribuição normal?",
+    "resposta": "A regra empírica estabelece que na distribuição normal: aproximadamente 68% dos dados estão a 1 desvio padrão da média (μ ± 1σ), 95% a 2 desvios (μ ± 2σ) e 99,7% a 3 desvios (μ ± 3σ) da média.",
+    "dica": "CESPE: essa regra vale APENAS para a distribuição NORMAL. Para qualquer distribuição (sem suposição de normalidade), vale o Teorema de Chebyshev: pelo menos 1 - 1/k² dos dados estão a k desvios padrão da média. Ex: k=2 -> 1 - 1/4 = 75% dos dados em μ ± 2σ (mínimo, para qualquer distribuição)."
+  },
+  {
+    "id": "estatistica_35",
+    "status": "REVISADO",
+    "pergunta": "O que é padronização (escore Z)?",
+    "resposta": "Escore Z (ou padronização) é a transformação Z = (X - μ) / σ, que converte um valor X de qualquer distribuição normal em um valor na distribuição normal padrão (média 0, desvio padrão 1). Permite comparar valores de diferentes distribuições e calcular probabilidades usando a tabela Z.",
+    "dica": "CESPE: Z = (X - μ) / σ. O escore Z indica quantos desvios padrão o valor X está acima (Z > 0) ou abaixo (Z < 0) da média. Z = 0 significa valor igual à média. Quanto maior |Z|, mais extremo é o valor. |Z| > 3 geralmente indica outlier."
+  },
+  {
+    "id": "estatistica_36",
+    "status": "REVISADO",
+    "pergunta": "O que é amostragem aleatória simples (AAS)?",
+    "resposta": "Amostragem aleatória simples (AAS) é a técnica em que todos os elementos da população têm igual probabilidade de serem selecionados. Pode ser realizada com reposição (um elemento pode ser sorteado mais de uma vez) ou sem reposição (cada elemento é sorteado uma única vez). É a técnica mais básica e serve como referência para as demais.",
+    "dica": "CESPE: AAS exige que a população seja homogênea ou que não haja subgrupos relevantes. Na AAS com reposição, as extrações são INDEPENDENTES. Na AAS sem reposição, são DEPENDENTES (mas para população grande, a diferença é desprezível). Vantagem: simplicidade. Desvantagem: requer lista completa da população."
+  },
+  {
+    "id": "estatistica_37",
+    "status": "REVISADO",
+    "pergunta": "O que é amostragem estratificada?",
+    "resposta": "Amostragem estratificada divide a população em subgrupos homogêneos chamados estratos (com base em características relevantes), e seleciona amostras independentes de cada estrato. Pode ser proporcional (tamanho da amostra proporcional ao tamanho do estrato) ou uniforme (mesmo número de elementos por estrato).",
+    "dica": "CESPE: ESTRATIFICADA = estratos HOMOGÊNEOS internamente (baixa variabilidade intra-estrato). Diferente de CONGLOMERADOS, que são HETEROGÊNEOS internamente. Objetivo da estratificada: reduzir a variância amostral. Ex: por faixa de renda, por região, por gênero."
+  },
+  {
+    "id": "estatistica_38",
+    "status": "REVISADO",
+    "pergunta": "O que é amostragem sistemática?",
+    "resposta": "Amostragem sistemática seleciona elementos da população seguindo um intervalo fixo de seleção k = N/n (onde N é o tamanho da população e n o tamanho da amostra). O primeiro elemento é sorteado aleatoriamente entre 1 e k, e a partir dele, seleciona-se a cada k elementos. Ex: k = 10, sorteia o 7º, depois 17º, 27º...",
+    "dica": "CESPE: amostragem sistemática é prática e de fácil execução, mas pode introduzir viés se houver periodicidade oculta na população (ex: amostrar a cada 7 dias pode pegar sempre o mesmo dia da semana). Vantagem: não exige lista completa numerada, apenas ordem."
+  },
+  {
+    "id": "estatistica_39",
+    "status": "REVISADO",
+    "pergunta": "O que é amostragem por conglomerados?",
+    "resposta": "Amostragem por conglomerados divide a população em grupos heterogêneos chamados conglomerados (clusters), sorteia aleatoriamente alguns desses conglomerados e analisa todos os elementos (ou uma subamostra) dos conglomerados sorteados. Difere da estratificada: nos conglomerados, a diversidade está DENTRO de cada grupo (heterogêneos internamente), enquanto nos estratos a homogeneidade está dentro e a diversidade entre grupos.",
+    "dica": "CESPE: CONGLOMERADOS = heterogêneos internamente (cada grupo reflete a diversidade da população). ESTRATIFICADA = homogêneos internamente. Conglomerados é útil quando não há lista completa da população, mas é possível listar grupos. Ex: sortear escolas e entrevistar todos os alunos."
+  },
+  {
+    "id": "estatistica_40",
+    "status": "REVISADO",
+    "pergunta": "O que é tamanho amostral e como é determinado?",
+    "resposta": "Tamanho amostral (n) é o número de elementos selecionados da população para compor a amostra. Depende de três fatores principais: (1) nível de confiança desejado (quanto maior, maior n); (2) margem de erro aceitável (quanto menor, maior n); (3) variabilidade populacional (quanto maior a variância, maior n).",
+    "dica": "CESPE: n → ∞ reduz a MARGEM DE ERRO, mas NÃO elimina o VIÉS amostral. Quanto MAIOR a variabilidade populacional, MAIOR o tamanho amostral necessário. Quanto MENOR a margem de erro, MAIOR n."
+  },
+  {
+    "id": "estatistica_41",
+    "status": "REVISADO",
+    "pergunta": "O que é nível de confiança em amostragem?",
+    "resposta": "Nível de confiança é a probabilidade (expressa em percentual) de que o intervalo de confiança construído contenha o verdadeiro parâmetro populacional. É representado por (1 - α) × 100%, onde α é o nível de significância. Os níveis mais comuns são 90% (Z = 1,645), 95% (Z = 1,96) e 99% (Z = 2,576).",
+    "dica": "CESPE: nível de confiança de 95% significa: se repetíssemos o experimento muitas vezes, em 95% dos casos o intervalo conteria o parâmetro. NÃO significa 95% de chance de o parâmetro estar no intervalo (interpretação bayesiana incorreta). O valor crítico Z aumenta com o nível de confiança."
+  }
+]

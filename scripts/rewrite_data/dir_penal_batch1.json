@@ -1,0 +1,355 @@
+{
+  "cards": [
+    {
+      "id": "dir_penal_0",
+      "pergunta": "Quais são os princípios básicos do Direito Penal?",
+      "resposta": "Legalidade, anterioridade, culpabilidade, proporcionalidade, humanidade, lesividade, intervenção mínima e fragmentariedade.",
+      "dica": "Legalidade (art. 1º CP), anterioridade, culpabilidade, proporcionalidade, humanidade, lesividade, fragmentariedade. CESPE: legalidade = reserva legal + anterioridade.",
+      "topico": "Princípios básicos",
+      "codigo_topico": "1",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_7",
+      "pergunta": "O que é a lei penal excepcional?",
+      "resposta": "Editada para situação anormal (guerra, calamidade); também ultraativa.",
+      "dica": "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas.",
+      "topico": "Lei penal excepcional, especial e temporária",
+      "codigo_topico": "3.3",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_8",
+      "topico": "Tempo e lugar do crime",
+      "pergunta": "Qual a teoria do tempo do crime no omissivo?",
+      "resposta": "Teoria da atividade (art. 4º CP): momento em que deveria agir.",
+      "dica": "Art. 4º CP.",
+      "codigo_topico": "3.2",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_9",
+      "topico": "Tempo e lugar do crime",
+      "pergunta": "No crime à distância, qual o lugar do crime?",
+      "resposta": "Teoria da ubiquidade (art. 6º CP): conduta OU resultado.",
+      "dica": "Art. 6º CP. Crime plurinacional.",
+      "codigo_topico": "3.2",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_10",
+      "topico": "Tempo e lugar do crime",
+      "pergunta": "Imputabilidade é aferida em que momento?",
+      "resposta": "No momento da ação/omissão (teoria da atividade, art. 4º CP).",
+      "dica": "Pegadinha: menor aos 17 = ECA, não CP.",
+      "codigo_topico": "3.2",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_11",
+      "topico": "Tempo e lugar do crime",
+      "pergunta": "Quando se considera praticado o crime permanente?",
+      "resposta": "Durante todo o período de permanência.",
+      "dica": "Súmula 711 STF. Flagrante permanente.",
+      "codigo_topico": "3.2",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_12",
+      "topico": "Tempo e lugar do crime",
+      "pergunta": "Crime continuado: como aplicar lei no tempo?",
+      "resposta": "Se lei mais grave entra na continuidade, aplica-se (Súmula 711 STF).",
+      "dica": "Súmula 711 STF.",
+      "codigo_topico": "3.2",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_13",
+      "topico": "Tempo e lugar do crime",
+      "pergunta": "Qual o lugar do crime na internet?",
+      "resposta": "Teoria da ubiquidade (art. 6º CP).",
+      "dica": "Art. 6º CP.",
+      "codigo_topico": "3.2",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_14",
+      "topico": "Tempo e lugar do crime",
+      "pergunta": "Quais teorias do tempo do crime?",
+      "resposta": "Atividade (CP adota), resultado, mista.",
+      "dica": "Art. 4º CP = teoria da atividade.",
+      "codigo_topico": "3.2",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_15",
+      "topico": "Tempo e lugar do crime",
+      "pergunta": "Qual teoria do lugar do crime no CP?",
+      "resposta": "Ubiquidade (art. 6º CP): conduta OU resultado.",
+      "dica": "Art. 6º CP.",
+      "codigo_topico": "3.2",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_17",
+      "topico": "Lei penal excepcional, especial e temporária",
+      "pergunta": "Diferença: lei excepcional x temporária?",
+      "resposta": "Excepcional: situações anormais, sem prazo. Temporária: prazo fixo.",
+      "dica": "Mnemônico: Exceção x TEMPO.",
+      "codigo_topico": "3.3",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_18",
+      "topico": "Lei penal excepcional, especial e temporária",
+      "pergunta": "O que é lei penal especial?",
+      "resposta": "Regula matéria específica (ex: Lei de Drogas).",
+      "dica": "Lex specialis derogat generali.",
+      "codigo_topico": "3.3",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_expand_19",
+      "topico": "Lei penal excepcional, especial e temporária",
+      "pergunta": "Lei temporária benéfica revogada por gravosa: qual vale?",
+      "resposta": "A temporária benéfica, por ultra-atividade (art. 3º CP).",
+      "dica": "Ultra-atividade ≠ retroatividade.",
+      "codigo_topico": "3.3",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_20",
+      "topico": "Lei penal excepcional, especial e temporária",
+      "pergunta": "Lei excepcional pode beneficiar réu após cessada?",
+      "resposta": "Sim, se crime na vigência (ultra-atividade).",
+      "dica": "Art. 3º CP.",
+      "codigo_topico": "3.3",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_21",
+      "topico": "Lei penal excepcional, especial e temporária",
+      "pergunta": "Fundamento constitucional da ultra-atividade?",
+      "resposta": "Art. 3º CP + segurança jurídica.",
+      "dica": "Art. 3º CP.",
+      "codigo_topico": "3.3",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_22",
+      "topico": "Lei penal excepcional, especial e temporária",
+      "pergunta": "Por que lei excepcional é ultra-ativa?",
+      "resposta": "Criada para situações anormais. Perderia eficácia se não fosse.",
+      "dica": "Art. 3º CP.",
+      "codigo_topico": "3.3",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_23",
+      "topico": "Territorialidade e extraterritorialidade da lei penal",
+      "pergunta": "CP adota territorialidade absoluta?",
+      "resposta": "Não. Temperada (art. 5º com exceções art. 7º).",
+      "dica": "CEBRASPE: absoluta = FALSO.",
+      "codigo_topico": "3.4",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_24",
+      "topico": "Territorialidade e extraterritorialidade da lei penal",
+      "pergunta": "Crimes com extraterritorialidade incondicionada?",
+      "resposta": "Vida do Presidente, patrimônio União, adm. pública, genocídio, tratado.",
+      "dica": "Art. 7º, I CP. Incondicionada = sem requisitos.",
+      "codigo_topico": "3.4",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_25",
+      "topico": "Territorialidade e extraterritorialidade da lei penal",
+      "pergunta": "Condições da extraterritorialidade condicionada?",
+      "resposta": "Agente no BR, dupla incriminação, crime extraditável, não julgado.",
+      "dica": "Art. 7º, II CP.",
+      "codigo_topico": "3.4",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_26",
+      "topico": "Territorialidade e extraterritorialidade da lei penal",
+      "pergunta": "Pena cumprida no exterior é computada?",
+      "resposta": "Sim. Atenua ou é computada (art. 8º CP).",
+      "dica": "Detração penal internacional.",
+      "codigo_topico": "3.4",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_27",
+      "topico": "Territorialidade e extraterritorialidade da lei penal",
+      "pergunta": "Navios como extensão do território?",
+      "resposta": "Públicos BR: sempre. Privados BR: em alto-mar (art. 5º, §§1º-2º).",
+      "dica": "Navio público = sempre BR. Privado em alto-mar = BR.",
+      "codigo_topico": "3.4",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_28",
+      "topico": "Territorialidade e extraterritorialidade da lei penal",
+      "pergunta": "O que é justiça universal?",
+      "resposta": "Brasil reprime crimes contra humanidade onde ocorrerem (art. 7º, I, d).",
+      "dica": "Genocídio = incondicionada.",
+      "codigo_topico": "3.4",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_29",
+      "topico": "Territorialidade e extraterritorialidade da lei penal",
+      "pergunta": "Princípio da representação (art. 7º, III CP)?",
+      "resposta": "Crime de brasileiro no exterior, se crime no país do fato.",
+      "dica": "Subsidiariedade.",
+      "codigo_topico": "3.4",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_35",
+      "topico": "Contagem de prazo",
+      "pergunta": "Prazo para progressão de regime?",
+      "resposta": "Dias corridos (art. 10 CP). Fração da pena (ex: 1/6).",
+      "dica": "Súmula 716 STF.",
+      "codigo_topico": "3.5",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_36",
+      "topico": "Contagem de prazo",
+      "pergunta": "Prazo do livramento condicional?",
+      "resposta": "Dias corridos (art. 10 CP). 1/3 (não reincidente) ou 1/2 (reincidente).",
+      "dica": "Art. 83 CP.",
+      "codigo_topico": "3.5",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_37",
+      "topico": "Contagem de prazo",
+      "pergunta": "Prazo da medida de segurança?",
+      "resposta": "Mínimo 1-3 anos. Dias corridos (art. 10 CP). Cessa por laudo.",
+      "dica": "Art. 97 CP.",
+      "codigo_topico": "3.5",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_38",
+      "topico": "Contagem de prazo",
+      "pergunta": "Prazo penal conta dias úteis?",
+      "resposta": "Não. Dias corridos (art. 10 CP: calendário comum).",
+      "dica": "Só direito processual civil conta dias úteis.",
+      "codigo_topico": "3.5",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_40",
+      "topico": "Irretroatividade da lei penal",
+      "pergunta": "Lei gravosa alcança fatos em execução?",
+      "resposta": "Não. Irretroatividade absoluta (art. 5º, XL CF/88).",
+      "dica": "Não retroage mesmo em execução.",
+      "codigo_topico": "3.6",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_41",
+      "topico": "Irretroatividade da lei penal",
+      "pergunta": "Lei processual penal retroage?",
+      "resposta": "Sim. Aplica-se imediatamente (art. 2º CPP).",
+      "dica": "Lei processual = imediata. Material = irretroativa.",
+      "codigo_topico": "3.6",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_42",
+      "topico": "Irretroatividade da lei penal",
+      "pergunta": "Lei que piora regime de pena retroage?",
+      "resposta": "Não. É lei material gravosa (art. 5º, XL CF/88).",
+      "dica": "Súmula 718 STF.",
+      "codigo_topico": "3.6",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_43",
+      "topico": "Irretroatividade da lei penal",
+      "pergunta": "Lei que aumenta prazo prescricional retroage?",
+      "resposta": "Não, se prejudicar. Redução de prazo é benéfica e retroage.",
+      "dica": "Prescrição é matéria material.",
+      "codigo_topico": "3.6",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_44",
+      "topico": "Irretroatividade da lei penal",
+      "pergunta": "Lei que altera progressão para pior retroage?",
+      "resposta": "Não. É lei material gravosa.",
+      "dica": "Progressão regida pela lei do fato.",
+      "codigo_topico": "3.6",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_45",
+      "topico": "Crimes contra a pessoa",
+      "pergunta": "O que é homicídio qualificado-privilegiado?",
+      "resposta": "Causa de diminuição + qualificadora. Admissível se compatíveis.",
+      "dica": "Súmulas 718, 719 STF.",
+      "codigo_topico": "4",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_46",
+      "topico": "Crimes contra a pessoa",
+      "pergunta": "Diferença homicídio culposo x doloso eventual?",
+      "resposta": "Doloso eventual: assume risco. Culposo: não quer nem assume.",
+      "dica": "Art. 121 §3º (1-3a) x caput (6-20a). Júri.",
+      "codigo_topico": "4",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_48",
+      "topico": "Crimes contra a pessoa",
+      "pergunta": "Lesão grave x gravíssima?",
+      "resposta": "Grave: +30d, perigo, debilidade, parto. Gravíssima: incurável, perda, aborto, deformidade.",
+      "dica": "Mnemônico: Grave = 30d. Gravíssima = incurável.",
+      "codigo_topico": "4",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_50",
+      "topico": "Crimes contra a pessoa",
+      "pergunta": "O que é rixa (art. 137 CP)?",
+      "resposta": "Participar de rixa. Detenção 15d a 2m. Se morte/lesão: aumento.",
+      "dica": "Entrar para separar = não é crime.",
+      "codigo_topico": "4",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_expand_51",
+      "topico": "Crimes contra a pessoa",
+      "pergunta": "Crimes contra a honra?",
+      "resposta": "Calúnia (fato criminoso falso), Difamação (reputação), Injúria (dignidade).",
+      "dica": "CAL = Crime. DIfamação = reputação. INJ = ofensa.",
+      "codigo_topico": "4",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_52",
+      "topico": "Crimes contra a pessoa",
+      "pergunta": "Crimes contra a pessoa no CP?",
+      "resposta": "Homicídio, suicídio/automutilação, lesão, periclitação, rixa, honra.",
+      "dica": "Arts. 121-145 CP.",
+      "codigo_topico": "4",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_54",
+      "topico": "Crimes contra a pessoa",
+      "pergunta": "Omissão de socorro (art. 135 CP)?",
+      "resposta": "Deixar de prestar assistência. Detenção 1 a 6m. Crime omissivo próprio.",
+      "dica": "Art. 135 CP.",
+      "codigo_topico": "4",
+      "dificuldade": "media"
+    }
+  ]
+}

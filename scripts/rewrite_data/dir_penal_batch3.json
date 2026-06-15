@@ -1,0 +1,337 @@
+{
+  "cards": [
+    {
+      "id": "dir_penal_expand_101",
+      "topico": "Organizações Criminosas (Lei nº 12.850/2013)",
+      "pergunta": "Técnicas especiais na Lei 12.850/13º",
+      "resposta": "Infiltração, interceptação, acesso dados, ação controlada (arts. 10-17).",
+      "dica": "Investigação.",
+      "codigo_topico": "13",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_102",
+      "topico": "Organizações Criminosas (Lei nº 12.850/2013)",
+      "pergunta": "Obstrução de investigação?",
+      "resposta": "Impedir/embaraçar. Pena 3-8a (art. 2º §1º).",
+      "dica": "Art. 2º §1º.",
+      "codigo_topico": "13",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_103",
+      "topico": "Organizações Criminosas (Lei nº 12.850/2013)",
+      "pergunta": "Associação criminosa x organização?",
+      "resposta": "Associação: 3+, sem estrutura. Organização: 4+, estrutura ordenada.",
+      "dica": "Art. 288 CP (3) x Lei 12.850/13 (4).",
+      "codigo_topico": "13",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_104",
+      "topico": "Organizações Criminosas (Lei nº 12.850/2013)",
+      "pergunta": "O que é ação controlada?",
+      "resposta": "Retardar intervenção para colher provas (art. 8º Lei 12.850/13).",
+      "dica": "Técnica especial.",
+      "codigo_topico": "13",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_expand_105",
+      "topico": "Crimes de Trânsito (Lei nº 9.503/1997)",
+      "pergunta": "Homicídio culposo no trânsito (art. 302 CTB)?",
+      "resposta": "Detenção 2-4a. Se álcool/racha/sem habilitação: 3-6a.",
+      "dica": "Detenção (não reclusão).",
+      "codigo_topico": "14",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_106",
+      "topico": "Crimes de Trânsito (Lei nº 9.503/1997)",
+      "pergunta": "Lesão culposa no trânsito (art. 303 CTB)?",
+      "resposta": "Detenção 6m-2a. Grave: 1-3a. Fuga: +1/3 a 1/2.",
+      "dica": "Art. 303.",
+      "codigo_topico": "14",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_107",
+      "topico": "Crimes de Trânsito (Lei nº 9.503/1997)",
+      "pergunta": "Embriaguez ao volante é perigo abstrato?",
+      "resposta": "Sim (STF). Basta álcool >=0,3 mg/L. Detenção 6m-3a.",
+      "dica": "Prova por qualquer meio (art. 306 §2º).",
+      "codigo_topico": "14",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_108",
+      "topico": "Crimes de Trânsito (Lei nº 9.503/1997)",
+      "pergunta": "Participação em racha (art. 308 CTB)?",
+      "resposta": "Detenção 6m-3a. Se morte = dolo eventual (júri).",
+      "dica": "Art. 308.",
+      "codigo_topico": "14",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_109",
+      "topico": "Crimes de Trânsito (Lei nº 9.503/1997)",
+      "pergunta": "Homicídio doloso no trânsito é do júri?",
+      "resposta": "Sim, se dolo eventual. Júri julga crimes dolosos contra a vida.",
+      "dica": "Art. 5º XXXVIII CF/88.",
+      "codigo_topico": "14",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_110",
+      "topico": "Crimes de Trânsito (Lei nº 9.503/1997)",
+      "pergunta": "Fuga do local do acidente (art. 305 CTB)?",
+      "resposta": "Detenção 6m-1a.",
+      "dica": "Art. 305.",
+      "codigo_topico": "14",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_111",
+      "topico": "Crimes de Trânsito (Lei nº 9.503/1997)",
+      "pergunta": "Art. 306 CTB exige estado de embriaguez?",
+      "resposta": "Não. Basta limite objetivo (0,3 mg/L).",
+      "dica": "Sintomas não são exigidos.",
+      "codigo_topico": "14",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_112",
+      "topico": "Violência doméstica e familiar contra a mulher (Lei nº 11.340/2006)",
+      "pergunta": "Lei Maria da Penha se aplica a mulheres trans?",
+      "resposta": "Sim (STJ). Protege independente de identidade de gênero.",
+      "dica": "NÃO se aplica a homem.",
+      "codigo_topico": "15",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_113",
+      "topico": "Violência doméstica e familiar contra a mulher (Lei nº 11.340/2006)",
+      "pergunta": "MP prevê prisão preventiva?",
+      "resposta": "Sim (art. 20). Independente da pena.",
+      "dica": "Art. 20.",
+      "codigo_topico": "15",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_114",
+      "topico": "Violência doméstica e familiar contra a mulher (Lei nº 11.340/2006)",
+      "pergunta": "5 formas de violência doméstica?",
+      "resposta": "Física, Psicológica, Sexual, Patrimonial, Moral (art. 7º).",
+      "dica": "FPSPM.",
+      "codigo_topico": "15",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_115",
+      "topico": "Violência doméstica e familiar contra a mulher (Lei nº 11.340/2006)",
+      "pergunta": "MP se aplica a relações homoafetivas?",
+      "resposta": "Sim (STJ). Independe de orientação sexual.",
+      "dica": "REsp 1.977.124.",
+      "codigo_topico": "15",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_116",
+      "topico": "Violência doméstica e familiar contra a mulher (Lei nº 11.340/2006)",
+      "pergunta": "Medidas protetivas na MP?",
+      "resposta": "Afastamento, proibição contato, suspensão porte, prisão (arts. 22-24).",
+      "dica": "Aplicáveis isoladamente.",
+      "codigo_topico": "15",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_117",
+      "topico": "Violência doméstica e familiar contra a mulher (Lei nº 11.340/2006)",
+      "pergunta": "Violência patrimonial na MP?",
+      "resposta": "Reter, subtrair, destruir objetos, documentos, bens (art. 7º IV).",
+      "dica": "Art. 7º IV.",
+      "codigo_topico": "15",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_118",
+      "topico": "Lei de Drogas (Lei nº 11.343/2006)",
+      "pergunta": "Diferença usuário x traficante?",
+      "resposta": "Usuário (art. 28): penas alternativas. Traficante (art. 33): reclusão 5-15a.",
+      "dica": "Finalidade é o critério (dolo).",
+      "codigo_topico": "16",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_120",
+      "topico": "Lei de Drogas (Lei nº 11.343/2006)",
+      "pergunta": "Traficante tem prisão especial?",
+      "resposta": "Não (art. 33 §5º). Vedado.",
+      "dica": "Vedação expressa.",
+      "codigo_topico": "16",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_121",
+      "topico": "Lei de Drogas (Lei nº 11.343/2006)",
+      "pergunta": "Usuário de drogas é preso?",
+      "resposta": "Não. Penas alternativas apenas (art. 28).",
+      "dica": "Não há prisão para usuário.",
+      "codigo_topico": "16",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_122",
+      "topico": "Lei de Drogas (Lei nº 11.343/2006)",
+      "pergunta": "'Mula' é crime autônomo?",
+      "resposta": "Não. É tráfico (art. 33). Pode ser §4º se requisitos.",
+      "dica": "Transporte para terceiro.",
+      "codigo_topico": "16",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_123",
+      "topico": "Lei de Drogas (Lei nº 11.343/2006)",
+      "pergunta": "Associação para o tráfico (art. 35)?",
+      "resposta": "2+ pessoas associadas. Pena 3-10a. Crime formal.",
+      "dica": "2 pessoas (difere de organização criminosa).",
+      "codigo_topico": "16",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_124",
+      "topico": "Violência doméstica e familiar contra a criança e o adolescente (Lei nº 14.344/2022)",
+      "pergunta": "O que é Lei Henry Borel (14.344/2022)?",
+      "resposta": "Prevenção e repressão à violência doméstica contra criança/adolescente.",
+      "dica": "Prisão preventiva obrigatória se risco.",
+      "codigo_topico": "17",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_expand_125",
+      "topico": "Violência doméstica e familiar contra a criança e o adolescente (Lei nº 14.344/2022)",
+      "pergunta": "Casa da Criança na Lei Henry Borel?",
+      "resposta": "Sim. Centro multidisciplinar (art. 9º).",
+      "dica": "Modelo Casa da Mulher.",
+      "codigo_topico": "17",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_126",
+      "topico": "Violência doméstica e familiar contra a criança e o adolescente (Lei nº 14.344/2022)",
+      "pergunta": "Lei Henry Borel alterou lesão corporal?",
+      "resposta": "Sim. Art. 129 §13 CP: lesão contra criança/adolescente/idoso/deficiente no âmbito doméstico.",
+      "dica": "Art. 129 §13 CP.",
+      "codigo_topico": "17",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_127",
+      "topico": "Violência doméstica e familiar contra a criança e o adolescente (Lei nº 14.344/2022)",
+      "pergunta": "Lei Henry Borel alterou o ECA?",
+      "resposta": "Sim. Medidas protetivas específicas e alterações no ECA.",
+      "dica": "Integra ECA e CP.",
+      "codigo_topico": "17",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_128",
+      "topico": "Violência doméstica e familiar contra a criança e o adolescente (Lei nº 14.344/2022)",
+      "pergunta": "Aplica-se a violência entre irmãos?",
+      "resposta": "Sim. Âmbito doméstico, familiar ou relação de afeto.",
+      "dica": "Âmbito familiar amplo.",
+      "codigo_topico": "17",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_130",
+      "topico": "Crimes Ambientais (Lei nº 9.605/1998)",
+      "pergunta": "Penas para PJ por crime ambiental?",
+      "resposta": "Multa, restritivas (suspensão, proibição, serviços), liquidação forçada (arts. 21-24).",
+      "dica": "Liquidação se criada para crime.",
+      "codigo_topico": "18",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_132",
+      "topico": "Crimes Ambientais (Lei nº 9.605/1998)",
+      "pergunta": "Poluição qualificada pela morte é hedionda?",
+      "resposta": "Sim (pena 4-12a).",
+      "dica": "Lei 9.605/98 + 8.072/90.",
+      "codigo_topico": "18",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_133",
+      "topico": "Crimes Ambientais (Lei nº 9.605/1998)",
+      "pergunta": "Desmatamento (art. 50-A) é crime de perigo?",
+      "resposta": "Sim. Perigo abstrato. Cortar floresta de preservação permanente sem autorização.",
+      "dica": "Art. 50-A.",
+      "codigo_topico": "18",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_134",
+      "topico": "Crimes Ambientais (Lei nº 9.605/1998)",
+      "pergunta": "PJ pode ser liquidada por crime ambiental?",
+      "resposta": "Sim, se criada para facilitar o crime (art. 24).",
+      "dica": "Pena extrema.",
+      "codigo_topico": "18",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_135",
+      "topico": "Estatuto do Desarmamento (Lei nº 10.826/2003)",
+      "pergunta": "Porte ilegal de arma (art. 14 Lei 10.826/03)?",
+      "resposta": "Portar/utilizar arma sem autorização. Reclusão 2-4a.",
+      "dica": "Verbo múltiplo.",
+      "codigo_topico": "19",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_137",
+      "topico": "Estatuto do Desarmamento (Lei nº 10.826/2003)",
+      "pergunta": "Disparo de arma (art. 15)?",
+      "resposta": "Lugar habitado/via pública. Reclusão 2-4a (doloso) ou detenção 1-2a (culposo).",
+      "dica": "Admite culposo.",
+      "codigo_topico": "19",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_138",
+      "topico": "Estatuto do Desarmamento (Lei nº 10.826/2003)",
+      "pergunta": "Tráfico internacional de arma (art. 18) é hediondo?",
+      "resposta": "Sim. Reclusão 4-8a. STF equipara a hediondo.",
+      "dica": "Porte/posse NÃO são hediondos.",
+      "codigo_topico": "19",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_139",
+      "topico": "Estatuto do Desarmamento (Lei nº 10.826/2003)",
+      "pergunta": "Omissão de cautela (art. 13)?",
+      "resposta": "Deixar de cuidar arma acessível a menor/deficiente. Detenção 1-6m.",
+      "dica": "Art. 13.",
+      "codigo_topico": "19",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_141",
+      "topico": "Estatuto do Desarmamento (Lei nº 10.826/2003)",
+      "pergunta": "Arma de uso restrito (art. 16)?",
+      "resposta": "Posse/porte: reclusão 4-8a.",
+      "dica": "Maior potencial ofensivo.",
+      "codigo_topico": "19",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_142",
+      "topico": "Estatuto do Desarmamento (Lei nº 10.826/2003)",
+      "pergunta": "Porte ilegal é perigo abstrato?",
+      "resposta": "Sim (STF). Não exige risco concreto.",
+      "dica": "RE 583.623.",
+      "codigo_topico": "19",
+      "dificuldade": "dificil"
+    }
+  ]
+}

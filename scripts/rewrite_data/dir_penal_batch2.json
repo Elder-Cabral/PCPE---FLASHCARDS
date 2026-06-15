@@ -1,0 +1,355 @@
+{
+  "cards": [
+    {
+      "id": "dir_penal_expand_55",
+      "topico": "Crimes contra a dignidade sexual",
+      "pergunta": "O que é importunação sexual (art. 215-A CP)?",
+      "resposta": "Ato libidinoso sem anuência para lascívia. Reclusão 1 a 5a.",
+      "dica": "Lei 13.718/2018. Sem violência/ameaça.",
+      "codigo_topico": "6",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_expand_56",
+      "topico": "Crimes contra a dignidade sexual",
+      "pergunta": "O que é assédio sexual (art. 216-A CP)?",
+      "resposta": "Constranger por hierarquia para obter vantagem sexual. Detenção 1 a 2a.",
+      "dica": "Exige hierarquia. Pena de DETENÇÃO.",
+      "codigo_topico": "6",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_expand_57",
+      "topico": "Crimes contra a dignidade sexual",
+      "pergunta": "Presunção no estupro de vulnerável é relativa",
+      "resposta": "Não. Absoluta (Súmula 593 STJ).",
+      "dica": "Irrelevante consentimento ou experiência.",
+      "codigo_topico": "6",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_58",
+      "topico": "Crimes contra a dignidade sexual",
+      "pergunta": "Aumento no estupro por lesão/morte?",
+      "resposta": "Lesão grave: 1/2. Morte: 2/3.",
+      "dica": "Arts. 213 e 217-A CP.",
+      "codigo_topico": "6",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_59",
+      "topico": "Crimes contra a dignidade sexual",
+      "pergunta": "Registro não autorizado de intimidade (art. 216-B)?",
+      "resposta": "Produzir sem autorização (detenção 6m-1a). Divulgar (reclusão 1-5a).",
+      "dica": "Divulgação = pena maior.",
+      "codigo_topico": "6",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_60",
+      "topico": "Crimes contra a dignidade sexual",
+      "pergunta": "Estupro é hediondo?",
+      "resposta": "Sim. Todas as formas (arts. 213, 217-A) são hediondas.",
+      "dica": "Lei 8.072/90 art. 1º, V.",
+      "codigo_topico": "6",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_62",
+      "topico": "Crimes contra a dignidade sexual",
+      "pergunta": "Estupro de vulnerável (art. 217-A CP)?",
+      "resposta": "Conjunção/ato libidinoso com menor 14a ou vulnerável. Reclusão 8 a 15a.",
+      "dica": "Presunção absoluta (Súmula 593 STJ).",
+      "codigo_topico": "6",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_64",
+      "topico": "Crimes Hediondos (Lei nº 8.072/1990)",
+      "pergunta": "Tráfico privilegiado é hediondo?",
+      "resposta": "Não (STF HC 118.533).",
+      "dica": "Art. 33 §4º Lei 11.343/06.",
+      "codigo_topico": "8",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_65",
+      "topico": "Crimes Hediondos (Lei nº 8.072/1990)",
+      "pergunta": "Progressão em crimes hediondos?",
+      "resposta": "Sim. 40% da pena (50% reincidente) - art. 112 LEP.",
+      "dica": "Lei 13.964/2019.",
+      "codigo_topico": "8",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_66",
+      "topico": "Crimes Hediondos (Lei nº 8.072/1990)",
+      "pergunta": "Crimes hediondos admitem fiança?",
+      "resposta": "Não. Insuscetíveis de fiança, anistia, graça, indulto.",
+      "dica": "CF/88 art. 5º, XLIII.",
+      "codigo_topico": "8",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_67",
+      "topico": "Crimes Hediondos (Lei nº 8.072/1990)",
+      "pergunta": "Latrocínio é hediondo?",
+      "resposta": "Sim. Art. 157 §3º CP.",
+      "dica": "Súmula 610 STF.",
+      "codigo_topico": "8",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_68",
+      "topico": "Crimes Hediondos (Lei nº 8.072/1990)",
+      "pergunta": "Regime inicial nos hediondos?",
+      "resposta": "Fechado (art. 2º §1º Lei 8.072/90).",
+      "dica": "STF: constitucional.",
+      "codigo_topico": "8",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_69",
+      "topico": "Crimes Hediondos (Lei nº 8.072/1990)",
+      "pergunta": "Hediondez por equiparação?",
+      "resposta": "Tráfico, tortura, terrorismo (CF/88 art. 5º, XLIII).",
+      "dica": "Equiparados ≠ listados.",
+      "codigo_topico": "8",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_71",
+      "topico": "Crimes resultantes de Preconceito de Raça ou de Cor (Lei nº 7.716/1989)",
+      "pergunta": "Discriminação por orientação sexual é crime?",
+      "resposta": "Sim (STF ADO 26). Homotransfobia = racismo.",
+      "dica": "Imprescritível e inafiançável.",
+      "codigo_topico": "9",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_expand_72",
+      "topico": "Crimes resultantes de Preconceito de Raça ou de Cor (Lei nº 7.716/1989)",
+      "pergunta": "Racismo é afiançável?",
+      "resposta": "Não. Inafiançável e imprescritível (art. 5º, XLII CF/88).",
+      "dica": "Exceção à prescritibilidade.",
+      "codigo_topico": "9",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_73",
+      "topico": "Crimes resultantes de Preconceito de Raça ou de Cor (Lei nº 7.716/1989)",
+      "pergunta": "Injúria racial x racismo após Lei 14.532/2023º",
+      "resposta": "Injúria: ofensa individual. Racismo: discriminação genérica. Ambas imprescritíveis.",
+      "dica": "Lei 14.532/2023.",
+      "codigo_topico": "9",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_expand_74",
+      "topico": "Crimes resultantes de Preconceito de Raça ou de Cor (Lei nº 7.716/1989)",
+      "pergunta": "Condutas da Lei 7.716/89º",
+      "resposta": "Negar acesso, hospedagem, emprego, transporte, matrícula por discriminação.",
+      "dica": "Arts. 3º-14.",
+      "codigo_topico": "9",
+      "dificuldade": "media"
+    },
+    {
+      "id": "dir_penal_expand_75",
+      "topico": "Crimes resultantes de Preconceito de Raça ou de Cor (Lei nº 7.716/1989)",
+      "pergunta": "Ação penal no racismo?",
+      "resposta": "Pública incondicionada.",
+      "dica": "Não depende de representação.",
+      "codigo_topico": "9",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_expand_76",
+      "topico": "Crimes resultantes de Preconceito de Raça ou de Cor (Lei nº 7.716/1989)",
+      "pergunta": "Injúria racial é ação penal?",
+      "resposta": "Pública incondicionada (Lei 14.532/2023 alterou).",
+      "dica": "Antes era privada.",
+      "codigo_topico": "9",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_expand_78",
+      "topico": "Crimes de Abuso de Autoridade (Lei nº 13.869/2019)",
+      "pergunta": "Penas na Lei de Abuso de Autoridade?",
+      "resposta": "Detenção 6m-2a. Admite restritivas e sursis.",
+      "dica": "Penal de DETENÇÃO.",
+      "codigo_topico": "10",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_79",
+      "topico": "Crimes de Abuso de Autoridade (Lei nº 13.869/2019)",
+      "pergunta": "Inabilitação para cargo na Lei 13.869/19º",
+      "resposta": "Sim. Art. 10: inabilitação para cargo eletivo até 5 anos.",
+      "dica": "Pena restritiva específica.",
+      "codigo_topico": "10",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_80",
+      "topico": "Crimes de Abuso de Autoridade (Lei nº 13.869/2019)",
+      "pergunta": "Aplica-se a qualquer Poder?",
+      "resposta": "Sim. Todos agentes públicos (Executivo, Legislativo, Judiciário, MP, TC).",
+      "dica": "Art. 2º.",
+      "codigo_topico": "10",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_81",
+      "topico": "Crimes de Abuso de Autoridade (Lei nº 13.869/2019)",
+      "pergunta": "Exige resultado naturalístico?",
+      "resposta": "Não. Crime formal. Basta conduta + finalidade.",
+      "dica": "Não exige dano efetivo.",
+      "codigo_topico": "10",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_82",
+      "topico": "Crimes de Abuso de Autoridade (Lei nº 13.869/2019)",
+      "pergunta": "Ação penal na Lei 13.869/19º",
+      "resposta": "Pública condicionada à representação (art. 16).",
+      "dica": "Exceção: MP age de ofício se interesse público.",
+      "codigo_topico": "10",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_85",
+      "topico": "Crimes de Tortura (Lei nº 9.455/1997)",
+      "pergunta": "Tortura é hedionda?",
+      "resposta": "Sim (CF/88 art. 5º XLIII).",
+      "dica": "Inafiançável.",
+      "codigo_topico": "11",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_86",
+      "topico": "Crimes de Tortura (Lei nº 9.455/1997)",
+      "pergunta": "Modalidades de tortura?",
+      "resposta": "Confissão (I,a), Castigo (I,b), Discriminação (I,c).",
+      "dica": "Art. 1º, I.",
+      "codigo_topico": "11",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_87",
+      "topico": "Crimes de Tortura (Lei nº 9.455/1997)",
+      "pergunta": "Ação penal na tortura?",
+      "resposta": "Pública incondicionada.",
+      "dica": "Sem representação.",
+      "codigo_topico": "11",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_88",
+      "topico": "Crimes de Tortura (Lei nº 9.455/1997)",
+      "pergunta": "Majorantes da tortura?",
+      "resposta": "1/6 a 1/3: agente público, criança/gestante/idoso/deficiente, sequestro.",
+      "dica": "Art. 1º §4º.",
+      "codigo_topico": "11",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_89",
+      "topico": "Crimes de Tortura (Lei nº 9.455/1997)",
+      "pergunta": "Tortura admite liberdade provisória?",
+      "resposta": "Não. Inafiançável (CF/88 art. 5º XLIII).",
+      "dica": "Vedado.",
+      "codigo_topico": "11",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_90",
+      "topico": "Estatuto da Criança e do Adolescente (Lei nº 8.069/1990)",
+      "pergunta": "Internação no ECA tem prazo máximo?",
+      "resposta": "3 anos. Reavaliação a cada 6 meses (art. 121 ECA).",
+      "dica": "Art. 121.",
+      "codigo_topico": "12",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_91",
+      "topico": "Estatuto da Criança e do Adolescente (Lei nº 8.069/1990)",
+      "pergunta": "Crimes no ECA?",
+      "resposta": "Vexame, pornografia, corrupção de menor, venda bebida (arts. 228-244-B).",
+      "dica": "Arts. 228-244-B.",
+      "codigo_topico": "12",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_92",
+      "topico": "Estatuto da Criança e do Adolescente (Lei nº 8.069/1990)",
+      "pergunta": "Consentimento menor 14a em crime sexual?",
+      "resposta": "Irrelevante (Súmula 593 STJ).",
+      "dica": "Presunção absoluta.",
+      "codigo_topico": "12",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_93",
+      "topico": "Estatuto da Criança e do Adolescente (Lei nº 8.069/1990)",
+      "pergunta": "Responsabilidade do adolescente?",
+      "resposta": "Inimputável. Ato infracional = medidas socioeducativas.",
+      "dica": "Art. 228 CF/88. Cláusula pétrea.",
+      "codigo_topico": "12",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_94",
+      "topico": "Estatuto da Criança e do Adolescente (Lei nº 8.069/1990)",
+      "pergunta": "O que é remissão no ECA?",
+      "resposta": "Exclusão/suspensão do processo c/ medida socioeducativa (arts. 126-128).",
+      "dica": "Não implica culpa.",
+      "codigo_topico": "12",
+      "dificuldade": "facil"
+    },
+    {
+      "id": "dir_penal_expand_95",
+      "topico": "Estatuto da Criança e do Adolescente (Lei nº 8.069/1990)",
+      "pergunta": "Venda de bebida a menor no ECA?",
+      "resposta": "Crime (art. 243). Detenção 2-4a. Perigo abstrato.",
+      "dica": "Não exige ingestão.",
+      "codigo_topico": "12",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_96",
+      "topico": "Estatuto da Criança e do Adolescente (Lei nº 8.069/1990)",
+      "pergunta": "Medidas socioeducativas?",
+      "resposta": "Advertência, reparação, serviços, liberdade assistida, semiliberdade, internação.",
+      "dica": "Art. 112 ECA.",
+      "codigo_topico": "12",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_97",
+      "topico": "Estatuto da Criança e do Adolescente (Lei nº 8.069/1990)",
+      "pergunta": "Idade da imputabilidade penal?",
+      "resposta": "18 anos (art. 228 CF/88).",
+      "dica": "Cláusula pétrea. Art. 27 CP.",
+      "codigo_topico": "12",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_99",
+      "topico": "Organizações Criminosas (Lei nº 12.850/2013)",
+      "pergunta": "Crime de organização criminosa admite tentativa?",
+      "resposta": "Não. Formal. Consuma-se na associação (art. 2º).",
+      "dica": "Pena 3-8a.",
+      "codigo_topico": "13",
+      "dificuldade": "dificil"
+    },
+    {
+      "id": "dir_penal_expand_100",
+      "topico": "Organizações Criminosas (Lei nº 12.850/2013)",
+      "pergunta": "Benefícios da colaboração premiada?",
+      "resposta": "Perdão, redução até 2/3, substituição, progressão (art. 4º).",
+      "dica": "Redução máxima 2/3.",
+      "codigo_topico": "13",
+      "dificuldade": "dificil"
+    }
+  ]
+}

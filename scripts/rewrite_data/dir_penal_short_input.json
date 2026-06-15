@@ -1,0 +1,1037 @@
+[
+  {
+    "id": "dir_penal_0",
+    "pergunta": "Quais são os princípios básicos do Direito Penal?",
+    "resposta": "Legalidade, anterioridade, culpabilidade, proporcionalidade, humanidade, lesividade, intervenção mínima e fragmentariedade.",
+    "dica": "Legalidade (art. 1º CP), anterioridade, culpabilidade, proporcionalidade, humanidade, lesividade, fragmentariedade. CESPE: legalidade = reserva legal + anterioridade.",
+    "topico": "Princípios básicos",
+    "codigo_topico": "1",
+    "dificuldade": "facil"
+  },
+  {
+    "id": "dir_penal_7",
+    "pergunta": "O que é a lei penal excepcional?",
+    "resposta": "Editada para situação anormal (guerra, calamidade); também ultraativa.",
+    "dica": "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas.",
+    "topico": "Lei penal excepcional, especial e temporária",
+    "codigo_topico": "3.3",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_8",
+    "topico": "Tempo e lugar do crime",
+    "pergunta": "Qual a teoria do tempo do crime no omissivo?",
+    "resposta": "Teoria da atividade (art. 4º CP): momento em que deveria agir.",
+    "dica": "Art. 4º CP.",
+    "codigo_topico": "3.2",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_9",
+    "topico": "Tempo e lugar do crime",
+    "pergunta": "No crime à distância, qual o lugar do crime?",
+    "resposta": "Teoria da ubiquidade (art. 6º CP): conduta OU resultado.",
+    "dica": "Art. 6º CP. Crime plurinacional.",
+    "codigo_topico": "3.2",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_10",
+    "topico": "Tempo e lugar do crime",
+    "pergunta": "Imputabilidade é aferida em que momento?",
+    "resposta": "No momento da ação/omissão (teoria da atividade, art. 4º CP).",
+    "dica": "Pegadinha: menor aos 17 = ECA, não CP.",
+    "codigo_topico": "3.2",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_11",
+    "topico": "Tempo e lugar do crime",
+    "pergunta": "Quando se considera praticado o crime permanente?",
+    "resposta": "Durante todo o período de permanência.",
+    "dica": "Súmula 711 STF. Flagrante permanente.",
+    "codigo_topico": "3.2",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_12",
+    "topico": "Tempo e lugar do crime",
+    "pergunta": "Crime continuado: como aplicar lei no tempo?",
+    "resposta": "Se lei mais grave entra na continuidade, aplica-se (Súmula 711 STF).",
+    "dica": "Súmula 711 STF.",
+    "codigo_topico": "3.2",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_13",
+    "topico": "Tempo e lugar do crime",
+    "pergunta": "Qual o lugar do crime na internet?",
+    "resposta": "Teoria da ubiquidade (art. 6º CP).",
+    "dica": "Art. 6º CP.",
+    "codigo_topico": "3.2",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_14",
+    "topico": "Tempo e lugar do crime",
+    "pergunta": "Quais teorias do tempo do crime?",
+    "resposta": "Atividade (CP adota), resultado, mista.",
+    "dica": "Art. 4º CP = teoria da atividade.",
+    "codigo_topico": "3.2",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_15",
+    "topico": "Tempo e lugar do crime",
+    "pergunta": "Qual teoria do lugar do crime no CP?",
+    "resposta": "Ubiquidade (art. 6º CP): conduta OU resultado.",
+    "dica": "Art. 6º CP.",
+    "codigo_topico": "3.2",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_17",
+    "topico": "Lei penal excepcional, especial e temporária",
+    "pergunta": "Diferença: lei excepcional x temporária?",
+    "resposta": "Excepcional: situações anormais, sem prazo. Temporária: prazo fixo.",
+    "dica": "Mnemônico: Exceção x TEMPO.",
+    "codigo_topico": "3.3",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_18",
+    "topico": "Lei penal excepcional, especial e temporária",
+    "pergunta": "O que é lei penal especial?",
+    "resposta": "Regula matéria específica (ex: Lei de Drogas).",
+    "dica": "Lex specialis derogat generali.",
+    "codigo_topico": "3.3",
+    "dificuldade": "facil"
+  },
+  {
+    "id": "dir_penal_expand_19",
+    "topico": "Lei penal excepcional, especial e temporária",
+    "pergunta": "Lei temporária benéfica revogada por gravosa: qual vale?",
+    "resposta": "A temporária benéfica, por ultra-atividade (art. 3º CP).",
+    "dica": "Ultra-atividade ≠ retroatividade.",
+    "codigo_topico": "3.3",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_20",
+    "topico": "Lei penal excepcional, especial e temporária",
+    "pergunta": "Lei excepcional pode beneficiar réu após cessada?",
+    "resposta": "Sim, se crime na vigência (ultra-atividade).",
+    "dica": "Art. 3º CP.",
+    "codigo_topico": "3.3",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_21",
+    "topico": "Lei penal excepcional, especial e temporária",
+    "pergunta": "Fundamento constitucional da ultra-atividade?",
+    "resposta": "Art. 3º CP + segurança jurídica.",
+    "dica": "Art. 3º CP.",
+    "codigo_topico": "3.3",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_22",
+    "topico": "Lei penal excepcional, especial e temporária",
+    "pergunta": "Por que lei excepcional é ultra-ativa?",
+    "resposta": "Criada para situações anormais. Perderia eficácia se não fosse.",
+    "dica": "Art. 3º CP.",
+    "codigo_topico": "3.3",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_23",
+    "topico": "Territorialidade e extraterritorialidade da lei penal",
+    "pergunta": "CP adota territorialidade absoluta?",
+    "resposta": "Não. Temperada (art. 5º com exceções art. 7º).",
+    "dica": "CEBRASPE: absoluta = FALSO.",
+    "codigo_topico": "3.4",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_24",
+    "topico": "Territorialidade e extraterritorialidade da lei penal",
+    "pergunta": "Crimes com extraterritorialidade incondicionada?",
+    "resposta": "Vida do Presidente, patrimônio União, adm. pública, genocídio, tratado.",
+    "dica": "Art. 7º, I CP. Incondicionada = sem requisitos.",
+    "codigo_topico": "3.4",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_25",
+    "topico": "Territorialidade e extraterritorialidade da lei penal",
+    "pergunta": "Condições da extraterritorialidade condicionada?",
+    "resposta": "Agente no BR, dupla incriminação, crime extraditável, não julgado.",
+    "dica": "Art. 7º, II CP.",
+    "codigo_topico": "3.4",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_26",
+    "topico": "Territorialidade e extraterritorialidade da lei penal",
+    "pergunta": "Pena cumprida no exterior é computada?",
+    "resposta": "Sim. Atenua ou é computada (art. 8º CP).",
+    "dica": "Detração penal internacional.",
+    "codigo_topico": "3.4",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_27",
+    "topico": "Territorialidade e extraterritorialidade da lei penal",
+    "pergunta": "Navios como extensão do território?",
+    "resposta": "Públicos BR: sempre. Privados BR: em alto-mar (art. 5º, §§1º-2º).",
+    "dica": "Navio público = sempre BR. Privado em alto-mar = BR.",
+    "codigo_topico": "3.4",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_28",
+    "topico": "Territorialidade e extraterritorialidade da lei penal",
+    "pergunta": "O que é justiça universal?",
+    "resposta": "Brasil reprime crimes contra humanidade onde ocorrerem (art. 7º, I, d).",
+    "dica": "Genocídio = incondicionada.",
+    "codigo_topico": "3.4",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_29",
+    "topico": "Territorialidade e extraterritorialidade da lei penal",
+    "pergunta": "Princípio da representação (art. 7º, III CP)?",
+    "resposta": "Crime de brasileiro no exterior, se crime no país do fato.",
+    "dica": "Subsidiariedade.",
+    "codigo_topico": "3.4",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_35",
+    "topico": "Contagem de prazo",
+    "pergunta": "Prazo para progressão de regime?",
+    "resposta": "Dias corridos (art. 10 CP). Fração da pena (ex: 1/6).",
+    "dica": "Súmula 716 STF.",
+    "codigo_topico": "3.5",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_36",
+    "topico": "Contagem de prazo",
+    "pergunta": "Prazo do livramento condicional?",
+    "resposta": "Dias corridos (art. 10 CP). 1/3 (não reincidente) ou 1/2 (reincidente).",
+    "dica": "Art. 83 CP.",
+    "codigo_topico": "3.5",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_37",
+    "topico": "Contagem de prazo",
+    "pergunta": "Prazo da medida de segurança?",
+    "resposta": "Mínimo 1-3 anos. Dias corridos (art. 10 CP). Cessa por laudo.",
+    "dica": "Art. 97 CP.",
+    "codigo_topico": "3.5",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_38",
+    "topico": "Contagem de prazo",
+    "pergunta": "Prazo penal conta dias úteis?",
+    "resposta": "Não. Dias corridos (art. 10 CP: calendário comum).",
+    "dica": "Só direito processual civil conta dias úteis.",
+    "codigo_topico": "3.5",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_40",
+    "topico": "Irretroatividade da lei penal",
+    "pergunta": "Lei gravosa alcança fatos em execução?",
+    "resposta": "Não. Irretroatividade absoluta (art. 5º, XL CF/88).",
+    "dica": "Não retroage mesmo em execução.",
+    "codigo_topico": "3.6",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_41",
+    "topico": "Irretroatividade da lei penal",
+    "pergunta": "Lei processual penal retroage?",
+    "resposta": "Sim. Aplica-se imediatamente (art. 2º CPP).",
+    "dica": "Lei processual = imediata. Material = irretroativa.",
+    "codigo_topico": "3.6",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_42",
+    "topico": "Irretroatividade da lei penal",
+    "pergunta": "Lei que piora regime de pena retroage?",
+    "resposta": "Não. É lei material gravosa (art. 5º, XL CF/88).",
+    "dica": "Súmula 718 STF.",
+    "codigo_topico": "3.6",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_43",
+    "topico": "Irretroatividade da lei penal",
+    "pergunta": "Lei que aumenta prazo prescricional retroage?",
+    "resposta": "Não, se prejudicar. Redução de prazo é benéfica e retroage.",
+    "dica": "Prescrição é matéria material.",
+    "codigo_topico": "3.6",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_44",
+    "topico": "Irretroatividade da lei penal",
+    "pergunta": "Lei que altera progressão para pior retroage?",
+    "resposta": "Não. É lei material gravosa.",
+    "dica": "Progressão regida pela lei do fato.",
+    "codigo_topico": "3.6",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_45",
+    "topico": "Crimes contra a pessoa",
+    "pergunta": "O que é homicídio qualificado-privilegiado?",
+    "resposta": "Causa de diminuição + qualificadora. Admissível se compatíveis.",
+    "dica": "Súmulas 718, 719 STF.",
+    "codigo_topico": "4",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_46",
+    "topico": "Crimes contra a pessoa",
+    "pergunta": "Diferença homicídio culposo x doloso eventual?",
+    "resposta": "Doloso eventual: assume risco. Culposo: não quer nem assume.",
+    "dica": "Art. 121 §3º (1-3a) x caput (6-20a). Júri.",
+    "codigo_topico": "4",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_48",
+    "topico": "Crimes contra a pessoa",
+    "pergunta": "Lesão grave x gravíssima?",
+    "resposta": "Grave: +30d, perigo, debilidade, parto. Gravíssima: incurável, perda, aborto, deformidade.",
+    "dica": "Mnemônico: Grave = 30d. Gravíssima = incurável.",
+    "codigo_topico": "4",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_50",
+    "topico": "Crimes contra a pessoa",
+    "pergunta": "O que é rixa (art. 137 CP)?",
+    "resposta": "Participar de rixa. Detenção 15d a 2m. Se morte/lesão: aumento.",
+    "dica": "Entrar para separar = não é crime.",
+    "codigo_topico": "4",
+    "dificuldade": "facil"
+  },
+  {
+    "id": "dir_penal_expand_51",
+    "topico": "Crimes contra a pessoa",
+    "pergunta": "Crimes contra a honra?",
+    "resposta": "Calúnia (fato criminoso falso), Difamação (reputação), Injúria (dignidade).",
+    "dica": "CAL = Crime. DIfamação = reputação. INJ = ofensa.",
+    "codigo_topico": "4",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_52",
+    "topico": "Crimes contra a pessoa",
+    "pergunta": "Crimes contra a pessoa no CP?",
+    "resposta": "Homicídio, suicídio/automutilação, lesão, periclitação, rixa, honra.",
+    "dica": "Arts. 121-145 CP.",
+    "codigo_topico": "4",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_54",
+    "topico": "Crimes contra a pessoa",
+    "pergunta": "Omissão de socorro (art. 135 CP)?",
+    "resposta": "Deixar de prestar assistência. Detenção 1 a 6m. Crime omissivo próprio.",
+    "dica": "Art. 135 CP.",
+    "codigo_topico": "4",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_55",
+    "topico": "Crimes contra a dignidade sexual",
+    "pergunta": "O que é importunação sexual (art. 215-A CP)?",
+    "resposta": "Ato libidinoso sem anuência para lascívia. Reclusão 1 a 5a.",
+    "dica": "Lei 13.718/2018. Sem violência/ameaça.",
+    "codigo_topico": "6",
+    "dificuldade": "facil"
+  },
+  {
+    "id": "dir_penal_expand_56",
+    "topico": "Crimes contra a dignidade sexual",
+    "pergunta": "O que é assédio sexual (art. 216-A CP)?",
+    "resposta": "Constranger por hierarquia para obter vantagem sexual. Detenção 1 a 2a.",
+    "dica": "Exige hierarquia. Pena de DETENÇÃO.",
+    "codigo_topico": "6",
+    "dificuldade": "facil"
+  },
+  {
+    "id": "dir_penal_expand_57",
+    "topico": "Crimes contra a dignidade sexual",
+    "pergunta": "Presunção no estupro de vulnerável é relativa",
+    "resposta": "Não. Absoluta (Súmula 593 STJ).",
+    "dica": "Irrelevante consentimento ou experiência.",
+    "codigo_topico": "6",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_58",
+    "topico": "Crimes contra a dignidade sexual",
+    "pergunta": "Aumento no estupro por lesão/morte?",
+    "resposta": "Lesão grave: 1/2. Morte: 2/3.",
+    "dica": "Arts. 213 e 217-A CP.",
+    "codigo_topico": "6",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_59",
+    "topico": "Crimes contra a dignidade sexual",
+    "pergunta": "Registro não autorizado de intimidade (art. 216-B)?",
+    "resposta": "Produzir sem autorização (detenção 6m-1a). Divulgar (reclusão 1-5a).",
+    "dica": "Divulgação = pena maior.",
+    "codigo_topico": "6",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_60",
+    "topico": "Crimes contra a dignidade sexual",
+    "pergunta": "Estupro é hediondo?",
+    "resposta": "Sim. Todas as formas (arts. 213, 217-A) são hediondas.",
+    "dica": "Lei 8.072/90 art. 1º, V.",
+    "codigo_topico": "6",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_62",
+    "topico": "Crimes contra a dignidade sexual",
+    "pergunta": "Estupro de vulnerável (art. 217-A CP)?",
+    "resposta": "Conjunção/ato libidinoso com menor 14a ou vulnerável. Reclusão 8 a 15a.",
+    "dica": "Presunção absoluta (Súmula 593 STJ).",
+    "codigo_topico": "6",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_64",
+    "topico": "Crimes Hediondos (Lei nº 8.072/1990)",
+    "pergunta": "Tráfico privilegiado é hediondo?",
+    "resposta": "Não (STF HC 118.533).",
+    "dica": "Art. 33 §4º Lei 11.343/06.",
+    "codigo_topico": "8",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_65",
+    "topico": "Crimes Hediondos (Lei nº 8.072/1990)",
+    "pergunta": "Progressão em crimes hediondos?",
+    "resposta": "Sim. 40% da pena (50% reincidente) - art. 112 LEP.",
+    "dica": "Lei 13.964/2019.",
+    "codigo_topico": "8",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_66",
+    "topico": "Crimes Hediondos (Lei nº 8.072/1990)",
+    "pergunta": "Crimes hediondos admitem fiança?",
+    "resposta": "Não. Insuscetíveis de fiança, anistia, graça, indulto.",
+    "dica": "CF/88 art. 5º, XLIII.",
+    "codigo_topico": "8",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_67",
+    "topico": "Crimes Hediondos (Lei nº 8.072/1990)",
+    "pergunta": "Latrocínio é hediondo?",
+    "resposta": "Sim. Art. 157 §3º CP.",
+    "dica": "Súmula 610 STF.",
+    "codigo_topico": "8",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_68",
+    "topico": "Crimes Hediondos (Lei nº 8.072/1990)",
+    "pergunta": "Regime inicial nos hediondos?",
+    "resposta": "Fechado (art. 2º §1º Lei 8.072/90).",
+    "dica": "STF: constitucional.",
+    "codigo_topico": "8",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_69",
+    "topico": "Crimes Hediondos (Lei nº 8.072/1990)",
+    "pergunta": "Hediondez por equiparação?",
+    "resposta": "Tráfico, tortura, terrorismo (CF/88 art. 5º, XLIII).",
+    "dica": "Equiparados ≠ listados.",
+    "codigo_topico": "8",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_71",
+    "topico": "Crimes resultantes de Preconceito de Raça ou de Cor (Lei nº 7.716/1989)",
+    "pergunta": "Discriminação por orientação sexual é crime?",
+    "resposta": "Sim (STF ADO 26). Homotransfobia = racismo.",
+    "dica": "Imprescritível e inafiançável.",
+    "codigo_topico": "9",
+    "dificuldade": "facil"
+  },
+  {
+    "id": "dir_penal_expand_72",
+    "topico": "Crimes resultantes de Preconceito de Raça ou de Cor (Lei nº 7.716/1989)",
+    "pergunta": "Racismo é afiançável?",
+    "resposta": "Não. Inafiançável e imprescritível (art. 5º, XLII CF/88).",
+    "dica": "Exceção à prescritibilidade.",
+    "codigo_topico": "9",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_73",
+    "topico": "Crimes resultantes de Preconceito de Raça ou de Cor (Lei nº 7.716/1989)",
+    "pergunta": "Injúria racial x racismo após Lei 14.532/2023º",
+    "resposta": "Injúria: ofensa individual. Racismo: discriminação genérica. Ambas imprescritíveis.",
+    "dica": "Lei 14.532/2023.",
+    "codigo_topico": "9",
+    "dificuldade": "facil"
+  },
+  {
+    "id": "dir_penal_expand_74",
+    "topico": "Crimes resultantes de Preconceito de Raça ou de Cor (Lei nº 7.716/1989)",
+    "pergunta": "Condutas da Lei 7.716/89º",
+    "resposta": "Negar acesso, hospedagem, emprego, transporte, matrícula por discriminação.",
+    "dica": "Arts. 3º-14.",
+    "codigo_topico": "9",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_75",
+    "topico": "Crimes resultantes de Preconceito de Raça ou de Cor (Lei nº 7.716/1989)",
+    "pergunta": "Ação penal no racismo?",
+    "resposta": "Pública incondicionada.",
+    "dica": "Não depende de representação.",
+    "codigo_topico": "9",
+    "dificuldade": "facil"
+  },
+  {
+    "id": "dir_penal_expand_76",
+    "topico": "Crimes resultantes de Preconceito de Raça ou de Cor (Lei nº 7.716/1989)",
+    "pergunta": "Injúria racial é ação penal?",
+    "resposta": "Pública incondicionada (Lei 14.532/2023 alterou).",
+    "dica": "Antes era privada.",
+    "codigo_topico": "9",
+    "dificuldade": "facil"
+  },
+  {
+    "id": "dir_penal_expand_78",
+    "topico": "Crimes de Abuso de Autoridade (Lei nº 13.869/2019)",
+    "pergunta": "Penas na Lei de Abuso de Autoridade?",
+    "resposta": "Detenção 6m-2a. Admite restritivas e sursis.",
+    "dica": "Penal de DETENÇÃO.",
+    "codigo_topico": "10",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_79",
+    "topico": "Crimes de Abuso de Autoridade (Lei nº 13.869/2019)",
+    "pergunta": "Inabilitação para cargo na Lei 13.869/19º",
+    "resposta": "Sim. Art. 10: inabilitação para cargo eletivo até 5 anos.",
+    "dica": "Pena restritiva específica.",
+    "codigo_topico": "10",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_80",
+    "topico": "Crimes de Abuso de Autoridade (Lei nº 13.869/2019)",
+    "pergunta": "Aplica-se a qualquer Poder?",
+    "resposta": "Sim. Todos agentes públicos (Executivo, Legislativo, Judiciário, MP, TC).",
+    "dica": "Art. 2º.",
+    "codigo_topico": "10",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_81",
+    "topico": "Crimes de Abuso de Autoridade (Lei nº 13.869/2019)",
+    "pergunta": "Exige resultado naturalístico?",
+    "resposta": "Não. Crime formal. Basta conduta + finalidade.",
+    "dica": "Não exige dano efetivo.",
+    "codigo_topico": "10",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_82",
+    "topico": "Crimes de Abuso de Autoridade (Lei nº 13.869/2019)",
+    "pergunta": "Ação penal na Lei 13.869/19º",
+    "resposta": "Pública condicionada à representação (art. 16).",
+    "dica": "Exceção: MP age de ofício se interesse público.",
+    "codigo_topico": "10",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_85",
+    "topico": "Crimes de Tortura (Lei nº 9.455/1997)",
+    "pergunta": "Tortura é hedionda?",
+    "resposta": "Sim (CF/88 art. 5º XLIII).",
+    "dica": "Inafiançável.",
+    "codigo_topico": "11",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_86",
+    "topico": "Crimes de Tortura (Lei nº 9.455/1997)",
+    "pergunta": "Modalidades de tortura?",
+    "resposta": "Confissão (I,a), Castigo (I,b), Discriminação (I,c).",
+    "dica": "Art. 1º, I.",
+    "codigo_topico": "11",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_87",
+    "topico": "Crimes de Tortura (Lei nº 9.455/1997)",
+    "pergunta": "Ação penal na tortura?",
+    "resposta": "Pública incondicionada.",
+    "dica": "Sem representação.",
+    "codigo_topico": "11",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_88",
+    "topico": "Crimes de Tortura (Lei nº 9.455/1997)",
+    "pergunta": "Majorantes da tortura?",
+    "resposta": "1/6 a 1/3: agente público, criança/gestante/idoso/deficiente, sequestro.",
+    "dica": "Art. 1º §4º.",
+    "codigo_topico": "11",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_89",
+    "topico": "Crimes de Tortura (Lei nº 9.455/1997)",
+    "pergunta": "Tortura admite liberdade provisória?",
+    "resposta": "Não. Inafiançável (CF/88 art. 5º XLIII).",
+    "dica": "Vedado.",
+    "codigo_topico": "11",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_90",
+    "topico": "Estatuto da Criança e do Adolescente (Lei nº 8.069/1990)",
+    "pergunta": "Internação no ECA tem prazo máximo?",
+    "resposta": "3 anos. Reavaliação a cada 6 meses (art. 121 ECA).",
+    "dica": "Art. 121.",
+    "codigo_topico": "12",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_91",
+    "topico": "Estatuto da Criança e do Adolescente (Lei nº 8.069/1990)",
+    "pergunta": "Crimes no ECA?",
+    "resposta": "Vexame, pornografia, corrupção de menor, venda bebida (arts. 228-244-B).",
+    "dica": "Arts. 228-244-B.",
+    "codigo_topico": "12",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_92",
+    "topico": "Estatuto da Criança e do Adolescente (Lei nº 8.069/1990)",
+    "pergunta": "Consentimento menor 14a em crime sexual?",
+    "resposta": "Irrelevante (Súmula 593 STJ).",
+    "dica": "Presunção absoluta.",
+    "codigo_topico": "12",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_93",
+    "topico": "Estatuto da Criança e do Adolescente (Lei nº 8.069/1990)",
+    "pergunta": "Responsabilidade do adolescente?",
+    "resposta": "Inimputável. Ato infracional = medidas socioeducativas.",
+    "dica": "Art. 228 CF/88. Cláusula pétrea.",
+    "codigo_topico": "12",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_94",
+    "topico": "Estatuto da Criança e do Adolescente (Lei nº 8.069/1990)",
+    "pergunta": "O que é remissão no ECA?",
+    "resposta": "Exclusão/suspensão do processo c/ medida socioeducativa (arts. 126-128).",
+    "dica": "Não implica culpa.",
+    "codigo_topico": "12",
+    "dificuldade": "facil"
+  },
+  {
+    "id": "dir_penal_expand_95",
+    "topico": "Estatuto da Criança e do Adolescente (Lei nº 8.069/1990)",
+    "pergunta": "Venda de bebida a menor no ECA?",
+    "resposta": "Crime (art. 243). Detenção 2-4a. Perigo abstrato.",
+    "dica": "Não exige ingestão.",
+    "codigo_topico": "12",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_96",
+    "topico": "Estatuto da Criança e do Adolescente (Lei nº 8.069/1990)",
+    "pergunta": "Medidas socioeducativas?",
+    "resposta": "Advertência, reparação, serviços, liberdade assistida, semiliberdade, internação.",
+    "dica": "Art. 112 ECA.",
+    "codigo_topico": "12",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_97",
+    "topico": "Estatuto da Criança e do Adolescente (Lei nº 8.069/1990)",
+    "pergunta": "Idade da imputabilidade penal?",
+    "resposta": "18 anos (art. 228 CF/88).",
+    "dica": "Cláusula pétrea. Art. 27 CP.",
+    "codigo_topico": "12",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_99",
+    "topico": "Organizações Criminosas (Lei nº 12.850/2013)",
+    "pergunta": "Crime de organização criminosa admite tentativa?",
+    "resposta": "Não. Formal. Consuma-se na associação (art. 2º).",
+    "dica": "Pena 3-8a.",
+    "codigo_topico": "13",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_100",
+    "topico": "Organizações Criminosas (Lei nº 12.850/2013)",
+    "pergunta": "Benefícios da colaboração premiada?",
+    "resposta": "Perdão, redução até 2/3, substituição, progressão (art. 4º).",
+    "dica": "Redução máxima 2/3.",
+    "codigo_topico": "13",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_101",
+    "topico": "Organizações Criminosas (Lei nº 12.850/2013)",
+    "pergunta": "Técnicas especiais na Lei 12.850/13º",
+    "resposta": "Infiltração, interceptação, acesso dados, ação controlada (arts. 10-17).",
+    "dica": "Investigação.",
+    "codigo_topico": "13",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_102",
+    "topico": "Organizações Criminosas (Lei nº 12.850/2013)",
+    "pergunta": "Obstrução de investigação?",
+    "resposta": "Impedir/embaraçar. Pena 3-8a (art. 2º §1º).",
+    "dica": "Art. 2º §1º.",
+    "codigo_topico": "13",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_103",
+    "topico": "Organizações Criminosas (Lei nº 12.850/2013)",
+    "pergunta": "Associação criminosa x organização?",
+    "resposta": "Associação: 3+, sem estrutura. Organização: 4+, estrutura ordenada.",
+    "dica": "Art. 288 CP (3) x Lei 12.850/13 (4).",
+    "codigo_topico": "13",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_104",
+    "topico": "Organizações Criminosas (Lei nº 12.850/2013)",
+    "pergunta": "O que é ação controlada?",
+    "resposta": "Retardar intervenção para colher provas (art. 8º Lei 12.850/13).",
+    "dica": "Técnica especial.",
+    "codigo_topico": "13",
+    "dificuldade": "facil"
+  },
+  {
+    "id": "dir_penal_expand_105",
+    "topico": "Crimes de Trânsito (Lei nº 9.503/1997)",
+    "pergunta": "Homicídio culposo no trânsito (art. 302 CTB)?",
+    "resposta": "Detenção 2-4a. Se álcool/racha/sem habilitação: 3-6a.",
+    "dica": "Detenção (não reclusão).",
+    "codigo_topico": "14",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_106",
+    "topico": "Crimes de Trânsito (Lei nº 9.503/1997)",
+    "pergunta": "Lesão culposa no trânsito (art. 303 CTB)?",
+    "resposta": "Detenção 6m-2a. Grave: 1-3a. Fuga: +1/3 a 1/2.",
+    "dica": "Art. 303.",
+    "codigo_topico": "14",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_107",
+    "topico": "Crimes de Trânsito (Lei nº 9.503/1997)",
+    "pergunta": "Embriaguez ao volante é perigo abstrato?",
+    "resposta": "Sim (STF). Basta álcool >=0,3 mg/L. Detenção 6m-3a.",
+    "dica": "Prova por qualquer meio (art. 306 §2º).",
+    "codigo_topico": "14",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_108",
+    "topico": "Crimes de Trânsito (Lei nº 9.503/1997)",
+    "pergunta": "Participação em racha (art. 308 CTB)?",
+    "resposta": "Detenção 6m-3a. Se morte = dolo eventual (júri).",
+    "dica": "Art. 308.",
+    "codigo_topico": "14",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_109",
+    "topico": "Crimes de Trânsito (Lei nº 9.503/1997)",
+    "pergunta": "Homicídio doloso no trânsito é do júri?",
+    "resposta": "Sim, se dolo eventual. Júri julga crimes dolosos contra a vida.",
+    "dica": "Art. 5º XXXVIII CF/88.",
+    "codigo_topico": "14",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_110",
+    "topico": "Crimes de Trânsito (Lei nº 9.503/1997)",
+    "pergunta": "Fuga do local do acidente (art. 305 CTB)?",
+    "resposta": "Detenção 6m-1a.",
+    "dica": "Art. 305.",
+    "codigo_topico": "14",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_111",
+    "topico": "Crimes de Trânsito (Lei nº 9.503/1997)",
+    "pergunta": "Art. 306 CTB exige estado de embriaguez?",
+    "resposta": "Não. Basta limite objetivo (0,3 mg/L).",
+    "dica": "Sintomas não são exigidos.",
+    "codigo_topico": "14",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_112",
+    "topico": "Violência doméstica e familiar contra a mulher (Lei nº 11.340/2006)",
+    "pergunta": "Lei Maria da Penha se aplica a mulheres trans?",
+    "resposta": "Sim (STJ). Protege independente de identidade de gênero.",
+    "dica": "NÃO se aplica a homem.",
+    "codigo_topico": "15",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_113",
+    "topico": "Violência doméstica e familiar contra a mulher (Lei nº 11.340/2006)",
+    "pergunta": "MP prevê prisão preventiva?",
+    "resposta": "Sim (art. 20). Independente da pena.",
+    "dica": "Art. 20.",
+    "codigo_topico": "15",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_114",
+    "topico": "Violência doméstica e familiar contra a mulher (Lei nº 11.340/2006)",
+    "pergunta": "5 formas de violência doméstica?",
+    "resposta": "Física, Psicológica, Sexual, Patrimonial, Moral (art. 7º).",
+    "dica": "FPSPM.",
+    "codigo_topico": "15",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_115",
+    "topico": "Violência doméstica e familiar contra a mulher (Lei nº 11.340/2006)",
+    "pergunta": "MP se aplica a relações homoafetivas?",
+    "resposta": "Sim (STJ). Independe de orientação sexual.",
+    "dica": "REsp 1.977.124.",
+    "codigo_topico": "15",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_116",
+    "topico": "Violência doméstica e familiar contra a mulher (Lei nº 11.340/2006)",
+    "pergunta": "Medidas protetivas na MP?",
+    "resposta": "Afastamento, proibição contato, suspensão porte, prisão (arts. 22-24).",
+    "dica": "Aplicáveis isoladamente.",
+    "codigo_topico": "15",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_117",
+    "topico": "Violência doméstica e familiar contra a mulher (Lei nº 11.340/2006)",
+    "pergunta": "Violência patrimonial na MP?",
+    "resposta": "Reter, subtrair, destruir objetos, documentos, bens (art. 7º IV).",
+    "dica": "Art. 7º IV.",
+    "codigo_topico": "15",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_118",
+    "topico": "Lei de Drogas (Lei nº 11.343/2006)",
+    "pergunta": "Diferença usuário x traficante?",
+    "resposta": "Usuário (art. 28): penas alternativas. Traficante (art. 33): reclusão 5-15a.",
+    "dica": "Finalidade é o critério (dolo).",
+    "codigo_topico": "16",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_120",
+    "topico": "Lei de Drogas (Lei nº 11.343/2006)",
+    "pergunta": "Traficante tem prisão especial?",
+    "resposta": "Não (art. 33 §5º). Vedado.",
+    "dica": "Vedação expressa.",
+    "codigo_topico": "16",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_121",
+    "topico": "Lei de Drogas (Lei nº 11.343/2006)",
+    "pergunta": "Usuário de drogas é preso?",
+    "resposta": "Não. Penas alternativas apenas (art. 28).",
+    "dica": "Não há prisão para usuário.",
+    "codigo_topico": "16",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_122",
+    "topico": "Lei de Drogas (Lei nº 11.343/2006)",
+    "pergunta": "'Mula' é crime autônomo?",
+    "resposta": "Não. É tráfico (art. 33). Pode ser §4º se requisitos.",
+    "dica": "Transporte para terceiro.",
+    "codigo_topico": "16",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_123",
+    "topico": "Lei de Drogas (Lei nº 11.343/2006)",
+    "pergunta": "Associação para o tráfico (art. 35)?",
+    "resposta": "2+ pessoas associadas. Pena 3-10a. Crime formal.",
+    "dica": "2 pessoas (difere de organização criminosa).",
+    "codigo_topico": "16",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_124",
+    "topico": "Violência doméstica e familiar contra a criança e o adolescente (Lei nº 14.344/2022)",
+    "pergunta": "O que é Lei Henry Borel (14.344/2022)?",
+    "resposta": "Prevenção e repressão à violência doméstica contra criança/adolescente.",
+    "dica": "Prisão preventiva obrigatória se risco.",
+    "codigo_topico": "17",
+    "dificuldade": "facil"
+  },
+  {
+    "id": "dir_penal_expand_125",
+    "topico": "Violência doméstica e familiar contra a criança e o adolescente (Lei nº 14.344/2022)",
+    "pergunta": "Casa da Criança na Lei Henry Borel?",
+    "resposta": "Sim. Centro multidisciplinar (art. 9º).",
+    "dica": "Modelo Casa da Mulher.",
+    "codigo_topico": "17",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_126",
+    "topico": "Violência doméstica e familiar contra a criança e o adolescente (Lei nº 14.344/2022)",
+    "pergunta": "Lei Henry Borel alterou lesão corporal?",
+    "resposta": "Sim. Art. 129 §13 CP: lesão contra criança/adolescente/idoso/deficiente no âmbito doméstico.",
+    "dica": "Art. 129 §13 CP.",
+    "codigo_topico": "17",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_127",
+    "topico": "Violência doméstica e familiar contra a criança e o adolescente (Lei nº 14.344/2022)",
+    "pergunta": "Lei Henry Borel alterou o ECA?",
+    "resposta": "Sim. Medidas protetivas específicas e alterações no ECA.",
+    "dica": "Integra ECA e CP.",
+    "codigo_topico": "17",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_128",
+    "topico": "Violência doméstica e familiar contra a criança e o adolescente (Lei nº 14.344/2022)",
+    "pergunta": "Aplica-se a violência entre irmãos?",
+    "resposta": "Sim. Âmbito doméstico, familiar ou relação de afeto.",
+    "dica": "Âmbito familiar amplo.",
+    "codigo_topico": "17",
+    "dificuldade": "media"
+  },
+  {
+    "id": "dir_penal_expand_130",
+    "topico": "Crimes Ambientais (Lei nº 9.605/1998)",
+    "pergunta": "Penas para PJ por crime ambiental?",
+    "resposta": "Multa, restritivas (suspensão, proibição, serviços), liquidação forçada (arts. 21-24).",
+    "dica": "Liquidação se criada para crime.",
+    "codigo_topico": "18",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_132",
+    "topico": "Crimes Ambientais (Lei nº 9.605/1998)",
+    "pergunta": "Poluição qualificada pela morte é hedionda?",
+    "resposta": "Sim (pena 4-12a).",
+    "dica": "Lei 9.605/98 + 8.072/90.",
+    "codigo_topico": "18",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_133",
+    "topico": "Crimes Ambientais (Lei nº 9.605/1998)",
+    "pergunta": "Desmatamento (art. 50-A) é crime de perigo?",
+    "resposta": "Sim. Perigo abstrato. Cortar floresta de preservação permanente sem autorização.",
+    "dica": "Art. 50-A.",
+    "codigo_topico": "18",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_134",
+    "topico": "Crimes Ambientais (Lei nº 9.605/1998)",
+    "pergunta": "PJ pode ser liquidada por crime ambiental?",
+    "resposta": "Sim, se criada para facilitar o crime (art. 24).",
+    "dica": "Pena extrema.",
+    "codigo_topico": "18",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_135",
+    "topico": "Estatuto do Desarmamento (Lei nº 10.826/2003)",
+    "pergunta": "Porte ilegal de arma (art. 14 Lei 10.826/03)?",
+    "resposta": "Portar/utilizar arma sem autorização. Reclusão 2-4a.",
+    "dica": "Verbo múltiplo.",
+    "codigo_topico": "19",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_137",
+    "topico": "Estatuto do Desarmamento (Lei nº 10.826/2003)",
+    "pergunta": "Disparo de arma (art. 15)?",
+    "resposta": "Lugar habitado/via pública. Reclusão 2-4a (doloso) ou detenção 1-2a (culposo).",
+    "dica": "Admite culposo.",
+    "codigo_topico": "19",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_138",
+    "topico": "Estatuto do Desarmamento (Lei nº 10.826/2003)",
+    "pergunta": "Tráfico internacional de arma (art. 18) é hediondo?",
+    "resposta": "Sim. Reclusão 4-8a. STF equipara a hediondo.",
+    "dica": "Porte/posse NÃO são hediondos.",
+    "codigo_topico": "19",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_139",
+    "topico": "Estatuto do Desarmamento (Lei nº 10.826/2003)",
+    "pergunta": "Omissão de cautela (art. 13)?",
+    "resposta": "Deixar de cuidar arma acessível a menor/deficiente. Detenção 1-6m.",
+    "dica": "Art. 13.",
+    "codigo_topico": "19",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_141",
+    "topico": "Estatuto do Desarmamento (Lei nº 10.826/2003)",
+    "pergunta": "Arma de uso restrito (art. 16)?",
+    "resposta": "Posse/porte: reclusão 4-8a.",
+    "dica": "Maior potencial ofensivo.",
+    "codigo_topico": "19",
+    "dificuldade": "dificil"
+  },
+  {
+    "id": "dir_penal_expand_142",
+    "topico": "Estatuto do Desarmamento (Lei nº 10.826/2003)",
+    "pergunta": "Porte ilegal é perigo abstrato?",
+    "resposta": "Sim (STF). Não exige risco concreto.",
+    "dica": "RE 583.623.",
+    "codigo_topico": "19",
+    "dificuldade": "dificil"
+  }
+]
