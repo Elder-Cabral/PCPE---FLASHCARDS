@@ -2011,7 +2011,7 @@ export default function App() {
 const SRS_BUTTONS = [
   { label: "\u274C Errei",   value: 0, bg: "#ef4444" },
   { label: "\u26A0\uFE0F Dif\u00EDcil", value: 1, bg: "#f59e0b" },
-  { label: "\U0001F44D Bom",  value: 2, bg: "#3b82f6" },
+  { label: "\u{1F44D} Bom",  value: 2, bg: "#3b82f6" },
   { label: "\u26A1 F\u00E1cil", value: 3, bg: "#10b981" },
 ];
 
