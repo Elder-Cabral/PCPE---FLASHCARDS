@@ -1,36 +1,725 @@
 {
   "rewrites": [
-    ["leg_estadual_3", "Qual a função constitucional da Polícia Civil de Pernambuco?", "Exercer a polícia judiciária e apurar infrações penais, exceto as militares, nos termos do art. 102 da CE-PE c/c art. 144, §4º da CF/88.", "⚠️ ALERTA CEBRASPE: A função é EXCLUSIVA da PC-PE para infrações penais comuns (não militares). A PM faz polícia ostensiva (art. 144, §5º). O MP faz controle externo (art. 129, VII). Nunca confunda: polícia judiciária = PC; polícia ostensiva = PM. Art. 102 CE-PE é o dispositivo-chave."],
-    ["leg_estadual_4", "O que é o Estatuto do Policial Civil de PE (Lei 6.425/72)?", "Lei estadual que regula direitos, deveres, regime disciplinar, carreira e garantias dos policiais civis do Estado de Pernambuco, com aplicação subsidiária da Lei 6.123/68 (Estatuto do Servidor Estadual).", "MNEMÔNICO: A Lei 6.425/72 é a lei ESPECÍFICA da PC-PE. A Lei 6.123/68 é o ESTATUTO GERAL do servidor. Relação: especialidade (6.425 prevalece) + subsidiariedade (6.123 aplica-se onde 6.425 for omissa)."],
-    ["leg_estadual_6", "Quais as penalidades disciplinares previstas no Estatuto do Policial Civil (Lei 6.425/72)?", "Advertência, repreensão, suspensão, demissão, cassação de aposentadoria e destituição de função comissionada (art. 28 da Lei 6.425/72).", "MNEMÔNICO: AR-SUS-DEM-CAS-DES. CESPE cobra: a suspensão NÃO pode exceder 90 dias (art. 30). Cassação de aposentadoria atinge quem já se aposentou mas cometeu falta quando na ativa."],
-    ["leg_estadual_8", "Qual o prazo do estágio probatório do policial civil de PE?", "3 anos (36 meses) de efetivo exercício, conforme a Lei 6.425/72 c/c a sistemática do art. 41 da CF/88 com redação dada pela EC 19/98.", "⚠️ ATENÇÃO: O estágio probatório do servidor público comum é de 3 anos (art. 41 CF/88). Para o policial civil de PE, segue o mesmo prazo pela aplicação subsidiária."],
-    ["leg_estadual_9", "O que configura abandono de cargo para o policial civil de PE?", "Ausência injustificada do servidor por mais de 30 dias consecutivos, sujeitando-o à penalidade de demissão (art. 35, V c/c art. 37 da Lei 6.425/72).", "PEGADINHA CESPE: O prazo é de 30 DIAS CONSECUTIVOS (não alternados). Inassiduidade habitual = faltas intercaladas que excedam 60 dias em 12 meses (art. 36). Decore: abandono = 30 dias SEGUIDOS; inassiduidade = 60 dias ALTERNADOS em 12 meses."],
-    ["leg_estadual_12", "Quem preside o inquérito policial segundo a LC 137/2008?", "O Delegado de Polícia, autoridade com exclusividade para presidir a investigação criminal preliminar, nos termos do art. 4º do CPP c/c Lei 12.830/13 e LC 137/2008.", "⚠️ PEGADINHA CLÁSSICA: O Delegado PRESIDE o IP com EXCLUSIVIDADE. O MP pode requisitar diligências e controlar externamente, mas NÃO preside. A LC 137/2008 (art. 2º) organiza a PC e mantém essa atribuição. Súmula Vinculante 14: Delegado pode negar acesso a investigação não concluída."],
-    ["leg_estadual_13", "Qual o órgão máximo da Polícia Civil de Pernambuco?", "A Delegacia-Geral da Polícia Civil, chefiada pelo Delegado-Geral, cargo de livre nomeação e exoneração pelo Governador do Estado.", "Subordinação: Delegado-Geral → Secretário de Defesa Social → Governador. A nomeação é DISCRICIONÁRIA do chefe do Executivo. O Delegado-Geral deve ser Delegado de Polícia de carreira (art. 6º LC 137/2008)."],
-    ["leg_estadual_15", "Quais os critérios de progressão funcional previstos na LC 317/2015?", "Progressão por elevação de nível profissional (certificação em cursos) e progressão por capacitação (aquisição de títulos), ambas condicionadas a avaliação periódica de desempenho e interstício mínimo.", "MNEMÔNICO: 2 PROGRESSÕES: (1) ELEVAÇÃO = certificação/cursos; (2) CAPACITAÇÃO = títulos. Requisitos cumulativos: interstício + avaliação + curso/título. O servidor em licença sem vencimentos ou cumprindo pena disciplinar NÃO concorre à progressão (art. 15, § único)."],
-    ["leg_estadual_17", "Qual o prazo para o servidor entrar em exercício após a posse (Lei 6.123/68)?", "30 dias contados da data da posse, sob pena de exoneração de ofício (art. 14, §2º da Lei 6.123/68).", "DECORE: POSSE → 30 DIAS → EXERCÍCIO. Se não entrar em exercício em 30 dias = exoneração. CESPE adora inverter: prazo da posse (30 dias contados da nomeação) vs prazo do exercício (30 dias contados da posse). São dois prazos distintos."],
-    ["leg_estadual_21", "A licença para tratar de interesses particulares do servidor estadual (PE) é remunerada?", "Não. A licença para interesse particular é concedida sem remuneração, por prazo não superior a 2 anos (prorrogável por mais 2), conforme art. 117 da Lei 6.123/68.", "⚠️ PEGADINHA CESPE: Ao contrário da licença-prêmio (remunerada), a licença para interesse particular é SEM REMUNERAÇÃO. Prazo máximo: 2 anos + 2 de prorrogação = até 4 anos. NÃO conta para aposentadoria. Exige 5 anos de efetivo exercício."],
-    ["leg_estadual_25", "Quando cabe aposentadoria compulsória no serviço público estadual de PE?", "Aos 70 anos de idade, para servidores públicos estaduais, conforme art. 40, §1º, II da CF/88 (com redação da EC 88/2015 elevou para 75 anos para professores universitários).", "⚠️ ATUALIZAÇÃO: A EC 88/2015 (PEC da Bengala) fixou 75 anos para servidores do STF, Tribunais Superiores e TCU. Para servidores estaduais comuns: 70 anos (regra geral). CESPE já cobrou: 'a aposentadoria compulsória do servidor público estadual é aos 75 anos' → FALSO (a regra geral é 70)."],
-    ["leg_estadual_30", "O policial civil de PE pode exercer advocacia?", "Não. É vedado ao policial civil o exercício de advocacia, ainda que em causa própria, conforme art. 28, II do Estatuto da OAB (Lei 8.906/94) e vedações do regime disciplinar da Lei 6.425/72.", "VEDAÇÃO ABSOLUTA: policial civil NÃO pode advogar (nem em causa própria). CESPE adora generalizar: 'policial pode advogar em causa própria' → FALSO. Só juiz, promotor e Defensor têm essa exceção parcial (art. 28, II e III Estatuto OAB)."],
-    ["leg_estadual_34", "Segundo a CE-PE, quem exerce o controle externo da atividade policial?", "O Ministério Público, conforme art. 129, VII da CF/88 e normativos estaduais, sendo o controle externo da atividade policial função institucional do MP.", "⚠️ ALERTA: O controle EXTERNO é do MINISTÉRIO PÚBLICO (não do Judiciário, não do Legislativo). O controle INTERNO é da Corregedoria da PC. A CE-PE não inovou — reproduz a CF/88. O MP pode requisitar diligências, acompanhar investigações e fiscalizar."],
-    ["leg_estadual_35", "Os policiais civis de PE têm direito de greve?", "Sim, mas com restrições. O STF (MI 708 e MI 712) reconheceu o direito de greve dos servidores públicos, inclusive policiais civis, desde que não comprometa a segurança pública e com regulamentação específica (art. 37, VII CF/88).", "⚠️ TEMA POLÊMICO: O STF no MI 708 decidiu que servidores públicos têm direito de greve (aplicando a Lei 7.783/89). Porém, atividades ESSENCIAIS (como segurança pública) exigem manutenção de equipe mínima. Para policiais CIVIS o direito existe, mas não para policiais MILITARES (proibição total)."],
-    ["leg_estadual_37", "Qual a jornada de trabalho do policial civil de PE?", "40 horas semanais, em regime de plantão ou expediente, conforme regulamentação da SDS e LC 137/2008, podendo haver escalas especiais.", "Regime: 40h/semana, mas o policial está sujeito a plantões, sobreavisos e convocações a qualquer momento (natureza policial). CESPE cobra adicional noturno (art. 73 CLT aplicado subsidiariamente). Hora noturna do policial = 52min30s (Súmula 60 TST)."],
-    ["leg_estadual_40", "Qual a atribuição constitucional da Polícia Científica de PE?", "Realizar perícias criminais e exames de corpo de delito, auxiliando a PC-PE na investigação criminal, nos termos do art. 105-A da CE-PE (incluído pela EC 52/2020).", "⚠️ NOVIDADE LEGISLATIVA: A Polícia Científica foi elevada a órgão autônomo de segurança pública pela EC 52/2020 (art. 105-A CE-PE). Antes era vinculada à PC. CESPE pode perguntar: 'A PC integra a Polícia Científica?' → NÃO (são órgãos distintos no art. 101 CE-PE)."],
-    ["leg_estadual_41", "O Delegado-Geral da PC-PE é cargo de livre nomeação?", "Sim, é cargo de livre nomeação e exoneração pelo Governador do Estado, devendo recair sobre Delegado de Polícia de carreira (art. 6º, §1º da LC 137/2008).", "⚠️ PEGADINHA: 'Livre nomeação' significa que o Governador pode escolher qualquer pessoa? NÃO! A lei exige que seja Delegado de Polícia de CARREIRA. A discricionariedade está na ESCOLHA entre os delegados, não na possibilidade de nomear não-delegado."],
-    ["leg_estadual_46", "A CE-PE permite a criação de polícia municipal?", "Não. A CE-PE (art. 101) não prevê polícia municipal. As Guardas Municipais têm função de proteção de bens e serviços municipais (art. 144, §8º CF/88), não são órgãos de segurança pública estadual.", "⚠️ PEGADINHA CLÁSSICA CESPE: 'A CE-PE prevê a Polícia Municipal como órgão de segurança pública' → FALSO. Guardas Municipais NÃO são polícia. O art. 101 CE-PE só prevê: PC, PM, CBM, Polícia Científica e Polícia Penal."],
-    ["leg_estadual_50", "Quais os requisitos para ingresso no cargo de Agente de Polícia Civil de PE?", "Nível superior completo, aprovação em concurso público de provas e títulos, curso de formação profissional, aptidão física, mental e idoneidade moral (LC 137/2008, arts. 10-11).", "⚠️ ATUALIZAÇÃO PÓS-EC 19/98: Exige-se NÍVEL SUPERIOR para TODOS os cargos da PC-PE (inclusive Agente). Não confunda com o passado (quando exigia nível médio). A LC 137/2008 exige curso de formação como 2ª etapa (eliminatória e classificatória)."],
-    ["leg_estadual_52", "A PC-PE pode investigar crimes militares?", "Não. A investigação de crimes militares é de competência da Polícia Judiciária Militar (PM-PE), sendo a PC-PE competente apenas para infrações penais comuns (art. 102 CE-PE c/c art. 144, §4º CF/88).", "⚠️ LIMITE CONSTITUCIONAL: A expressão 'exceto as militares' no art. 144, §4º CF/88 é CHAVE. Crimes militares estaduais são investigados pela PM (IPM). Crimes militares federais, pela PF. A PC-PE NÃO apura crime militar, mesmo que o autor seja civil."],
-    ["leg_estadual_56", "Qual a diferença entre Polícia Civil e Polícia Militar segundo a CE-PE?", "A PC-PE exerce polícia judiciária (art. 102 CE-PE) e apura infrações penais comuns; a PM-PE exerce polícia ostensiva e preservação da ordem pública (art. 103 CE-PE).", "MNEMÔNICO: PC = JUDICIÁRIA (investiga DEPOIS do crime); PM = OSTENSIVA (prevenção, ronda, DURANTE). CESPE adora: 'Compete à PM a apuração de infrações penais' → FALSO."],
-    ["leg_estadual_60", "Quais delegacias especializadas existem na estrutura da PC-PE?", "DHPP (homicídios), DRACO (crime organizado), DPCA (criança/adolescente), DECAP (patrimônio), DEINTER (interior), DEPATRI (trânsito), NUIC (inteligência), GACE (alto escalão), GGAP (APP), entre outras.", "MNEMÔNICO: DHPP = Homicídio; DRACO = Crime Organizado; DPCA = Criança/Adolescente; DECAP = Patrimônio; DEINTER = Interior; DEPATRI = Trânsito; NUIC = Inteligência. CESPE adora: 'O DHPP investiga homicídios de policiais?' → SIM."],
-    ["leg_estadual_63", "Qual a relação entre a LC 137/2008 e a LC 317/2015?", "A LC 137/2008 é lei geral do PCCV da PC-PE (todos os cargos). A LC 317/2015 é lei especial do cargo de Delegado de Polícia. A LC 137 é marco geral; a LC 317 detalha a carreira de Delegado.", "⚠️ CORREÇÃO DE ERRO COMUM: A LC 137/2008 INSTITUI o PCCV da PC-PE. A LC 317/2015 NÃO institui, mas dispõe sobre o cargo de Delegado. Relação: geral (137) x especial (317)."],
-    ["leg_estadual_64", "Quais as hipóteses de demissão do policial civil (Lei 6.425/72)?", "Abandono de cargo, inassiduidade habitual, improbidade, incontinência pública, conduta escandalosa, ofensa física, crime contra a administração, entre outras previstas no art. 35.", "⚠️ DIFERENÇA IMPORTANTE: A demissão é penalidade máxima. Exige processo administrativo disciplinar (PAD) com ampla defesa. A cassação de aposentadoria é hipótese quando o policial já aposentado cometeu falta grave quando na ativa."],
-    ["leg_estadual_70", "Quais as formas de provimento de cargo público na Lei 6.123/68?", "Nomeação, promoção, readaptação, reversão, aproveitamento, reintegração e recondução (art. 8º da Lei 6.123/68).", "MNEMÔNICO: N-P-R-R-A-R-R (Nomeação, Promoção, Readaptação, Reversão, Aproveitamento, Reintegração, Recondução). CESPE: 'A promoção é forma de provimento?' → SIM. 'A remoção é forma de provimento?' → NÃO."],
-    ["leg_estadual_72", "Segundo a CE-PE, servidores públicos têm direito de sindicalização?", "Sim, o direito de sindicalização é garantido aos servidores públicos civis (art. 37, VI CF/88), exceto para militares (art. 42, §1º c/c art. 142, §3º, IV CF/88).", "⚠️ DIFERENÇA CRUCIAL: Sindicalização: servidor civil PODE, militar NÃO PODE. Greve: servidor civil PODE (com restrições), militar NÃO PODE (proibição absoluta)."],
-    ["leg_estadual_74", "A criação de novos cargos na PC-PE depende de quê?", "Depende de lei específica de iniciativa do Chefe do Poder Executivo (Governador), conforme art. 61, §1º, II, 'a' CF/88 e princípio da reserva legal em matéria de criação de cargos públicos.", "⚠️ RESERVA LEGAL: Cargo público só se cria por LEI. Iniciativa PRIVATIVA do Governador para cargos do Executivo. A LC 137/2008 já fixou o quantitativo máximo. Novo cargo exige nova lei."],
-    ["leg_estadual_79", "O que é sindicância patrimonial no âmbito do serviço público de PE?", "Procedimento administrativo para apurar evolução patrimonial incompatível do servidor, visando identificar enriquecimento ilícito (art. 9º da Lei 6.123/68 c/c Lei 8.429/92).", "⚠️ SINDICÂNCIA ≠ PAD: A sindicância patrimonial é ESPECÍFICA para evolução patrimonial. Sindicância comum é preparatória do PAD. A patrimonial pode levar diretamente à demissão se comprovado enriquecimento ilícito."],
-    ["leg_estadual_83", "Quando o policial civil de PE pode ser transferido compulsoriamente?", "Por necessidade do serviço, mediante ato fundamentado da autoridade competente, respeitando a lotação original sempre que possível (art. 3º LC 317/2015 e Lei 12.830/13).", "⚠️ PARA DELEGADOS: A remoção do Delegado exige FUNDAMENTAÇÃO (art. 3º LC 317/2015 c/c Lei 12.830/13). É garantia de autonomia funcional. Remoção arbitrária e sem motivação pode ser anulada."],
-    ["leg_estadual_86", "O que prevê o art. 105-B da CE-PE?", "Dispõe sobre a Polícia Penal de PE, órgão de segurança pública responsável pela vigilância e custódia de presos, incluída pela EC Estadual 52/2020.", "⚠️ NOVIDADE: A Polícia Penal foi criada pela EC 52/2020 (art. 105-B CE-PE). É órgão de segurança pública (art. 101, V). Substitui os agentes penitenciários. CESPE: 'A Polícia Penal integra o sistema de segurança pública estadual' → VERDADEIRO."],
-    ["leg_estadual_88", "O que é o Conselho de Polícia Civil previsto na LC 137/2008?", "Órgão colegiado consultivo e deliberativo da PC-PE, com composição paritária, que atua na formulação de políticas e diretrizes da instituição.", "Natureza: CONSULTIVO + DELIBERATIVO (não é executivo). Paritário: representantes de diferentes carreiras. CESPE: 'O Conselho de Polícia Civil tem poder de nomear o Delegado-Geral?' → NÃO (a nomeação é do Governador)."]
+    [
+      "leg_estadual_0",
+      "No ?mbito da Constitui??o do Estado de Pernambuco, os artigos 101 a 105-B tratam da Seguran?a P?blica. Que mat?rias espec?ficas cada um desses dispositivos disciplina?",
+      "O art. 101 elenca os cinco ?rg?os de seguran?a p?blica estadual (PC, PM, CBM, Pol?cia Cient?fica e Pol?cia Penal, inclu?da pela EC 52/2020). O art. 102 disp?e sobre a PC e sua fun??o de pol?cia judici?ria. O art. 103 trata da PM e CBM (pol?cia ostensiva). Os arts. 105 e 105-A regulam a Pol?cia Cient?fica (per?cias). J? o art. 105-B disciplina a Pol?cia Penal (cust?dia de presos).",
+      "MNEM?NICO: 101-?RG?OS, 102-PC, 103-PM/CBM, 105-CIENT?FICA, 105-B-PENAL. CESPE adora trocar: 'O art. 104 tamb?m trata de seguran?a p?blica' ? FALSO (104 ? Defesa Civil). Decore o bloco 101 a 105-B e nunca confunda com o art. 100 ou 106."
+    ],
+    [
+      "leg_estadual_1",
+      "Segundo o art. 101 da Constitui??o do Estado de Pernambuco, quais s?o os ?rg?os que comp?em o sistema de seguran?a p?blica estadual?",
+      "A CE-PE, em seu art. 101, relaciona cinco ?rg?os de seguran?a p?blica: Pol?cia Civil, Pol?cia Militar, Corpo de Bombeiros Militar, Pol?cia Cient?fica e Pol?cia Penal. As Guardas Municipais N?O integram este rol, sendo tratadas apenas no ?4? do art. 101 para prote??o de bens, servi?os e instala??es municipais. A Pol?cia Penal foi inclu?da pela EC Estadual n? 52/2020.",
+      "ALERTA CESPE: A CF/88 tem 6 ?rg?os (inclui PF, PRF, PFER). A CE-PE tem 5 ?rg?os (N?O inclui for?as federais). CESPE adora: 'A CE-PE prev? seis ?rg?os de seguran?a p?blica' ? FALSO (s?o cinco). N?o confunda: Guarda Municipal N?O ? ?rg?o de seguran?a p?blica estadual."
+    ],
+    [
+      "leg_estadual_2",
+      "A qual Poder e a qual ?rg?o da administra??o estadual a Pol?cia Civil de Pernambuco est? subordinada e vinculada, respectivamente?",
+      "A PC-PE ? subordinada diretamente ao Poder Executivo Estadual, na pessoa do Governador (art. 144, ?6? CF/88 c/c art. 101 CE-PE), e est? vinculada administrativamente ? Secretaria de Defesa Social (SDS) para fins de coordena??o, gest?o e planejamento. O Delegado-Geral ? a autoridade m?xima da institui??o, cargo de livre nomea??o e exonera??o pelo Governador, devendo recair sobre Delegado de carreira (LC 137/2008, art. 6?).",
+      "CADEIA: Delegado-Geral ? Secret?rio SDS ? Governador. Diferen?a sutil: SUBORDINA??O ? ao Governador; VINCULA??O ? ? SDS. CESPE adora: 'A PC-PE ? subordinada ? SDS' ? FALSO (? subordinada ao Governador, vinculada ? SDS). Nomea??o do Delegado-Geral ? livre, mas exige carreira de Delegado."
+    ],
+    [
+      "leg_estadual_5",
+      "Jo?o, policial civil de PE, descumpriu uma ordem de servi?o publicada em boletim interno. Essa conduta configura que tipo de infra??o administrativa segundo a Lei 6.425/72?",
+      "Transgress?o disciplinar, definida no art. 27 do Estatuto do Policial Civil (Lei 6.425/72) como toda a??o ou omiss?o que viole os deveres funcionais estabelecidos em lei, regulamento, instru??o superior ou ato normativo interno da PC-PE. A transgress?o disciplinar ? apurada em procedimento pr?prio e pode resultar em penalidades que v?o da advert?ncia ? demiss?o, conforme a gravidade da infra??o e os antecedentes do servidor.",
+      "MNEM?NICO: TRANSGRESS?O = TUDO que viola dever funcional (lei, regulamento, instru??o, norma interna). CESPE adora: 'Transgress?o disciplinar ? apenas a viola??o de lei' ? FALSO (abrange regulamento, instru??es e normas internas, conforme art. 27 Lei 6.425/72). O rol de fontes ? amplo, n?o taxativo."
+    ],
+    [
+      "leg_estadual_7",
+      "De que forma a Lei 6.123/68 (Estatuto do Servidor Estadual) se aplica aos policiais civis de Pernambuco, considerando a exist?ncia da Lei 6.425/72 (Estatuto do Policial Civil)?",
+      "A Lei 6.123/68 se aplica SUBSIDIARIAMENTE aos policiais civis de PE, ou seja, apenas naquilo que n?o for regulado de forma espec?fica pela Lei 6.425/72 (Estatuto do Policial Civil). A rela??o entre ambas ? de especialidade: a 6.425/72 prevalece por ser lei especial voltada ? categoria, sendo a 6.123/68 aplicada nas omiss?es, conforme expressamente previsto no art. 3?, ?2? da Lei 6.425/72.",
+      "RELA??O: 6.425/72 = ESPEC?FICA (prevalece). 6.123/68 = GERAL e SUBSIDI?RIA (preenche lacunas). CESPE adora generalizar: 'A Lei 6.123/68 se aplica integralmente aos policiais civis' ? FALSO. S? onde a 6.425/72 for omissa. Decore: 6.425 > 6.123 por especialidade."
+    ],
+    [
+      "leg_estadual_10",
+      "Um policial civil de PE faltou ao servi?o 50 vezes de forma intercalada em um ano, sem justificativa. Essa conduta configura qual infra??o disciplinar e qual a penalidade correspondente?",
+      "Inassiduidade habitual, prevista no art. 36 da Lei 6.425/72, caracterizada pelo faltar ao servi?o por mais de 60 (sessenta) dias, interpoladamente, no per?odo de 12 (doze) meses. Essa infra??o sujeita o policial ? penalidade de demiss?o, conforme art. 35, VI c/c art. 36 da Lei 6.425/72. Diferencia-se do abandono de cargo, que exige aus?ncia injustificada por mais de 30 dias consecutivos (art. 35, V).",
+      "DIFEREN?A CR?TICA CESPE: Inassiduidade = 60 dias ALTERNADOS em 12 meses. Abandono = 30 dias CONSECUTIVOS. Decore: INASSIDUIDADE = INTERCALADO (60/12). ABANDONO = CONT?NUO (30). CESPE adora trocar os prazos e as naturezas. Ambos levam ? demiss?o (art. 35, V e VI Lei 6.425/72)."
+    ],
+    [
+      "leg_estadual_11",
+      "Qual o objeto principal da Lei Complementar Estadual 137/2008 e qual sua import?ncia para a organiza??o da Pol?cia Civil de Pernambuco?",
+      "A LC 137/2008 disp?e sobre a organiza??o b?sica, a estrutura administrativa, o quadro de cargos e o quantitativo do efetivo da Pol?cia Civil do Estado de Pernambuco. Ela estabelece a estrutura hier?rquica (Delegacia-Geral, Diretorias, Departamentos e Delegacias), fixa o n?mero de cargos por classe e define as atribui??es das unidades especializadas, sendo considerada a lei org?nica estruturante da PC-PE.",
+      "LC 137/2008 = LEI ORG?NICA DA PC-PE (estrutura f?sica e de cargos). LC 317/2015 = PCCV (vencimentos). CESPE adora trocar: 'A LC 137/2008 institui o Plano de Cargos e Vencimentos da PC-PE' ? FALSO (quem institui o PCCV ? a LC 317/2015). A LC 137 fixa QUANTITATIVO, n?o sal?rio."
+    ],
+    [
+      "leg_estadual_14",
+      "Qual o objeto e o alcance da Lei Complementar Estadual 317/2015 no ?mbito da Pol?cia Civil de Pernambuco?",
+      "A LC 317/2015 institui o Plano de Cargos, Carreiras e Vencimentos (PCCV) dos servidores da Pol?cia Civil de PE, dispondo sobre as regras de ingresso, promo??o, progress?o funcional ? por eleva??o de n?vel (certifica??o em cursos) e por capacita??o (aquisi??o de t?tulos) ?, enquadramento, tabela remunerat?ria e direitos dos policiais civis, abrangendo Delegados, Agentes, Escriv?es e demais carreiras da institui??o.",
+      "?? CORRE??O COMUM: LC 137 = ESTRUTURA (cargos). LC 317 = VENCIMENTOS (PCCV). CESPE adora inverter os objetos: 'A LC 317/2015 disp?e sobre a organiza??o b?sica da PC-PE' ? FALSO. Progress?o na LC 317 exige interst?cio + avalia??o de desempenho + curso/t?tulo (art. 15)."
+    ],
+    [
+      "leg_estadual_16",
+      "Segundo a Lei 6.123/68 (Estatuto do Servidor Estadual de PE), como se define o ato de posse e qual o prazo para sua efetiva??o sob pena de tornar sem efeito a nomea??o?",
+      "Posse ? o ato de investidura em cargo p?blico pelo qual o candidato nomeado aceita formalmente o cargo e assume os deveres funcionais, materializando-se com a assinatura do termo de posse perante a autoridade competente (art. 13 Lei 6.123/68). Deve ocorrer no prazo de 30 dias contados da publica??o do ato de nomea??o, sob pena de tornar sem efeito a nomea??o (art. 13, ?1?). O servidor deve entrar em exerc?cio em at? 30 dias ap?s a posse (art. 14, ?2?).",
+      "PRAZOS DIFERENTES: Nomea??o ? (30 dias) ? POSSE ? (30 dias) ? EXERC?CIO. CESPE adora confundir: 'O prazo para posse ? de 30 dias contados da posse' ? absurdo. Posse conta da NOMEA??O. Exerc?cio conta da POSSE. Perdeu um prazo? Perdeu o direito ao cargo. Decore: N30P30E."
+    ],
+    [
+      "leg_estadual_18",
+      "Diferencie exonera??o de demiss?o no ?mbito da Lei 6.123/68 quanto ? natureza jur?dica e ?s hip?teses de ocorr?ncia.",
+      "Exonera??o ? o desfazimento do v?nculo funcional SEM car?ter punitivo, podendo ocorrer: a) a pedido do servidor; b) de of?cio, quando o servidor n?o entra em exerc?cio no prazo legal (art. 14, ?2?) ou quando n?o obt?m aprova??o no est?gio probat?rio (art. 21); ou c) em caso de acumula??o ilegal n?o resolvida. J? a demiss?o tem natureza PUNITIVA, decorre de PAD com ampla defesa (art. 136) e exige falta grave comprovada.",
+      "DIFEREN?A-CHAVE: Exonera??o SEM puni??o (administrativa/volunt?ria). Demiss?o COM puni??o (disciplinar, ap?s PAD). CESPE adora: 'A exonera??o de of?cio por n?o entrar em exerc?cio ? penalidade disciplinar' ? FALSO. Exonera??o n?o ? penalidade. Decore: EXONERA??O = desligamento 'neutro'; DEMISS?O = 'puni??o'."
+    ],
+    [
+      "leg_estadual_19",
+      "Como a Lei 6.123/68 define a demiss?o e quais as consequ?ncias jur?dicas dessa penalidade para o servidor p?blico estadual, incluindo a distin??o com a cassa??o de aposentadoria?",
+      "Demiss?o ? a penalidade disciplinar m?xima que rompe definitivamente o v?nculo funcional com a administra??o p?blica, exigindo PAD com contradit?rio e ampla defesa (art. 136, ?1? Lei 6.123/68). Hip?teses incluem abandono de cargo, inassiduidade habitual, improbidade e crimes contra a administra??o. A demiss?o N?O atinge a aposentadoria j? concedida, mas o servidor aposentado que cometeu falta grave na ativa pode ter sua aposentadoria cassada, conforme art. 136, ?3?.",
+      "CESPE ADORA: 'Demiss?o e exonera??o s?o ambas penalidades' ? FALSO (exonera??o N?O ? penalidade). 'A demiss?o atinge a aposentadoria j? concedida' ? FALSO (quem atinge a aposentadoria ? a CASSA??O). Decore: Demiss?o = servidor ATIVO. Cassa??o = servidor APOSENTADO (falta na ativa)."
+    ],
+    [
+      "leg_estadual_20",
+      "Quais os requisitos para concess?o e a dura??o da licen?a-pr?mio prevista no Estatuto do Servidor Estadual de Pernambuco (Lei 6.123/68)?",
+      "A licen?a-pr?mio ? o afastamento remunerado por 3 (tr?s) meses concedido ao servidor p?blico estadual que completar cada quinqu?nio (5 anos) de efetivo exerc?cio, desde que n?o tenha sofrido penalidade disciplinar e n?o tenha faltado injustificadamente ao servi?o no per?odo aquisitivo (art. 110 da Lei 6.123/68). O servidor pode converter parte da licen?a em pec?nia, recebendo o valor correspondente ao per?odo n?o gozado.",
+      "REGRAS: 5 anos de exerc?cio ? 3 meses de licen?a. CESPE adora inverter: 'A licen?a-pr?mio ? concedida a cada 3 anos por 5 meses' ? FALSO. Decore: 5?3 (5 anos para 3 meses). A licen?a-pr?mio ? REMUNERADA (ao contr?rio da licen?a para interesse particular, que ? SEM vencimentos). Pode ser convertida em dinheiro parcialmente."
+    ],
+    [
+      "leg_estadual_22",
+      "Quais os requisitos para aquisi??o da estabilidade pelo servidor p?blico estadual de PE e as hip?teses constitucionais e legais de sua perda?",
+      "A estabilidade ? adquirida ap?s 3 (tr?s) anos de efetivo exerc?cio no cargo e aprova??o em avalia??o especial de desempenho por comiss?o institu?da para essa finalidade (art. 41, ?4? CF/88 c/c Lei 6.123/68 e art. 19 do ADCT). O servidor est?vel s? perder? o cargo: a) por senten?a judicial transitada em julgado; b) mediante PAD com ampla defesa; c) por insufici?ncia de desempenho comprovada em avalia??o peri?dica, na forma de lei complementar (art. 41, ?1? CF/88).",
+      "?? EC 19/98: Antes bastavam 2 anos. Agora s?o 3 anos + avalia??o especial. CESPE adora: 'A estabilidade ? autom?tica ap?s 3 anos' ? FALSO (exige avalia??o de desempenho). 'Servidor em est?gio probat?rio precisa de PAD para ser exonerado' ? FALSO (pode ser exonerado sem PAD, art. 21 Lei 6.123/68)."
+    ],
+    [
+      "leg_estadual_23",
+      "Conceitue recondu??o no ?mbito da Lei 6.123/68, indicando em que hip?teses ela ocorre e qual o requisito subjetivo para sua concess?o.",
+      "Recondu??o ? o retorno do servidor est?vel ao cargo anteriormente ocupado, em duas hip?teses (art. 27 da Lei 6.123/68): I - quando inabilitado em est?gio probat?rio relativo a outro cargo para o qual foi nomeado; II - quando reintegrado o ocupante anterior do cargo que foi considerado ilegalmente demitido, hip?tese em que o servidor reconduzido, se n?o est?vel, ? colocado em disponibilidade. O requisito essencial ? que o servidor j? seja EST?VEL no cargo anterior (art. 27, caput).",
+      "?? REQUISITO: S? pode ser reconduzido quem j? ? EST?VEL no cargo anterior (art. 27 Lei 6.123/68). CESPE adora: 'A recondu??o se aplica a servidor em est?gio probat?rio' ? FALSO. Diferen?a: REINTEGRA??O = volta de quem foi demitido. RECONDU??O = volta de quem n?o passou no probat?rio ou perdeu o cargo para reintegrado."
+    ],
+    [
+      "leg_estadual_24",
+      "Na Lei 6.123/68, conceitue reintegra??o e indique os efeitos financeiros desse instituto para o servidor reintegrado.",
+      "Reintegra??o ? a forma de provimento derivado pela qual o servidor retorna ao cargo anteriormente ocupado quando sua demiss?o for anulada por decis?o judicial ou administrativa (art. 25 Lei 6.123/68). O reintegrado faz jus ao ressarcimento de TODAS as vantagens do per?odo de afastamento, incluindo vencimentos, promo??es e demais direitos que teria se estivesse em exerc?cio. Se o cargo estiver ocupado, o servidor ocupante ser? reconduzido ao cargo de origem (se est?vel) ou colocado em disponibilidade.",
+      "EFEITOS: Reintegra??o ? volta com TODOS os atrasados (retroativos integrais). Recondu??o ? volta SEM atrasados. CESPE adora trocar: 'Na reintegra??o, o servidor n?o recebe os vencimentos do per?odo de afastamento' ? FALSO (recebe tudo, art. 25 ?1? Lei 6.123/68). Decore: REINTEGRA??O = repara??o integral."
+    ],
+    [
+      "leg_estadual_26",
+      "Qual a finalidade da sindic?ncia no ?mbito da Lei 6.123/68, quais seus prazos e quais os poss?veis resultados desse procedimento?",
+      "A sindic?ncia, prevista no art. 145 da Lei 6.123/68, ? um procedimento administrativo sum?rio e preparat?rio destinado a apurar irregularidades no servi?o p?blico que n?o justifiquem, em tese, a abertura imediata de PAD. O prazo ? de 30 dias, prorrog?vel por igual per?odo (art. 145, ?1?). Pode resultar em: a) arquivamento; b) aplica??o de penalidade leve (advert?ncia ou repreens?o); ou c) instaura??o de PAD, se constatada infra??o grave que exija suspens?o ou demiss?o.",
+      "SINDIC?NCIA ? PAD: Sindic?ncia = 30 dias (+30), pode aplicar penalidades leves. PAD = 60 dias (+60), aplica suspens?o >30 dias e demiss?o. CESPE adora: 'A sindic?ncia pode aplicar demiss?o' ? FALSO (s? PAD aplica demiss?o). Sindic?ncia ? presidida por 1 servidor; PAD por comiss?o de 3 servidores est?veis."
+    ],
+    [
+      "leg_estadual_27",
+      "Como a Lei 6.123/68 disciplina o Processo Administrativo Disciplinar (PAD) quanto ? composi??o da comiss?o processante, prazo de conclus?o e penalidades que pode aplicar?",
+      "O PAD ? o procedimento formal destinado a apurar infra??es disciplinares graves, assegurados o contradit?rio e a ampla defesa (art. 136 c/c art. 148 Lei 6.123/68). A comiss?o processante ? composta por 3 servidores p?blicos est?veis (art. 149). O prazo para conclus?o ? de 60 dias, prorrog?vel por igual per?odo (art. 154). O PAD ? obrigat?rio para aplica??o de penalidades de suspens?o superior a 30 dias e demiss?o, sendo vedada a aplica??o direta dessas penas sem o devido processo legal.",
+      "PAD = 3 servidores est?veis + 60 dias (+60). Sindic?ncia = 1 servidor + 30 dias (+30). CESPE adora: 'O PAD pode ser conduzido por comiss?o de 2 servidores' ? FALSO (s?o 3, art. 149). 'O PAD tem prazo de 30 dias' ? FALSO (60 dias, art. 154). Decore: PAD = 3-60; Sindic?ncia = 1-30."
+    ],
+    [
+      "leg_estadual_28",
+      "Conceitue remo??o no Estatuto do Servidor Estadual de PE (Lei 6.123/68), diferenciando suas modalidades e esclarecendo se configura forma de provimento de cargo p?blico.",
+      "Remo??o ? o deslocamento do servidor p?blico, a pedido ou de of?cio, no ?mbito do mesmo quadro de pessoal, com ou sem mudan?a de sede, para outra unidade administrativa ou localidade (art. 30 da Lei 6.123/68). A remo??o N?O ? forma de provimento de cargo p?blico ? o servidor permanece no mesmo cargo, apenas muda a lota??o. As formas de provimento est?o no art. 8? (nomea??o, promo??o, readapta??o, revers?o, aproveitamento, reintegra??o e recondu??o) e N?O incluem a remo??o.",
+      "?? CESPE ADORA: 'A remo??o ? forma de provimento de cargo p?blico' ? FALSO. Remo??o = deslocamento DENTRO do mesmo cargo (muda s? a lota??o). Provimento = ocupa??o do cargo (art. 8?). CESPE tamb?m cobra: 'remo??o de of?cio independe de motiva??o' ? FALSO (todo ato administrativo requiere motiva??o, STF)."
+    ],
+    [
+      "leg_estadual_29",
+      "Diferencie redistribui??o de remo??o no ?mbito da Lei 6.123/68 quanto ao objeto do deslocamento e ? destina??o do cargo.",
+      "A redistribui??o (art. 32 Lei 6.123/68) ? o deslocamento do CARGO com o seu TITULAR para outro ?rg?o ou entidade do mesmo Poder, por interesse do servi?o, implicando altera??o da lota??o do cargo no ?rg?o de origem. Na remo??o (art. 30), apenas o SERVIDOR ? deslocado dentro do mesmo quadro, e o cargo permanece na lota??o original. Na redistribui??o, o cargo 'segue' o servidor; na remo??o, apenas o servidor se move, e o cargo fica onde estava.",
+      "DIFEREN?A ESSENCIAL: Redistribui??o = CARGO + TITULAR mudam de ?rg?o. Remo??o = s? o TITULAR muda (cargo fica). CESPE adora inverter: 'Na redistribui??o, apenas o servidor ? deslocado' ? FALSO. 'A remo??o transporta o cargo para outro ?rg?o' ? FALSO. Ambas s?o por INTERESSE DO SERVI?O e dependem de ato fundamentado."
+    ],
+    [
+      "leg_estadual_31",
+      "Qual o significado da sigla DHPP na estrutura da PC-PE, sua compet?ncia material e sua base legal de atua??o?",
+      "DHPP significa Delegacia de Homic?dios e Prote??o ? Pessoa, unidade especializada da Pol?cia Civil de Pernambuco respons?vel pela investiga??o de crimes contra a vida, especialmente homic?dios dolosos consumados e tentados, latroc?nios e les?es corporais seguidas de morte. Atua tamb?m na prote??o de v?timas e testemunhas amea?adas. Sua compet?ncia decorre da LC 137/2008 e do CPP (art. 4?). O DHPP conta com for?as-tarefa especializadas e n?cleos de intelig?ncia para elucida??o de homic?dios complexos.",
+      "MNEM?NICO: DHPP = DE Homic?dio e Prote??o ? Pessoa. CESPE adora: 'O DHPP investiga crimes patrimoniais' ? FALSO (foco ? CRIME CONTRA A VIDA). 'O DHPP investiga homic?dios de policiais?' ? SIM (homic?dio ? homic?dio). N?o confunda: DHPP (homic?dio) ? DECAP (patrim?nio) ? DRACO (crime organizado)."
+    ],
+    [
+      "leg_estadual_32",
+      "O que significa a sigla DRACO na estrutura da Pol?cia Civil de Pernambuco e qual o foco de atua??o dessa unidade especializada?",
+      "DRACO ? a sigla para Delegacia de Repress?o ?s A??es Criminosas Organizadas, unidade especializada da PC-PE focada no combate a organiza??es criminosas, fac??es criminosas, associa??es criminosas e delitos de alta complexidade que envolvam estrutura??o criminosa (tr?fico de drogas em larga escala, lavagem de dinheiro, mil?cias privadas). Atua com m?todos especiais de investiga??o previstos na Lei 12.850/2013, como a??o controlada, infiltra??o policial virtual e presencial, e colabora??o premiada.",
+      "DRACO = CRIME ORGANIZADO (Lei 12.850/13). DHPP = HOMIC?DIO. DPCA = CRIAN?A/ADOLESCENTE. CESPE adora: 'O DRACO investiga qualquer crime de tr?fico de drogas' ? PARCIAL (s? o de grande escala e organizado). 'O DRACO investiga homic?dios' ? FALSO (quem investiga homic?dio ? o DHPP). Decore as 3 siglas principais: DHPP, DRACO, DPCA."
+    ],
+    [
+      "leg_estadual_33",
+      "Qual a compet?ncia material da DPCA no ?mbito da Pol?cia Civil de Pernambuco e qual legisla??o federal rege sua atua??o?",
+      "DPCA ? a Delegacia da Crian?a e do Adolescente, unidade especializada da PC-PE na apura??o de crimes cometidos CONTRA crian?as e adolescentes (v?timas) e, subsidiariamente, de atos infracionais praticados POR adolescentes (art. 171 a 190 ECA). Sua atua??o ? regida pelo Estatuto da Crian?a e do Adolescente (Lei 8.069/90) e pela Lei 13.431/2017 (Depoimento Especial), que estabelecem prioridade absoluta na apura??o, procedimentos especiais e a oitiva especial da v?tima para evitar revitimiza??o.",
+      "DPCA = FOCO EM CRIAN?A/ADOLESCENTE V?TIMA (crimes CONTRA). CESPE adora: 'O DPCA s? investiga crimes cometidos por adolescentes' ? FALSO (o foco principal ? crime CONTRA a crian?a/adolescente). Prioridade absoluta (art. 227 CF/88). Depoimento Especial = Lei 13.431/2017. N?o confunda: DPCA ? DEAM (Delegacia da Mulher)."
+    ],
+    [
+      "leg_estadual_36",
+      "Como funciona a avaliação periódica de desempenho prevista na LC 317/2015 para progressão funcional?",
+      "A avaliação periódica de desempenho é instrumento obrigatório e cumulativo para ambas as modalidades de progressão funcional (elevação de nível e capacitação), conforme arts. 11 a 14 da LC 317/2015. Considera metas institucionais, resultados individuais e conduta funcional do servidor. O servidor em licença sem vencimentos ou cumprindo pena disciplinar NÃO concorre à progressão no período (art. 15, § único LC 317/2015).",
+      "⚠️ PEGADINHA CESPE: A avaliação de desempenho é requisito CUMULATIVO (não alternativo) para ambas as progressões. Servidor em estágio probatório também é avaliado, mas sob regras da Lei 6.425/72, não da LC 317/2015. CESPE troca: a avaliação substitui o interstício mínimo — FALSO (são requisitos cumulativos)."
+    ],
+    [
+      "leg_estadual_38",
+      "Qual o valor e a base de cálculo do adicional de periculosidade do policial civil de PE?",
+      "O adicional de periculosidade é de 30% sobre o vencimento BASE do policial civil, devido pelo exercício de atividade perigosa, conforme art. 68, §2º da LC 137/2008. É pago enquanto perdurar a exposição ao risco e incorpora-se aos proventos de aposentadoria. NÃO se acumula com adicional de insalubridade (Súmula 238 TST aplicada subsidiariamente).",
+      "📌 MNEMÔNICO: PERICULOSIDADE = 30% sobre o BASE (não sobre o mínimo). INSALUBRIDADE = 10/20/40% sobre o SALÁRIO MÍNIMO. CESPE troca os percentuais: periculosidade do policial é 20% — FALSO (art. 68, §2º LC 137/2008). Não confundir: periculosidade = risco de vida; insalubridade = agente nocivo à saúde."
+    ],
+    [
+      "leg_estadual_39",
+      "O que é cessão de servidor na Lei 6.123/68 e quais suas modalidades?",
+      "Cessão é o deslocamento TEMPORÁRIO do servidor para outro órgão ou entidade da administração pública, com ou sem ônus para o órgão cedente (art. 57 da Lei 6.123/68). Na cessão COM ÔNUS, o órgão cedente mantém o pagamento da remuneração; na SEM ÔNUS, o órgão cessionário assume. O prazo máximo é de 2 anos, prorrogável por igual período, salvo para exercício de cargo em comissão.",
+      "⚠️ PEGADINHA CESPE: CESSÃO não se confunde com REMOÇÃO (deslocamento dentro do mesmo órgão) nem com READAPTAÇÃO (mudança por limitação de saúde). A cessão transfere a titularidade do servidor — FALSO (mantém vínculo com o cedente). Cessão sem ônus é ilegal — FALSO (é modalidade prevista em lei)."
+    ],
+    [
+      "leg_estadual_42",
+      "Quais as hipóteses constitucionais de acumulação de cargos públicos permitidas que se aplicam ao servidor estadual de PE?",
+      "A regra é a vedação de acumulação remunerada (art. 37, XVI CF/88 c/c Lei 6.123/68). As únicas exceções, havendo compatibilidade de horários, são: (a) dois cargos de professor; (b) um cargo de professor com outro técnico ou científico; (c) dois cargos ou empregos privativos de profissionais de saúde. A vedação aplica-se também a proventos de aposentadoria (art. 37, §10 CF/88).",
+      "📌 MNEMÔNICO: As 3 exceções: PROF + PROF | PROF + TÉC | SAÚDE + SAÚDE. ⚠️ CESPE adora: Policial civil pode acumular com cargo de professor se houver compatibilidade — VERDADEIRO (se enquadrar nas exceções). Policial pode acumular dois cargos públicos — FALSO (regra geral vedada, com exceções taxativas). Acumulação de proventos com vencimentos também é vedada (art. 37, §10)."
+    ],
+    [
+      "leg_estadual_43",
+      "Quais são os cinco órgãos de segurança pública previstos no art. 101 da CE-PE?",
+      "O art. 101 da CE-PE elenca cinco órgãos: I — Polícia Civil; II — Polícia Militar; III — Corpo de Bombeiros Militar; IV — Polícia Científica; V — Polícia Penal (incluída pela EC Estadual 52/2020). O §4º trata das Guardas Municipais, que NÃO integram o rol de órgãos de segurança pública estadual, tendo função meramente de proteção de bens, serviços e instalações municipais.",
+      "⚠️ PEGADINHA CLÁSSICA CESPE: CF/88 tem 6 órgãos (inclui PF, PRF, PFER). CE-PE tem 5 órgãos (NÃO inclui forças federais). Guardas Municipais são órgãos de segurança pública estadual — FALSO (art. 101, §4º). Polícia Penal é órgão de segurança pública — VERDADEIRO (inciso V do art. 101). Mnemônico: 101-CE = 5 órgãos estaduais."
+    ],
+    [
+      "leg_estadual_44",
+      "O que é o GACE na estrutura da PC-PE e qual sua atribuição?",
+      "O GACE (Grupo de Apoio a Casos Especiais) é a unidade especializada da PC-PE voltada a investigações de alto escalão, envolvendo autoridades com foro privilegiado (ex.: Deputados, Secretários, Juízes) e crimes de grande repercussão social e midiática. Atua com equipe multidisciplinar sob supervisão direta do Delegado-Geral, no âmbito da estrutura organizacional da PC-PE prevista na LC 137/2008 e nos Decretos Estaduais que a regulamentam.",
+      "⚠️ CORREÇÃO DE ERRO COMUM: GACE = Grupo de APOIO A CASOS ESPECIAIS (alto escalão), NÃO Grupo de Aperfeiçoamento nem Captura Especializada. Mnemônico: GACE = Grandes Autoridades / Casos Especiais. Não confundir com GGAP (custódia de presos) nem DRACO (crime organizado)."
+    ],
+    [
+      "leg_estadual_45",
+      "Quais os prazos prescricionais para aplicação de penalidades disciplinares na Lei 6.123/68?",
+      "O art. 32 da Lei 6.123/68 estabelece: 5 ANOS para infrações puníveis com demissão, cassação de aposentadoria ou destituição de cargo em comissão (infrações GRAVES); 2 ANOS para infrações puníveis com suspensão (MÉDIAS); 180 DIAS para infrações puníveis com advertência (LEVES). O prazo conta da data em que o fato se tornou CONHECIDO pela administração (art. 32, §2º).",
+      "📌 MNEMÔNICO: GRAVE = 5 ANOS / MÉDIA = 2 ANOS / LEVE = 180 DIAS. ⚠️ CESPE adora inverter: infração leve prescreve em 2 anos — FALSO. O prazo conta da data do fato — FALSO (conta do CONHECIMENTO pela administração). A prescrição interrompe-se com a instauração do PAD (art. 32, §3º)."
+    ],
+    [
+      "leg_estadual_47",
+      "O que é o DECAP na estrutura da PC-PE e qual sua atribuição?",
+      "O DECAP (Delegacia de Crimes contra o Patrimônio) é unidade especializada da PC-PE no combate a crimes patrimoniais, como furtos, roubos, extorsões e danos qualificados (arts. 155 a 163 CP). Atua com equipe dedicada a investigações de crimes contra o patrimônio em geral, inserida na estrutura organizacional da PC-PE regulamentada pela LC 137/2008 e pelos Decretos Estaduais de organização da Polícia Civil.",
+      "⚠️ CORREÇÃO DE ERRO COMUM: DECAP = DElegacia de Crimes contra o PAtrimônio, NÃO Departamento de Capturas. Mnemônico: DECAP / PAT = PATrimônio. CESPE: DECAP investiga homicídios — FALSO (quem investiga é o DHPP). DECAP investiga latrocínio — VERDADEIRO (latrocínio é crime patrimonial, art. 157, §3º CP)."
+    ],
+    [
+      "leg_estadual_48",
+      "O que é disponibilidade no regime da Lei 6.123/68 e quais seus efeitos?",
+      "Disponibilidade é a situação do servidor ESTÁVEL que, extinto o cargo ou declarada sua desnecessidade, fica afastado do exercício com remuneração PROPORCIONAL ao tempo de serviço, até o adequado aproveitamento em outro cargo (art. 41, §3º CF/88 c/c arts. 37 a 39 da Lei 6.123/68). O período de disponibilidade computa-se como tempo de serviço. O aproveitamento é obrigatório; recusa configura abandono de cargo.",
+      "📌 MNEMÔNICO: DISPONIBILIDADE = CARGO EXTINTO + SERVIDOR ESTÁVEL + REMUNERAÇÃO PROPORCIONAL. ⚠️ CESPE: servidor em disponibilidade não recebe remuneração — FALSO. Disponibilidade se aplica a servidor não estável — FALSO (só para estável). Recusando o aproveitamento, o servidor é exonerado — FALSO (configura ABANDONO DE CARGO)."
+    ],
+    [
+      "leg_estadual_49",
+      "Como é calculada a remuneração do servidor estadual posto em disponibilidade (Lei 6.123/68)?",
+      "O servidor estável posto em disponibilidade recebe remuneração PROPORCIONAL ao tempo de serviço, nos termos do art. 41, §3º da CF/88 c/c art. 38 da Lei 6.123/68. Exemplo: servidor com 20 anos de serviço recebe a fração de 20/35 (57,14%) da remuneração do cargo de origem. O período em disponibilidade conta como tempo de serviço para todos os efeitos legais. O aproveitamento em cargo de natureza e vencimentos compatíveis é obrigatório.",
+      "⚠️ PEGADINHA CESPE: disponibilidade com remuneração integral — FALSO (é PROPORCIONAL). disponibilidade sem remuneração — FALSO. Disponibilidade aplica-se ao servidor estável extinto o cargo — VERDADEIRO. Este card substituiu pergunta SIM/NÃO por discursiva, padrão CESPE."
+    ],
+    [
+      "leg_estadual_51",
+      "O que é o NUIC e qual sua função na estrutura da PC-PE?",
+      "O NUIC (Núcleo de Inteligência) é o órgão de inteligência policial da PC-PE, responsável por produzir conhecimento estratégico e tático, coletar, analisar e difundir dados criminais para subsidiar investigações e ações de prevenção e repressão qualificada. Atua em integração com sistemas de inteligência estaduais e nacionais (SINIC — Sistema Nacional de Inteligência Criminal), nos termos da LC 137/2008 e das diretrizes do Sistema Estadual de Inteligência de Segurança Pública.",
+      "📌 MNEMÔNICO: NUIC = NÚCLEO de Inteligência (produz CONHECIMENTO). ⚠️ CESPE: O NUIC investiga crimes de trânsito — FALSO (é o DEPATRI). INTELIGÊNCIA ≠ INVESTIGAÇÃO: inteligência produz conhecimento estratégico; investigação produz prova processual."
+    ],
+    [
+      "leg_estadual_53",
+      "Quais os requisitos para a progressão por capacitação prevista na LC 317/2015?",
+      "A progressão por capacitação (LC 317/2015, arts. 7º a 10) exige TRÊS requisitos cumulativos: (a) interstício mínimo no nível atual; (b) avaliação periódica de desempenho satisfatória; (c) apresentação de certificados de cursos ou títulos acadêmicos reconhecidos. É uma das duas modalidades de progressão (a outra é a por elevação de nível profissional). O servidor em licença sem vencimentos ou cumprindo pena disciplinar NÃO faz jus (art. 15, § único).",
+      "⚠️ DIFERENÇA CRUCIAL: PROGRESSÃO POR CAPACITAÇÃO = TÍTULOS/CURSOS ACADÊMICOS. PROGRESSÃO POR ELEVAÇÃO DE NÍVEL = CERTIFICAÇÃO PROFISSIONAL. CESPE: a progressão por capacitação exige apenas títulos — FALSO (exige interstício + avaliação + título). LC 317/2015 rege todos os cargos da PC-PE — FALSO (é lei do cargo de Delegado; LC 137/2008 rege os demais)."
+    ],
+    [
+      "leg_estadual_54",
+      "Quais são os deveres funcionais do policial civil previstos no art. 27 da Lei 6.425/72?",
+      "O art. 27 da Lei 6.425/72 estabelece como deveres do policial civil: I — lealdade às instituições constitucionais e administrativas; II — assiduidade e pontualidade; III — urbanidade e respeito ao público e superiores; IV — sigilo profissional sobre informações obtidas em razão do cargo; V — obediência hierárquica às ordens superiores, SALVO quando manifestamente ilegais; VI — zelo pelo patrimônio público; VII — eficiência e dedicação ao serviço público.",
+      "📌 MNEMÔNICO: L-A-U-S-O-Z-E (Lealdade, Assiduidade, Urbanidade, Sigilo, Obediência, Zelo, Eficiência). ⚠️ PEGADINHA: A obediência hierárquica NÃO é absoluta — ordem MANIFESTAMENTE ILEGAL deve ser recusada. CESPE: o policial deve cumprir toda ordem superior, independentemente de legalidade — FALSO. O sigilo profissional é absoluto — FALSO (cede diante de dever legal de informação)."
+    ],
+    [
+      "leg_estadual_55",
+      "O que é o DEPATRI na estrutura da PC-PE?",
+      "O DEPATRI (Departamento de Trânsito) é o órgão especializado da PC-PE na investigação de crimes de trânsito, como homicídio culposo na direção de veículo automotor (art. 302 CTB), lesão corporal culposa (art. 303 CTB) e embriaguez ao volante (art. 306 CTB). Atua na perícia de acidentes de trânsito e na produção de provas técnicas relacionadas à mobilidade urbana e segurança viária.",
+      "⚠️ CORREÇÃO DE ERRO COMUM: DEPATRI = DEPartamento de TRÂNSITO, NÃO Delegacia de Repressão ao Patrimônio. Mnemônico: DEPATRI = DEP + TRÂNSITO (patri = patrol/patrulha). CESPE: DEPATRI investiga crimes contra o patrimônio — FALSO (é o DECAP)."
+    ],
+    [
+      "leg_estadual_57",
+      "Quem homologa o concurso público da PC-PE e qual a natureza jurídica desse ato?",
+      "O concurso público da PC-PE é homologado por DECRETO do Governador do Estado, ato administrativo VINCULADO (não discricionário) e obrigatório após o encerramento do certame. A homologação fixa o marco inicial do prazo de validade do concurso (até 2 anos, prorrogável por igual período, art. 37, III CF/88). Não confere direito à nomeação imediata, mas, dentro das vagas do edital e do prazo de validade, gera direito subjetivo à nomeação (RE 598.099 RG/STF).",
+      "⚠️ PEGADINHA CESPE: A homologação do concurso é ato discricionário do Governador — FALSO (ato VINCULADO). Homologado o concurso, o candidato tem direito líquido à nomeação — depende: se dentro do prazo de validade e das vagas do edital, SIM (RE 598.099/STF). O prazo de validade do concurso conta da publicação do edital — FALSO (conta da HOMOLOGAÇÃO)."
+    ],
+    [
+      "leg_estadual_58",
+      "Quais as atribuições e requisitos do cargo de Escrivão de Polícia na PC-PE?",
+      "O Escrivão de Polícia é cargo público de provimento efetivo, nível SUPERIOR (LC 137/2008), privativo de bacharel em Direito, responsável pela lavratura de autos, termos, intimações, mandados e demais atos cartorários. Exerce fé-pública documental e certifica atos processuais e administrativos. O ingresso dá-se por concurso público de provas e títulos, com curso de formação profissional (ACADEPOL) como etapa obrigatória.",
+      "📌 ATUALIZAÇÃO PÓS-EC 19/98: NÍVEL SUPERIOR é exigido para TODOS os cargos da PC-PE. ⚠️ CESPE: Escrivão exerce função de polícia judiciária — FALSO (quem exerce é o Delegado; o Escrivão exerce função CARTORÁRIA). Escrivão não precisa ser bacharel em Direito — FALSO (LC 137/2008 exige)."
+    ],
+    [
+      "leg_estadual_59",
+      "Quais as atribuições e requisitos do cargo de Delegado de Polícia na PC-PE?",
+      "O Delegado de Polícia é autoridade policial, cargo de carreira de nível superior, PRIVATIVO de bacharel em Direito (art. 144, §4º CF/88 c/c LC 137/2008, arts. 4º e 5º). Preside o inquérito policial com EXCLUSIVIDADE (art. 4º CPP c/c art. 2º, §1º Lei 12.830/13). Exerce polícia judiciária, coordena investigações, requisita perícias e representa por medidas cautelares constitucionais e processuais.",
+      "⚠️ PEGADINHAS: Qualquer bacharel em Direito pode ser Delegado da PC-PE — FALSO (exige concurso público + curso de formação na ACADEPOL). Delegado-Geral é a autoridade máxima da PC-PE — VERDADEIRO. Delegado pode delegar a presidência do IP a Escrivão — FALSO (presidência do IP é PRIVATIVA de Delegado — Lei 12.830/13, art. 2º, §1º)."
+    ],
+    [
+      "leg_estadual_61",
+      "Qual a função da ACADEPOL na estrutura da PC-PE?",
+      "A ACADEPOL (Academia de Polícia Civil de Pernambuco) é o órgão central de ensino, capacitação e aperfeiçoamento profissional da PC-PE, instituída no âmbito da estrutura organizacional prevista na LC 137/2008 e nos Decretos Estaduais regulamentadores. Responsabiliza-se pelo Curso de Formação Profissional (etapa obrigatória dos concursos), cursos de aperfeiçoamento, atualização, especialização e pós-graduação lato sensu dos policiais civis de todas as carreiras. Atua também na pesquisa e produção de conhecimento técnico-científico aplicado à segurança pública.",
+      "📌 MNEMÔNICO: ACADEPOL = FORMA + CAPACITA + ESPECIALIZA + PESQUISA. ⚠️ CESPE: ACADEPOL é responsável apenas pela formação de novos policiais — FALSO (abrange também aperfeiçoamento e especialização dos já em atividade). Curso de formação é apenas classificatório — FALSO (é ELIMINATÓRIO e classificatório)."
+    ],
+    [
+      "leg_estadual_62",
+      "Qual a natureza jurídica do Curso de Formação Profissional no concurso da PC-PE?",
+      "O Curso de Formação Profissional (CFP) é a segunda etapa do concurso público da PC-PE, de caráter ELIMINATÓRIO E CLASSIFICATÓRIO, ministrado pela ACADEPOL (LC 137/2008, arts. 10 e 11). O candidato é matriculado como ALUNO-POLICIAL, sem vínculo estatutário. A reprovação no CFP implica eliminação do certame, independentemente da nota nas provas anteriores. A aprovação é condição para nomeação e posse no cargo público.",
+      "⚠️ PEGADINHA: CFP é etapa exclusivamente classificatória — FALSO (é ELIMINATÓRIO e classificatório). O candidato já é servidor público durante o CFP — FALSO (é ALUNO-POLICIAL, não servidor). CFP substitui o estágio probatório — FALSO (são institutos distintos: CFP é etapa do concurso; estágio probatório é após a posse, 3 anos de efetivo exercício — art. 41 CF/88)."
+    ],
+    [
+      "leg_estadual_65",
+      "O que é o GGAP na estrutura da PC-PE?",
+      "O GGAP (Grupo de Gerenciamento de Apoio ao Preso) é a unidade especializada da PC-PE responsável pela custódia, escolta e guarda de presos sob responsabilidade da Polícia Civil, no âmbito da estrutura organizacional prevista na LC 137/2008 e nos Decretos Estaduais de organização da PC-PE. Atua no apoio logístico das unidades prisionais provisórias vinculadas às delegacias e na escolta de presos para audiências, traslados entre estabelecimentos prisionais e apresentações em juízo.",
+      "⚠️ CORREÇÃO DE ERRO COMUM: GGAP = Grupo de Gerenciamento de Apoio ao PRESO (custódia/escolta), NÃO Grupo de Gestão e Análise Policial. Mnemônico: GGAP = Gerenciamento de apoiado ao PRESO. CESPE: GGAP investiga crimes patrimoniais — FALSO (é custódia de presos). Não confunda: GACE = alto escalão; DECAP = patrimônio; GGAP = presos."
+    ],
+    [
+      "leg_estadual_66",
+      "Qual o percentual do adicional noturno e a duração da hora noturna do policial civil de PE?",
+      "O adicional noturno do policial civil é de 20% sobre o valor da hora diurna, com a hora noturna reduzida para 52 minutos e 30 segundos (art. 73, §1º CLT c/c Súmula 60 TST, aplicados subsidiariamente). Considera-se período noturno o trabalho entre 22h e 5h. A redução da hora noturna implica que 7 horas de trabalho noturno equivalem a 8 horas diurnas para cálculo da remuneração.",
+      "📌 MNEMÔNICO: NOTURNO = 20% + 52min30s (hora REDUZIDA). ⚠️ CESPE adora trocar: adicional noturno do policial é 30% — FALSO (periculosidade é 30%; noturno é 20%). A hora noturna tem 60 minutos — FALSO (tem 52min30s — Súmula 60 TST). Período noturno vai das 20h às 4h — FALSO (é das 22h às 5h, art. 73, §2º CLT)."
+    ],
+    [
+      "leg_estadual_67",
+      "Quais os requisitos e o prazo de férias do servidor estadual pela Lei 6.123/68?",
+      "30 dias consecutivos de férias remuneradas por ano, adquiridas após 12 meses de efetivo exercício (art. 103, Lei 6.123/68). É vedado o fracionamento, salvo por necessidade do serviço (§4º). É proibida a acumulação além de 2 períodos, salvo imperiosa necessidade (art. 105). Durante as férias, o servidor mantém todas as vantagens do cargo (art. 108).",
+      "Mnemônico: 'FÉRIAS 30-12-2' → 30 dias, após 12 meses, máximo 2 períodos acumulados. ⚠ CESPE adora trocar: férias NÃO são 20 dias, NÃO são adquiridas após 6 meses. O fracionamento é EXCEÇÃO (necessidade do serviço), não regra!"
+    ],
+    [
+      "leg_estadual_68",
+      "O que é o adicional por tempo de serviço (ATS) na Lei 6.123/68 e qual seu percentual?",
+      "O Adicional por Tempo de Serviço (ATS) é uma gratificação de 5% (cinco por cento) por quinquênio de efetivo exercício, calculada sobre o vencimento do cargo efetivo, concedida automaticamente a partir do dia imediato ao do completion do quinquênio (art. 170 e parágrafo único, Lei 6.123/68, com redação da Lei 6.472/72). Incorpora-se ao provento da aposentadoria na proporção de 1/35 (homem) ou 1/30 (mulher) por ano efetivamente percebido (art. 173).",
+      "Mnemônico: 'ATS = 5% a cada 5 anos' → 5% por quinquênio. ⚠ CESPE troca: NÃO é 10%, NÃO é por biênio, NÃO é calculado sobre o vencimento total, mas sobre o vencimento do CARGO EFETIVO. A incorporação é PROPORCIONAL ao tempo de percepção (35 avos homem / 30 avos mulher)."
+    ],
+    [
+      "leg_estadual_69",
+      "O que é aproveitamento no âmbito da Lei 6.123/68?",
+      "Aproveitamento é o retorno à atividade do funcionário em disponibilidade, em cargo igual ou equivalente, pela sua natureza e vencimento, ao anteriormente ocupado (art. 69, Lei 6.123/68). Deve ocorrer obrigatoriamente na primeira oportunidade que se oferecer (art. 70). Havendo mais de um concorrente à mesma vaga, terá preferência o de maior tempo de disponibilidade (art. 72).",
+      "Mnemônico: 'APROVEITAMENTO = APÓS DISPONIBILIDADE' ⚠ CESPE troca aproveitamento com reversão! Reversão é de aposentado; aproveitamento é de disponível. Decore: 'Disponível → Aproveitado; Aposentado → Revertido' (D.A.R.A)."
+    ],
+    [
+      "leg_estadual_71",
+      "O que significa interdição de direitos como penalidade na Lei 6.425/72 e qual seu fundamento?",
+      "A 'interdição de direitos' NÃO é uma penalidade autônoma no Estatuto do Policial Civil (Lei 6.425/72). As penas disciplinares são as do art. 34: I - Repreensão; II - Multa; III - Suspensão; IV - Detenção disciplinar; V - Destituição de função; VI - Demissão; VII - Cassação de aposentadoria ou disponibilidade. O efeito de interdição de direitos decorre de penas como a demissão (arts. 49-50) e a destituição de função (art. 48), que impedem temporária ou definitivamente o exercício de cargos ou funções públicas.",
+      "⚠ ALERTA CESPE: a banca pergunta 'interdição de direitos' para testar se você sabe que NÃO é uma pena autônoma no art. 34 da Lei 6.425/72! É EFEITO de penas como demissão e destituição. Decore o rol do art. 34: 'R e M u S i D e C D' (Repreensão, Multa, Suspensão, Detenção, Destituição, Demissão, Cassação)."
+    ],
+    [
+      "leg_estadual_73",
+      "O que garante a irredutibilidade de vencimentos na Constituição do Estado de Pernambuco?",
+      "A irredutibilidade de vencimentos é garantia constitucional (art. 100, CE-PE c/c art. 37, XV, CF/88) que veda a redução do valor nominal da remuneração do servidor público. A CE-PE também assegura revisão geral anual (art. 100, §2º, CE-PE). Exceções: redução por inadequação ao regime previdenciário ou por teto constitucional (art. 100, §§ 8º e 13, CE-PE).",
+      "⚠ PEGADINHA CESPE: irredutibilidade é do valor NOMINAL (não do real/poder de compra). A revisão geral anual é para reposição inflacionária, mas NÃO é automática — depende de lei específica. Exceções: teto e previdência. Mnemônico: 'IRREDUTÍVEL = NOMINAL, exceto TETO e PREV'."
+    ],
+    [
+      "leg_estadual_75",
+      "O que caracteriza o cargo em comissão na estrutura da PC-PE?",
+      "Cargo em comissão é cargo de livre nomeação e exoneração pelo Chefe do Poder Executivo, destinado exclusivamente a funções de direção, chefia e assessoramento (art. 37, II e V, CF/88; art. 97, CE-PE). Na PC-PE, existem cargos comissionados como Delegado-Geral, Diretores e Chefes de unidades, que podem ser preenchidos por policiais de carreira ou, em até 25% (exceção), por profissionais de notório saber (art. 102, §1º, CE-PE).",
+      "Mnemônico: 'CCom = Direção, Chefia, Assessoramento (DCA)'. ⚠ CESPE adora cobrar: cargo em comissão NÃO é privativo de policial (pode haver não-policiais, desde que dentro do limite). Só o último nível da carreira de Delegado é privativo de Delegado (art. 103, CE-PE)."
+    ],
+    [
+      "leg_estadual_76",
+      "Qual a natureza jurídica do cargo de Agente de Polícia Civil de Pernambuco?",
+      "Cargo público efetivo, de provimento por concurso público de provas, de natureza policial civil, integrante do Quadro Próprio de Pessoal da Polícia Civil de Pernambuco (PCPE), submetido a regime jurídico estatutário (Lei 6.425/72 e LC 137/2008, art. 7º, IV). É de carreira, estruturado em classes e padrões, com progressão funcional por tempo de serviço e avaliação de desempenho (LC 137/2008, arts. 17-23).",
+      "Mnemônico: 'A = Agente = Efetivo + Concurso + Carreira'. ⚠ PEGADINHA CESPE: o cargo de Agente NÃO é comissionado, NÃO é temporário, NÃO é de livre nomeação. Diferença do cargo de Delegado: ambos são efetivos, mas o ingresso no cargo de Delegado exige bacharelado em Direito + 3 anos de atividade jurídica (LC 317/2015, art. 2º)."
+    ],
+    [
+      "leg_estadual_77",
+      "Como é estruturado o regime de plantão policial na PC-PE?",
+      "O regime de plantão policial é a escala de trabalho em turnos de revezamento para garantir o atendimento ininterrupto das unidades policiais (24 horas), especialmente nas delegacias de plantão (art. 2º, Lei 6.425/72 c/c arts. 103-104, CE-PE). É regulamentado administrativamente pela Chefia de Polícia, respeitando a carga horária semanal definida no PCCV (LC 137/2008) e os princípios da hierarquia e disciplina.",
+      "⚠ CESPE cobra pegadinha: plantão NÃO significa 'sem limites' — há carga horária máxima e controle. O regime de plantão não exclui direitos como adicional noturno e repouso semanal. Mnemônico: 'PLANTÃO = 24h ininterruptas, mas com LIMITE de carga'."
+    ],
+    [
+      "leg_estadual_78",
+      "O que é a Superintendência de Polícia Metropolitana na estrutura da PC-PE?",
+      "A Superintendência de Polícia Metropolitana é unidade de coordenação e gestão operacional das delegacias circunscricionais e especializadas da Região Metropolitana do Recife (RMR), subordinada diretamente à Delegacia-Geral da Polícia Civil (LC 137/2008, art. 5º c/c Decreto 44.469/2017). Sua estrutura inclui delegacias seccionais e unidades especializadas no atendimento à população metropolitana.",
+      "Mnemônico: 'SUP-METRO = RMR + subordinada ao DG'. ⚠ PEGADINHA CESPE: a Superintendência Metropolitana NÃO abrange todo o Estado — só a RMR. O interior é organizado por Delegacias Regionais (antigas DEINTERs). Não confundir com a Superintendência de Polícia do Interior."
+    ],
+    [
+      "leg_estadual_80",
+      "Como se dá a aposentadoria por invalidez do policial civil em Pernambuco?",
+      "A aposentadoria por invalidez do policial civil ocorre quando o servidor é acometido de doença que o torne permanentemente incapaz para o serviço público (art. 97, Lei 6.123/68). Será sempre precedida de licença para tratamento de saúde por período não inferior a 24 meses, salvo se o laudo médico concluir pela incapacidade definitiva (§2º, art. 100, Lei 6.123/68). Os proventos são integrais se a invalidez decorrer de acidente em serviço, doença profissional ou doença grave especificada em lei; caso contrário, proporcionais ao tempo de contribuição.",
+      "Mnemônico: 'INVALIDEZ = 24 meses de licença (regra) → exceto incapacidade definitiva'. ⚠ CESPE adora: invalidez por acidente em serviço = proventos INTEGRAIS; invalidez comum = proporcionais. Não confundir com aposentadoria especial do policial (art. 103, §5º, CE-PE) que exige 25 ou 30 anos de contribuição."
+    ],
+    [
+      "leg_estadual_81",
+      "Em que hipóteses o policial civil em estágio probatório pode ser demitido?",
+      "O policial civil em estágio probatório pode ser demitido em duas hipóteses: (1) por não aprovação no estágio probatório, após processo de avaliação periódica que conclua pela inaptidão para o exercício do cargo (art. 43, Lei 6.123/68 c/c art. 33, Lei 6.425/72); (2) por cometimento de infração disciplinar grave que configure falta passível de demissão (art. 49, Lei 6.425/72), assegurados o contraditório e a ampla defesa em processo administrativo disciplinar (art. 56, Lei 6.425/72).",
+      "Mnemônico: 'EP demite = INAPTIDÃO + FALTA GRAVE'. ⚠ PEGADINHA CESPE: o estágio probatório NÃO é garantia de estabilidade — o servidor pode ser demitido sim, tanto por não aprovação no estágio quanto por PAD. O estágio probatório é de 3 anos (art. 43, Lei 6.123/68). Não confundir: no estágio probatório NÃO há estabilidade (esta só após 3 anos + aprovação)."
+    ],
+    [
+      "leg_estadual_82",
+      "O que significa DEINTER na estrutura organizacional da PC-PE?",
+      "DEINTER é a sigla para 'Departamento Estadual de Investigação do Interior', unidade de coordenação regional da Polícia Civil de Pernambuco responsável pela supervisão e integração das atividades das delegacias em determinada região do interior do Estado (LC 137/2008, art. 5º c/c regulamentação do Decreto 44.469/2017). Subordina-se à Delegacia-Geral e articula-se com a Superintendência Metropolitana para cobertura de todo o Estado.",
+      "Mnemônico: 'DEINTER = DO INTERIOR (D-E-I-N-T-E-R)'. ⚠ CESPE gosta de confundir: não existe 'DEINTER metropolitano' — na RMR é a Superintendência Metropolitana. Os DEINTERs são regionais (Interior I, Interior II, etc.). Não confundir com DINTER da PMPE (estrutura militar)."
+    ],
+    [
+      "leg_estadual_84",
+      "Segundo a CE-PE, quem nomeia e de quem é a competência para nomear o Secretário de Defesa Social?",
+      "Compete privativamente ao Governador do Estado nomear e exonerar o Secretário de Defesa Social (art. 37, XIV, CE-PE c/c art. 84, I e XXV, CF/88, aplicado por simetria). O Secretário é cargo de livre nomeação e exoneração (comissionado), não precisando ser policial civil ou militar, mas deve integrar o Conselho de Defesa Social que assessora o Governador na política de segurança (art. 101, §2º, CE-PE).",
+      "Mnemônico: 'SDS = GOV nomeia, livre escolha'. ⚠ ALERTA CESPE: NÃO é chefe de polícia que nomeia, NÃO é a ALEPE, NÃO é o Secretário de Administração. A nomeação é ATO PRIVATIVO DO GOVERNADOR. O Conselho de Defesa Social assessora, mas quem nomeia é exclusivamente o Governador."
+    ],
+    [
+      "leg_estadual_85",
+      "Como é composto o regime disciplinar do Estatuto do Policial Civil (Lei 6.425/72)?",
+      "O regime disciplinar (arts. 30 a 56, Lei 6.425/72) compreende: (a) DEVERES (art. 30); (b) TRANSGRESSÕES DISCIPLINARES (art. 31, com 48 incisos); (c) PENAS DISCIPLINARES (art. 34): Repreensão, Multa, Suspensão (até 30 dias), Detenção disciplinar, Destituição de função, Demissão, Cassação de aposentadoria/disponibilidade; (d) CIRCUNSTÂNCIAS AGRAVANTES (art. 35); (e) COMPETÊNCIA PARA APLICAÇÃO (art. 52); (f) PROCESSO DISCIPLINAR (art. 56).",
+      "Mnemônico: 'REG DISC = DEVERES + TRANSGRESSÕES + PENAS + PROCESSO'. ⚠ CESPE: a suspensão NÃO excede 30 dias (art. 37). Detenção disciplinar (art. 34, IV) é polêmica — alguns doutrinadores a consideram inconstitucional (STF). Decore: 'PENA DE DETENÇÃO DISCIPLINAR ainda está na lei, mas é discutida'."
+    ],
+    [
+      "leg_estadual_87",
+      "Qual a diferença entre cargo público e função pública na Lei 6.123/68?",
+      "CARGO PÚBLICO: conjunto de atribuições e responsabilidades criado por lei, com denominação própria, número certo e vencimento específico, provido por nomeação (arts. 2º e 10, Lei 6.123/68). FUNÇÃO PÚBLICA: conjunto de atribuições de natureza transitória, sem cargo permanente, criada para atender necessidade temporária, sem denominação própria de cargo (art. 3º, Lei 6.123/68). Resumo: cargo é permanente e criado por lei; função é temporária e acessória ao cargo.",
+      "Mnemônico: 'CARGO = LEI + PERMANENTE | FUNÇÃO = TEMPORÁRIA'. ⚠ PEGADINHA CESPE: função de confiança (art. 37, V, CF) é diferente de função pública temporária! A função de confiança é privativa de servidor efetivo para chefia/direção/assessoramento. Já a função pública (Lei 6.123/68 art. 3º) pode ser exercida sem cargo efetivo."
+    ],
+    [
+      "leg_estadual_89",
+      "O que é lotação provisória segundo a Lei 6.123/68?",
+      "Lotação provisória é a designação temporária do servidor público para exercer funções em unidade administrativa diversa de sua lotação definitiva, sem alteração de sua sede funcional principal (arts. 48-50 Lei 6.123/68). É medida excepcional, motivada por necessidade temporária do serviço, e não se confunde com remoção (que é definitiva). O servidor em lotação provisória mantém o vencimento do cargo efetivo.",
+      "Mnemônico: 'LOTAÇÃO PROVISÓRIA = TEMPORÁRIA ≠ REMOÇÃO (definitiva)'. ⚠ CESPE: lotação provisória NÃO gera direito a mudança de sede, NÃO altera o cargo, NÃO garante efetividade. A remoção é definitiva e altera a sede do servidor. Decore: 'Provisória = temporária; Remoção = permanente'."
+    ],
+    [
+      "leg_estadual_90",
+      "Quais as espécies de licença previstas na Lei 6.123/68 e seus respectivos artigos?",
+      "As licenças estão previstas nos arts. 109 a 134 da Lei 6.123/68: (1) Licença-prêmio: 6 meses a cada decênio (art. 112); (2) Tratamento de saúde: até 24 meses, prorrogável (arts. 115-124); (3) Doença em pessoa da família: até 24 meses (art. 125); (4) Maternidade: 180 dias com vencimento integral (art. 126); (5) Paternidade: 15 dias (art. 2º, LC 03/90); (6) Serviço militar (art. 128); (7) Mandato eletivo (art. 128-A); (8) Interesse particular (arts. 130-131); (9) Capacitação (arts. 132-133).",
+      "Mnemônico: 'LICENÇAS = P r ê m i o + S a ú d e + F a m í l i a + M a t e r n i d a d e + P a t e r n i d a d e + M i l i t a r + M a n d a t o + I n t e r e s s e + C a p a c i t a ç ã o'. ⚠ CESPE: a licença-prêmio é APÓS 10 anos (decênio), não após 5 anos. Maternidade = 180 dias (integral). Interesse particular = até 4 anos, SEM vencimento (art. 130)."
+    ],
+    [
+      "leg_estadual_91",
+      "Qual o fundamento legal do vencimento base do Agente de Polícia e como se dá a progressão?",
+      "O vencimento base do Agente de Polícia é fixado pela LC 137/2008 (PCCV) e leis supervenientes (LC 156/2010, LC 177/2011), estruturado em Grade de Vencimento Base por classes e padrões (arts. 17-23, LC 137/2008). A progressão funcional ocorre por: (a) tempo de serviço (mudança de classe a cada 5 anos); (b) avaliação de desempenho; (c) qualificação profissional (cursos, especializações). O ingresso dá-se na Classe I, Padrão A, da faixa salarial inicial (art. 19, LC 137/2008). ATENÇÃO: a LC 317/2015 trata do cargo de DELEGADO DE POLÍCIA, NÃO do Agente!",
+      "⚠ PEGADINHA MORTAL DA CESPE! A LC 317/2015 NÃO trata do vencimento do Agente — ela regulamenta o cargo de Delegado (art. 103, §5º, CE-PE). Quem rege o vencimento do Agente é a LC 137/2008 e suas alterações. Mnemônico: 'AGENTE = LC 137 | DELEGADO = LC 317'. Não caia nessa pegadinha!"
+    ],
+    [
+      "leg_estadual_92",
+      "O que são os Conselhos Comunitários de Segurança e qual seu fundamento na CE-PE?",
+      "Os Conselhos Comunitários de Segurança são órgãos colegiados de participação popular criados para discutir, propor e acompanhar medidas de segurança pública nas comunidades locais, previstos no art. 105-A da Constituição do Estado de Pernambuco (incluído pela EC 53/2020). Têm caráter consultivo e deliberativo nos limites de sua competência, visando integrar a sociedade civil com os órgãos de segurança pública estadual.",
+      "Mnemônico: 'CONSEG = CONSELHO COMUNITÁRIO (art. 105-A CE)'. ⚠ ALERTA CESPE: os Conselhos NÃO substituem a polícia, NÃO têm poder de investigar, NÃO são órgãos executivos. São de PARTICIPAÇÃO POPULAR (consulta + proposta). Não confundir com o Conselho de Defesa Social (art. 101, §2º) que assessora o Governador."
+    ],
+    [
+      "leg_estadual_93",
+      "O que é o Agente de Polícia Civil de Pernambuco e quais são suas atribuições específicas?",
+      "O Agente de Polícia Civil é cargo público efetivo de nível superior, de natureza policial, integrante da carreira policial civil, com atribuições de polícia judiciária e investigação criminal (arts. 1º e 7º, Lei 6.425/72; art. 7º, IV, LC 137/2008). Suas atribuições incluem: executar diligências investigatórias; cumprir mandados de prisão, busca e apreensão; colher provas e vestígios; elaborar relatórios de investigação; dar apoio técnico-operacional ao Delegado de Polícia na condução do inquérito policial; e realizar ações preventivas e repressivas de criminalidade.",
+      "Mnemônico: 'AGENTE = EXECUTA DILIGÊNCIAS + CUMPRE MANDADOS + COLHE PROVAS'. ⚠ CESPE: o Agente NÃO preside inquérito, NÃO decide indiciamento, NÃO requisita perícia oficial (quem faz é o Delegado). O Agente auxilia e executa as determinações do Delegado (art. 103, CE-PE)."
+    ],
+    [
+      "leg_estadual_94",
+      "O que diferencia as atribuições do Agente de Polícia e do Delegado quanto à presidência do inquérito policial?",
+      "A diferença é de NATUREZA JURÍDICA E CONSTITUCIONAL: o Delegado de Polícia, ocupante do último nível da carreira, tem a atribuição privativa de presidir o inquérito policial e dirigir a investigação criminal (art. 103, CE-PE; art. 4º, CPP). O Agente de Polícia, subordinado ao Delegado, executa as diligências determinadas, cumpre mandados, colhe provas e elabora relatórios, mas NÃO preside o IP nem decide sobre indiciamentos. Essa distinção decorre da hierarquia funcional e da chefia da investigação.",
+      "Mnemônico: 'DELEGADO = PRESIDE | AGENTE = EXECUTA'. ⚠ PEGADINHA CLÁSSICA CESPE: o Agente pode, SIM, realizar diligências investigatórias e colher provas de ofício (no exercício da função), mas NÃO pode presidir o inquérito. O IP é privativo do Delegado (art. 103, CE-PE c/c art. 4º, CPP). Nem mesmo o Escrivão preside o IP!"
+    ],
+    [
+      "leg_estadual_95",
+      "Quais as penalidades disciplinares previstas no Estatuto do Policial Civil de PE (Lei 6.425/1972)?",
+      "Advertência, repreensão, suspensão, demissão, cassação de aposentadoria e destituição de função comissionada, conforme o art. 28 da Lei 6.425/1972.",
+      "MNEMÔNICO: AR-SUS-DEM-CAS-DES (Advertência, Repreensão, Suspensão, Demissão, Cassação, Destituição). PEGADINHA CESPE: a suspensão NÃO pode exceder 90 dias (art. 30). A cassação de aposentadoria aplica-se a quem já se aposentou mas cometeu falta grave quando na ativa."
+    ],
+    [
+      "leg_estadual_96",
+      "A LC 317/2015 prevê regras de progressão funcional para a carreira de Delegado de Polícia?",
+      "Não. A LC 317/2015 (apenas 4 artigos) regula a natureza jurídica do cargo de Delegado (art. 1º), o ingresso mediante concurso público com 3 anos de atividade jurídica (art. 2º) e a remoção por ato fundamentado (art. 3º). A progressão funcional é disciplinada pela LC 137/2008 (arts. 15 a 17), que institui o PCCV da PC-PE.",
+      "⚠️ PEGADINHA CLÁSSICA CESPE: A LC 317/2015 tem SOMENTE 4 artigos e NÃO trata de progressão, promoção ou capacitação. Toda matéria de progressão está na LC 137/2008. Decore: 317 = Delegado (natureza, ingresso, remoção); 137 = PCCV (cargos, carreiras, progressão)."
+    ],
+    [
+      "leg_estadual_new_97",
+      "O que estabelecem os artigos 101 a 105-B da Constituição do Estado de Pernambuco?",
+      "Instituem o capítulo da Segurança Pública Estadual. Art. 101: órgãos permanentes (PC, PM, CBM, Polícia Científica e Polícia Penal). Art. 102: PC exerce polícia judiciária e apura infrações penais (exceto militares). Art. 103: PM exerce polícia ostensiva e preservação da ordem pública. Art. 104: CBM e Polícia Penal (segurança de presídios). Art. 105-A: Polícia Científica (perícias criminais, EC 52/2020). Art. 105-B: Segurança Viária (EC 54/2020).",
+      "MNEMÔNICO: 5 ÓRGÃOS do art. 101: 'PC PM CBM Ci Pen' (Polícia Civil, Militar, Bombeiros, Científica, Penal). ⚠️ CESPE adora: art. 102 = PC (judiciária) vs art. 103 = PM (ostensiva). Art. 105-A e 105-B foram inseridos por ECs de 2020."
+    ],
+    [
+      "leg_estadual_new_98",
+      "Qual a finalidade da Lei nº 6.425/1972 (Estatuto do Policial Civil de PE)?",
+      "Dispõe sobre o regime jurídico peculiar dos funcionários policiais civis da Secretaria de Defesa Social de Pernambuco, estabelecendo direitos, deveres, garantias, hierarquia, disciplina, penalidades e o Conselho Superior de Polícia. É o estatuto específico da PC-PE, com aplicação subsidiária da Lei 6.123/1968.",
+      "⚠️ RELAÇÃO DE LEIS: 6.425/72 = Estatuto ESPECÍFICO do policial civil (prevalece). 6.123/68 = Estatuto GERAL do servidor estadual (aplica-se onde 6.425 for omissa). CESPE cobra: 'A Lei 6.123/68 revogou a 6.425/72?' → FALSO. São complementares."
+    ],
+    [
+      "leg_estadual_new_99",
+      "O que regula a Lei nº 6.123/1968 (Estatuto do Servidor do Estado de Pernambuco)?",
+      "Institui o regime jurídico dos servidores públicos civis do Estado de Pernambuco, abrangendo provimento, vacância, direitos, vantagens, deveres, processo administrativo disciplinar e aposentadoria. Aplica-se subsidiariamente aos policiais civis, quando não houver disposição específica na Lei 6.425/1972 ou na LC 137/2008.",
+      "⚠️ CESPE: A lei 6.123/68 é o ESTATUTO GERAL. Para o policial civil, aplica-se SUBSIDIARIAMENTE (só onde a lei específica for omissa). Art. 1º: 'servidores civis do Estado'. MNEMÔNICO: 6.123 = GERAL; 6.425 = POLICIAL."
+    ],
+    [
+      "leg_estadual_new_100",
+      "Qual o objeto da Lei Complementar nº 137/2008?",
+      "Institui, no âmbito da PC-PE, o Plano de Cargos, Carreiras e Vencimentos (PCCV) dos servidores de natureza policial civil, nos termos do art. 1º da LC 137/2008. Define os 9 cargos do Grupo Ocupacional Policial Civil (art. 7º), a grade de vencimento (art. 9º), as regras de ingresso (arts. 10-11), progressão funcional (arts. 15-17) e a Comissão Administrativa de Avaliação e Acompanhamento do PCCV (art. 24).",
+      "⚠️ OBJETO CENTRAL: LC 137/2008 = PCCV da PC-PE. NÃO se confunde com a LC 317/2015 (Delegado). MNEMÔNICO: '137 = PCCV = Plano de Cargos, Carreiras e Vencimentos'. Regulamentada pelo Decreto 44.469/2017."
+    ],
+    [
+      "leg_estadual_new_101",
+      "O que dispõe a Lei Complementar nº 317/2015?",
+      "Regulamenta o § 5º do art. 103 da Constituição do Estado de Pernambuco, dispondo sobre o cargo de Delegado de Polícia. Declara que as funções de polícia judiciária e apuração de infrações penais exercidas pelo Delegado são de natureza jurídica e policial, essenciais e exclusivas de Estado (art. 1º). Estabelece ingresso mediante concurso público com participação da OAB, bacharelado em Direito e 3 anos de atividade jurídica ou policial (art. 2º), e remoção por ato fundamentado (art. 3º).",
+      "⚠️ ATENÇÃO: A LC 317/2015 NÃO é sobre LOA ou orçamento. É sobre o cargo de DELEGADO DE POLÍCIA. Base constitucional: § 5º do art. 103 da CE-PE. Só tem 4 artigos. CESPE já cobrou: 'A LC 317/2015 dispõe sobre a carreira de Agente de Polícia' → FALSO."
+    ],
+    [
+      "leg_estadual_expand_0",
+      "Quais as características do exercício das atividades da carreira policial civil segundo o art. 1º da LC 137/2008?",
+      "A carreira policial civil é exclusiva de Estado, estruturada para prestação de serviços essenciais, observados os princípios da hierarquia e da disciplina. O PCCV aplica-se aos servidores de natureza policial civil da PC-PE, seguindo os arts. 37-41 da CF/88, arts. 97-99 da CE-PE e a Lei 6.123/1968.",
+      "⚠️ TRÊS PILARES: (1) Exclusividade de Estado; (2) Serviços essenciais; (3) Hierarquia e disciplina. CESPE adora: 'A carreira policial civil é privativa de brasileiros natos?' → FALSO (não há essa exigência na LC 137/2008)."
+    ],
+    [
+      "leg_estadual_expand_1",
+      "Quais são os 9 cargos do Grupo Ocupacional Policial Civil (art. 7º da LC 137/2008)?",
+      "Segundo o art. 7º da LC 137/2008, são 9 cargos: I - Delegado de Polícia; II - Médico Legista; III - Perito Criminal; IV - Agente de Polícia; V - Escrivão de Polícia; VI - Agente de Perícia Criminal; VII - Agente de Medicina Legal; VIII - Perito Papiloscopista; IX - Operador de Telecomunicação.",
+      "MNEMÔNICO: 'DEL MÉD PER AG ESC AGM PAP TEL' = Delegado, Médico Legista, Perito Criminal, Agente, Escrivão, Agente Perícia, Agente Medicina, Papiloscopista, Telecom. ⚠️ CESPE: O cargo de Delegado NÃO integra mais o PCCV desde a LC 156/2010 (art. 6º), mas ainda consta no art. 7º da LC 137/2008 como referencial."
+    ],
+    [
+      "leg_estadual_expand_2",
+      "Como se estrutura a grade de vencimento base dos cargos da PC-PE segundo o art. 9º, parágrafo único da LC 137/2008?",
+      "O art. 9º, parágrafo único da LC 137/2008 estrutura a Grade de Vencimento Base em: (a) 4 Classes (I a IV) = progressão vertical por tempo; (b) 7 Faixas Salariais (A a G) = progressão horizontal por capacitação. A matriz resultante é Classe x Faixa, totalizando 28 posições possíveis.",
+      "MNEMÔNICO: '4 CLASSES (I-IV) x 7 FAIXAS (A-G) = 28 POSIÇÕES'. Classe = tempo (vertical). Faixa = capacitação (horizontal). ⚠️ CESPE inverte: 'A Classe representa capacitação e a Faixa representa tempo' → FALSO. É o contrário."
+    ],
+    [
+      "leg_estadual_expand_3",
+      "Como se dá o ingresso nos cargos da PC-PE segundo a LC 137/2008?",
+      "Mediante concurso público de provas e títulos, sempre na faixa e classe iniciais. Exige-se nível superior completo (para todos os cargos), aprovação em curso de formação profissional (2ª etapa, eliminatória e classificatória), aptidão física e mental, e idoneidade moral (arts. 10-11 da LC 137/2008).",
+      "⚠️ PÓS-EC 19/98: EXIGE-SE NÍVEL SUPERIOR para TODOS os cargos da PC-PE. O curso de formação é a 2ª etapa do concurso. CESPE: 'O curso de formação é apenas classificatório' → FALSO (também é eliminatório)."
+    ],
+    [
+      "leg_estadual_expand_4",
+      "Quais as hipóteses em que o servidor NÃO concorre à progressão funcional na PC-PE (art. 15 da LC 137/2008)?",
+      "Não concorre à progressão funcional o servidor que estiver:\na) Em licença sem vencimentos;\nb) Cumprindo pena disciplinar;\nc) Em gozo de licença por prazo superior a 90 dias (salvo licença-maternidade);\nd) Afastado para exercício de mandato eletivo.\n(Art. 15, parágrafo único da LC 137/2008)",
+      "MNEMÔNICO: 'SEM VENC, PENA, +90 DIAS, MANDATO'. ⚠️ CESPE: Licença-maternidade NÃO prejudica a progressão (exceção ao prazo de 90 dias). CESPE adora generalizar: 'licença superior a 90 dias impede progressão' sem mencionar a exceção da licença-maternidade."
+    ],
+    [
+      "leg_estadual_expand_5",
+      "Como funciona a progressão por elevação de nível profissional segundo o art. 17 da LC 137/2008?",
+      "Conforme o art. 17 da LC 137/2008, a progressão por elevação de nível profissional é a passagem do servidor de uma classe para a imediatamente superior (progressão vertical) mediante certificação em cursos de formação, aperfeiçoamento ou especialização, desde que cumprido o interstício mínimo de 2 anos em cada classe e obtida avaliação periódica de desempenho satisfatória.",
+      "⚠️ DIFERENÇA: Progressão VERTICAL = Classe (elevação de nível, art. 17). Progressão HORIZONTAL = Faixa (capacitação/títulos, art. 16). Ambas exigem interstício de 2 anos + avaliação. CESPE: 'A elevação de nível independe de avaliação' → FALSO."
+    ],
+    [
+      "leg_estadual_expand_6",
+      "Qual a regra para cessão de servidores da PC-PE para outros órgãos (art. 20 da LC 137/2008)?",
+      "Nos termos do art. 20 da LC 137/2008, a cessão de servidor da PC-PE para outro órgão somente pode ocorrer com: (1) consentimento expresso do servidor; (2) autorização do Delegado-Geral; (3) desde que não prejudique o funcionamento da unidade policial de origem.",
+      "⚠️ TRÊS REQUISITOS CUMULATIVOS: (1) Consentimento do servidor; (2) Autorização do Delegado-Geral; (3) Não prejuízo ao serviço. CESPE: 'A cessão independe do consentimento do servidor' → FALSO. O servidor precisa CONCORDAR."
+    ],
+    [
+      "leg_estadual_expand_7",
+      "O que é a Comissão Administrativa do PCCV prevista no art. 24 da LC 137/2008?",
+      "É a Comissão Administrativa de Avaliação do Enquadramento e Acompanhamento do PCCV, prevista no art. 24 da LC 137/2008. Órgão colegiado composto paritariamente por representantes da administração e dos servidores. Atribuições: avaliar enquadramentos, acompanhar a execução do PCCV, analisar recursos e propor ajustes ao plano.",
+      "⚠️ NATUREZA: Órgão COLEGIADO, PARITÁRIO (administração + servidores). NÃO é órgão executivo. Suas decisões são consultivas e deliberativas no âmbito do PCCV. CESPE: 'A Comissão pode nomear servidores' → FALSO (compete ao Delegado-Geral)."
+    ],
+    [
+      "leg_estadual_expand_8",
+      "Quais os objetivos do PCCV da PC-PE estabelecidos no art. 4º da LC 137/2008?",
+      "O art. 4º da LC 137/2008 estabelece como objetivos do PCCV: I - valorizar o servidor policial civil; II - estabelecer critérios de progressão funcional; III - adequar a remuneração à complexidade das atribuições; IV - estimular o desenvolvimento profissional; V - melhorar a qualidade dos serviços; VI - garantir isonomia salarial.",
+      "MNEMÔNICO: 'VALORIZAR, PROGREDIR, ADEQUAR, CAPACITAR, MELHORAR, ISONOMIZAR'. ⚠️ CESPE: 'O PCCV visa reduzir salários dos policiais' → FALSO. O objetivo é valorizar e melhorar a remuneração."
+    ],
+    [
+      "leg_estadual_expand_9",
+      "Qual o objeto e a base constitucional da LC 317/2015?",
+      "Objeto: dispor sobre o cargo de Delegado de Polícia, suas funções de polícia judiciária e a apuração de infrações penais, declarando-as de natureza jurídica e policial, essenciais e exclusivas de Estado. Base constitucional: § 5º do art. 103 da Constituição do Estado de Pernambuco.",
+      "⚠️ BASE CONSTITUCIONAL ESPECÍFICA: § 5º do art. 103 da CE-PE. Isso é PEGADINHA CERTA da CESPE: 'A LC 317/2015 tem base no art. 144 da CF/88' → FALSO (a base é o art. 103, §5º da CE-PE)."
+    ],
+    [
+      "leg_estadual_expand_10",
+      "Como a LC 317/2015 define o cargo de Delegado de Polícia (art. 1º)?",
+      "Define que o cargo de Delegado de Polícia, as funções de polícia judiciária e a apuração de infrações penais são de natureza jurídica e policial, essenciais e exclusivas de Estado (art. 1º, caput, da LC 317/2015).",
+      "⚠️ TRÊS CARACTERÍSTICAS: (1) Natureza jurídica e policial; (2) Essenciais; (3) Exclusivas de Estado. CESPE: 'O cargo de Delegado é de natureza exclusivamente administrativa' → FALSO. A lei diz expressamente: 'natureza jurídica e policial'."
+    ],
+    [
+      "leg_estadual_expand_11",
+      "Qual garantia é conferida ao Delegado de Polícia pelo art. 1º, parágrafo único da LC 317/2015?",
+      "O art. 1º, parágrafo único da LC 317/2015 garante ao Delegado de Polícia, para formação de seu convencimento e no exercício de suas atribuições, a interpretação do ordenamento jurídico com isenção, imparcialidade e de modo fundamentado.",
+      "⚠️ TRÊS EXIGÊNCIAS PARA A INTERPRETAÇÃO: (1) Isenção; (2) Imparcialidade; (3) Modo fundamentado. CESPE: 'O Delegado pode decidir com base em convicção pessoal não fundamentada' → FALSO. A lei exige FUNDAMENTAÇÃO."
+    ],
+    [
+      "leg_estadual_expand_12",
+      "Como se dá o ingresso no cargo de Delegado de Polícia segundo o art. 2º da LC 317/2015?",
+      "Conforme o art. 2º da LC 317/2015: ingresso sempre na faixa e classe iniciais, mediante concurso público de provas e títulos com participação da OAB. Exigências: diploma de bacharel em Direito e mínimo de 3 anos de atividade jurídica ou policial, comprovados no ato da posse.",
+      "MNEMÔNICO: 'CONCURSO + OAB + DIREITO + 3 ANOS'. ⚠️ CESPE: O prazo de 3 anos é de ATIVIDADE JURÍDICA OU POLICIAL (não apenas advocacia). A comprovação é no ATO DA POSSE, não na inscrição. A OAB participa em TODAS as fases do concurso."
+    ],
+    [
+      "leg_estadual_expand_13",
+      "A exigência de 3 anos de atividade jurídica para Delegado se aplica a concursos iniciados antes da LC 317/2015?",
+      "Não. O parágrafo único do art. 2º da LC 317/2015 expressamente exclui a aplicação da exigência de 3 anos de atividade jurídica ou policial para concursos públicos iniciados antes da vigência desta Lei Complementar (18/12/2015).",
+      "⚠️ REGRA DE DIREITO INTERTEMPORAL: A exigência de 3 anos NÃO retroage. CESPE: 'Candidato aprovado em concurso de 2014 mas nomeado em 2016 precisa comprovar 3 anos' → FALSO. Se o concurso foi iniciado antes de 18/12/2015, a regra não se aplica."
+    ],
+    [
+      "leg_estadual_expand_14",
+      "Qual a regra para remoção do Delegado de Polícia segundo o art. 3º da LC 317/2015?",
+      "O art. 3º da LC 317/2015 determina que a remoção do Delegado de Polícia dar-se-á somente por ato devidamente fundamentado. A motivação é obrigatória, sob pena de nulidade por violação à autonomia funcional do Delegado.",
+      "⚠️ GARANTIA ESSENCIAL: A remoção exige FUNDAMENTAÇÃO (ato motivado). Isso protege a autonomia do Delegado contra remoções punitivas disfarçadas. CESPE: 'A remoção do Delegado é ato discricionário puro' → FALSO. É discricionário, mas DEVE ser fundamentado (vinculação à motivação)."
+    ],
+    [
+      "leg_estadual_expand_15",
+      "Qual a relação entre a LC 137/2008 e a LC 317/2015?",
+      "A LC 137/2008 é lei geral do PCCV da PC-PE (aplicável a todos os 9 cargos). A LC 317/2015 é lei especial do cargo de Delegado de Polícia. Com a LC 156/2010, o Delegado deixou de figurar no PCCV (art. 6º), passando a ser regido especificamente pela LC 317/2015. A LC 137/2008, contudo, continua sendo o marco geral organizacional da PC-PE.",
+      "⚠️ CORREÇÃO DE ERRO COMUM: A LC 317/2015 NÃO integra nem substitui o PCCV. Ela é lei ESPECIAL para Delegados. A LC 137/2008 é lei GERAL. Relação: geral (137) + especial (317). CESPE: 'A LC 317/2015 revogou a LC 137/2008 para Delegados' → FALSO (são complementares)."
+    ],
+    [
+      "leg_estadual_expand_16",
+      "Segundo a LC 317/2015, o cargo de Delegado de Polícia é de carreira? Explique.",
+      "Sim. O art. 1º da LC 317/2015 declara que as funções de polícia judiciária e apuração de infrações penais exercidas pelo Delegado de Polícia são essenciais e exclusivas de Estado, e o art. 2º determina que o ingresso se dá sempre na faixa e classe iniciais, com possibilidade de progressão na carreira, caracterizando-o como cargo de carreira (não isolado).",
+      "⚠️ CESPE: 'O cargo de Delegado é cargo isolado, sem progressão' → FALSO. É cargo de CARREIRA (ingresso na classe inicial e progressão). A carreira de Delegado, contudo, é regida por lei específica (LC 317/2015), não mais pelo PCCV da LC 137/2008."
+    ],
+    [
+      "leg_estadual_expand_17",
+      "A LC 317/2015 exige a participação de qual instituição no concurso público para Delegado de Polícia?",
+      "Exige a participação da Ordem dos Advogados do Brasil (OAB) no concurso público de provas e títulos para ingresso no cargo de Delegado de Polícia (art. 2º, caput, da LC 317/2015). A OAB participa em todas as fases do certame.",
+      "⚠️ PARTICIPAÇÃO DA OAB: O art. 2º exige que a OAB participe do concurso. Isso é ESPECÍFICO para Delegado. NÃO se aplica aos demais cargos da PC-PE (Agente, Escrivão, etc.). CESPE: 'A OAB participa do concurso para Escrivão da PC-PE' → FALSO (só para Delegado)."
+    ],
+    [
+      "leg_estadual_3",
+      "Qual a função constitucional da Polícia Civil de Pernambuco?",
+      "Exercer a polícia judiciária e apurar infrações penais, exceto as militares, nos termos do art. 102 da CE-PE c/c art. 144, §4º da CF/88.",
+      "⚠️ ALERTA CEBRASPE: A função é EXCLUSIVA da PC-PE para infrações penais comuns (não militares). A PM faz polícia ostensiva (art. 144, §5º). O MP faz controle externo (art. 129, VII). Nunca confunda: polícia judiciária = PC; polícia ostensiva = PM. Art. 102 CE-PE é o dispositivo-chave."
+    ],
+    [
+      "leg_estadual_4",
+      "O que é o Estatuto do Policial Civil de PE (Lei 6.425/72)?",
+      "Lei estadual que regula direitos, deveres, regime disciplinar, carreira e garantias dos policiais civis do Estado de Pernambuco, com aplicação subsidiária da Lei 6.123/68 (Estatuto do Servidor Estadual).",
+      "MNEMÔNICO: A Lei 6.425/72 é a lei ESPECÍFICA da PC-PE. A Lei 6.123/68 é o ESTATUTO GERAL do servidor. Relação: especialidade (6.425 prevalece) + subsidiariedade (6.123 aplica-se onde 6.425 for omissa)."
+    ],
+    [
+      "leg_estadual_6",
+      "Quais as penalidades disciplinares previstas no Estatuto do Policial Civil (Lei 6.425/72)?",
+      "Advertência, repreensão, suspensão, demissão, cassação de aposentadoria e destituição de função comissionada (art. 28 da Lei 6.425/72).",
+      "MNEMÔNICO: AR-SUS-DEM-CAS-DES. CESPE cobra: a suspensão NÃO pode exceder 90 dias (art. 30). Cassação de aposentadoria atinge quem já se aposentou mas cometeu falta quando na ativa."
+    ],
+    [
+      "leg_estadual_8",
+      "Qual o prazo do estágio probatório do policial civil de PE?",
+      "3 anos (36 meses) de efetivo exercício, conforme a Lei 6.425/72 c/c a sistemática do art. 41 da CF/88 com redação dada pela EC 19/98.",
+      "⚠️ ATENÇÃO: O estágio probatório do servidor público comum é de 3 anos (art. 41 CF/88). Para o policial civil de PE, segue o mesmo prazo pela aplicação subsidiária."
+    ],
+    [
+      "leg_estadual_9",
+      "O que configura abandono de cargo para o policial civil de PE?",
+      "Ausência injustificada do servidor por mais de 30 dias consecutivos, sujeitando-o à penalidade de demissão (art. 35, V c/c art. 37 da Lei 6.425/72).",
+      "PEGADINHA CESPE: O prazo é de 30 DIAS CONSECUTIVOS (não alternados). Inassiduidade habitual = faltas intercaladas que excedam 60 dias em 12 meses (art. 36). Decore: abandono = 30 dias SEGUIDOS; inassiduidade = 60 dias ALTERNADOS em 12 meses."
+    ],
+    [
+      "leg_estadual_12",
+      "Quem preside o inquérito policial segundo a LC 137/2008?",
+      "O Delegado de Polícia, autoridade com exclusividade para presidir a investigação criminal preliminar, nos termos do art. 4º do CPP c/c Lei 12.830/13 e LC 137/2008.",
+      "⚠️ PEGADINHA CLÁSSICA: O Delegado PRESIDE o IP com EXCLUSIVIDADE. O MP pode requisitar diligências e controlar externamente, mas NÃO preside. A LC 137/2008 (art. 2º) organiza a PC e mantém essa atribuição. Súmula Vinculante 14: Delegado pode negar acesso a investigação não concluída."
+    ],
+    [
+      "leg_estadual_13",
+      "Qual o órgão máximo da Polícia Civil de Pernambuco?",
+      "A Delegacia-Geral da Polícia Civil, chefiada pelo Delegado-Geral, cargo de livre nomeação e exoneração pelo Governador do Estado.",
+      "Subordinação: Delegado-Geral → Secretário de Defesa Social → Governador. A nomeação é DISCRICIONÁRIA do chefe do Executivo. O Delegado-Geral deve ser Delegado de Polícia de carreira (art. 6º LC 137/2008)."
+    ],
+    [
+      "leg_estadual_15",
+      "Quais os critérios de progressão funcional previstos na LC 317/2015?",
+      "Progressão por elevação de nível profissional (certificação em cursos) e progressão por capacitação (aquisição de títulos), ambas condicionadas a avaliação periódica de desempenho e interstício mínimo.",
+      "MNEMÔNICO: 2 PROGRESSÕES: (1) ELEVAÇÃO = certificação/cursos; (2) CAPACITAÇÃO = títulos. Requisitos cumulativos: interstício + avaliação + curso/título. O servidor em licença sem vencimentos ou cumprindo pena disciplinar NÃO concorre à progressão (art. 15, § único)."
+    ],
+    [
+      "leg_estadual_17",
+      "Qual o prazo para o servidor entrar em exercício após a posse (Lei 6.123/68)?",
+      "30 dias contados da data da posse, sob pena de exoneração de ofício (art. 14, §2º da Lei 6.123/68).",
+      "DECORE: POSSE → 30 DIAS → EXERCÍCIO. Se não entrar em exercício em 30 dias = exoneração. CESPE adora inverter: prazo da posse (30 dias contados da nomeação) vs prazo do exercício (30 dias contados da posse). São dois prazos distintos."
+    ],
+    [
+      "leg_estadual_21",
+      "A licença para tratar de interesses particulares do servidor estadual (PE) é remunerada?",
+      "Não. A licença para interesse particular é concedida sem remuneração, por prazo não superior a 2 anos (prorrogável por mais 2), conforme art. 117 da Lei 6.123/68.",
+      "⚠️ PEGADINHA CESPE: Ao contrário da licença-prêmio (remunerada), a licença para interesse particular é SEM REMUNERAÇÃO. Prazo máximo: 2 anos + 2 de prorrogação = até 4 anos. NÃO conta para aposentadoria. Exige 5 anos de efetivo exercício."
+    ],
+    [
+      "leg_estadual_25",
+      "Quando cabe aposentadoria compulsória no serviço público estadual de PE?",
+      "Aos 70 anos de idade, para servidores públicos estaduais, conforme art. 40, §1º, II da CF/88 (com redação da EC 88/2015 elevou para 75 anos para professores universitários).",
+      "⚠️ ATUALIZAÇÃO: A EC 88/2015 (PEC da Bengala) fixou 75 anos para servidores do STF, Tribunais Superiores e TCU. Para servidores estaduais comuns: 70 anos (regra geral). CESPE já cobrou: 'a aposentadoria compulsória do servidor público estadual é aos 75 anos' → FALSO (a regra geral é 70)."
+    ],
+    [
+      "leg_estadual_30",
+      "O policial civil de PE pode exercer advocacia?",
+      "Não. É vedado ao policial civil o exercício de advocacia, ainda que em causa própria, conforme art. 28, II do Estatuto da OAB (Lei 8.906/94) e vedações do regime disciplinar da Lei 6.425/72.",
+      "VEDAÇÃO ABSOLUTA: policial civil NÃO pode advogar (nem em causa própria). CESPE adora generalizar: 'policial pode advogar em causa própria' → FALSO. Só juiz, promotor e Defensor têm essa exceção parcial (art. 28, II e III Estatuto OAB)."
+    ],
+    [
+      "leg_estadual_34",
+      "Segundo a CE-PE, quem exerce o controle externo da atividade policial?",
+      "O Ministério Público, conforme art. 129, VII da CF/88 e normativos estaduais, sendo o controle externo da atividade policial função institucional do MP.",
+      "⚠️ ALERTA: O controle EXTERNO é do MINISTÉRIO PÚBLICO (não do Judiciário, não do Legislativo). O controle INTERNO é da Corregedoria da PC. A CE-PE não inovou — reproduz a CF/88. O MP pode requisitar diligências, acompanhar investigações e fiscalizar."
+    ],
+    [
+      "leg_estadual_35",
+      "Os policiais civis de PE têm direito de greve?",
+      "Sim, mas com restrições. O STF (MI 708 e MI 712) reconheceu o direito de greve dos servidores públicos, inclusive policiais civis, desde que não comprometa a segurança pública e com regulamentação específica (art. 37, VII CF/88).",
+      "⚠️ TEMA POLÊMICO: O STF no MI 708 decidiu que servidores públicos têm direito de greve (aplicando a Lei 7.783/89). Porém, atividades ESSENCIAIS (como segurança pública) exigem manutenção de equipe mínima. Para policiais CIVIS o direito existe, mas não para policiais MILITARES (proibição total)."
+    ],
+    [
+      "leg_estadual_37",
+      "Qual a jornada de trabalho do policial civil de PE?",
+      "40 horas semanais, em regime de plantão ou expediente, conforme regulamentação da SDS e LC 137/2008, podendo haver escalas especiais.",
+      "Regime: 40h/semana, mas o policial está sujeito a plantões, sobreavisos e convocações a qualquer momento (natureza policial). CESPE cobra adicional noturno (art. 73 CLT aplicado subsidiariamente). Hora noturna do policial = 52min30s (Súmula 60 TST)."
+    ],
+    [
+      "leg_estadual_40",
+      "Qual a atribuição constitucional da Polícia Científica de PE?",
+      "Realizar perícias criminais e exames de corpo de delito, auxiliando a PC-PE na investigação criminal, nos termos do art. 105-A da CE-PE (incluído pela EC 52/2020).",
+      "⚠️ NOVIDADE LEGISLATIVA: A Polícia Científica foi elevada a órgão autônomo de segurança pública pela EC 52/2020 (art. 105-A CE-PE). Antes era vinculada à PC. CESPE pode perguntar: 'A PC integra a Polícia Científica?' → NÃO (são órgãos distintos no art. 101 CE-PE)."
+    ],
+    [
+      "leg_estadual_41",
+      "O Delegado-Geral da PC-PE é cargo de livre nomeação?",
+      "Sim, é cargo de livre nomeação e exoneração pelo Governador do Estado, devendo recair sobre Delegado de Polícia de carreira (art. 6º, §1º da LC 137/2008).",
+      "⚠️ PEGADINHA: 'Livre nomeação' significa que o Governador pode escolher qualquer pessoa? NÃO! A lei exige que seja Delegado de Polícia de CARREIRA. A discricionariedade está na ESCOLHA entre os delegados, não na possibilidade de nomear não-delegado."
+    ],
+    [
+      "leg_estadual_46",
+      "A CE-PE permite a criação de polícia municipal?",
+      "Não. A CE-PE (art. 101) não prevê polícia municipal. As Guardas Municipais têm função de proteção de bens e serviços municipais (art. 144, §8º CF/88), não são órgãos de segurança pública estadual.",
+      "⚠️ PEGADINHA CLÁSSICA CESPE: 'A CE-PE prevê a Polícia Municipal como órgão de segurança pública' → FALSO. Guardas Municipais NÃO são polícia. O art. 101 CE-PE só prevê: PC, PM, CBM, Polícia Científica e Polícia Penal."
+    ],
+    [
+      "leg_estadual_50",
+      "Quais os requisitos para ingresso no cargo de Agente de Polícia Civil de PE?",
+      "Nível superior completo, aprovação em concurso público de provas e títulos, curso de formação profissional, aptidão física, mental e idoneidade moral (LC 137/2008, arts. 10-11).",
+      "⚠️ ATUALIZAÇÃO PÓS-EC 19/98: Exige-se NÍVEL SUPERIOR para TODOS os cargos da PC-PE (inclusive Agente). Não confunda com o passado (quando exigia nível médio). A LC 137/2008 exige curso de formação como 2ª etapa (eliminatória e classificatória)."
+    ],
+    [
+      "leg_estadual_52",
+      "A PC-PE pode investigar crimes militares?",
+      "Não. A investigação de crimes militares é de competência da Polícia Judiciária Militar (PM-PE), sendo a PC-PE competente apenas para infrações penais comuns (art. 102 CE-PE c/c art. 144, §4º CF/88).",
+      "⚠️ LIMITE CONSTITUCIONAL: A expressão 'exceto as militares' no art. 144, §4º CF/88 é CHAVE. Crimes militares estaduais são investigados pela PM (IPM). Crimes militares federais, pela PF. A PC-PE NÃO apura crime militar, mesmo que o autor seja civil."
+    ],
+    [
+      "leg_estadual_56",
+      "Qual a diferença entre Polícia Civil e Polícia Militar segundo a CE-PE?",
+      "A PC-PE exerce polícia judiciária (art. 102 CE-PE) e apura infrações penais comuns; a PM-PE exerce polícia ostensiva e preservação da ordem pública (art. 103 CE-PE).",
+      "MNEMÔNICO: PC = JUDICIÁRIA (investiga DEPOIS do crime); PM = OSTENSIVA (prevenção, ronda, DURANTE). CESPE adora: 'Compete à PM a apuração de infrações penais' → FALSO."
+    ],
+    [
+      "leg_estadual_60",
+      "Quais delegacias especializadas existem na estrutura da PC-PE?",
+      "DHPP (homicídios), DRACO (crime organizado), DPCA (criança/adolescente), DECAP (patrimônio), DEINTER (interior), DEPATRI (trânsito), NUIC (inteligência), GACE (alto escalão), GGAP (APP), entre outras.",
+      "MNEMÔNICO: DHPP = Homicídio; DRACO = Crime Organizado; DPCA = Criança/Adolescente; DECAP = Patrimônio; DEINTER = Interior; DEPATRI = Trânsito; NUIC = Inteligência. CESPE adora: 'O DHPP investiga homicídios de policiais?' → SIM."
+    ],
+    [
+      "leg_estadual_63",
+      "Qual a relação entre a LC 137/2008 e a LC 317/2015?",
+      "A LC 137/2008 é lei geral do PCCV da PC-PE (todos os cargos). A LC 317/2015 é lei especial do cargo de Delegado de Polícia. A LC 137 é marco geral; a LC 317 detalha a carreira de Delegado.",
+      "⚠️ CORREÇÃO DE ERRO COMUM: A LC 137/2008 INSTITUI o PCCV da PC-PE. A LC 317/2015 NÃO institui, mas dispõe sobre o cargo de Delegado. Relação: geral (137) x especial (317)."
+    ],
+    [
+      "leg_estadual_64",
+      "Quais as hipóteses de demissão do policial civil (Lei 6.425/72)?",
+      "Abandono de cargo, inassiduidade habitual, improbidade, incontinência pública, conduta escandalosa, ofensa física, crime contra a administração, entre outras previstas no art. 35.",
+      "⚠️ DIFERENÇA IMPORTANTE: A demissão é penalidade máxima. Exige processo administrativo disciplinar (PAD) com ampla defesa. A cassação de aposentadoria é hipótese quando o policial já aposentado cometeu falta grave quando na ativa."
+    ],
+    [
+      "leg_estadual_70",
+      "Quais as formas de provimento de cargo público na Lei 6.123/68?",
+      "Nomeação, promoção, readaptação, reversão, aproveitamento, reintegração e recondução (art. 8º da Lei 6.123/68).",
+      "MNEMÔNICO: N-P-R-R-A-R-R (Nomeação, Promoção, Readaptação, Reversão, Aproveitamento, Reintegração, Recondução). CESPE: 'A promoção é forma de provimento?' → SIM. 'A remoção é forma de provimento?' → NÃO."
+    ],
+    [
+      "leg_estadual_72",
+      "Segundo a CE-PE, servidores públicos têm direito de sindicalização?",
+      "Sim, o direito de sindicalização é garantido aos servidores públicos civis (art. 37, VI CF/88), exceto para militares (art. 42, §1º c/c art. 142, §3º, IV CF/88).",
+      "⚠️ DIFERENÇA CRUCIAL: Sindicalização: servidor civil PODE, militar NÃO PODE. Greve: servidor civil PODE (com restrições), militar NÃO PODE (proibição absoluta)."
+    ],
+    [
+      "leg_estadual_74",
+      "A criação de novos cargos na PC-PE depende de quê?",
+      "Depende de lei específica de iniciativa do Chefe do Poder Executivo (Governador), conforme art. 61, §1º, II, 'a' CF/88 e princípio da reserva legal em matéria de criação de cargos públicos.",
+      "⚠️ RESERVA LEGAL: Cargo público só se cria por LEI. Iniciativa PRIVATIVA do Governador para cargos do Executivo. A LC 137/2008 já fixou o quantitativo máximo. Novo cargo exige nova lei."
+    ],
+    [
+      "leg_estadual_79",
+      "O que é sindicância patrimonial no âmbito do serviço público de PE?",
+      "Procedimento administrativo para apurar evolução patrimonial incompatível do servidor, visando identificar enriquecimento ilícito (art. 9º da Lei 6.123/68 c/c Lei 8.429/92).",
+      "⚠️ SINDICÂNCIA ≠ PAD: A sindicância patrimonial é ESPECÍFICA para evolução patrimonial. Sindicância comum é preparatória do PAD. A patrimonial pode levar diretamente à demissão se comprovado enriquecimento ilícito."
+    ],
+    [
+      "leg_estadual_83",
+      "Quando o policial civil de PE pode ser transferido compulsoriamente?",
+      "Por necessidade do serviço, mediante ato fundamentado da autoridade competente, respeitando a lotação original sempre que possível (art. 3º LC 317/2015 e Lei 12.830/13).",
+      "⚠️ PARA DELEGADOS: A remoção do Delegado exige FUNDAMENTAÇÃO (art. 3º LC 317/2015 c/c Lei 12.830/13). É garantia de autonomia funcional. Remoção arbitrária e sem motivação pode ser anulada."
+    ],
+    [
+      "leg_estadual_86",
+      "O que prevê o art. 105-B da CE-PE?",
+      "Dispõe sobre a Polícia Penal de PE, órgão de segurança pública responsável pela vigilância e custódia de presos, incluída pela EC Estadual 52/2020.",
+      "⚠️ NOVIDADE: A Polícia Penal foi criada pela EC 52/2020 (art. 105-B CE-PE). É órgão de segurança pública (art. 101, V). Substitui os agentes penitenciários. CESPE: 'A Polícia Penal integra o sistema de segurança pública estadual' → VERDADEIRO."
+    ],
+    [
+      "leg_estadual_88",
+      "O que é o Conselho de Polícia Civil previsto na LC 137/2008?",
+      "Órgão colegiado consultivo e deliberativo da PC-PE, com composição paritária, que atua na formulação de políticas e diretrizes da instituição.",
+      "Natureza: CONSULTIVO + DELIBERATIVO (não é executivo). Paritário: representantes de diferentes carreiras. CESPE: 'O Conselho de Polícia Civil tem poder de nomear o Delegado-Geral?' → NÃO (a nomeação é do Governador)."
+    ]
   ],
   "removes": [],
   "merges": {}

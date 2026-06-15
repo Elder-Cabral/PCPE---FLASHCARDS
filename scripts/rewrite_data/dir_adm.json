@@ -1,1 +1,198 @@
-{"rewrites": [["dir_adm_0", "O que é Administração Pública em sentido subjetivo (formal/orgânico)?", "Conjunto de órgãos e pessoas jurídicas que exercem a função administrativa do Estado. Corresponde a QUEM presta o serviço.", "SENTIDO SUBJETIVO = QUEM (sujeitos). SENTIDO OBJETIVO = O QUÊ (atividades). CESPE inverte. Mnemônico: SUBjetivo = SUjeito; OBJETIVO = atiVIDADE."], ["dir_adm_2", "Quais são os elementos/requisitos do ato administrativo?", "Competência, Finalidade, Forma, Motivo e Objeto (C-F-F-M-O). A Lei 9.784/99 (art. 2º) os chama de requisitos.", "CESPE cobra os 5 ELEMENTOS. Mnemônico: COM-FIM-FOR-MOT-OBJ."], ["dir_adm_8", "Quais são os atributos do ato administrativo?", "Presunção de legitimidade/veracidade, Imperatividade, Autoexecutoriedade e Tipicidade (P-I-A-T).", "MNEMÔNICO: P-I-A-T. CESPE: 'autoexecutoriedade está em todos os atos' -> FALSO (só nos que a lei autoriza)."], ["dir_adm_7", "O que é a Teoria dos Motivos Determinantes?", "A validade do ato vincula-se aos motivos indicados. Se o motivo for falso, o ato é nulo.", "Mesmo atos DISCRICIONÁRIOS, se motivados, têm validade vinculada à veracidade do motivo. Ex: demissão 'por conveniência' mas na verdade perseguição = nulo (desvio de finalidade)."], ["dir_adm_15", "O que é poder de polícia?", "Atividade estatal que condiciona o exercício de direitos ao bem-estar público, limitando atividades privadas (art. 78 CTN).", "ATRIBUTOS: Discricionariedade, Autoexecutoriedade, Coercibilidade. STF (RE 550.769): poder de polícia NÃO pode ser delegado a particulares para fiscalização."], ["dir_adm_17", "O poder de polícia pode ser delegado a particulares?", "Em regra, NÃO. Atos de fiscalização e repressão são indelegáveis. STF admite delegação de atos materiais/preparatórios.", "RE 550.769 RG. Fiscalização = indelegável. Atos materiais (vistoria, medição) = delegáveis. CESPE adora essa distinção."], ["dir_adm_20", "O que é o regime jurídico-administrativo?", "Conjunto de prerrogativas (supremacia do interesse público) e sujeições (indisponibilidade do interesse público).", "DUAS FACES: PRERROGATIVAS = supremacia; SUJEIÇÕES = indisponibilidade. CESPE: 'O regime adm é só privilégios' -> FALSO (há sujeições)."], ["dir_adm_22", "O que é responsabilidade civil objetiva do Estado (art. 37, §6º CF/88)?", "Estado responde objetivamente por danos causados por seus agentes. Exige: conduta, dano e nexo causal. Regresso contra agente em caso de dolo/culpa.", "TEORIA DO RISCO ADMINISTRATIVO. Excludentes: caso fortuito, culpa exclusiva da vítima. OMISSÃO: responsabilidade SUBJETIVA (STF RE 841.526). CESPE adora."], ["dir_adm_29", "O que é descentralização administrativa?", "Transferência da execução de serviço público a outra pessoa jurídica. Pode ser: territorial, por serviços, por colaboração.", "DESCENTRALIZAÇÃO != DESCONCENTRAÇÃO. Descentralização: cria NOVA pessoa. Desconcentração: distribui competências dentro da mesma pessoa (órgãos). CESPE: 'autarquia é desconcentração' -> FALSO."], ["dir_adm_32", "Quais são os princípios dos serviços públicos?", "Continuidade, generalidade, modicidade, atualidade, eficiência, cortesia e regularidade (art. 6º Lei 8.987/95).", "MNEMÔNICO: C-G-M-A-E-C-R. CESPE: 'continuidade é absoluta' -> NÃO (exceções: greve, inadimplemento, manutenção)."], ["dir_adm_37", "O que é improbidade administrativa (Lei 8.429/92)?", "Ato ilegal e imoral de agente público contra a Administração. Após Lei 14.230/21, só admite dolo (não mais culpa).", "MUDANÇA Lei 14.230/21: (1) exige DOLO; (2) tipificação fechada; (3) prescrição 8 anos; (4) ANPC. CESPE 2024+ cobra a NOVA lei."], ["dir_adm_38", "O que é processo administrativo (Lei 9.784/99)?", "Conjunto de atos para formação de decisão administrativa. Lei 9.784/99 regula no âmbito federal, aplicável subsidiariamente.", "PRINCÍPIOS (art. 2º): legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório. CESPE: '9.784/99 aplica-se a todos os processos' -> FALSO (só federal)."], ["dir_adm_39", "Quais as modalidades de licitação da Lei 14.133/21?", "Pregão, concorrência, concurso, leilão e diálogo competitivo. Extinguiu tomada de preços, convite e RDC.", "NLL (14.133/21): P-C-C-L-D. RDC (Lei 12.462/11) FOI REVOGADO. Tomada de Preços e Convite NÃO EXISTEM MAIS. CESPE cobra evolução legislativa."], ["dir_adm_41", "O que é dispensa de licitação?", "Licitação é legalmente possível, mas a lei DISPENSA (rol taxativo art. 75 Lei 14.133/21). Ex: pequeno valor, emergência.", "DISPENSA (art. 75) != INEXIGIBILIDADE (art. 74). Dispensa: licitação possível mas dispensada. Inexigibilidade: licitação inviável. CESPE: 'pequeno valor é inexigível' -> FALSO."], ["dir_adm_43", "O que é agente público?", "Toda pessoa física que exerce função pública, remunerada ou gratuita, temporária ou definitiva.", "CLASSIFICAÇÃO: (1) Políticos; (2) Servidores estatutários; (3) Empregados celetistas; (4) Temporários (art. 37, IX); (5) Honoríficos; (6) Delegados."], ["dir_adm_45", "O que diferencia anulação de revogação do ato administrativo?", "Anulação: ato ilegal, ex tunc, Adm ou Judiciário. Revogação: ato inconveniente, ex nunc, só Adm. Súmula 473 STF.", "ANULAÇÃO = ilegal -> Adm/Judiciário -> ex tunc. REVOGAÇÃO = inconveniente -> só Adm -> ex nunc. NÃO se revoga ato vinculado. Decadência 5 anos (art. 54 Lei 9.784/99)."], ["dir_adm_47", "O que é o princípio da razoabilidade na Administração Pública?", "Princípio implícito que exige adequação entre meios e fins, proibindo exigências abusivas.", "NÃO está expressa no caput do art. 37 (LIMPE). Está no art. 2º Lei 9.784/99. É implícito. CESPE: 'razoabilidade é expressa' -> FALSO."], ["dir_adm_54", "O que é delegação de competência?", "Transferência da execução de competência a outro órgão/agente, mantendo-se a titularidade. Revogável a qualquer tempo.", "DELEGAÇÃO != AVOCAÇÃO. Delegação: transfere EXECUÇÃO. Avocação: chama para si. NÃO se delega competência exclusiva (Lei 9.784/99, arts. 12-15)."], ["dir_adm_56", "O que são cláusulas exorbitantes nos contratos administrativos?", "Prerrogativas especiais da Administração: alteração unilateral, fiscalização, ocupação temporária, rescisão unilateral, sanções.", "PRERROGATIVAS: (1) alteração unilateral (25% +); (2) rescisão unilateral; (3) fiscalização; (4) ocupação; (5) sanções. CESPE: 'podem ser livremente pactuadas' -> NÃO (decorrem de lei)."], ["dir_adm_62", "O que é o controle externo pelo Legislativo?", "Controle do Legislativo sobre a Administração com auxílio do TCU. Abrange controle financeiro, orçamentário e patrimonial (art. 70 CF/88).", "Controle EXTERNO: Legislativo controla Executivo. TCU auxilia o Congresso (art. 71). CPI tem poder de investigação (art. 58, §3º). CESPE: 'TCU é órgão do Judiciário' -> FALSO."], ["dir_adm_64", "O que é o princípio da legalidade para a Administração Pública?", "Administração só pode fazer o que a lei autoriza (vinculação positiva). Diferente do particular (pode tudo que não é proibido).", "DUPLA DIMENSÃO: Legalidade ADMINISTRATIVA (subordinação) vs Legalidade GERAL (autonomia). CESPE inverte: 'adm pode fazer tudo que a lei não proíbe' -> FALSO."], ["dir_adm_67", "O que são bens públicos de uso comum do povo?", "Bens destinados ao uso coletivo (ruas, praças, mares). Não podem ser alienados mantendo essa destinação. Art. 99, I CC.", "CLASSIFICAÇÃO: (1) USO COMUM; (2) USO ESPECIAL; (3) DOMINICAIS. Bens públicos são IMPENHORÁVEIS e NÃO usucapíveis (art. 183, §3º CF)."], ["dir_adm_73", "O que é nepotismo e qual sua vedação no serviço público?", "Nomeação de parentes para cargos públicos. Vedado pela Súmula Vinculante 13: parentes até 3º grau para cargo em comissão.", "SV 13: parentes ATÉ 3º GRAU (cônjuge, pais, filhos, irmãos, tios, sobrinhos). NÃO atinge cargos POLÍTICOS (STF RE 823.416). CESPE adora essa exceção."], ["dir_adm_76", "O que é ato administrativo complexo?", "Ato que resulta da manifestação de vontade de dois ou mais órgãos para sua formação. Ex: nomeação de Ministro (Presidente + Senado).", "COMPLEXO != COMPOSTO. Complexo: duas vontades para FORMAR o ato. Composto: ato principal + outro que o HOMOLOGA. CESPE: 'complexo depende de uma vontade' -> FALSO."], ["dir_adm_84", "O que é o controle difuso de constitucionalidade pelo STF?", "Declaração de inconstitucionalidade com efeito inter partes e ex tunc. Pode alcançar erga omnes com RG e SV.", "MECANISMOS DE AMPLIAÇÃO: (1) RG; (2) SV; (3) Resolução do Senado (art. 52, X). CESPE: 'difuso sempre tem efeito erga omnes' -> FALSO (regra inter partes)."], ["dir_adm_86", "O que são agências reguladoras?", "Autarquias de regime especial para regular/fiscalizar serviços públicos. Ex: ANATEL, ANP, ANVISA. Mandato fixo de dirigentes.", "Natureza: autarquias de regime ESPECIAL. Dirigentes: mandato FIXO. CESPE: 'agências reguladoras são direito privado' -> FALSO (autarquias = direito público)."], ["dir_adm_90", "O que era o Regime Diferenciado de Contratações (RDC)?", "Regime da Lei 12.462/11 para Copa/Olimpíadas. FOI REVOGADO pela Lei 14.133/21 (NLL).", "RDC FOI REVOGADO pela NLL (art. 193). Inovações (inversão de fases, contratação integrada) incorporadas pela NLL. CESPE 2024+: 'RDC é aplicável' -> FALSO."], ["dir_adm_94", "O que são empresas públicas e sociedades de economia mista?", "Empresa pública: capital 100% público, qualquer forma jurídica. SEM: capital misto (público majoritário), sempre S/A.", "Diferenças: EP = capital 100% público, forma livre. SEM = capital misto, S/A. Falência: EP e SEM NÃO estão sujeitas à falência (Lei 14.133/21). CESPE adora."], ["dir_adm_96", "O que é a Lei de Acesso à Informação (Lei 12.527/11)?", "Regula o acesso a informações públicas. Princípios: transparência ativa (divulgação espontânea) e passiva (resposta a pedidos). Prazo: 20 dias prorrogável por 10.", "LAI: informações de interesse público devem ser divulgadas independentemente de solicitação. Exceções: informações sigilosas (classificadas em ultrassecreta, secreta, reservada). CESPE: 'LAI se aplica a todos os entes' -> VERDADEIRO."], ["dir_adm_98", "O que são os Tribunais de Contas e sua função?", "Órgãos de controle externo que auxiliam o Legislativo. Julgam contas dos administradores e aplicam sanções (art. 71 CF/88).", "TCU (federal) e TCs (estaduais/municipais). FUNÇÕES: (1) julgar contas; (2) fiscalizar; (3) aplicar sanções; (4) sustar atos. CESPE: 'TCU julga contas dos administradores' -> SIM (art. 71, II)."]], "removes": [], "merges": {}}
+{
+  "rewrites": [
+    [
+      "dir_adm_95",
+      "Qual a relação entre a Lei 6.425/1972 (Estatuto do Policial Civil) e a Lei 6.123/1968 (Estatuto do Servidor Estadual de PE)?",
+      "A Lei 6.425/1972 é o estatuto ESPECÍFICO dos policiais civis de PE (lei especial). A Lei 6.123/1968 é o estatuto GERAL dos servidores públicos estaduais. Aplica-se o princípio da ESPECIALIDADE: a 6.425/72 prevalece sobre a 6.123/68. Onde a 6.425 for omissa, aplica-se SUBSIDIARIAMENTE a 6.123/68.",
+      "MNEMÔNICO: 6.425 = ESPECIAL (policial); 6.123 = GERAL (servidor). REGRA: especial prevalece; subsidiária preenche lacunas. CESPE: 'A Lei 6.123/68 revogou a Lei 6.425/72' → FALSO (são complementares). 'O policial civil rege-se exclusivamente pela Lei 6.425/72' → FALSO (a 6.123/68 aplica-se subsidiariamente)."
+    ],
+    [
+      "dir_adm_97",
+      "A Lei 8.112/1990 (Regime Jurídico dos Servidores Federais) aplica-se aos policiais civis de PE?",
+      "Não. A Lei 8.112/90 é exclusiva do regime federal (União). Os policiais civis de PE regem-se pelo estatuto especial (Lei 6.425/1972), pelo estatuto geral estadual (Lei 6.123/1968), pela LC 137/2008 (PCCV da PC-PE) e pela LC 317/2015 (cargo de Delegado). A Lei 8.429/1992 (improbidade) é nacional e aplica-se a todos os agentes públicos, inclusive estaduais.",
+      "HIERARQUIA NORMATIVA DA PC-PE: 1º) CF/88 + CE-PE; 2º) Lei 6.425/72 (especial); 3º) Lei 6.123/68 (geral subsidiária); 4º) LC 137/2008 (carreira); 5º) LC 317/2015 (Delegados). A 8.112/90 NÃO se aplica. A 8.429/92 SIM (norma nacional). CESPE: 'O regime dos policiais civis de PE é idêntico ao dos servidores federais' → FALSO."
+    ],
+    [
+      "dir_adm_98",
+      "O que são os Tribunais de Contas e sua função?",
+      "Órgãos de controle externo que auxiliam o Legislativo. Julgam contas dos administradores e aplicam sanções (art. 71 CF/88).",
+      "TCU (federal) e TCs (estaduais/municipais). FUNÇÕES: (1) julgar contas; (2) fiscalizar; (3) aplicar sanções; (4) sustar atos. CESPE: 'TCU julga contas dos administradores' -> SIM (art. 71, II)."
+    ],
+    [
+      "dir_adm_0",
+      "O que é Administração Pública em sentido subjetivo (formal/orgânico)?",
+      "Conjunto de órgãos e pessoas jurídicas que exercem a função administrativa do Estado. Corresponde a QUEM presta o serviço.",
+      "SENTIDO SUBJETIVO = QUEM (sujeitos). SENTIDO OBJETIVO = O QUÊ (atividades). CESPE inverte. Mnemônico: SUBjetivo = SUjeito; OBJETIVO = atiVIDADE."
+    ],
+    [
+      "dir_adm_2",
+      "Quais são os elementos/requisitos do ato administrativo?",
+      "Competência, Finalidade, Forma, Motivo e Objeto (C-F-F-M-O). A Lei 9.784/99 (art. 2º) os chama de requisitos.",
+      "CESPE cobra os 5 ELEMENTOS. Mnemônico: COM-FIM-FOR-MOT-OBJ."
+    ],
+    [
+      "dir_adm_8",
+      "Quais são os atributos do ato administrativo?",
+      "Presunção de legitimidade/veracidade, Imperatividade, Autoexecutoriedade e Tipicidade (P-I-A-T).",
+      "MNEMÔNICO: P-I-A-T. CESPE: 'autoexecutoriedade está em todos os atos' -> FALSO (só nos que a lei autoriza)."
+    ],
+    [
+      "dir_adm_7",
+      "O que é a Teoria dos Motivos Determinantes?",
+      "A validade do ato vincula-se aos motivos indicados. Se o motivo for falso, o ato é nulo.",
+      "Mesmo atos DISCRICIONÁRIOS, se motivados, têm validade vinculada à veracidade do motivo. Ex: demissão 'por conveniência' mas na verdade perseguição = nulo (desvio de finalidade)."
+    ],
+    [
+      "dir_adm_15",
+      "O que é poder de polícia?",
+      "Atividade estatal que condiciona o exercício de direitos ao bem-estar público, limitando atividades privadas (art. 78 CTN).",
+      "ATRIBUTOS: Discricionariedade, Autoexecutoriedade, Coercibilidade. STF (RE 550.769): poder de polícia NÃO pode ser delegado a particulares para fiscalização."
+    ],
+    [
+      "dir_adm_17",
+      "O poder de polícia pode ser delegado a particulares?",
+      "Em regra, NÃO. Atos de fiscalização e repressão são indelegáveis. STF admite delegação de atos materiais/preparatórios.",
+      "RE 550.769 RG. Fiscalização = indelegável. Atos materiais (vistoria, medição) = delegáveis. CESPE adora essa distinção."
+    ],
+    [
+      "dir_adm_20",
+      "O que é o regime jurídico-administrativo?",
+      "Conjunto de prerrogativas (supremacia do interesse público) e sujeições (indisponibilidade do interesse público).",
+      "DUAS FACES: PRERROGATIVAS = supremacia; SUJEIÇÕES = indisponibilidade. CESPE: 'O regime adm é só privilégios' -> FALSO (há sujeições)."
+    ],
+    [
+      "dir_adm_22",
+      "O que é responsabilidade civil objetiva do Estado (art. 37, §6º CF/88)?",
+      "Estado responde objetivamente por danos causados por seus agentes. Exige: conduta, dano e nexo causal. Regresso contra agente em caso de dolo/culpa.",
+      "TEORIA DO RISCO ADMINISTRATIVO. Excludentes: caso fortuito, culpa exclusiva da vítima. OMISSÃO: responsabilidade SUBJETIVA (STF RE 841.526). CESPE adora."
+    ],
+    [
+      "dir_adm_29",
+      "O que é descentralização administrativa?",
+      "Transferência da execução de serviço público a outra pessoa jurídica. Pode ser: territorial, por serviços, por colaboração.",
+      "DESCENTRALIZAÇÃO != DESCONCENTRAÇÃO. Descentralização: cria NOVA pessoa. Desconcentração: distribui competências dentro da mesma pessoa (órgãos). CESPE: 'autarquia é desconcentração' -> FALSO."
+    ],
+    [
+      "dir_adm_32",
+      "Quais são os princípios dos serviços públicos?",
+      "Continuidade, generalidade, modicidade, atualidade, eficiência, cortesia e regularidade (art. 6º Lei 8.987/95).",
+      "MNEMÔNICO: C-G-M-A-E-C-R. CESPE: 'continuidade é absoluta' -> NÃO (exceções: greve, inadimplemento, manutenção)."
+    ],
+    [
+      "dir_adm_37",
+      "O que é improbidade administrativa (Lei 8.429/92)?",
+      "Ato ilegal e imoral de agente público contra a Administração. Após Lei 14.230/21, só admite dolo (não mais culpa).",
+      "MUDANÇA Lei 14.230/21: (1) exige DOLO; (2) tipificação fechada; (3) prescrição 8 anos; (4) ANPC. CESPE 2024+ cobra a NOVA lei."
+    ],
+    [
+      "dir_adm_38",
+      "O que é processo administrativo (Lei 9.784/99)?",
+      "Conjunto de atos para formação de decisão administrativa. Lei 9.784/99 regula no âmbito federal, aplicável subsidiariamente.",
+      "PRINCÍPIOS (art. 2º): legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório. CESPE: '9.784/99 aplica-se a todos os processos' -> FALSO (só federal)."
+    ],
+    [
+      "dir_adm_39",
+      "Quais as modalidades de licitação da Lei 14.133/21?",
+      "Pregão, concorrência, concurso, leilão e diálogo competitivo. Extinguiu tomada de preços, convite e RDC.",
+      "NLL (14.133/21): P-C-C-L-D. RDC (Lei 12.462/11) FOI REVOGADO. Tomada de Preços e Convite NÃO EXISTEM MAIS. CESPE cobra evolução legislativa."
+    ],
+    [
+      "dir_adm_41",
+      "O que é dispensa de licitação?",
+      "Licitação é legalmente possível, mas a lei DISPENSA (rol taxativo art. 75 Lei 14.133/21). Ex: pequeno valor, emergência.",
+      "DISPENSA (art. 75) != INEXIGIBILIDADE (art. 74). Dispensa: licitação possível mas dispensada. Inexigibilidade: licitação inviável. CESPE: 'pequeno valor é inexigível' -> FALSO."
+    ],
+    [
+      "dir_adm_43",
+      "O que é agente público?",
+      "Toda pessoa física que exerce função pública, remunerada ou gratuita, temporária ou definitiva.",
+      "CLASSIFICAÇÃO: (1) Políticos; (2) Servidores estatutários; (3) Empregados celetistas; (4) Temporários (art. 37, IX); (5) Honoríficos; (6) Delegados."
+    ],
+    [
+      "dir_adm_45",
+      "O que diferencia anulação de revogação do ato administrativo?",
+      "Anulação: ato ilegal, ex tunc, Adm ou Judiciário. Revogação: ato inconveniente, ex nunc, só Adm. Súmula 473 STF.",
+      "ANULAÇÃO = ilegal -> Adm/Judiciário -> ex tunc. REVOGAÇÃO = inconveniente -> só Adm -> ex nunc. NÃO se revoga ato vinculado. Decadência 5 anos (art. 54 Lei 9.784/99)."
+    ],
+    [
+      "dir_adm_47",
+      "O que é o princípio da razoabilidade na Administração Pública?",
+      "Princípio implícito que exige adequação entre meios e fins, proibindo exigências abusivas.",
+      "NÃO está expressa no caput do art. 37 (LIMPE). Está no art. 2º Lei 9.784/99. É implícito. CESPE: 'razoabilidade é expressa' -> FALSO."
+    ],
+    [
+      "dir_adm_54",
+      "O que é delegação de competência?",
+      "Transferência da execução de competência a outro órgão/agente, mantendo-se a titularidade. Revogável a qualquer tempo.",
+      "DELEGAÇÃO != AVOCAÇÃO. Delegação: transfere EXECUÇÃO. Avocação: chama para si. NÃO se delega competência exclusiva (Lei 9.784/99, arts. 12-15)."
+    ],
+    [
+      "dir_adm_56",
+      "O que são cláusulas exorbitantes nos contratos administrativos?",
+      "Prerrogativas especiais da Administração: alteração unilateral, fiscalização, ocupação temporária, rescisão unilateral, sanções.",
+      "PRERROGATIVAS: (1) alteração unilateral (25% +); (2) rescisão unilateral; (3) fiscalização; (4) ocupação; (5) sanções. CESPE: 'podem ser livremente pactuadas' -> NÃO (decorrem de lei)."
+    ],
+    [
+      "dir_adm_62",
+      "O que é o controle externo pelo Legislativo?",
+      "Controle do Legislativo sobre a Administração com auxílio do TCU. Abrange controle financeiro, orçamentário e patrimonial (art. 70 CF/88).",
+      "Controle EXTERNO: Legislativo controla Executivo. TCU auxilia o Congresso (art. 71). CPI tem poder de investigação (art. 58, §3º). CESPE: 'TCU é órgão do Judiciário' -> FALSO."
+    ],
+    [
+      "dir_adm_64",
+      "O que é o princípio da legalidade para a Administração Pública?",
+      "Administração só pode fazer o que a lei autoriza (vinculação positiva). Diferente do particular (pode tudo que não é proibido).",
+      "DUPLA DIMENSÃO: Legalidade ADMINISTRATIVA (subordinação) vs Legalidade GERAL (autonomia). CESPE inverte: 'adm pode fazer tudo que a lei não proíbe' -> FALSO."
+    ],
+    [
+      "dir_adm_67",
+      "O que são bens públicos de uso comum do povo?",
+      "Bens destinados ao uso coletivo (ruas, praças, mares). Não podem ser alienados mantendo essa destinação. Art. 99, I CC.",
+      "CLASSIFICAÇÃO: (1) USO COMUM; (2) USO ESPECIAL; (3) DOMINICAIS. Bens públicos são IMPENHORÁVEIS e NÃO usucapíveis (art. 183, §3º CF)."
+    ],
+    [
+      "dir_adm_73",
+      "O que é nepotismo e qual sua vedação no serviço público?",
+      "Nomeação de parentes para cargos públicos. Vedado pela Súmula Vinculante 13: parentes até 3º grau para cargo em comissão.",
+      "SV 13: parentes ATÉ 3º GRAU (cônjuge, pais, filhos, irmãos, tios, sobrinhos). NÃO atinge cargos POLÍTICOS (STF RE 823.416). CESPE adora essa exceção."
+    ],
+    [
+      "dir_adm_76",
+      "O que é ato administrativo complexo?",
+      "Ato que resulta da manifestação de vontade de dois ou mais órgãos para sua formação. Ex: nomeação de Ministro (Presidente + Senado).",
+      "COMPLEXO != COMPOSTO. Complexo: duas vontades para FORMAR o ato. Composto: ato principal + outro que o HOMOLOGA. CESPE: 'complexo depende de uma vontade' -> FALSO."
+    ],
+    [
+      "dir_adm_84",
+      "O que é o controle difuso de constitucionalidade pelo STF?",
+      "Declaração de inconstitucionalidade com efeito inter partes e ex tunc. Pode alcançar erga omnes com RG e SV.",
+      "MECANISMOS DE AMPLIAÇÃO: (1) RG; (2) SV; (3) Resolução do Senado (art. 52, X). CESPE: 'difuso sempre tem efeito erga omnes' -> FALSO (regra inter partes)."
+    ],
+    [
+      "dir_adm_86",
+      "O que são agências reguladoras?",
+      "Autarquias de regime especial para regular/fiscalizar serviços públicos. Ex: ANATEL, ANP, ANVISA. Mandato fixo de dirigentes.",
+      "Natureza: autarquias de regime ESPECIAL. Dirigentes: mandato FIXO. CESPE: 'agências reguladoras são direito privado' -> FALSO (autarquias = direito público)."
+    ],
+    [
+      "dir_adm_90",
+      "O que era o Regime Diferenciado de Contratações (RDC)?",
+      "Regime da Lei 12.462/11 para Copa/Olimpíadas. FOI REVOGADO pela Lei 14.133/21 (NLL).",
+      "RDC FOI REVOGADO pela NLL (art. 193). Inovações (inversão de fases, contratação integrada) incorporadas pela NLL. CESPE 2024+: 'RDC é aplicável' -> FALSO."
+    ],
+    [
+      "dir_adm_94",
+      "O que são empresas públicas e sociedades de economia mista?",
+      "Empresa pública: capital 100% público, qualquer forma jurídica. SEM: capital misto (público majoritário), sempre S/A.",
+      "Diferenças: EP = capital 100% público, forma livre. SEM = capital misto, S/A. Falência: EP e SEM NÃO estão sujeitas à falência (Lei 14.133/21). CESPE adora."
+    ],
+    [
+      "dir_adm_96",
+      "O que é a Lei de Acesso à Informação (Lei 12.527/11)?",
+      "Regula o acesso a informações públicas. Princípios: transparência ativa (divulgação espontânea) e passiva (resposta a pedidos). Prazo: 20 dias prorrogável por 10.",
+      "LAI: informações de interesse público devem ser divulgadas independentemente de solicitação. Exceções: informações sigilosas (classificadas em ultrassecreta, secreta, reservada). CESPE: 'LAI se aplica a todos os entes' -> VERDADEIRO."
+    ]
+  ],
+  "removes": [],
+  "merges": {}
+}
