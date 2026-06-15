@@ -2863,10 +2863,12 @@ function Shell({ children, user, stats, onLogout, centered, userMeta = null, sho
             <div style={{ display: "inline-block", background: "linear-gradient(135deg,#e11d48,#be123c)", borderRadius: 10, padding: "6px 14px" }}>
               <span style={{ color: "#fff", fontWeight: 700, fontSize: 9, letterSpacing: 2, fontFamily: "monospace" }}>PC-PE · AGENTE</span>
             </div>
-            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              <span style={{ color: "#f97316", fontSize: 12, fontWeight: 600 }}>🔥 {userMeta?.current_streak ?? calculateStreak(srsData)}</span>
-              <span style={{ color: "#94a3b8", fontSize: 11 }}>|</span>
-              <span style={{ color: "#3b82f6", fontSize: 12, fontWeight: 600 }}>🛡️ {userMeta?.shields_available ?? 2}</span>
+            <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              <span style={{ color: "#f97316", fontSize: 12, fontWeight: 600 }} title="Dias de ofensiva">🔥 {userMeta?.current_streak ?? calculateStreak(srsData)}</span>
+              <span style={{ color: "#94a3b8", fontSize: 10, fontWeight: 400 }}>dias</span>
+              <span style={{ color: "#334155", fontSize: 11, fontWeight: 300 }}>|</span>
+              <span style={{ color: "#3b82f6", fontSize: 12, fontWeight: 600 }} title="Escudos disponíveis">🛡️ {userMeta?.shields_available ?? 2}</span>
+              <span style={{ color: "#94a3b8", fontSize: 10, fontWeight: 400 }}>escudos</span>
             </div>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
