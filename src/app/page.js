@@ -20,6 +20,13 @@ function getSupabase() {
   // Reuse cached runtime client (preserves auth session)
   if (_runtimeSupabaseClient) return _runtimeSupabaseClient;
 
+  // Use the module-level client if it's a real Supabase instance (not a stub)
+  if (supabase && !supabase.__isStub) {
+    _runtimeSupabaseClient = supabase;
+    return supabase;
+  }
+
+  // Fallback: try creating from localStorage config (for runtime-configured projects)
   try {
     const url = process.env.NEXT_PUBLIC_SUPABASE_URL || localStorage.getItem('pcpe_supabase_url');
     const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || localStorage.getItem('pcpe_supabase_anon_key');
@@ -29,15 +36,6 @@ function getSupabase() {
     }
   } catch (e) {
     console.warn('Could not create Supabase client at runtime:', e);
-  }
-
-  // If env-exported client is a real Supabase client (not the stub), use it.
-  try {
-    if (supabase && !supabase.__isStub) {
-      return supabase;
-    }
-  } catch (e) {
-    // fallthrough
   }
 
   return supabase;
