@@ -361,12 +361,12 @@ export default function App() {
 
       /* Dashboard content container */
       .dashboard-content {
-        padding: 28px 24px;
+        padding: 12px 24px;
       }
 
       @media (max-width: 640px) {
         .dashboard-content {
-          padding: 16px 0 !important;
+          padding: 8px 0 !important;
         }
       }
 
@@ -2885,49 +2885,50 @@ function Shell({ children, user, stats, onLogout, centered, userMeta = null, sho
       <div className="shell-hero-composite" />
       <div style={{ position: "fixed", top: -200, left: "50%", transform: "translateX(-50%)", width: 600, height: 400, borderRadius: "50%", background: "radial-gradient(ellipse,rgba(59,130,246,0.03) 0%,transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
 
-      <div style={{ position: "relative", zIndex: 1, width: "100%", maxWidth: 800, margin: "0 auto", boxSizing: "border-box", flex: 1, display: "flex", flexDirection: "column", minHeight: 0, padding: isMobile ? "12px 10px 20px" : "24px 16px 32px" }}>
-        {/* ── CARD PRINCIPAL (sólido, sem transparência) ── */}
-        <div style={{ flex: 1, display: "flex", flexDirection: "column", background: "#0f172a", borderRadius: isMobile ? 16 : 24, border: "1px solid rgba(255,255,255,0.06)", minHeight: 0, padding: isMobile ? "14px 16px" : "20px 24px" }}>
-          {/* Topbar */}
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: isMobile ? "stretch" : "center", flexDirection: isMobile ? "column" : "row", flexShrink: 0, flexWrap: "wrap", gap: isMobile ? 6 : 8 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-              <div style={{ display: "inline-block", background: "linear-gradient(135deg,#e11d48,#be123c)", borderRadius: 10, padding: "6px 14px" }}>
-                <span style={{ color: "#fff", fontWeight: 700, fontSize: 9, letterSpacing: 2, fontFamily: "monospace" }}>PC-PE · AGENTE</span>
-              </div>
-              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                <span style={{ color: "#f97316", fontSize: 12, fontWeight: 600, whiteSpace: "nowrap" }} title="Dias de ofensiva">
-                  🔥 {userMeta?.current_streak ?? calculateStreak(srsData)} <span style={{ color: "#94a3b8", fontSize: 10, fontWeight: 400 }}>dias</span>
-                </span>
-                <span style={{ color: "#334155", fontSize: 11, fontWeight: 300 }}>|</span>
-                <span style={{ color: "#3b82f6", fontSize: 12, fontWeight: 600, whiteSpace: "nowrap" }} title="Escudos disponíveis">
-                  🛡️ {userMeta?.shields_available ?? 2} <span style={{ color: "#94a3b8", fontSize: 10, fontWeight: 400 }}>escudos</span>
-                </span>
-              </div>
+      <div style={{ position: "relative", zIndex: 1, width: "100%", maxWidth: 800, margin: "0 auto", boxSizing: "border-box", flex: 1, display: "flex", flexDirection: "column", minHeight: 0, padding: isMobile ? "12px 10px 20px" : "16px 16px 24px" }}>
+        {/* Topbar */}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: isMobile ? "stretch" : "center", flexDirection: isMobile ? "column" : "row", flexShrink: 0, flexWrap: "wrap", gap: isMobile ? 6 : 8 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <div style={{ display: "inline-block", background: "linear-gradient(135deg,#e11d48,#be123c)", borderRadius: 10, padding: "6px 14px" }}>
+              <span style={{ color: "#fff", fontWeight: 700, fontSize: 9, letterSpacing: 2, fontFamily: "monospace" }}>PC-PE · AGENTE</span>
             </div>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: isMobile ? "flex-start" : "flex-end", gap: 14 }}>
-              <span style={{ color: "#94a3b8", fontSize: 12, fontWeight: 500 }}>
-                {user?.role === "admin" ? "👑" : "👤"} {user?.name}
+            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+              <span style={{ color: "#f97316", fontSize: 12, fontWeight: 600, whiteSpace: "nowrap" }} title="Dias de ofensiva">
+                🔥 {userMeta?.current_streak ?? calculateStreak(srsData)} <span style={{ color: "#94a3b8", fontSize: 10, fontWeight: 400 }}>dias</span>
               </span>
-              <button
-                onClick={onLogout}
-                className="btn-hover"
-                style={{
-                  background: "rgba(239,68,68,0.08)",
-                  border: "1px solid rgba(239,68,68,0.15)",
-                  borderRadius: 10,
-                  padding: "6px 12px",
-                  fontSize: 11,
-                  fontWeight: 600,
-                  color: "#ef4444",
-                  cursor: "pointer"
-                }}
-              >
-                Sair
-              </button>
+              <span style={{ color: "#334155", fontSize: 11, fontWeight: 300 }}>|</span>
+              <span style={{ color: "#3b82f6", fontSize: 12, fontWeight: 600, whiteSpace: "nowrap" }} title="Escudos disponíveis">
+                🛡️ {userMeta?.shields_available ?? 2} <span style={{ color: "#94a3b8", fontSize: 10, fontWeight: 400 }}>escudos</span>
+              </span>
             </div>
           </div>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: isMobile ? "flex-start" : "flex-end", gap: 14 }}>
+            <span style={{ color: "#94a3b8", fontSize: 12, fontWeight: 500 }}>
+              {user?.role === "admin" ? "👑" : "👤"} {user?.name}
+            </span>
+            <button
+              onClick={onLogout}
+              className="btn-hover"
+              style={{
+                background: "rgba(239,68,68,0.08)",
+                border: "1px solid rgba(239,68,68,0.15)",
+                borderRadius: 10,
+                padding: "6px 12px",
+                fontSize: 11,
+                fontWeight: 600,
+                color: "#ef4444",
+                cursor: "pointer"
+              }}
+            >
+              Sair
+            </button>
+          </div>
+        </div>
 
-          <hr style={{ width: "100%", border: "none", borderTop: "1px solid rgba(255,255,255,0.06)", margin: "12px 0", flexShrink: 0 }} />
+        <hr style={{ width: "100%", border: "none", borderTop: "1px solid rgba(255,255,255,0.06)", margin: "12px 0", flexShrink: 0 }} />
+
+        {/* ── CARD PRINCIPAL (sólido, sem transparência) ── */}
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", background: "#0f172a", borderRadius: isMobile ? 16 : 24, border: "1px solid rgba(255,255,255,0.06)", minHeight: 0, padding: isMobile ? "12px 16px" : "12px 20px" }}>
 
           {/* Banner de Escudo de Ofensiva */}
           {showShieldBanner && (
