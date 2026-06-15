@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 import { jwtVerify } from 'jose';
 import { JWT_SECRET, JWT_ISSUER, SESSION_COOKIE } from './lib/jwt-config';
 
-const PUBLIC_PATHS = ['/api/auth/login', '/api/auth/logout', '/api/auth/me'];
+const PUBLIC_PATHS = ['/', '/api/auth/login', '/api/auth/logout', '/api/auth/me'];
 
 /**
  * @param {NextRequest} request
