@@ -146,6 +146,7 @@ export default function AmbientSound({ isMobile }) {
         modestbranding: 1,
         loop: 1,
         playlist: videoId,
+        origin: typeof window !== 'undefined' ? window.location.origin : '',
       },
       events: {
         onReady: () => {
@@ -174,7 +175,8 @@ export default function AmbientSound({ isMobile }) {
       videoId +
       "?autoplay=1&controls=0&loop=1&playlist=" +
       videoId +
-      "&modestbranding=1&fs=0";
+      "&modestbranding=1&fs=0" +
+      "&origin=" + encodeURIComponent(window.location.origin);
     iframe.allow = "autoplay; encrypted-media";
     iframe.style.position = "absolute";
     iframe.style.width = "0px";
