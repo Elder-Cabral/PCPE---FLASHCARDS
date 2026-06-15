@@ -3023,7 +3023,7 @@ const Shell = React.memo(function Shell({ children, user, stats, onLogout, cente
 
           {/* Pomodoro Timer */}
           <div style={{ display: showPomodoro ? 'block' : 'none', flexShrink: 0 }}>
-            <PomodoroBar username={user?.username} onHide={() => setShowPomodoro(false)} onTick={handlePomodoroTick} isMobile={isMobile} />
+            <PomodoroBar username={user?.username} onHide={hidePomodoro ? () => setShowPomodoro(false) : undefined} onTick={handlePomodoroTick} isMobile={isMobile} />
           </div>
 
           {showPomodoro && (
