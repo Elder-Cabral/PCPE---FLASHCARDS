@@ -2987,7 +2987,7 @@ function Shell({ children, user, stats, onLogout, centered, userMeta = null, sho
             }}
           >
             🍅
-            {pomodoroInfo?.status !== "idle" && (
+            {pomodoroInfo != null && pomodoroInfo.status !== "idle" && (
               <span style={{ fontSize: 11, fontWeight: 600, fontFamily: 'monospace' }}>
                 {pomodoroInfo.formatted}
               </span>
