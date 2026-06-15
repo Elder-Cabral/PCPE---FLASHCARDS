@@ -1061,7 +1061,7 @@ export default function App() {
       materiaStats: {}
     };
 
-    result.streak = userMeta?.current_streak ?? calculateStreak(srsData);
+    result.streak = calculateStreak(srsData);
 
     for (const mat of MATERIAS) {
       const cards = BANCO[mat.id] || [];
@@ -1098,7 +1098,7 @@ export default function App() {
     }
 
     return result;
-  }, [srsData, userMeta?.current_streak]);
+  }, [srsData]);
 
   // Preparar fila de estudos padrão (Todos / SRS)
   const startStudySession = (materiaId, mode) => {
@@ -2894,7 +2894,7 @@ function Shell({ children, user, stats, onLogout, centered, userMeta = null, sho
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                 <span style={{ color: "#f97316", fontSize: 12, fontWeight: 600, whiteSpace: "nowrap" }} title="Dias de ofensiva">
-                  🔥 {userMeta?.current_streak ?? calculateStreak(srsData)} <span style={{ color: "#94a3b8", fontSize: 10, fontWeight: 400 }}>dias</span>
+                  🔥 {calculateStreak(srsData)} <span style={{ color: "#94a3b8", fontSize: 10, fontWeight: 400 }}>dias</span>
                 </span>
                 <span style={{ color: "#334155", fontSize: 11, fontWeight: 300 }}>|</span>
                 <span style={{ color: "#3b82f6", fontSize: 12, fontWeight: 600, whiteSpace: "nowrap" }} title="Escudos disponíveis">
