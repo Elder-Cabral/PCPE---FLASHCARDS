@@ -91,6 +91,14 @@ Sempre que revisar o arquivo `banco.json`, verifique se há caracteres corrompid
    - Escrever o banco com `fs.writeFileSync(path, JSON.stringify(data, null, 2), 'utf8')`
 7. **Em caso de dúvida**, execute `node scripts/fix_mojibake_v3.mjs` (dry-run) antes de qualquer commit que envolva adição de cards. O output mostrará exatamente o que seria alterado.
 
+8. **⚠️ REGRA CRÍTICA — CORRUPÇÃO POR "?" (CARACTERES NÃO-ASCII):** Ao salvar arquivos JSON com `fs.writeFileSync`, a omissão do parâmetro `'utf8'` no Windows corrompe todos os caracteres acentuados (ç, ã, á, é, ó, etc.) substituindo-os por `?`. Isso ocorre porque o Node.js usa a code page do sistema (ex: Windows-1252) quando o encoding não é especificado.
+
+   **PREVENÇÃO ABSOLUTA:**
+   - `fs.writeFileSync(path, JSON.stringify(data, null, 2), 'utf8')` — SEMPRE com `'utf8'` explícito
+   - `JSON.parse(fs.readFileSync(path, 'utf8'))` — SEMPRE com `'utf8'` na leitura
+   - Após gerar qualquer lote de cards, execute `node scripts/fix_mojibake_v3.mjs` (dry-run) e também verifique se há `?` no meio de palavras com `node -e "const fs=require('fs');const b=JSON.parse(fs.readFileSync('src/data/banco.json','utf8'));let c=0;Object.values(b).forEach(cs=>cs.forEach(c=>{['pergunta','resposta','dica'].forEach(f=>{if(c[f]&&/[a-z]\?[a-z]/i.test(c[f])){c++;console.log(c.id,f,c[f].match(/[a-z]\?[a-z]/i)[0])}})}) );console.log('Corrompidos:',c)"`
+   - Se encontrar corrupção por `?`, execute `node scripts/fix_question_mark.mjs` para reparar
+
 **[VALIDAÇÃO DE ACENTUAÇÃO (ORTOGRAFIA)]**
 Todo texto gerado para os flashcards DEVE obedecer integralmente às regras de acentuação gráfica do Português Brasileiro (Novo Acordo Ortográfico). A falha em aplicar os acentos corretamente gera retrabalho e compromete a credibilidade do material.
 
