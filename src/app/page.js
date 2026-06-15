@@ -4,6 +4,7 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGri
 import { createClient } from '@supabase/supabase-js';
 import BANCO from "../data/banco.json";
 import { supabase } from "../lib/supabase";
+import PomodoroBar from "./PomodoroBar";
 
 // Cache for a runtime-created Supabase client, so we never lose the auth session
 // (which is held in-memory by the client instance after signInWithPassword).
@@ -118,6 +119,9 @@ function calculateSM2(q, interval = 1, repetition = 0, ef = 2.5) {
 function getLocalDateString(date) {
   return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
 }
+function getTodayStr() {
+  return new Date().toISOString().slice(0, 10);
+}
 
 function calculateStreak(srsData) {
   const dates = new Set();
@@ -205,6 +209,8 @@ export default function App() {
   const [graphCustomStart, setGraphCustomStart] = useState("");
   const [graphCustomEnd, setGraphCustomEnd] = useState("");
   const [cardSnapshot, setCardSnapshot] = useState({});
+  const [userMeta, setUserMeta] = useState(null);
+  const [showShieldBanner, setShowShieldBanner] = useState(false);
   const feedbackInProgressCardId = useRef(null);
   const saveQueueRef = useRef(Promise.resolve());
   const isSavingRef = useRef(false);
@@ -564,6 +570,63 @@ export default function App() {
     return result;
   };
 
+  const loadUserMeta = useCallback(async (username) => {
+    if (!username) return;
+    const client = getSupabase();
+    try {
+      const { data, error } = await client
+        .from("user_meta")
+        .select("*")
+        .eq("username", username)
+        .maybeSingle();
+
+      const today = getTodayStr();
+      const meta = data || {
+        username,
+        current_streak: 0,
+        last_study_date: null,
+        shields_available: 2,
+      };
+      let needsUpdate = !data;
+      let shieldActivated = false;
+
+      // Reset semanal de escudos (segunda-feira)
+      if (new Date().getDay() === 1 && meta.shields_available < 2) {
+        meta.shields_available = 2;
+        needsUpdate = true;
+      }
+
+      // Verificar dias perdidos
+      if (meta.last_study_date) {
+        const lastDate = new Date(meta.last_study_date + "T00:00:00");
+        const todayDate = new Date(today + "T00:00:00");
+        const diffDays = Math.floor((todayDate - lastDate) / 86400000);
+        if (diffDays >= 2) {
+          if (meta.shields_available > 0) {
+            meta.shields_available -= 1;
+            shieldActivated = true;
+            needsUpdate = true;
+          } else {
+            meta.current_streak = 0;
+            needsUpdate = true;
+          }
+        }
+      }
+
+      if (needsUpdate) {
+        await client.from("user_meta").upsert({
+          ...meta,
+          updated_at: new Date().toISOString(),
+        });
+      }
+
+      setUserMeta(meta);
+      if (shieldActivated) setShowShieldBanner(true);
+    } catch (e) {
+      console.error("Erro ao carregar user_meta:", e);
+    }
+  }, []);
+
   // Carregar progresso do Supabase com mesclagem inteligente
   const loadUserData = async (username) => {
     try {
@@ -687,6 +750,13 @@ export default function App() {
     }
   }, []);
 
+  // Carregar user_meta (streak/shields) quando o usuario logar
+  useEffect(() => {
+    if (currentUser?.username) {
+      loadUserMeta(currentUser.username);
+    }
+  }, [currentUser?.username, loadUserMeta]);
+
   // Inicializar snapshot de cards para detectar "Novas" questões adicionadas
   useEffect(() => {
     if (!currentUser) return;
@@ -745,6 +815,34 @@ export default function App() {
 
     return () => clearInterval(interval);
   }, [currentUser]);
+
+  // Atualizar streak ao finalizar sessao de estudo
+  useEffect(() => {
+    if (!sessionCompleted || !currentUser || answeredSessionIds.size < 1) return;
+    const updateMeta = async () => {
+      const today = getTodayStr();
+      const prev = userMeta || { current_streak: 0, last_study_date: null, shields_available: 2 };
+      let newStreak = prev.current_streak || 0;
+      if (prev.last_study_date !== today) {
+        newStreak += 1;
+      }
+      const updated = {
+        username: currentUser.username,
+        current_streak: newStreak,
+        last_study_date: today,
+        shields_available: prev.shields_available ?? 2,
+        updated_at: new Date().toISOString(),
+      };
+      try {
+        const client = getSupabase();
+        await client.from("user_meta").upsert(updated);
+        setUserMeta(updated);
+      } catch (e) {
+        console.error("Erro ao atualizar streak:", e);
+      }
+    };
+    updateMeta();
+  }, [sessionCompleted]);
 
   const handleLogin = async (user) => {
     try {
@@ -933,7 +1031,7 @@ export default function App() {
       materiaStats: {}
     };
 
-    result.streak = calculateStreak(srsData);
+    result.streak = userMeta?.current_streak || 0;
 
     for (const mat of MATERIAS) {
       const cards = BANCO[mat.id] || [];
@@ -970,7 +1068,7 @@ export default function App() {
     }
 
     return result;
-  }, [srsData]);
+  }, [srsData, userMeta?.current_streak]);
 
   // Preparar fila de estudos padrão (Todos / SRS)
   const startStudySession = (materiaId, mode) => {
@@ -1114,7 +1212,7 @@ export default function App() {
     const emojiText = isGlobal ? "⚡" : (matInfo?.emoji || "");
 
     return (
-      <Shell user={currentUser} stats={stats} onLogout={handleLogout} centered>
+      <Shell user={currentUser} stats={stats} onLogout={handleLogout} centered userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)}>
         {toastMessage && (
           <div style={{
             position: "fixed",
@@ -1440,7 +1538,7 @@ export default function App() {
     const isGlobal = studyMode === "global_srs";
     const matInfo = !isGlobal ? MATERIAS.find(m => m.id === selectedMateria) : null;
     return (
-      <Shell user={currentUser} stats={stats} onLogout={handleLogout} centered>
+      <Shell user={currentUser} stats={stats} onLogout={handleLogout} centered userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)}>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "32px 20px", width: "100%", maxWidth: 480, margin: "0 auto", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 24, boxSizing: "border-box" }}>
           <div style={{ fontSize: 56, marginBottom: 16 }}>🏆</div>
           <h2 style={{ color: "#fff", fontSize: 22, fontWeight: 600, margin: 0 }}>
@@ -1498,7 +1596,7 @@ export default function App() {
     }).filter(mat => mat.count > 0);
 
     return (
-      <Shell user={currentUser} stats={stats} onLogout={handleLogout}>
+      <Shell user={currentUser} stats={stats} onLogout={handleLogout} userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)}>
         <div style={{ width: "100%", maxWidth: 560, margin: "0 auto", display: "flex", flexDirection: "column", gap: 20, boxSizing: "border-box" }}>
           <button
             onClick={() => setShowFavoritesMateriaSelector(false)}
@@ -1587,7 +1685,7 @@ export default function App() {
       const selectedCardsCount = cards.filter(c => selectedTopics.includes(c.topico)).length;
 
       return (
-        <Shell user={currentUser} stats={stats} onLogout={handleLogout}>
+        <Shell user={currentUser} stats={stats} onLogout={handleLogout} userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)}>
           <div style={{ width: "100%", maxWidth: 560, margin: "0 auto", display: "flex", flexDirection: "column", gap: 20, boxSizing: "border-box" }}>
             <button
               onClick={() => setShowTopicSelector(false)}
@@ -1731,7 +1829,7 @@ export default function App() {
     }
 
     return (
-      <Shell user={currentUser} stats={stats} onLogout={handleLogout}>
+      <Shell user={currentUser} stats={stats} onLogout={handleLogout} userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)}>
         <div style={{ width: "100%", maxWidth: 560, margin: "0 auto", display: "flex", flexDirection: "column", gap: 24, boxSizing: "border-box" }}>
           <button
             onClick={() => setSelectedMateria(null)}
@@ -1843,7 +1941,7 @@ export default function App() {
 
   // Página Inicial - Lista de Matérias
   return (
-    <Shell user={currentUser} stats={stats} onLogout={handleLogout}>
+    <Shell user={currentUser} stats={stats} onLogout={handleLogout} userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)}>
       {/* Barra de Preferências */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20, background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "12px 18px", flexWrap: "wrap", gap: 12 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
@@ -2360,13 +2458,15 @@ function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, 
 
       const matHistory = filteredHistory.filter(e => e.materia === mat.id);
       const totalAnswers = matHistory.length;
-      const correctAnswers = matHistory.filter(e => e.resultado >= 2).length;
-      const accuracy = totalAnswers > 0 ? Math.round((correctAnswers / totalAnswers) * 100) : 0;
+      const acertoAnswers = matHistory.filter(e => e.resultado >= 2).length;
+      const alertaAnswers = matHistory.filter(e => e.resultado === 1).length;
+      const erroAnswers = matHistory.filter(e => e.resultado === 0).length;
+      const accuracy = (acertoAnswers + erroAnswers) > 0 ? Math.round((acertoAnswers / (acertoAnswers + erroAnswers)) * 100) : 0;
 
       const matSrsValues = cards.filter(c => srsData[c.id]).map(c => srsData[c.id]);
       const hardCards = matSrsValues.filter(s => s.interval <= 3 && s.repetition < 2).length;
 
-      return { ...mat, total, studied, progressPct, accuracy, hardCards, totalAnswers };
+      return { ...mat, total, studied, progressPct, accuracy, hardCards, totalAnswers, acertoAnswers, alertaAnswers, erroAnswers };
     });
   }, [MATERIAS, BANCO, srsData, filteredHistory]);
 
@@ -2413,10 +2513,11 @@ function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, 
       if (entry.timestamp < startMs) continue;
       if (graphPeriod === "custom" && graphCustomEnd && entry.timestamp > new Date(graphCustomEnd).getTime()) continue;
       const dayStr = getLocalDateString(new Date(entry.timestamp));
-      if (!dayMap[dayStr]) dayMap[dayStr] = { date: dayStr, total: 0, correctos: 0, incorrectos: 0 };
+      if (!dayMap[dayStr]) dayMap[dayStr] = { date: dayStr, total: 0, acertos: 0, alertas: 0, erros: 0 };
       dayMap[dayStr].total++;
-      if (entry.resultado >= 2) dayMap[dayStr].correctos++;
-      else dayMap[dayStr].incorrectos++;
+      if (entry.resultado >= 2) dayMap[dayStr].acertos++;
+      else if (entry.resultado === 1) dayMap[dayStr].alertas++;
+      else dayMap[dayStr].erros++;
     }
 
     const result = [];
@@ -2424,7 +2525,7 @@ function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, 
       const d = new Date(now - (days - 1 - i) * 86400000);
       const dayStr = getLocalDateString(d);
       const existing = dayMap[dayStr];
-      result.push(existing || { date: dayStr, total: 0, correctos: 0, incorrectos: 0 });
+      result.push(existing || { date: dayStr, total: 0, acertos: 0, alertas: 0, erros: 0 });
     }
     return result;
   }, [answerHistory, graphPeriod, graphCustomStart, graphCustomEnd]);
@@ -2437,7 +2538,7 @@ function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, 
   };
 
   return (
-    <Shell user={user} stats={stats} onLogout={onLogout}>
+    <Shell user={user} stats={stats} onLogout={onLogout} userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)}>
       <div style={{ width: "100%", maxWidth: 640, margin: "0 auto", display: "flex", flexDirection: "column", gap: 20, boxSizing: "border-box" }}>
         <button
           onClick={onBack}
@@ -2515,7 +2616,7 @@ function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, 
                   </div>
                   {isWeak && (
                     <div style={{ fontSize: 9, color: "#ef4444", marginTop: 2 }}>
-                      Pontos fracos: {m.hardCards} cards difíceis · {m.totalAnswers > 0 ? `${100-m.accuracy}%` : ""} de erro
+                      Pontos fracos: {m.hardCards} cards difíceis · {m.acertoAnswers + m.erroAnswers > 0 ? `${100-m.accuracy}%` : ""} de erro
                     </div>
                   )}
                 </div>
@@ -2637,12 +2738,13 @@ function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, 
                   }}
                   formatter={(value, name) => [
                     value,
-                    name === "correctos" ? "Acertos" : name === "incorrectos" ? "Erros" : "Total"
+                    name === "acertos" ? "Acertos" : name === "alertas" ? "Alertas" : name === "erros" ? "Erros" : "Total"
                   ]}
                   labelFormatter={label => `Data: ${label}`}
                 />
-                <Bar dataKey="correctos" fill="#10b981" radius={[2, 2, 0, 0]} stackId="a" />
-                <Bar dataKey="incorrectos" fill="#ef4444" radius={[2, 2, 0, 0]} stackId="a" />
+                <Bar dataKey="acertos" fill="#10b981" radius={[2, 2, 0, 0]} stackId="a" />
+                <Bar dataKey="alertas" fill="#f59e0b" radius={[2, 2, 0, 0]} stackId="a" />
+                <Bar dataKey="erros" fill="#ef4444" radius={[2, 2, 0, 0]} stackId="a" />
               </BarChart>
             </ResponsiveContainer>
           ) : (
@@ -2658,6 +2760,10 @@ function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, 
               <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                 <div style={{ width: 10, height: 10, borderRadius: 2, background: "#10b981" }} />
                 <span style={{ color: "#94a3b8" }}>Acertos</span>
+              </div>
+              <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                <div style={{ width: 10, height: 10, borderRadius: 2, background: "#f59e0b" }} />
+                <span style={{ color: "#94a3b8" }}>Alertas</span>
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                 <div style={{ width: 10, height: 10, borderRadius: 2, background: "#ef4444" }} />
@@ -2689,10 +2795,13 @@ function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, 
               <strong style={{ color: "#f1f5f9" }}>Sessões</strong> — Cada vez que você senta pra estudar conta como 1 sessão. Se você parar por <strong style={{ color: "#e2e8f0" }}>mais de 15 minutos</strong> e depois voltar a responder, é uma nova sessão. Ex: estudou de manhã e depois à noite = 2 sessões.
             </div>
             <div style={{ fontSize: 11, color: "#94a3b8", lineHeight: 1.6 }}>
-              <strong style={{ color: "#f1f5f9" }}>Taxa de Acerto</strong> — Porcentagem de respostas "Bom" ou "Fácil" em relação ao total de respostas na matéria. O filtro de período (7/15/30 dias) altera esse número para mostrar apenas o período selecionado.
+              <strong style={{ color: "#f1f5f9" }}>Taxa de Acerto</strong> — Porcentagem de respostas "Bom" ou "Fácil" em relação ao total de acertos + erros (respostas "Difícil" são contabilizadas como alerta e não entram no cálculo). O filtro de período (7/15/30 dias) altera esse número para mostrar apenas o período selecionado.
             </div>
             <div style={{ fontSize: 11, color: "#94a3b8", lineHeight: 1.6 }}>
-              <strong style={{ color: "#f1f5f9" }}>Gráfico</strong> — Barras verdes = acertos (Bom/Fácil). Barras vermelhas = erros (Errei/Difícil). Use os filtros para ver sua evolução nos últimos 7, 15 ou 30 dias, ou escolha um período personalizado.
+              <strong style={{ color: "#f1f5f9" }}>Gráfico</strong> — Barras verdes = acertos (Bom/Fácil). Barras amarelas = alertas (Difícil). Barras vermelhas = erros (Errei). Use os filtros para ver sua evolução nos últimos 7, 15 ou 30 dias, ou escolha um período personalizado.
+            </div>
+            <div style={{ fontSize: 11, color: "#94a3b8", lineHeight: 1.6 }}>
+              <strong style={{ color: "#f1f5f9" }}>Alertas (Difícil)</strong> — Respostas marcadas como "Difícil" formam uma categoria neutra: não são acerto nem erro. Elas indicam cards que você acertou, mas com dificuldade, e servem como sinal de atenção para revisão futura.
             </div>
             <div style={{ fontSize: 11, color: "#94a3b8", lineHeight: 1.6, borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: 10 }}>
               ⚠️ Dados passados não existem: o histórico começou a ser registrado a partir da implementação desta tela. Os números e gráficos refletem apenas o período a partir de agora.
@@ -2718,7 +2827,7 @@ function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, 
 }
 
 // ── COMPONENTE: SHELL / LAYOUT ──────────────────────────────────────────────
-function Shell({ children, user, stats, onLogout, centered }) {
+function Shell({ children, user, stats, onLogout, centered, userMeta = null, showShieldBanner = false, onDismissShield = () => {} }) {
   return (
     <div style={{ height: "100vh", overflow: "hidden", background: "#030712", boxSizing: "border-box", position: "relative", width: "100%", display: "flex", flexDirection: "column" }}>
       <div className="shell-hero-composite" />
@@ -2726,9 +2835,18 @@ function Shell({ children, user, stats, onLogout, centered }) {
 
       <div style={{ position: "relative", zIndex: 1, width: "100%", maxWidth: 800, margin: "0 auto", boxSizing: "border-box", flex: 1, display: "flex", flexDirection: "column", minHeight: 0, padding: "24px 16px 32px" }}>
         {/* Topbar (fixo, não rola) */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 28, flexShrink: 0 }}>
-          <div style={{ display: "inline-block", background: "linear-gradient(135deg,#e11d48,#be123c)", borderRadius: 10, padding: "6px 14px" }}>
-            <span style={{ color: "#fff", fontWeight: 700, fontSize: 9, letterSpacing: 2, fontFamily: "monospace" }}>PC-PE · AGENTE</span>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12, flexShrink: 0, flexWrap: "wrap", gap: 8 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <div style={{ display: "inline-block", background: "linear-gradient(135deg,#e11d48,#be123c)", borderRadius: 10, padding: "6px 14px" }}>
+              <span style={{ color: "#fff", fontWeight: 700, fontSize: 9, letterSpacing: 2, fontFamily: "monospace" }}>PC-PE · AGENTE</span>
+            </div>
+            {(userMeta?.current_streak || userMeta?.shields_available) ? (
+              <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                <span style={{ color: "#f97316", fontSize: 12, fontWeight: 600 }}>🔥 {userMeta.current_streak || 0}</span>
+                <span style={{ color: "#94a3b8", fontSize: 11 }}>|</span>
+                <span style={{ color: "#3b82f6", fontSize: 12, fontWeight: 600 }}>🛡️ {userMeta.shields_available || 0}</span>
+              </div>
+            ) : null}
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
             <span style={{ color: "#94a3b8", fontSize: 12, fontWeight: 500 }}>
@@ -2752,6 +2870,34 @@ function Shell({ children, user, stats, onLogout, centered }) {
             </button>
           </div>
         </div>
+
+        {/* Banner de Escudo de Ofensiva */}
+        {showShieldBanner && (
+          <div style={{
+            display: "flex", alignItems: "center", gap: 10,
+            background: "rgba(59,130,246,0.1)", border: "1px solid rgba(59,130,246,0.2)",
+            borderRadius: 12, padding: "10px 16px", marginBottom: 12, flexShrink: 0,
+          }}>
+            <span style={{ fontSize: 18 }}>🛡️</span>
+            <p style={{ color: "#93c5fd", fontSize: 12, fontWeight: 500, margin: 0, flex: 1, lineHeight: 1.4 }}>
+              Você perdeu um dia, mas seu Escudo de Ofensiva foi ativado e salvou sua sequência! ({userMeta?.shields_available || 0} escudo(s) restante(s))
+            </p>
+            <button
+              onClick={onDismissShield}
+              className="btn-hover"
+              style={{
+                background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)",
+                borderRadius: 8, padding: "4px 10px", fontSize: 11, fontWeight: 600,
+                color: "#94a3b8", cursor: "pointer", outline: "none", whiteSpace: "nowrap",
+              }}
+            >
+              OK
+            </button>
+          </div>
+        )}
+
+        {/* Pomodoro Timer */}
+        <PomodoroBar username={user?.username} />
 
         {centered ? (
           <div style={{ flex: 1, overflow: "hidden", minHeight: 0, display: "flex", flexDirection: "column", justifyContent: "center", background: "rgba(17,24,39,0.8)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 24, boxShadow: "0 18px 50px rgba(0,0,0,0.5)" }}>
