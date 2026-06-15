@@ -1,6 +1,39 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 
+// Persistent global variables to keep the player running when switching screens
+let globalContainer = null;
+let globalPlayer = null;
+let activeSetPlaying = null;
+let globalPlayingState = {
+  category: null,
+  subcategory: null,
+  playing: false,
+  volume: 50,
+  playerMode: null,
+};
+
+function getGlobalContainer() {
+  if (typeof window === "undefined") return null;
+  if (!globalContainer) {
+    globalContainer = document.getElementById("global-yt-player-container");
+    if (!globalContainer) {
+      globalContainer = document.createElement("div");
+      globalContainer.id = "global-yt-player-container";
+      globalContainer.style.position = "fixed";
+      globalContainer.style.top = "0";
+      globalContainer.style.left = "0";
+      globalContainer.style.width = "0px";
+      globalContainer.style.height = "0px";
+      globalContainer.style.opacity = "0";
+      globalContainer.style.pointerEvents = "none";
+      globalContainer.style.zIndex = "-9999";
+      document.body.appendChild(globalContainer);
+    }
+  }
+  return globalContainer;
+}
+
 const YT_VIDEOS = {
   natureza: "Xv2NElOHo-0",
   chuva: "mPZkdNFkNps",
@@ -61,17 +94,36 @@ const btnSub = {
 
 export default function AmbientSound({ isMobile }) {
   const [expanded, setExpanded] = useState(false);
-  const [category, setCategory] = useState(null);
-  const [subcategory, setSubcategory] = useState(null);
-  const [playing, setPlaying] = useState(false);
-  const [volume, setVolume] = useState(50);
-  const [playerMode, setPlayerMode] = useState(null);
-  const playerRef = useRef(null);
+  const [category, setCategory] = useState(globalPlayingState.category);
+  const [subcategory, setSubcategory] = useState(globalPlayingState.subcategory);
+  const [playing, setPlaying] = useState(globalPlayingState.playing);
+  const [volume, setVolume] = useState(globalPlayingState.volume);
+  const [playerMode, setPlayerMode] = useState(globalPlayingState.playerMode);
+  const playerRef = useRef(globalPlayer);
   const containerRef = useRef(null);
   const volumeRef = useRef(volume);
   const playerModeRef = useRef(playerMode);
   volumeRef.current = volume;
   playerModeRef.current = playerMode;
+
+  // Sync state variables to the global state object
+  useEffect(() => {
+    globalPlayingState.category = category;
+    globalPlayingState.subcategory = subcategory;
+    globalPlayingState.playing = playing;
+    globalPlayingState.volume = volume;
+    globalPlayingState.playerMode = playerMode;
+  }, [category, subcategory, playing, volume, playerMode]);
+
+  // Keep a reference to the active instance's setPlaying function
+  useEffect(() => {
+    activeSetPlaying = setPlaying;
+    return () => {
+      if (activeSetPlaying === setPlaying) {
+        activeSetPlaying = null;
+      }
+    };
+  }, [setPlaying]);
 
   function getTrackId() {
     if (!category) return null;
@@ -125,7 +177,7 @@ export default function AmbientSound({ isMobile }) {
 
   // ── Cria player via YT.Player ──
   function createApiPlayer(trackId, videoId) {
-    const container = containerRef.current;
+    const container = getGlobalContainer();
     if (!container) return null;
     container.innerHTML = "";
     const divId = "yt-player-" + trackId + "-" + Date.now();
@@ -153,11 +205,14 @@ export default function AmbientSound({ isMobile }) {
         onReady: () => {
           p.setVolume(volumeRef.current);
           try { p.playVideo(); } catch (err) {}
-          setPlaying(true);
+          if (activeSetPlaying) activeSetPlaying(true);
         },
         onStateChange: (e) => {
-          if (e.data === window.YT.PlayerState.PLAYING) setPlaying(true);
-          else if (e.data === window.YT.PlayerState.PAUSED || e.data === window.YT.PlayerState.ENDED) setPlaying(false);
+          if (e.data === window.YT.PlayerState.PLAYING) {
+            if (activeSetPlaying) activeSetPlaying(true);
+          } else if (e.data === window.YT.PlayerState.PAUSED || e.data === window.YT.PlayerState.ENDED) {
+            if (activeSetPlaying) activeSetPlaying(false);
+          }
         },
       },
     });
@@ -167,7 +222,7 @@ export default function AmbientSound({ isMobile }) {
 
   // ── Cria player via iframe embed (fallback sem API) ──
   function createEmbedPlayer(trackId, videoId) {
-    const container = containerRef.current;
+    const container = getGlobalContainer();
     if (!container) return null;
     container.innerHTML = "";
     const iframe = document.createElement("iframe");
@@ -196,8 +251,12 @@ export default function AmbientSound({ isMobile }) {
         else playerRef.current.remove();
       } catch {}
       playerRef.current = null;
+      globalPlayer = null;
     }
+    const container = getGlobalContainer();
+    if (container) container.innerHTML = "";
     setPlaying(false);
+    globalPlayingState.playing = false;
   }
 
   function handlePlay() {
@@ -212,6 +271,7 @@ export default function AmbientSound({ isMobile }) {
       } else {
         destroyPlayer();
         playerRef.current = null;
+        globalPlayer = null;
       }
       setPlaying(true);
       return;
@@ -228,6 +288,7 @@ export default function AmbientSound({ isMobile }) {
 
     if (p) {
       playerRef.current = p;
+      globalPlayer = p;
       if (playerMode !== "api") setPlaying(true);
     }
   }
@@ -239,6 +300,7 @@ export default function AmbientSound({ isMobile }) {
     } else if (playerRef.current.remove) {
       playerRef.current.remove();
       playerRef.current = null;
+      globalPlayer = null;
     }
     setPlaying(false);
   }
