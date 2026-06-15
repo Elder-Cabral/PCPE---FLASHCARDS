@@ -60,17 +60,16 @@ const btnSub = {
 };
 
 export default function AmbientSound() {
+  const [expanded, setExpanded] = useState(false);
   const [category, setCategory] = useState(null);
   const [subcategory, setSubcategory] = useState(null);
   const [playing, setPlaying] = useState(false);
   const [volume, setVolume] = useState(50);
-  const [playerReady, setPlayerReady] = useState(false);
-  const [pendingPlay, setPendingPlay] = useState(false);
+  const [creating, setCreating] = useState(false);
   const playerRef = useRef(null);
   const containerRef = useRef(null);
   const apiLoadedRef = useRef(false);
-  const volumeRef = useRef(volume);
-  volumeRef.current = volume;
+  const trackForPlayerRef = useRef(null);
 
   const getTrackId = useCallback(() => {
     if (!category) return null;
@@ -79,7 +78,6 @@ export default function AmbientSound() {
     return null;
   }, [category, subcategory]);
 
-  // Carregar YouTube IFrame API
   useEffect(() => {
     if (typeof window.YT === "undefined" && !apiLoadedRef.current) {
       apiLoadedRef.current = true;
@@ -89,25 +87,25 @@ export default function AmbientSound() {
     }
   }, []);
 
-  // Criar/destruir player ao trocar de faixa
-  useEffect(() => {
-    const trackId = getTrackId();
-    if (!trackId) return;
+  const destroyPlayer = useCallback(() => {
+    if (playerRef.current) {
+      try { playerRef.current.destroy(); } catch {}
+      playerRef.current = null;
+    }
+    setPlaying(false);
+    setCreating(false);
+  }, []);
+
+  const createAndPlay = useCallback((trackId) => {
     const videoId = YT_VIDEOS[trackId];
     if (!videoId) return;
 
-    if (playerRef.current) {
-      playerRef.current.destroy();
-      playerRef.current = null;
-    }
-    setPlayerReady(false);
-    setPlaying(false);
-    setPendingPlay(false);
-
-    let cancelled = false;
+    destroyPlayer();
+    setCreating(true);
+    trackForPlayerRef.current = trackId;
 
     const tryCreate = () => {
-      if (cancelled) return;
+      if (trackForPlayerRef.current !== trackId) return;
       if (typeof window.YT === "undefined" || !window.YT.Player) {
         setTimeout(tryCreate, 300);
         return;
@@ -116,15 +114,15 @@ export default function AmbientSound() {
       if (!container) return;
       container.innerHTML = "";
       const div = document.createElement("div");
-      div.id = "yt-sound-" + trackId + "-" + Date.now();
+      div.id = "yt-player-" + trackId + "-" + Date.now();
       container.appendChild(div);
 
-      playerRef.current = new window.YT.Player(div.id, {
+      const p = new window.YT.Player(div.id, {
         videoId,
         height: "0",
         width: "0",
         playerVars: {
-          autoplay: 0,
+          autoplay: 1,
           controls: 0,
           disablekb: 1,
           enablejsapi: 1,
@@ -135,54 +133,45 @@ export default function AmbientSound() {
         },
         events: {
           onReady: () => {
-            if (cancelled) return;
-            playerRef.current?.setVolume(volumeRef.current);
-            setPlayerReady(true);
+            if (trackForPlayerRef.current !== trackId) return;
+            p.setVolume(volume);
+            setCreating(false);
+            setPlaying(true);
           },
           onStateChange: (e) => {
-            if (cancelled) return;
+            if (trackForPlayerRef.current !== trackId) return;
             if (e.data === window.YT.PlayerState.PLAYING) setPlaying(true);
             else if (e.data === window.YT.PlayerState.PAUSED || e.data === window.YT.PlayerState.ENDED) setPlaying(false);
           },
         },
       });
+      playerRef.current = p;
     };
 
     tryCreate();
-    return () => {
-      cancelled = true;
-      if (playerRef.current) {
-        playerRef.current.destroy();
-        playerRef.current = null;
-      }
-    };
-  }, [getTrackId]);
+  }, [destroyPlayer, volume]);
 
-  // Pending play auto-trigger quando player ficar pronto
   useEffect(() => {
-    if (pendingPlay && playerReady && playerRef.current) {
-      setPendingPlay(false);
-      playerRef.current.playVideo();
-    }
-  }, [pendingPlay, playerReady]);
-
-  // Sincronizar volume
-  useEffect(() => {
-    if (playerRef.current && playerReady) {
+    if (playerRef.current) {
       playerRef.current.setVolume(volume);
     }
-  }, [volume, playerReady]);
+  }, [volume]);
 
   const handlePlay = () => {
-    if (playerRef.current && playerReady) {
-      playerRef.current.playVideo();
+    const trackId = getTrackId();
+    if (!trackId) return;
+    if (playerRef.current && trackForPlayerRef.current === trackId) {
+      // Player ja existe para esta faixa — basta dar play
+      if (typeof playerRef.current.playVideo === "function") {
+        playerRef.current.playVideo();
+      }
     } else {
-      setPendingPlay(true);
+      createAndPlay(trackId);
     }
   };
 
   const handlePause = () => {
-    if (playerRef.current && playerReady) {
+    if (playerRef.current && typeof playerRef.current.pauseVideo === "function") {
       playerRef.current.pauseVideo();
     }
   };
@@ -190,16 +179,18 @@ export default function AmbientSound() {
   const selectCategory = (catId) => {
     const cat = CATEGORIES.find((c) => c.id === catId);
     if (!cat) return;
-    if (cat.subs) {
-      setCategory((prev) => (prev === catId ? null : catId));
-      setSubcategory(null);
+    if (category === catId) {
+      setCategory(null);
+      destroyPlayer();
     } else {
-      setCategory((prev) => (prev === catId ? null : catId));
+      destroyPlayer();
+      setCategory(catId);
       setSubcategory(null);
     }
   };
 
   const selectSub = (subId) => {
+    destroyPlayer();
     setSubcategory(subId);
   };
 
@@ -210,106 +201,120 @@ export default function AmbientSound() {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 8, width: "100%" }}>
-      {/* Labels */}
-      <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-        <span style={{ color: "#60a5fa", fontSize: 10, fontWeight: 600, letterSpacing: 0.5 }}>
+      {/* Cabecalho colapsavel */}
+      <div
+        onClick={() => setExpanded((v) => !v)}
+        className="btn-hover"
+        style={{
+          display: "flex", alignItems: "center", gap: 8, cursor: "pointer",
+          userSelect: "none", padding: "2px 0",
+        }}
+      >
+        <span style={{ color: "#64748b", fontSize: 10, fontWeight: 600, letterSpacing: 0.5 }}>
           🔊 SOM AMBIENTE
         </span>
-        {!category && (
-          <span style={{ color: "#475569", fontSize: 10, fontWeight: 400 }}>
-            — escolha uma categoria para ouvir
+        {playing && (
+          <span style={{ color: "#22c55e", fontSize: 9, fontWeight: 600, letterSpacing: 0.5, animation: "pulse 1.5s ease-in-out infinite" }}>
+            ● Tocando
           </span>
         )}
+        <span style={{ color: "#475569", fontSize: 9, marginLeft: "auto" }}>
+          {expanded ? "▲" : "▼"}
+        </span>
       </div>
 
-      {/* Categorias */}
-      <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-        {CATEGORIES.map((cat) => {
-          const isActive = category === cat.id;
-          return (
-            <button
-              key={cat.id}
-              onClick={() => selectCategory(cat.id)}
-              className="btn-hover"
-              style={{
-                ...btnCat,
-                background: isActive ? "rgba(59,130,246,0.15)" : "rgba(255,255,255,0.03)",
-                border: isActive ? "1px solid rgba(59,130,246,0.3)" : "1px solid rgba(255,255,255,0.06)",
-                color: isActive ? "#93c5fd" : "#64748b",
-              }}
-            >
-              {cat.label}
-              {cat.subs && (
-                <span style={{ marginLeft: 3, fontSize: 8, color: isActive ? "#60a5fa" : "#475569" }}>
-                  {isActive ? "▼" : "▸"}
-                </span>
-              )}
-            </button>
-          );
-        })}
-      </div>
+      {expanded && (
+        <>
+          {/* Categorias */}
+          <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+            {CATEGORIES.map((cat) => {
+              const isActive = category === cat.id;
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => selectCategory(cat.id)}
+                  className="btn-hover"
+                  style={{
+                    ...btnCat,
+                    background: isActive ? "rgba(255,255,255,0.06)" : "rgba(255,255,255,0.02)",
+                    border: isActive ? "1px solid rgba(255,255,255,0.12)" : "1px solid rgba(255,255,255,0.04)",
+                    color: isActive ? "#f1f5f9" : "#64748b",
+                  }}
+                >
+                  {cat.label}
+                  {cat.subs && (
+                    <span style={{ marginLeft: 3, fontSize: 8 }}>
+                      {isActive ? "▼" : "▸"}
+                    </span>
+                  )}
+                </button>
+              );
+            })}
+          </div>
 
-      {/* Subcategorias (Foco / Urbano) */}
-      {needsSub && (
-        <div style={{ display: "flex", gap: 6, paddingLeft: 4 }}>
-          {resolvedCat.subs.map((s) => (
-            <button
-              key={s.id}
-              onClick={() => selectSub(s.id)}
-              className="btn-hover"
-              style={{
-                ...btnSub,
-                background: subcategory === s.id ? "rgba(59,130,246,0.12)" : "rgba(255,255,255,0.02)",
-                border: subcategory === s.id ? "1px solid rgba(59,130,246,0.25)" : "1px solid transparent",
-                color: subcategory === s.id ? "#93c5fd" : "#64748b",
-              }}
-            >
-              {s.label}
-            </button>
-          ))}
-        </div>
-      )}
-
-      {/* Playback controls (aparece quando uma faixa esta selecionada) */}
-      {showPlayback && (
-        <div style={{ display: "flex", alignItems: "center", gap: 10, paddingLeft: 2 }}>
-          <button
-            onClick={playing ? handlePause : handlePlay}
-            className="btn-hover"
-            style={{
-              ...btnCat,
-              background: playing ? "rgba(239,68,68,0.12)" : "rgba(34,197,94,0.12)",
-              border: playing ? "1px solid rgba(239,68,68,0.2)" : "1px solid rgba(34,197,94,0.2)",
-              color: playing ? "#f87171" : "#4ade80",
-              fontSize: 10,
-              padding: "4px 10px",
-            }}
-          >
-            {playing ? "⏸ Pausar" : pendingPlay ? "⏳ Preparando..." : "▶ Tocar"}
-          </button>
-
-          <span style={{ color: "#94a3b8", fontSize: 11, fontWeight: 500 }}>
-            {getTrackLabel(trackId)}
-          </span>
-
-          {playing && (
-            <span style={{ color: "#22c55e", fontSize: 9, fontWeight: 600, letterSpacing: 0.5, animation: "pulse 1.5s ease-in-out infinite" }}>
-              ●
-            </span>
+          {/* Subcategorias */}
+          {needsSub && (
+            <div style={{ display: "flex", gap: 6, paddingLeft: 4 }}>
+              {resolvedCat.subs.map((s) => (
+                <button
+                  key={s.id}
+                  onClick={() => selectSub(s.id)}
+                  className="btn-hover"
+                  style={{
+                    ...btnSub,
+                    background: subcategory === s.id ? "rgba(255,255,255,0.06)" : "rgba(255,255,255,0.02)",
+                    border: subcategory === s.id ? "1px solid rgba(255,255,255,0.12)" : "1px solid transparent",
+                    color: subcategory === s.id ? "#f1f5f9" : "#64748b",
+                  }}
+                >
+                  {s.label}
+                </button>
+              ))}
+            </div>
           )}
 
-          <div style={{ display: "flex", alignItems: "center", gap: 4, marginLeft: "auto" }}>
-            <span style={{ color: "#64748b", fontSize: 9 }}>🔉</span>
-            <input
-              type="range"
-              min="0"
-              max="100"
-              value={volume}
-              onChange={(e) => setVolume(Number(e.target.value))}
-              style={{ width: 56, height: 4, cursor: "pointer", accentColor: "#3b82f6" }}
-            />
-          </div>
-        </div>
+          {/* Playback */}
+          {showPlayback && (
+            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              <button
+                onClick={playing ? handlePause : handlePlay}
+                className="btn-hover"
+                style={{
+                  ...btnCat,
+                  background: playing ? "rgba(239,68,68,0.12)" : "rgba(34,197,94,0.12)",
+                  border: playing ? "1px solid rgba(239,68,68,0.2)" : "1px solid rgba(34,197,94,0.25)",
+                  color: playing ? "#f87171" : "#4ade80",
+                  fontSize: 10,
+                  padding: "4px 10px",
+                }}
+              >
+                {playing ? "⏸ Pausar" : creating ? "⏳" : "▶ Tocar"}
+              </button>
+
+              <span style={{ color: "#94a3b8", fontSize: 11, fontWeight: 500 }}>
+                {getTrackLabel(trackId)}
+              </span>
+
+              {creating && (
+                <span style={{ color: "#f59e0b", fontSize: 9, fontWeight: 500 }}>
+                  carregando...
+                </span>
+              )}
+
+              <div style={{ display: "flex", alignItems: "center", gap: 4, marginLeft: "auto" }}>
+                <span style={{ color: "#64748b", fontSize: 9 }}>🔉</span>
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value={volume}
+                  onChange={(e) => setVolume(Number(e.target.value))}
+                  style={{ width: 56, height: 4, cursor: "pointer", accentColor: "#3b82f6" }}
+                />
+              </div>
+            </div>
+          )}
+        </>
       )}
 
       <div ref={containerRef} style={{ display: "none" }} />

@@ -1232,7 +1232,7 @@ export default function App() {
     const emojiText = isGlobal ? "⚡" : (matInfo?.emoji || "");
 
     return (
-      <Shell user={currentUser} stats={stats} onLogout={handleLogout} centered userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)} srsData={srsData}>
+      <Shell user={currentUser} stats={stats} onLogout={handleLogout} centered userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)} srsData={srsData} hidePomodoro={true}>
         {toastMessage && (
           <div style={{
             position: "fixed",
@@ -2847,7 +2847,10 @@ function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, 
 }
 
 // ── COMPONENTE: SHELL / LAYOUT ──────────────────────────────────────────────
-function Shell({ children, user, stats, onLogout, centered, userMeta = null, showShieldBanner = false, onDismissShield = () => {}, srsData = {} }) {
+function Shell({ children, user, stats, onLogout, centered, userMeta = null, showShieldBanner = false, onDismissShield = () => {}, srsData = {}, hidePomodoro = false }) {
+  const [showPomodoro, setShowPomodoro] = useState(!hidePomodoro);
+  useEffect(() => { setShowPomodoro(!hidePomodoro); }, [hidePomodoro]);
+
   return (
     <div style={{ height: "100vh", overflow: "hidden", background: "#030712", boxSizing: "border-box", position: "relative", width: "100%", display: "flex", flexDirection: "column" }}>
       <div className="shell-hero-composite" />
@@ -2914,8 +2917,29 @@ function Shell({ children, user, stats, onLogout, centered, userMeta = null, sho
           </div>
         )}
 
-        {/* Pomodoro Timer */}
-        <PomodoroBar username={user?.username} />
+        {/* Pomodoro Timer (sempre montado, oculto via display) */}
+        <div style={{ display: showPomodoro ? 'block' : 'none' }}>
+          <PomodoroBar username={user?.username} onHide={() => setShowPomodoro(false)} />
+        </div>
+
+        {/* Botao flutuante quando oculto durante estudo */}
+        {!showPomodoro && hidePomodoro && (
+          <button
+            onClick={() => setShowPomodoro(true)}
+            className="btn-hover"
+            style={{
+              position: 'fixed', bottom: 20, right: 20, zIndex: 100,
+              background: 'rgba(255,255,255,0.04)',
+              border: '1px solid rgba(255,255,255,0.08)',
+              borderRadius: 24, padding: '10px 16px',
+              color: '#94a3b8', fontSize: 16, cursor: 'pointer',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.4)',
+              outline: 'none',
+            }}
+          >
+            🍅
+          </button>
+        )}
 
         {centered ? (
           <div style={{ flex: 1, overflow: "hidden", minHeight: 0, display: "flex", flexDirection: "column", justifyContent: "center", background: "rgba(17,24,39,0.8)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 24, boxShadow: "0 18px 50px rgba(0,0,0,0.5)" }}>

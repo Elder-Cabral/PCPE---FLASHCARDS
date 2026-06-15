@@ -33,7 +33,7 @@ function playBeep() {
   }
 }
 
-export default function PomodoroBar({ username }) {
+export default function PomodoroBar({ username, onHide }) {
   const [duration, setDuration] = useState(25);
   const [timeLeft, setTimeLeft] = useState(25 * 60);
   const [status, setStatus] = useState("idle");
@@ -107,8 +107,8 @@ export default function PomodoroBar({ username }) {
         display: "flex",
         flexDirection: "column",
         gap: 12,
-        background: "rgba(59,130,246,0.06)",
-        border: "1px solid rgba(59,130,246,0.15)",
+        background: "rgba(255,255,255,0.02)",
+        border: "1px solid rgba(255,255,255,0.05)",
         borderRadius: 16,
         padding: "14px 18px",
         marginBottom: 16,
@@ -117,7 +117,7 @@ export default function PomodoroBar({ username }) {
     >
       {/* ── Linha 1: Pomodoro ── */}
       <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
-        <span style={{ color: "#60a5fa", fontSize: 10, fontWeight: 600, letterSpacing: 0.5 }}>
+        <span style={{ color: "#94a3b8", fontSize: 10, fontWeight: 600, letterSpacing: 0.5 }}>
           🍅 POMODORO
         </span>
 
@@ -125,8 +125,8 @@ export default function PomodoroBar({ username }) {
           value={duration}
           onChange={handleDurationChange}
           style={{
-            background: "rgba(15,23,42,0.6)",
-            border: "1px solid rgba(255,255,255,0.08)",
+            background: "#0f172a",
+            border: "1px solid rgba(255,255,255,0.1)",
             borderRadius: 8,
             padding: "4px 6px",
             color: "#f1f5f9",
@@ -168,12 +168,25 @@ export default function PomodoroBar({ username }) {
             ● EM ANDAMENTO
           </span>
         )}
+
+        {onHide && (
+          <button
+            onClick={onHide}
+            className="btn-hover"
+            style={{
+              border: "none", borderRadius: 8, padding: "4px 8px", fontSize: 11, fontWeight: 600,
+              cursor: "pointer", outline: "none", background: "rgba(255,255,255,0.04)", color: "#64748b",
+              marginLeft: "auto",
+            }}
+            title="Minimizar"
+          >
+            ─
+          </button>
+        )}
       </div>
 
-      {/* ── Separador ── */}
-      <hr style={{ width: "100%", border: "none", borderTop: "1px solid rgba(59,130,246,0.12)", margin: 0 }} />
+      <hr style={{ width: "100%", border: "none", borderTop: "1px solid rgba(255,255,255,0.05)", margin: 0 }} />
 
-      {/* ── Linha 2: Som Ambiente ── */}
       <AmbientSound />
     </div>
   );
