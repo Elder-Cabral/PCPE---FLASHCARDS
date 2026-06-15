@@ -2,12 +2,12 @@
 import { useState, useEffect, useRef } from "react";
 
 const YT_VIDEOS = {
-  natureza: "vgqQSVFch44",
-  chuva: "y4h_4NIOxuY",
-  foco_432hz: "JaB7SW_WCYI",
+  natureza: "Xv2NElOHo-0",
+  chuva: "mPZkdNFkNps",
+  foco_432hz: "RYcaG64JkqM",
   foco_ruido: "nMfPqeZjc2c",
-  urbano_cafe: "Mckcmh-OU5M",
-  urbano_noturno: "wAPCSnAhhC8",
+  urbano_cafe: "Y9mRoCerrpY",
+  urbano_noturno: "s6XIt0vUq6A",
 };
 
 const CATEGORIES = [
