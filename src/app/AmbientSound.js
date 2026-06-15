@@ -69,7 +69,16 @@ export default function AmbientSound({ isMobile }) {
   const playerRef = useRef(null);
   const containerRef = useRef(null);
   const volumeRef = useRef(volume);
+  const playerModeRef = useRef(playerMode);
   volumeRef.current = volume;
+  playerModeRef.current = playerMode;
+
+  function getTrackId() {
+    if (!category) return null;
+    if (category === "natureza" || category === "chuva") return category;
+    if ((category === "foco" || category === "urbano") && subcategory) return subcategory;
+    return null;
+  }
 
   // ── Carrega YouTube IFrame API com fallback para embed ──
   useEffect(() => {
@@ -77,7 +86,7 @@ export default function AmbientSound({ isMobile }) {
     let poll;
     const timeout = setTimeout(() => {
       if (poll) clearInterval(poll);
-      if (!cancelled && !playerMode) setPlayerMode("embed");
+      if (!cancelled && !playerModeRef.current) setPlayerMode("embed");
     }, 10000);
 
     function onApiReady() {
@@ -111,7 +120,8 @@ export default function AmbientSound({ isMobile }) {
       if (poll) clearInterval(poll);
       clearTimeout(timeout);
     };
-  }, [playerMode]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // ── Cria player via YT.Player ──
   function createApiPlayer(trackId, videoId) {

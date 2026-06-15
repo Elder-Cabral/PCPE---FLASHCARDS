@@ -447,7 +447,7 @@ export default function App() {
       }
       @media (max-width: 640px) {
         .pomodoro-floating-btn {
-          bottom: calc(env(safe-area-inset-bottom, 0px) + 12px) !important;
+          bottom: 12px !important;
           right: 12px !important;
           padding: 8px 12px !important;
           border-radius: 20px !important;
@@ -462,6 +462,9 @@ export default function App() {
         }
         .shell-padding-bottom {
           padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+        .pomodoro-floating-btn {
+          padding-bottom: calc(env(safe-area-inset-bottom) + 8px) !important;
         }
       }
     `;
@@ -2875,7 +2878,7 @@ function Shell({ children, user, stats, onLogout, centered, userMeta = null, sho
   }, []);
 
   return (
-    <div style={{ height: "100vh", overflow: "hidden", background: "#030712", boxSizing: "border-box", position: "relative", width: "100%", display: "flex", flexDirection: "column" }}>
+      <div style={{ height: "100vh", overflow: "hidden", background: "#030712", boxSizing: "border-box", position: "relative", width: "100%", display: "flex", flexDirection: "column" }}>
       <div className="shell-hero-composite" />
       <div style={{ position: "fixed", top: -200, left: "50%", transform: "translateX(-50%)", width: 600, height: 400, borderRadius: "50%", background: "radial-gradient(ellipse,rgba(59,130,246,0.03) 0%,transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
 
@@ -2900,7 +2903,7 @@ function Shell({ children, user, stats, onLogout, centered, userMeta = null, sho
             </div>
             <div style={{ display: "flex", alignItems: "center", justifyContent: isMobile ? "flex-start" : "flex-end", gap: 14 }}>
               <span style={{ color: "#94a3b8", fontSize: 12, fontWeight: 500 }}>
-                {user.role === "admin" ? "👑" : "👤"} {user.name}
+                {user?.role === "admin" ? "👑" : "👤"} {user?.name}
               </span>
               <button
                 onClick={onLogout}
