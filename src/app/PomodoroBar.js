@@ -16,7 +16,6 @@ function playBeep() {
     gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.6);
     osc.start(ctx.currentTime);
     osc.stop(ctx.currentTime + 0.6);
-
     setTimeout(() => {
       const osc2 = ctx.createOscillator();
       const gain2 = ctx.createGain();
@@ -70,15 +69,9 @@ export default function PomodoroBar({ username }) {
         .eq("username", username)
         .eq("log_date", today)
         .maybeSingle();
-
       const newCount = (existing?.count || 0) + 1;
       await supabase.from("pomodoro_log").upsert(
-        {
-          username,
-          log_date: today,
-          count: newCount,
-          updated_at: new Date().toISOString(),
-        },
+        { username, log_date: today, count: newCount, updated_at: new Date().toISOString() },
         { onConflict: "username, log_date" }
       );
     } catch (e) {
@@ -112,156 +105,76 @@ export default function PomodoroBar({ username }) {
     <div
       style={{
         display: "flex",
-        alignItems: "center",
-        gap: 10,
-        background: "rgba(255,255,255,0.03)",
-        border: "1px solid rgba(255,255,255,0.06)",
-        borderRadius: 14,
-        padding: "7px 14px",
+        flexDirection: "column",
+        gap: 12,
+        background: "rgba(59,130,246,0.06)",
+        border: "1px solid rgba(59,130,246,0.15)",
+        borderRadius: 16,
+        padding: "14px 18px",
         marginBottom: 16,
         flexShrink: 0,
-        flexWrap: "wrap",
       }}
     >
-      <span
-        style={{
-          color: "#94a3b8",
-          fontSize: 11,
-          fontWeight: 600,
-          letterSpacing: 1,
-        }}
-      >
-        🍅 POMODORO
-      </span>
-
-      <select
-        value={duration}
-        onChange={handleDurationChange}
-        style={{
-          background: "#0f172a",
-          border: "1px solid rgba(255,255,255,0.1)",
-          borderRadius: 8,
-          padding: "4px 6px",
-          color: "#f1f5f9",
-          fontSize: 11,
-          fontWeight: 500,
-          outline: "none",
-          cursor: "pointer",
-        }}
-      >
-        <option value={10}>10 min</option>
-        <option value={25}>25 min</option>
-      </select>
-
-      <span
-        style={{
-          color: "#f1f5f9",
-          fontSize: 17,
-          fontWeight: 700,
-          fontFamily: "monospace",
-          minWidth: 52,
-          textAlign: "center",
-        }}
-      >
-        {String(minutes).padStart(2, "0")}:{String(seconds).padStart(2, "0")}
-      </span>
-
-      {status === "idle" && (
-        <button
-          onClick={handleStart}
-          className="btn-hover"
-          style={{
-            border: "1px solid rgba(34,197,94,0.25)",
-            borderRadius: 8,
-            padding: "4px 10px",
-            fontSize: 11,
-            fontWeight: 600,
-            cursor: "pointer",
-            outline: "none",
-            whiteSpace: "nowrap",
-            background: "rgba(34,197,94,0.12)",
-            color: "#4ade80",
-          }}
-        >
-          ▶ Iniciar
-        </button>
-      )}
-      {status === "running" && (
-        <button
-          onClick={handlePause}
-          className="btn-hover"
-          style={{
-            border: "1px solid rgba(234,179,8,0.25)",
-            borderRadius: 8,
-            padding: "4px 10px",
-            fontSize: 11,
-            fontWeight: 600,
-            cursor: "pointer",
-            outline: "none",
-            whiteSpace: "nowrap",
-            background: "rgba(234,179,8,0.12)",
-            color: "#eab308",
-          }}
-        >
-          ⏸ Pausar
-        </button>
-      )}
-      {status === "paused" && (
-        <button
-          onClick={handleStart}
-          className="btn-hover"
-          style={{
-            border: "1px solid rgba(34,197,94,0.25)",
-            borderRadius: 8,
-            padding: "4px 10px",
-            fontSize: 11,
-            fontWeight: 600,
-            cursor: "pointer",
-            outline: "none",
-            whiteSpace: "nowrap",
-            background: "rgba(34,197,94,0.12)",
-            color: "#4ade80",
-          }}
-        >
-          ▶ Continuar
-        </button>
-      )}
-      <button
-        onClick={handleReset}
-        className="btn-hover"
-        style={{
-          border: "1px solid rgba(239,68,68,0.2)",
-          borderRadius: 8,
-          padding: "4px 10px",
-          fontSize: 11,
-          fontWeight: 600,
-          cursor: "pointer",
-          outline: "none",
-          whiteSpace: "nowrap",
-          background: "rgba(239,68,68,0.1)",
-          color: "#f87171",
-        }}
-      >
-        ↺ Reset
-      </button>
-
-      <div style={{ width: 1, height: 20, background: "rgba(255,255,255,0.08)", flexShrink: 0 }} />
-
-      <AmbientSound />
-
-      {status === "running" && (
-        <span
-          style={{
-            color: "#22c55e",
-            fontSize: 9,
-            fontWeight: 600,
-            letterSpacing: 0.5,
-            animation: "pulse 1.5s ease-in-out infinite",
-          }}
-        >
-          ● EM ANDAMENTO
+      {/* ── Linha 1: Pomodoro ── */}
+      <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+        <span style={{ color: "#60a5fa", fontSize: 10, fontWeight: 600, letterSpacing: 0.5 }}>
+          🍅 POMODORO
         </span>
-      )}
+
+        <select
+          value={duration}
+          onChange={handleDurationChange}
+          style={{
+            background: "rgba(15,23,42,0.6)",
+            border: "1px solid rgba(255,255,255,0.08)",
+            borderRadius: 8,
+            padding: "4px 6px",
+            color: "#f1f5f9",
+            fontSize: 11,
+            fontWeight: 500,
+            outline: "none",
+            cursor: "pointer",
+          }}
+        >
+          <option value={10}>10 min</option>
+          <option value={25}>25 min</option>
+        </select>
+
+        <span style={{ color: "#f1f5f9", fontSize: 17, fontWeight: 700, fontFamily: "monospace", minWidth: 52, textAlign: "center" }}>
+          {String(minutes).padStart(2, "0")}:{String(seconds).padStart(2, "0")}
+        </span>
+
+        {status === "idle" && (
+          <button onClick={handleStart} className="btn-hover" style={{ border: "1px solid rgba(34,197,94,0.25)", borderRadius: 8, padding: "4px 10px", fontSize: 11, fontWeight: 600, cursor: "pointer", outline: "none", whiteSpace: "nowrap", background: "rgba(34,197,94,0.12)", color: "#4ade80" }}>
+            ▶ Iniciar
+          </button>
+        )}
+        {status === "running" && (
+          <button onClick={handlePause} className="btn-hover" style={{ border: "1px solid rgba(234,179,8,0.25)", borderRadius: 8, padding: "4px 10px", fontSize: 11, fontWeight: 600, cursor: "pointer", outline: "none", whiteSpace: "nowrap", background: "rgba(234,179,8,0.12)", color: "#eab308" }}>
+            ⏸ Pausar
+          </button>
+        )}
+        {status === "paused" && (
+          <button onClick={handleStart} className="btn-hover" style={{ border: "1px solid rgba(34,197,94,0.25)", borderRadius: 8, padding: "4px 10px", fontSize: 11, fontWeight: 600, cursor: "pointer", outline: "none", whiteSpace: "nowrap", background: "rgba(34,197,94,0.12)", color: "#4ade80" }}>
+            ▶ Continuar
+          </button>
+        )}
+        <button onClick={handleReset} className="btn-hover" style={{ border: "1px solid rgba(239,68,68,0.2)", borderRadius: 8, padding: "4px 10px", fontSize: 11, fontWeight: 600, cursor: "pointer", outline: "none", whiteSpace: "nowrap", background: "rgba(239,68,68,0.1)", color: "#f87171" }}>
+          ↺ Reset
+        </button>
+
+        {status === "running" && (
+          <span style={{ color: "#22c55e", fontSize: 9, fontWeight: 600, letterSpacing: 0.5, animation: "pulse 1.5s ease-in-out infinite" }}>
+            ● EM ANDAMENTO
+          </span>
+        )}
+      </div>
+
+      {/* ── Separador ── */}
+      <hr style={{ width: "100%", border: "none", borderTop: "1px solid rgba(59,130,246,0.12)", margin: 0 }} />
+
+      {/* ── Linha 2: Som Ambiente ── */}
+      <AmbientSound />
     </div>
   );
 }
