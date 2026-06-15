@@ -150,6 +150,7 @@ export default function AmbientSound({ isMobile }) {
       events: {
         onReady: () => {
           p.setVolume(volumeRef.current);
+          try { p.playVideo(); } catch (err) {}
           setPlaying(true);
         },
         onStateChange: (e) => {
@@ -175,7 +176,11 @@ export default function AmbientSound({ isMobile }) {
       videoId +
       "&modestbranding=1&fs=0";
     iframe.allow = "autoplay; encrypted-media";
-    iframe.style.display = "none";
+    iframe.style.position = "absolute";
+    iframe.style.width = "0px";
+    iframe.style.height = "0px";
+    iframe.style.opacity = "0";
+    iframe.style.pointerEvents = "none";
     iframe.__trackId = trackId;
     container.appendChild(iframe);
     return iframe;
@@ -393,7 +398,7 @@ export default function AmbientSound({ isMobile }) {
         </>
       )}
 
-      <div ref={containerRef} style={{ display: "none" }} />
+      <div ref={containerRef} style={{ position: "absolute", width: 0, height: 0, opacity: 0, pointerEvents: "none" }} />
     </div>
   );
 }
