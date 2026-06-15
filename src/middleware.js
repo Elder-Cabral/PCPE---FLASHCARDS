@@ -21,7 +21,7 @@ export async function middleware(request) {
   response.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
   // CSP: blocks inline scripts, restricts resources to same-origin + known CDNs
   const isDev = process.env.NODE_ENV !== 'production';
-  const scriptSrc = isDev ? "'self' 'unsafe-inline' 'unsafe-eval'" : "'self' 'unsafe-inline'";
+  const scriptSrc = isDev ? "'self' 'unsafe-inline' 'unsafe-eval' https://www.youtube.com https://s.ytimg.com" : "'self' 'unsafe-inline' https://www.youtube.com https://s.ytimg.com";
 
   response.headers.set(
     'Content-Security-Policy',
