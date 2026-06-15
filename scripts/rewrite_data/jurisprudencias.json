@@ -12,7 +12,7 @@
     "id": "jurisprudencias_1",
     "pergunta": "Qual o alcance da Súmula Vinculante 14 do STF quanto ao acesso do advogado aos autos do inquérito policial?",
     "resposta": "O advogado tem direito de acessar amplamente os autos do inquérito ja documentados, mesmo sem procuração, ressalvadas as diligências em andamento cujo sigilo seja justificado (SV 14 STF).",
-    "dica": "ALERTA CESPE: O acesso e aos atos JA DOCUMENTADOS. Diligências em andamento podem ter sigilo. A SV 14 NAO da acesso ilimitado. O Delegado pode negar acesso se houver risco de comprometer a investigação fundamentadamente.",
+    "dica": "ALERTA CESPE: O acesso É aos atos JA DOCUMENTADOS. Diligências em andamento podem ter sigilo. A SV 14 NAO da acesso ilimitado. O Delegado pode negar acesso se houver risco de comprometer a investigação fundamentadamente.",
     "topico": "Jurisprudências de Direito Constitucional",
     "codigo_topico": "1",
     "dificuldade": "medio"
@@ -38,7 +38,7 @@
   {
     "id": "jurisprudencias_4",
     "pergunta": "Qual o entendimento do STF na AP 937 QO sobre foro privilegiado?",
-    "resposta": "O foro por prerrogativa de função aplica-se apenas aos crimes cometidos DURANTE o exercício do cargo e RELACIONADOS as funções desempenhadas. Findo o mandato ou após a renuncia o processo e remetido a primeira instância (AP 937 QO STF).",
+    "resposta": "O foro por prerrogativa de função aplica-se apenas aos crimes cometidos DURANTE o exercício do cargo e RELACIONADOS as funções desempenhadas. Findo o mandato ou após a renuncia o processo É remetido a primeira instância (AP 937 QO STF).",
     "dica": "MUDANÇA DE JURISPRUDÊNCIA 2018: Antes o foro era mantido mesmo após o fim do cargo. Agora so para crimes DURANTE e RELACIONADOS ao cargo. CESPE: Deputado comete crime antes do mandato foro no STF se mantem NAO. Findo o cargo cai o foro.",
     "topico": "Jurisprudências de Direito Constitucional",
     "codigo_topico": "1",
@@ -47,7 +47,7 @@
   {
     "id": "jurisprudencias_5",
     "pergunta": "Qual o entendimento do STF no HC 82.959/SP sobre o crime de tortura?",
-    "resposta": "O crime de tortura e hediondo (Lei 9.455/97) e como tal insuscetivel de graça indulto fiança e anistia nos termos do art. 5 XLIII CF/88 sendo a pena cumprida integralmente em regime fechado (HC 82.959/SP STF).",
+    "resposta": "O crime de tortura É hediondo (Lei 9.455/97) e como tal insuscetivel de graça indulto fiança e anistia nos termos do art. 5 XLIII CF/88 sendo a pena cumprida integralmente em regime fechado (HC 82.959/SP STF).",
     "dica": "TORTURA É HEDIONDO: A Lei 9.455/97 define tortura como crime hediondo. Consequencias: regime inicial fechado, vedação de graça/indulto/anistia/fiança, progressão mais lenta (2/5 ou 3/5). CESPE: Tortura admite indulto NAO (art. 5 XLIII CF/88).",
     "topico": "Jurisprudências de Direito Constitucional",
     "codigo_topico": "1",
@@ -57,7 +57,7 @@
     "id": "jurisprudencias_6",
     "pergunta": "O que decidiu o STF na ADI 4.451 sobre liberdade de expressão e crimes de opiniao?",
     "resposta": "É inconstitucional a tipificação penal do discurso de odio quando não for demonstrado o dolo específico de incitar discriminação reafirmando que a liberdade de expressão protege manifestações mesmo polêmicas mas não o odio comprovado (ADI 4.451 STF).",
-    "dica": "CESPE: A ADI 4.451 tratou da revogação de dispositivos da Lei de Imprensa (Lei 5.250/67). O STF entendeu que a liberdade de expressão NAO e absoluta e cede quando ha discurso de odio comprovado. Protege opiniões não crimes.",
+    "dica": "CESPE: A ADI 4.451 tratou da revogação de dispositivos da Lei de Imprensa (Lei 5.250/67). O STF entendeu que a liberdade de expressão NÃO É absoluta e cede quando ha discurso de odio comprovado. Protege opiniões não crimes.",
     "topico": "Jurisprudências de Direito Constitucional",
     "codigo_topico": "1",
     "dificuldade": "dificil"
@@ -66,7 +66,7 @@
     "id": "jurisprudencias_7",
     "pergunta": "O que decidiu o STF no RE 593.727 sobre revista íntima vexatória?",
     "resposta": "É ilícita a prova obtida mediante revista íntima vexatória realizada sem fundada suspeita no ambiente de trabalho configurando violação a dignidade da pessoa humana e a intimidade (RE 593.727 STF - Tema 280 RG).",
-    "dica": "TEMA 280: O STF firmou que revista íntima vexatória (desnudamento, exames invasivos) e PROVA ILÍCITA. Aplica-se a empregados de empresas privadas. Em presídios o STF foi mais flexivel. CESPÉ adora esse tema. Atenção ao contexto.",
+    "dica": "TEMA 280: O STF firmou que revista íntima vexatória (desnudamento, exames invasivos) e PROVA ILÍCITA. Aplica-se a empregados de empresas privadas. Em presídios o STF foi mais flexivel. CESPE adora esse tema. Atenção ao contexto.",
     "topico": "Jurisprudências de Direito Constitucional",
     "codigo_topico": "1",
     "dificuldade": "medio"
@@ -93,7 +93,7 @@
     "id": "jurisprudencias_10",
     "pergunta": "Qual o entendimento atual do STF sobre execução provisória da pena?",
     "resposta": "A execução da condenação penal so pode iniciar após o trânsito em julgado. O STF ao julgar as ADC 43 44 e 54 consolidou que a prisão antes do trânsito em julgado viola a presunção de inocência (RE 841.526 c/c ADC 43).",
-    "dica": "ATENÇÃO: O STF MUDOU de posição! Em 2016 (HC 126.292) permitia execução após 2 instância; em 2019 (ADC 43/44/54) voltou a exigir trânsito em julgado. CESPÉ 2024+: Execução provisória após 2 instância é constitucional FALSO.",
+    "dica": "ATENÇÃO: O STF MUDOU de posição! Em 2016 (HC 126.292) permitia execução após 2 instância; em 2019 (ADC 43/44/54) voltou a exigir trânsito em julgado. CESPE 2024+: Execução provisória após 2 instância é constitucional FALSO.",
     "topico": "Jurisprudências de Direito Constitucional",
     "codigo_topico": "1",
     "dificuldade": "dificil"
@@ -102,7 +102,7 @@
     "id": "jurisprudencias_11",
     "pergunta": "O que decidiu o STF na ADPF 779 sobre a tese de legítima defesa da honra?",
     "resposta": "É inconstitucional a utilização da tese de legítima defesa da honra em crimes de feminicídio ou agressões contra mulheres por violar os princípios da dignidade da pessoa humana e da igualdade de gênero (ADPF 779 STF).",
-    "dica": "CESPE: A tese da legítima defesa da honra NAO e aceita pelo Judiciário. O STF vedou expressamente sua invocação por advogados de defesa em plenário do Júri. Viola direitos fundamentais (art. 1 III e art. 5 I CF/88).",
+    "dica": "CESPE: A tese da legítima defesa da honra NÃO É aceita pelo Judiciário. O STF vedou expressamente sua invocação por advogados de defesa em plenário do Júri. Viola direitos fundamentais (art. 1 III e art. 5 I CF/88).",
     "topico": "Jurisprudências de Direito Constitucional",
     "codigo_topico": "1",
     "dificuldade": "medio"
@@ -120,7 +120,7 @@
     "id": "jurisprudencias_13",
     "pergunta": "O colaborador premiado tem direito ao silêncio no acordo de delação?",
     "resposta": "Sim. O colaborador tem direito de permanecer em silêncio quanto a fatos que possam incrimina-lo não podendo ser coagido a responder perguntas autoincriminatorias de fatos não abrangidos pelo acordo (STF HC 127.483 e art. 4 14 Lei 12.850/13).",
-    "dica": "ALERTA CESPE: O direito ao silêncio do colaborador NAO e absoluto ele responde pelo descumprimento do acordo (perda dos benefícios). Mas quanto a fatos NAO abrangidos pelo acordo pode exercer o direito ao silêncio integralmente.",
+    "dica": "ALERTA CESPE: O direito ao silêncio do colaborador NÃO É absoluto ele responde pelo descumprimento do acordo (perda dos benefícios). Mas quanto a fatos NAO abrangidos pelo acordo pode exercer o direito ao silêncio integralmente.",
     "topico": "Jurisprudências de Direito Constitucional",
     "codigo_topico": "1",
     "dificuldade": "medio"
@@ -138,7 +138,7 @@
     "id": "jurisprudencias_15",
     "pergunta": "Qual o direito do candidato aprovado dentro do número de vagas do concurso público?",
     "resposta": "O candidato aprovado dentro do número de vagas previstas no edital tem direito subjetivo a nomeação durante o prazo de validade do concurso configurando ato vinculado da Administração (Tema 590 STF - RE 598.099).",
-    "dica": "PEGADINHA: Dentro das vagas = DIREITO a nomeação (ato vinculado). Cadastro de reserva = MERA EXPECTATIVA (ato discricionário salvo surgimento de novas vagas). CESPÉ adora: Aprovado em cadastro reserva tem direito a nomeação FALSO.",
+    "dica": "PEGADINHA: Dentro das vagas = DIREITO a nomeação (ato vinculado). Cadastro de reserva = MERA EXPECTATIVA (ato discricionário salvo surgimento de novas vagas). CESPE adora: Aprovado em cadastro reserva tem direito a nomeação FALSO.",
     "topico": "Jurisprudências de Direito Constitucional",
     "codigo_topico": "1",
     "dificuldade": "facil"
@@ -156,7 +156,7 @@
     "id": "jurisprudencias_17",
     "pergunta": "O que decidiu o RE 1.152.702 do STF sobre regime de cumprimento de pena?",
     "resposta": "O STF fixou a constitucionalidade da fixação do regime inicial fechado com base na hediondez do crime mas exige fundamentação concreta para o regime mais gravoso não sendo automática a imposição do fechado (RE 1.152.702 STF - Tema 1068).",
-    "dica": "TEMA 1068: O regime inicial fechado para hediondos NAO e automatico. O juiz deve fundamentar com base nas circunstâncias judiciais (art. 59 CP). CESPE: Para hediondo o regime inicial e sempre fechado FALSO (STF mitigou o art. 2 1 LCH).",
+    "dica": "TEMA 1068: O regime inicial fechado para hediondos NÃO É automático. O juiz deve fundamentar com base nas circunstâncias judiciais (art. 59 CP). CESPE: Para hediondo o regime inicial É sempre fechado FALSO (STF mitigou o art. 2 1 LCH).",
     "topico": "Jurisprudências de Direito Constitucional",
     "codigo_topico": "1",
     "dificuldade": "dificil"
@@ -192,7 +192,7 @@
     "id": "jurisprudencias_21",
     "pergunta": "O que estabelece a Súmula 589 do STJ sobre laudo perícial no crime de tráfico de drogas?",
     "resposta": "É prescindível o laudo perícial para comprovar a materialidade do crime de tráfico de drogas quando ha prova testemunhal idônea e apreensão da substancia podendo a perícia ser suprida por outros meios de prova (Súmula 589 STJ).",
-    "dica": "PEGADINHA: A Súmula 589 NAO dispensa a perícia diz que e PRESCINDIVEL (desnecessaria) quando ha testemunhas + apreensão. Para o crime de USO (art. 28) a perícia e dispensável (art. 50 1 Lei 11.343/06). CESPÉ adora essa distincao.",
+    "dica": "PEGADINHA: A Súmula 589 NAO dispensa a perícia diz que É PRESCINDÍVEL (desnecessaria) quando ha testemunhas + apreensão. Para o crime de USO (art. 28) a perícia É dispensável (art. 50 1 Lei 11.343/06). CESPE adora essa distincao.",
     "topico": "Jurisprudências de Direito Penal",
     "codigo_topico": "2",
     "dificuldade": "dificil"
@@ -237,7 +237,7 @@
     "id": "jurisprudencias_26",
     "pergunta": "Qual a competência para julgar o crime de desobediencia a medidas protetivas da Lei Maria da Penha (Súmula 562 STJ)?",
     "resposta": "Compete a Justica Estadual (Vara de Violencia Domestica ou Juizado Criminal) julgar o crime de desobediencia a medidas protetivas independentemente da natureza da medida descumprida (Súmula 562 STJ).",
-    "dica": "Súmula 562 fixa competência ESTADUAL. CESPE: O crime de desobediencia a medida protetiva e de competência federal FALSO. O descumprimento de medida protetiva pode configurar o crime do art. 24-A da Lei 11.340/06.",
+    "dica": "Súmula 562 fixa competência ESTADUAL. CESPE: O crime de desobediencia a medida protetiva É de competência federal FALSO. O descumprimento de medida protetiva pode configurar o crime do art. 24-A da Lei 11.340/06.",
     "topico": "Jurisprudências de Direito Penal",
     "codigo_topico": "2",
     "dificuldade": "facil"
@@ -264,7 +264,7 @@
     "id": "jurisprudencias_29",
     "pergunta": "O que estabelece a Súmula 455 do STJ sobre a necessidade de perícia no crime de tráfico?",
     "resposta": "A prova da materialidade do crime de tráfico de drogas exige laudo perícial que ateste a natureza e quantidade da substancia salvo nas hipóteses de impossibilidade (perda ou consumo) em que o laudo pode ser suprido por prova testemunhal (Súmula 455 STJ).",
-    "dica": "DIFERENCA SÚMULAS: A Súmula 455 trata da MATERIALIDADE (exige perícia salvo impossibilidade). A Súmula 589 diz que o laudo e PRESCINDIVEL para comprovação quando ha testemunhas + apreensão. Parecem contraditórias mas se complementam.",
+    "dica": "DIFERENCA SÚMULAS: A Súmula 455 trata da MATERIALIDADE (exige perícia salvo impossibilidade). A Súmula 589 diz que o laudo É PRESCINDÍVEL para comprovação quando ha testemunhas + apreensão. Parecem contraditórias mas se complementam.",
     "topico": "Jurisprudências de Direito Penal",
     "codigo_topico": "2",
     "dificuldade": "dificil"
@@ -272,7 +272,7 @@
   {
     "id": "jurisprudencias_30",
     "pergunta": "O que estabelece a Súmula 542 do STJ sobre a hediondez do crime de tortura?",
-    "resposta": "O crime de tortura (Lei 9.455/97) e equiparado a crime hediondo pela Constituição Federal (art. 5 XLIII) sendo insuscetivel de graça indulto anistia e fiança com regime inicial fechado (Súmula 542 STJ).",
+    "resposta": "O crime de tortura (Lei 9.455/97) É equiparado a crime hediondo pela Constituição Federal (art. 5 XLIII) sendo insuscetivel de graça indulto anistia e fiança com regime inicial fechado (Súmula 542 STJ).",
     "dica": "A Súmula 542 STJ reforca o que ja esta na CF/88. Tortura = crime equiparado a hediondo. CESPE: O crime de tortura admite fiança NAO (art. 5 XLIII CF/88). Tortura admite anistia NAO.",
     "topico": "Jurisprudências de Direito Penal",
     "codigo_topico": "2",
@@ -282,7 +282,7 @@
     "id": "jurisprudencias_31",
     "pergunta": "O que estabelece a Súmula 528 do STJ sobre associação para o tráfico?",
     "resposta": "O crime de associação para o tráfico (art. 35 Lei 11.343/06) exige a associação estável e permanente de duas ou mais pessoas para a prática reiterada de tráfico não se confundindo com a mera coautoria eventual (Súmula 528 STJ).",
-    "dica": "ASSOCIACAO tem CARÁTER ESTÁVEL É PERMANENTE (sociedade criminosa duradoura). Nao e mero ajuste momentâneo. CESPE: Duas pessoas que traficam juntas uma unica vez cometem associação para o tráfico FALSO (falta estabilidade).",
+    "dica": "ASSOCIACAO tem CARÁTER ESTÁVEL É PERMANENTE (sociedade criminosa duradoura). Não É mero ajuste momentâneo. CESPE: Duas pessoas que traficam juntas uma unica vez cometem associação para o tráfico FALSO (falta estabilidade).",
     "topico": "Jurisprudências de Direito Penal",
     "codigo_topico": "2",
     "dificuldade": "medio"
@@ -317,7 +317,7 @@
   {
     "id": "jurisprudencias_35",
     "pergunta": "O que estabelece a Súmula 445 do STJ sobre crime de responsabilidade dos prefeitos?",
-    "resposta": "O crime de responsabilidade de prefeitos (Decreto-Lei 201/67) e de natureza político-administrativa sendo julgado pela Camara Municipal mas os crimes comuns conexos são julgados pelo Poder Judiciário (Súmula 445 STJ).",
+    "resposta": "O crime de responsabilidade de prefeitos (Decreto-Lei 201/67) É de natureza político-administrativa sendo julgado pela Camara Municipal mas os crimes comuns conexos são julgados pelo Poder Judiciário (Súmula 445 STJ).",
     "dica": "DUALIDADE: O prefeito responde por crime de responsabilidade (julgamento político pela Camara) e por crimes comuns (Judiciário). CESPE: O crime de responsabilidade do prefeito e julgado pelo Tribunal de Justica FALSO (e pela Camara Municipal).",
     "topico": "Jurisprudências de Direito Penal",
     "codigo_topico": "2",
@@ -354,7 +354,7 @@
     "id": "jurisprudencias_39",
     "pergunta": "Qual o entendimento do STF sobre a possibilidade de concurso formal entre roubo e latrocínio?",
     "resposta": "O STF (HC 149.392) entende que o roubo e o latrocínio (art. 157 3 CP) são crimes autônomos sendo possível o concurso formal quando no mesmo contexto o agente subtrai bens e mata a vítima tipificando-se ambos os crimes.",
-    "dica": "LATROCINIO = roubo + morte (resultado qualificado). Mas se ha dois eventos distintos (ex.: rouba um carro e minutos depois mata o dono) ha concurso entre roubo e homicidio não latrocínio. CESPÉ adora essa diferença sutil.",
+    "dica": "LATROCINIO = roubo + morte (resultado qualificado). Mas se ha dois eventos distintos (ex.: rouba um carro e minutos depois mata o dono) ha concurso entre roubo e homicidio não latrocínio. CESPE adora essa diferença sutil.",
     "topico": "Jurisprudências de Direito Penal",
     "codigo_topico": "2",
     "dificuldade": "dificil"
@@ -372,7 +372,7 @@
     "id": "jurisprudencias_41",
     "pergunta": "Qual o entendimento do STF (RE 593.727) sobre prova ilícita por revista íntima?",
     "resposta": "A prova obtida por revista íntima vexatória (desnudamento agachamento exposição de genitais) sem fundada suspeita é ilícita contaminando as provas derivadas e não podendo ser utilizada em processo penal (RE 593.727 STF - Tema 280).",
-    "dica": "No ambito PRISIONAL o STF flexibilizou: visitantes podem ser submetidos a revista menos invasiva (mas não vexatória). CESPE: A revista íntima em presídio e sempre lícita FALSO (também observa a dignidade). No trabalho privado é ilícita.",
+    "dica": "No ambito PRISIONAL o STF flexibilizou: visitantes podem ser submetidos a revista menos invasiva (mas não vexatória). CESPE: A revista íntima em presídio É sempre lícita FALSO (também observa a dignidade). No trabalho privado é ilícita.",
     "topico": "Jurisprudências de Direito Processual Penal",
     "codigo_topico": "3",
     "dificuldade": "medio"
@@ -398,7 +398,7 @@
   {
     "id": "jurisprudencias_44",
     "pergunta": "Qual o prazo para conclusão do inquérito policial segundo a Súmula 491 do STJ?",
-    "resposta": "O prazo para conclusão do inquérito policial e de 30 dias para indiciado solto (prorrogável) e de 10 dias para preso contados da data da prisão sob pena de constrangimento ilegal (Súmula 491 STJ c/c art. 10 CPP).",
+    "resposta": "O prazo para conclusão do inquérito policial É de 30 dias para indiciado solto (prorrogável) e de 10 dias para preso contados da data da prisão sob pena de constrangimento ilegal (Súmula 491 STJ c/c art. 10 CPP).",
     "dica": "ALERTA: PRESO = 10 dias (improrrogável pela Súmula 491 mas a lei permite prorrogação judicial). SOLTO = 30 dias (prorrogável). CESPE: O IP para indiciado preso deve terminar em 10 dias improrrogaveis VERDADEIRO (Súmula 491 STJ).",
     "topico": "Jurisprudências de Direito Processual Penal",
     "codigo_topico": "3",
@@ -417,7 +417,7 @@
     "id": "jurisprudencias_46",
     "pergunta": "O que decidiu a ADI 5.510 do STF sobre o prazo da prisão temporária?",
     "resposta": "O STF declarou constitucional o prazo de 30 dias (prorrogável por mais 30) para a prisão temporária em crimes hediondos e equiparados e de 5 dias (prorrogável por mais 5) para os demais crimes (ADI 5.510 STF c/c Lei 7.960/89).",
-    "dica": "PRISAO TEMPORARIA: crimes hediondos = 30+30 dias; demais = 5+5 dias. A ADI 5.510 confirmou a constitucionalidade dos prazos. CESPE: A prisão temporária para tráfico e de 5 dias prorrogável por mais 5 FALSO (tráfico e hediondo: 30+30).",
+    "dica": "PRISAO TEMPORARIA: crimes hediondos = 30+30 dias; demais = 5+5 dias. A ADI 5.510 confirmou a constitucionalidade dos prazos. CESPE: A prisão temporária para tráfico É de 5 dias prorrogável por mais 5 FALSO (tráfico e hediondo: 30+30).",
     "topico": "Jurisprudências de Direito Processual Penal",
     "codigo_topico": "3",
     "dificuldade": "medio"
@@ -453,7 +453,7 @@
     "id": "jurisprudencias_50",
     "pergunta": "Qual o entendimento do STF (RE 966.177) sobre interceptação telefônica e prova derivada?",
     "resposta": "A interceptação telefônica sem autorização judicial ou com fundamento genérico é ilícita contaminando as provas dela derivadas. Exige-se fundamentação concreta e individualizada para a quebra do sigilo (RE 966.177 STF - Tema 919 RG).",
-    "dica": "REQUISITOS interceptação (Lei 9.296/96): ordem judicial indícios razoaveis de autoria imprescindibilidade para prova crime punido com reclusao. O RE 966.177 reforca que fundamentação genérica inválida a prova. CESPÉ adora os requisitos.",
+    "dica": "REQUISITOS interceptação (Lei 9.296/96): ordem judicial indícios razoaveis de autoria imprescindibilidade para prova crime punido com reclusao. O RE 966.177 reforca que fundamentação genérica inválida a prova. CESPE adora os requisitos.",
     "topico": "Jurisprudências de Direito Processual Penal",
     "codigo_topico": "3",
     "dificuldade": "dificil"
@@ -480,7 +480,7 @@
     "id": "jurisprudencias_53",
     "pergunta": "Qual o entendimento do STF sobre o juiz das garantias (Tema 1248)?",
     "resposta": "O STF (ADIs 6.298 6.299 6.300 e Tema 1248) decidiu que o juiz das garantias é constitucional mas sua implementação e progressiva não sendo aplicável imediatamente enquanto não houver estruturação pelos Tribunais.",
-    "dica": "MUITO CUIDADO: O juiz das garantias foi criado pelo Pacote Anticrime (Lei 13.964/19). O STF suspendeu a implementação imediata (ADI 6.298). Regra: existe é constitucional mas a implementação depende de estruturação. CESPÉ adora esse tema.",
+    "dica": "MUITO CUIDADO: O juiz das garantias foi criado pelo Pacote Anticrime (Lei 13.964/19). O STF suspendeu a implementação imediata (ADI 6.298). Regra: existe é constitucional mas a implementação depende de estruturação. CESPE adora esse tema.",
     "topico": "Jurisprudências de Direito Processual Penal",
     "codigo_topico": "3",
     "dificuldade": "dificil"
@@ -489,7 +489,7 @@
     "id": "jurisprudencias_54",
     "pergunta": "Qual o entendimento do STF (HC 166.373) sobre a validade da delação de corréu?",
     "resposta": "A delação de corréu não pode ser utilizada como unica prova para condenação sendo necessárias provas complementares que confirmem o conteúdo da colaboração (art. 4 16 Lei 12.850/13 e HC 166.373 STF).",
-    "dica": "DELACAO NAO BASTA: A palavra do colaborador isoladamente NAO e suficiente para condenar (art. 4 16 Lei 12.850/13 - incluido pelo Pacote Anticrime reforcando jurisprudência do STF). CESPE: A delação de corréu e suficiente para condenar FALSO.",
+    "dica": "DELACAO NAO BASTA: A palavra do colaborador isoladamente NÃO É suficiente para condenar (art. 4 16 Lei 12.850/13 - incluido pelo Pacote Anticrime reforcando jurisprudência do STF). CESPE: A delação de corréu É suficiente para condenar FALSO.",
     "topico": "Jurisprudências de Direito Processual Penal",
     "codigo_topico": "3",
     "dificuldade": "medio"
@@ -516,7 +516,7 @@
     "id": "jurisprudencias_57",
     "pergunta": "Qual o entendimento do STF (HC 118.686) sobre fundamentação da prisão preventiva?",
     "resposta": "A prisão preventiva exige fundamentação concreta e individualizada sendo vedada a utilização de formulas genéricas ou a mera referencia a gravidade abstrata do crime (HC 118.686 STF c/c art. 315 CPP).",
-    "dica": "HC 118.686: A prisão preventiva NAO pode ser baseada apenas na gravidade abstrata do crime. Exige-se fundamentação CONCRETA com demonstração do periculum libertatis real (risco de fuga reiteração obstrucao). CESPÉ adora essa distincao.",
+    "dica": "HC 118.686: A prisão preventiva NAO pode ser baseada apenas na gravidade abstrata do crime. Exige-se fundamentação CONCRETA com demonstração do periculum libertatis real (risco de fuga reiteração obstrucao). CESPE adora essa distincao.",
     "topico": "Jurisprudências de Direito Processual Penal",
     "codigo_topico": "3",
     "dificuldade": "dificil"
@@ -543,7 +543,7 @@
     "id": "jurisprudencias_60",
     "pergunta": "O que decidiu o STF no RE 828.041 sobre terceirização na atividade-fim?",
     "resposta": "O STF (Tema 725 RG) decidiu que a terceirização é lícita tanto para atividade-meio quanto para atividade-fim desde que não haja pessoalidade e subordinação direta sendo constitucional a Lei 13.429/2017 (RE 828.041 STF).",
-    "dica": "MUDANÇA DE ENTENDIMENTO: Antes a Súmula 331 TST so permitia terceirização na atividade-meio. O STF no Tema 725 ampliou para TODAS as atividades (atividade-fim também) desde que sem subordinação direta. CESPÉ adora esse tema.",
+    "dica": "MUDANÇA DE ENTENDIMENTO: Antes a Súmula 331 TST so permitia terceirização na atividade-meio. O STF no Tema 725 ampliou para TODAS as atividades (atividade-fim também) desde que sem subordinação direta. CESPE adora esse tema.",
     "topico": "Jurisprudências de Direito Administrativo",
     "codigo_topico": "4",
     "dificuldade": "dificil"
@@ -578,8 +578,8 @@
   {
     "id": "jurisprudencias_64",
     "pergunta": "O que estabelece a Súmula 650 do STJ sobre prescrição na improbidade administrativa?",
-    "resposta": "A pretensão de ressarcimento ao erário por ato de improbidade e imprescritível mas as demais sanções (perda de cargo suspensão direitos multa) prescrevem em 8 anos após o trânsito em julgado da sentença (Súmula 650 STJ c/c art. 23 Lei 8.429/92).",
-    "dica": "ATENÇÃO: Com a Lei 14.230/2021 (nova LIA) a prescrição foi alterada. A Súmula 650 STJ mantem o entendimento de que o RESSARCIMENTO e imprescritível (art. 37 5 CF/88). As demais sanções prescrevem conforme a lei vigente. CESPÉ adora.",
+    "resposta": "A pretensão de ressarcimento ao erário por ato de improbidade É imprescritível mas as demais sanções (perda de cargo suspensão direitos multa) prescrevem em 8 anos após o trânsito em julgado da sentença (Súmula 650 STJ c/c art. 23 Lei 8.429/92).",
+    "dica": "ATENÇÃO: Com a Lei 14.230/2021 (nova LIA) a prescrição foi alterada. A Súmula 650 STJ mantem o entendimento de que o RESSARCIMENTO É imprescritível (art. 37 5 CF/88). As demais sanções prescrevem conforme a lei vigente. CESPE adora.",
     "topico": "Jurisprudências de Direito Administrativo",
     "codigo_topico": "4",
     "dificuldade": "dificil"
@@ -642,7 +642,7 @@
     "id": "jurisprudencias_71",
     "pergunta": "O que estabelece o Tema 177 do STF sobre reintegraçao de servidor público estável?",
     "resposta": "O servidor público estável demitido por ato ilegal tem direito a reintegraçao ao cargo anterior com ressarcimento dos vencimentos e vantagens desde que não tenha decorrido o prazo prescricional de 5 anos (Tema 177 STF - RE 660.536).",
-    "dica": "A reintegraçao e garantida ao servidor ESTÁVEL demitido ilegalmente. Se o cargo foi extinto o servidor fica em disponibilidade (art. 41 3 CF/88). CESPE: Servidor estável demitido tem direito a reintegraçao independente de prazo FALSO (prescreve em 5 anos).",
+    "dica": "A reintegração É garantida ao servidor ESTÁVEL demitido ilegalmente. Se o cargo foi extinto o servidor fica em disponibilidade (art. 41 3 CF/88). CESPE: Servidor estável demitido tem direito a reintegraçao independente de prazo FALSO (prescreve em 5 anos).",
     "topico": "Jurisprudências de Direito Administrativo",
     "codigo_topico": "4",
     "dificuldade": "medio"
@@ -650,8 +650,8 @@
   {
     "id": "jurisprudencias_72",
     "pergunta": "O que decidiu o STF no RE 1.003.717 sobre teto remuneratorio?",
-    "resposta": "O STF (Tema 785 RG) decidiu que o teto remuneratorio unico (subsidio dos Ministros do STF) aplica-se a todos os Poderes sendo que nos Estados o teto e o subsidio do Governador (RE 1.003.717 STF c/c art. 37 XI CF/88).",
-    "dica": "TETO GERAL = STF. TETO ESTADUAL = Governador. A EC 41/2003 criou os subtetos. CESPE: O teto estadual e o subsidio do Governador VERDADEIRO. Servidor estadual pode receber acima do STF FALSO.",
+    "resposta": "O STF (Tema 785 RG) decidiu que o teto remuneratorio unico (subsidio dos Ministros do STF) aplica-se a todos os Poderes sendo que nos Estados o teto É o subsídio do Governador (RE 1.003.717 STF c/c art. 37 XI CF/88).",
+    "dica": "TETO GERAL = STF. TETO ESTADUAL = Governador. A EC 41/2003 criou os subtetos. CESPE: O teto estadual É o subsídio do Governador VERDADEIRO. Servidor estadual pode receber acima do STF FALSO.",
     "topico": "Jurisprudências de Direito Administrativo",
     "codigo_topico": "4",
     "dificuldade": "facil"
@@ -669,7 +669,7 @@
     "id": "jurisprudencias_74",
     "pergunta": "O que estabelece a Súmula 611 do STJ sobre estágio probatório de servidor público?",
     "resposta": "O servidor público em estágio probatório pode ser exonerado por insuficiencia de desempenho desde que assegurados o contraditorio e a ampla defesa em processo administrativo específico (Súmula 611 STJ c/c art. 41 4 CF/88).",
-    "dica": "Estagio probatório = 3 anos (art. 41 CF/88). A exoneração por mau desempenho exige PAD específico. CESPE: O servidor em estágio probatório pode ser exonerado sem processo FALSO. A exoneração no estágio probatório e discricionária FALSO (exige motivação).",
+    "dica": "Estagio probatório = 3 anos (art. 41 CF/88). A exoneração por mau desempenho exige PAD específico. CESPE: O servidor em estágio probatório pode ser exonerado sem processo FALSO. A exoneração no estágio probatório É discricionária FALSO (exige motivação).",
     "topico": "Jurisprudências de Direito Administrativo",
     "codigo_topico": "4",
     "dificuldade": "medio"
@@ -713,7 +713,7 @@
   {
     "id": "jurisprudencias_79",
     "pergunta": "O que decidiu o Tema 129 do STF sobre prescrição da pretensão de ressarcimento ao erário?",
-    "resposta": "O STF (Tema 129 RG) decidiu que a pretensão de ressarcimento ao erário e imprescritível (art. 37 5 CF/88) mas as ações de improbidade para aplicar sanções prescrevem conforme o art. 23 da Lei 8.429/92 (RE 852.475 STF).",
+    "resposta": "O STF (Tema 129 RG) decidiu que a pretensão de ressarcimento ao erário É imprescritível (art. 37 5 CF/88) mas as ações de improbidade para aplicar sanções prescrevem conforme o art. 23 da Lei 8.429/92 (RE 852.475 STF).",
     "dica": "IMPRESCRITÍVEL = RESSARCIMENTO. PRESCRITÍVEL = demais sanções. O STF no Tema 129 consolidou: a ação de improbidade para ressarcimento ao erário NAO prescreve. CESPE: Toda ação de improbidade e imprescritível FALSO (so o ressarcimento ao erário).",
     "topico": "Jurisprudências de Direito Administrativo",
     "codigo_topico": "4",
