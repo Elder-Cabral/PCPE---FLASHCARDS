@@ -215,6 +215,7 @@ export default function App() {
   const saveQueueRef = useRef(Promise.resolve());
   const isSavingRef = useRef(false);
   const toggleFavTimeoutRef = useRef(null);
+  const srsDataRef = useRef(srsData);
 
   // Estilos globais e de responsividade injetados
   useEffect(() => {
@@ -463,6 +464,9 @@ export default function App() {
     feedbackInProgressCardId.current = null;
   }, [currentQueueIndex]);
 
+  // Manter ref do srsData sempre atualizada
+  useEffect(() => { srsDataRef.current = srsData; }, [srsData]);
+
   // Salvar progresso no Supabase com mesclagem inteligente
   // ── HISTÓRICO DE RESPOSTAS ────────────────────────────────────────────────
   const mergeAnswerHistory = (local, remote) => {
@@ -581,14 +585,25 @@ export default function App() {
         .maybeSingle();
 
       const today = getTodayStr();
-      const meta = data || {
-        username,
-        current_streak: 0,
-        last_study_date: null,
-        shields_available: 2,
-      };
-      let needsUpdate = !data;
+
+      // Se nao existir registro, semear streak do SRS existente
+      if (!data) {
+        const seedStreak = calculateStreak(srsDataRef.current);
+        const meta = {
+          username,
+          current_streak: seedStreak,
+          last_study_date: seedStreak > 0 ? today : null,
+          shields_available: 2,
+          updated_at: new Date().toISOString(),
+        };
+        await client.from("user_meta").upsert(meta);
+        setUserMeta(meta);
+        return;
+      }
+
+      let needsUpdate = false;
       let shieldActivated = false;
+      const meta = { ...data };
 
       // Reset semanal de escudos (segunda-feira)
       if (new Date().getDay() === 1 && meta.shields_available < 2) {
@@ -624,6 +639,8 @@ export default function App() {
       if (shieldActivated) setShowShieldBanner(true);
     } catch (e) {
       console.error("Erro ao carregar user_meta:", e);
+      // Fallback: usa streak calculado do SRS
+      setUserMeta({ current_streak: calculateStreak(srsDataRef.current), shields_available: 2 });
     }
   }, []);
 
@@ -1031,7 +1048,7 @@ export default function App() {
       materiaStats: {}
     };
 
-    result.streak = userMeta?.current_streak || 0;
+    result.streak = userMeta?.current_streak ?? calculateStreak(srsData);
 
     for (const mat of MATERIAS) {
       const cards = BANCO[mat.id] || [];
@@ -1187,6 +1204,9 @@ export default function App() {
         setGraphCustomEnd={setGraphCustomEnd}
         onBack={() => setShowDesempenho(false)}
         onLogout={handleLogout}
+        userMeta={userMeta}
+        showShieldBanner={showShieldBanner}
+        setShowShieldBanner={setShowShieldBanner}
         startWeakStudy={(cards) => {
           setStudyQueue(cards);
           setCurrentQueueIndex(0);
@@ -1212,7 +1232,7 @@ export default function App() {
     const emojiText = isGlobal ? "⚡" : (matInfo?.emoji || "");
 
     return (
-      <Shell user={currentUser} stats={stats} onLogout={handleLogout} centered userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)}>
+      <Shell user={currentUser} stats={stats} onLogout={handleLogout} centered userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)} srsData={srsData}>
         {toastMessage && (
           <div style={{
             position: "fixed",
@@ -1538,7 +1558,7 @@ export default function App() {
     const isGlobal = studyMode === "global_srs";
     const matInfo = !isGlobal ? MATERIAS.find(m => m.id === selectedMateria) : null;
     return (
-      <Shell user={currentUser} stats={stats} onLogout={handleLogout} centered userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)}>
+      <Shell user={currentUser} stats={stats} onLogout={handleLogout} centered userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)} srsData={srsData}>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "32px 20px", width: "100%", maxWidth: 480, margin: "0 auto", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 24, boxSizing: "border-box" }}>
           <div style={{ fontSize: 56, marginBottom: 16 }}>🏆</div>
           <h2 style={{ color: "#fff", fontSize: 22, fontWeight: 600, margin: 0 }}>
@@ -1596,7 +1616,7 @@ export default function App() {
     }).filter(mat => mat.count > 0);
 
     return (
-      <Shell user={currentUser} stats={stats} onLogout={handleLogout} userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)}>
+      <Shell user={currentUser} stats={stats} onLogout={handleLogout} userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)} srsData={srsData}>
         <div style={{ width: "100%", maxWidth: 560, margin: "0 auto", display: "flex", flexDirection: "column", gap: 20, boxSizing: "border-box" }}>
           <button
             onClick={() => setShowFavoritesMateriaSelector(false)}
@@ -1685,7 +1705,7 @@ export default function App() {
       const selectedCardsCount = cards.filter(c => selectedTopics.includes(c.topico)).length;
 
       return (
-        <Shell user={currentUser} stats={stats} onLogout={handleLogout} userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)}>
+        <Shell user={currentUser} stats={stats} onLogout={handleLogout} userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)} srsData={srsData}>
           <div style={{ width: "100%", maxWidth: 560, margin: "0 auto", display: "flex", flexDirection: "column", gap: 20, boxSizing: "border-box" }}>
             <button
               onClick={() => setShowTopicSelector(false)}
@@ -1829,7 +1849,7 @@ export default function App() {
     }
 
     return (
-      <Shell user={currentUser} stats={stats} onLogout={handleLogout} userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)}>
+      <Shell user={currentUser} stats={stats} onLogout={handleLogout} userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)} srsData={srsData}>
         <div style={{ width: "100%", maxWidth: 560, margin: "0 auto", display: "flex", flexDirection: "column", gap: 24, boxSizing: "border-box" }}>
           <button
             onClick={() => setSelectedMateria(null)}
@@ -1941,7 +1961,7 @@ export default function App() {
 
   // Página Inicial - Lista de Matérias
   return (
-    <Shell user={currentUser} stats={stats} onLogout={handleLogout} userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)}>
+    <Shell user={currentUser} stats={stats} onLogout={handleLogout} userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)} srsData={srsData}>
       {/* Barra de Preferências */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20, background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "12px 18px", flexWrap: "wrap", gap: 12 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
@@ -2407,7 +2427,7 @@ function LoginBadge() {
 }
 
 // ── COMPONENTE: TELA DESEMPENHO ─────────────────────────────────────────────
-function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, graphPeriod, setGraphPeriod, graphCustomStart, setGraphCustomStart, graphCustomEnd, setGraphCustomEnd, onBack, onLogout, startWeakStudy }) {
+function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, graphPeriod, setGraphPeriod, graphCustomStart, setGraphCustomStart, graphCustomEnd, setGraphCustomEnd, onBack, onLogout, startWeakStudy, userMeta, showShieldBanner, setShowShieldBanner }) {
 
   const getFilteredHistory = () => {
     const now = Date.now();
@@ -2538,7 +2558,7 @@ function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, 
   };
 
   return (
-    <Shell user={user} stats={stats} onLogout={onLogout} userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)}>
+    <Shell user={user} stats={stats} onLogout={onLogout} userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)} srsData={srsData}>
       <div style={{ width: "100%", maxWidth: 640, margin: "0 auto", display: "flex", flexDirection: "column", gap: 20, boxSizing: "border-box" }}>
         <button
           onClick={onBack}
@@ -2827,7 +2847,7 @@ function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, 
 }
 
 // ── COMPONENTE: SHELL / LAYOUT ──────────────────────────────────────────────
-function Shell({ children, user, stats, onLogout, centered, userMeta = null, showShieldBanner = false, onDismissShield = () => {} }) {
+function Shell({ children, user, stats, onLogout, centered, userMeta = null, showShieldBanner = false, onDismissShield = () => {}, srsData = {} }) {
   return (
     <div style={{ height: "100vh", overflow: "hidden", background: "#030712", boxSizing: "border-box", position: "relative", width: "100%", display: "flex", flexDirection: "column" }}>
       <div className="shell-hero-composite" />
@@ -2840,13 +2860,11 @@ function Shell({ children, user, stats, onLogout, centered, userMeta = null, sho
             <div style={{ display: "inline-block", background: "linear-gradient(135deg,#e11d48,#be123c)", borderRadius: 10, padding: "6px 14px" }}>
               <span style={{ color: "#fff", fontWeight: 700, fontSize: 9, letterSpacing: 2, fontFamily: "monospace" }}>PC-PE · AGENTE</span>
             </div>
-            {(userMeta?.current_streak || userMeta?.shields_available) ? (
-              <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                <span style={{ color: "#f97316", fontSize: 12, fontWeight: 600 }}>🔥 {userMeta.current_streak || 0}</span>
-                <span style={{ color: "#94a3b8", fontSize: 11 }}>|</span>
-                <span style={{ color: "#3b82f6", fontSize: 12, fontWeight: 600 }}>🛡️ {userMeta.shields_available || 0}</span>
-              </div>
-            ) : null}
+            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              <span style={{ color: "#f97316", fontSize: 12, fontWeight: 600 }}>🔥 {userMeta?.current_streak ?? calculateStreak(srsData)}</span>
+              <span style={{ color: "#94a3b8", fontSize: 11 }}>|</span>
+              <span style={{ color: "#3b82f6", fontSize: 12, fontWeight: 600 }}>🛡️ {userMeta?.shields_available ?? 2}</span>
+            </div>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
             <span style={{ color: "#94a3b8", fontSize: 12, fontWeight: 500 }}>
