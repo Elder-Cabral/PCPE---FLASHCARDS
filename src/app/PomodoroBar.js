@@ -35,6 +35,93 @@ function playBeep() {
   }
 }
 
+// Persistent global state for Pomodoro
+let globalDuration = 25;
+let globalTimeLeft = 25 * 60;
+let globalStatus = "idle";
+let globalInterval = null;
+let globalUsername = null;
+
+const activeInstances = new Set();
+
+function registerInstance(inst) {
+  activeInstances.add(inst);
+}
+
+function unregisterInstance(inst) {
+  activeInstances.delete(inst);
+}
+
+function notifyInstances() {
+  activeInstances.forEach((inst) => {
+    inst.setTimeLeft(globalTimeLeft);
+    inst.setStatus(globalStatus);
+    inst.setDuration(globalDuration);
+  });
+}
+
+function startGlobalTimer() {
+  if (globalInterval) return;
+  globalInterval = setInterval(() => {
+    if (globalStatus === "running") {
+      if (globalTimeLeft <= 1) {
+        globalStatus = "idle";
+        globalTimeLeft = globalDuration * 60;
+        if (globalInterval) {
+          clearInterval(globalInterval);
+          globalInterval = null;
+        }
+        playBeep();
+        logPomodoroGlobal();
+        notifyInstances();
+      } else {
+        globalTimeLeft -= 1;
+        notifyInstances();
+      }
+    }
+  }, 1000);
+}
+
+function pauseGlobalTimer() {
+  globalStatus = "paused";
+  if (globalInterval) {
+    clearInterval(globalInterval);
+    globalInterval = null;
+  }
+  notifyInstances();
+}
+
+function resetGlobalTimer() {
+  globalStatus = "idle";
+  globalTimeLeft = globalDuration * 60;
+  if (globalInterval) {
+    clearInterval(globalInterval);
+    globalInterval = null;
+  }
+  notifyInstances();
+}
+
+async function logPomodoroGlobal() {
+  const username = globalUsername;
+  if (!username || !supabase?.from) return;
+  try {
+    const today = new Date().toISOString().slice(0, 10);
+    const { data: existing } = await supabase
+      .from("pomodoro_log")
+      .select("count")
+      .eq("username", username)
+      .eq("log_date", today)
+      .maybeSingle();
+    const newCount = (existing?.count || 0) + 1;
+    await supabase.from("pomodoro_log").upsert(
+      { username, log_date: today, count: newCount, updated_at: new Date().toISOString() },
+      { onConflict: "username, log_date" }
+    );
+  } catch (e) {
+    console.error("Erro ao salvar pomodoro:", e);
+  }
+}
+
 /**
  * @param {{
  *   username?: string,
@@ -44,12 +131,25 @@ function playBeep() {
  * }} props
  */
 export default function PomodoroBar({ username, onHide, onTick, isMobile }) {
-  const [duration, setDuration] = useState(25);
-  const [timeLeft, setTimeLeft] = useState(25 * 60);
-  const [status, setStatus] = useState("idle");
-  const intervalRef = useRef(null);
-  const durationRef = useRef(duration);
-  durationRef.current = duration;
+  const [duration, setDuration] = useState(globalDuration);
+  const [timeLeft, setTimeLeft] = useState(globalTimeLeft);
+  const [status, setStatus] = useState(globalStatus);
+
+  useEffect(() => {
+    if (username) globalUsername = username;
+  }, [username]);
+
+  useEffect(() => {
+    const inst = { setDuration, setTimeLeft, setStatus };
+    registerInstance(inst);
+    // If it was already running, resume standard tick updates
+    if (globalStatus === "running" && !globalInterval) {
+      startGlobalTimer();
+    }
+    return () => {
+      unregisterInstance(inst);
+    };
+  }, []);
 
   useEffect(() => {
     if (onTick) {
@@ -64,61 +164,30 @@ export default function PomodoroBar({ username, onHide, onTick, isMobile }) {
     }
   }, [timeLeft, status, duration, onTick]);
 
-  useEffect(() => {
-    if (status === "running") {
-      intervalRef.current = setInterval(() => {
-        setTimeLeft((prev) => {
-          if (prev <= 1) {
-            clearInterval(intervalRef.current);
-            setStatus("idle");
-            playBeep();
-            logPomodoro();
-            return durationRef.current * 60;
-          }
-          return prev - 1;
-        });
-      }, 1000);
-    }
-    return () => clearInterval(intervalRef.current);
-  }, [status]);
-
-  const logPomodoro = async () => {
-    if (!username || !supabase?.from) return;
-    try {
-      const today = new Date().toISOString().slice(0, 10);
-      const { data: existing } = await supabase
-        .from("pomodoro_log")
-        .select("count")
-        .eq("username", username)
-        .eq("log_date", today)
-        .maybeSingle();
-      const newCount = (existing?.count || 0) + 1;
-      await supabase.from("pomodoro_log").upsert(
-        { username, log_date: today, count: newCount, updated_at: new Date().toISOString() },
-        { onConflict: "username, log_date" }
-      );
-    } catch (e) {
-      console.error("Erro ao salvar pomodoro:", e);
-    }
-  };
-
   const handleDurationChange = (e) => {
     const val = parseInt(e.target.value);
-    setDuration(val);
-    setTimeLeft(val * 60);
-    setStatus("idle");
-    clearInterval(intervalRef.current);
+    globalDuration = val;
+    globalTimeLeft = val * 60;
+    globalStatus = "idle";
+    if (globalInterval) {
+      clearInterval(globalInterval);
+      globalInterval = null;
+    }
+    notifyInstances();
   };
 
-  const handleStart = () => setStatus("running");
-  const handlePause = () => {
-    setStatus("paused");
-    clearInterval(intervalRef.current);
+  const handleStart = () => {
+    globalStatus = "running";
+    notifyInstances();
+    startGlobalTimer();
   };
+
+  const handlePause = () => {
+    pauseGlobalTimer();
+  };
+
   const handleReset = () => {
-    setStatus("idle");
-    clearInterval(intervalRef.current);
-    setTimeLeft(duration * 60);
+    resetGlobalTimer();
   };
 
   const minutes = Math.floor(timeLeft / 60);
