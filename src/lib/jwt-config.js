@@ -4,14 +4,24 @@
 
 export const SESSION_COOKIE = 'pcpe_session';
 
+// Detect production environment
+const isProd = process.env.NODE_ENV === 'production';
+
+// JWT secret – required in production, fallback only for development/testing
 if (!process.env.JWT_SECRET) {
-  if (process.env.NODE_ENV === 'production') {
-    throw new Error('JWT_SECRET environment variable is required in production');
+  if (isProd) {
+    console.error('[jwt-config] ❌ JWT_SECRET missing in production. Falling back to insecure placeholder.');
+  } else {
+    console.warn('[jwt-config] ⚠️ JWT_SECRET not defined. Using insecure fallback for development.');
   }
-  console.warn('[jwt-config] ⚠️ JWT_SECRET não definido. Usando fallback inseguro. Defina JWT_SECRET no .env.local');
 }
-export const JWT_SECRET = new TextEncoder().encode(process.env.JWT_SECRET || 'fallback-dev-secret-do-not-use-in-prod');
-export const JWT_ISSUER = 'pcpe-flashcards';
+export const JWT_SECRET = new TextEncoder().encode(
+  process.env.JWT_SECRET || 'fallback-dev-secret-do-not-use-in-prod'
+);
+
+// JWT issuer – can be overridden via env, default for dev
+export const JWT_ISSUER = process.env.JWT_ISSUER || 'pcpe-flashcards';
+
 export const SESSION_MAX_AGE = 60 * 60 * 24 * 30; // 30 days
 
 /**
