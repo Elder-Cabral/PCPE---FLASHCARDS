@@ -59,7 +59,7 @@ const btnSub = {
   whiteSpace: "nowrap",
 };
 
-export default function AmbientSound() {
+export default function AmbientSound({ isMobile }) {
   const [expanded, setExpanded] = useState(false);
   const [category, setCategory] = useState(null);
   const [subcategory, setSubcategory] = useState(null);
@@ -290,6 +290,8 @@ export default function AmbientSound() {
                   className="btn-hover"
                   style={{
                     ...btnCat,
+                    fontSize: isMobile ? 10 : 11,
+                    padding: isMobile ? "4px 8px" : "5px 10px",
                     background: isActive ? "rgba(255,255,255,0.06)" : "rgba(255,255,255,0.02)",
                     border: isActive ? "1px solid rgba(255,255,255,0.12)" : "1px solid rgba(255,255,255,0.04)",
                     color: isActive ? "#f1f5f9" : "#64748b",
@@ -315,6 +317,8 @@ export default function AmbientSound() {
                   className="btn-hover"
                   style={{
                     ...btnSub,
+                    fontSize: isMobile ? 9 : 10,
+                    padding: isMobile ? "2px 6px" : "3px 8px",
                     background: subcategory === s.id ? "rgba(255,255,255,0.06)" : "rgba(255,255,255,0.02)",
                     border: subcategory === s.id ? "1px solid rgba(255,255,255,0.12)" : "1px solid transparent",
                     color: subcategory === s.id ? "#f1f5f9" : "#64748b",

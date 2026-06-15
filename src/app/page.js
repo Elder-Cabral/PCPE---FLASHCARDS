@@ -366,7 +366,7 @@ export default function App() {
 
       @media (max-width: 640px) {
         .dashboard-content {
-          padding: 20px 14px !important;
+          padding: 16px 0 !important;
         }
       }
 
@@ -436,6 +436,22 @@ export default function App() {
         .flashcard-answer-text {
           font-size: 13px !important;
           line-height: 1.55 !important;
+        }
+      }
+
+      /* Botão flutuante do Pomodoro */
+      .pomodoro-floating-btn {
+        bottom: 20px; right: 20px;
+        padding: 10px 16px;
+        border-radius: 24px;
+      }
+      @media (max-width: 640px) {
+        .pomodoro-floating-btn {
+          bottom: calc(env(safe-area-inset-bottom, 0px) + 12px) !important;
+          right: 12px !important;
+          padding: 8px 12px !important;
+          border-radius: 20px !important;
+          font-size: 14px !important;
         }
       }
 
@@ -2843,18 +2859,31 @@ function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, 
 function Shell({ children, user, stats, onLogout, centered, userMeta = null, showShieldBanner = false, onDismissShield = () => {}, srsData = {}, hidePomodoro = false }) {
   const [showPomodoro, setShowPomodoro] = useState(!hidePomodoro);
   const [pomodoroInfo, setPomodoroInfo] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
   useEffect(() => { setShowPomodoro(!hidePomodoro); }, [hidePomodoro]);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 640px)");
+    setIsMobile(mq.matches);
+    const handler = (e) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
+  const handlePomodoroTick = useCallback((info) => {
+    setPomodoroInfo(info);
+  }, []);
 
   return (
     <div style={{ height: "100vh", overflow: "hidden", background: "#030712", boxSizing: "border-box", position: "relative", width: "100%", display: "flex", flexDirection: "column" }}>
       <div className="shell-hero-composite" />
       <div style={{ position: "fixed", top: -200, left: "50%", transform: "translateX(-50%)", width: 600, height: 400, borderRadius: "50%", background: "radial-gradient(ellipse,rgba(59,130,246,0.03) 0%,transparent 70%)", pointerEvents: "none", zIndex: 0 }} />
 
-      <div style={{ position: "relative", zIndex: 1, width: "100%", maxWidth: 800, margin: "0 auto", boxSizing: "border-box", flex: 1, display: "flex", flexDirection: "column", minHeight: 0, padding: "24px 16px 32px" }}>
+      <div style={{ position: "relative", zIndex: 1, width: "100%", maxWidth: 800, margin: "0 auto", boxSizing: "border-box", flex: 1, display: "flex", flexDirection: "column", minHeight: 0, padding: isMobile ? "12px 10px 20px" : "24px 16px 32px" }}>
         {/* ── CARD PRINCIPAL (sólido, sem transparência) ── */}
-        <div style={{ flex: 1, display: "flex", flexDirection: "column", background: "#0f172a", borderRadius: 24, border: "1px solid rgba(255,255,255,0.06)", minHeight: 0, padding: "20px 24px" }}>
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", background: "#0f172a", borderRadius: isMobile ? 16 : 24, border: "1px solid rgba(255,255,255,0.06)", minHeight: 0, padding: isMobile ? "14px 16px" : "20px 24px" }}>
           {/* Topbar */}
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0, flexWrap: "wrap", gap: 8 }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: isMobile ? "stretch" : "center", flexDirection: isMobile ? "column" : "row", flexShrink: 0, flexWrap: "wrap", gap: isMobile ? 6 : 8 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
               <div style={{ display: "inline-block", background: "linear-gradient(135deg,#e11d48,#be123c)", borderRadius: 10, padding: "6px 14px" }}>
                 <span style={{ color: "#fff", fontWeight: 700, fontSize: 9, letterSpacing: 2, fontFamily: "monospace" }}>PC-PE · AGENTE</span>
@@ -2869,7 +2898,7 @@ function Shell({ children, user, stats, onLogout, centered, userMeta = null, sho
                 </span>
               </div>
             </div>
-            <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: isMobile ? "flex-start" : "flex-end", gap: 14 }}>
               <span style={{ color: "#94a3b8", fontSize: 12, fontWeight: 500 }}>
                 {user.role === "admin" ? "👑" : "👤"} {user.name}
               </span>
@@ -2921,7 +2950,7 @@ function Shell({ children, user, stats, onLogout, centered, userMeta = null, sho
 
           {/* Pomodoro Timer */}
           <div style={{ display: showPomodoro ? 'block' : 'none', flexShrink: 0 }}>
-            <PomodoroBar username={user?.username} onHide={() => setShowPomodoro(false)} onTick={(info) => setPomodoroInfo(info)} />
+            <PomodoroBar username={user?.username} onHide={() => setShowPomodoro(false)} onTick={handlePomodoroTick} isMobile={isMobile} />
           </div>
 
           {showPomodoro && (
@@ -2945,13 +2974,12 @@ function Shell({ children, user, stats, onLogout, centered, userMeta = null, sho
         {!showPomodoro && hidePomodoro && (
           <button
             onClick={() => setShowPomodoro(true)}
-            className="btn-hover"
+            className="pomodoro-floating-btn btn-hover"
             style={{
-              position: 'fixed', bottom: 20, right: 20, zIndex: 100,
+              position: 'fixed', zIndex: 100,
               display: 'flex', alignItems: 'center', gap: 6,
               background: pomodoroInfo?.status === "running" ? 'rgba(34,197,94,0.15)' : 'rgba(255,255,255,0.04)',
               border: pomodoroInfo?.status === "running" ? '1px solid rgba(34,197,94,0.25)' : '1px solid rgba(255,255,255,0.08)',
-              borderRadius: 24, padding: '10px 16px',
               color: pomodoroInfo?.status === "running" ? '#4ade80' : '#94a3b8',
               fontSize: 16, cursor: 'pointer',
               boxShadow: '0 4px 15px rgba(0,0,0,0.4)',

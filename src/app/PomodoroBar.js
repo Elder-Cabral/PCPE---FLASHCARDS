@@ -33,15 +33,13 @@ function playBeep() {
   }
 }
 
-export default function PomodoroBar({ username, onHide, onTick }) {
+export default function PomodoroBar({ username, onHide, onTick, isMobile }) {
   const [duration, setDuration] = useState(25);
   const [timeLeft, setTimeLeft] = useState(25 * 60);
   const [status, setStatus] = useState("idle");
   const intervalRef = useRef(null);
   const durationRef = useRef(duration);
   durationRef.current = duration;
-  const statusRef = useRef(status);
-  useEffect(() => { statusRef.current = status; }, [status]);
 
   useEffect(() => {
     if (onTick) {
@@ -127,7 +125,7 @@ export default function PomodoroBar({ username, onHide, onTick }) {
       }}
     >
       {/* ── Linha 1: Pomodoro ── */}
-      <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: isMobile ? 6 : 10, flexWrap: "wrap" }}>
         <span style={{ color: "#94a3b8", fontSize: 10, fontWeight: 600, letterSpacing: 0.5 }}>
           🍅 POMODORO
         </span>
@@ -151,30 +149,30 @@ export default function PomodoroBar({ username, onHide, onTick }) {
           <option value={25}>25 min</option>
         </select>
 
-        <span style={{ color: "#f1f5f9", fontSize: 17, fontWeight: 700, fontFamily: "monospace", minWidth: 52, textAlign: "center" }}>
+        <span style={{ color: "#f1f5f9", fontSize: isMobile ? 15 : 17, fontWeight: 700, fontFamily: "monospace", minWidth: 48, textAlign: "center" }}>
           {String(minutes).padStart(2, "0")}:{String(seconds).padStart(2, "0")}
         </span>
 
         {status === "idle" && (
-          <button onClick={handleStart} className="btn-hover" style={{ border: "1px solid rgba(34,197,94,0.25)", borderRadius: 8, padding: "4px 10px", fontSize: 11, fontWeight: 600, cursor: "pointer", outline: "none", whiteSpace: "nowrap", background: "rgba(34,197,94,0.12)", color: "#4ade80" }}>
+          <button onClick={handleStart} className="btn-hover pomodoro-btn" style={{ border: "1px solid rgba(34,197,94,0.25)", borderRadius: 8, padding: isMobile ? "2px 7px" : "4px 10px", fontSize: isMobile ? 10 : 11, fontWeight: 600, cursor: "pointer", outline: "none", whiteSpace: "nowrap", background: "rgba(34,197,94,0.12)", color: "#4ade80" }}>
             ▶ Iniciar
           </button>
         )}
         {status === "running" && (
-          <button onClick={handlePause} className="btn-hover" style={{ border: "1px solid rgba(234,179,8,0.25)", borderRadius: 8, padding: "4px 10px", fontSize: 11, fontWeight: 600, cursor: "pointer", outline: "none", whiteSpace: "nowrap", background: "rgba(234,179,8,0.12)", color: "#eab308" }}>
+          <button onClick={handlePause} className="btn-hover pomodoro-btn" style={{ border: "1px solid rgba(234,179,8,0.25)", borderRadius: 8, padding: isMobile ? "2px 7px" : "4px 10px", fontSize: isMobile ? 10 : 11, fontWeight: 600, cursor: "pointer", outline: "none", whiteSpace: "nowrap", background: "rgba(234,179,8,0.12)", color: "#eab308" }}>
             ⏸ Pausar
           </button>
         )}
         {status === "paused" && (
-          <button onClick={handleStart} className="btn-hover" style={{ border: "1px solid rgba(34,197,94,0.25)", borderRadius: 8, padding: "4px 10px", fontSize: 11, fontWeight: 600, cursor: "pointer", outline: "none", whiteSpace: "nowrap", background: "rgba(34,197,94,0.12)", color: "#4ade80" }}>
+          <button onClick={handleStart} className="btn-hover pomodoro-btn" style={{ border: "1px solid rgba(34,197,94,0.25)", borderRadius: 8, padding: isMobile ? "2px 7px" : "4px 10px", fontSize: isMobile ? 10 : 11, fontWeight: 600, cursor: "pointer", outline: "none", whiteSpace: "nowrap", background: "rgba(34,197,94,0.12)", color: "#4ade80" }}>
             ▶ Continuar
           </button>
         )}
-        <button onClick={handleReset} className="btn-hover" style={{ border: "1px solid rgba(239,68,68,0.2)", borderRadius: 8, padding: "4px 10px", fontSize: 11, fontWeight: 600, cursor: "pointer", outline: "none", whiteSpace: "nowrap", background: "rgba(239,68,68,0.1)", color: "#f87171" }}>
-          ↺ Reset
+        <button onClick={handleReset} className="btn-hover pomodoro-btn" style={{ border: "1px solid rgba(239,68,68,0.2)", borderRadius: 8, padding: isMobile ? "2px 7px" : "4px 10px", fontSize: isMobile ? 10 : 11, fontWeight: 600, cursor: "pointer", outline: "none", whiteSpace: "nowrap", background: "rgba(239,68,68,0.1)", color: "#f87171" }}>
+          ↺ {isMobile ? "" : "Reset"}
         </button>
 
-        {status === "running" && (
+        {status === "running" && !isMobile && (
           <span style={{ color: "#22c55e", fontSize: 9, fontWeight: 600, letterSpacing: 0.5, animation: "pulse 1.5s ease-in-out infinite" }}>
             ● EM ANDAMENTO
           </span>
@@ -185,7 +183,7 @@ export default function PomodoroBar({ username, onHide, onTick }) {
             onClick={onHide}
             className="btn-hover"
             style={{
-              border: "none", borderRadius: 8, padding: "4px 8px", fontSize: 11, fontWeight: 600,
+              border: "none", borderRadius: 8, padding: isMobile ? "2px 6px" : "4px 8px", fontSize: 11, fontWeight: 600,
               cursor: "pointer", outline: "none", background: "rgba(255,255,255,0.04)", color: "#64748b",
               marginLeft: "auto",
             }}
@@ -198,7 +196,7 @@ export default function PomodoroBar({ username, onHide, onTick }) {
 
       <hr style={{ width: "100%", border: "none", borderTop: "1px solid rgba(255,255,255,0.05)", margin: 0 }} />
 
-      <AmbientSound />
+      <AmbientSound isMobile={isMobile} />
     </div>
   );
 }
