@@ -20,13 +20,16 @@ export async function middleware(request) {
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
   response.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
   // CSP: blocks inline scripts, restricts resources to same-origin + known CDNs
+  const isDev = process.env.NODE_ENV !== 'production';
+  const scriptSrc = isDev ? "'self' 'unsafe-inline' 'unsafe-eval'" : "'self' 'unsafe-inline'";
+
   response.headers.set(
     'Content-Security-Policy',
     "default-src 'self'; " +
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
     "font-src 'self' https://fonts.gstatic.com; " +
     "frame-src 'self' https://www.youtube.com; " +
-    "script-src 'self'; " +
+    `script-src ${scriptSrc}; ` +
     "img-src 'self' data:; " +
     "connect-src 'self' https:; " +
     "base-uri 'self'; " +

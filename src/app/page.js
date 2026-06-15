@@ -19,7 +19,7 @@ import { createClient } from '@supabase/supabase-js';
 import BANCO from "../data/banco.json";
 import { supabase } from "../lib/supabase";
 import PomodoroBar from "./PomodoroBar";
-import { SESSION_COOKIE } from "../lib/jwt-config";
+const SESSION_COOKIE = 'pcpe_session';
 
 // Cache for a runtime-created Supabase client, so we never lose the auth session
 // (which is held in-memory by the client instance after signInWithPassword).
@@ -285,6 +285,7 @@ export default function App() {
   const saveQueueRef = useRef(Promise.resolve());
   const isSavingRef = useRef(false);
   const toggleFavTimeoutRef = useRef(null);
+  const srsDataRef = useRef(srsData);
   const { setError, ErrorToast } = useAsyncError();
 
   const resetSessionState = useCallback(() => {
