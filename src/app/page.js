@@ -2393,7 +2393,10 @@ function TelaLogin({ onLogin }) {
           <p style={{ color: "#64748b", fontSize: 11, fontWeight: 600, marginTop: 6, letterSpacing: 2 }}>AGENTE DE POLÍCIA · PE</p>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+        <form
+          onSubmit={(e) => { e.preventDefault(); handleFormSubmit(); }}
+          style={{ display: "flex", flexDirection: "column", gap: 12 }}
+        >
           <div>
             <LoginInput
               type="text"
@@ -2402,7 +2405,6 @@ function TelaLogin({ onLogin }) {
               autoComplete="username"
               value={username}
               onChange={e => setUsername(e.target.value)}
-              onKeyDown={e => e.key === "Enter" && handleFormSubmit()}
               placeholder="Usuário"
               onFocus={e => { e.target.style.borderColor = "rgba(59,130,246,0.5)"; e.target.style.boxShadow = "0 0 0 3px rgba(59,130,246,0.08)" }}
               onBlur={e => { e.target.style.borderColor = "rgba(255,255,255,0.08)"; e.target.style.boxShadow = "none" }}
@@ -2416,7 +2418,6 @@ function TelaLogin({ onLogin }) {
               autoComplete="current-password"
               value={password}
               onChange={e => setPassword(e.target.value)}
-              onKeyDown={e => e.key === "Enter" && handleFormSubmit()}
               placeholder="Senha"
               onFocus={e => { e.target.style.borderColor = "rgba(59,130,246,0.5)"; e.target.style.boxShadow = "0 0 0 3px rgba(59,130,246,0.08)" }}
               onBlur={e => { e.target.style.borderColor = "rgba(255,255,255,0.08)"; e.target.style.boxShadow = "none" }}
@@ -2449,7 +2450,7 @@ function TelaLogin({ onLogin }) {
           {erro && <p style={{ color: "#ef4444", fontSize: 11, fontWeight: 500, margin: 0, textAlign: "center" }}>{erro}</p>}
 
           <button
-            onClick={handleFormSubmit}
+            type="submit"
             className="btn-hover"
             style={{
               background: "linear-gradient(135deg, #2563eb, #1d4ed8)",
@@ -2466,7 +2467,7 @@ function TelaLogin({ onLogin }) {
           >
             ENTRAR
           </button>
-        </div>
+        </form>
       </div>
     </div>
   );
