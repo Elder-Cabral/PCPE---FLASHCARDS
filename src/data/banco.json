@@ -47,7 +47,7 @@
     },
     {
       "id": "leg_estadual_5",
-      "pergunta": "João, policial civil de PE, descumpriu uma ordem de serviço publicada em boletim interno. Essa conduta configura que tipo de infração administrativa segundo a Lei 6.425/72º",
+      "pergunta": "João, policial civil de PE, descumpriu uma ordem de serviço publicada em boletim interno. Essa conduta configura que tipo de infração administrativa segundo a Lei 6.425/72?",
       "resposta": "Transgressão disciplinar, definida no art. 27 do Estatuto do Policial Civil (Lei 6.425/72) como toda ação ou omissão que viole os deveres funcionais estabelecidos em lei, regulamento, instrução superior ou ato normativo interno da PC-PE. A transgressão disciplinar é apurada em procedimento próprio e pode resultar em penalidades que vão da advertência à demissão, conforme a gravidade da infração e os antecedentes do servidor.",
       "dica": "MNEMÔNICO: Transgressão = TUDO que viola dever funcional (lei, regulamento, instrução, norma interna). CESPE adora: 'Transgressão disciplinar é apenas a violação de lei' é FALSO (abrange regulamento, instruções e normas internas, conforme art. 27 Lei 6.425/72). O rol de fontes é amplo, não taxativo.",
       "topico": "Lei nº 6.425/1972 - Estatuto do Policial Civil",
@@ -110,7 +110,7 @@
     },
     {
       "id": "leg_estadual_12",
-      "pergunta": "Quem preside o inquérito policial segundo a LC 137/2008º",
+      "pergunta": "Quem preside o inquérito policial segundo a LC 137/2008?",
       "resposta": "O Delegado de Polícia, autoridade com exclusividade para presidir a investigação criminal preliminar, nos termos do art. 4º do CPP c/c Lei 12.830/13 e LC 137/2008.",
       "dica": "⚠️ PEGADINHA CLÁSSICA: O Delegado PRESIDE o IP com EXCLUSIVIDADE. O MP pode requisitar diligências e controlar externamente, mas NÃO preside. A LC 137/2008 (art. 2º) organiza a PC e mantém essa atribuição. Súmula Vinculante 14: Delegado pode negar acesso a investigação não concluída.",
       "topico": "Lei Complementar nº 137/2008",
@@ -137,7 +137,7 @@
     },
     {
       "id": "leg_estadual_15",
-      "pergunta": "Quais os critérios de progressão funcional previstos na LC 317/2015º",
+      "pergunta": "Quais os critérios de progressão funcional previstos na LC 317/2015?",
       "resposta": "Progressão por elevação de nível profissional (certificação em cursos) e progressão por capacitação (aquisição de títulos), ambas condicionadas a avaliação periódica de desempenho e interstício mínimo.",
       "dica": "MNEMÔNICO: 2 PROGRESSÕES: (1) ELEVAÇÃO = certificação/cursos; (2) CAPACITAÇÃO = títulos. Requisitos cumulativos: interstício + avaliação + curso/título. O servidor em licença sem vencimentos ou cumprindo pena disciplinar NÃO concorre à progressão (art. 15, § único).",
       "topico": "Lei Complementar nº 317/2015",
@@ -353,7 +353,7 @@
     },
     {
       "id": "leg_estadual_39",
-      "pergunta": "O que é cessão de servidor na Lei 6.123/68 e quais suas modalidadesão",
+      "pergunta": "O que é cessão de servidor na Lei 6.123/68 e quais suas modalidades?",
       "resposta": "Cessão é o deslocamento TEMPORÁRIO do servidor para outro órgão ou entidade da administração pública, com ou sem ônus para o órgão cedente (art. 57 da Lei 6.123/68). Na cessão COM ÔNUS, o órgão cedente mantém o pagamento da remuneração; na SEM ÔNUS, o órgão cessionário assume. O prazo máximo é de 2 anos, prorrogável por igual período, salvo para exercício de cargo em comissão.",
       "dica": "⚠️ PEGADINHA CESPE: CESSÃO não se confunde com REMOÇÃO (deslocamento dentro do mesmo órgão) nem com READAPTAÇÃO (mudança por limitação de saúde). A cessão transfere a titularidade do servidor — FALSO (mantém vínculo com o cedente). Cessão sem ônus é ilegal — FALSO (é modalidade prevista em lei).",
       "topico": "Lei nº 6.123/1968 - Estatuto do Servidor do Estado de Pernambuco",
@@ -407,7 +407,7 @@
     },
     {
       "id": "leg_estadual_45",
-      "pergunta": "Quais os prazos prescricionais para aplicação de penalidades disciplinares na Lei 6.123/68º",
+      "pergunta": "Quais os prazos prescricionais para aplicação de penalidades disciplinares na Lei 6.123/68?",
       "resposta": "O art. 32 da Lei 6.123/68 estabelece: 5 ANOS para infrações puníveis com demissão, cassação de aposentadoria ou destituição de cargo em comissão (infrações GRAVES); 2 ANOS para infrações puníveis com suspensão (MÉDIAS); 180 DIAS para infrações puníveis com advertência (LEVES). O prazo conta da data em que o fato se tornou CONHECIDO pela administração (art. 32, §2º).",
       "dica": "📌 MNEMÔNICO: GRAVE = 5 ANOS / MÉDIA = 2 ANOS / LEVE = 180 DIAS. ⚠️ CESPE adora inverter: infração leve prescreve em 2 anos — FALSO. O prazo conta da data do fato — FALSO (conta do CONHECIMENTO pela administração). A prescrição interrompe-se com a instauração do PAD (art. 32, §3º).",
       "topico": "Lei nº 6.425/1972 - Estatuto do Policial Civil",
@@ -434,7 +434,7 @@
     },
     {
       "id": "leg_estadual_48",
-      "pergunta": "O que é disponibilidade no regime da Lei 6.123/68 e quais seus efeitosão",
+      "pergunta": "O que é disponibilidade no regime da Lei 6.123/68 e quais seus efeitos?",
       "resposta": "Disponibilidade é a situação do servidor ESTÁVEL que, extinto o cargo ou declarada sua desnecessidade, fica afastado do exercício com remuneração PROPORCIONAL ao tempo de serviço, até o adequado aproveitamento em outro cargo (art. 41, §3º CF/88 c/c arts. 37 a 39 da Lei 6.123/68). O período de disponibilidade computa-se como tempo de serviço. O aproveitamento é obrigatório; recusa configura abandono de cargo.",
       "dica": "📌 MNEMÔNICO: DISPONIBILIDADE = CARGO EXTINTO + SERVIDOR ESTÁVEL + REMUNERAÇÃO PROPORCIONAL. ⚠️ CESPE: servidor em disponibilidade não recebe remuneração — FALSO. Disponibilidade se aplica a servidor não estável — FALSO (só para estável). Recusando o aproveitamento, o servidor é exonerado — FALSO (configura ABANDONO DE CARGO).",
       "topico": "Lei nº 6.123/1968 - Estatuto do Servidor do Estado de Pernambuco",
@@ -470,7 +470,7 @@
     },
     {
       "id": "leg_estadual_52",
-      "pergunta": "A PC-PE pode investigar crimes militaresão",
+      "pergunta": "A PC-PE pode investigar crimes militares?",
       "resposta": "Não. A investigação de crimes militares é de competência da Polícia Judiciária Militar (PM-PE), sendo a PC-PE competente apenas para infrações penais comuns (art. 102 CE-PE c/c art. 144, §4º CF/88).",
       "dica": "⚠️ LIMITE CONSTITUCIONAL: A expressão 'exceto as militares' no art. 144, §4º CF/88 é CHAVE. Crimes militares estaduais são investigados pela PM (IPM). Crimes militares federais, pela PF. A PC-PE NÃO apura crime militar, mesmo que o autor seja civil.",
       "topico": "Constituição do Estado de Pernambuco (artigos 101 a 105-B)",
@@ -479,7 +479,7 @@
     },
     {
       "id": "leg_estadual_53",
-      "pergunta": "Quais os requisitos para a progressão por capacitação prevista na LC 317/2015º",
+      "pergunta": "Quais os requisitos para a progressão por capacitação prevista na LC 317/2015?",
       "resposta": "A progressão por capacitação (LC 317/2015, arts. 7º a 10) exige TRÊS requisitos cumulativos: (a) interstício mínimo no nível atual; (b) avaliação periódica de desempenho satisfatória; (c) apresentação de certificados de cursos ou títulos acadêmicos reconhecidos. É uma das duas modalidades de progressão (a outra é a por elevação de nível profissional). O servidor em licença sem vencimentos ou cumprindo pena disciplinar NÃO faz jus (art. 15, § único).",
       "dica": "⚠️ DIFERENÇA CRUCIAL: PROGRESSÃO POR CAPACITAÇÃO = TÍTULOS/CURSOS ACADÊMICOS. PROGRESSÃO POR ELEVAÇÃO DE NÍVEL = CERTIFICAÇÃO PROFISSIONAL. CESPE: a progressão por capacitação exige apenas títulos — FALSO (exige interstício + avaliação + título). LC 317/2015 rege todos os cargos da PC-PE — FALSO (é lei do cargo de Delegado; LC 137/2008 rege os demais).",
       "topico": "Lei Complementar nº 317/2015",
@@ -488,7 +488,7 @@
     },
     {
       "id": "leg_estadual_54",
-      "pergunta": "Quais são os deveres funcionais do policial civil previstos no art. 27 da Lei 6.425/72º",
+      "pergunta": "Quais são os deveres funcionais do policial civil previstos no art. 27 da Lei 6.425/72?",
       "resposta": "O art. 27 da Lei 6.425/72 estabelece como deveres do policial civil: I — lealdade às instituições constitucionais e administrativas; II — assiduidade e pontualidade; III — urbanidade e respeito ao público e superiores; IV — sigilo profissional sobre informações obtidas em razão do cargo; V — obediência hierárquica às ordens superiores, SALVO quando manifestamente ilegais; VI — zelo pelo patrimônio público; VII — eficiência e dedicação ao serviço público.",
       "dica": "📌 MNEMÔNICO: L-A-U-S-O-Z-E (Lealdade, Assiduidade, Urbanidade, Sigilo, Obediência, Zelo, Eficiência). ⚠️ PEGADINHA: A obediência hierárquica NÃO é absoluta — ordem MANIFESTAMENTE ILEGAL deve ser recusada. CESPE: o policial deve cumprir toda ordem superior, independentemente de legalidade — FALSO. O sigilo profissional é absoluto — FALSO (cede diante de dever legal de informação).",
       "topico": "Lei nº 6.425/1972 - Estatuto do Policial Civil",
@@ -569,7 +569,7 @@
     },
     {
       "id": "leg_estadual_63",
-      "pergunta": "Qual a relação entre a LC 137/2008 e a LC 317/2015º",
+      "pergunta": "Qual a relação entre a LC 137/2008 e a LC 317/2015?",
       "resposta": "A LC 137/2008 é lei geral do PCCV da PC-PE (todos os cargos). A LC 317/2015 é lei especial do cargo de Delegado de Polícia. A LC 137 é marco geral; a LC 317 detalha a carreira de Delegado.",
       "dica": "⚠️ CORREÇÃO DE ERRO COMUM: A LC 137/2008 INSTITUI o PCCV da PC-PE. A LC 317/2015 NÃO institui, mas dispõe sobre o cargo de Delegado. Relação: geral (137) x especial (317).",
       "topico": "Lei Complementar nº 137/2008",
@@ -605,7 +605,7 @@
     },
     {
       "id": "leg_estadual_67",
-      "pergunta": "Quais os requisitos e o prazo de férias do servidor estadual pela Lei 6.123/68º",
+      "pergunta": "Quais os requisitos e o prazo de férias do servidor estadual pela Lei 6.123/68?",
       "resposta": "30 dias consecutivos de férias remuneradas por ano, adquiridas após 12 meses de efetivo exercício (art. 103, Lei 6.123/68). É vedado o fracionamento, salvo por necessidade do serviço (§4º). É proibida a acumulação além de 2 períodos, salvo imperiosa necessidade (art. 105). Durante as férias, o servidor mantém todas as vantagens do cargo (art. 108).",
       "dica": "Mnemônico: 'FÉRIAS 30-12-2' → 30 dias, após 12 meses, máximo 2 períodos acumulados. ⚠ CESPE adora trocar: férias NÃO são 20 dias, NÃO são adquiridas após 6 meses. O fracionamento é EXCEÇÃO (necessidade do serviço), não regra!",
       "topico": "Lei nº 6.123/1968 - Estatuto do Servidor do Estado de Pernambuco",
@@ -623,7 +623,7 @@
     },
     {
       "id": "leg_estadual_69",
-      "pergunta": "O que é aproveitamento no âmbito da Lei 6.123/68º",
+      "pergunta": "O que é aproveitamento no âmbito da Lei 6.123/68?",
       "resposta": "Aproveitamento é o retorno à atividade do funcionário em disponibilidade, em cargo igual ou equivalente, pela sua natureza e vencimento, ao anteriormente ocupado (art. 69, Lei 6.123/68). Deve ocorrer obrigatoriamente na primeira oportunidade que se oferecer (art. 70). Havendo mais de um concorrente à mesma vaga, terá preferência o de maior tempo de disponibilidade (art. 72).",
       "dica": "Mnemônico: 'APROVEITAMENTO = APÓS DISPONIBILIDADE' ⚠ CESPE troca aproveitamento com reversão! Reversão é de aposentado; aproveitamento é de disponível. Decore: 'Disponível → Aproveitado; Aposentado → Revertido' (D.A.R.A).",
       "topico": "Lei nº 6.123/1968 - Estatuto do Servidor do Estado de Pernambuco",
@@ -632,7 +632,7 @@
     },
     {
       "id": "leg_estadual_70",
-      "pergunta": "Quais as formas de provimento de cargo público na Lei 6.123/68º",
+      "pergunta": "Quais as formas de provimento de cargo público na Lei 6.123/68?",
       "resposta": "Nomeação, promoção, readaptação, reversão, aproveitamento, reintegração e recondução (art. 8º da Lei 6.123/68).",
       "dica": "MNEMÔNICO: N-P-R-R-A-R-R (Nomeação, Promoção, Readaptação, Reversão, Aproveitamento, Reintegração, Recondução). CESPE: 'A promoção é forma de provimento' → SIM. 'A remoção é forma de provimento' → NÃO.",
       "topico": "Lei nº 6.123/1968 - Estatuto do Servidor do Estado de Pernambuco",
@@ -785,7 +785,7 @@
     },
     {
       "id": "leg_estadual_87",
-      "pergunta": "Qual a diferença entre cargo público e função pública na Lei 6.123/68º",
+      "pergunta": "Qual a diferença entre cargo público e função pública na Lei 6.123/68?",
       "resposta": "CARGO PÚBLICO: conjunto de atribuições e responsabilidades criado por lei, com denominação própria, número certo e vencimento específico, provido por nomeação (arts. 2º e 10, Lei 6.123/68). FUNÇÃO PÚBLICA: conjunto de atribuições de natureza transitória, sem cargo permanente, criada para atender necessidade temporária, sem denominação própria de cargo (art. 3º, Lei 6.123/68). Resumo: cargo é permanente e criado por lei; função é temporária e acessória ao cargo.",
       "dica": "Mnemônico: 'CARGO = LEI + PERMANENTE | FUNÇÃO = TEMPORÁRIA'. ⚠ PEGADINHA CESPE: função de confiança (art. 37, V, CF) é diferente de função pública temporária! A função de confiança é privativa de servidor efetivo para chefia/direção/assessoramento. Já a função pública (Lei 6.123/68 art. 3º) pode ser exercida sem cargo efetivo.",
       "topico": "Lei nº 6.123/1968 - Estatuto do Servidor do Estado de Pernambuco",
@@ -794,7 +794,7 @@
     },
     {
       "id": "leg_estadual_88",
-      "pergunta": "O que é o Conselho de Polícia Civil previsto na LC 137/2008º",
+      "pergunta": "O que é o Conselho de Polícia Civil previsto na LC 137/2008?",
       "resposta": "Órgão colegiado consultivo e deliberativo da PC-PE, com composição paritária, que atua na formulação de políticas e diretrizes da instituição.",
       "dica": "Natureza: CONSULTIVO + DELIBERATIVO (não é executivo). Paritário: representantes de diferentes carreiras. CESPE: 'O Conselho de Polícia Civil tem poder de nomear o Delegado-Geral?' → NÃO (a nomeação é do Governador).",
       "topico": "Lei nº 6.425/1972 - Estatuto do Policial Civil",
@@ -803,7 +803,7 @@
     },
     {
       "id": "leg_estadual_89",
-      "pergunta": "O que é lotação provisória segundo a Lei 6.123/68º",
+      "pergunta": "O que é lotação provisória segundo a Lei 6.123/68?",
       "resposta": "Lotação provisória é a designação temporária do servidor público para exercer funções em unidade administrativa diversa de sua lotação definitiva, sem alteração de sua sede funcional principal (arts. 48-50 Lei 6.123/68). É medida excepcional, motivada por necessidade temporária do serviço, e não se confunde com remoção (que é definitiva). O servidor em lotação provisória mantém o vencimento do cargo efetivo.",
       "dica": "Mnemônico: 'LOTAÇÃO PROVISÓRIA = TEMPORÁRIA ≠ REMOÇÃO (definitiva)'. ⚠ CESPE: lotação provisória NÃO gera direito a mudança de sede, NÃO altera o cargo, NÃO garante efetividade. A remoção é definitiva e altera a sede do servidor. Decore: 'Provisória = temporária; Remoção = permanente'.",
       "topico": "Lei nº 6.123/1968 - Estatuto do Servidor do Estado de Pernambuco",
@@ -812,7 +812,7 @@
     },
     {
       "id": "leg_estadual_90",
-      "pergunta": "Quais as espécies de licença previstas na Lei 6.123/68 e seus respectivos artigosão",
+      "pergunta": "Quais as espécies de licença previstas na Lei 6.123/68 e seus respectivos artigos?",
       "resposta": "As licenças estão previstas nos arts. 109 a 134 da Lei 6.123/68: (1) Licença-prêmio: 6 meses a cada decênio (art. 112); (2) Tratamento de saúde: até 24 meses, prorrogável (arts. 115-124); (3) Doença em pessoa da família: até 24 meses (art. 125); (4) Maternidade: 180 dias com vencimento integral (art. 126); (5) Paternidade: 15 dias (art. 2º, LC 03/90); (6) Serviço militar (art. 128); (7) Mandato eletivo (art. 128-A); (8) Interesse particular (arts. 130-131); (9) Capacitação (arts. 132-133).",
       "dica": "Mnemônico: 'LICENÇAS = P r ê m i o + S a ú d e + F a m í l i a + M a t e r n i d a d e + P a t e r n i d a d e + M i l i t a r + M a n d a t o + I n t e r e s s e + C a p a c i t a ç ã o'. ⚠ CESPE: a licença-prêmio é APÓS 10 anos (decênio), não após 5 anos. Maternidade = 180 dias (integral). Interesse particular = até 4 anos, SEM vencimento (art. 130).",
       "topico": "Lei nº 6.123/1968 - Estatuto do Servidor do Estado de Pernambuco",
@@ -839,7 +839,7 @@
     },
     {
       "id": "leg_estadual_93",
-      "pergunta": "O que é o Agente de Polícia Civil de Pernambuco e quais são suas atribuições específicasão",
+      "pergunta": "O que é o Agente de Polícia Civil de Pernambuco e quais são suas atribuições específicas?",
       "resposta": "O Agente de Polícia Civil é cargo público efetivo de nível superior, de natureza policial, integrante da carreira policial civil, com atribuições de polícia judiciária e investigação criminal (arts. 1º e 7º, Lei 6.425/72; art. 7º, IV, LC 137/2008). Suas atribuições incluem: executar diligências investigatórias; cumprir mandados de prisão, busca e apreensão; colher provas e vestígios; elaborar relatórios de investigação; dar apoio técnico-operacional ao Delegado de Polícia na condução do inquérito policial; e realizar ações preventivas e repressivas de criminalidade.",
       "dica": "Mnemônico: 'AGENTE = EXECUTA DILIGÊNCIAS + CUMPRE MANDADOS + COLHE PROVAS'. ⚠ CESPE: o Agente NÃO preside inquérito, NÃO decide indiciamento, NÃO requisita perícia oficial (quem faz é o Delegado). O Agente auxilia e executa as determinações do Delegado (art. 103, CE-PE).",
       "topico": "Constituição do Estado de Pernambuco (artigos 101 a 105-B)",
@@ -902,7 +902,7 @@
     },
     {
       "id": "leg_estadual_new_100",
-      "pergunta": "Qual o objeto da Lei Complementar nº 137/2008º",
+      "pergunta": "Qual o objeto da Lei Complementar nº 137/2008?",
       "resposta": "Institui, no âmbito da PC-PE, o Plano de Cargos, Carreiras e Vencimentos (PCCV) dos servidores de natureza policial civil, nos termos do art. 1º da LC 137/2008. Define os 9 cargos do Grupo Ocupacional Policial Civil (art. 7º), a grade de vencimento (art. 9º), as regras de ingresso (arts. 10-11), progressão funcional (arts. 15-17) e a Comissão Administrativa de Avaliação e Acompanhamento do PCCV (art. 24).",
       "dica": "⚠️ OBJETO CENTRAL: LC 137/2008 = PCCV da PC-PE. NÃO se confunde com a LC 317/2015 (Delegado). MNEMÔNICO: '137 = PCCV = Plano de Cargos, Carreiras e Vencimentos'. Regulamentada pelo Decreto 44.469/2017.",
       "topico": "Lei Complementar nº 137/2008",
@@ -911,7 +911,7 @@
     },
     {
       "id": "leg_estadual_new_101",
-      "pergunta": "O que dispõe a Lei Complementar nº 317/2015º",
+      "pergunta": "O que dispõe a Lei Complementar nº 317/2015?",
       "resposta": "Regulamenta o § 5º do art. 103 da Constituição do Estado de Pernambuco, dispondo sobre o cargo de Delegado de Polícia. Declara que as funções de polícia judiciária e apuração de infrações penais exercidas pelo Delegado são de natureza jurídica e policial, essenciais e exclusivas de Estado (art. 1º). Estabelece ingresso mediante concurso público com participação da OAB, bacharelado em Direito e 3 anos de atividade jurídica ou policial (art. 2º), e remoção por ato fundamentado (art. 3º).",
       "dica": "⚠️ ATENÇÃO: A LC 317/2015 NÃO é sobre LOA ou orçamento. É sobre o cargo de DELEGADO DE POLÍCIA. Base constitucional: § 5º do art. 103 da CE-PE. Só tem 4 artigos. CESPE já cobrou: 'A LC 317/2015 dispõe sobre a carreira de Agente de Polícia' → FALSO.",
       "topico": "Lei Complementar nº 317/2015",
@@ -920,7 +920,7 @@
     },
     {
       "id": "leg_estadual_expand_0",
-      "pergunta": "Quais as características do exercício das atividades da carreira policial civil segundo o art. 1º da LC 137/2008º",
+      "pergunta": "Quais as características do exercício das atividades da carreira policial civil segundo o art. 1º da LC 137/2008?",
       "resposta": "A carreira policial civil é exclusiva de Estado, estruturada para prestação de serviços essenciais, observados os princípios da hierarquia e da disciplina. O PCCV aplica-se aos servidores de natureza policial civil da PC-PE, seguindo os arts. 37-41 da CF/88, arts. 97-99 da CE-PE e a Lei 6.123/1968.",
       "dica": "⚠️ TRÊS PILARES: (1) Exclusividade de Estado; (2) Serviços essenciais; (3) Hierarquia e disciplina. CESPE adora: 'A carreira policial civil é privativa de brasileiros natosão' → FALSO (não há essa exigência na LC 137/2008).",
       "topico": "Lei Complementar nº 137/2008",
@@ -938,7 +938,7 @@
     },
     {
       "id": "leg_estadual_expand_2",
-      "pergunta": "Como se estrutura a grade de vencimento base dos cargos da PC-PE segundo o art. 9º, parágrafo único da LC 137/2008º",
+      "pergunta": "Como se estrutura a grade de vencimento base dos cargos da PC-PE segundo o art. 9º, parágrafo único da LC 137/2008?",
       "resposta": "O art. 9º, parágrafo único da LC 137/2008 estrutura a Grade de Vencimento Base em: (a) 4 Classes (I a IV) = progressão vertical por tempo; (b) 7 Faixas Salariais (A a G) = progressão horizontal por capacitação. A matriz resultante é Classe x Faixa, totalizando 28 posições possíveis.",
       "dica": "MNEMÔNICO: '4 CLASSES (I-IV) x 7 FAIXAS (A-G) = 28 POSIÇÕES'. Classe = tempo (vertical). Faixa = capacitação (horizontal). ⚠️ CESPE inverte: 'A Classe representa capacitação e a Faixa representa tempo' → FALSO. É o contrário.",
       "topico": "Lei Complementar nº 137/2008",
@@ -947,7 +947,7 @@
     },
     {
       "id": "leg_estadual_expand_3",
-      "pergunta": "Como se dá o ingresso nos cargos da PC-PE segundo a LC 137/2008º",
+      "pergunta": "Como se dá o ingresso nos cargos da PC-PE segundo a LC 137/2008?",
       "resposta": "Mediante concurso público de provas e títulos, sempre na faixa e classe iniciais. Exige-se nível superior completo (para todos os cargos), aprovação em curso de formação profissional (2ª etapa, eliminatória e classificatória), aptidão física e mental, e idoneidade moral (arts. 10-11 da LC 137/2008).",
       "dica": "⚠️ PÓS-EC 19/98: EXIGE-SE NÍVEL SUPERIOR para TODOS os cargos da PC-PE. O curso de formação é a 2ª etapa do concurso. CESPE: 'O curso de formação é apenas classificatório' → FALSO (também é eliminatório).",
       "topico": "Lei Complementar nº 137/2008",
@@ -965,7 +965,7 @@
     },
     {
       "id": "leg_estadual_expand_5",
-      "pergunta": "Como funciona a progressão por elevação de nível profissional segundo o art. 17 da LC 137/2008º",
+      "pergunta": "Como funciona a progressão por elevação de nível profissional segundo o art. 17 da LC 137/2008?",
       "resposta": "Conforme o art. 17 da LC 137/2008, a progressão por elevação de nível profissional é a passagem do servidor de uma classe para a imediatamente superior (progressão vertical) mediante certificação em cursos de formação, aperfeiçoamento ou especialização, desde que cumprido o interstício mínimo de 2 anos em cada classe e obtida avaliação periódica de desempenho satisfatória.",
       "dica": "⚠️ DIFERENÇA: Progressão VERTICAL = Classe (elevação de nível, art. 17). Progressão HORIZONTAL = Faixa (capacitação/títulos, art. 16). Ambas exigem interstício de 2 anos + avaliação. CESPE: 'A elevação de nível independe de avaliação' → FALSO.",
       "topico": "Lei Complementar nº 137/2008",
@@ -983,7 +983,7 @@
     },
     {
       "id": "leg_estadual_expand_7",
-      "pergunta": "O que é a Comissão Administrativa do PCCV prevista no art. 24 da LC 137/2008º",
+      "pergunta": "O que é a Comissão Administrativa do PCCV prevista no art. 24 da LC 137/2008?",
       "resposta": "É a Comissão Administrativa de Avaliação do Enquadramento e Acompanhamento do PCCV, prevista no art. 24 da LC 137/2008. Órgão colegiado composto paritariamente por representantes da administração e dos servidores. Atribuições: avaliar enquadramentos, acompanhar a execução do PCCV, analisar recursos e propor ajustes ao plano.",
       "dica": "⚠️ NATUREZA: Órgão COLEGIADO, PARITÁRIO (administração + servidores). NÃO é órgão executivo. Suas decisões são consultivas e deliberativas no âmbito do PCCV. CESPE: 'A Comissão pode nomear servidores' → FALSO (compete ao Delegado-Geral).",
       "topico": "Lei Complementar nº 137/2008",
@@ -992,7 +992,7 @@
     },
     {
       "id": "leg_estadual_expand_8",
-      "pergunta": "Quais os objetivos do PCCV da PC-PE estabelecidos no art. 4º da LC 137/2008º",
+      "pergunta": "Quais os objetivos do PCCV da PC-PE estabelecidos no art. 4º da LC 137/2008?",
       "resposta": "O art. 4º da LC 137/2008 estabelece como objetivos do PCCV: I - valorizar o servidor policial civil; II - estabelecer critérios de progressão funcional; III - adequar a remuneração à complexidade das atribuições; IV - estimular o desenvolvimento profissional; V - melhorar a qualidade dos serviços; VI - garantir isonomia salarial.",
       "dica": "MNEMÔNICO: 'VALORIZAR, PROGREDIR, ADEQUAR, CAPACITAR, MELHORAR, ISONOMIZAR'. ⚠️ CESPE: 'O PCCV visa reduzir salários dos policiais' → FALSO. O objetivo é valorizar e melhorar a remuneração.",
       "topico": "Lei Complementar nº 137/2008",
@@ -1001,7 +1001,7 @@
     },
     {
       "id": "leg_estadual_expand_9",
-      "pergunta": "Qual o objeto e a base constitucional da LC 317/2015º",
+      "pergunta": "Qual o objeto e a base constitucional da LC 317/2015?",
       "resposta": "Objeto: dispor sobre o cargo de Delegado de Polícia, suas funções de polícia judiciária e a apuração de infrações penais, declarando-as de natureza jurídica e policial, essenciais e exclusivas de Estado. Base constitucional: § 5º do art. 103 da Constituição do Estado de Pernambuco.",
       "dica": "⚠️ BASE CONSTITUCIONAL ESPECÍFICA: § 5º do art. 103 da CE-PE. Isso é PEGADINHA CERTA da CESPE: 'A LC 317/2015 tem base no art. 144 da CF/88' → FALSO (a base é o art. 103, §5º da CE-PE).",
       "topico": "Lei Complementar nº 317/2015",
@@ -1019,7 +1019,7 @@
     },
     {
       "id": "leg_estadual_expand_11",
-      "pergunta": "Qual garantia é conferida ao Delegado de Polícia pelo art. 1º, parágrafo único da LC 317/2015º",
+      "pergunta": "Qual garantia é conferida ao Delegado de Polícia pelo art. 1º, parágrafo único da LC 317/2015?",
       "resposta": "O art. 1º, parágrafo único da LC 317/2015 garante ao Delegado de Polícia, para formação de seu convencimento e no exercício de suas atribuições, a interpretação do ordenamento jurídico com isenção, imparcialidade e de modo fundamentado.",
       "dica": "⚠️ TRÊS EXIGÊNCIAS PARA A INTERPRETAÇÃO: (1) Isenção; (2) Imparcialidade; (3) Modo fundamentado. CESPE: 'O Delegado pode decidir com base em convicção pessoal não fundamentada' → FALSO. A lei exige FUNDAMENTAÇÃO.",
       "topico": "Lei Complementar nº 317/2015",
@@ -1028,7 +1028,7 @@
     },
     {
       "id": "leg_estadual_expand_12",
-      "pergunta": "Como se dá o ingresso no cargo de Delegado de Polícia segundo o art. 2º da LC 317/2015º",
+      "pergunta": "Como se dá o ingresso no cargo de Delegado de Polícia segundo o art. 2º da LC 317/2015?",
       "resposta": "Conforme o art. 2º da LC 317/2015: ingresso sempre na faixa e classe iniciais, mediante concurso público de provas e títulos com participação da OAB. Exigências: diploma de bacharel em Direito e mínimo de 3 anos de atividade jurídica ou policial, comprovados no ato da posse.",
       "dica": "MNEMÔNICO: 'CONCURSO + OAB + DIREITO + 3 ANOS'. ⚠️ CESPE: O prazo de 3 anos é de ATIVIDADE JURÍDICA OU POLICIAL (não apenas advocacia). A comprovação é no ATO DA POSSE, não na inscrição. A OAB participa em TODAS as fases do concurso.",
       "topico": "Lei Complementar nº 317/2015",
@@ -1037,7 +1037,7 @@
     },
     {
       "id": "leg_estadual_expand_13",
-      "pergunta": "A exigência de 3 anos de atividade jurídica para Delegado se aplica a concursos iniciados antes da LC 317/2015º",
+      "pergunta": "A exigência de 3 anos de atividade jurídica para Delegado se aplica a concursos iniciados antes da LC 317/2015?",
       "resposta": "Não. O parágrafo único do art. 2º da LC 317/2015 expressamente exclui a aplicação da exigência de 3 anos de atividade jurídica ou policial para concursos públicos iniciados antes da vigência desta Lei Complementar (18/12/2015).",
       "dica": "⚠️ REGRA DE DIREITO INTERTEMPORAL: A exigência de 3 anos NÃO retroage. CESPE: 'Candidato aprovado em concurso de 2014 mas nomeado em 2016 precisa comprovar 3 anos' → FALSO. Se o concurso foi iniciado antes de 18/12/2015, a regra não se aplica.",
       "topico": "Lei Complementar nº 317/2015",
@@ -1046,7 +1046,7 @@
     },
     {
       "id": "leg_estadual_expand_14",
-      "pergunta": "Qual a regra para remoção do Delegado de Polícia segundo o art. 3º da LC 317/2015º",
+      "pergunta": "Qual a regra para remoção do Delegado de Polícia segundo o art. 3º da LC 317/2015?",
       "resposta": "O art. 3º da LC 317/2015 determina que a remoção do Delegado de Polícia dar-se-á somente por ato devidamente fundamentado. A motivação é obrigatória, sob pena de nulidade por violação à autonomia funcional do Delegado.",
       "dica": "⚠️ GARANTIA ESSENCIAL: A remoção exige FUNDAMENTAÇÃO (ato motivado). Isso protege a autonomia do Delegado contra remoções punitivas disfarçadas. CESPE: 'A remoção do Delegado é ato discricionário puro' → FALSO. É discricionário, mas DEVE ser fundamentado (vinculação à motivação).",
       "topico": "Lei Complementar nº 317/2015",
@@ -1084,7 +1084,7 @@
     },
     {
       "id": "dir_const_1",
-      "pergunta": "O que é poder constituinte originário e quais suas característicasão",
+      "pergunta": "O que é poder constituinte originário e quais suas características?",
       "resposta": "Poder de criar uma nova Constituição. É inicial, autônomo, incondicionado, ilimitado juridicamente e permanente.",
       "dica": "MNEMÔNICO: I-A-I-I-P (Inicial, Autônomo, Incondicionado, Ilimitado, Permanente). CESPE: adota a teoria kelseniana (ilimitado juridicamente).",
       "topico": "Princípios fundamentais",
@@ -1111,7 +1111,7 @@
     },
     {
       "id": "dir_const_4",
-      "pergunta": "Qual a diferença entre princípios e regras constitucionaisão",
+      "pergunta": "Qual a diferença entre princípios e regras constitucionais?",
       "resposta": "Princípios: normas de alto grau de abstração, aplicadas por ponderação. Regras: aplicadas por subsunção (tudo ou nada). Dworkin/Alexy.",
       "dica": "MNEMÔNICO: PRINCÍPIOS = mandados de OTIMIZAÇÃO (ponderação). REGRAS = TUDO OU NADA (subsunção). CESPE: 'Princípios podem ser aplicados gradualmente' -> VERDADEIRO.",
       "topico": "Princípios fundamentais",
@@ -1147,7 +1147,7 @@
     },
     {
       "id": "dir_const_8",
-      "pergunta": "Para que serve o habeas corpus e quais seus requisitosão",
+      "pergunta": "Para que serve o habeas corpus e quais seus requisitos?",
       "resposta": "Proteger o direito de locomoção contra ilegalidade ou abuso de poder. Pode ser preventivo (salvo-conduto) ou repressivo. Gratuito e dispensada capacidade postulatória (art. 5º, LXVIII e LXXVII CF/88).",
       "dica": "CESPE ADORA: 'HC não exige advogado' -> VERDADEIRO. 'HC protege qualquer direito' -> FALSO (só locomoção). 'HC coletivo é admitido' -> STF admite (HC 143.641).",
       "topico": "Direitos e garantias fundamentais",
@@ -1516,7 +1516,7 @@
     },
     {
       "id": "dir_const_49",
-      "pergunta": "O que é a extradição de brasileiros segundo a CF/88º",
+      "pergunta": "O que é a extradição de brasileiros segundo a CF/88?",
       "resposta": "Vedada para brasileiros natos. Para naturalizados, admitida em crime comum anterior à naturalização ou tráfico de drogas.",
       "dica": "Art. 5º, LI/LII, CF. Brasileiro nato: jamais extraditado. Naturalizado: crime anterior ou tráfico. Brasileiro nato pode ser EXPULSO.",
       "topico": "Direitos e garantias fundamentais",
@@ -1525,7 +1525,7 @@
     },
     {
       "id": "dir_const_50",
-      "pergunta": "O que é o princípio da proporcionalidade no direito constitucional",
+      "pergunta": "O que é o princípio da proporcionalidade no direito constitucional?",
       "resposta": "Exige que as limitações aos direitos fundamentais sejam adequadas, necessárias e proporcionais ao fim almejado.",
       "dica": "Proporcionalidade: adequação, necessidade, proporcionalidade estrita. Razoabilidade é equivalente.",
       "topico": "Direitos e garantias fundamentais",
@@ -1633,7 +1633,7 @@
     },
     {
       "id": "dir_const_62",
-      "pergunta": "O que é o princípio da eficiência inserido pela EC 19/98º",
+      "pergunta": "O que é o princípio da eficiência inserido pela EC 19/98?",
       "resposta": "Impõe ao agente público a obrigação de realizar atribuições com qualidade, presteza, economicidade e resultado favorável.",
       "dica": "Art. 37 (EC 19/98). Eficiência: qualidade, economicidade. NÃO se sobrepõe à legalidade.",
       "topico": "Princípios implícitos da administração pública",
@@ -1714,7 +1714,7 @@
     },
     {
       "id": "dir_const_71",
-      "pergunta": "O que é eficácia horizontal dos direitos fundamentaisão",
+      "pergunta": "O que é eficácia horizontal dos direitos fundamentais?",
       "resposta": "Aplicação dos direitos fundamentais também nas relações entre particulares. STF adota eficácia direta/ imediata (RE 158.215, RE 201.819).",
       "dica": "TRÊS TEORIAS: (1) State Action (EUA); (2) Eficácia Indireta (Alemanha); (3) Eficácia Direta (Brasil-STF). Ex: exclusão de associado sem defesa.",
       "topico": "Direitos e garantias fundamentais",
@@ -1750,7 +1750,7 @@
     },
     {
       "id": "dir_const_75",
-      "pergunta": "O que é o princípio federativo segundo a CF/88º",
+      "pergunta": "O que é o princípio federativo segundo a CF/88?",
       "resposta": "A República Federativa do Brasil é composta por entes autônomos com repartição constitucional de competências.",
       "dica": "Arts. 1º e 18, CF. Federação: União, estados, DF, municípios. Territórios não são entes federativos.",
       "topico": "Princípios fundamentais",
@@ -1849,7 +1849,7 @@
     },
     {
       "id": "dir_const_86",
-      "pergunta": "O que é o sistema acusatório constitucional",
+      "pergunta": "O que é o sistema acusatório constitucional?",
       "resposta": "Funções de acusar, defender e julgar atribuídas a órgãos distintos. Lei 13.964/19 positivou no art. 3º-A CPP.",
       "dica": "Art. 3º-A CPP: 'vedadas a iniciativa do juiz na fase de investigação e a substituição probatória da acusação'. CESPE: 'juiz pode decretar prova de ofício' -> SIM, excepcionalmente (art. 156 CPP).",
       "topico": "Direitos e garantias fundamentais",
@@ -1903,7 +1903,7 @@
     },
     {
       "id": "dir_const_new_92",
-      "pergunta": "O que são princípios fundamentais na Constituição de 1988º",
+      "pergunta": "O que são princípios fundamentais na Constituição de 1988?",
       "resposta": "São os valores estruturantes do Estado brasileiro previstos nos arts. 1º a 4º da CF/88: soberania, cidadania, dignidade da pessoa humana, separação de poderes, objetivos e princípios das relações internacionais.",
       "dica": "ÁREA: Direito Constitucional. CESPE adora cobrar a literalidade do texto constitucional e as diferenças entre remédios constitucionais. Atenção às exceções de cada norma.",
       "topico": "Princípios fundamentais",
@@ -1957,7 +1957,7 @@
     },
     {
       "id": "dir_const_new_98",
-      "pergunta": "O que tratam as disposições gerais da Administração Pública na CF/88º",
+      "pergunta": "O que tratam as disposições gerais da Administração Pública na CF/88?",
       "resposta": "Os princípios constitucionais (art. 37): legalidade, impessoalidade, moralidade, publicidade e eficiência (LIMPE).",
       "dica": "ÁREA: Direito Constitucional. CESPE adora cobrar a literalidade do texto constitucional e as diferenças entre remédios constitucionais. Atenção às exceções de cada norma.",
       "topico": "Disposições gerais, servidores públicos",
@@ -2011,7 +2011,7 @@
     },
     {
       "id": "dir_const_new_104",
-      "pergunta": "Qual a função institucional do Ministério Público segundo a CF/88º",
+      "pergunta": "Qual a função institucional do Ministério Público segundo a CF/88?",
       "resposta": "Defender a ordem jurídica, o regime democrático e os interesses sociais e individuais indisponíveis (art. 127), incluindo o controle externo da atividade policial.",
       "dica": "ÁREA: Direito Constitucional. CESPE adora cobrar a literalidade do texto constitucional e as diferenças entre remédios constitucionais. Atenção às exceções de cada norma.",
       "topico": "Ministério Público, Advocacia Pública",
@@ -2065,7 +2065,7 @@
     },
     {
       "id": "dir_const_expand_4",
-      "pergunta": "O poder constituinte derivado revisor existiu na CF/88º",
+      "pergunta": "O poder constituinte derivado revisor existiu na CF/88?",
       "resposta": "Sim. Foi previsto no art. 3º do ADCT e realizado em 1993, com quórum de maioria absoluta e sessão unicameral. Já exauriu sua função.",
       "dica": "ALERTA CEBRASPE: O poder revisor foi uma espécie de derivado com quórum menor (maioria absoluta). Já foi exercido; hoje só cabe emenda com 3/5.",
       "topico": "Poderes Constituintes Originário, Derivado e Decorrente",
@@ -2083,7 +2083,7 @@
     },
     {
       "id": "dir_const_expand_6",
-      "pergunta": "Quais são as cláusulas pétreas do art. 60, §4º da CF/88º",
+      "pergunta": "Quais são as cláusulas pétreas do art. 60, §4º da CF/88?",
       "resposta": "I - forma federativa de Estado; II - voto direto, secreto, universal e periódico; III - separação dos Poderes; IV - direitos e garantias individuais.",
       "dica": "Mnemônico: F V S D (Federativa, Voto, Separação, Direitos). ATENÇÃO: 'direitos e garantias INDIVIDUAIS' - não são todos os fundamentais, só os individuais.",
       "topico": "Poderes Constituintes Originário, Derivado e Decorrente",
@@ -2119,7 +2119,7 @@
     },
     {
       "id": "dir_const_expand_10",
-      "pergunta": "Qual o quórum para aprovação de emenda constitucional",
+      "pergunta": "Qual o quórum para aprovação de emenda constitucional?",
       "resposta": "3/5 dos membros de cada Casa do Congresso Nacional (Câmara e Senado), em dois turnos de votação em cada Casa (art. 60, §2º).",
       "dica": "DIFERENÇA: Emenda = 3/5 em dois turnos. Lei complementar = maioria absoluta. Lei ordinária = maioria simples (presentes).",
       "topico": "Poderes Constituintes Originário, Derivado e Decorrente",
@@ -2182,7 +2182,7 @@
     },
     {
       "id": "dir_const_expand_18",
-      "pergunta": "O que é o fenômeno da recepção constitucional",
+      "pergunta": "O que é o fenômeno da recepção constitucional?",
       "resposta": "As leis anteriores à CF/88 são recepcionadas se compatíveis materialmente com a nova ordem constitucional. Se incompatíveis, são revogadas.",
       "dica": "ATENÇÃO: A recepção é juízo de compatibilidade MATERIAL. A forma (processo legislativo) da lei anterior é irrelevante.",
       "topico": "Aplicabilidade das normas constitucionais",
@@ -2200,7 +2200,7 @@
     },
     {
       "id": "dir_const_expand_20",
-      "pergunta": "O que é repristinação no direito constitucional",
+      "pergunta": "O que é repristinação no direito constitucional?",
       "resposta": "A nova Constituição não restaura leis anteriores revogadas pela ordem constitucional precedente, salvo disposição expressa em contrário.",
       "dica": "Regra geral: não há repristinação automática. A CF/88 não trouxe cláusula geral de repristinação.",
       "topico": "Aplicabilidade das normas constitucionais",
@@ -2227,7 +2227,7 @@
     },
     {
       "id": "dir_const_expand_23",
-      "pergunta": "O que é a mutação constitucional",
+      "pergunta": "O que é a mutação constitucional?",
       "resposta": "Processo informal de alteração do sentido e alcance das normas constitucionais, sem modificação do texto, por interpretação judicial, costumes ou práticas políticas.",
       "dica": "ALERTA CEBRASPE: Difere da reforma (emenda). A mutação não altera o texto, apenas o significado. Ex: interpretação do STF sobre mandado de injunção.",
       "topico": "Aplicabilidade das normas constitucionais",
@@ -2533,7 +2533,7 @@
     },
     {
       "id": "dir_const_expand_57",
-      "pergunta": "O que são os Conselhos da República e de Defesa Nacional",
+      "pergunta": "O que são os Conselhos da República e de Defesa Nacional?",
       "resposta": "Órgãos consultivos do Presidente para questões relevantes. Conselho da República (art. 89): intervenção federal, estado de defesa/sítio. Conselho de Defesa Nacional (art. 91): segurança nacional.",
       "dica": "Ambos são de consulta obrigatória em certas matérias, mas as decisões não vinculam o Presidente.",
       "topico": "Poder executivo",
@@ -2551,7 +2551,7 @@
     },
     {
       "id": "dir_const_expand_59",
-      "pergunta": "Como se dá a composição do Congresso Nacional",
+      "pergunta": "Como se dá a composição do Congresso Nacional?",
       "resposta": "Câmara dos Deputados (representantes do povo, sistema proporcional) e Senado Federal (representantes dos estados e DF, sistema majoritário).",
       "dica": "Câmara: proporcional, mandato 4 anos. Senado: majoritário, mandato 8 anos, renovação 1/3 e 2/3 alternadamente.",
       "topico": "Poder legislativo",
@@ -2560,7 +2560,7 @@
     },
     {
       "id": "dir_const_expand_60",
-      "pergunta": "Quantos deputados federais e senadores compõem o Congresso Nacional",
+      "pergunta": "Quantos deputados federais e senadores compõem o Congresso Nacional?",
       "resposta": "513 deputados federais (distribuídos proporcionalmente) e 81 senadores (3 por estado e DF).",
       "dica": "Mínimo de 8 e máximo de 70 deputados por estado (LC 78/93). Senado: 3 por ente federativo.",
       "topico": "Poder legislativo",
@@ -2749,7 +2749,7 @@
     },
     {
       "id": "dir_const_expand_78",
-      "pergunta": "Qual a finalidade da Defensoria Pública segundo a CF/88º",
+      "pergunta": "Qual a finalidade da Defensoria Pública segundo a CF/88?",
       "resposta": "Prestar orientação jurídica e defesa dos necessitados, em todos os graus, de forma integral e gratuita (art. 134).",
       "dica": "A EC 80/2014 deu autonomia funcional e administrativa à DP, além de iniciativa para propor seu orçamento.",
       "topico": "Defensoria Pública",
@@ -2866,7 +2866,7 @@
     },
     {
       "id": "dir_const_expand_89",
-      "pergunta": "O que são as Forças Armadas segundo a CF/88º",
+      "pergunta": "O que são as Forças Armadas segundo a CF/88?",
       "resposta": "Instituições nacionais permanentes sob autoridade suprema do Presidente, destinadas à defesa da Pátria, garantia dos poderes constitucionais e da lei e da ordem (art. 142).",
       "dica": "FA são da União, não são forças estaduais. GLO (garantia da lei e da ordem) é excepcional.",
       "topico": "Da Defesa do Estado e das Instituições Democráticas",
@@ -2893,7 +2893,7 @@
     },
     {
       "id": "dir_const_expand_91",
-      "pergunta": "Como a CE-PE organiza as funções dos órgãos de segurança pública estaduaisão",
+      "pergunta": "Como a CE-PE organiza as funções dos órgãos de segurança pública estaduais?",
       "resposta": "PC-PE: polícia judiciária e apuração de infrações penais comuns (art. 102). PM-PE: polícia ostensiva e preservação da ordem pública (art. 103). CBM-PE: defesa civil, prevenção e combate a incêndios (art. 104). Polícia Científica: perícias criminais (art. 105-A). Polícia Penal: custódia e vigilância de presos (art. 105-B).",
       "dica": "MNEMÔNICO DAS FUNÇÕES: PC = INVESTIGA (judiciária); PM = OSTENSIVA (prevenção); CBM = SALVA (defesa civil); CIENT = PERÍCIA (prova técnica); PENAL = CUSTÓDIA (presídio). A EC 52/2020 foi o marco normativo que reestruturou o sistema.",
       "topico": "Segurança Pública na Constituição do Estado de Pernambuco",
@@ -3093,7 +3093,7 @@
     },
     {
       "id": "dir_adm_7",
-      "pergunta": "O que é a Teoria dos Motivos Determinantesão",
+      "pergunta": "O que é a Teoria dos Motivos Determinantes?",
       "resposta": "A validade do ato vincula-se aos motivos indicados. Se o motivo for falso, o ato é nulo.",
       "dica": "Mesmo atos DISCRICIONÁRIOS, se motivados, têm validade vinculada à veracidade do motivo. Ex: demissão 'por conveniência' mas na verdade perseguição = nulo (desvio de finalidade).",
       "topico": "Ato administrativo",
@@ -3183,7 +3183,7 @@
     },
     {
       "id": "dir_adm_17",
-      "pergunta": "O poder de polícia pode ser delegado a particularesão",
+      "pergunta": "O poder de polícia pode ser delegado a particulares?",
       "resposta": "Em regra, NÃO. Atos de fiscalização e repressão são indelegáveis. STF admite delegação de atos materiais/preparatórios.",
       "dica": "RE 550.769 RG. Fiscalização = indelegável. Atos materiais (vistoria, medição) = delegáveis. CESPE adora essa distinção.",
       "topico": "Ato administrativo",
@@ -3318,7 +3318,7 @@
     },
     {
       "id": "dir_adm_32",
-      "pergunta": "Quais são os princípios dos serviços públicosão",
+      "pergunta": "Quais são os princípios dos serviços públicos?",
       "resposta": "Continuidade, generalidade, modicidade, atualidade, eficiência, cortesia e regularidade (art. 6º Lei 8.987/95).",
       "dica": "MNEMÔNICO: C-G-M-A-E-C-R. CESPE: 'continuidade é absoluta' -> NÃO (exceções: greve, inadimplemento, manutenção).",
       "topico": "Serviços públicos",
@@ -3516,7 +3516,7 @@
     },
     {
       "id": "dir_adm_56",
-      "pergunta": "O que são cláusulas exorbitantes nos contratos administrativosão",
+      "pergunta": "O que são cláusulas exorbitantes nos contratos administrativos?",
       "resposta": "Prerrogativas especiais da Administração: alteração unilateral, fiscalização, ocupação temporária, rescisão unilateral, sanções.",
       "dica": "PRERROGATIVAS: (1) alteração unilateral (25% +); (2) rescisão unilateral; (3) fiscalização; (4) ocupação; (5) sanções. CESPE: 'podem ser livremente pactuadas' -> NÃO (decorrem de lei).",
       "topico": "Licitações e contratos administrativos",
@@ -3768,7 +3768,7 @@
     },
     {
       "id": "dir_adm_86",
-      "pergunta": "O que são agências reguladorasão",
+      "pergunta": "O que são agências reguladoras?",
       "resposta": "Autarquias de regime especial para regular/fiscalizar serviços públicos. Ex: ANATEL, ANP, ANVISA. Mandato fixo de dirigentes.",
       "dica": "Natureza: autarquias de regime ESPECIAL. Dirigentes: mandato FIXO. CESPE: 'agências reguladoras são direito privado' -> FALSO (autarquias = direito público).",
       "topico": "Administração direta e indireta",
@@ -3930,7 +3930,7 @@
     },
     {
       "id": "dir_adm_new_105",
-      "pergunta": "Em que consiste a responsabilidade civil do Estado e qual a teoria adotada pela CF/88º",
+      "pergunta": "Em que consiste a responsabilidade civil do Estado e qual a teoria adotada pela CF/88?",
       "resposta": "É a obrigação do Estado de indenizar danos causados a terceiros por seus agentes; adota-se a teoria da responsabilidade objetiva (risco administrativo), independentemente de culpa.",
       "dica": "Responsabilidade OBJETIVA do Estado (art. 37, §6º). Risco administrativo. CESPE: culpa exclusiva da vítima exclui responsabilidade.",
       "topico": "Responsabilidade civil do Estado",
@@ -4020,7 +4020,7 @@
     },
     {
       "id": "dir_adm_new_115",
-      "pergunta": "O que caracteriza a improbidade administrativa segundo a Lei nº 8.429/1992º",
+      "pergunta": "O que caracteriza a improbidade administrativa segundo a Lei nº 8.429/1992?",
       "resposta": "São atos que causam enriquecimento ilícito, prejuízo ao erário ou violam princípios da Administração, sujeitando o agente a sanções como perda de função, ressarcimento e suspensão de direitos políticos.",
       "dica": "Lei 8.429/92. Ações: enriquecimento, dano ao erário, viola princípios. CESPE: dolo é necessário (não pune culpa).",
       "topico": "Improbidade administrativa",
@@ -4065,7 +4065,7 @@
     },
     {
       "id": "dir_adm_99",
-      "pergunta": "Em quais hipóteses a CF/88 admite acumulação de cargos públicosão (Art. 37, XVI)",
+      "pergunta": "Em quais hipóteses a CF/88 admite acumulação de cargos públicos (Art. 37, XVI)?",
       "resposta": "Dois cargos de professor; um de professor com outro técnico ou científico; dois de saúde ou privativos de profissional de saúde, desde que haja compatibilidade de horários.",
       "dica": "Cargo: efetivo (concurso) ou comissão (confiança). CESPE: cargo em comissão é para direção/assessoramento.",
       "topico": "Disposições constitucionais aplicáveis",
@@ -4083,7 +4083,7 @@
     },
     {
       "id": "dir_adm_101",
-      "pergunta": "Qual o tratamento constitucional ao servidor público investido em mandato eletivo? (Art. 38, CF/88)",
+      "pergunta": "Qual o tratamento constitucional ao servidor público investido em mandato eletivo? (Art. 38, CF/88)?",
       "resposta": "Mandato federal/estadual/distrital: afastamento obrigatório. Prefeito: afasta-se e pode optar pela remuneração. Vereador: se houver compatibilidade de horários, acumula; senão, afasta-se sem remuneração do cargo efetivo.",
       "dica": "ÁREA: Direito Administrativo. CESPE cobra regime jurídico-administrativo, classificação de atos e responsabilidade civil. Atenção aos atributos e elementos.",
       "topico": "Disposições constitucionais aplicáveis",
@@ -4443,7 +4443,7 @@
     },
     {
       "id": "dir_adm_expand_39",
-      "pergunta": "Qual a relação entre Direito Administrativo e Direito Constitucional",
+      "pergunta": "Qual a relação entre Direito Administrativo e Direito Constitucional?",
       "resposta": "O Direito Constitucional estabelece os fundamentos e princípios (arts. 37 a 41 CF/88); o Direito Administrativo detalha e operacionaliza esses preceitos.",
       "dica": "A CF é a base de validade de todo o direito administrativo. Tendência: constitucionalização do Dir. Administrativo.",
       "topico": "Conceito",
@@ -5579,7 +5579,7 @@
     },
     {
       "id": "dir_penal_38",
-      "pergunta": "Quais as formas de violência doméstica segundo a Lei 11.340/06º",
+      "pergunta": "Quais as formas de violência doméstica segundo a Lei 11.340/06?",
       "resposta": "Violência física, psicológica, sexual, patrimonial e moral praticadas no âmbito doméstico ou familiar.",
       "dica": "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas.",
       "topico": "Violência doméstica e familiar contra a mulher (Lei nº 11.340/2006)",
@@ -5597,7 +5597,7 @@
     },
     {
       "id": "dir_penal_40",
-      "pergunta": "O que prevê a Lei 14.344/2022º",
+      "pergunta": "O que prevê a Lei 14.344/2022?",
       "resposta": "Mecanismos para combater violência doméstica contra crianças e adolescentes; cria Casa da Criança e medidas protetivas.",
       "dica": "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas.",
       "topico": "Violência doméstica e familiar contra a criança e o adolescente (Lei nº 14.344/2022)",
@@ -6029,7 +6029,7 @@
     },
     {
       "id": "dir_penal_89",
-      "pergunta": "Qual é a pena da receptação de semovente de produção ou animal doméstico após a Lei 15.397/2026º",
+      "pergunta": "Qual é a pena da receptação de semovente de produção ou animal doméstico após a Lei 15.397/2026?",
       "resposta": "Reclusão de 3 a 8 anos e multa, se o agente sabe ou deve saber que o animal é produto de crime e atua com finalidade de produção ou comercialização.",
       "dica": "Art. 180-A do CP: alcança semovente domesticável de produção, ainda que abatido ou dividido em partes, e animal doméstico.",
       "topico": "Crimes contra o patrimônio",
@@ -6047,7 +6047,7 @@
     },
     {
       "id": "dir_penal_91",
-      "pergunta": "Quando a pena do art. 266 do CP deve ser aplicada em dobro segundo a Lei 15.397/2026º",
+      "pergunta": "Quando a pena do art. 266 do CP deve ser aplicada em dobro segundo a Lei 15.397/2026?",
       "resposta": "Quando o crime é cometido por ocasião de calamidade pública ou mediante subtração, dano ou destruição de equipamento instalado em estrutura usada para serviços de telecomunicações.",
       "dica": "Pegadinha: não é aumento de 1/3 a 1/2; no art. 266, §2º, as penas são aplicadas em dobro.",
       "topico": "Crimes contra a administração pública",
@@ -6056,7 +6056,7 @@
     },
     {
       "id": "dir_penal_92",
-      "pergunta": "Qual é a pena do furto mediante fraude praticado por meio eletrônico ou informático após a Lei 15.397/2026º",
+      "pergunta": "Qual é a pena do furto mediante fraude praticado por meio eletrônico ou informático após a Lei 15.397/2026?",
       "resposta": "Reclusão de 4 a 10 anos e multa, ainda que o dispositivo esteja desconectado da rede e haja ou não violação de mecanismo de segurança.",
       "dica": "Art. 155, §4º-B, CP: inclui uso de programa malicioso ou qualquer meio fraudulento análogo. Não confundir com fraude eletrônica do estelionato (art. 171, §2º-A).",
       "topico": "Crimes contra o patrimônio",
@@ -6101,7 +6101,7 @@
     },
     {
       "id": "dir_penal_97",
-      "pergunta": "O que é a cessão de conta laranja incluída no estelionato pela Lei 15.397/2026º",
+      "pergunta": "O que é a cessão de conta laranja incluída no estelionato pela Lei 15.397/2026?",
       "resposta": "É ceder, gratuita ou onerosamente, conta bancária para trânsito de recursos destinados ao financiamento de atividade criminosa ou que dela sejam fruto; pena de 1 a 5 anos e multa.",
       "dica": "Art. 171, §2º, VII, CP: a cessão pode ser gratuita ou onerosa. A Lei 15.397/2026 também revogou o §5º do art. 171.",
       "topico": "Crimes contra o patrimônio",
@@ -6696,7 +6696,7 @@
     {
       "id": "dir_penal_expand_57",
       "topico": "Crimes contra a dignidade sexual",
-      "pergunta": "Presunção no estupro de vulnerável é relativa",
+      "pergunta": "V/F: A presunção no estupro de vulnerável é relativa?",
       "resposta": "NÃO. A Súmula 593 do STJ consolidou que a presunção é ABSOLUTA, sendo irrelevante o consentimento da vítima menor de 14 anos, sua experiência sexual anterior ou a existência de relacionamento amoroso com o agente. O crime de estupro de vulnerável configura-se independentemente desses fatores. CESPE: se a questão disser que a presunção é relativa (pode ser afastada), está ERRADA. A banca já cobrou este tópico em múltiplas provas policiais.",
       "dica": "Súmula 593 STJ: presunção ABSOLUTA. Irrelevante: consentimento, experiência sexual, relacionamento amoroso.",
       "codigo_topico": "6",
@@ -6831,7 +6831,7 @@
     {
       "id": "dir_penal_expand_73",
       "topico": "Crimes resultantes de Preconceito de Raça ou de Cor (Lei nº 7.716/1989)",
-      "pergunta": "Injúria racial x racismo após Lei 14.532/2023º",
+      "pergunta": "Injúria racial x racismo após Lei 14.532/2023?",
       "resposta": "A injúria racial (art. 140 §3o CP) ofende a honra de pessoa DETERMINADA por elemento referente à raça, cor, etnia, religião ou origem. O racismo (Lei 7.716/89) atinge a COLETIVIDADE indistinta, sem pessoa determinada. A Lei 14.532/2023 tornou a injúria racial imprescritível e de ação penal pública incondicionada (antes era privada). CESPE: a diferença é INDIVÍDUO x COLETIVIDADE. Ambas agora são imprescritíveis.",
       "dica": "Lei 14.532/2023. Injúria racial: art. 140 §3o CP (indivíduo determinado). Racismo: Lei 7.716/89 (coletividade). Ambas imprescritíveis.",
       "codigo_topico": "9",
@@ -6840,7 +6840,7 @@
     {
       "id": "dir_penal_expand_74",
       "topico": "Crimes resultantes de Preconceito de Raça ou de Cor (Lei nº 7.716/1989)",
-      "pergunta": "Condutas da Lei 7.716/89º",
+      "pergunta": "Condutas da Lei 7.716/89?",
       "resposta": "A Lei 7.716/89, arts. 3o a 14, pune diversas condutas discriminatórias: negar acesso a estabelecimento comercial; negar hospedagem em hotel; impedir acesso a transporte público; recusar emprego; obstar matrícula escolar; impedir acesso a cargo público; recusar prestação de serviço público ou privado, entre outras, por motivo de raça, cor, etnia, religião ou procedência nacional. CESPE: todas as formas de segregação são punidas.",
       "dica": "Arts. 3o-14 Lei 7.716/89. Negar acesso, hospedagem, emprego, transporte, matrícula por discriminação.",
       "codigo_topico": "9",
@@ -6885,7 +6885,7 @@
     {
       "id": "dir_penal_expand_79",
       "topico": "Crimes de Abuso de Autoridade (Lei nº 13.869/2019)",
-      "pergunta": "Inabilitação para cargo na Lei 13.869/19º",
+      "pergunta": "Inabilitação para cargo na Lei 13.869/19?",
       "resposta": "SIM. O art. 10 da Lei 13.869/19 prevê como efeito específico da condenação a inabilitação para o exercício de cargo, mandato ou função pública de NATUREZA ELETIVA pelo período de até 5 anos. É um efeito extrapenal automático da condenação. CESPE: a inabilitação é para cargo ELETIVO (não qualquer cargo público) e pelo prazo de até 5 ANOS. Não confundir com a perda do cargo, que é efeito genérico da condenação penal (art. 92 CP).",
       "dica": "Art. 10 Lei 13.869/19. Inabilitação cargo ELETIVO até 5 anos. Efeito extrapenal automático da condenação.",
       "codigo_topico": "10",
@@ -6912,7 +6912,7 @@
     {
       "id": "dir_penal_expand_82",
       "topico": "Crimes de Abuso de Autoridade (Lei nº 13.869/2019)",
-      "pergunta": "Ação penal na Lei 13.869/19º",
+      "pergunta": "Ação penal na Lei 13.869/19?",
       "resposta": "A ação penal nos crimes da Lei 13.869/19 é, em regra, PÚBLICA CONDICIONADA À REPRESENTAÇÃO (art. 16). A vítima ou seu representante legal deve oferecer representação para que o Ministério Público possa denunciar. Exceção: se houver INTERESSE PÚBLICO, o MP pode agir de ofício. CESPE: a banca cobra a regra (condicionada à representação) e a exceção (interesse público).",
       "dica": "Art. 16 Lei 13.869/19. Regra: pública condicionada à representação. Exceção: MP age de ofício se interesse público.",
       "codigo_topico": "10",
@@ -7083,7 +7083,7 @@
     {
       "id": "dir_penal_expand_101",
       "topico": "Organizações Criminosas (Lei nº 12.850/2013)",
-      "pergunta": "Técnicas especiais na Lei 12.850/13º",
+      "pergunta": "Técnicas especiais na Lei 12.850/13?",
       "resposta": "A Lei 12.850/2013 (Organizações Criminosas) prevê os seguintes meios especiais de investigação: colaboração premiada (arts. 3º-A a 7º); ação controlada (arts. 8º e 9º); infiltração de agentes (arts. 10 a 12-B); acesso a dados e informações (arts. 15 e 16); interceptação de comunicações telefônicas/informáticas (art. 13); monitoramento de comunicações (art. 14); e proteção a colaboradores e vítimas (arts. 17 e 18). O CESPE cobra: colaboração premiada está na Lei 12.850/13 (arts. 3º-A a 7º); infiltração pode ser virtual (art. 10-A); o juiz pode prorrogar a infiltração. Atenção aos prazos e requisitos específicos de cada técnica.",
       "dica": "Lei 12.850/13, arts. 10-17: infiltração, ação controlada, acesso a dados, interceptação. CESPE cobra diferença entre cada técnica e seus prazos específicos.",
       "codigo_topico": "13",
@@ -7903,7 +7903,7 @@
     },
     {
       "id": "dir_proc_penal_51",
-      "pergunta": "O que é ação controlada prevista na Lei 12.850/13º",
+      "pergunta": "O que é ação controlada prevista na Lei 12.850/13?",
       "resposta": "Retardamento da intervenção policial para colher informações sobre a organização criminosa, mediante autorização judicial.",
       "dica": "AÇÃO CONTROLADA (Lei 12.850/13, art. 8): retardamento da intervenção policial, com autorização judicial. CESPE: 'ação controlada dispensa autorização judicial' -> FALSO.",
       "topico": "Investigação Criminal (Lei nº 12.830/2013)",
@@ -8236,7 +8236,7 @@
     },
     {
       "id": "dir_proc_penal_new_88",
-      "pergunta": "O que caracteriza a prisão temporária prevista na Lei nº 7.960/1989º",
+      "pergunta": "O que caracteriza a prisão temporária prevista na Lei nº 7.960/1989?",
       "resposta": "Prisão cautelar cabível na fase de inquérito, por prazo de 5 dias (prorrogáveis por mais 5), ou 30 dias (prorrogáveis por mais 30) em crimes hediondos, exigindo fundamentação e decisão judicial.",
       "dica": "PRISÃO TEMPORÁRIA (Lei 7.960/89): cautelar na fase investigativa. Exige representação ou requerimento (juiz NÃO decreta de ofício). Prazos: 5+5 ou 30+30. CESPE adora.",
       "topico": "Lei nº 7.960/1989 (prisão temporária)",
@@ -8524,7 +8524,7 @@
     },
     {
       "id": "dir_proc_penal_expand_31",
-      "pergunta": "O que sao crimes de menor potencial ofensivo na Lei 9.099/95º",
+      "pergunta": "O que sao crimes de menor potencial ofensivo na Lei 9.099/95?",
       "resposta": "Infracoes com pena máxima NÃO superior a 2 anos, cumulada ou não com multa (art. 61 Lei 9.099/95).",
       "dica": "Contravenções SAO SEMPRE de menor potencial ofensivo, independentemente da pena.",
       "topico": "Juizados Especiais Criminais (Lei nº 9.099/1995)",
@@ -8614,7 +8614,7 @@
     },
     {
       "id": "dir_proc_penal_expand_41",
-      "pergunta": "O que diz o art. 1 da Lei 12.830/13º",
+      "pergunta": "O que diz o art. 1 da Lei 12.830/13?",
       "resposta": "A investigação criminal é privativa da Polícia Civil, exercida pelo Delegado de carreira (art. 144, 4 CF).",
       "dica": "Art. 144, 4 CF: policias civis, dirigidas por delegados, exercem polícia judiciária é apuração de infracoes.",
       "topico": "Investigação Criminal (Lei nº 12.830/2013)",
@@ -14491,7 +14491,7 @@
     },
     {
       "id": "raciocinio_expand_18",
-      "pergunta": "CESPE: Considere a função f(x) = 2x - 4. Qual o valor de f(0)? Para qual x temos f(x) = 0º",
+      "pergunta": "CESPE: Considere a função f(x) = 2x - 4. Qual o valor de f(0)? Para qual x temos f(x) = 0?",
       "resposta": "f(0) = 2(0) - 4 = -4. f(x) = 0 → 2x - 4 = 0 → 2x = 4 → x = 2 (raiz/zero da função).",
       "dica": "CESPE: f(0) é onde a reta corta o eixo y (coeficiente linear = -4). f(x)=0 é a raiz, onde corta o eixo x.",
       "topico": "Funções e gráficos",
@@ -14581,7 +14581,7 @@
     },
     {
       "id": "raciocinio_expand_28",
-      "pergunta": "CESPE: Complete a analogia: 'Delegado está para Investigação assim como Promotor está para ______'",
+      "pergunta": "CESPE: Complete a analogia: 'Delegado está para Investigação assim como Promotor está para ______'?",
       "resposta": "Promotor está para ACUSAÇÃO. A relação é: cada profissional exerce a função institucional característica (Delegado → preside inquérito/investiga; Promotor → oferece denúncia/acusa).",
       "dica": "Analogia no CESPE: identifique a RELAÇÃO entre o primeiro par e aplique a mesma relação ao segundo. Pode ser de função, hierarquia, parte-todo, causa-efeito.",
       "topico": "Lógica de argumentação: analogias, inferências, deduções e conclusões",
@@ -14635,7 +14635,7 @@
     },
     {
       "id": "raciocinio_expand_34",
-      "pergunta": "CESPE: Diferencie: proposição simples vs proposição composta. Classifique: 'O delegado investigou e o perito analisou.'",
+      "pergunta": "CESPE: Diferencie: proposição simples vs proposição composta. Classifique: 'O delegado investigou e o perito analisou.'?",
       "resposta": "Simples: uma única oração, sem conectivo lógico. Composta: duas ou mais orações unidas por conectivo ('e', 'ou', 'se...então', 'se e somente se'). A frase é COMPOSTA (conjunção 'e').",
       "dica": "CESPE: toda proposição composta tem pelo menos um conectivo lógico. Frases sem verbo NÃO são proposições. Exclamativas e interrogativas também NÃO.",
       "topico": "Proposições simples e compostas",
@@ -14779,7 +14779,7 @@
     },
     {
       "id": "raciocinio_expand_50",
-      "pergunta": "CESPE: Qual a probabilidade de, ao lançar dois dados honestos, a soma ser 7º",
+      "pergunta": "CESPE: Qual a probabilidade de, ao lançar dois dados honestos, a soma ser 7?",
       "resposta": "Total de resultados: 6×6 = 36. Pares que somam 7: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) = 6 casos. P = 6/36 = 1/6 ≈ 16,67%.",
       "dica": "Para soma de dados: as somas 7 e 6 são as mais frequentes (cada uma: 6/36). Soma 2: 1/36. Soma 12: 1/36. Simetria: P(soma k) = P(soma 14-k).",
       "topico": "Princípios de contagem e probabilidade",
@@ -16988,7 +16988,7 @@
     },
     {
       "id": "estatistica_expand_7",
-      "pergunta": "Qual a diferença entre eventos mutuamente exclusivos e eventos independentesão",
+      "pergunta": "Qual a diferença entre eventos mutuamente exclusivos e eventos independentes?",
       "resposta": "Mutuamente exclusivos: A ∩ B = ∅, P(A∩B) = 0. Se um ocorre, o outro não ocorre.\nIndependentes: P(A∩B) = P(A)×P(B). A ocorrência de um não afeta a probabilidade do outro.\nRELAÇÃO: Se P(A)>0 e P(B)>0, eventos ME são SEMPRE dependentes (se A ocorre, P(B|A)=0 ≠ P(B)).",
       "dica": "✅ Grave: 'ME com P>0 são DEPENDENTES'. CESPE adora essa pegadinha! Independentes NUNCA são ME (a menos que P=0).",
       "topico": "Probabilidade",
@@ -17602,7 +17602,7 @@
     },
     {
       "id": "jurisprudencias_44",
-      "pergunta": "Qual o prazo para conclusão do inquérito policial segundo a Súmula 491 do STJá",
+      "pergunta": "Qual o prazo para conclusão do inquérito policial segundo a Súmula 491 do STJ?",
       "resposta": "O prazo para conclusão do inquérito policial É de 30 dias para indiciado solto (prorrogável) e de 10 dias para preso contados da data da prisão sob pena de constrangimento ilegal (Súmula 491 STJ c/c art. 10 CPP).",
       "dica": "ALERTA: PRESO = 10 dias (improrrogável pela Súmula 491 mas a lei permite prorrogação judicial). SOLTO = 30 dias (prorrogável). CESPE: O IP para indiciado preso deve terminar em 10 dias improrrogaveis - VERDADEIRO (Súmula 491 STJ).",
       "topico": "Jurisprudências de Direito Processual Penal",
@@ -17710,7 +17710,7 @@
     },
     {
       "id": "jurisprudencias_56",
-      "pergunta": "O que estabelece a Súmula 604 do STJ sobre prisão preventiva no tráfico de drogasão",
+      "pergunta": "O que estabelece a Súmula 604 do STJ sobre prisão preventiva no tráfico de drogas?",
       "resposta": "A prisão preventiva para garantia da ordem pública no tráfico de drogas pode ser decretada com base na gravidade abstrata do delito e na quantidade de droga apreendida desde que fundamentada (Súmula 604 STJ).",
       "dica": "Súmula 604 STJ: a gravidade ABSTRATA do tráfico (natureza hedionda) pode justificar a preventiva mas exige FUNDAMENTAÇÃO. CESPE: A preventiva no tráfico e automática - FALSO (exige fundamentação concreta mas a gravidade abstrata e um dos fatores).",
       "topico": "Jurisprudências de Direito Processual Penal",
@@ -17737,7 +17737,7 @@
     },
     {
       "id": "jurisprudencias_59",
-      "pergunta": "O que estabelece a Súmula 423 do STJ sobre embargos infringentesão",
+      "pergunta": "O que estabelece a Súmula 423 do STJ sobre embargos infringentes?",
       "resposta": "Os embargos infringentes (art. 609 parágrafo unico CPP) são cabíveis quando ha decisão não unânime em recurso de apelação proferida por tribunal desde que desfavorável ao reu (Súmula 423 STJ).",
       "dica": "REQUISITOS: (1) decisão NAO UNANIMÉ em apelação; (2) desfavorável ao reu; (3) reforma da sentença. O Pacote Anticrime (Lei 13.964/19) alterou o CPP mas manteve os embargos infringentes. CESPE: Embargos infringentes so cabem no Júri - FALSO.",
       "topico": "Jurisprudências de Direito Processual Penal",
@@ -17764,7 +17764,7 @@
     },
     {
       "id": "jurisprudencias_62",
-      "pergunta": "O que decidiu o STF no RE 366.488 sobre poder de polícia e taxasão",
+      "pergunta": "O que decidiu o STF no RE 366.488 sobre poder de polícia e taxas?",
       "resposta": "O STF fixou que o exercício do poder de polícia é pressuposto para a cobrança de taxas (art. 145 II CF/88) sendo inconstitucional a taxa quando o serviço não é específico e divisivel ou o poder de polícia não é efetivamente exercido (RE 366.488 STF).",
       "dica": "Taxa exige: (1) serviço público específico e divisivel OU (2) exercício do poder de polícia. CESPE: A taxa de licença para funcionamento exige efetivo exercício do poder de polícia - VERDADEIRO (STF RE 366.488).",
       "topico": "Jurisprudências de Direito Administrativo",
@@ -17773,7 +17773,7 @@
     },
     {
       "id": "jurisprudencias_63",
-      "pergunta": "O que decidiu o STF na ADI 3.035 sobre controle de constitucionalidade de atos normativosão",
+      "pergunta": "O que decidiu o STF na ADI 3.035 sobre controle de constitucionalidade de atos normativos?",
       "resposta": "O STF firmou que é possível o controle de constitucionalidade de atos normativos municipais em face da Constituição Federal por meio de ADI desde que haja ofensa direta a CF/88 e não mera reflexão de ofensa (ADI 3.035 STF).",
       "dica": "ADI municipal: é POSSÍVEL no STF mas apenas quando o parametro e a CF/88 (não a Constituição Estadual). Para lei municipal vs. CÉ cabe Representação de Inconstitucionalidade no TJ local. CESPE: Lei municipal não pode ser objeto de ADI no STF - FALSO.",
       "topico": "Jurisprudências de Direito Administrativo",
@@ -17818,7 +17818,7 @@
     },
     {
       "id": "jurisprudencias_68",
-      "pergunta": "O que decidiu o STF no Tema 831 sobre desnecessidade de licitação para contratação de advogadosão",
+      "pergunta": "O que decidiu o STF no Tema 831 sobre desnecessidade de licitação para contratação de advogados?",
       "resposta": "O STF (Tema 831) decidiu que a contratação de advogados pela Administração Pública por notória especialização é hipótese de inexigibilidade de licitação (art. 25 II Lei 8.666/93) desde que o valor seja compatível com o mercado.",
       "dica": "Atenção: O Tema 831 NAO criou exceção genérica exige: (1) singularidade do objeto; (2) notória especialização; (3) valor compatível. A Lei 14.133/2021 (art. 74 III) manteve a hipótese. CESPE: Advogados podem ser contratados sem licitação sem requisitos - FALSO.",
       "topico": "Jurisprudências de Direito Administrativo",
@@ -17836,7 +17836,7 @@
     },
     {
       "id": "jurisprudencias_70",
-      "pergunta": "O que decidiu o STF no RE 595.521 sobre acumulo de cargos públicosão",
+      "pergunta": "O que decidiu o STF no RE 595.521 sobre acumulo de cargos públicos?",
       "resposta": "O STF (Tema 72 RG) firmou que a acumulação de dois cargos de professor ou de um de professor com outro tecnico-cientifico é possível desde que haja compatibilidade de horarios e não ultrapasse o teto constitucional (RE 595.521 STF c/c art. 37 XVI CF/88).",
       "dica": "HIPOTESES de acumulação (art. 37 XVI CF/88): (a) 2 cargos de professor; (b) 1 professor + 1 tecnico/cientifico; (c) 2 cargos de saúde; (d) 2 cargos de magistério. CESPE: Acumular cargo de Delegado com Professor é possível SIM (se houver compatibilidade).",
       "topico": "Jurisprudências de Direito Administrativo",
@@ -17890,7 +17890,7 @@
     },
     {
       "id": "jurisprudencias_76",
-      "pergunta": "O que decidiu o STF na ADI 2.135 sobre alteração do regime jurídico de servidoresão",
+      "pergunta": "O que decidiu o STF na ADI 2.135 sobre alteração do regime jurídico de servidores?",
       "resposta": "O STF declarou a inconstitucionalidade formal do 1 do art. 39 CF/88 (redação da EC 19/98) que previa regime unico de servidores restabelecendo a autonomia dos entes para adotar regime celetista ou estatutário (ADI 2.135 STF).",
       "dica": "EC 19/98 tentou impor regime unico (celetista). O STF na ADI 2.135 declarou inconstitucional por VICIO FORMAL. Assim cada ente pode escolher: regime estatutário ou CLT. CESPE: Todos os servidores devem ser estatutários - FALSO.",
       "topico": "Jurisprudências de Direito Administrativo",
@@ -17899,7 +17899,7 @@
     },
     {
       "id": "jurisprudencias_77",
-      "pergunta": "O que decidiu o STF no Tema 373 sobre controle judicial de políticas públicasão",
+      "pergunta": "O que decidiu o STF no Tema 373 sobre controle judicial de políticas públicas?",
       "resposta": "O STF (Tema 373 RG) admite o controle judicial de políticas públicas quando houver violação ao minimo existencial ou omissão estatal injustificada desde que não haja interferência no merito administrativo discricionário (RE 559.646 STF).",
       "dica": "O Judiciário PODÉ determinar que o Executivo implemente políticas públicas quando isso envolve DIREITOS FUNDAMENTAIS (saúde educação). Limite: não pode substituir a discricionariedade orcamentaria. CESPE: Judiciário não pode intervir em políticas públicas - FALSO.",
       "topico": "Jurisprudências de Direito Administrativo",
