@@ -137,6 +137,7 @@ export default function AmbientSound({ isMobile }) {
       videoId,
       height: "0",
       width: "0",
+      host: "https://www.youtube.com",
       playerVars: {
         autoplay: 1,
         controls: 0,

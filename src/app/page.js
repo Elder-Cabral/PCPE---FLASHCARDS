@@ -2397,6 +2397,9 @@ function TelaLogin({ onLogin }) {
           <div>
             <LoginInput
               type="text"
+              id="username"
+              name="username"
+              autoComplete="username"
               value={username}
               onChange={e => setUsername(e.target.value)}
               onKeyDown={e => e.key === "Enter" && handleFormSubmit()}
@@ -2408,6 +2411,9 @@ function TelaLogin({ onLogin }) {
           <div>
             <LoginInput
               type="password"
+              id="password"
+              name="password"
+              autoComplete="current-password"
               value={password}
               onChange={e => setPassword(e.target.value)}
               onKeyDown={e => e.key === "Enter" && handleFormSubmit()}
