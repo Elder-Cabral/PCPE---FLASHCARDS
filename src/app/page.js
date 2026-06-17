@@ -79,10 +79,12 @@ const MATERIAS = [
  */
 function highlightFalso(text) {
   if (!text) return text;
-  const parts = text.split(/\b(FALSO|VERDADEIRO)\b/);
+  const parts = text.split(/\b(FALSO|VERDADEIRO|SIM|NÃO)\b/);
   return parts.map((part, i) => {
     if (part === "FALSO") return <span key={i} style={{ color: "#f87171", fontWeight: 600 }}>FALSO</span>;
     if (part === "VERDADEIRO") return <span key={i} style={{ color: "#4ade80", fontWeight: 600 }}>VERDADEIRO</span>;
+    if (part === "SIM") return <span key={i} style={{ color: "#4ade80", fontWeight: 600 }}>SIM</span>;
+    if (part === "NÃO") return <span key={i} style={{ color: "#f87171", fontWeight: 600 }}>NÃO</span>;
     return part;
   });
 }
@@ -2053,23 +2055,42 @@ function StudySession({
   const emojiText = isGlobal ? "⚡" : (matInfo?.emoji || "");
 
   const [isFlipped, setIsFlipped] = useState(false);
+  const [needsScroll, setNeedsScroll] = useState(false);
   const backContentRef = useRef(null);
+  const backContainerRef = useRef(null);
   const cardOuterRef = useRef(null);
+
+  function measureAndClamp() {
+    if (!backContentRef.current || !cardOuterRef.current || !backContainerRef.current) return;
+    const neededH = backContentRef.current.scrollHeight + 120;
+    const cardTop = cardOuterRef.current.getBoundingClientRect().top;
+    const reserve = window.innerWidth <= 640 ? 200 : 180;
+    const maxH = window.innerHeight - cardTop - reserve;
+    const finalH = Math.max(Math.min(neededH, maxH), 200);
+    cardOuterRef.current.style.height = `${finalH}px`;
+    setNeedsScroll(neededH > maxH);
+  }
 
   useEffect(() => {
     setIsFlipped(false);
-    if (cardOuterRef.current) {
-      cardOuterRef.current.style.height = "";
-    }
+    setNeedsScroll(false);
+    if (cardOuterRef.current) cardOuterRef.current.style.height = "";
   }, [currentQueueIndex]);
 
   useLayoutEffect(() => {
-    if (isFlipped && backContentRef.current && cardOuterRef.current) {
-      const pad = 42 + 14 + 42 + 22;
-      cardOuterRef.current.style.height = `${Math.max(backContentRef.current.scrollHeight + pad, 200)}px`;
-    } else if (!isFlipped && cardOuterRef.current) {
-      cardOuterRef.current.style.height = "";
+    if (isFlipped) {
+      measureAndClamp();
+    } else {
+      setNeedsScroll(false);
+      if (cardOuterRef.current) cardOuterRef.current.style.height = "";
     }
+  }, [isFlipped]);
+
+  useEffect(() => {
+    if (!isFlipped) return;
+    const onResize = () => measureAndClamp();
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
   }, [isFlipped]);
 
   return (
@@ -2172,12 +2193,13 @@ function StudySession({
 
               {/* Verso */}
               <div
+                ref={backContainerRef}
                 className="custom-scrollbar flashcard-box flashcard-back-style"
                 style={{
                   border: `1px solid ${themeColor}40`,
                   justifyContent: "flex-start",
                   alignItems: "center",
-                  overflow: "hidden"
+                  overflow: needsScroll ? "hidden auto" : "hidden"
                 }}
               >
                 <div style={{ fontSize: 10, color: themeColor, fontWeight: 600, letterSpacing: 3, marginBottom: 14, flexShrink: 0 }}>
