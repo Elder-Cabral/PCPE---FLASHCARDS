@@ -16022,16 +16022,20 @@
       "dica": "CESPE cobra a distinção: descritiva -> descreve dados (tabelas, gráficos, medidas); inferencial -> generaliza (testes de hipótese, intervalos de confiança). Exemplo clássico: Qual ramo calcula a média amostral? -> Estatística descritiva.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "media"
+      "dificuldade": "media",
+      "camada_visual": "DESCRITIVA: retrato falado dos dados. INFERENCIAL: generaliza para a populacao.",
+      "camada_aplicacao": "Pesq eleitoral: descritiva=45% na amostra. Inferencial=45%+-3% na populacao."
     },
     {
       "id": "estatistica_1",
       "pergunta": "O que é população e amostra?",
       "resposta": "População: todos os elementos de interesse. Amostra: subconjunto representativo. Parâmetro descreve população; estatística descreve amostra.",
-      "dica": "POPULAÇÃO = todos. AMOSTRA = parte. PARÂMETRO = medida da população. ESTATÍSTICA = medida da amostra. CESPE adora.",
+      "dica": "⚠️ CESPE: POPULAÇÃO = todos (μ,σ,π — GREGO). AMOSTRA = subconjunto (x̄,s,p̂ — LATIM). Grego=população; Latim=amostra.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "media"
+      "dificuldade": "media",
+      "camada_visual": "Populacao = aquario. Amostra = balde. Parametro (grego) vs Estatistica (latim).",
+      "camada_aplicacao": "Altura media dos recifenses (mi)=parametro. Media de 500 entrevistados (x_barra)=estatistica."
     },
     {
       "id": "estatistica_2",
@@ -16040,7 +16044,9 @@
       "dica": "CESPE: variável qualitativa NÃO admite operações aritméticas (média de sexo não faz sentido). Quantitativa discreta: valores inteiros e contáveis (ex: nº de filhos). Contínua: valores em intervalo real (ex: peso).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "media"
+      "dificuldade": "media",
+      "camada_visual": "Variavel = pergunta da pesquisa. Qualitativa=categorias. Quantitativa=numeros.",
+      "camada_aplicacao": "BO: tipo de crime=qualitativa nominal, n_envolvidos=quantitativa discreta, valor=continua."
     },
     {
       "id": "estatistica_3",
@@ -16049,7 +16055,9 @@
       "dica": "CESPE: na nominal, NÃO há ordenação entre as categorias. Se a questão disser ordem natural ou hierarquia, é ORDINAL, não nominal. Ex: escolaridade NÃO é nominal, é ordinal.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "media"
+      "dificuldade": "media",
+      "camada_visual": "Cardapio sem ordem: arroz, feijao lado a lado. Nominal = sem hierarquia.",
+      "camada_aplicacao": "Cor dos olhos, estado civil, religiao: nominais sem ordenacao natural."
     },
     {
       "id": "estatistica_4",
@@ -16058,7 +16066,9 @@
       "dica": "CESPE: se a variável tem hierarquia/ordem, é ORDINAL, não nominal. Cuidado: faixa etária (criança, adolescente, adulto, idoso) é ordinal, pois há ordem implícita.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "media"
+      "dificuldade": "media",
+      "camada_visual": "Niveis de jogo: facil < medio < dificil. Ordinal = com ordem natural.",
+      "camada_aplicacao": "Escolaridade (fundamental<medio<superior), classe social (A>B>C)."
     },
     {
       "id": "estatistica_5",
@@ -16067,7 +16077,9 @@
       "dica": "CESPE: discreta = valores INTEIROS e CONTÁVEIS. Contínua = valores em INTERVALO REAL. Pergunta clássica: Número de pessoas em uma fila é variável... -> discreta. Peso das pessoas -> contínua.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "media"
+      "dificuldade": "media",
+      "camada_visual": "Contar: 1,2,3 carros. Discreta = valores inteiros de contagem.",
+      "camada_aplicacao": "Ocorrencias policiais/dia, n_filhos, n_comodos: inteiros de contagem."
     },
     {
       "id": "estatistica_6",
@@ -16076,7 +16088,9 @@
       "dica": "CESPE: contínua = valores DECIMAIS possíveis, resultantes de MEDIÇÃO. Se a questão permite qualquer valor em um intervalo, é contínua. Ex: tempo gasto no percurso é contínuo (pode ser 15,3 min).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "media"
+      "dificuldade": "media",
+      "camada_visual": "Medir: 1,73m; 1,735m... sempre mais preciso. Continua = medicao.",
+      "camada_aplicacao": "Peso (72,3kg), tempo (25,7min), temperatura (31,5C): qualquer valor no intervalo."
     },
     {
       "id": "estatistica_7",
@@ -16085,7 +16099,9 @@
       "dica": "CESPE cobra: frequência relativa = frequência absoluta / total. Frequência acumulada = soma das frequências das classes anteriores + classe atual. Atenção: frequência relativa acumulada da última classe é sempre 100% (ou 1).",
       "topico": "Probabilidade",
       "codigo_topico": "2",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "Organizar armario: separar, contar, calcular proporcao, acumular.",
+      "camada_aplicacao": "Transporte: 40 onibus=40%, 30 carro=30%, 20 metro=20%, 10 bike=10%."
     },
     {
       "id": "estatistica_8",
@@ -16094,7 +16110,9 @@
       "dica": "CESPE: frequência absoluta total = n (tamanho da amostra). Ex: em uma pesquisa com 100 pessoas, 30 preferem café -> frequência absoluta = 30. Não confundir com frequência relativa (30/100 = 30%).",
       "topico": "Probabilidade",
       "codigo_topico": "2",
-      "dificuldade": "media"
+      "dificuldade": "media",
+      "camada_visual": "Contagem simples: quantas vezes cada valor aparece.",
+      "camada_aplicacao": "30 alunos: 12 nota7, 10 nota8, 8 nota9. Frequencias absolutas: 12,10,8."
     },
     {
       "id": "estatistica_9",
@@ -16103,7 +16121,9 @@
       "dica": "CESPE: a soma de TODAS as frequências relativas é 1 (ou 100%). A frequência relativa acumulada da ÚLTIMA classe é sempre 1 (ou 100%). Cuidado para não confundir frequência relativa com frequência absoluta.",
       "topico": "Probabilidade",
       "codigo_topico": "2",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "Fatia do bolo: 12/30 = 40%. Proporcao que cada parte representa.",
+      "camada_aplicacao": "500 ocorrencias, 150 furtos. Freq rel = 150/500 = 30%. Soma total = 100%."
     },
     {
       "id": "estatistica_10",
@@ -16112,16 +16132,20 @@
       "dica": "CESPE: frequência acumulada é sempre CRESCENTE. A Fac da última classe = n (para absoluta) ou 1/100% (para relativa). Questão clássica: Qual a frequência acumulada da 3ª classe? -> Soma das frequências das classes 1, 2 e 3.",
       "topico": "Probabilidade",
       "codigo_topico": "2",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "Escada: cada degrau soma o anterior. No fim, o total.",
+      "camada_aplicacao": "Salarios: ate 2SM=10, ate 4SM=25, ate 6SM=40. Fac 3a classe = 10+25+40=75."
     },
     {
       "id": "estatistica_11",
-      "pergunta": "O que é média aritmética?",
-      "resposta": "Soma de todos os valores dividida pelo número de observações: x̄ = Σxi/n.",
-      "dica": "MÉDIA = centro de gravidade. Sensível a outliers. CESPE: 'média é influenciada por valores extremos' -> VERDADEIRO.",
+      "pergunta": "O que é média aritmética e por que ela é sensível a outliers?",
+      "resposta": "Média aritmética (x̄) = soma de todos os valores dividida por n: x̄ = Σxi/n. Centro de gravidade. SENSÍVEL a outliers — um valor extremo desloca a média, diferentemente da mediana.",
+      "dica": "⚠️ CESPE: média é AFETADA por outliers (verdadeiro). Mediana NÃO. Ex: {1,2,3,100} → média=26,5; mediana=2,5.",
       "topico": "Probabilidade",
       "codigo_topico": "2",
-      "dificuldade": "media"
+      "dificuldade": "media",
+      "camada_visual": "Gangorra: outlier na ponta desloca a media. Centro de gravidade.",
+      "camada_aplicacao": "Notas 5,6,7,8,9 = media 7. Se entra 0: 0,6,7,8,9 = media 6."
     },
     {
       "id": "estatistica_13",
@@ -16130,25 +16154,31 @@
       "dica": "CESPE: moda é a única medida de posição que se aplica a variáveis QUALITATIVAS. Se a questão disser distribuição bimodal, significa que há DOIS valores com maior frequência. Não confundir: moda em dados agrupados = ponto médio da classe de maior frequência (classe modal).",
       "topico": "Probabilidade condicional e independência",
       "codigo_topico": "2.2",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "Sabor mais pedido: valor que mais aparece. Pode ter mais de um.",
+      "camada_aplicacao": "Renda {2,2,3,3,3,3,4,5,10,20}: moda=3 (4x). Media=5,5 (distorcida). Unica medida p/ qualitativas."
     },
     {
       "id": "estatistica_14",
       "pergunta": "Qual a relação entre média, mediana e moda em distribuições assimétricas?",
       "resposta": "Assimetria positiva (cauda à direita): Moda < Mediana < Média. Assimetria negativa (cauda à esquerda): Média < Mediana < Moda.",
-      "dica": "POSITIVA: Mo < Md < x̄ (cauda direita). NEGATIVA: x̄ < Md < Mo (cauda esquerda). Normal: Mo = Md = x̄. CESPE adora essa relação.",
+      "dica": "⚠️ CESPE: POSITIVA (cauda direita): Mo<Md<x̄. NEGATIVA (cauda esquerda): x̄<Md<Mo. SIMÉTRICA: Mo=Md=x̄.",
       "topico": "Probabilidade condicional e independência",
       "codigo_topico": "2.2",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "Corda com peso na direita: media puxada (assimetria positiva).",
+      "camada_aplicacao": "Renda: maioria baixa, ricos puxam media. Mo < Md < x_barra = positiva."
     },
     {
       "id": "estatistica_15",
-      "pergunta": "O que é variância?",
-      "resposta": "Média dos quadrados dos desvios em relação à média. Mede a dispersão. σ² = Σ(xi - x̄)²/n.",
-      "dica": "VARIÂNCIA: quadrado da unidade dos dados. Populacional: σ² (divide por N). Amostral: s² (divide por n-1).",
+      "pergunta": "O que é variância e qual a diferença entre populacional e amostral?",
+      "resposta": "Variância = média dos quadrados dos desvios. Populacional σ² = Σ(xi−μ)²/N. Amostral s² = Σ(xi−x̄)²/(n−1). Unidade ao quadrado.",
+      "dica": "⚠️ CESPE: variância NÃO está na unidade dos dados (ao quadrado). Desvio padrão SIM. s² não viesado, s viesado.",
       "topico": "Técnicas de amostragem: amostragem aleatória simples, estratificada, sistemática e por conglomerados",
       "codigo_topico": "3",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "Espalhamento ao quadrado: metros -> variancia em metros2.",
+      "camada_aplicacao": "Alturas {1,70;1,72;1,71;1,69;1,73}: s2=0,0002 m2. Add 2,00m: muito maior."
     },
     {
       "id": "estatistica_16",
@@ -16157,7 +16187,9 @@
       "dica": "DESVIO PADRÃO = variância na unidade original. CESPE: 'desvio padrão é sempre positivo' -> VERDADEIRO (raiz quadrada).",
       "topico": "Tamanho amostral",
       "codigo_topico": "3.1",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "Elastico ao redor da media: esticado=espalhado, apertado=concentrado.",
+      "camada_aplicacao": "Turma A: media70, DP5 (65-75). Turma B: media70, DP20 (50-90)."
     },
     {
       "id": "estatistica_17",
@@ -16166,7 +16198,9 @@
       "dica": "CESPE: CV é útil quando as médias são muito diferentes ou as unidades são distintas. Ex: comparar dispersão de peso (kg) e altura (m). CV alto (> 30% a 50%) indica alta dispersão relativa. CV = 0 significa dados homogêneos (sem dispersão).",
       "topico": "Técnicas de amostragem: amostragem aleatória simples, estratificada, sistemática e por conglomerados",
       "codigo_topico": "3",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "Lupa que compara dispersao: CV elimina unidade, compara kg com m.",
+      "camada_aplicacao": "Peso: media70, DP7 -> CV=10%. Altura: media1,70, DP8,5cm -> CV=5%."
     },
     {
       "id": "estatistica_18",
@@ -16175,7 +16209,9 @@
       "dica": "CESPE: amplitude total NÃO é resistente a outliers (diferente do IIQ). É facilmente influenciada por um único valor extremo. Se a questão pedir uma medida de dispersão ROBUSTA, NÃO escolha amplitude total.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "media"
+      "dificuldade": "media",
+      "camada_visual": "So extremos: do teto ao chao. Outlier ja muda tudo.",
+      "camada_aplicacao": "Idades {18,19,20,21,22,65}: amplitude=47 mas 95% 18-22. Engana."
     },
     {
       "id": "estatistica_19",
@@ -16184,16 +16220,20 @@
       "dica": "CESPE: Q2 = MEDIANA = 50º percentil. Q1 = 25º percentil. Q3 = 75º percentil. O IIQ (Q3 - Q1) contém os 50% centrais dos dados e é resistente a outliers. Método do boxplot: outlier é valor < Q1 - 1,5×IIQ ou > Q3 + 1,5×IIQ.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Pizza 4 fatias: Q1=25%, Q2=50%(mediana), Q3=75%.",
+      "camada_aplicacao": "Salarios: Q1=R$2000, Q2=R$3500, Q3=R$6000. IIQ=R$4000 (50% centrais)."
     },
     {
       "id": "estatistica_20",
-      "pergunta": "O que é intervalo interquartil (IIQ)?",
-      "resposta": "IIQ = Q3 − Q1; mede a dispersão dos 50% centrais dos dados; robusto a outliers.",
+      "pergunta": "O que é IIQ e o que ele informa?",
+      "resposta": "IIQ = Q3−Q1. Dispersão 50% centrais. ROBUSTO a outliers. Boxplot: < Q1−1,5×IIQ ou > Q3+1,5×IIQ = outliers.",
       "dica": "IIQ = Q3 − Q1, mede a dispersão dos 50% centrais. CESPE: é medida de DISPERSÃO (não de posição). Diferentemente da amplitude total, o IIQ é ROBUSTO a outliers. Usado no boxplot para identificar outliers (valores abaixo de Q1 − 1,5×IIQ ou acima de Q3 + 1,5×IIQ).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "medio"
+      "dificuldade": "medio",
+      "camada_visual": "Faixa do meio do alvo: 50% centrais. Resistente a extremos.",
+      "camada_aplicacao": "Notas 0-100: Q1=40, Q3=80, IIQ=40. 50% alunos entre 40-80. Outliers < -20 ou > 140."
     },
     {
       "id": "estatistica_21",
@@ -16202,16 +16242,20 @@
       "dica": "CESPE: outliers podem indicar erros de medição, valores atípicos genuínos ou problemas na coleta. O método do IIQ é mais robusto (usa mediana e quartis), enquanto o escore Z é influenciado por outliers (já que usa média e desvio padrão, que são sensíveis a extremos).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Aluno de 2m na turma de criancas: destoa. Investigar.",
+      "camada_aplicacao": "Renda media R$5000, aparece R$1.000.000. Se Q3+1,5xIIQ=R$15000, e outlier."
     },
     {
       "id": "estatistica_22",
-      "pergunta": "O que é histograma?",
-      "resposta": "Gráfico de barras adjacentes para variáveis contínuas. Base = classes; altura = frequência.",
-      "dica": "HISTOGRAMA: barras JUNTAS (sem espaço). Polígono de frequência: linhas. Ogiva: frequência acumulada. CESPE: 'histograma é para variáveis qualitativas' -> FALSO.",
+      "pergunta": "O que é histograma e como difere do gráfico de barras?",
+      "resposta": "Histograma: barras JUNTAS para CONTÍNUAS. Barras: SEPARADAS para QUALITATIVAS/discretas.",
+      "dica": "⚠️ CESPE: histograma barras JUNTAS. Barras têm espaços.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Empilhar blocos: colunas se tocam (variavel continua).",
+      "camada_aplicacao": "Idades policiais: 20-30(40), 30-40(60), 40-50(35), 50-60(15)."
     },
     {
       "id": "estatistica_23",
@@ -16220,7 +16264,9 @@
       "dica": "CESPE: gráfico de pizza é INADEQUADO para muitos dados (mais de 5-6 categorias, fica poluído). Não é recomendado para comparar diferenças pequenas entre categorias. A soma dos percentuais deve ser 100%. Cada setor = (frequência relativa) × 360°.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Torta em fatias: angulo proporcional a frequencia. 360 = 100%.",
+      "camada_aplicacao": "Orcamento: 50% salarios (180), 25% equipamentos (90), 15% treinamento (54)."
     },
     {
       "id": "estatistica_24",
@@ -16229,7 +16275,9 @@
       "dica": "CESPE: assimetria POSITIVA = cauda à DIREITA (valores altos). Assimetria NEGATIVA = cauda à ESQUERDA (valores baixos). Coeficiente de assimetria de Pearson: As = 3(média - mediana) / desvio padrão. Se As = 0 -> simétrica. Se As > 0 -> positiva. Se As < 0 -> negativa.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Balança inclinada: peso na direita = cauda direita = assimetria positiva.",
+      "camada_aplicacao": "Boletos: maioria R$100-500, alguns R$10000 puxam media. Cauda direita = positiva."
     },
     {
       "id": "estatistica_25",
@@ -16238,7 +16286,9 @@
       "dica": "Curtose: grau de achatamento da distribuição. Leptocúrtica = coeficiente > 3 (caudas pesadas/muita concentração). Mesocúrtica = coeficiente = 3 (normal). Platicúrtica = coeficiente < 3 (achatada/caudas leves). CESPE: 'qual distribuição tem maior concentração de dados na média?' LEPTOCÚRTICA. Dica: LEPTO = pontiaguda, PLATI = plana/achatada, MESO = intermediária.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "medio"
+      "dificuldade": "medio",
+      "camada_visual": "Grau de pontiagudez: lepto=agulha, plati=chapada, meso=normal.",
+      "camada_aplicacao": "Altura soldados: muito concentrada (leptocurtica). Peso populacao: achatado (platicurtico)."
     },
     {
       "id": "estatistica_26",
@@ -16247,7 +16297,9 @@
       "dica": "CESPE: consequências dos axiomas: P(∅) = 0; P(A) + P(Ac) = 1; P(A ∪ B) = P(A) + P(B) - P(A ∩ B) para eventos NÃO exclusivos. Atenção: a soma das probabilidades de todos os eventos elementares é 1 (decorre do axioma 2).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Regras: 1) prob>=0, 2) total=1, 3) exclusivos somam.",
+      "camada_aplicacao": "Dado: P(1)=1/6>=0. P(Omega)=1. P(1 ou 2)=1/6+1/6 (exclusivos)."
     },
     {
       "id": "estatistica_27",
@@ -16256,7 +16308,9 @@
       "dica": "CESPE: a probabilidade do espaço amostral é sempre 1: P(Ω) = 1. Evento é um subconjunto do espaço amostral. Se o espaço amostral tem n elementos igualmente prováveis, P(A) = |A| / |Ω| (definição clássica de probabilidade).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Menu completo: todos pedidos possiveis (Omega). Evento = so sucos.",
+      "camada_aplicacao": "2 dados: Omega=36. Evento soma7 = {(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)}."
     },
     {
       "id": "estatistica_28",
@@ -16265,16 +16319,20 @@
       "dica": "CESPE: MUTUAMENTE EXCLUSIVOS ≠ INDEPENDENTES. Eventos exclusivos NUNCA são independentes (exceto se P(A) ou P(B) = 0). Se A e B são exclusivos e P(A) > 0 e P(B) > 0, então P(A|B) = 0, logo P(A|B) ≠ P(A), violando a definição de independência.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Agua e oleo: nao se misturam. Exclusivos nao ocorrem juntos.",
+      "camada_aplicacao": "Carta: as e rei exclusivos. P(as ou rei)=4/52+4/52=8/52."
     },
     {
       "id": "estatistica_29",
       "pergunta": "O que são eventos independentes?",
-      "resposta": "A ocorrência de um não afeta a probabilidade do outro. P(A∩B) = P(A)*P(B).",
-      "dica": "INDEPENDENTES: P(A∩B)=P(A)P(B). CESPE: 'eventos mutuamente exclusivos são independentes' -> FALSO (ME nunca são independentes).",
+      "resposta": "Um não afeta o outro. P(A∩B)=P(A)P(B); P(A|B)=P(A); P(B|A)=P(B).",
+      "dica": "⚠️ CESPE: ME com P>0 NUNCA são independentes! P(A|B)=0≠P(A).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Moeda sem memoria: 1o resultado nao influencia o 2o.",
+      "camada_aplicacao": "P(carro roubado)=0,01 e P(chuva)=0,3. Independentes: P(ambos)=0,003."
     },
     {
       "id": "estatistica_31",
@@ -16283,7 +16341,9 @@
       "dica": "CESPE: Teorema de Bayes = probabilidade reversa ou atualização de crenças. O denominador P(B) é a probabilidade total de B (soma das probabilidades de todos os caminhos que levam a B). Decore: P(A|B) = [P(B|A) × P(A)] / P(B). Exemplo clássico: testes de doenças e falsos positivos.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Atualizar crenca: priori -> evidencia -> posteriori (Bayes).",
+      "camada_aplicacao": "Doenca 1%, teste 99% sensivel, 5% falso +. P(doente|+)=16,7%."
     },
     {
       "id": "estatistica_32",
@@ -16292,16 +16352,20 @@
       "dica": "CESPE: pressupostos da binomial: (1) n fixo; (2) independentes; (3) dois resultados; (4) p constante. Desvio padrão = √(np(1-p)). Se n é grande e p próximo de 0,5, a binomial se aproxima da normal. Cuidado: C(n,k) = n! / [k!(n-k)!].",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Moeda 10x contar caras: independente, p constante, n fixo.",
+      "camada_aplicacao": "20 veiculos, 30% irregulares. P(X=5)=C(20,5)x0,3^5x0,7^15. E(X)=6."
     },
     {
       "id": "estatistica_33",
-      "pergunta": "O que é distribuição normal?",
-      "resposta": "Distribuição em forma de sino, simétrica em torno da média. Caracterizada por μ e σ. Curva padrão: Z = (X-μ)/σ.",
-      "dica": "NORMAL = curva de Gauss. Média=moda=mediana. 68-95-99,7. Padronização Z. CESPE: 'normal é assimétrica' -> FALSO (simétrica).",
+      "pergunta": "O que é distribuição normal e suas propriedades?",
+      "resposta": "Curva de Gauss, sino, simétrica. Média=moda=mediana. Z=(X−μ)/σ∼N(0,1). 68-95-99,7.",
+      "dica": "⚠️ CESPE: normal SIMÉTRICA (assimetria=0). Mesocúrtica (curtose=3). Curva em sino não = normal.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Sino de igreja: alto e simetrico. Media=moda=mediana no centro.",
+      "camada_aplicacao": "QI: mi=100, sigma=15. 68% 85-115, 95% 70-130, 99,7% 55-145."
     },
     {
       "id": "estatistica_34",
@@ -16310,7 +16374,9 @@
       "dica": "CESPE: essa regra vale APENAS para a distribuição NORMAL. Para qualquer distribuição (sem suposição de normalidade), vale o Teorema de Chebyshev: pelo menos 1 - 1/k² dos dados estão a k desvios padrão da média. Ex: k=2 -> 1 - 1/4 = 75% dos dados em μ ± 2σ (mínimo, para qualquer distribuição).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Alvo de tiro: 68% centro, 95% 2o, 99,7% 3o. So para normal.",
+      "camada_aplicacao": "Altura policiais 175cm, DP8cm. 68% 167-183, 95% 159-191, 99,7% 151-199."
     },
     {
       "id": "estatistica_35",
@@ -16319,7 +16385,9 @@
       "dica": "CESPE: Z = (X - μ) / σ. O escore Z indica quantos desvios padrão o valor X está acima (Z > 0) ou abaixo (Z < 0) da média. Z = 0 significa valor igual à média. Quanto maior |Z|, mais extremo é o valor. |Z| > 3 geralmente indica outlier.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Tradutor universal: qualquer normal vira Z~(0,1). Compara escalas.",
+      "camada_aplicacao": "Maria: 80, media70, DP5 -> Z=2. Joao: 60, media50, DP8 -> Z=1,25."
     },
     {
       "id": "estatistica_36",
@@ -16328,7 +16396,9 @@
       "dica": "CESPE: AAS exige que a população seja homogênea ou que não haja subgrupos relevantes. Na AAS com reposição, as extrações são INDEPENDENTES. Na AAS sem reposição, são DEPENDENTES (mas para população grande, a diferença é desprezível). Vantagem: simplicidade. Desvantagem: requer lista completa da população.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Sortear nomes do chapeu: todos com mesma chance.",
+      "camada_aplicacao": "Sortear 100 policiais de 2000: cada 5% de chance."
     },
     {
       "id": "estatistica_37",
@@ -16337,7 +16407,9 @@
       "dica": "CESPE: ESTRATIFICADA = estratos HOMOGÊNEOS internamente (baixa variabilidade intra-estrato). Diferente de CONGLOMERADOS, que são HETEROGÊNEOS internamente. Objetivo da estratificada: reduzir a variância amostral. Ex: por faixa de renda, por região, por gênero.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Dividir por altura e sortear de CADA grupo. Homogeneos dentro.",
+      "camada_aplicacao": "Pesquisa salarial por cargo: delegados, agentes, escrivães."
     },
     {
       "id": "estatistica_38",
@@ -16346,7 +16418,9 @@
       "dica": "CESPE: amostragem sistemática é prática e de fácil execução, mas pode introduzir viés se houver periodicidade oculta na população (ex: amostrar a cada 7 dias pode pegar sempre o mesmo dia da semana). Vantagem: não exige lista completa numerada, apenas ordem.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Cada 10o nome: sorteia inicio e pula k. Risco: periodicidade.",
+      "camada_aplicacao": "5000 habitantes, k=50. Inicio 23: 23,73,123...4973."
     },
     {
       "id": "estatistica_39",
@@ -16355,7 +16429,9 @@
       "dica": "CESPE: CONGLOMERADOS = heterogêneos internamente (cada grupo reflete a diversidade da população). ESTRATIFICADA = homogêneos internamente. Conglomerados é útil quando não há lista completa da população, mas é possível listar grupos. Ex: sortear escolas e entrevistar todos os alunos.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Escolher escolas e entrevistar TODOS alunos. Heterogeneos dentro.",
+      "camada_aplicacao": "Recife: divide bairros, sorteia 5, entrevista TODOS moradores."
     },
     {
       "id": "estatistica_40",
@@ -16364,7 +16440,9 @@
       "dica": "CESPE: n → ∞ reduz a MARGEM DE ERRO, mas NÃO elimina o VIÉS amostral. Quanto MAIOR a variabilidade populacional, MAIOR o tamanho amostral necessário. Quanto MENOR a margem de erro, MAIOR n.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Provar sopa: poucas colheres=amostra. Panela inteira=censo.",
+      "camada_aplicacao": "95% confianca margem 2%: n=2401. Margem 1%: n=9604."
     },
     {
       "id": "estatistica_41",
@@ -16373,7 +16451,9 @@
       "dica": "CESPE: nível de confiança de 95% significa: se repetíssemos o experimento muitas vezes, em 95% dos casos o intervalo conteria o parâmetro. NÃO significa 95% de chance de o parâmetro estar no intervalo (interpretação bayesiana incorreta). O valor crítico Z aumenta com o nível de confiança.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Mira 95%: 100 tiros, 95 acertam o alvo (IC contem parametro).",
+      "camada_aplicacao": "100 pesquisas: 95 teriam resultado dentro da margem de erro."
     },
     {
       "id": "estatistica_42",
@@ -16382,7 +16462,9 @@
       "dica": "CESPE: margem de erro depende do nível de confiança (z), da variabilidade (σ) e do tamanho amostral (n). Aumentar n reduz a margem de erro. NÃO confundir com erro padrão (σ/√n): erro padrão é o desvio da distribuição amostral; margem de erro é o erro padrão × valor crítico.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Gordura do IC: +-3% = verdade 47%-53%. Mais n = menos gordura.",
+      "camada_aplicacao": "Candidato 45%+-3%: verdadeiro apoio 42%-48%. Margem 1% -> 44%-46%."
     },
     {
       "id": "estatistica_43",
@@ -16391,25 +16473,31 @@
       "dica": "CESPE: estimativa pontual NÃO tem margem de erro associada (por isso o intervalo de confiança é preferível). A média amostral é estimador não viesado da média populacional. Decore: x̄ estima μ; s² estima σ²; p̂ estima p.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Chutar idade: 35 anos (pontual). IC daria intervalo.",
+      "camada_aplicacao": "QI 100 policiais: x_barra=108. IC95%: 108+-3=[105,111]."
     },
     {
       "id": "estatistica_44",
-      "pergunta": "O que é intervalo de confiança?",
-      "resposta": "Intervalo construído a partir da amostra que, com determinada confiança, contém o verdadeiro valor do parâmetro.",
+      "pergunta": "O que é IC e como interpretá-lo?",
+      "resposta": "IC = intervalo que com confiança (1−α) contém o parâmetro. IC = estimativa ± margem de erro.",
       "dica": "IC de 95%: em 95 das 100 amostras, o intervalo conterá o parâmetro populacional. CESPE: 'o parâmetro populacional está no IC com 95% de probabilidade' é INTERPRETAÇÃO ERRADA — o parâmetro é fixo. Dica: IC = estimativa pontual ± margem de erro (z × σ/√n). A amplitude do IC diminui se n aumenta ou se o nível de confiança reduz.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "Rede de pescar: joga e espera o peixe dentro. 95% acertam.",
+      "camada_aplicacao": "Tempo resposta 12min, IC95%=[10,5;13,5]. 95/100 amostras contem a media."
     },
     {
       "id": "estatistica_45",
-      "pergunta": "O que é hipótese nula (H0) e alternativa (H1)?",
-      "resposta": "H0: hipótese a ser testada (geralmente de igualdade/nulidade). H1: hipótese que contradiz H0 e que se quer provar.",
+      "pergunta": "O que são H0 e H1?",
+      "resposta": "H0: hipótese de nulidade. H1: contradiz H0. Rejeita H0 ou não. Conservador: dúvida → não rejeita.",
       "dica": "H0 é a hipótese da negação; H1 é a hipótese do pesquisador. Erro Tipo I = rejeitar H0 verdadeira (α). Erro Tipo II = não rejeitar H0 falsa (β). CESPE: 'na dúvida, não se rejeita H0' — padrão conservador da estatística. Poder do teste = 1 − β. Dica: α é controlado pelo pesquisador; β depende do tamanho amostral e do efeito real.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "medio"
+      "dificuldade": "medio",
+      "camada_visual": "Presuncao de inocencia: H0=inocente ate prova contraria.",
+      "camada_aplicacao": "H0: mi_nova=mi_atual. H1: mi_nova>mi_atual. So troca se rejeitar H0."
     },
     {
       "id": "estatistica_46",
@@ -16418,7 +16506,9 @@
       "dica": "CESPE: α é o nível de significância. α = 0,05 significa 5% de chance de erro tipo I. Mnemônico: Tipo I = falso positivo (rejeitar H0 verdadeira). Lembre: a justiça condena um inocente (rejeitar inocência verdadeira).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Condenar inocente: rejeitar H0 verdadeira. Alfa = falso positivo.",
+      "camada_aplicacao": "Medicamento: H0=ineficaz. Erro I=concluir que funciona quando nao. Alfa=0,05."
     },
     {
       "id": "estatistica_47",
@@ -16427,16 +16517,20 @@
       "dica": "CESPE: erro tipo II = falso negativo (deixar de rejeitar H0 falsa). β depende de α, tamanho amostral e magnitude do efeito. Mnemônico: Tipo II = deixar passar (absolver um culpado). α e β são inversamente relacionados (para n fixo).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Absolver culpado: nao rejeitar H0 falsa. Beta = falso negativo.",
+      "camada_aplicacao": "Remedio: Erro II=concluir nao funciona quando funciona. Poder=1-beta."
     },
     {
       "id": "estatistica_48",
-      "pergunta": "O que é o p-valor?",
-      "resposta": "Probabilidade de obter resultado igual ou mais extremo que o observado, supondo H0 verdadeira; se p < α, rejeita-se H0.",
+      "pergunta": "O que é p-valor?",
+      "resposta": "P(resultado ≥ observado | H0 verdadeira). p<α → REJEITA H0. Menor p → mais evidência CONTRA H0.",
       "dica": "p-valor: nível descritivo do teste. Se p < α, REJEITA-SE H0. CESPE: p-valor NÃO é a probabilidade de H0 ser verdadeira! É P(dados | H0), não P(H0 | dados). Quanto menor o p-valor, mais evidência CONTRA H0. Ex: p = 0,03 com α = 0,05 → rejeita H0. p = 0,07 → NÃO rejeita H0. Não confundir com o nível de significância α.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "Surpresa dos dados: p pequeno = improvavel sob H0.",
+      "camada_aplicacao": "p=0,03 com alfa=0,05 -> rejeita H0. p=0,08 -> nao rejeita."
     },
     {
       "id": "estatistica_49",
@@ -16445,7 +16539,9 @@
       "dica": "CESPE: Pearson mede relação LINEAR apenas. Pode haver r = 0 e existir relação não linear forte (ex: parabólica). Fórmula: r = Cov(X,Y) / (σX × σY). Atenção: correlação NÃO implica causalidade (falácia cum hoc ergo propter hoc).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Danca: X e Y sobem juntos = correlacao positiva. r em [-1,+1].",
+      "camada_aplicacao": "Horas estudo e nota: r=0,85 (forte). Faltas e nota: r=-0,70."
     },
     {
       "id": "estatistica_50",
@@ -16454,16 +16550,20 @@
       "dica": "CESPE: b (inclinação) = Cov(X,Y) / Var(X). a (intercepto) = Ȳ − bX̄. A regressão minimiza a soma dos quadrados dos resíduos (MQO). b é a variação esperada em Y para cada unidade de variação em X.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Melhor reta entre pontos: Y=a+bX. Minimiza distancia total.",
+      "camada_aplicacao": "Tempo resposta x distancia: Y=2+0,5X. 10km -> tempo=7min."
     },
     {
       "id": "estatistica_51",
-      "pergunta": "O que é o coeficiente de determinação R²?",
-      "resposta": "Proporção da variação de Y explicada pelo modelo de regressão; varia de 0 a 1 (0% a 100%).",
+      "pergunta": "O que é R²?",
+      "resposta": "R² = proporção da variação de Y explicada (0 a 1). R²=1−SQRes/SQTotal. R² alto não prova causalidade.",
       "dica": "R² = 1 − (SQResidual / SQTotal). Varia de 0 a 1. CESPE: R² alto indica bom ajuste, mas NÃO prova causalidade. R² = 0,75 significa que 75% da variação de Y é explicada pelo modelo. Em regressão múltipla, use o R² AJUSTADO (penaliza inclusão de variáveis desnecessárias). Dica: R² sempre aumenta com novas variáveis; o R² ajustado não.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "medio"
+      "dificuldade": "medio",
+      "camada_visual": "Nota 0-100%: R2=0,80 -> 80% da variacao explicada pelo modelo.",
+      "camada_aplicacao": "Criminalidade x desemprego: R2=0,75. 75% explicado."
     },
     {
       "id": "estatistica_52",
@@ -16472,7 +16572,9 @@
       "dica": "CESPE: a caixa contém 50% dos dados centrais (entre Q1 e Q3). Outliers moderados: além de 1,5×IIQ. Outliers extremos: além de 3×IIQ. O boxplot é útil para comparar distribuições e identificar assimetria.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Ficha resumo: min, Q1, mediana, Q3, max. Outliers alem dos bigodes.",
+      "camada_aplicacao": "Salarios: caixa R$3000-7000, mediana R$4500. R$50000=outlier."
     },
     {
       "id": "estatistica_53",
@@ -16481,16 +16583,20 @@
       "dica": "CESPE: a esperança é o primeiro momento da distribuição. Propriedades: E(c) = c; E(aX + b) = aE(X) + b; E(X + Y) = E(X) + E(Y) (sempre, sem independência). E(XY) = E(X)E(Y) apenas se X e Y são independentes. NÃO confundir com mediana.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Media de longo prazo: jogar dado infinitas vezes -> 3,5.",
+      "camada_aplicacao": "Ganha R$10 se cara, perde R$5 se coroa. E(X)=10x0,5-5x0,5=R$2,50."
     },
     {
       "id": "estatistica_54",
-      "pergunta": "O que é o Teorema Central do Limite (TCL)?",
-      "resposta": "A distribuição das médias amostrais se aproxima de uma normal, independentemente da distribuição original, à medida que n aumenta.",
-      "dica": "TCL: para n suficientemente grande (n ≥ 30 na prática), a distribuição amostral da média aproxima-se da normal, mesmo com população não normal. CESPE: exceção — distribuições muito assimétricas ou com caudas pesadas exigem n maior. Dica: o TCL fundamenta a inferência estatística (testes z, t, intervalos de confiança). NÃO confundir com a Lei dos Grandes Números.",
+      "pergunta": "O que é o TCL?",
+      "resposta": "Distribuição das médias amostrais → normal conforme n↑, independente da distribuição original. n≥30 suficiente. Base da inferência.",
+      "dica": "⚠️ CESPE: TCL ≠ LGN. LGN: média converge. TCL: FORMA da distribuição amostral → normal.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "Medias de 30 dados viram normal, mesmo se dados uniformes.",
+      "camada_aplicacao": "100 amostras de 50 pessoas: 100 medias ~normal (TCL)."
     },
     {
       "id": "estatistica_55",
@@ -16499,7 +16605,9 @@
       "dica": "CESPE: desvio padrão está na MESMA unidade dos dados (diferente da variância). Para população: σ = √[ Σ(Xi − μ)² / N ]. O desvio padrão é sensível a outliers. Atenção: a correção de Bessel (n−1) é para que s² seja não viesado, mas s ainda é viesado.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Medir dispersao com desconto (n-1) por usar amostra.",
+      "camada_aplicacao": "Idades {25,30,35,40,45}: n=5. s2=250/4=62,5. s=7,9 anos."
     },
     {
       "id": "estatistica_56",
@@ -16508,7 +16616,9 @@
       "dica": "CESPE: a estatística é usada para ESTIMAR o parâmetro. Ex: x̄ (estatística) estima μ (parâmetro). A distribuição amostral da estatística permite fazer inferência. Mnemônico: grego = população; latim = amostra.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "media"
+      "dificuldade": "media",
+      "camada_visual": "Grego (mi,sigma) = populacao. Latim (x_barra,s) = amostra.",
+      "camada_aplicacao": "Altura media real brasileiros = mi. Media de 1000 entrevistados = x_barra."
     },
     {
       "id": "estatistica_57",
@@ -16517,7 +16627,9 @@
       "dica": "CESPE: a SUBTRAÇÃO da interseção é OBRIGATÓRIA quando os eventos não são mutuamente exclusivos. Erro comum: somar sem subtrair a interseção. Para três eventos: P(A ∪ B ∪ C) = P(A)+P(B)+P(C) − P(A∩B) − P(A∩C) − P(B∩C) + P(A∩B∩C).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Circulos sobrepostos: P(AUB)=P(A)+P(B)-P(AnB). Subtrai interseccao.",
+      "camada_aplicacao": "Cafe 0,7 ou cha 0,4, 20% ambos. P(cafe ou cha)=0,7+0,4-0,2=0,9."
     },
     {
       "id": "estatistica_58",
@@ -16526,7 +16638,9 @@
       "dica": "CESPE: a probabilidade do complementar é útil para calcular pelo menos um ou nenhum. Ex: P(pelo menos um sucesso) = 1 − P(nenhum sucesso). O complementar do complementar é o próprio evento: (Aᶜ)ᶜ = A.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Resto: P(chuva)=30% -> P(nao chover)=70%. Complementar soma 100%.",
+      "camada_aplicacao": "P(pelo menos 1 acerto em 3) = 1 - P(nenhum) = 1 - 0,3^3 = 0,973."
     },
     {
       "id": "estatistica_59",
@@ -16535,7 +16649,9 @@
       "dica": "CESPE: Poisson = eventos raros e independentes. A média É IGUAL à variância (equidispersão). Se a variância for maior que a média, há superdispersão (não Poisson). Aproximação: Poisson(λ) ≈ Binomial(n,p) quando n grande e p pequeno (λ = np).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Eventos raros: chamadas/hora. Media=Variancia=lambda.",
+      "camada_aplicacao": "Ocorrencias/hora lambda=3. P(X=5)=e-3x3^5/5!=10%. P(0)=e-3=5%."
     },
     {
       "id": "estatistica_60",
@@ -16544,7 +16660,9 @@
       "dica": "CESPE: existem diferentes métodos de cálculo (a CEBRASPE costuma usar o método de interpolação). Não confundir percentil com porcentagem: percentil é uma medida de posição. Quartis (4 partes), decis (10 partes) e percentis (100 partes) são quantis.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Posicao na fila: P90 = mais alto que 90% das pessoas.",
+      "camada_aplicacao": "Teste fisico: candidato P90 superou 90% dos demais."
     },
     {
       "id": "estatistica_61",
@@ -16553,7 +16671,9 @@
       "dica": "CESPE: AED usa estatística descritiva (não inferencial). Ferramentas comuns: histograma, boxplot, scatter plot, medidas de posição e dispersão. Tukey foi o pioneiro da AED. O objetivo é gerar hipóteses, não testá-las.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Detetive: examina tudo (graficos, tabelas) antes de hipotese.",
+      "camada_aplicacao": "Antes da regressao: histogramas, boxplots, scatter plots. Isso e AED."
     },
     {
       "id": "estatistica_62",
@@ -16562,7 +16682,9 @@
       "dica": "CESPE: útil para verificar a suposição de linearidade antes de aplicar regressão linear. Se os pontos formam uma nuvem sem padrão, r ≈ 0. Se formam uma reta crescente, r > 0. Cuidado: outliers podem distorcer visualmente a percepção da correlação.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Mapa 2D: cada ponto = (altura, peso). Nuvem ascendente = correlacao.",
+      "camada_aplicacao": "Anos estudo x salario: nuvem ascendente (correlacao positiva)."
     },
     {
       "id": "estatistica_63",
@@ -16571,7 +16693,9 @@
       "dica": "CESPE: na uniforme discreta, todos os resultados são equiprováveis. Não confundir com uniforme CONTÍNUA (intervalo real). Exemplo clássico: dado não viciado, roleta. Função de probabilidade: P(X = xi) = 1/n para n valores.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Dado honesto: 6 faces, chance 1/6 cada. Exemplo simples.",
+      "camada_aplicacao": "Sorteio 1-10: P(X=k)=1/10. Media=(1+10)/2=5,5. P(par)=0,5."
     },
     {
       "id": "estatistica_64",
@@ -16580,7 +16704,9 @@
       "dica": "CESPE: inferência estatística SÓ é possível com amostragem probabilística. Amostragem não probabilística não permite inferência. A margem de erro e o nível de confiança são usados para quantificar a incerteza da inferência.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Provar sopa e concluir sobre a panela. Infere populacao.",
+      "camada_aplicacao": "1000 entrevistados: candidato 45%+-3%. So valido com amostragem probabilistica."
     },
     {
       "id": "estatistica_65",
@@ -16589,16 +16715,20 @@
       "dica": "CESPE: números-índice podem ser de preço, quantidade ou valor. Fórmulas comuns: Laspeyres (ponderação fixa no período base), Paasche (ponderação fixa no período atual), Fisher (média geométrica de Laspeyres e Paasche). Período base é a referência.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Termometro economico: IPCA 1000->1050 = inflacao 5%.",
+      "camada_aplicacao": "Cesta basica R$300 -> R$360. Indice=120. Aumento 20%."
     },
     {
       "id": "estatistica_66",
       "pergunta": "O que é erro não amostral?",
-      "resposta": "Erro proveniente de fatores além do tamanho da amostra: erros de medição, não resposta, viés do entrevistador.",
+      "resposta": "Erro ALÉM de n: medição, não resposta, viés. NÃO diminui com ↑n. SISTEMÁTICO.",
       "dica": "Erro não amostral ≠ erro amostral (variabilidade da amostra). Exemplos: viés de seleção, erro de resposta, erro de processamento, não resposta. CESPE: erro não amostral NÃO diminui com o aumento de n (diferente do erro amostral). É mais perigoso por ser SISTEMÁTICO, comprometendo a validade da pesquisa independentemente do tamanho da amostra.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "medio"
+      "dificuldade": "medio",
+      "camada_visual": "Regua torta: mil medidas todas erradas. n nao resolve.",
+      "camada_aplicacao": "Pesquisa telefonica: so ouve quem tem telefone (vies). 1000->10000 nao resolve."
     },
     {
       "id": "estatistica_67",
@@ -16607,7 +16737,9 @@
       "dica": "CESPE: séries temporais têm dependência temporal (observações não independentes). Componentes: T (tendência), S (sazonalidade), C (ciclo), R (ruído). Modelos: aditivo (Y = T+S+C+R) ou multiplicativo (Y = T×S×C×R). Suavização exponencial e ARIMA são métodos comuns.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Filme dos dados: tendencia, sazonalidade, ciclo, ruido.",
+      "camada_aplicacao": "Roubos/mes: queda, pico dezembro, ciclo economico 7 anos, ruido."
     },
     {
       "id": "estatistica_68",
@@ -16616,7 +16748,9 @@
       "dica": "CESPE: o IPCA é o índice oficial de inflação do Brasil (metas do CMN). PNAD Contínua substituiu a PNAD tradicional desde 2016. O Censo Demográfico é decenal (realizado a cada 10 anos). IBGE também define o método de cálculo da contagem da população.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "GPS estatistico: censo, PNAD, IPCA.",
+      "camada_aplicacao": "IPCA do IBGE usado pelo BC para Selic. Acima meta = juros sobem."
     },
     {
       "id": "estatistica_69",
@@ -16625,7 +16759,9 @@
       "dica": "CESPE: a correção de Bessel (n−1) é usada porque a média amostral x̄ é estimada a partir dos dados, consumindo 1 grau de liberdade. Se a população for finita e a amostra for censitária, usa-se N. Atenção: s² é não viesado, mas s (desvio padrão) é viesado.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Populacional/N. Amostral/(n-1): correcao de Bessel.",
+      "camada_aplicacao": "Notas {6,7,8,9,10}: se populacao s2=10/5=2. Se amostra s2=10/4=2,5."
     },
     {
       "id": "estatistica_70",
@@ -16634,16 +16770,20 @@
       "dica": "CESPE: a ogiva NUNCA decresce (sempre não decrescente). Útil para estimar percentis graficamente. Existem dois tipos: ogiva menos que (frequência acumulada crescente) e mais que (frequência acumulada decrescente). Ogiva é diferente do histograma.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Rampa sempre sobe: soma frequencias a cada classe. Monotonica.",
+      "camada_aplicacao": "Freq [10,20,30,40]: ogiva 10,30,60,100. Percentil 50 onde ogiva=50%."
     },
     {
       "id": "estatistica_71",
-      "pergunta": "O que é o gráfico de barras versus histograma?",
-      "resposta": "Barras: para variáveis qualitativas ou discretas, com espaço entre as barras. Histograma: para variáveis contínuas, sem espaço entre as barras.",
+      "pergunta": "Diferença entre barras e histograma?",
+      "resposta": "BARRAS: QUALITATIVAS — separadas. HISTOGRAMA: CONTÍNUAS — juntas. Área proporcional à freq.",
       "dica": "Gráfico de BARRAS: variável categórica ou discreta — barras SEPARADAS. HISTOGRAMA: variável contínua — barras JUNTAS (sem espaços). CESPE: 'o histograma tem barras separadas?' NÃO, pois variável contínua não tem lacunas entre classes. Dica: no histograma, a área de cada barra é proporcional à frequência; o eixo Y pode ser frequência absoluta, relativa ou densidade.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Predios separados (barras) vs muro continuo (histograma).",
+      "camada_aplicacao": "Barras: ocorrencias/tipo (separado). Histograma: idades 20-30,30-40 (junto)."
     },
     {
       "id": "estatistica_72",
@@ -16652,7 +16792,9 @@
       "dica": "CESPE: dados brutos → rol → tabela de frequência → gráficos. O rol é essencial para calcular a mediana (valor central do rol). Dados não ordenados geram erros no cálculo de medidas de posição. Rol é sinônimo de dados ordenados.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Cartas embaralhadas -> ordenar -> achar carta do meio (mediana).",
+      "camada_aplicacao": "{45,23,67,12,89,34,56}. Rol: {12,23,34,45,56,67,89}. Mediana=45."
     },
     {
       "id": "estatistica_73",
@@ -16661,7 +16803,9 @@
       "dica": "CESPE: censo NÃO tem erro amostral (pois não há amostra), mas pode ter erros não amostrais (medição, não resposta). Censo é inviável para populações infinitas. Apenas a amostragem permite inferência com margem de erro controlada.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Contar todos graos de arroz: exato mas caro. Amostra pratica.",
+      "camada_aplicacao": "Censo IBGE visita todos. Preciso, caro, cada 10 anos. PNAD usa amostragem."
     },
     {
       "id": "estatistica_74",
@@ -16670,7 +16814,9 @@
       "dica": "CESPE: 2ª fórmula de Pearson: As = 3(média − mediana) / desvio padrão. Decore: 1ª fórmula usa MODA; 2ª fórmula usa MEDIANA. Assimetria nula (As=0) não garante normalidade (pode ser simétrica não normal).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Comparar media e moda: media>moda = assimetria positiva.",
+      "camada_aplicacao": "Salarios: moda=R$2000, media=R$4500. As=(4500-2000)/3000=0,83."
     },
     {
       "id": "estatistica_75",
@@ -16679,7 +16825,9 @@
       "dica": "CESPE: escore Z é usado para identificar outliers (|Z| > 3). Distribuição normal padrão Z tem μ = 0 e σ = 1. Z é diferente do coeficiente de variação (CV = σ/μ, que mede dispersão relativa).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Tradutor de posicoes: Z=2 = 2 desvios acima da media.",
+      "camada_aplicacao": "Mat: 80, media60, DP10 -> Z=2. Port: 75, media70, DP4 -> Z=1,25."
     },
     {
       "id": "estatistica_76",
@@ -16688,16 +16836,20 @@
       "dica": "CESPE: tabela de contingência pode ter frequências absolutas, relativas (%) ou esperadas. O teste Qui-Quadrado de independência usa a tabela de contingência. Uma tabela 2×2 é o caso mais comum (duas variáveis com duas categorias cada).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Quadro dupla entrada: linha x coluna com contagens.",
+      "camada_aplicacao": "Homens: 30A,20B. Mulheres: 25A,25B. Teste Qui-Quadrado de associacao."
     },
     {
       "id": "estatistica_77",
       "pergunta": "O que é viés amostral?",
-      "resposta": "Erro sistemático que faz a amostra representar inadequadamente a população, distorcendo as estimativas.",
+      "resposta": "Erro SISTEMÁTICO. ↑n reduz erro amostral, NÃO o viés. Melhorar desenho amostral.",
       "dica": "Viés amostral: erro SISTEMÁTICO (não aleatório). Exemplos: viés de seleção, viés de voluntariado, viés de sobrevivência. CESPE: 'o viés amostral diminui com o aumento da amostra?' NÃO! Viés é erro sistemático — aumentar n só reduz o erro amostral (aleatório). Para reduzir viés, é preciso melhorar o desenho amostral (ex: aleatorização).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "medio"
+      "dificuldade": "medio",
+      "camada_visual": "Balança desregulada: sempre +2kg. n maior nao resolve.",
+      "camada_aplicacao": "Pesquisa so com motoristas de app (vies): nao representa quem usa onibus."
     },
     {
       "id": "estatistica_78",
@@ -16706,7 +16858,9 @@
       "dica": "CESPE: AAS com reposição → extrações independentes. AAS sem reposição → extrações dependentes (mas para N grande, a diferença é desprezível). Na prática, amostragem sem reposição é mais comum. Fator de correção para população finita: √((N−n)/(N−1)).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Sortear e devolver (com reposicao): independente.",
+      "camada_aplicacao": "10 bolas. Com reposicao: prob=1/10. Sem: 1/10,1/9,1/8... dependente."
     },
     {
       "id": "estatistica_79",
@@ -16715,7 +16869,9 @@
       "dica": "CESPE: decis, quartis e percentis são QUANTIS. D1 = P10 (10º percentil). D5 = P50 (mediana). D9 = P90 (90º percentil). Existem 9 decis (D1 a D9) que dividem os dados em 10 partes.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Pizza 10 fatias: D1=10%, D5=50%(mediana), D9=90%.",
+      "camada_aplicacao": "Renda: D1=R$1000, D5=R$3500, D9=R$10000. D9-D1=desigualdade."
     },
     {
       "id": "estatistica_80",
@@ -16724,7 +16880,9 @@
       "dica": "CESPE: para variável discreta, a FDA é uma função escada (saltos nos valores possíveis). Para variável contínua, a FDA é contínua. P(a < X ≤ b) = F(b) − F(a). A FDA é a integral da função densidade de probabilidade (fdp).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Escada 0 a 1: prob acumulada ate cada valor x.",
+      "camada_aplicacao": "P(alt<=1,70)=0,40. P(alt<=1,80)=0,75. P(1,70<X<=1,80)=0,35."
     },
     {
       "id": "estatistica_81",
@@ -16733,16 +16891,20 @@
       "dica": "CESPE: Pearson mede relação LINEAR. Spearman mede relação MONOTÔNICA (crescente ou decrescente, não precisa ser reta). Spearman é menos sensível a outliers que Pearson. Fórmula: ρ = 1 − (6Σdᵢ²)/(n(n²−1)), onde dᵢ é a diferença entre os postos.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Pearson p/ relacoes monotonas. Baseado em ranks. Menos sensivel.",
+      "camada_aplicacao": "Classificacao e salario: rho=1. 1o ganha mais que 2o, 2o mais que 3o."
     },
     {
       "id": "estatistica_82",
-      "pergunta": "Qual a diferença entre amostragem probabilística e não probabilística?",
-      "resposta": "Probabilística: todos têm chance conhecida de seleção (AAS, estratificada, sistemática). Não probabilística: seleção por conveniência ou julgamento.",
+      "pergunta": "Diferença entre amostragem probabilística e não probabilística?",
+      "resposta": "Probabilística: chance CONHECIDA (AAS, estratificada, sistemática, conglomerados). Permite inferência. Não probabilística: NÃO.",
       "dica": "Probabilística: requer sorteio, permite inferência estatística e cálculo de erro amostral. Tipos: AAS, estratificada, sistemática, conglomerados. Não probabilística: NÃO permite inferência; exemplos: conveniência, bola de neve, intencional. CESPE: 'amostragem por cotas é probabilística?' NÃO — as cotas não são sorteadas, mas preenchidas por conveniência, sendo não probabilística.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "medio"
+      "dificuldade": "medio",
+      "camada_visual": "Loteria (probabilistica) vs amigos (nao probabilistica).",
+      "camada_aplicacao": "Sorteio cadastro eleitoral (probabilistica). Cotas na rua (nao probabilistica)."
     },
     {
       "id": "estatistica_83",
@@ -16751,7 +16913,9 @@
       "dica": "CESPE: as classes devem ser mutuamente exclusivas e exaustivas (todo dado pertence a alguma classe). A amplitude do intervalo pode ser constante ou variável. Ponto médio representa a classe. Número de classes: regra de Sturges (k = 1 + 3,3 log n).",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Caixa que agrupa valores: Li, Ls, amplitude, ponto medio.",
+      "camada_aplicacao": "Classes renda: [0,1000) PM=500; [1000,2000) PM=1500. Sturges: k=1+3,3 log n."
     },
     {
       "id": "estatistica_84",
@@ -16760,7 +16924,9 @@
       "dica": "CESPE: a classe mediana é a primeira cuja frequência acumulada ultrapassa n/2. f_md é a frequência ABSOLUTA, não a acumulada. A mediana é resistente a outliers.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Achar centro exato na classe mediana (interpolacao).",
+      "camada_aplicacao": "Salarios: Md = 1000+(25-10)/25x1000 = 1600."
     },
     {
       "id": "estatistica_85",
@@ -16769,7 +16935,9 @@
       "dica": "CESPE: o ponto médio é uma aproximação. A média calculada com pontos médios é uma estimativa, não o valor exato. Atenção: usar o ponto médio presume distribuição uniforme dentro da classe.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Representante da classe: todos valem o ponto medio.",
+      "camada_aplicacao": "Altura: 1,60-1,70(20p) PM=1,65; 1,70-1,80(30p) PM=1,75. Media=1,71."
     },
     {
       "id": "estatistica_86",
@@ -16778,16 +16946,20 @@
       "dica": "CESPE: frequência relativa = f_i / n. Frequência acumulada (Fac) é usada para calcular mediana, quartis e percentis em dados agrupados. A Fac da última classe é sempre n.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Album de fotos: classes com contagens, proporcoes, acumulados.",
+      "camada_aplicacao": "Notas: 0-2(5),2-4(8),4-6(15),6-8(8),8-10(4). Rel: 12,5%,20%,37,5%,20%,10%."
     },
     {
       "id": "estatistica_87",
       "pergunta": "O que é o coeficiente de variação e quando é útil?",
       "resposta": "CV = (σ / x̄) × 100%. Medida de dispersão relativa, adimensional (unitless). Útil para comparar variabilidade entre conjuntos com médias ou unidades diferentes (ex: kg e cm).",
-      "dica": "CESPE: CV é adimensional — permite comparar dispersão de conjuntos com unidades distintas. CV > desvio padrão quando a média é < 1. Quanto menor o CV, mais homogêneo o conjunto. CV = 0 → dados constantes.",
+      "dica": "⚠️ CESPE: CV adimensional. CV=(σ/x̄)×100%. Menor CV = mais homogêneo. CV=0 → constantes.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Regua percentual: CV elimina unidade. Compara kg com m.",
+      "camada_aplicacao": "Investimento A: CV=25%. B: CV=33,3%. A menos arriscado (menor CV)."
     },
     {
       "id": "estatistica_88",
@@ -16796,7 +16968,9 @@
       "dica": "CESPE: quando p é desconhecido, usa-se p = 0,5 (máxima variabilidade → maior n, conservador). Quanto maior o nível de confiança (↑ Z) ou menor a margem de erro (↓ E), maior o n necessário.",
       "topico": "Tamanho amostral",
       "codigo_topico": "3.1",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "Calibrar pesquisa: Z, E, p=0,5 (pior caso) garante n.",
+      "camada_aplicacao": "95% (Z=1,96), margem3%: n=1067. Margem2%: n=2401."
     },
     {
       "id": "estatistica_new_89",
@@ -16805,7 +16979,9 @@
       "dica": "CESPE: o boxplot visualiza mediana (linha interna), quartis (caixas), intervalo interquartil (IIQ) e outliers (pontos além dos limites). Assimetria e curtose complementam a análise descritiva.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "media"
+      "dificuldade": "media",
+      "camada_visual": "AED: tabelas, graficos, medidas p/ explorar dados antes de modelar.",
+      "camada_aplicacao": "Boxplot mostra mediana, quartis, IIQ, outliers."
     },
     {
       "id": "estatistica_new_90",
@@ -16814,7 +16990,9 @@
       "dica": "Medidas de POSIÇÃO: média (sensível a outliers), mediana (robusta), moda (mais frequente). Medidas de DISPERSÃO: amplitude (máx − mín, sensível), variância, desvio padrão (√variância), CV (DP/média). CESPE: 'qual dispersão usar para comparar conjuntos com médias diferentes?' O CV (coeficiente de variação), por ser adimensional. Dica: média e desvio padrão usam a mesma unidade dos dados.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "medio"
+      "dificuldade": "medio",
+      "camada_visual": "Posicao (centro) vs Dispersao (espalhamento). CV une ambos.",
+      "camada_aplicacao": "CV=DP/media: adimensional. Compara conjuntos com medias ou unidades diferentes."
     },
     {
       "id": "estatistica_new_91",
@@ -16823,7 +17001,9 @@
       "dica": "CESPE: excesso de curtose = curtose − 3. Excesso = 0 → mesocúrtica; > 0 → leptocúrtica; < 0 → platicúrtica. Assimetria positiva = cauda longa à direita = valores extremos superiores.",
       "topico": "Estatística descritiva e análise exploratória de dados: gráficos, diagramas, tabelas, medidas descritivas (posição, dispersão, assimetria e curtose)",
       "codigo_topico": "1",
-      "dificuldade": "media"
+      "dificuldade": "media",
+      "camada_visual": "Distorcao (assimetria) e achatamento (curtose) da curva.",
+      "camada_aplicacao": "Excesso de curtose = curtose-3. >0 lepto, =0 meso, <0 plati."
     },
     {
       "id": "estatistica_new_92",
@@ -16832,7 +17012,9 @@
       "dica": "CESPE: o 3º axioma exige que os eventos sejam MUTUAMENTE EXCLUSIVOS (A ∩ B = ∅). CESPE adora testar: P(A∪B) = P(A) + P(B) sempre? — FALSO! Só vale se A e B forem mutuamente exclusivos.",
       "topico": "Definições básicas e axiomas",
       "codigo_topico": "2.1",
-      "dificuldade": "media"
+      "dificuldade": "media",
+      "camada_visual": "Tres axiomas: fundacao da teoria da probabilidade.",
+      "camada_aplicacao": "P(AUB)=P(A)+P(B) SO se ME. CESPE testa isso."
     },
     {
       "id": "estatistica_new_93",
@@ -16841,7 +17023,9 @@
       "dica": "CESPE: se P(A∩B) = 0 e P(A), P(B) > 0, então A e B são MUTUAMENTE EXCLUSIVOS, NÃO independentes. De fato, P(A|B) = 0 ≠ P(A). Eventos independentes com P>0 SEMPRE têm intersecção não vazia.",
       "topico": "Probabilidade",
       "codigo_topico": "2",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "Condicional reduz espaco amostral. Independencia = sem efeito.",
+      "camada_aplicacao": "ME com P>0: P(A|B)=0 != P(A) -> dependentes. Pegadinha CESPE."
     },
     {
       "id": "estatistica_new_94",
@@ -16850,7 +17034,9 @@
       "dica": "CESPE: estratificada = homogeneidade DENTRO dos estratos, sorteia elementos de TODOS os estratos. Conglomerados = heterogeneidade DENTRO dos grupos, sorteia GRUPOS inteiros. AAS com reposição gera amostras independentes; sem reposição, dependentes.",
       "topico": "Tamanho amostral",
       "codigo_topico": "3.1",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "Quatro tecnicas: AAS, estratificada, sistematica, conglomerados.",
+      "camada_aplicacao": "Estratificada: sorteia TODOS estratos. Conglomerados: sorteia GRUPOS."
     },
     {
       "id": "estatistica_expand_0",
@@ -16859,7 +17045,9 @@
       "dica": "⚠️ CESPE: Só vale quando os eventos elementares são EQUIPROVÁVEIS. Se o enunciado falar em 'dado viciado' ou 'moeda desbalanceada', NÃO use esta definição diretamente.",
       "topico": "Probabilidade",
       "codigo_topico": "2",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "P(A)=favoraveis/possiveis. So se equiproaveis.",
+      "camada_aplicacao": "Dado honesto: P(par)=3/6=0,5. Viciado nao vale."
     },
     {
       "id": "estatistica_expand_1",
@@ -16868,7 +17056,9 @@
       "dica": "CESPE: a definição frequencial exige REPETIÇÕES INDEPENDENTES. Difere da clássica (que exige equiprobabilidade). A lei dos grandes números garante que a frequência relativa converge para a probabilidade teórica.",
       "topico": "Probabilidade",
       "codigo_topico": "2",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "P(A)=limite da frequencia relativa. Lei dos Grandes Numeros.",
+      "camada_aplicacao": "Moeda 10x: 7 caras(70%). 100x: 52(52%). 1000x: 503(50,3%)."
     },
     {
       "id": "estatistica_expand_2",
@@ -16877,7 +17067,9 @@
       "dica": "CESPE: o 3º axioma só vale para eventos MUTUAMENTE EXCLUSIVOS. Se A e B não são exclusivos, P(A∪B) = P(A) + P(B) − P(A∩B). O axioma é a base para a aditividade finita e contável.",
       "topico": "Probabilidade",
       "codigo_topico": "2",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "3 axiomas: fundacao da probabilidade.",
+      "camada_aplicacao": "P(AUB)=P(A)+P(B)-P(AnB) decorre dos axiomas."
     },
     {
       "id": "estatistica_expand_3",
@@ -16886,7 +17078,9 @@
       "dica": "CESPE: o complementar de A (A^c) é o conjunto de elementos de Ω que NÃO estão em A. P(A) + P(A^c) = 1. ∅ e Ω são complementares. P(∅) = 0 é consequência do 2º axioma.",
       "topico": "Probabilidade",
       "codigo_topico": "2",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "Complementar: P(A)+P(Ac)=1. P(vazio)=0.",
+      "camada_aplicacao": "P(nenhum 6 em 3 dados) = (5/6)^3 = 0,579."
     },
     {
       "id": "estatistica_expand_4",
@@ -16895,7 +17089,9 @@
       "dica": "CESPE: a fórmula geral SEMPRE subtrai a intersecção. A forma simplificada (só soma) só vale se P(A∩B) = 0, ou seja, eventos mutuamente exclusivos. CESPE adora testar: P(A∪B) = P(A) + P(B) − P(A∩B) é sempre verdade → VERDADEIRO (fórmula geral).",
       "topico": "Probabilidade",
       "codigo_topico": "2",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "P(AUB)=P(A)+P(B)-P(AnB). Formula geral.",
+      "camada_aplicacao": "P(estudar)=0,6, P(trab)=0,5, P(ambos)=0,3. Uniao=0,8."
     },
     {
       "id": "estatistica_expand_5",
@@ -16904,7 +17100,9 @@
       "dica": "CESPE: para n eventos, alterna-se soma das probabilidades individuais (−) soma das intersecções duplas (+) soma das triplas (−) soma das quádruplas... até ± P(intersecção de todos). O sinal do último termo é (−1)^{n+1}.",
       "topico": "Probabilidade",
       "codigo_topico": "2",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "3 eventos: +individuais -duplas +tripla.",
+      "camada_aplicacao": "P(A)=0,5, P(B)=0,4, P(C)=0,3, duplas=0,1, tripla=0,05. Uniao=0,95."
     },
     {
       "id": "estatistica_expand_6",
@@ -16913,7 +17111,9 @@
       "dica": "CESPE: a regra do produto geral NÃO exige independência — usa probabilidade condicional. A forma simplificada P(A)P(B) só vale se A e B forem independentes. Para n eventos: P(∩Ai) = P(A1) × P(A2|A1) × P(A3|A1∩A2) × ...",
       "topico": "Probabilidade",
       "codigo_topico": "2",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "P(AnB)=P(A)P(B|A). Regra do produto.",
+      "camada_aplicacao": "2 cartas: P(as na 1a E as na 2a)=4/52x3/51=0,0045."
     },
     {
       "id": "estatistica_expand_7",
@@ -16922,7 +17122,9 @@
       "dica": "✅ Grave: 'ME com P>0 são DEPENDENTES'. CESPE adora essa pegadinha! Independentes NUNCA são ME (a menos que P=0).",
       "topico": "Probabilidade",
       "codigo_topico": "2",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "ME vs Independentes: ME com P>0 SAO DEPENDENTES.",
+      "camada_aplicacao": "P(as) e P(rei) ME -> dependentes. P(cara1) e P(cara2) indep."
     },
     {
       "id": "estatistica_expand_8",
@@ -16931,7 +17133,9 @@
       "dica": "CESPE: o teorema da probabilidade total SÓ vale se {Ai} formar uma PARTIÇÃO (mutuamente exclusivos E exaustivos). É a base para o Teorema de Bayes: P(Ai|B) = P(Ai)P(B|Ai) / Σ P(Aj)P(B|Aj).",
       "topico": "Probabilidade",
       "codigo_topico": "2",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "P(B)=S P(Ai) P(B|Ai). Probabilidade total.",
+      "camada_aplicacao": "P(+)=0,01x0,99+0,99x0,05=0,0594."
     },
     {
       "id": "estatistica_expand_9",
@@ -16940,7 +17144,9 @@
       "dica": "CESPE: partição = quebra do Ω em pedaços que não se sobrepõem e cuja união é o total. Exemplo clássico: A e A^c formam uma partição de Ω. O TPT e Bayes exigem partição.",
       "topico": "Probabilidade",
       "codigo_topico": "2",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "Particao: exclusivos + exaustivos. A e Ac formam uma.",
+      "camada_aplicacao": "A=chove, Ac=nao chove: exclusivos e exaustivos. P(A)+P(Ac)=1."
     },
     {
       "id": "estatistica_expand_10",
@@ -16949,7 +17155,9 @@
       "dica": "CESPE: a binomial pressupõe: (1) n fixo, (2) independentes, (3) mesma p, (4) dois resultados. E(X) = np. Var(X) = np(1−p). Se n = 1, a binomial se reduz a Bernoulli.",
       "topico": "Probabilidade",
       "codigo_topico": "2",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "Bernoulli: 2 resultados. Binomial: n repeticoes.",
+      "camada_aplicacao": "10 questoes p=0,25. X~Bin(10;0,25). P(3)=C(10,3)x0,25^3x0,75^7."
     },
     {
       "id": "estatistica_expand_11",
@@ -16958,7 +17166,9 @@
       "dica": "CESPE: Ω pode ser finito, infinito enumerável ou não enumerável. Evento é QUALQUER subconjunto de Ω (em espaços discretos). Evento certo = Ω; evento impossível = ∅. Espaço amostral equiprovável: todos os elementos têm mesma chance.",
       "topico": "Definições básicas e axiomas",
       "codigo_topico": "2.1",
-      "dificuldade": "media"
+      "dificuldade": "media",
+      "camada_visual": "Aleatorio, Omega, evento, elementar: vocabulario basico.",
+      "camada_aplicacao": "Dado: Omega={1,2,3,4,5,6}, evento par={2,4,6}, elementar={3}."
     },
     {
       "id": "estatistica_expand_12",
@@ -16967,7 +17177,9 @@
       "dica": "CESPE: P(A) ≤ 1 decorre de P(A) + P(A^c) = 1 e P(A^c) ≥ 0. A monotonicidade (A ⊆ B ⇒ P(A) ≤ P(B)) é muito cobrada: Todo subconjunto tem probabilidade menor ou igual ao conjunto que o contém.",
       "topico": "Definições básicas e axiomas",
       "codigo_topico": "2.1",
-      "dificuldade": "media"
+      "dificuldade": "media",
+      "camada_visual": "Consequencias: P(vazio)=0, P(Ac)=1-P(A), etc.",
+      "camada_aplicacao": "A sub B: ser mulher sub ser adulto. P(mulher) <= P(adulto)."
     },
     {
       "id": "estatistica_expand_13",
@@ -16976,7 +17188,9 @@
       "dica": "CESPE: toda partição é composta por eventos MUTUAMENTE EXCLUSIVOS e EXAUSTIVOS. A e A^c formam a partição mais simples. O Teorema de Bayes exige uma partição do espaço amostral.",
       "topico": "Definições básicas e axiomas",
       "codigo_topico": "2.1",
-      "dificuldade": "media"
+      "dificuldade": "media",
+      "camada_visual": "Particao = divisao sem sobras nem sobreposicoes.",
+      "camada_aplicacao": "Faixas etarias 0-18, 18-60, 60+: exclusivas, exaustivas, soma=1."
     },
     {
       "id": "estatistica_expand_14",
@@ -16985,7 +17199,9 @@
       "dica": "CESPE: a condição P(B) > 0 é essencial — não existe probabilidade condicional para evento de probabilidade zero. P(A|B) redefine a probabilidade no subespaço B, renormalizando por P(B). Se A e B são independentes, P(A|B) = P(A).",
       "topico": "Probabilidade condicional e independência",
       "codigo_topico": "2.2",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "P(A|B)=P(AnB)/P(B). Reduz Omega a B.",
+      "camada_aplicacao": "P(doente|+)=P(doente n +)/P(+). P(B)=0 -> condicional nao existe."
     },
     {
       "id": "estatistica_expand_15",
@@ -16994,7 +17210,9 @@
       "dica": "CESPE: a ordem dos eventos importa na fórmula geral. Se todos os eventos forem independentes, o produto se reduz a P(A1)×P(A2)×...×P(An). Para 2 eventos: P(A∩B) = P(A) × P(B|A) = P(B) × P(A|B).",
       "topico": "Probabilidade condicional e independência",
       "codigo_topico": "2.2",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "Regra da cadeia p/ n eventos sequenciais.",
+      "camada_aplicacao": "3 cartas ouro sem reposicao: 13/52x12/51x11/50=0,0129."
     },
     {
       "id": "estatistica_expand_16",
@@ -17003,7 +17221,9 @@
       "dica": "CESPE: eventos independentes com P>0 SEMPRE têm intersecção não vazia (P(A∩B) = P(A)P(B) > 0). Logo, eventos mutuamente exclusivos com P>0 NUNCA são independentes! Essa é a pegadinha mais clássica da CESPE em probabilidade.",
       "topico": "Probabilidade condicional e independência",
       "codigo_topico": "2.2",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "P(AnB)=P(A)P(B). ME nunca sao independentes.",
+      "camada_aplicacao": "2 moedas: P(cara1 n cara2)=0,5x0,5=0,25. Se ME, P=0."
     },
     {
       "id": "estatistica_expand_17",
@@ -17012,7 +17232,9 @@
       "dica": "CESPE: P(A_i) é a probabilidade a priori (antes da evidência). P(A_i|B) é a probabilidade a posteriori (após a evidência). O Teorema de Bayes inverte a condicional: de P(B|A_i) obtém-se P(A_i|B). Exige partição do espaço amostral.",
       "topico": "Probabilidade condicional e independência",
       "codigo_topico": "2.2",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "Bayes: atualiza P(causa) com evidencia.",
+      "camada_aplicacao": "P(doente|+)=(0,01x0,99)/(0,01x0,99+0,99x0,05)=16,7%."
     },
     {
       "id": "estatistica_expand_18",
@@ -17021,7 +17243,9 @@
       "dica": "CESPE: V.A. discreta = função de probabilidade (f.p.) ou massa de probabilidade. V.A. contínua = função densidade de probabilidade (f.d.p.) — a probabilidade em um ponto é ZERO. P(a ≤ X ≤ b) = ∫_a^b f(x)dx.",
       "topico": "Probabilidade condicional e independência",
       "codigo_topico": "2.2",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "VA = numero. Discreta=contavel. Continua=intervalo.",
+      "camada_aplicacao": "Chamadas/hora=VA discreta. Tempo atendimento=VA continua. Ponto exato=0."
     },
     {
       "id": "estatistica_expand_19",
@@ -17030,7 +17254,9 @@
       "dica": "CESPE: na AAS sem reposição, as seleções são DEPENDENTES (a probabilidade condicional muda a cada retirada). Na AAS com reposição, as seleções são INDEPENDENTES. AAS pressupõe que a população seja homogênea.",
       "topico": "Técnicas de amostragem: amostragem aleatória simples, estratificada, sistemática e por conglomerados",
       "codigo_topico": "3",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "AAS com/sem reposicao: independente vs dependente.",
+      "camada_aplicacao": "AAS 100 de 10000: com reposicao indep; sem reposicao dep. Fator~0,99."
     },
     {
       "id": "estatistica_expand_20",
@@ -17039,7 +17265,9 @@
       "dica": "CESPE: estratificada = homogeneidade DENTRO dos estratos, heterogeneidade ENTRE estratos. A alocação proporcional é a mais comum. A alocação uniforme é usada quando os estratos têm tamanhos similares ou quando se quer comparar os estratos.",
       "topico": "Técnicas de amostragem: amostragem aleatória simples, estratificada, sistemática e por conglomerados",
       "codigo_topico": "3",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "Estratos homogeneos. Alocacao proporcional ou uniforme.",
+      "camada_aplicacao": "3 estratos (30%,50%,20%). Amostra100: proporcional 30,50,20. Uniforme 33,33,34."
     },
     {
       "id": "estatistica_expand_21",
@@ -17048,7 +17276,9 @@
       "dica": "CESPE: a amostragem sistemática é mais prática que a AAS quando a população está ordenada, mas o risco de periodicidade é sua maior desvantagem. Se a ordenação for aleatória, equivale à AAS.",
       "topico": "Técnicas de amostragem: amostragem aleatória simples, estratificada, sistemática e por conglomerados",
       "codigo_topico": "3",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "k=N/n. Risco: periodicidade oculta.",
+      "camada_aplicacao": "Amostrar cada 7o dia: sempre mesmo dia (vies). Aleatorio = AAS."
     },
     {
       "id": "estatistica_expand_22",
@@ -17057,7 +17287,9 @@
       "dica": "✅ Macete: 'Estratos → dentro parecidos; Conglomerados → dentro diferentes'. CESPE: conglomerado é mais barato, mas menos preciso. Usado quando não há lista completa da população.",
       "topico": "Técnicas de amostragem: amostragem aleatória simples, estratificada, sistemática e por conglomerados",
       "codigo_topico": "3",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "Conglomerados (heterogeneos) vs Estratos (homogeneos).",
+      "camada_aplicacao": "Escolas (conglom): heterogeneas, sorteia algumas. Series (estratos): homogeneas."
     },
     {
       "id": "estatistica_expand_23",
@@ -17066,7 +17298,9 @@
       "dica": "⚠️ CESPE: Aumentar o tamanho amostral reduz o erro amostral, mas NÃO reduz o erro não amostral! Erro não amostral é mais perigoso em grandes amostras.",
       "topico": "Técnicas de amostragem: amostragem aleatória simples, estratificada, sistemática e por conglomerados",
       "codigo_topico": "3",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Amostral (diminui c/ n) vs Nao amostral (nao diminui).",
+      "camada_aplicacao": "Amostral +-3% (n=1000). Nao amostral: vies persiste c/ n=10000."
     },
     {
       "id": "estatistica_expand_24",
@@ -17075,7 +17309,9 @@
       "dica": "CESPE: a fórmula supõe população infinita. Para população finita, aplica-se correção: n_finito = (n_inf × N) / (n_inf + N − 1). Quanto menor E (mais precisão) ou maior Z (mais confiança), maior o n.",
       "topico": "Tamanho amostral",
       "codigo_topico": "3.1",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "n=Z2pq/E2. p=0,5 conservador.",
+      "camada_aplicacao": "95% (Z=1,96), E=0,03, p=0,5: n=1067. E=0,02: n=2401."
     },
     {
       "id": "estatistica_expand_25",
@@ -17084,7 +17320,9 @@
       "dica": "CESPE: a correção para população finita é usada quando n/N > 0,05 (amostra > 5% da população). Quanto menor N, maior o efeito da correção. Se N é muito grande, n_finito ≈ n_infinito.",
       "topico": "Tamanho amostral",
       "codigo_topico": "3.1",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "n_finito = (n_inf x N)/(n_inf+N-1).",
+      "camada_aplicacao": "N=5000, n_inf=1067. n_finito=880."
     },
     {
       "id": "estatistica_expand_26",
@@ -17093,7 +17331,9 @@
       "dica": "CESPE: a fórmula de Slovin DERIVA de n = (Z² × 0,5 × 0,5) / e² com correção para população finita, assumindo Z = 2 (aproximação para 95% de confiança). Não é preciso usar Z explícito — já está embutido na aproximação.",
       "topico": "Tamanho amostral",
       "codigo_topico": "3.1",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "Slovin: n=N/(1+Ne2). Z~2 embutido.",
+      "camada_aplicacao": "N=10000, e=0,05: n=10000/(1+10000x0,0025)=385."
     },
     {
       "id": "estatistica_expand_27",
@@ -17102,7 +17342,9 @@
       "dica": "CESPE: a fórmula exige CONHECER σ, o que raramente ocorre na prática. Solução: usar s (desvio padrão amostral) como estimativa, ou conduzir amostra-piloto. Quanto maior σ² (mais heterogeneidade), maior o n necessário.",
       "topico": "Tamanho amostral",
       "codigo_topico": "3.1",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "n=Z2s2/E2. Precisa s. Usa-se amostra piloto.",
+      "camada_aplicacao": "95%, E=R$200, s=R$1000: n=96. Maior s2 -> maior n."
     },
     {
       "id": "estatistica_expand_28",
@@ -17111,7 +17353,9 @@
       "dica": "CESPE: a relação é: n ∝ Z² × σ² / E². Dobrar a precisão (E/2) quadruplica n. Aumentar o nível de confiança de 95% (Z≈1,96) para 99% (Z≈2,58) aumenta n em ≈73%. A variabilidade é o fator que o pesquisador menos controla.",
       "topico": "Tamanho amostral",
       "codigo_topico": "3.1",
-      "dificuldade": "facil"
+      "dificuldade": "facil",
+      "camada_visual": "Mais confianca, menos margem, mais variancia -> maior n.",
+      "camada_aplicacao": "95%->99%: n+73%. E 3%->1,5%: n quadruplica."
     },
     {
       "id": "estatistica_expand_29",
@@ -17120,7 +17364,9 @@
       "dica": "CESPE: Var(X) = E(X²) − [E(X)]² é a fórmula computacional (mais prática). A esperança é um operador LINEAR: E(aX + b) = aE(X) + b. A variância NÃO é linear: Var(aX + b) = a²Var(X). CESPE adora testar essas propriedades.",
       "topico": "Probabilidade",
       "codigo_topico": "2",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "E(X)=SxP(x). Var=E(X2)-E(X)2.",
+      "camada_aplicacao": "Dado: E(X)=3,5. E(X2)=15,17. Var=2,92. DP=1,71."
     },
     {
       "id": "estatistica_expand_30",
@@ -17129,7 +17375,9 @@
       "dica": "CESPE: a binomial é a SOMA de n Bernoulli independentes. E(X) = np, Var(X) = npq (q = 1−p). A variância é máxima quando p = 0,5 (máxima incerteza). A proporção amostral p̂ = X/n tem E(p̂) = p e Var(p̂) = p(1−p)/n.",
       "topico": "Probabilidade",
       "codigo_topico": "2",
-      "dificuldade": "dificil"
+      "dificuldade": "dificil",
+      "camada_visual": "Binomial: E(X)=np. Var(X)=np(1-p).",
+      "camada_aplicacao": "20 questoes p=0,25: E(X)=5. Var=20x0,25x0,75=3,75. DP=1,94."
     }
   ],
   "jurisprudencias": [

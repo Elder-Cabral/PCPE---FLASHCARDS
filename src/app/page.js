@@ -2069,6 +2069,9 @@ function StudySession({
 
   const [isFlipped, setIsFlipped] = useState(false);
   const [needsScroll, setNeedsScroll] = useState(false);
+  const [showLayersModal, setShowLayersModal] = useState(false);
+  const isStats = selectedMateria === "estatistica";
+  const hasLayers = !!(isStats && currentCard && (currentCard.camada_visual || currentCard.camada_aplicacao));
   const backContentRef = useRef(null);
   const backContainerRef = useRef(null);
   const cardOuterRef = useRef(null);
@@ -2286,6 +2289,37 @@ function StudySession({
               {favorites.includes(currentCard.id) ? "favoritado" : "favoritar"}
             </span>
           </button>
+
+          {/* Botão de Camadas (apenas Estatística) */}
+          {hasLayers && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setShowLayersModal(true);
+              }}
+              style={{
+                position: "absolute",
+                top: 16,
+                left: 16,
+                background: "transparent",
+                border: "none",
+                color: "#3b82f6",
+                cursor: "pointer",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: 2,
+                zIndex: 20,
+                outline: "none",
+                pointerEvents: "auto"
+              }}
+            >
+              <span style={{ fontSize: 18 }}>🧠</span>
+              <span style={{ fontSize: 9, fontWeight: 500, opacity: 0.6, letterSpacing: 0.5, color: "#94a3b8" }}>
+                camadas
+              </span>
+            </button>
+          )}
         </div>
 
         {/* Botões de Ação */}
@@ -2364,6 +2398,84 @@ function StudySession({
           />
         </div>
       </div>
+
+      {/* Modal de Camadas (apenas Estatística) */}
+      {showLayersModal && currentCard && (
+        <div
+          onClick={() => setShowLayersModal(false)}
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 9999,
+            background: "rgba(0,0,0,0.75)",
+            backdropFilter: "blur(6px)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: 20
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              background: "linear-gradient(135deg, #0e1726, #090d16)",
+              border: "1px solid rgba(255,255,255,0.08)",
+              borderRadius: 24,
+              padding: "32px 28px",
+              maxWidth: 520,
+              width: "100%",
+              maxHeight: "85vh",
+              overflowY: "auto",
+              position: "relative",
+              boxShadow: "0 25px 50px rgba(0,0,0,0.5)"
+            }}
+          >
+            <button
+              onClick={() => setShowLayersModal(false)}
+              style={{
+                position: "absolute",
+                top: 16,
+                right: 16,
+                background: "transparent",
+                border: "none",
+                color: "#64748b",
+                cursor: "pointer",
+                fontSize: 20,
+                lineHeight: 1,
+                zIndex: 1
+              }}
+            >
+              ✕
+            </button>
+
+            {/* Camada 1 — Visual/Intuitivo */}
+            <div style={{ marginBottom: 28 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
+                <span style={{ fontSize: 20 }}>💡</span>
+                <span style={{ color: "#3b82f6", fontSize: 13, fontWeight: 700, letterSpacing: 2 }}>
+                  INTUIÇÃO VISUAL
+                </span>
+              </div>
+              <p style={{ color: "#e2e8f0", fontSize: 14, lineHeight: 1.7, margin: 0, fontFamily: "Georgia, serif" }}>
+                {currentCard.camada_visual}
+              </p>
+            </div>
+
+            {/* Camada 2 — Aplicação Prática */}
+            <div>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
+                <span style={{ fontSize: 20 }}>🔍</span>
+                <span style={{ color: "#eab308", fontSize: 13, fontWeight: 700, letterSpacing: 2 }}>
+                  APLICAÇÃO PRÁTICA
+                </span>
+              </div>
+              <p style={{ color: "#e2e8f0", fontSize: 14, lineHeight: 1.7, margin: 0, fontFamily: "Georgia, serif" }}>
+                {currentCard.camada_aplicacao}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </Shell>
   );
 }
