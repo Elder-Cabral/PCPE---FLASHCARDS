@@ -10,7 +10,7 @@
 /** @typedef {import('../types').AppStats} AppStats */
 /** @typedef {import('../types').MateriaStats} MateriaStats */
 /** @typedef {import('../types').PomodoroTick} PomodoroTick */
-import React, { useState, useEffect, useCallback, useMemo, useRef, useLayoutEffect } from "react";
+import React, { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import { ErrorBoundary } from "../components/ErrorBoundary";
 import { useAsyncError } from "../hooks/useAsyncError";
 import { safeCall } from "../lib/api";
@@ -2052,58 +2052,11 @@ function StudySession({
   const labelText = isGlobal ? "Revisão Geral" : (matInfo?.label || "");
   const emojiText = isGlobal ? "⚡" : (matInfo?.emoji || "");
 
-  const EXPAND_THRESHOLD = 260;
   const [isFlipped, setIsFlipped] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [showExpand, setShowExpand] = useState(false);
-  const backContentRef = useRef(null);
-  const backContainerRef = useRef(null);
-  const cardOuterRef = useRef(null);
 
   useEffect(() => {
     setIsFlipped(false);
   }, [currentQueueIndex]);
-
-  useEffect(() => {
-    setIsExpanded(false);
-    setShowExpand(false);
-  }, [currentQueueIndex]);
-
-  function measureOverflow() {
-    if (backContentRef.current) {
-      setShowExpand(backContentRef.current.scrollHeight > EXPAND_THRESHOLD);
-    }
-  }
-
-  useLayoutEffect(() => {
-    if (isFlipped) {
-      measureOverflow();
-    } else {
-      setShowExpand(false);
-    }
-  }, [isFlipped]);
-
-  useEffect(() => {
-    if (!isFlipped) return;
-    window.addEventListener('resize', measureOverflow);
-    return () => window.removeEventListener('resize', measureOverflow);
-  }, [isFlipped]);
-
-  function handleToggleExpand(e) {
-    e.stopPropagation();
-    setIsExpanded(prev => !prev);
-  }
-
-  useLayoutEffect(() => {
-    if (!backContentRef.current || !cardOuterRef.current) return;
-    if (isExpanded) {
-      const contentH = backContentRef.current.scrollHeight;
-      const pad = 42 + 42 + 14 + 8 + 28;
-      cardOuterRef.current.style.height = `${Math.max(contentH + pad, 200)}px`;
-    } else {
-      cardOuterRef.current.style.height = "";
-    }
-  }, [isExpanded]);
 
   return (
     <Shell user={currentUser} stats={stats} onLogout={onLogout} centered userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={onDismissShield} srsData={srsData} hidePomodoro={true}>
@@ -2166,22 +2119,18 @@ function StudySession({
         </div>
 
         {/* Flashcard 3D */}
-        <div
-          ref={cardOuterRef}
-          style={{
-            width: "100%",
-            flex: isExpanded ? "0 0 auto" : 1,
-            minHeight: 200,
-            position: "relative",
-            transition: "height 0.25s ease, flex 0.3s ease"
-          }}
-        >
+        <div style={{
+          width: "100%",
+          flex: 1,
+          minHeight: 200,
+          position: "relative",
+        }}>
           <div
-            onClick={() => { if (!isExpanded) setIsFlipped(prev => !prev); }}
+            onClick={() => setIsFlipped(prev => !prev)}
             style={{
               width: "100%",
               height: "100%",
-              cursor: isExpanded ? "default" : "pointer",
+              cursor: "pointer",
               perspective: 1000
             }}
           >
@@ -2208,33 +2157,26 @@ function StudySession({
 
               {/* Verso */}
               <div
-                ref={backContainerRef}
                 className="custom-scrollbar flashcard-box flashcard-back-style"
                 style={{
                   border: `1px solid ${themeColor}40`,
                   justifyContent: "flex-start",
                   alignItems: "center",
-                  overflow: isExpanded ? "hidden auto" : "hidden"
+                  overflow: "hidden auto"
                 }}
               >
                 <div style={{ fontSize: 10, color: themeColor, fontWeight: 600, letterSpacing: 3, marginBottom: 14, flexShrink: 0 }}>
                   ✦ RESPOSTA ✦
                 </div>
 
-                <div
-                  ref={backContentRef}
-                  style={{
-                    width: "100%",
-                    flex: "1 1 auto",
-                    overflow: "hidden",
-                    maxHeight: isExpanded ? "none" : `${EXPAND_THRESHOLD}px`,
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    position: "relative"
-                  }}
-                >
+                <div style={{
+                  width: "100%",
+                  flex: "1 1 auto",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}>
                   <p className="flashcard-answer-text" style={{ color: "#e2e8f0", fontSize: 15, lineHeight: 1.65, textAlign: "center", margin: "0 0 16px 0", fontFamily: "Georgia, serif" }}>
                     {currentCard?.resposta}
                   </p>
@@ -2257,47 +2199,7 @@ function StudySession({
                       </p>
                     </div>
                   )}
-
-                  {showExpand && !isExpanded && (
-                    <div style={{
-                      position: "absolute",
-                      bottom: 0,
-                      left: 0,
-                      right: 0,
-                      height: 40,
-                      background: "linear-gradient(transparent 0%, #0f162a 100%)",
-                      pointerEvents: "none"
-                    }} />
-                  )}
                 </div>
-
-                {showExpand && (
-                  <button
-                    onClick={handleToggleExpand}
-                    style={{
-                      background: "rgba(255,255,255,0.04)",
-                      border: "1px solid rgba(255,255,255,0.06)",
-                      color: "#94a3b8",
-                      cursor: "pointer",
-                      borderRadius: 8,
-                      padding: "10px 28px",
-                      fontSize: 13,
-                      fontWeight: 500,
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: 4,
-                      flexShrink: 0,
-                      marginTop: 8,
-                      marginBottom: 0,
-                      transition: "all 0.2s ease",
-                      alignSelf: "center",
-                      letterSpacing: 0.5
-                    }}
-                    title={isExpanded ? "Recolher" : "Ver mais"}
-                  >
-                    {isExpanded ? "▲ recolher" : "▼ ver mais"}
-                  </button>
-                )}
               </div>
             </div>
           </div>
