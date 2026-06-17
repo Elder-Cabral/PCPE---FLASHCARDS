@@ -1146,6 +1146,75 @@ export default function App() {
     return arr;
   };
 
+  // ── ALGORITMO DE SELEÇÃO 4/10 ────────────────────────────────────────
+  /**
+   * @param {AnswerEntry[]} entries
+   * @returns {"nao_visto"|"muito_errado"|"dominado"|"normal"}
+   */
+  const getCardCategory = (entries) => {
+    if (!entries || entries.length === 0) return "nao_visto";
+    let errors = 0, successes = 0;
+    for (const e of entries) {
+      if (e.resultado === 0 || e.resultado === 1) errors++;
+      else if (e.resultado === 2 || e.resultado === 3) successes++;
+    }
+    const netErrors = Math.max(0, errors - successes);
+    if (netErrors >= 2) return "muito_errado";
+    if (successes >= 5) return "dominado";
+    return "normal";
+  };
+
+  /**
+   * Constrói fila com regra 4/10: a cada janela de 10 cards,
+   * no mínimo 4 são prioritários (não vistos ou muito errados).
+   * @param {Flashcard[]} cards
+   * @param {AnswerEntry[]} answerHistory
+   * @returns {Flashcard[]}
+   */
+  const buildPrioritizedQueue = (cards, answerHistory) => {
+    const historyByCard = new Map();
+    for (const entry of answerHistory) {
+      const arr = historyByCard.get(entry.cardId);
+      if (arr) arr.push(entry);
+      else historyByCard.set(entry.cardId, [entry]);
+    }
+
+    const prioritarios = [];
+    const normais = [];
+    const dominados = [];
+
+    for (const card of cards) {
+      const entries = historyByCard.get(card.id) || [];
+      const cat = getCardCategory(entries);
+      if (cat === "nao_visto" || cat === "muito_errado") prioritarios.push(card);
+      else if (cat === "dominado") dominados.push(card);
+      else normais.push(card);
+    }
+
+    shuffle(prioritarios);
+    shuffle(normais);
+    shuffle(dominados);
+
+    const allNormais = [...normais, ...dominados];
+    const total = prioritarios.length + allNormais.length;
+    if (total === 0) return [];
+    if (prioritarios.length === 0) return allNormais;
+
+    // Distribuir prioritários uniformemente ao longo da fila
+    const result = new Array(total);
+    const step = total / prioritarios.length;
+    const pPos = new Array(total).fill(false);
+    for (let i = 0; i < prioritarios.length; i++)
+      pPos[Math.min(Math.round(i * step), total - 1)] = true;
+
+    let p = 0, n = 0;
+    for (let i = 0; i < total; i++) {
+      if (pPos[i] && p < prioritarios.length) result[i] = prioritarios[p++];
+      else result[i] = allNormais[n++];
+    }
+    return result;
+  };
+
   const sortQueue = (queueToSort) => {
     if (reviewOrder === "random") {
       return shuffle([...queueToSort]);
@@ -1266,9 +1335,9 @@ export default function App() {
       queue = [...dueCards, ...newCards];
     }
 
-    const sortedQueue = sortQueue(queue);
+    const prioritizedQueue = buildPrioritizedQueue(queue, answerHistory);
 
-    setStudyQueue(sortedQueue);
+    setStudyQueue(prioritizedQueue);
     setCurrentQueueIndex(0);
     setStudyMode(mode);
     setSelectedMateria(materiaId);
@@ -1280,9 +1349,9 @@ export default function App() {
     const cards = BANCO[selectedMateria] || [];
     let queue = cards.filter(c => topicsToStudy.includes(c.topico));
 
-    const sortedQueue = sortQueue(queue);
+    const prioritizedQueue = buildPrioritizedQueue(queue, answerHistory);
 
-    setStudyQueue(sortedQueue);
+    setStudyQueue(prioritizedQueue);
     setCurrentQueueIndex(0);
     setStudyMode("topic");
     resetSessionState();
