@@ -525,8 +525,14 @@ export default function App() {
         }
       }
 
-      /* Desktop (>640px) — padding reduzido */
+      /* Desktop (>640px) — padding reduzido, SRS mais próximo */
       @media (min-width: 641px) {
+        .study-container {
+          gap: 10px !important;
+        }
+        .nav-wrapper {
+          margin-top: 10px;
+        }
         .flashcard-box {
           padding: 32px 34px !important;
         }
@@ -2130,7 +2136,7 @@ function StudySession({
           ⚠️ {toastMessage}
         </div>
       )}
-      <div style={{ display: "flex", flexDirection: "column", gap: 20, width: "100%", maxWidth: 640, margin: "0 auto", boxSizing: "border-box", flex: 1, minHeight: 0, padding: "0 4px" }}>
+      <div className="study-container" style={{ display: "flex", flexDirection: "column", gap: 20, width: "100%", maxWidth: 640, margin: "0 auto", boxSizing: "border-box", flex: 1, minHeight: 0, padding: "0 4px" }}>
         {/* Header do Estudo */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexShrink: 0, padding: "0 8px" }}>
           <BackButton onClick={onBack} />
@@ -2352,12 +2358,14 @@ function StudySession({
         </div>
 
         {/* Navegação Manual Inferior */}
-        <NavButtons
-          onPrev={onPrevCard}
-          onNext={onNextCard}
-          hasPrev={currentQueueIndex > 0}
-          hasNext={currentQueueIndex < studyQueue.length - 1}
-        />
+        <div className="nav-wrapper" style={{ flexShrink: 0 }}>
+          <NavButtons
+            onPrev={onPrevCard}
+            onNext={onNextCard}
+            hasPrev={currentQueueIndex > 0}
+            hasNext={currentQueueIndex < studyQueue.length - 1}
+          />
+        </div>
       </div>
     </Shell>
   );
