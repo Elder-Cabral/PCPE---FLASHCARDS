@@ -10,7 +10,7 @@
 /** @typedef {import('../types').AppStats} AppStats */
 /** @typedef {import('../types').MateriaStats} MateriaStats */
 /** @typedef {import('../types').PomodoroTick} PomodoroTick */
-import React, { useState, useEffect, useCallback, useMemo, useRef } from "react";
+import React, { useState, useEffect, useCallback, useMemo, useRef, useLayoutEffect } from "react";
 import { ErrorBoundary } from "../components/ErrorBoundary";
 import { useAsyncError } from "../hooks/useAsyncError";
 import { safeCall } from "../lib/api";
@@ -399,8 +399,9 @@ export default function App() {
       .flashcard-back-style {
         background: linear-gradient(135deg, #0f162a, #0b0f19);
         box-shadow: 0 20px 45px rgba(0,0,0,0.4);
-        overflow-y: auto;
+        overflow: hidden;
         transform: rotateY(180deg);
+        padding-right: 60px;
       }
 
       /* Composite hero: banner + overlay + subtle grid on top */
@@ -484,6 +485,9 @@ export default function App() {
           padding: 32px 20px !important;
           border-radius: 20px !important;
         }
+        .flashcard-back-style {
+          padding-right: 52px !important;
+        }
         .flashcard-question-text {
           font-size: 16px !important;
           line-height: 1.6 !important;
@@ -505,6 +509,9 @@ export default function App() {
         .flashcard-box {
           padding: 28px 16px !important;
           border-radius: 16px !important;
+        }
+        .flashcard-back-style {
+          padding-right: 48px !important;
         }
         .flashcard-question-text {
           font-size: 15px !important;
@@ -2046,10 +2053,42 @@ function StudySession({
   const emojiText = isGlobal ? "⚡" : (matInfo?.emoji || "");
 
   const [isFlipped, setIsFlipped] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [hasOverflow, setHasOverflow] = useState(false);
+  const backContentRef = useRef(null);
+  const backContainerRef = useRef(null);
+  const cardOuterRef = useRef(null);
 
   useEffect(() => {
     setIsFlipped(false);
   }, [currentQueueIndex]);
+
+  useEffect(() => {
+    setIsExpanded(false);
+    setHasOverflow(false);
+    const raf = requestAnimationFrame(() => {
+      if (backContentRef.current && backContainerRef.current) {
+        setHasOverflow(backContentRef.current.scrollHeight > backContainerRef.current.clientHeight + 2);
+      }
+    });
+    return () => cancelAnimationFrame(raf);
+  }, [currentQueueIndex]);
+
+  function handleToggleExpand(e) {
+    e.stopPropagation();
+    setIsExpanded(prev => !prev);
+  }
+
+  useLayoutEffect(() => {
+    if (!backContentRef.current || !cardOuterRef.current) return;
+    if (isExpanded) {
+      const contentH = backContentRef.current.scrollHeight;
+      const pad = 42 + 42 + 14 + 8 + 28;
+      cardOuterRef.current.style.height = `${Math.max(contentH + pad, 200)}px`;
+    } else {
+      cardOuterRef.current.style.height = "";
+    }
+  }, [isExpanded]);
 
   return (
     <Shell user={currentUser} stats={stats} onLogout={onLogout} centered userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={onDismissShield} srsData={srsData} hidePomodoro={true}>
@@ -2113,19 +2152,21 @@ function StudySession({
 
         {/* Flashcard 3D */}
         <div
+          ref={cardOuterRef}
           style={{
             width: "100%",
-            flex: 1,
+            flex: isExpanded ? "0 0 auto" : 1,
             minHeight: 200,
-            position: "relative"
+            position: "relative",
+            transition: "flex 0.3s ease"
           }}
         >
           <div
-            onClick={() => setIsFlipped(prev => !prev)}
+            onClick={() => { if (!isExpanded) setIsFlipped(prev => !prev); }}
             style={{
               width: "100%",
               height: "100%",
-              cursor: "pointer",
+              cursor: isExpanded ? "default" : "pointer",
               perspective: 1000
             }}
           >
@@ -2151,31 +2192,95 @@ function StudySession({
               </div>
 
               {/* Verso */}
-              <div className="custom-scrollbar flashcard-box flashcard-back-style" style={{ border: `1px solid ${themeColor}40` }}>
-                <div style={{ fontSize: 10, color: themeColor, fontWeight: 600, letterSpacing: 3, marginBottom: 14 }}>✦ RESPOSTA ✦</div>
-                
-                <p className="flashcard-answer-text" style={{ color: "#e2e8f0", fontSize: 15, lineHeight: 1.65, textAlign: "center", margin: "0 0 16px 0", fontFamily: "Georgia, serif" }}>
-                  {currentCard?.resposta}
-                </p>
+              <div
+                ref={backContainerRef}
+                className="custom-scrollbar flashcard-box flashcard-back-style"
+                style={{
+                  border: `1px solid ${themeColor}40`,
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                  overflow: isExpanded ? "hidden auto" : "hidden"
+                }}
+              >
+                <div style={{ fontSize: 10, color: themeColor, fontWeight: 600, letterSpacing: 3, marginBottom: 14, flexShrink: 0 }}>
+                  ✦ RESPOSTA ✦
+                </div>
 
-                {/* Dica do Professor */}
-                {currentCard?.dica && (
-                  <div style={{
-                    background: "rgba(234,179,8,0.04)",
-                    border: "1px solid rgba(234,179,8,0.12)",
-                    borderRadius: 14,
-                    padding: "12px 16px",
+                <div
+                  ref={backContentRef}
+                  style={{
                     width: "100%",
-                    boxSizing: "border-box",
-                    marginTop: "auto"
-                  }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#eab308", fontSize: 11, fontWeight: 600, letterSpacing: 1, marginBottom: 4 }}>
-                      <span>🎓</span> DICA DO PROFESSOR (CEBRASPE)
+                    flex: "1 1 auto",
+                    overflow: "hidden",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    position: "relative"
+                  }}
+                >
+                  <p className="flashcard-answer-text" style={{ color: "#e2e8f0", fontSize: 15, lineHeight: 1.65, textAlign: "center", margin: "0 0 16px 0", fontFamily: "Georgia, serif" }}>
+                    {currentCard?.resposta}
+                  </p>
+
+                  {currentCard?.dica && (
+                    <div style={{
+                      background: "rgba(234,179,8,0.04)",
+                      border: "1px solid rgba(234,179,8,0.12)",
+                      borderRadius: 14,
+                      padding: "12px 16px",
+                      width: "100%",
+                      boxSizing: "border-box",
+                      marginTop: 12
+                    }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#eab308", fontSize: 11, fontWeight: 600, letterSpacing: 1, marginBottom: 4 }}>
+                        <span>🎓</span> DICA DO PROFESSOR (CEBRASPE)
+                      </div>
+                      <p style={{ color: "#d1d5db", fontSize: 11, lineHeight: 1.5, margin: 0 }}>
+                        {highlightFalso(currentCard?.dica)}
+                      </p>
                     </div>
-                    <p style={{ color: "#d1d5db", fontSize: 11, lineHeight: 1.5, margin: 0 }}>
-                      {highlightFalso(currentCard?.dica)}
-                    </p>
-                  </div>
+                  )}
+
+                  {hasOverflow && !isExpanded && (
+                    <div style={{
+                      position: "absolute",
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      height: 40,
+                      background: "linear-gradient(transparent 0%, #0f162a 100%)",
+                      pointerEvents: "none"
+                    }} />
+                  )}
+                </div>
+
+                {hasOverflow && (
+                  <button
+                    onClick={handleToggleExpand}
+                    style={{
+                      background: "rgba(255,255,255,0.04)",
+                      border: "1px solid rgba(255,255,255,0.06)",
+                      color: "#94a3b8",
+                      cursor: "pointer",
+                      borderRadius: 8,
+                      padding: "4px 12px",
+                      fontSize: 11,
+                      fontWeight: 500,
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 4,
+                      flexShrink: 0,
+                      marginTop: 8,
+                      marginBottom: 0,
+                      transition: "all 0.2s ease",
+                      alignSelf: "center",
+                      letterSpacing: 0.5
+                    }}
+                    title={isExpanded ? "Recolher" : "Ver mais"}
+                  >
+                    {isExpanded ? "▲ recolher" : "▼ ver mais"}
+                  </button>
                 )}
               </div>
             </div>
