@@ -2316,7 +2316,7 @@ function StudySession({
             >
               <span style={{ fontSize: 18 }}>🧠</span>
               <span style={{ fontSize: 9, fontWeight: 500, opacity: 0.6, letterSpacing: 0.5, color: "#94a3b8" }}>
-                camadas
+                entender
               </span>
             </button>
           )}
