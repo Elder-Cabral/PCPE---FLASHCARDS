@@ -525,6 +525,16 @@ export default function App() {
         }
       }
 
+      /* Desktop (>640px) — padding reduzido */
+      @media (min-width: 641px) {
+        .flashcard-box {
+          padding: 32px 34px !important;
+        }
+        .flashcard-back-style {
+          padding-right: 54px !important;
+        }
+      }
+
       /* Botão flutuante do Pomodoro */
       .pomodoro-floating-btn {
         bottom: 20px; right: 20px;
@@ -2062,7 +2072,11 @@ function StudySession({
 
   function measureAndClamp() {
     if (!backContentRef.current || !cardOuterRef.current || !backContainerRef.current) return;
-    const neededH = backContentRef.current.scrollHeight + 120;
+    const cs = window.getComputedStyle(backContainerRef.current);
+    const padTop = parseFloat(cs.paddingTop);
+    const padBot = parseFloat(cs.paddingBottom);
+    const overhead = padTop + padBot + 24;
+    const neededH = backContentRef.current.scrollHeight + overhead;
     const cardTop = cardOuterRef.current.getBoundingClientRect().top;
     const reserve = window.innerWidth <= 640 ? 200 : 170;
     const maxH = window.innerHeight - cardTop - reserve;
@@ -2212,7 +2226,7 @@ function StudySession({
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  justifyContent: "center",
+                  justifyContent: "flex-start",
                 }}>
                   <p className="flashcard-answer-text" style={{ color: "#e2e8f0", fontSize: 15, lineHeight: 1.65, textAlign: "center", margin: "0 0 16px 0", fontFamily: "Georgia, serif" }}>
                     {currentCard?.resposta}
