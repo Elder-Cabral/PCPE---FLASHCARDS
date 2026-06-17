@@ -5238,7 +5238,7 @@
     {
       "id": "dir_penal_0",
       "pergunta": "Quais são os princípios basilares do Direito Penal?",
-      "resposta": "São oito: (1) LEGALIDADE (art. 1 CP + art. 5 XXXIX CF/88) - nullum crimen nulla poena sine lege; (2) ANTERIORIDADE; (3) CULPABILIDADE; (4) PROPORCIONALIDADE; (5) HUMANIDADE (art. 5 XLVII CF/88 veda penas cruéis); (6) LESIVIDADE; (7) INTERVENCAO MINIMA (ultima ratio); (8) FRAGMENTARIEDADE. CESPE: legalidade = reserva legal + anterioridade. MP NAO cria crimes (art. 62, par.1, I, b CF/88).",
+      "resposta": "São oito: (1) LEGALIDADE (art. 1 CP + art. 5 XXXIX CF/88) - nullum crimen nulla poena sine lege; (2) ANTERIORIDADE; (3) CULPABILIDADE; (4) PROPORCIONALIDADE; (5) HUMANIDADE (art. 5 XLVII CF/88 veda penas cruéis); (6) LESIVIDADE; (7) INTERVENCAO MÍNIMA (última ratio); (8) FRAGMENTARIEDADE. CESPE: legalidade = reserva legal + anterioridade. MP NÃO cria crimes (art. 62, par.1, I, b CF/88).",
       "dica": "Mnem: L A C P H L I F. CESPE: legalidade = reserva legal + ANTERIORIDADE (não irretroatividade). Art. 1 CP é art. 5 XXXIX CF/88.",
       "topico": "Princípios básicos",
       "codigo_topico": "1",
@@ -5301,8 +5301,8 @@
     {
       "id": "dir_penal_7",
       "pergunta": "O que e lei penal excepcional e qual sua principal caracteristica temporal?",
-      "resposta": "Lei penal excepcional: editada para situacões anormais transitórias (guerra, calamidade pública), sem prazo determinado. Caracteristica principal: ULTRA-ATIVIDADE (art. 3 CP): apesar de cessada a anormalidade, continua a regular fatos de sua vigencia. Diferencia-se da lei temporária (prazo fixo). Ambas são auto-revogáveis e ultra-ativas. Lei especial (ex: Drogas) regula matéria especifica e não se confunde com excepcional.",
-      "dica": "Mnem: LEI EXCEPCIONAL = situacão ANORMAL (sem prazo). LEI TEMPORARIA = PRAZO FIXO. Ambas ultra-ativas (art. 3 CP).",
+      "resposta": "Lei penal excepcional: editada para situacões anormais transitórias (guerra, calamidade pública), sem prazo determinado. Caracteristica principal: ULTRA-ATIVIDADE (art. 3 CP): apesar de cessada a anormalidade, continua a regular fatos de sua vigencia. Diferencia-se da lei temporária (prazo fixo). Ambas são auto-revogáveis e ultra-ativas. Lei especial (ex: Drogas) regula matéria específica e não se confunde com excepcional.",
+      "dica": "Mnem: LEI EXCEPCIONAL = situacão ANORMAL (sem prazo). LEI TEMPORÁRIA = PRAZO FIXO. Ambas ultra-ativas (art. 3 CP).",
       "topico": "Lei penal excepcional, especial e temporária",
       "codigo_topico": "3.3",
       "dificuldade": "media"
@@ -5985,7 +5985,7 @@
     {
       "id": "dir_penal_84",
       "pergunta": "O que é o princípio da intervenção mínima?",
-      "resposta": "O Direito Penal só deve ser usado como último recurso (ultima ratio), quando outros ramos do direito forem insuficientes.",
+      "resposta": "O Direito Penal só deve ser usado como último recurso (última ratio), quando outros ramos do direito forem insuficientes.",
       "dica": "ÁREA: Direito Penal. CESPE cobra parte geral (arts. 1-120 CP) e especial (crimes contra administração pública). Atenção às diferenças entre figuras típicas.",
       "topico": "Princípios básicos",
       "codigo_topico": "1",
@@ -6265,7 +6265,7 @@
       "id": "dir_penal_expand_9",
       "topico": "Tempo e lugar do crime",
       "pergunta": "Qual teoria define o lugar do crime a distancia ou plurilocal no CP?",
-      "resposta": "TEORIA DA UBIQUIDADE (art. 6 CP): lugar do crime e tanto o local da conduta quanto o local do resultado. O agente pode ser processado em qualquer desses locais. Ex: disparo de um estado e morte em outro - ambos competentes. Vale para crimes na internet: golpe virtual do exterior contra brasileiro - lugar do crime = Brasil se o resultado aqui se produziu. NAO confundir com teoria da atividade (tempo do crime).",
+      "resposta": "TEORIA DA UBIQUIDADE (art. 6 CP): lugar do crime e tanto o local da conduta quanto o local do resultado. O agente pode ser processado em qualquer desses locais. Ex: disparo de um estado e morte em outro - ambos competentes. Vale para crimes na internet: golpe virtual do exterior contra brasileiro - lugar do crime = Brasil se o resultado aqui se produziu. NÃO confundir com teoria da atividade (tempo do crime).",
       "dica": "DIFERENCA: Atividade (art. 4) = TEMPO. Ubiquidade (art. 6) = LUGAR. CESPE troca deliberadamente.",
       "codigo_topico": "3.2",
       "dificuldade": "media"
@@ -6283,7 +6283,7 @@
       "id": "dir_penal_expand_11",
       "topico": "Tempo e lugar do crime",
       "pergunta": "Em que momento o crime permanente se considera praticado para lei, flagrante e prescricão?",
-      "resposta": "Crime permanente (ex: sequestro, carcere privado): consumacão se prolonga no tempo. Considera-se praticado DURANTE TODO O PERIODO de permanência. Consequencias: (a) lei aplicavel = qualquer momento da permanência; (b) flagrante a qualquer tempo; (c) prescricão conta do fim da permanência. Súmula 711 STF: lei mais grave editada durante a permanência se aplica a todos os fatos anteriores. Diferença de crime continuado: permanente = consumacão unica prolongada; continuado = varios crimes.",
+      "resposta": "Crime permanente (ex: sequestro, carcere privado): consumacão se prolonga no tempo. Considera-se praticado DURANTE TODO O PERÍODO de permanência. Consequencias: (a) lei aplicavel = qualquer momento da permanência; (b) flagrante a qualquer tempo; (c) prescricão conta do fim da permanência. Súmula 711 STF: lei mais grave editada durante a permanência se aplica a todos os fatos anteriores. Diferença de crime continuado: permanente = consumacão única prolongada; continuado = varios crimes.",
       "dica": "Súmula 711 STF: lei mais grave durante permanência se aplica a todos. Prescricão = fim da permanência.",
       "codigo_topico": "3.2",
       "dificuldade": "media"
@@ -6292,7 +6292,7 @@
       "id": "dir_penal_expand_12",
       "topico": "Tempo e lugar do crime",
       "pergunta": "O que e lei penal em branco?",
-      "resposta": "Norma penal em que o preceito primario (descricão da conduta) e incompleto, dependendo de complemento. Divide-se em: (a) HOMOGENEA (propria): complemento da mesma fonte legislativa (ex: art. 121 CP + art. 327 CP - conceito de funcionario público); (b) HETEROGENEA (impropria): complemento de fonte diversa (ex: Lei 11.343/06 art. 33 + portaria ANVISA). STF entende que NAO viola o princípio da legalidade. Ex clasico: art. 33 Lei de Drogas + Portaria ANVISA que define substancias proibidas.",
+      "resposta": "Norma penal em que o preceito primario (descricão da conduta) e incompleto, dependendo de complemento. Divide-se em: (a) HOMOGENEA (própria): complemento da mesma fonte legislativa (ex: art. 121 CP + art. 327 CP - conceito de funcionário público); (b) HETEROGENEA (impropria): complemento de fonte diversa (ex: Lei 11.343/06 art. 33 + portaria ANVISA). STF entende que NÃO viola o princípio da legalidade. Ex clasico: art. 33 Lei de Drogas + Portaria ANVISA que define substancias proibidas.",
       "dica": "Mnem: HOMOGENEA = mesma fonte. HETEROGENEA = fonte diversa. CESPE: lei penal em branco viola legalidade? FALSO (STF).",
       "codigo_topico": "3.2",
       "dificuldade": "media"
@@ -6310,7 +6310,7 @@
       "id": "dir_penal_expand_14",
       "topico": "Tempo e lugar do crime",
       "pergunta": "Quais as teorias sobre o tempo do crime e qual o CP adota?",
-      "resposta": "Tres teorias: (1) ATIVIDADE - tempo = momento da conduta; (2) RESULTADO - tempo = momento do resultado; (3) MISTA (ubiquidade temporal) - tempo = qualquer momento entre conduta e resultado. O CP adota a TEORIA DA ATIVIDADE (art. 4): crime praticado no momento da acão ou omissão, ainda que outro seja o resultado. Isso define lei aplicavel, imputabilidade e prescricão. CESPE: NAO confundir com lugar (art. 6 = ubiquidade).",
+      "resposta": "Tres teorias: (1) ATIVIDADE - tempo = momento da conduta; (2) RESULTADO - tempo = momento do resultado; (3) MISTA (ubiquidade temporal) - tempo = qualquer momento entre conduta e resultado. O CP adota a TEORIA DA ATIVIDADE (art. 4): crime praticado no momento da acão ou omissão, ainda que outro seja o resultado. Isso define lei aplicavel, imputabilidade e prescricão. CESPE: NÃO confundir com lugar (art. 6 = ubiquidade).",
       "dica": "CESPE: CP adota teoria mista para tempo? FALSO. Adota ATIVIDADE. Teoria mista e para LUGAR (ubiquidade).",
       "codigo_topico": "3.2",
       "dificuldade": "media"
@@ -6319,7 +6319,7 @@
       "id": "dir_penal_expand_15",
       "topico": "Tempo e lugar do crime",
       "pergunta": "Qual teoria o CP adota para definir o lugar do crime?",
-      "resposta": "O CP adota a TEORIA DA UBIQUIDADE (art. 6): crime praticado no lugar da acão/omissão OU no lugar do resultado (onde se produziu ou deveria produzir-se). Competem o juiz do local da conduta é o do resultado (art. 70 CPP). Ex: homicidio com conduta em SP e resultado em MG - ambos competentes. NAO confundir: teoria da atividade (art. 4) = tempo; ubiquidade (art. 6) = lugar.",
+      "resposta": "O CP adota a TEORIA DA UBIQUIDADE (art. 6): crime praticado no lugar da acão/omissão OU no lugar do resultado (onde se produziu ou deveria produzir-se). Competem o juiz do local da conduta é o do resultado (art. 70 CPP). Ex: homicidio com conduta em SP e resultado em MG - ambos competentes. NÃO confundir: teoria da atividade (art. 4) = tempo; ubiquidade (art. 6) = lugar.",
       "dica": "DIFERENCA: Atividade = TEMPO (art. 4). Ubiquidade = LUGAR (art. 6). CESPE troca. Mnem: TEMPO = ATIVIDADE; LUGAR = UBIQUIDADE.",
       "codigo_topico": "3.2",
       "dificuldade": "media"
@@ -6337,7 +6337,7 @@
       "id": "dir_penal_expand_17",
       "topico": "Lei penal excepcional, especial e temporária",
       "pergunta": "O que e lei penal especial e como se relaciona com a lei geral?",
-      "resposta": "Lei penal especial regula matéria especifica, derrogando a lei geral pelo criterio da ESPECIALIDADE (lex specialis derogat generali). Ex: Lei 11.343/06 (Drogas) e especial frente ão CP; Lei 9.455/97 (Tortura) tambem. A lei especial pode ser mais benefica OU mais gravosa que a geral - a especialidade prevalece independentemente. Diferença: lei especial X lei excepcional/temporária (estas são auto-revogáveis e ultra-ativas).",
+      "resposta": "Lei penal especial regula matéria específica, derrogando a lei geral pelo criterio da ESPECIALIDADE (lex specialis derogat generali). Ex: Lei 11.343/06 (Drogas) e especial frente ão CP; Lei 9.455/97 (Tortura) tambem. A lei especial pode ser mais benefica OU mais gravosa que a geral - a especialidade prevalece independentemente. Diferença: lei especial X lei excepcional/temporária (estas são auto-revogáveis e ultra-ativas).",
       "dica": "CESPE: lei especial prevalece sobre geral SO quando mais benefica? FALSO. A especialidade prevalece sempre.",
       "codigo_topico": "3.3",
       "dificuldade": "media"
@@ -6355,8 +6355,8 @@
       "id": "dir_penal_expand_19",
       "topico": "Lei penal excepcional, especial e temporária",
       "pergunta": "O que e lei penal temporária e qual sua principal consequencia apos o prazo?",
-      "resposta": "Lei penal temporária ja nasce com prazo determinado de duracão (ex: 6 meses). Caracteristica principal: ULTRA-ATIVIDADE (art. 3 CP): apos expirado o prazo, continua a regular os fatos de sua vigencia, mesmo que revogada por lei posterior mais benefica. Diferencia-se da lei excepcional (sem prazo, vinculada a situacão anormal). Ambas são ultra-ativas é auto-revogáveis. CESPE: lei temporária NAO perde eficácia apos o prazo para fatos de sua vigencia.",
-      "dica": "CESPE: lei temporária não ultra-age? FALSO. Mnem: TEMPORARIA = TEMPO (prazo fixo); EXCEPCIONAL = EXCECAO (anormalidade).",
+      "resposta": "Lei penal temporária ja nasce com prazo determinado de duracão (ex: 6 meses). Caracteristica principal: ULTRA-ATIVIDADE (art. 3 CP): apos expirado o prazo, continua a regular os fatos de sua vigencia, mesmo que revogada por lei posterior mais benefica. Diferencia-se da lei excepcional (sem prazo, vinculada a situacão anormal). Ambas são ultra-ativas é auto-revogáveis. CESPE: lei temporária NÃO perde eficácia apos o prazo para fatos de sua vigencia.",
+      "dica": "CESPE: lei temporária não ultra-age? FALSO. Mnem: TEMPORÁRIA = TEMPO (prazo fixo); EXCEPCIONAL = EXCECAO (anormalidade).",
       "codigo_topico": "3.3",
       "dificuldade": "media"
     },
@@ -6382,7 +6382,7 @@
       "id": "dir_penal_expand_22",
       "topico": "Lei penal excepcional, especial e temporária",
       "pergunta": "Qual o fundamento legal e constitucional da ultra-atividade das leis penais excepcionais e temporárias?",
-      "resposta": "Previsão expressa no art. 3 CP. Fundamento constitucional: princípio da SEGURANCA JURIDICA (art. 5, XXXVI CF/88) - protecão do direito adquirido e do ato jurídico perfeito. Como a lei excepcional/temporária ja nasce com prazo ou condicão de validade, sua aplicacão aos fatos de sua vigencia decorre da propria necessidade que motivou sua edicão. O art. 3 CP evita que o infrator seja beneficiado pelo fim da lei. Não se confunde com retroatividade (art. 2 CP - lei nova alcanca o passado).",
+      "resposta": "Previsão expressa no art. 3 CP. Fundamento constitucional: princípio da SEGURANCA JURÍDICA (art. 5, XXXVI CF/88) - protecão do direito adquirido e do ato jurídico perfeito. Como a lei excepcional/temporária ja nasce com prazo ou condicão de validade, sua aplicacão aos fatos de sua vigencia decorre da própria necessidade que motivou sua edicão. O art. 3 CP evita que o infrator seja beneficiado pelo fim da lei. Não se confunde com retroatividade (art. 2 CP - lei nova alcanca o passado).",
       "dica": "CESPE: ultra-atividade decorre da retroatividade da lei benefica? FALSO. Ultra-atividade = aplica lei ja revogada. Retroatividade = aplica lei nova. Art. 3 CP.",
       "codigo_topico": "3.3",
       "dificuldade": "media"
@@ -6391,8 +6391,8 @@
       "id": "dir_penal_expand_23",
       "topico": "Territorialidade e extraterritorialidade da lei penal",
       "pergunta": "Qual a regra da retroatividade da lei penal mais benefica (lex mitior)?",
-      "resposta": "SIM. A lex mitior retroage para alcancar fatos anteriores, inclusive apos trânsito em julgado (art. 2, par. unico CP + art. 5, XL CF/88). A lei INTERMEDIARIA (que vigorou entre o fato é a sentença, mas ja foi revogada) tambem retroage se mais benefica. EXCECAO: leis excepcionais e temporárias (art. 3 CP) não se submetem a essa regra por ultra-atividade. CESPE: a lei mais benefica retroage mesmo apos condenacão definitiva - o juiz da execucão deve adequar a pena.",
-      "dica": "CESPE: lei benefica só retroage ate o trânsito em julgado? FALSO. Art. 2, par. unico CP. Lei intermediaria mais benefica retroage? SIM.",
+      "resposta": "SIM. A lex mitior retroage para alcancar fatos anteriores, inclusive apos trânsito em julgado (art. 2, par. único CP + art. 5, XL CF/88). A lei INTERMEDIARIA (que vigorou entre o fato é a sentença, mas ja foi revogada) tambem retroage se mais benefica. EXCECAO: leis excepcionais e temporárias (art. 3 CP) não se submetem a essa regra por ultra-atividade. CESPE: a lei mais benefica retroage mesmo apos condenacão definitiva - o juiz da execucão deve adequar a pena.",
+      "dica": "CESPE: lei benefica só retroage ate o trânsito em julgado? FALSO. Art. 2, par. único CP. Lei intermediaria mais benefica retroage? SIM.",
       "codigo_topico": "3.4",
       "dificuldade": "media"
     },
@@ -6400,8 +6400,8 @@
       "id": "dir_penal_expand_24",
       "topico": "Territorialidade e extraterritorialidade da lei penal",
       "pergunta": "É admitida a lex tertia (combinacão de leis penais) no Brasil?",
-      "resposta": "NAO. Lex tertia é a combinacão de dispositivos de duas leis distintas para criar uma terceira norma supostamente mais benefica ão reu. STF (RE 600.154, Tema 438) e STJ vedam essa pratica, pois o juiz não pode legislar. Aplica-se a lei como um todo, sem combinar partes. Ex: não se pode pegar a pena de uma lei é o regime de outra. Diferença de lei intermediaria (que é aplicada integralmente se mais benefica).",
-      "dica": "CESPE adora: e possível combinar lei anterior (pena) com lei posterior (regime)? FALSO. STF Tema 438. Lex tertia não confundir com lei intermediaria.",
+      "resposta": "NÃO. Lex tertia é a combinacão de dispositivos de duas leis distintas para criar uma terceira norma supostamente mais benefica ão reu. STF (RE 600.154, Tema 438) e STJ vedam essa pratica, pois o juiz não pode legislar. Aplica-se a lei como um todo, sem combinar partes. Ex: não se pode pegar a pena de uma lei é o regime de outra. Diferença de lei intermediaria (que é aplicada integralmente se mais benefica).",
+      "dica": "CESPE adora: é possível combinar lei anterior (pena) com lei posterior (regime)? FALSO. STF Tema 438. Lex tertia não confundir com lei intermediaria.",
       "codigo_topico": "3.4",
       "dificuldade": "media"
     },
@@ -6553,7 +6553,7 @@
       "id": "dir_penal_expand_41",
       "topico": "Irretroatividade da lei penal",
       "pergunta": "Lei penal mais gravosa pode retroagir para alcancar fatos em execucão?",
-      "resposta": "NAO. A irretroatividade da lei penal mais gravosa e ABSOLUTA (art. 5, XL CF/88 + art. 2 CP). Não importa o status do processo: o agente sera julgado e tera a pena executada conforme a lei do tempo do fato. Lei posterior mais gravosa nunca retroage. Ex: lei que aumenta pena de 4 para 8 anos não se aplica a crimes anteriores. A unica excecão a irretroatividade e quando a lei e mais benefica (que retroage).",
+      "resposta": "NÃO. A irretroatividade da lei penal mais gravosa e ABSOLUTA (art. 5, XL CF/88 + art. 2 CP). Não importa o status do processo: o agente sera julgado e tera a pena executada conforme a lei do tempo do fato. Lei posterior mais gravosa nunca retroage. Ex: lei que aumenta pena de 4 para 8 anos não se aplica a crimes anteriores. A única excecão a irretroatividade e quando a lei e mais benefica (que retroage).",
       "dica": "REGRA DE OURO: lei GRAVOSA = irretroatividade absoluta. Lei BENEFICA = sempre retroage. Art. 5, XL CF/88 + art. 2 CP.",
       "codigo_topico": "3.6",
       "dificuldade": "media"
@@ -6562,7 +6562,7 @@
       "id": "dir_penal_expand_42",
       "topico": "Irretroatividade da lei penal",
       "pergunta": "A lei processual penal retroage? Qual o princípio aplicavel?",
-      "resposta": "A lei processual penal aplica-se IMEDIATAMENTE (art. 2 CPP), sem retroagir, pelo princípio tempus regit actum: atos ja praticados sob lei anterior permanecem validos; atos futuros seguem a nova lei. Diferente da lei penal material, a processual não retroage para beneficiar nem prejudicar. ATENCAO: se a lei processual contiver conteúdo material (ex: prazos prescricionais, regras de execucão), aplicam-se as regras da lei material (irretroatividade da gravosa).",
+      "resposta": "A lei processual penal aplica-se IMEDIATAMENTE (art. 2 CPP), sem retroagir, pelo princípio tempus regit actum: atos ja praticados sob lei anterior permanecem válidos; atos futuros seguem a nova lei. Diferente da lei penal material, a processual não retroage para beneficiar nem prejudicar. ATENCAO: se a lei processual contiver conteúdo material (ex: prazos prescricionais, regras de execucão), aplicam-se as regras da lei material (irretroatividade da gravosa).",
       "dica": "CESPE: lei processual retroage sempre? FALSO (imediata, não retroativa). Se tem conteúdo material, segue regras penais.",
       "codigo_topico": "3.6",
       "dificuldade": "media"
@@ -6589,7 +6589,7 @@
       "id": "dir_penal_expand_45",
       "topico": "Crimes contra a pessoa",
       "pergunta": "Uma lei mais rigorosa para progressão de regime retroage?",
-      "resposta": "NAO. Regras de progressão de regime, embora na LEP, tem natureza MATERIAL (Direito Penal), não processual. Logo, submetem-se a irretroatividade da lei gravosa (art. 5, XL CF/88 + art. 2 CP). Se nova lei exige fracão maior (ex: de 1/6 para 40%), não se aplica a crimes anteriores. STF consolidou (RE 1.111.111). O mesmo vale para livramento condicional é outros beneficios de execucão.",
+      "resposta": "NÃO. Regras de progressão de regime, embora na LEP, tem natureza MATERIAL (Direito Penal), não processual. Logo, submetem-se a irretroatividade da lei gravosa (art. 5, XL CF/88 + art. 2 CP). Se nova lei exige fracão maior (ex: de 1/6 para 40%), não se aplica a crimes anteriores. STF consolidou (RE 1.111.111). O mesmo vale para livramento condicional é outros benefícios de execucão.",
       "dica": "PEGADINHA: progressão de regime e matéria processual? FALSO (e material). Lei mais gravosa não retroage. STF Tema 999.",
       "codigo_topico": "4",
       "dificuldade": "dificil"
@@ -6625,7 +6625,7 @@
       "id": "dir_penal_expand_49",
       "topico": "Crimes contra a pessoa",
       "pergunta": "A Lei Maria da Penha se aplica a crimes tentados contra a mulher?",
-      "resposta": "SIM. LMP (art. 5) define violencia domestica de forma ampla: acão ou omissão baseada no gênero que cause morte, lesão, sofrimento fisico/sexual/psicologico, dano moral ou patrimonial. Isso abrange crimes tentados e contravencões. Tentativa de homicidio, lesão ou qualquer crime no contexto de violencia domestica esta sujeita as medidas protetivas e regras da LMP. NAO e necessário que o crime seja consumado para aplicacão da lei.",
+      "resposta": "SIM. LMP (art. 5) define violencia domestica de forma ampla: acão ou omissão baseada no gênero que cause morte, lesão, sofrimento fisico/sexual/psicologico, dano moral ou patrimonial. Isso abrange crimes tentados e contravencões. Tentativa de homicidio, lesão ou qualquer crime no contexto de violencia domestica esta sujeita as medidas protetivas e regras da LMP. NÃO é necessário que o crime seja consumado para aplicacão da lei.",
       "dica": "CESPE: LMP só se aplica a crimes consumados? FALSO (abrange tentativa e contravencões). Art. 5 LMP.",
       "codigo_topico": "4",
       "dificuldade": "media"
@@ -6634,8 +6634,8 @@
       "id": "dir_penal_expand_50",
       "topico": "Crimes contra a pessoa",
       "pergunta": "Qual a diferença entre atipicidade formal e material?",
-      "resposta": "FORMAL: conduta não se enquadra em tipo penal (ex: matar inseto). MATERIAL: decorre do princípio da lesividade/insignificancia - conduta formalmente típica mas sem lesão relevante ão bem jurídico (ex: furto de um centavo). O princípio da insignificancia (STF HC 84.412) gera ATIPICIDADE MATERIAL. Requisitos cumulativos: (a) minima ofensividade; (b) ausencia de periculosidade social; (c) reduzido grau de reprovabilidade; (d) inexpressividade da lesão. NAO exclui ilicitude ou culpabilidade - exclui a tipicidade.",
-      "dica": "CESPE: insignificancia exclui ilicitude? FALSO (exclui TIPICIDADE material). NAO se aplica a crimes com violencia ou grave ameaca.",
+      "resposta": "FORMAL: conduta não se enquadra em tipo penal (ex: matar inseto). MATERIAL: decorre do princípio da lesividade/insignificancia - conduta formalmente típica mas sem lesão relevante ão bem jurídico (ex: furto de um centavo). O princípio da insignificancia (STF HC 84.412) gera ATIPICIDADE MATERIAL. Requisitos cumulativos: (a) mínima ofensividade; (b) ausencia de periculosidade social; (c) reduzido grau de reprovabilidade; (d) inexpressividade da lesão. NÃO exclui ilicitude ou culpabilidade - exclui a tipicidade.",
+      "dica": "CESPE: insignificancia exclui ilicitude? FALSO (exclui TIPICIDADE material). NÃO se aplica a crimes com violencia ou grave ameaca.",
       "codigo_topico": "4",
       "dificuldade": "facil"
     },
@@ -6661,7 +6661,7 @@
       "id": "dir_penal_expand_53",
       "topico": "Crimes contra a pessoa",
       "pergunta": "Quais os grupos de crimes contra a pessoa no CP (arts. 121-154)?",
-      "resposta": "Seis grupos: (1) CRIMES CONTRA A VIDA: homicidio (121), suicidio/automutilacão (122), infanticidio (123), aborto (124-128); (2) LESAO CORPORAL (129); (3) PERICLITACAO DA VIDA É SAUDE (130-136): contaminacão, abandono, omissão de socorro, maus-tratos; (4) RIXA (137); (5) CRIMES CONTRA A HONRA: calunia (138), difamacão (139), injuria (140); (6) LIBERDADE INDIVIDUAL (146-154): constrangimento, ameaca, sequestro. CESPE: periclitação NAO exige resultado (crime de perigo).",
+      "resposta": "Seis grupos: (1) CRIMES CONTRA A VIDA: homicidio (121), suicidio/automutilacão (122), infanticidio (123), aborto (124-128); (2) LESAO CORPORAL (129); (3) PERICLITACAO DA VIDA É SAUDE (130-136): contaminacão, abandono, omissão de socorro, maus-tratos; (4) RIXA (137); (5) CRIMES CONTRA A HONRA: calunia (138), difamacão (139), injuria (140); (6) LIBERDADE INDIVIDUAL (146-154): constrangimento, ameaca, sequestro. CESPE: periclitação NÃO exige resultado (crime de perigo).",
       "dica": "Mnem: VIDA-LESAO-PERICLITACAO-RIXA-HONRA-LIBERDADE. Arts. 121-154 CP. Honra e contra a pessoa? SIM.",
       "codigo_topico": "4",
       "dificuldade": "media"
@@ -7056,7 +7056,7 @@
     {
       "id": "dir_penal_expand_98",
       "topico": "Organizações Criminosas (Lei nº 12.850/2013)",
-      "pergunta": "Qual a idade minima para imputabilidade penal no Brasil?",
+      "pergunta": "Qual a idade mínima para imputabilidade penal no Brasil?",
       "resposta": "18 ANOS (art. 228 CF/88 + art. 27 CP). Trata-se de clausula petrea (CF/88 art. 60, par. 4, IV - direitos e garantias individuais). Menores de 18 anos são inimputaveis, sujeitando-se as medidas socioeducativas do ECA (Lei 8.069/90). A imputabilidade é aferida no momento da acão/omissão (art. 4 CP). Propostas de reducão da maioridade penal são recorrentes no Congresso, mas esbarram na clausula petrea - STF entende que PEC pode reduzir se houver nova manifestacão do poder constituinte derivado.",
       "dica": "Art. 228 CF/88 + art. 27 CP: 18 anos. Clausula petrea. Aferida no momento do fato (art. 4 CP).",
       "codigo_topico": "13",
@@ -7255,7 +7255,7 @@
       "id": "dir_penal_expand_121",
       "topico": "Lei de Drogas (Lei nº 11.343/2006)",
       "pergunta": "O condenado por trafego de drogas tem direito a prisão especial?",
-      "resposta": "NAO. O art. 33, par. 5 da Lei 11.343/2006 veda expressamente a prisão especial para condenados por trafego de drogas. Tambem não ha direito a regime especial de cumprimento de pena. O trafego comum (art. 33 caput e par. 1) tem pena de 5 a 15 anos de reclusão, regime inicial FECHADO. O trafego privilegiado (art. 33 par. 4) tem pena de 1a8m a 4a de detencão. A vedacão a prisão especial se aplica a ambos. CESPE: não confundir com o usuario (art. 28) que não e preso, recebendo penas alternativas.",
+      "resposta": "NÃO. O art. 33, par. 5 da Lei 11.343/2006 veda expressamente a prisão especial para condenados por trafego de drogas. Tambem não ha direito a regime especial de cumprimento de pena. O trafego comum (art. 33 caput e par. 1) tem pena de 5 a 15 anos de reclusão, regime inicial FECHADO. O trafego privilegiado (art. 33 par. 4) tem pena de 1a8m a 4a de detencão. A vedacão a prisão especial se aplica a ambos. CESPE: não confundir com o usuario (art. 28) que não e preso, recebendo penas alternativas.",
       "dica": "Lei 11.343/06 art. 33 par. 5: VEDA prisão especial ão traficante. Não confundir com usuario (art. 28).",
       "codigo_topico": "16",
       "dificuldade": "dificil"
@@ -7300,7 +7300,7 @@
       "id": "dir_penal_expand_126",
       "topico": "Violência doméstica e familiar contra a criança e o adolescente (Lei nº 14.344/2022)",
       "pergunta": "O que é a Casa da Crianca na Lei Henry Borel (Lei 14.344/2022)?",
-      "resposta": "SIM. A Lei 14.344/2022 (Lei Henry Borel) criou a Casa da Crianca (art. 9), inspirada no modelo da Casa da Mulher (LMP), como centro multidisciplinar de atendimento integral a crianca ou adolescente vitima de violencia domestica e familiar. Oferece acolhimento, apoio psicossocial, jurídico e de saude. A lei tambem alterou o CP (art. 129, par. 13 - lesão corporal contra menor no ambito domestico) é o ECA, estabelecendo medidas protetivas especificas e prisão preventiva obrigatória quando houver risco.",
+      "resposta": "SIM. A Lei 14.344/2022 (Lei Henry Borel) criou a Casa da Crianca (art. 9), inspirada no modelo da Casa da Mulher (LMP), como centro multidisciplinar de atendimento integral a crianca ou adolescente vitima de violencia domestica e familiar. Oferece acolhimento, apoio psicossocial, jurídico e de saude. A lei tambem alterou o CP (art. 129, par. 13 - lesão corporal contra menor no âmbito domestico) é o ECA, estabelecendo medidas protetivas específicas e prisão preventiva obrigatória quando houver risco.",
       "dica": "Lei 14.344/2022 art. 9. Casa da Crianca = centro multidisciplinar. Modelo Casa da Mulher. Alterou CP e ECA.",
       "codigo_topico": "17",
       "dificuldade": "dificil"
@@ -7554,7 +7554,7 @@
       "id": "dir_proc_penal_11",
       "pergunta": "O que é prisão em flagrante e quais suas espécies?",
       "resposta": "Prisão cautelar no momento ou logo após o crime. Espécies: próprio (art. 302, I), quase-flagrante (II), presumido (III), ficto (IV).",
-      "dica": "FLAGRANTE PROPRIO (praticando), QUASE (acabou), PRESUMIDO (perseguido), FICTO (encontrado com objetos). CESPE: flagrante ESPERADO = válido. PREPARADO = crime impossível (Súmula 145 STF).",
+      "dica": "FLAGRANTE PRÓPRIO (praticando), QUASE (acabou), PRESUMIDO (perseguido), FICTO (encontrado com objetos). CESPE: flagrante ESPERADO = válido. PREPARADO = crime impossível (Súmula 145 STF).",
       "topico": "Prisão e liberdade provisória",
       "codigo_topico": "4",
       "dificuldade": "dificil"
@@ -8282,8 +8282,8 @@
     {
       "id": "dir_proc_penal_expand_4",
       "pergunta": "As imunidades diplomáticas se aplicam a crimes praticados por brasileiros no exterior?",
-      "resposta": "Nao. As imunidades diplomáticas sao pessoais (ratione personae). Brasileiros a servico do Estado no exterior não gozam de imunidade penal plena.",
-      "dica": "Sumula 73 STJ: a imunidade diplomatica não se estende a empregados administrativos de missoes diplomáticas.",
+      "resposta": "Não. As imunidades diplomáticas sao pessoais (ratione personae). Brasileiros a servico do Estado no exterior não gozam de imunidade penal plena.",
+      "dica": "Súmula 73 STJ: a imunidade diplomatica não se estende a empregados administrativos de missoes diplomáticas.",
       "topico": "Aplicação da lei processual no tempo, no espaço é em relação às pessoas",
       "codigo_topico": "1",
       "dificuldade": "media"
@@ -8353,7 +8353,7 @@
     },
     {
       "id": "dir_proc_penal_expand_12",
-      "pergunta": "O juiz pode produzir provas de oficio no sistema acusatorio?",
+      "pergunta": "O juiz pode produzir provas de ofício no sistema acusatorio?",
       "resposta": "Apos Lei 13.964/19, apenas excepcionalmente (art. 156, I é II CPP), sem substituir as partes (art. 3-A CPP).",
       "dica": "Art. 156 CPP: provas urgentes (I) é para esclarecer fato relevante (II). Mas NÃO pode substituir o MP (art. 3-A).",
       "topico": "Disposições preliminares do Código de Processo Penal",
@@ -8363,8 +8363,8 @@
     {
       "id": "dir_proc_penal_expand_13",
       "pergunta": "O que é o princípio da iniciativa das partes no processo penal?",
-      "resposta": "Veda ao juiz agir de oficio na deflagração da ação penal. Cabe ao MP (acao publica) ou ao ofendido (acao privada) provocar a jurisdição.",
-      "dica": "Art. 3-A CPP + Art. 24 CPP: ação penal publica é de iniciativa do MP.",
+      "resposta": "Veda ao juiz agir de ofício na deflagração da ação penal. Cabe ao MP (acao pública) ou ao ofendido (acao privada) provocar a jurisdição.",
+      "dica": "Art. 3-A CPP + Art. 24 CPP: ação penal pública é de iniciativa do MP.",
       "topico": "Disposições preliminares do Código de Processo Penal",
       "codigo_topico": "1.1",
       "dificuldade": "media"
@@ -8380,9 +8380,9 @@
     },
     {
       "id": "dir_proc_penal_expand_15",
-      "pergunta": "O que diz o art. 4 do CPP sobre a função da polícia judiciaria?",
+      "pergunta": "O que diz o art. 4 do CPP sobre a função da polícia judiciária?",
       "resposta": "A polícia judiciária sera exercida pelas autoridades policiais para apuração de infracoes penais é autoria.",
-      "dica": "Paragrafo unico: não exclui autoridades administrativas com funcoes semelhantes.",
+      "dica": "Paragrafo único: não exclui autoridades administrativas com funcoes semelhantes.",
       "topico": "Disposições preliminares do Código de Processo Penal",
       "codigo_topico": "1.1",
       "dificuldade": "media"
@@ -8390,7 +8390,7 @@
     {
       "id": "dir_proc_penal_expand_16",
       "pergunta": "O que é o princípio da legalidade processual (devido processo legal)?",
-      "resposta": "Ninguém sera processado senão pela forma legal (art. 5, LIII é LIV CF). O rito é obrigatorio sob pena de nulidade (art. 564 CPP).",
+      "resposta": "Ninguém sera processado senão pela forma legal (art. 5, LIII é LIV CF). O rito é obrigatório sob pena de nulidade (art. 564 CPP).",
       "dica": "Art. 5, LIII: ninguém sera processado senão pela autoridade competente. LIV: ninguém sera privado da liberdade sem devido processo legal.",
       "topico": "Disposições preliminares do Código de Processo Penal",
       "codigo_topico": "1.1",
@@ -8416,9 +8416,9 @@
     },
     {
       "id": "dir_proc_penal_expand_19",
-      "pergunta": "Qual o prazo maximo das medidas cautelares diversas da prisao?",
-      "resposta": "Nao ha prazo maximo legal. O juiz deve reavaliar a necessidade a cada 90 dias (art. 316, paragrafo unico CPP).",
-      "dica": "Art. 316, paragrafo unico CPP (Lei 13.964/19). Aplica-se também a prisao preventiva.",
+      "pergunta": "Qual o prazo máximo das medidas cautelares diversas da prisao?",
+      "resposta": "Não ha prazo máximo legal. O juiz deve reavaliar a necessidade a cada 90 dias (art. 316, paragrafo único CPP).",
+      "dica": "Art. 316, paragrafo único CPP (Lei 13.964/19). Aplica-se também a prisao preventiva.",
       "topico": "Medidas cautelares diversas da prisão",
       "codigo_topico": "5",
       "dificuldade": "dificil"
@@ -8443,17 +8443,17 @@
     },
     {
       "id": "dir_proc_penal_expand_22",
-      "pergunta": "Em que situacoes o juiz decreta de oficio medidas cautelares?",
+      "pergunta": "Em que situações o juiz decreta de ofício medidas cautelares?",
       "resposta": "Apos Lei 13.964/19, NÃO pode na fase investigatoria (art. 3-A CPP). Durante o processo, pode nos casos expressos (art. 311 CPP).",
-      "dica": "Art. 311 CPP: prisao preventiva de oficio apenas no curso da ação penal. Na investigacao: NAO.",
+      "dica": "Art. 311 CPP: prisao preventiva de ofício apenas no curso da ação penal. Na investigação: NÃO.",
       "topico": "Medidas cautelares diversas da prisão",
       "codigo_topico": "5",
       "dificuldade": "dificil"
     },
     {
       "id": "dir_proc_penal_expand_23",
-      "pergunta": "Quais os requisitos para a prisao temporaria (art. 1 Lei 7.960/89)?",
-      "resposta": "I - imprescindível para as investigacoes; II - indiciado sem residência fixa ou sem identificacao; III - fundadas razões de autoria nos crimes do art. 1, III.",
+      "pergunta": "Quais os requisitos para a prisao temporária (art. 1 Lei 7.960/89)?",
+      "resposta": "I - imprescindível para as investigações; II - indiciado sem residência fixa ou sem identificacao; III - fundadas razões de autoria nos crimes do art. 1, III.",
       "dica": "3 requisitos CUMULATIVOS. Mnemonic: IMP + IDENT + CRIME.",
       "topico": "Lei nº 7.960/1989 (prisão temporária)",
       "codigo_topico": "6",
@@ -8461,7 +8461,7 @@
     },
     {
       "id": "dir_proc_penal_expand_24",
-      "pergunta": "Qual o prazo da prisao temporaria é sua prorrogacao?",
+      "pergunta": "Qual o prazo da prisao temporária é sua prorrogação?",
       "resposta": "5 dias, prorrogável por mais 5 (art. 2, 4 Lei 7.960/89). Para hediondos: 30 dias, prorrogável por mais 30.",
       "dica": "ALERTA: Prorrogação não é automatica. Exige decisao fundamentada. 5+5 regra geral; 30+30 hediondos.",
       "topico": "Lei nº 7.960/1989 (prisão temporária)",
@@ -8470,17 +8470,17 @@
     },
     {
       "id": "dir_proc_penal_expand_25",
-      "pergunta": "Quem pode requerer a prisao temporaria?",
-      "resposta": "MP (requerimento) ou Autoridade Policial (representacao). O juiz NÃO pode decreta-la de oficio (art. 2 c/c art. 3-A CPP).",
-      "dica": "ALERTA: Delegado faz REPRESENTACAO. MP faz REQUERIMENTO. Juiz não pode de oficio.",
+      "pergunta": "Quem pode requerer a prisao temporária?",
+      "resposta": "MP (requerimento) ou Autoridade Policial (representacao). O juiz NÃO pode decreta-la de ofício (art. 2 c/c art. 3-A CPP).",
+      "dica": "ALERTA: Delegado faz REPRESENTACAO. MP faz REQUERIMENTO. Juiz não pode de ofício.",
       "topico": "Lei nº 7.960/1989 (prisão temporária)",
       "codigo_topico": "6",
       "dificuldade": "dificil"
     },
     {
       "id": "dir_proc_penal_expand_26",
-      "pergunta": "Quais crimes admitem a prisao temporaria (art. 1, III)?",
-      "resposta": "Homicidio, sequestro, latrocinio, extorsao, estupro, epidemia, incendio, trafico, genocidio, organização criminosa, crimes financeiros é hediondos.",
+      "pergunta": "Quais crimes admitem a prisao temporária (art. 1, III)?",
+      "resposta": "Homicidio, sequestro, latrocinio, extorsao, estupro, epidemia, incêndio, trafico, genocidio, organização criminosa, crimes financeiros é hediondos.",
       "dica": "Art. 1, III Lei 7.960/89. ALERTA: Banca cobra texto literal do inciso III.",
       "topico": "Lei nº 7.960/1989 (prisão temporária)",
       "codigo_topico": "6",
@@ -8488,7 +8488,7 @@
     },
     {
       "id": "dir_proc_penal_expand_27",
-      "pergunta": "A prisao temporaria pode ser convertida em preventiva?",
+      "pergunta": "A prisao temporária pode ser convertida em preventiva?",
       "resposta": "Sim. Esgotado o prazo, se presentes os requisitos do art. 312 CPP, o juiz pode decretar a preventiva (art. 310, II c/c 311 CPP).",
       "dica": "Art. 310, II c/c art. 311 CPP. Súmula 239 STJ: 'O prazo para decretação da prisão preventiva conta-se da prisão temporária.' CESPE: a temporária tem prazo certo (5 dias + 5, ou 30 dias nos hediondos). Esgotado o prazo, se ainda houver necessidade, o juiz converte em preventiva desde que presentes os requisitos do art. 312 CPP.",
       "topico": "Lei nº 7.960/1989 (prisão temporária)",
@@ -8497,7 +8497,7 @@
     },
     {
       "id": "dir_proc_penal_expand_28",
-      "pergunta": "O que ocorre quando expira o prazo da prisao temporaria sem prorrogacao?",
+      "pergunta": "O que ocorre quando expira o prazo da prisao temporária sem prorrogação?",
       "resposta": "O preso deve ser IMEDIATAMENTE posto em liberdade (art. 2, 7 Lei 7.960/89).",
       "dica": "Art. 2, 7: Decorrido o prazo, liberdade imediata, salvo se ja decretada preventiva.",
       "topico": "Lei nº 7.960/1989 (prisão temporária)",
@@ -8506,7 +8506,7 @@
     },
     {
       "id": "dir_proc_penal_expand_29",
-      "pergunta": "A prisao temporaria exige fundamentação especifica?",
+      "pergunta": "A prisao temporária exige fundamentação específica?",
       "resposta": "Sim. Deve indicar a motivação da imprescindibilidade é o prazo (art. 2, 1 Lei 7.960/89). Decisao genérica é nula.",
       "dica": "Art. 2, 1 Lei 7.960/89. ALERTA: Falta de motivação concreta = prisao ilegal.",
       "topico": "Lei nº 7.960/1989 (prisão temporária)",
@@ -8515,9 +8515,9 @@
     },
     {
       "id": "dir_proc_penal_expand_30",
-      "pergunta": "A prisao temporaria cabe para crimes culposos ou contravenções?",
-      "resposta": "Nao. So para crimes DOLOSOS do art. 1, III Lei 7.960/89. Não se aplica a contravencoes.",
-      "dica": "ALERTA: NÃO se aplica a contravenções penais. Art. 1, III exige crimes dolosos especificos.",
+      "pergunta": "A prisao temporária cabe para crimes culposos ou contravenções?",
+      "resposta": "Não. So para crimes DOLOSOS do art. 1, III Lei 7.960/89. Não se aplica a contravencoes.",
+      "dica": "ALERTA: NÃO se aplica a contravenções penais. Art. 1, III exige crimes dolosos específicos.",
       "topico": "Lei nº 7.960/1989 (prisão temporária)",
       "codigo_topico": "6",
       "dificuldade": "dificil"
@@ -8534,8 +8534,8 @@
     {
       "id": "dir_proc_penal_expand_32",
       "pergunta": "O que é a composição civil dos danos no JECRIM?",
-      "resposta": "Acordo entre autor é vítima para reparacao, homologado pelo juiz. Extingue a punibilidade se cumprido (art. 74, par. unico).",
-      "dica": "Sumula 54 STJ: na lesao corporal leve, extingue a punibilidade. Aplica-se a acoes condicionadas é privadas.",
+      "resposta": "Acordo entre autor é vítima para reparacao, homologado pelo juiz. Extingue a punibilidade se cumprido (art. 74, par. único).",
+      "dica": "Súmula 54 STJ: na lesao corporal leve, extingue a punibilidade. Aplica-se a acoes condicionadas é privadas.",
       "topico": "Juizados Especiais Criminais (Lei nº 9.099/1995)",
       "codigo_topico": "7",
       "dificuldade": "media"
@@ -8544,7 +8544,7 @@
       "id": "dir_proc_penal_expand_33",
       "pergunta": "Qual o procedimento da transação penal?",
       "resposta": "MP propoe pena restritiva ou multa. Aceita, aplica-se sem processo. Vedada se condenado ou ja transacionou nos 5 anos (art. 76, 2).",
-      "dica": "Art. 76, 2 Lei 9.099/95: veda se condenacao anterior ou transação nos 5 anos.",
+      "dica": "Art. 76, 2 Lei 9.099/95: veda se condenação anterior ou transação nos 5 anos.",
       "topico": "Juizados Especiais Criminais (Lei nº 9.099/1995)",
       "codigo_topico": "7",
       "dificuldade": "media"
@@ -8561,7 +8561,7 @@
     {
       "id": "dir_proc_penal_expand_35",
       "pergunta": "Quais os requisitos para a suspensão condicional do processo?",
-      "resposta": "Pena minima ate 1 ano, acusado não estar sendo processado ou condenado, é aceitacao das condições (art. 89 Lei 9.099/95).",
+      "resposta": "Pena mínima ate 1 ano, acusado não estar sendo processado ou condenado, é aceitacao das condições (art. 89 Lei 9.099/95).",
       "dica": "Art. 89: MP propoe suspensão por 2 a 4 anos ao oferecer denuncia.",
       "topico": "Juizados Especiais Criminais (Lei nº 9.099/1995)",
       "codigo_topico": "7",
@@ -8579,7 +8579,7 @@
     {
       "id": "dir_proc_penal_expand_37",
       "pergunta": "O que é o rito sumaríssimo dos JECRIM?",
-      "resposta": "Audiência unica com conciliacao, transacao, denúncia oral, instrução é julgamento (arts. 62 é 71-82 Lei 9.099/95).",
+      "resposta": "Audiência única com conciliacao, transacao, denúncia oral, instrução é julgamento (arts. 62 é 71-82 Lei 9.099/95).",
       "dica": "Art. 62: orienta-se por oralidade, informalidade, economia é celeridade.",
       "topico": "Juizados Especiais Criminais (Lei nº 9.099/1995)",
       "codigo_topico": "7",
@@ -8588,8 +8588,8 @@
     {
       "id": "dir_proc_penal_expand_38",
       "pergunta": "A transação penal pode ser proposta mais de uma vez?",
-      "resposta": "Nao, se ja beneficiado nos 5 anos anteriores (art. 76, 2, II Lei 9.099/95).",
-      "dica": "ALERTA: Transação é unica a cada 5 anos. Suspensão condicional tem regra propria (art. 89).",
+      "resposta": "Não, se ja beneficiado nos 5 anos anteriores (art. 76, 2, II Lei 9.099/95).",
+      "dica": "ALERTA: Transação é única a cada 5 anos. Suspensão condicional tem regra própria (art. 89).",
       "topico": "Juizados Especiais Criminais (Lei nº 9.099/1995)",
       "codigo_topico": "7",
       "dificuldade": "media"
@@ -8623,7 +8623,7 @@
     },
     {
       "id": "dir_proc_penal_expand_42",
-      "pergunta": "O delegado tem autonomia funcional na investigacao?",
+      "pergunta": "O delegado tem autonomia funcional na investigação?",
       "resposta": "Sim. Independencia funcional na conducao do IP, sem subordinação a órgão externo (art. 2 Lei 12.830/13).",
       "dica": "ALERTA: Autonomia não exclui controle externo do MP (art. 129, VII CF).",
       "topico": "Investigação Criminal (Lei nº 12.830/2013)",
@@ -8641,8 +8641,8 @@
     },
     {
       "id": "dir_proc_penal_expand_44",
-      "pergunta": "O delegado pode ser removido por pressão na investigacao?",
-      "resposta": "Nao. A lei veda remoção por influência ou pressao. A remoção deve ser motivada (art. 2, 5).",
+      "pergunta": "O delegado pode ser removido por pressão na investigação?",
+      "resposta": "Não. A lei veda remoção por influência ou pressao. A remoção deve ser motivada (art. 2, 5).",
       "dica": "Art. 2, 5 Lei 12.830/13: protecao da autonomia funcional do delegado.",
       "topico": "Investigação Criminal (Lei nº 12.830/2013)",
       "codigo_topico": "8",
@@ -8651,8 +8651,8 @@
     {
       "id": "dir_proc_penal_expand_45",
       "pergunta": "Quais os requisitos para ser delegado de policia?",
-      "resposta": "Bacharel em Direito é aprovacao em concurso publico (art. 3 Lei 12.830/13).",
-      "dica": "Sumula Vinculante 46 STF: nomeacao sem concurso é inconstitucional.",
+      "resposta": "Bacharel em Direito é aprovacao em concurso público (art. 3 Lei 12.830/13).",
+      "dica": "Súmula Vinculante 46 STF: nomeacao sem concurso é inconstitucional.",
       "topico": "Investigação Criminal (Lei nº 12.830/2013)",
       "codigo_topico": "8",
       "dificuldade": "media"
@@ -8661,16 +8661,16 @@
       "id": "dir_proc_penal_expand_46",
       "pergunta": "O MP pode requisitar diligências ao delegado?",
       "resposta": "Sim (art. 129, VIII CF c/c art. 13, II CPP). O delegado deve cumprir, salvo ilegalidade manifesta.",
-      "dica": "Art. 13, II CPP. ALERTA: Requisicao do MP é OBRIGATORIA, salvo ilegalidade manifesta.",
+      "dica": "Art. 13, II CPP. ALERTA: Requisicao do MP é OBRIGATÓRIA, salvo ilegalidade manifesta.",
       "topico": "Investigação Criminal (Lei nº 12.830/2013)",
       "codigo_topico": "8",
       "dificuldade": "media"
     },
     {
       "id": "dir_proc_penal_expand_47",
-      "pergunta": "O delegado pode arquivar o inquerito?",
-      "resposta": "Nao. Deve remeter ao juiz, que encaminha ao MP. Arquivamento é ato do MP (art. 17 CPP c/c Súmula 524 STF).",
-      "dica": "Art. 17 CPP: autoridade policial não pode mandar arquivar autos de inquerito.",
+      "pergunta": "O delegado pode arquivar o inquérito?",
+      "resposta": "Não. Deve remeter ao juiz, que encaminha ao MP. Arquivamento é ato do MP (art. 17 CPP c/c Súmula 524 STF).",
+      "dica": "Art. 17 CPP: autoridade policial não pode mandar arquivar autos de inquérito.",
       "topico": "Investigação Criminal (Lei nº 12.830/2013)",
       "codigo_topico": "8",
       "dificuldade": "media"
@@ -8678,7 +8678,7 @@
     {
       "id": "dir_proc_penal_expand_48",
       "pergunta": "O que é o trancamento do IP por abuso de poder?",
-      "resposta": "Judiciario, por habeas corpus, tranca o IP se flagrante ilegalidade, ausencia de justa causa ou extincao da punibilidade.",
+      "resposta": "Judiciário, por habeas corpus, tranca o IP se flagrante ilegalidade, ausencia de justa causa ou extincao da punibilidade.",
       "dica": "Súmula 697 STF: 'O trancamento do IP por falta de justa causa é cabível via HC.' Súmula 20 STJ: 'É cabível HC para trancar ação penal quando ausente justa causa.' CESPE: trancamento é medida EXCEPCIONAL — só quando materialmente impossível a existência do crime ou ausência total de indícios mínimos de autoria. Não cabe para reexame de provas nem para discutir tipicidade em tese.",
       "topico": "Investigação Criminal (Lei nº 12.830/2013)",
       "codigo_topico": "8",
@@ -8688,7 +8688,7 @@
       "id": "dir_proc_penal_expand_49",
       "pergunta": "O delegado pode representar pela prisao preventiva?",
       "resposta": "Sim, no curso do IP, com fundamentação (art. 311 CPP c/c art. 2 Lei 12.830/13).",
-      "dica": "ALERTA: Delegado faz REPRESENTACAO. MP faz REQUERIMENTO. Juiz de oficio apenas na ação penal.",
+      "dica": "ALERTA: Delegado faz REPRESENTACAO. MP faz REQUERIMENTO. Juiz de ofício apenas na ação penal.",
       "topico": "Investigação Criminal (Lei nº 12.830/2013)",
       "codigo_topico": "8",
       "dificuldade": "media"
@@ -8714,7 +8714,7 @@
     {
       "id": "dir_proc_penal_expand_52",
       "pergunta": "O que é a publicidade dos atos processuais (art. 5, LX CF)?",
-      "resposta": "Atos processuais sao publicos, salvo defesa da intimidade ou interesse social (art. 5, LX CF). IP tem sigilo externo (art. 20 CPP).",
+      "resposta": "Atos processuais sao públicos, salvo defesa da intimidade ou interesse social (art. 5, LX CF). IP tem sigilo externo (art. 20 CPP).",
       "dica": "SV 14 STF: advogado tem acesso a elementos ja documentados.",
       "topico": "Disposições constitucionais aplicáveis ao direito processual penal",
       "codigo_topico": "9",
@@ -8724,7 +8724,7 @@
       "id": "dir_proc_penal_expand_53",
       "pergunta": "O que é o princípio do juiz natural (art. 5, LIII CF)?",
       "resposta": "Ninguém sera processado senão pela autoridade competente. Juiz previamente determinado por lei, vedados tribunais de excecao.",
-      "dica": "Art. 5, LIII é XXXVII CF. Juiz das garantias é especie de juiz natural.",
+      "dica": "Art. 5, LIII é XXXVII CF. Juiz das garantias é espécie de juiz natural.",
       "topico": "Disposições constitucionais aplicáveis ao direito processual penal",
       "codigo_topico": "9",
       "dificuldade": "media"
@@ -11220,7 +11220,7 @@
     {
       "id": "informatica_26",
       "pergunta": "O que é a função SOMA no Excel?",
-      "resposta": "A função SOMA é a função mais utilizada do Excel. Ela soma valores de um intervalo de células ou de células individuais. Sintaxe: =SOMA(num1; [num2]; ...). O atalho Alt+= insere a função SOMA automáticamente para o intervalo adjacente. =SOMA(A1:A10) soma todas as células de A1 a A10, enquanto =SOMA(A1;A3;A5) soma apenas células específicas. A função ignora células com texto, mas considera valores numéricos e logicos (VERDADEIRO=1, FALSO=0). CESPE cobra que SOMA aceita até 255 argumentos e pode somar intervalos inteiros com referências 3D entre planilhas.",
+      "resposta": "A função SOMA é a função mais utilizada do Excel. Ela soma valores de um intervalo de células ou de células individuais. Sintaxe: =SOMA(num1; [num2]; ...). O atalho Alt+= insere a função SOMA automáticamente para o intervalo adjacente. =SOMA(A1:A10) soma todas as células de A1 a A10, enquanto =SOMA(A1;A3;A5) soma apenas células específicas. A função ignora células com texto, mas considera valores numéricos e lógicos (VERDADEIRO=1, FALSO=0). CESPE cobra que SOMA aceita até 255 argumentos e pode somar intervalos inteiros com referências 3D entre planilhas.",
       "dica": "Função MAIS COBRADA do Excel. Atalho Alt+= insere SOMA automática. CESPE: SOMA aceita até 255 argumentos e referências 3D.",
       "topico": "Software de apresentação do PowerPoint",
       "codigo_topico": "1.6",
@@ -11301,7 +11301,7 @@
     {
       "id": "informatica_35",
       "pergunta": "O que é a função SE no Excel?",
-      "resposta": "A função SE é a principal função lógica do Excel, executando um teste condicional e retornando valores diferentes conforme o resultado. Sintaxe: =SE(teste_logico; valor_se_verdadeiro; valor_se_falso). Possui 3 argumentos obrigatorios. Exemplo: =SE(A1>10; 'Alto'; 'Baixo') retorna 'Alto' se A1>10, senao 'Baixo'. O Excel permite até 64 níveis de SE aninhados (um SE dentro de outro). CESPE explora que o terceiro argumento (valor_se_falso) e opcional na prática: se omitido é o teste for FALSO, retorna FALSO. Atencao aos parenteses: cada SE aninhado abre e fecha um par.",
+      "resposta": "A função SE é a principal função lógica do Excel, executando um teste condicional e retornando valores diferentes conforme o resultado. Sintaxe: =SE(teste_lógico; valor_se_verdadeiro; valor_se_falso). Possui 3 argumentos obrigatórios. Exemplo: =SE(A1>10; 'Alto'; 'Baixo') retorna 'Alto' se A1>10, senao 'Baixo'. O Excel permite até 64 níveis de SE aninhados (um SE dentro de outro). CESPE explora que o terceiro argumento (valor_se_falso) e opcional na prática: se omitido é o teste for FALSO, retorna FALSO. Atencao aos parenteses: cada SE aninhado abre e fecha um par.",
       "dica": "3 argumentos: teste; valor_verdadeiro; valor_falso. Até 64 níveis aninhados. CESPE: =SE(A1>10;'Alto';'Baixo').",
       "topico": "Redes de Computadores",
       "codigo_topico": "2",
@@ -11409,8 +11409,8 @@
     {
       "id": "informatica_47",
       "pergunta": "O que é a função CONT.SE no Excel?",
-      "resposta": "A função CONT.SE conta o número de células em um intervalo que atendem a um unico critério específicado. Sintaxe: =CONT.SE(intervalo; critérios). O critério pode ser número (10), texto ('Aprovado'), expressao ('>=50') ou referência a outra célula. Difere de CONT.SES, que aceita múltiplos critérios em intervalos diferentes. CONT.SE conta células com valores logicos (VERDADEIRO/FALSO), diferente de CONT.núm que só conta números. CESPE cobra que o critério de texto deve estar entre aspas duplas e que curingas como * (qualquer sequência) e ? (um caractere) são aceitos em critérios de texto.",
-      "dica": "CONT.SE (1 critério) != CONT.SES (múltiplos critérios). Aceita curingas * e ?. CESPE: CONT.SE conta valores logicos SIM.",
+      "resposta": "A função CONT.SE conta o número de células em um intervalo que atendem a um único critério específicado. Sintaxe: =CONT.SE(intervalo; critérios). O critério pode ser número (10), texto ('Aprovado'), expressao ('>=50') ou referência a outra célula. Difere de CONT.SES, que aceita múltiplos critérios em intervalos diferentes. CONT.SE conta células com valores lógicos (VERDADEIRO/FALSO), diferente de CONT.núm que só conta números. CESPE cobra que o critério de texto deve estar entre aspas duplas e que curingas como * (qualquer sequência) e ? (um caractere) são aceitos em critérios de texto.",
+      "dica": "CONT.SE (1 critério) != CONT.SES (múltiplos critérios). Aceita curingas * e ?. CESPE: CONT.SE conta valores lógicos SIM.",
       "topico": "Redes de Computadores",
       "codigo_topico": "2",
       "dificuldade": "media"
@@ -11598,7 +11598,7 @@
     {
       "id": "informatica_68",
       "pergunta": "O que é a função SOMASE no Excel?",
-      "resposta": "A função SOMASE soma as células em um intervalo que atendem a um unico critério. Sintaxe: =SOMASE(intervalo; critério; [intervalo_soma]). Se o intervalo_soma for omitido, o Excel soma o próprio intervalo do critério. Exemplo: =SOMASE(B1:B10; '>100'; C1:C10) soma os valores em C1:C10 onde as células correspondentes em B1:B10 são maiores que 100. Difere de SOMASES, que aceita múltiplos critérios. Os curingas * (qualquer texto) e ? (um caractere) funcionam em critérios de texto. CESPE cobra que o intervalo_soma deve ter o mesmo tamanho do intervalo de critério, caso contrário pode gerar erro.",
+      "resposta": "A função SOMASE soma as células em um intervalo que atendem a um único critério. Sintaxe: =SOMASE(intervalo; critério; [intervalo_soma]). Se o intervalo_soma for omitido, o Excel soma o próprio intervalo do critério. Exemplo: =SOMASE(B1:B10; '>100'; C1:C10) soma os valores em C1:C10 onde as células correspondentes em B1:B10 são maiores que 100. Difere de SOMASES, que aceita múltiplos critérios. Os curingas * (qualquer texto) e ? (um caractere) funcionam em critérios de texto. CESPE cobra que o intervalo_soma deve ter o mesmo tamanho do intervalo de critério, caso contrário pode gerar erro.",
       "dica": "SOMASE (1 condicao) != SOMASES (múltiplas). Ex: =SOMASE(B1:B10;'>100';C1:C10). Aceita curingas * e ?. CESPE adora SOMASE.",
       "topico": "Redes de Computadores",
       "codigo_topico": "2",
@@ -12030,7 +12030,7 @@
     {
       "id": "informatica_new_116",
       "pergunta": "Cite exemplos de funções matemáticas e estatísticas do Excel.",
-      "resposta": "Funções matemáticas: SOMA (soma valores), ARRED (arredonda número com casas decimais definidas), ABS (retorna valor absoluto sem sinal), MULT (multiplica valores), TRUNCAR (trunca número sem arredondar), POTENCIA (eleva número a potencia), RAIZ (raiz quadrada). Funções estatísticas: MEDIA (media aritmetica), máximo (maior valor), mínimo (menor valor), CONT.núm (conta células numericas), CONT.SE (conta conforme critério), MED (mediana), DESVPAD (desvio padrão), MODO (valor mais frequente). CESPE prioriza SOMA, MEDIA, SE, PROCV, SOMASE e CONT.SE como funções mais cobradas. Conhecer a sintaxe de cada uma é essencial.",
+      "resposta": "Funções matemáticas: SOMA (soma valores), ARRED (arredonda número com casas decimais definidas), ABS (retorna valor absoluto sem sinal), MULT (multiplica valores), TRUNCAR (trunca número sem arredondar), POTENCIA (eleva número a potencia), RAIZ (raiz quadrada). Funções estatísticas: MEDIA (media aritmetica), máximo (maior valor), mínimo (menor valor), CONT.núm (conta células numéricas), CONT.SE (conta conforme critério), MED (mediana), DESVPAD (desvio padrão), MODO (valor mais frequente). CESPE prioriza SOMA, MEDIA, SE, PROCV, SOMASE e CONT.SE como funções mais cobradas. Conhecer a sintaxe de cada uma é essencial.",
       "dica": "Matemáticas: SOMA, ARRED, ABS, MULT, POTENCIA. Estatísticas: MEDIA, máximo, mínimo, MED, CONT.SE. CESPE prioriza SOMA, MEDIA, SE, PROCV, SOMASE.",
       "topico": "Principais funções do Excel: matemáticas, estatísticas, data-hora, financeiras e de texto",
       "codigo_topico": "1.5.2",
@@ -13111,7 +13111,7 @@
       "id": "informatica_expand_98",
       "topico": "Edição da planilha: copiar, colar, recortar, limpar, marcar",
       "pergunta": "Como copiar conteúdo para células adjacentes?",
-      "resposta": "No Excel, ha várias formas dê copiar conteúdo para células adjacentes. A mais visual e arrastar a alca de preenchimento (pequeno quadrado no canto inferior direito da célula selecionada) pelas células adjacentes. Também é possível usar Ctrl+D (preencher abaixo) para copiar o conteúdo da célula superior para as células selecionadas abaixo e Ctrl+R (preencher a direita) para copiar da esquerda para a direita. O preenchimento automático com a alca também pode criar sequencias numericas (1, 2, 3...), de data (seg, terc, qua...) ou personalizadas. CESPE: Ctrl+D cópia apenas de cima para baixo; Ctrl+R cópia da esquerda para a direita.",
+      "resposta": "No Excel, ha várias formas dê copiar conteúdo para células adjacentes. A mais visual e arrastar a alca de preenchimento (pequeno quadrado no canto inferior direito da célula selecionada) pelas células adjacentes. Também é possível usar Ctrl+D (preencher abaixo) para copiar o conteúdo da célula superior para as células selecionadas abaixo e Ctrl+R (preencher a direita) para copiar da esquerda para a direita. O preenchimento automático com a alca também pode criar sequencias numéricas (1, 2, 3...), de data (seg, terc, qua...) ou personalizadas. CESPE: Ctrl+D cópia apenas de cima para baixo; Ctrl+R cópia da esquerda para a direita.",
       "dica": "Alca de preenchimento (arrastar), Ctrl+D (abaixo), Ctrl+R (direita). CESPE: Ctrl+D cópia de cima p/ baixo; Ctrl+R da esquerda p/ direita.",
       "codigo_topico": "1.5.4",
       "dificuldade": "facil"
@@ -13147,8 +13147,8 @@
       "id": "informatica_expand_102",
       "topico": "Edição da planilha: copiar, colar, recortar, limpar, marcar",
       "pergunta": "O que é validação de dados?",
-      "resposta": "Válidação de dados no Excel é um recurso que RESTRINGE o tipo de dado que o usuário pode inserir em uma célula, garantindo integridade das informações. Acesse Dados > válidação de Dados. É possível configurar: critérios de válidação (número inteiro, decimal, lista, data, hora, texto com comprimento específico ou personalizado com formula), mensagem de entrada (instrucao ao selecionar a célula) e alerta de erro (estilos Parar, Atencao ou informação). O recurso de Lista permite criar menus suspensos. CESPE: válidação de dados não impede que dados invalidos SEJAM COLADOS via Ctrl+V — a válidação só bloqueia digitacao manual.",
-      "dica": "Dados > válidação de Dados. Restringe tipo de dado. CESPE: não bloqueia colagem (Ctrl+V) de dados invalidos. Só bloqueia digitacao.",
+      "resposta": "Válidação de dados no Excel é um recurso que RESTRINGE o tipo de dado que o usuário pode inserir em uma célula, garantindo integridade das informações. Acesse Dados > válidação de Dados. É possível configurar: critérios de válidação (número inteiro, decimal, lista, data, hora, texto com comprimento específico ou personalizado com formula), mensagem de entrada (instrucao ao selecionar a célula) e alerta de erro (estilos Parar, Atencao ou informação). O recurso de Lista permite criar menus suspensos. CESPE: válidação de dados não impede que dados inválidos SEJAM COLADOS via Ctrl+V — a válidação só bloqueia digitacao manual.",
+      "dica": "Dados > válidação de Dados. Restringe tipo de dado. CESPE: não bloqueia colagem (Ctrl+V) de dados inválidos. Só bloqueia digitacao.",
       "codigo_topico": "1.5.4",
       "dificuldade": "media"
     },
@@ -13165,8 +13165,8 @@
       "id": "informatica_expand_104",
       "topico": "Classificação de dados nas planilhas",
       "pergunta": "Como classificar por múltiplos níveis?",
-      "resposta": "Para classificar dados por múltiplos critérios no Excel, vá em Dados > Classificar. Na janela, clique em 'Adicionar Nivel' para incluir novos critérios. Defina a primeira coluna como critério principal (ex: Estado), depois adicione nivel para o segundo critério (ex: Cidade), e assim por diante. Para cada nivel é possível escolher: classificar por valores, cor da célula, cor da fonte ou icone condicional, em ordem crescente/decrescente. Use as setas para reordenar a prioridade. CESPE: a classificação segue a ordem dos níveis definidos — primeiro nivel 1, depois nivel 2 dentro do agrupamento do nivel 1. Marque 'Meus dados contém cabeçalhos'.",
-      "dica": "Dados > Classificar > Adicionar Nivel. Ordem dos níveis define prioridade. CESPE: marcar 'Meus dados contém cabeçalhos'.",
+      "resposta": "Para classificar dados por múltiplos critérios no Excel, vá em Dados > Classificar. Na janela, clique em 'Adicionar Nível' para incluir novos critérios. Defina a primeira coluna como critério principal (ex: Estado), depois adicione nível para o segundo critério (ex: Cidade), e assim por diante. Para cada nível é possível escolher: classificar por valores, cor da célula, cor da fonte ou icone condicional, em ordem crescente/decrescente. Use as setas para reordenar a prioridade. CESPE: a classificação segue a ordem dos níveis definidos — primeiro nível 1, depois nível 2 dentro do agrupamento do nível 1. Marque 'Meus dados contém cabeçalhos'.",
+      "dica": "Dados > Classificar > Adicionar Nível. Ordem dos níveis define prioridade. CESPE: marcar 'Meus dados contém cabeçalhos'.",
       "codigo_topico": "1.5.5",
       "dificuldade": "facil"
     },
@@ -13219,7 +13219,7 @@
       "id": "informatica_expand_110",
       "topico": "Classificação de dados nas planilhas",
       "pergunta": "Como desfazer classificação?",
-      "resposta": "Para desfazer uma classificação no Excel, use Ctrl+Z (desfazer) imediatamente apos a classificação. Se você fechar e reabrir o arquivo, o Ctrl+Z não funcionará mais. Por isso, a recomendacao e adicionar uma coluna de índice sequencial (numerar de 1 a N) ANTES de classificar os dados, assim você pode restaurar a ordem original classificando por essa coluna. CESPE: o Excel não possui um botao 'Desfazer classificação' específico no menu Dados — o unico metodo nativo e Ctrl+Z ou a coluna de índice. Apos várias operações de edição, Ctrl+Z pode não estár mais disponivel (pilha de desfazer têm limite).",
+      "resposta": "Para desfazer uma classificação no Excel, use Ctrl+Z (desfazer) imediatamente apos a classificação. Se você fechar e reabrir o arquivo, o Ctrl+Z não funcionará mais. Por isso, a recomendacao e adicionar uma coluna de índice sequencial (numerar de 1 a N) ANTES de classificar os dados, assim você pode restaurar a ordem original classificando por essa coluna. CESPE: o Excel não possui um botao 'Desfazer classificação' específico no menu Dados — o único metodo nativo e Ctrl+Z ou a coluna de índice. Apos várias operações de edição, Ctrl+Z pode não estár mais disponivel (pilha de desfazer têm limite).",
       "dica": "Ctrl+Z imediatamente apos classificar. CESPE: melhor prática = criar coluna de índice (1,2,3...) ANTES de classificar.",
       "codigo_topico": "1.5.5",
       "dificuldade": "facil"
@@ -13246,8 +13246,8 @@
       "id": "informatica_expand_113",
       "topico": "Gráficos",
       "pergunta": "Como criar gráfico combinado?",
-      "resposta": "Para criar um gráfico combinado no Excel, que mescla dois tipos de gráfico (ex: colunas com linha), selecione os dados e vá em inserir > gráficos Combinados > Coluna Agrupada e Linha no Eixo Secundario. Isso cria um gráfico com colunas para uma serie e linha para outra, onde a serie em linha ganha um eixo vertical secundario do lado direito. Também é possível personalizar existente: clique direito sobre uma serie > Alterar Tipo de gráfico dê Serie > escolha o tipo desejado.",
-      "dica": "Inserir > gráficos Combinados. Ex: colunas + linha com eixo secundario. CESPE: útil quando series têm escalas diferentes.",
+      "resposta": "Para criar um gráfico combinado no Excel, que mescla dois tipos de gráfico (ex: colunas com linha), selecione os dados e vá em inserir > gráficos Combinados > Coluna Agrupada e Linha no Eixo Secundario. Isso cria um gráfico com colunas para uma série e linha para outra, onde a série em linha ganha um eixo vertical secundario do lado direito. Também é possível personalizar existente: clique direito sobre uma série > Alterar Tipo de gráfico dê Série > escolha o tipo desejado.",
+      "dica": "Inserir > gráficos Combinados. Ex: colunas + linha com eixo secundario. CESPE: útil quando séries têm escalas diferentes.",
       "codigo_topico": "1.5.6",
       "dificuldade": "media"
     },
@@ -13291,8 +13291,8 @@
       "id": "informatica_expand_118",
       "topico": "Gráficos",
       "pergunta": "Como alterar dados de gráfico existente?",
-      "resposta": "Para alterar os dados de um gráfico existente no Excel, clique com o botao direito sobre o gráfico e selecione 'Selecionar Dados' ou use a guia Design do gráfico > Selecionar Dados. Na janela, é possível: alterar o intervalo total de dados, adicionar ou remover series, editar series individuais (nome e valores), e inverter linhas/colunas (trocar eixo X por categorias). CESPE: a opção 'Inverter Linhas/Colunas' reorganiza como o Excel interpreta os dados — linhas viram series ou categorias. Também é possível alterar dados arrastando o intervalo selecionado na planilha. Apos alterar, o gráfico e atualizado automáticamente.",
-      "dica": "Clique direito > Selecionar Dados. CESPE: alterar intervalo, adicionar/remover series, inverter linhas/colunas. Gráfico atualiza automáticamente.",
+      "resposta": "Para alterar os dados de um gráfico existente no Excel, clique com o botao direito sobre o gráfico e selecione 'Selecionar Dados' ou use a guia Design do gráfico > Selecionar Dados. Na janela, é possível: alterar o intervalo total de dados, adicionar ou remover séries, editar séries individuais (nome e valores), e inverter linhas/colunas (trocar eixo X por categorias). CESPE: a opção 'Inverter Linhas/Colunas' reorganiza como o Excel interpreta os dados — linhas viram séries ou categorias. Também é possível alterar dados arrastando o intervalo selecionado na planilha. Apos alterar, o gráfico e atualizado automáticamente.",
+      "dica": "Clique direito > Selecionar Dados. CESPE: alterar intervalo, adicionar/remover séries, inverter linhas/colunas. Gráfico atualiza automáticamente.",
       "codigo_topico": "1.5.6",
       "dificuldade": "facil"
     },
@@ -17217,7 +17217,7 @@
       "id": "jurisprudencias_1",
       "pergunta": "Qual o alcance da Súmula Vinculante 14 do STF quanto ao acesso do advogado aos autos do inquérito policial?",
       "resposta": "O advogado tem direito de acessar amplamente os autos do inquérito ja documentados, mesmo sem procuração, ressalvadas as diligências em andamento cujo sigilo seja justificado (SV 14 STF).",
-      "dica": "ALERTA CESPE: O acesso É aos atos JA DOCUMENTADOS. Diligências em andamento podem ter sigilo. A SV 14 NAO da acesso ilimitado. O Delegado pode negar acesso se houver risco de comprometer a investigação fundamentadamente.",
+      "dica": "ALERTA CESPE: O acesso É aos atos JA DOCUMENTADOS. Diligências em andamento podem ter sigilo. A SV 14 NÃO da acesso ilimitado. O Delegado pode negar acesso se houver risco de comprometer a investigação fundamentadamente.",
       "topico": "Jurisprudências de Direito Constitucional",
       "codigo_topico": "1",
       "dificuldade": "medio"
@@ -17244,7 +17244,7 @@
       "id": "jurisprudencias_4",
       "pergunta": "Qual o entendimento do STF na AP 937 QO sobre foro privilegiado?",
       "resposta": "O foro por prerrogativa de função aplica-se apenas aos crimes cometidos DURANTE o exercício do cargo e RELACIONADOS as funções desempenhadas. Findo o mandato ou após a renuncia o processo É remetido a primeira instância (AP 937 QO STF).",
-      "dica": "MUDANÇA DE JURISPRUDÊNCIA 2018: Antes o foro era mantido mesmo após o fim do cargo. Agora so para crimes DURANTE e RELACIONADOS ao cargo. CESPE: Deputado comete crime antes do mandato foro no STF se mantem NAO. Findo o cargo cai o foro.",
+      "dica": "MUDANÇA DE JURISPRUDÊNCIA 2018: Antes o foro era mantido mesmo após o fim do cargo. Agora so para crimes DURANTE e RELACIONADOS ao cargo. CESPE: Deputado comete crime antes do mandato foro no STF se mantem NÃO. Findo o cargo cai o foro.",
       "topico": "Jurisprudências de Direito Constitucional",
       "codigo_topico": "1",
       "dificuldade": "dificil"
@@ -17288,8 +17288,8 @@
     {
       "id": "jurisprudencias_9",
       "pergunta": "Quais os requisitos para aplicação do princípio da insignificância no STF?",
-      "resposta": "O STF exige: (a) mínima ofensividade da conduta, (b) ausência de periculosidade social, (c) reduzido grau de reprovabilidade e (d) inexpressividade da lesão jurídica. Nao se aplica a crimes com violência ou grave ameaça (HC 104.339 STF).",
-      "dica": "MNEMÔNICO: M-A-R-I (Minima ofensividade, Ausencia periculosidade, Reduzida reprovabilidade, Inexpressividade lesão). CESPE: insignificância NAO se aplica a crimes de tráfico de drogas (STF HC 103.415) nem a crimes com violência.",
+      "resposta": "O STF exige: (a) mínima ofensividade da conduta, (b) ausência de periculosidade social, (c) reduzido grau de reprovabilidade e (d) inexpressividade da lesão jurídica. Não se aplica a crimes com violência ou grave ameaça (HC 104.339 STF).",
+      "dica": "MNEMÔNICO: M-A-R-I (Mínima ofensividade, Ausencia periculosidade, Reduzida reprovabilidade, Inexpressividade lesão). CESPE: insignificância NÃO se aplica a crimes de tráfico de drogas (STF HC 103.415) nem a crimes com violência.",
       "topico": "Jurisprudências de Direito Constitucional",
       "codigo_topico": "1",
       "dificuldade": "medio"
@@ -17316,7 +17316,7 @@
       "id": "jurisprudencias_12",
       "pergunta": "Quais os requisitos de validade da delação premiada segundo o STF?",
       "resposta": "A delação premiada exige: (a) voluntariedade, (b) acordo formal com o Ministério Público, (c) presença de advogado, (d) gravação audiovisual, (e) confirmação em juízo e (f) eficácia na investigação (RE 1.237.465 STF - Tema 1135 RG).",
-      "dica": "A delação e MEIO DE OBTENÇÃO DE PROVA não prova em si. O colaborador tem direito ao silêncio. CESPE: delação de corréu isoladamente NAO basta para condenação (art. 4 16 Lei 12.850/13).",
+      "dica": "A delação e MEIO DE OBTENÇÃO DE PROVA não prova em si. O colaborador tem direito ao silêncio. CESPE: delação de corréu isoladamente NÃO basta para condenação (art. 4 16 Lei 12.850/13).",
       "topico": "Jurisprudências de Direito Constitucional",
       "codigo_topico": "1",
       "dificuldade": "dificil"
@@ -17388,7 +17388,7 @@
       "id": "jurisprudencias_20",
       "pergunta": "Qual o entendimento do STJ sobre a hediondez do tráfico privilegiado (Tema 108)?",
       "resposta": "O STJ firmou que o tráfico privilegiado (art. 33 4 Lei 11.343/06) é crime hediondo mas permite a fixação de regime inicial aberto e a substituicao da pena privativa de liberdade por restritiva de direitos (Tema 108 STJ - REsp 1.482.235).",
-      "dica": "POSICAO DO STJ: O Tema 108 STJ segue o mesmo entendimento do STF (RE 635.659). A natureza hedionda permanece mas as consequencias praticas (regime substituicao) são mais brandas. CESPE: Trafico privilegiado não é hediondo - FALSO.",
+      "dica": "POSICAO DO STJ: O Tema 108 STJ segue o mesmo entendimento do STF (RE 635.659). A natureza hedionda permanece mas as consequencias práticas (regime substituicao) são mais brandas. CESPE: Trafico privilegiado não é hediondo - FALSO.",
       "topico": "Jurisprudências de Direito Penal",
       "codigo_topico": "2",
       "dificuldade": "medio"
@@ -17415,7 +17415,7 @@
       "id": "jurisprudencias_23",
       "pergunta": "O que estabelece a Súmula 606 do STJ sobre o crime de persecução (stalking)?",
       "resposta": "A reiteração de condutas no crime de persecução (art. 147-A CP) exige a prática de mais de um ato de perturbação sendo necessário o dolo específico de violar a liberdade ou privacidade da vítima (Súmula 606 STJ).",
-      "dica": "O crime de stalking foi incluido pela Lei 14.132/2021. A Súmula 606 exige REITERACAO (pluralidade de atos) + DOLO ESPECÍFICO. CESPE: Uma unica mensagem configura stalking NAO (exige reiteração salvo se houver ameaça).",
+      "dica": "O crime de stalking foi incluido pela Lei 14.132/2021. A Súmula 606 exige REITERACAO (pluralidade de atos) + DOLO ESPECÍFICO. CESPE: Uma única mensagem configura stalking NÃO (exige reiteração salvo se houver ameaça).",
       "topico": "Jurisprudências de Direito Penal",
       "codigo_topico": "2",
       "dificuldade": "medio"
@@ -17423,8 +17423,8 @@
     {
       "id": "jurisprudencias_24",
       "pergunta": "O que estabelece a Súmula 614 do STJ sobre concurso de crimes no estelionato?",
-      "resposta": "Se o agente prática múltiplos estelionatos contra vítimas distintas no mesmo contexto aplica-se a regra do concurso formal impróprio (art. 70 parágrafo unico CP) com soma das penas (Súmula 614 STJ).",
-      "dica": "Súmula 614 STJ: Estelionato contra diversas vítimas = CONCURSO FORMAL IMPROPRIO (soma de penas). CESPE: Estelionato contra varias vítimas é crime unico - FALSO. Aplica-se o concurso material - FALSO (e formal impróprio).",
+      "resposta": "Se o agente prática múltiplos estelionatos contra vítimas distintas no mesmo contexto aplica-se a regra do concurso formal impróprio (art. 70 parágrafo único CP) com soma das penas (Súmula 614 STJ).",
+      "dica": "Súmula 614 STJ: Estelionato contra diversas vítimas = CONCURSO FORMAL IMPROPRIO (soma de penas). CESPE: Estelionato contra varias vítimas é crime único - FALSO. Aplica-se o concurso material - FALSO (e formal impróprio).",
       "topico": "Jurisprudências de Direito Penal",
       "codigo_topico": "2",
       "dificuldade": "dificil"
@@ -17459,8 +17459,8 @@
     {
       "id": "jurisprudencias_28",
       "pergunta": "Qual o entendimento do STF (HC 97.256) sobre crime continuado específico?",
-      "resposta": "O crime continuado específico (art. 71 parágrafo unico CP) aplica-se aos crimes cometidos com violência ou grave ameaça contra vítimas diferentes desde que as condutas sejam da mesma espécie e haja conexão temporal e espacial.",
-      "dica": "O parágrafo unico do art. 71 permite aumento de 1/6 a 2/3 para crimes continuados COM violência. CESPE: Crime continuado NAO se aplica a crimes violentos - FALSO (aplica-se mas com pena majorada pelo parágrafo unico).",
+      "resposta": "O crime continuado específico (art. 71 parágrafo único CP) aplica-se aos crimes cometidos com violência ou grave ameaça contra vítimas diferentes desde que as condutas sejam da mesma espécie e haja conexão temporal e espacial.",
+      "dica": "O parágrafo único do art. 71 permite aumento de 1/6 a 2/3 para crimes continuados COM violência. CESPE: Crime continuado NÃO se aplica a crimes violentos - FALSO (aplica-se mas com pena majorada pelo parágrafo único).",
       "topico": "Jurisprudências de Direito Penal",
       "codigo_topico": "2",
       "dificuldade": "medio"
@@ -17478,7 +17478,7 @@
       "id": "jurisprudencias_30",
       "pergunta": "O que estabelece a Súmula 542 do STJ sobre a hediondez do crime de tortura?",
       "resposta": "O crime de tortura (Lei 9.455/97) É equiparado a crime hediondo pela Constituição Federal (art. 5 XLIII) sendo insuscetivel de graça indulto anistia e fiança com regime inicial fechado (Súmula 542 STJ).",
-      "dica": "A Súmula 542 STJ reforca o que ja esta na CF/88. Tortura = crime equiparado a hediondo. CESPE: O crime de tortura admite fiança NAO (art. 5 XLIII CF/88). Tortura admite anistia NAO.",
+      "dica": "A Súmula 542 STJ reforca o que ja esta na CF/88. Tortura = crime equiparado a hediondo. CESPE: O crime de tortura admite fiança NÃO (art. 5 XLIII CF/88). Tortura admite anistia NÃO.",
       "topico": "Jurisprudências de Direito Penal",
       "codigo_topico": "2",
       "dificuldade": "facil"
@@ -17487,7 +17487,7 @@
       "id": "jurisprudencias_31",
       "pergunta": "O que estabelece a Súmula 528 do STJ sobre associação para o tráfico?",
       "resposta": "O crime de associação para o tráfico (art. 35 Lei 11.343/06) exige a associação estável e permanente de duas ou mais pessoas para a prática reiterada de tráfico não se confundindo com a mera coautoria eventual (Súmula 528 STJ).",
-      "dica": "ASSOCIACAO tem CARÁTER ESTÁVEL É PERMANENTE (sociedade criminosa duradoura). Não É mero ajuste momentâneo. CESPE: Duas pessoas que traficam juntas uma unica vez cometem associação para o tráfico - FALSO (falta estabilidade).",
+      "dica": "ASSOCIACAO tem CARÁTER ESTÁVEL É PERMANENTE (sociedade criminosa duradoura). Não É mero ajuste momentâneo. CESPE: Duas pessoas que traficam juntas uma única vez cometem associação para o tráfico - FALSO (falta estabilidade).",
       "topico": "Jurisprudências de Direito Penal",
       "codigo_topico": "2",
       "dificuldade": "medio"
@@ -17495,7 +17495,7 @@
     {
       "id": "jurisprudencias_32",
       "pergunta": "O que estabelece a Súmula 501 do STJ sobre prisão preventiva no homicidio?",
-      "resposta": "A prisão preventiva pode ser decretada para garantia da ordem pública quando ha indícios de autoria e prova da materialidade do homicidio sendo desnecessario esperar o trânsito em julgado para iniciar a segregação cautelar (Súmula 501 STJ).",
+      "resposta": "A prisão preventiva pode ser decretada para garantia da ordem pública quando ha indícios de autoria e prova da materialidade do homicidio sendo desnecessário esperar o trânsito em julgado para iniciar a segregação cautelar (Súmula 501 STJ).",
       "dica": "A Súmula 501 autoriza prisão preventiva em homicidio mesmo antes do julgamento. CESPE: A prisão preventiva no homicidio exige condenação - FALSO (e cautelar pode ser antes). Fundamentação: garantia da ordem pública (art. 312 CPP).",
       "topico": "Jurisprudências de Direito Penal",
       "codigo_topico": "2",
@@ -17505,7 +17505,7 @@
       "id": "jurisprudencias_33",
       "pergunta": "O que estabelece a Súmula 608 do STJ sobre o crime de importunação sexual?",
       "resposta": "O crime de importunação sexual (art. 215-A CP) consuma-se com a prática de ato libidinoso na presença de alguém sem violência ou grave ameaça independentemente de contato físico direto (Súmula 608 STJ).",
-      "dica": "A importunação sexual NAO exige contato físico (ex.: masturbação em público toques não consentidos). É crime de PERIGO. CESPE: Importunação sexual exige contato físico - FALSO. Diferenca de estupro: estupro exige violência/grave ameaça ou vulnerabilidade.",
+      "dica": "A importunação sexual NÃO exige contato físico (ex.: masturbação em público toques não consentidos). É crime de PERIGO. CESPE: Importunação sexual exige contato físico - FALSO. Diferenca de estupro: estupro exige violência/grave ameaça ou vulnerabilidade.",
       "topico": "Jurisprudências de Direito Penal",
       "codigo_topico": "2",
       "dificuldade": "medio"
@@ -17514,7 +17514,7 @@
       "id": "jurisprudencias_34",
       "pergunta": "O que estabelece a Súmula 636 do STJ sobre o crime de furto privilegiado?",
       "resposta": "O furto privilegiado (art. 155 2 CP) caracteriza-se pelo pequeno valor da coisa e pela primariedade do reu sendo cabível a aplicação de pena reduzida (1/3 a 2/3) ou a substituicao por restritiva de direitos (Súmula 636 STJ).",
-      "dica": "O privilegiamento NAO descaracteriza o crime. O furto privilegiado continua sendo furto com pena reduzida. CESPE: Furto privilegiado e infração de menor potencial ofensivo DEPENDE (se a pena for ate 2 anos sim).",
+      "dica": "O privilegiamento NÃO descaracteriza o crime. O furto privilegiado continua sendo furto com pena reduzida. CESPE: Furto privilegiado e infração de menor potencial ofensivo DEPENDE (se a pena for ate 2 anos sim).",
       "topico": "Jurisprudências de Direito Penal",
       "codigo_topico": "2",
       "dificuldade": "medio"
@@ -17541,7 +17541,7 @@
       "id": "jurisprudencias_37",
       "pergunta": "Qual o entendimento do STJ sobre a majorante do uso de arma de fogo no roubo (Súmula 657)?",
       "resposta": "A majorante do emprego de arma de fogo no crime de roubo (art. 157 2-A I CP) exige a efetiva utilização do artefato sendo suficiente a simulação com arma de brinquedo para caracterizar a grave ameaça mas não a majorante (Súmula 657 STJ).",
-      "dica": "ALERTA: Arma de BRINQUEDO NAO configura a majorante do emprego de arma de fogo (Súmula 657 STJ) mas ainda configura ROUBO pela grave ameaça. CESPE: Roubo com arma de brinquedo não é crime - FALSO (e roubo sem a majorante).",
+      "dica": "ALERTA: Arma de BRINQUEDO NÃO configura a majorante do emprego de arma de fogo (Súmula 657 STJ) mas ainda configura ROUBO pela grave ameaça. CESPE: Roubo com arma de brinquedo não é crime - FALSO (e roubo sem a majorante).",
       "topico": "Jurisprudências de Direito Penal",
       "codigo_topico": "2",
       "dificuldade": "dificil"
@@ -17577,7 +17577,7 @@
       "id": "jurisprudencias_41",
       "pergunta": "Qual o entendimento do STF (RE 593.727) sobre prova ilícita por revista íntima?",
       "resposta": "A prova obtida por revista íntima vexatória (desnudamento agachamento exposição de genitais) sem fundada suspeita é ilícita contaminando as provas derivadas e não podendo ser utilizada em processo penal (RE 593.727 STF - Tema 280).",
-      "dica": "No ambito PRISIONAL o STF flexibilizou: visitantes podem ser submetidos a revista menos invasiva (mas não vexatória). CESPE: A revista íntima em presídio É sempre lícita - FALSO (também observa a dignidade). No trabalho privado é ilícita.",
+      "dica": "No âmbito PRISIONAL o STF flexibilizou: visitantes podem ser submetidos a revista menos invasiva (mas não vexatória). CESPE: A revista íntima em presídio É sempre lícita - FALSO (também observa a dignidade). No trabalho privado é ilícita.",
       "topico": "Jurisprudências de Direito Processual Penal",
       "codigo_topico": "3",
       "dificuldade": "medio"
@@ -17586,7 +17586,7 @@
       "id": "jurisprudencias_42",
       "pergunta": "O que estabelece o Tema 490 do STF sobre nulidade por violação ao devido processo legal?",
       "resposta": "A nulidade por violação ao devido processo legal (art. 5 LIV CF/88) exige a demonstração de efetivo prejuízo a defesa (pas de nullite sans grief) não se declarando nulidade por mera formalidade (Tema 490 STF - RE 727.652).",
-      "dica": "PAS DE NULLITÉ SANS GRIEF: Nao ha nulidade sem prejuízo. Essa e a regra no processo penal. CESPE: Qualquer irregularidade processual gera nulidade - FALSO. Nulidade absoluta = prejuízo presumido. Nulidade relativa = precisa demonstrar prejuízo.",
+      "dica": "PAS DE NULLITÉ SANS GRIEF: Não ha nulidade sem prejuízo. Essa e a regra no processo penal. CESPE: Qualquer irregularidade processual gera nulidade - FALSO. Nulidade absoluta = prejuízo presumido. Nulidade relativa = precisa demonstrar prejuízo.",
       "topico": "Jurisprudências de Direito Processual Penal",
       "codigo_topico": "3",
       "dificuldade": "medio"
@@ -17622,7 +17622,7 @@
       "id": "jurisprudencias_46",
       "pergunta": "O que decidiu a ADI 5.510 do STF sobre o prazo da prisão temporária?",
       "resposta": "O STF declarou constitucional o prazo de 30 dias (prorrogável por mais 30) para a prisão temporária em crimes hediondos e equiparados e de 5 dias (prorrogável por mais 5) para os demais crimes (ADI 5.510 STF c/c Lei 7.960/89).",
-      "dica": "PRISAO TEMPORARIA: crimes hediondos = 30+30 dias; demais = 5+5 dias. A ADI 5.510 confirmou a constitucionalidade dos prazos. CESPE: A prisão temporária para tráfico É de 5 dias prorrogável por mais 5 - FALSO (tráfico e hediondo: 30+30).",
+      "dica": "PRISAO TEMPORÁRIA: crimes hediondos = 30+30 dias; demais = 5+5 dias. A ADI 5.510 confirmou a constitucionalidade dos prazos. CESPE: A prisão temporária para tráfico É de 5 dias prorrogável por mais 5 - FALSO (tráfico e hediondo: 30+30).",
       "topico": "Jurisprudências de Direito Processual Penal",
       "codigo_topico": "3",
       "dificuldade": "medio"
@@ -17649,7 +17649,7 @@
       "id": "jurisprudencias_49",
       "pergunta": "O que estabelece a Súmula 630 do STJ sobre prova digital e quebra de sigilo telematico?",
       "resposta": "O acesso a dados telemáticos (conversas de WhatsApp e-mails nuvem) sem autorização judicial configura prova ilícita salvo se houver consentimento voluntario do titular ou flagrante digital (Súmula 630 STJ c/c art. 5 XII CF/88).",
-      "dica": "Súmula 630 STJ: dados telemáticos exigem AUTORIZAÇÃO JUDICIAL. Nao confundir: quebra de sigilo bancario (LC 105/2001) com quebra de sigilo telematico. CESPE: O acesso ao WhatsApp sem autorização judicial é lícito - FALSO.",
+      "dica": "Súmula 630 STJ: dados telemáticos exigem AUTORIZAÇÃO JUDICIAL. Não confundir: quebra de sigilo bancario (LC 105/2001) com quebra de sigilo telematico. CESPE: O acesso ao WhatsApp sem autorização judicial é lícito - FALSO.",
       "topico": "Jurisprudências de Direito Processual Penal",
       "codigo_topico": "3",
       "dificuldade": "medio"
@@ -17693,8 +17693,8 @@
     {
       "id": "jurisprudencias_54",
       "pergunta": "Qual o entendimento do STF (HC 166.373) sobre a validade da delação de corréu?",
-      "resposta": "A delação de corréu não pode ser utilizada como unica prova para condenação sendo necessárias provas complementares que confirmem o conteúdo da colaboração (art. 4 16 Lei 12.850/13 e HC 166.373 STF).",
-      "dica": "DELACAO NAO BASTA: A palavra do colaborador isoladamente NÃO É suficiente para condenar (art. 4 16 Lei 12.850/13 - incluido pelo Pacote Anticrime reforcando jurisprudência do STF). CESPE: A delação de corréu É suficiente para condenar - FALSO.",
+      "resposta": "A delação de corréu não pode ser utilizada como única prova para condenação sendo necessárias provas complementares que confirmem o conteúdo da colaboração (art. 4 16 Lei 12.850/13 e HC 166.373 STF).",
+      "dica": "DELACAO NÃO BASTA: A palavra do colaborador isoladamente NÃO É suficiente para condenar (art. 4 16 Lei 12.850/13 - incluido pelo Pacote Anticrime reforcando jurisprudência do STF). CESPE: A delação de corréu É suficiente para condenar - FALSO.",
       "topico": "Jurisprudências de Direito Processual Penal",
       "codigo_topico": "3",
       "dificuldade": "medio"
@@ -17721,7 +17721,7 @@
       "id": "jurisprudencias_57",
       "pergunta": "Qual o entendimento do STF (HC 118.686) sobre fundamentação da prisão preventiva?",
       "resposta": "A prisão preventiva exige fundamentação concreta e individualizada sendo vedada a utilização de formulas genéricas ou a mera referencia a gravidade abstrata do crime (HC 118.686 STF c/c art. 315 CPP).",
-      "dica": "HC 118.686: A prisão preventiva NAO pode ser baseada apenas na gravidade abstrata do crime. Exige-se fundamentação CONCRETA com demonstração do periculum libertatis real (risco de fuga reiteração obstrucao). CESPE adora essa distincao.",
+      "dica": "HC 118.686: A prisão preventiva NÃO pode ser baseada apenas na gravidade abstrata do crime. Exige-se fundamentação CONCRETA com demonstração do periculum libertatis real (risco de fuga reiteração obstrucao). CESPE adora essa distincao.",
       "topico": "Jurisprudências de Direito Processual Penal",
       "codigo_topico": "3",
       "dificuldade": "dificil"
@@ -17738,8 +17738,8 @@
     {
       "id": "jurisprudencias_59",
       "pergunta": "O que estabelece a Súmula 423 do STJ sobre embargos infringentes?",
-      "resposta": "Os embargos infringentes (art. 609 parágrafo unico CPP) são cabíveis quando ha decisão não unânime em recurso de apelação proferida por tribunal desde que desfavorável ao reu (Súmula 423 STJ).",
-      "dica": "REQUISITOS: (1) decisão NAO UNANIMÉ em apelação; (2) desfavorável ao reu; (3) reforma da sentença. O Pacote Anticrime (Lei 13.964/19) alterou o CPP mas manteve os embargos infringentes. CESPE: Embargos infringentes so cabem no Júri - FALSO.",
+      "resposta": "Os embargos infringentes (art. 609 parágrafo único CPP) são cabíveis quando ha decisão não unânime em recurso de apelação proferida por tribunal desde que desfavorável ao reu (Súmula 423 STJ).",
+      "dica": "REQUISITOS: (1) decisão NÃO UNANIMÉ em apelação; (2) desfavorável ao reu; (3) reforma da sentença. O Pacote Anticrime (Lei 13.964/19) alterou o CPP mas manteve os embargos infringentes. CESPE: Embargos infringentes so cabem no Júri - FALSO.",
       "topico": "Jurisprudências de Direito Processual Penal",
       "codigo_topico": "3",
       "dificuldade": "medio"
@@ -17792,7 +17792,7 @@
     {
       "id": "jurisprudencias_65",
       "pergunta": "O que estabelece a Súmula 634 do STJ sobre improbidade administrativa e dano ao erário?",
-      "resposta": "A configuração de ato de improbidade administrativa que cause dano ao erário exige a demonstração de efetivo prejuízo ao patrimonio público não sendo suficiente o simples descumprimento da lei (Súmula 634 STJ).",
+      "resposta": "A configuração de ato de improbidade administrativa que cause dano ao erário exige a demonstração de efetivo prejuízo ao patrimônio público não sendo suficiente o simples descumprimento da lei (Súmula 634 STJ).",
       "dica": "Súmula 634 STJ: Para improbidade com DANO AO ERARIO precisa de PREJUIZO EFETIVO. Para improbidade que VIOLA PRINCIPIOS (art. 11) basta a ilegalidade. CESPE: O simples descumprimento da lei configura improbidade com dano ao erário - FALSO.",
       "topico": "Jurisprudências de Direito Administrativo",
       "codigo_topico": "4",
@@ -17820,7 +17820,7 @@
       "id": "jurisprudencias_68",
       "pergunta": "O que decidiu o STF no Tema 831 sobre desnecessidade de licitação para contratação de advogados?",
       "resposta": "O STF (Tema 831) decidiu que a contratação de advogados pela Administração Pública por notória especialização é hipótese de inexigibilidade de licitação (art. 25 II Lei 8.666/93) desde que o valor seja compatível com o mercado.",
-      "dica": "Atenção: O Tema 831 NAO criou exceção genérica exige: (1) singularidade do objeto; (2) notória especialização; (3) valor compatível. A Lei 14.133/2021 (art. 74 III) manteve a hipótese. CESPE: Advogados podem ser contratados sem licitação sem requisitos - FALSO.",
+      "dica": "Atenção: O Tema 831 NÃO criou exceção genérica exige: (1) singularidade do objeto; (2) notória especialização; (3) valor compatível. A Lei 14.133/2021 (art. 74 III) manteve a hipótese. CESPE: Advogados podem ser contratados sem licitação sem requisitos - FALSO.",
       "topico": "Jurisprudências de Direito Administrativo",
       "codigo_topico": "4",
       "dificuldade": "dificil"
@@ -17837,8 +17837,8 @@
     {
       "id": "jurisprudencias_70",
       "pergunta": "O que decidiu o STF no RE 595.521 sobre acumulo de cargos públicos?",
-      "resposta": "O STF (Tema 72 RG) firmou que a acumulação de dois cargos de professor ou de um de professor com outro tecnico-cientifico é possível desde que haja compatibilidade de horarios e não ultrapasse o teto constitucional (RE 595.521 STF c/c art. 37 XVI CF/88).",
-      "dica": "HIPOTESES de acumulação (art. 37 XVI CF/88): (a) 2 cargos de professor; (b) 1 professor + 1 tecnico/cientifico; (c) 2 cargos de saúde; (d) 2 cargos de magistério. CESPE: Acumular cargo de Delegado com Professor é possível SIM (se houver compatibilidade).",
+      "resposta": "O STF (Tema 72 RG) firmou que a acumulação de dois cargos de professor ou de um de professor com outro técnico-cientifico é possível desde que haja compatibilidade de horarios e não ultrapasse o teto constitucional (RE 595.521 STF c/c art. 37 XVI CF/88).",
+      "dica": "HIPÓTESES de acumulação (art. 37 XVI CF/88): (a) 2 cargos de professor; (b) 1 professor + 1 técnico/cientifico; (c) 2 cargos de saúde; (d) 2 cargos de magistério. CESPE: Acumular cargo de Delegado com Professor é possível SIM (se houver compatibilidade).",
       "topico": "Jurisprudências de Direito Administrativo",
       "codigo_topico": "4",
       "dificuldade": "facil"
@@ -17855,7 +17855,7 @@
     {
       "id": "jurisprudencias_72",
       "pergunta": "O que decidiu o STF no RE 1.003.717 sobre teto remuneratorio?",
-      "resposta": "O STF (Tema 785 RG) decidiu que o teto remuneratorio unico (subsidio dos Ministros do STF) aplica-se a todos os Poderes sendo que nos Estados o teto É o subsídio do Governador (RE 1.003.717 STF c/c art. 37 XI CF/88).",
+      "resposta": "O STF (Tema 785 RG) decidiu que o teto remuneratorio único (subsidio dos Ministros do STF) aplica-se a todos os Poderes sendo que nos Estados o teto É o subsídio do Governador (RE 1.003.717 STF c/c art. 37 XI CF/88).",
       "dica": "TETO GERAL = STF. TETO ESTADUAL = Governador. A EC 41/2003 criou os subtetos. CESPE: O teto estadual É o subsídio do Governador - VERDADEIRO. Servidor estadual pode receber acima do STF - FALSO.",
       "topico": "Jurisprudências de Direito Administrativo",
       "codigo_topico": "4",
@@ -17883,7 +17883,7 @@
       "id": "jurisprudencias_75",
       "pergunta": "O que entende o STF (RE 297.286) sobre ato administrativo discricionário vs. vinculado?",
       "resposta": "O STF distingue ato vinculado (todos os elementos definidos em lei sem margem de escolha) de ato discricionário (lei permite margem de escolha quanto ao merito administrativo - conveniencia e oportunidade) sendo o merito insindicavel pelo Judiciário (RE 297.286 STF).",
-      "dica": "O merito do ato administrativo (conveniencia e oportunidade) NAO pode ser revisto pelo Judiciário. O Judiciário so analisa LEGALIDADE. CESPE: O juiz pode anular ato discricionário inconveniente - FALSO (so se for ilegal ou desproporcional).",
+      "dica": "O merito do ato administrativo (conveniencia e oportunidade) NÃO pode ser revisto pelo Judiciário. O Judiciário so analisa LEGALIDADE. CESPE: O juiz pode anular ato discricionário inconveniente - FALSO (so se for ilegal ou desproporcional).",
       "topico": "Jurisprudências de Direito Administrativo",
       "codigo_topico": "4",
       "dificuldade": "facil"
@@ -17891,8 +17891,8 @@
     {
       "id": "jurisprudencias_76",
       "pergunta": "O que decidiu o STF na ADI 2.135 sobre alteração do regime jurídico de servidores?",
-      "resposta": "O STF declarou a inconstitucionalidade formal do 1 do art. 39 CF/88 (redação da EC 19/98) que previa regime unico de servidores restabelecendo a autonomia dos entes para adotar regime celetista ou estatutário (ADI 2.135 STF).",
-      "dica": "EC 19/98 tentou impor regime unico (celetista). O STF na ADI 2.135 declarou inconstitucional por VICIO FORMAL. Assim cada ente pode escolher: regime estatutário ou CLT. CESPE: Todos os servidores devem ser estatutários - FALSO.",
+      "resposta": "O STF declarou a inconstitucionalidade formal do 1 do art. 39 CF/88 (redação da EC 19/98) que previa regime único de servidores restabelecendo a autonomia dos entes para adotar regime celetista ou estatutário (ADI 2.135 STF).",
+      "dica": "EC 19/98 tentou impor regime único (celetista). O STF na ADI 2.135 declarou inconstitucional por VICIO FORMAL. Assim cada ente pode escolher: regime estatutário ou CLT. CESPE: Todos os servidores devem ser estatutários - FALSO.",
       "topico": "Jurisprudências de Direito Administrativo",
       "codigo_topico": "4",
       "dificuldade": "dificil"
@@ -17900,7 +17900,7 @@
     {
       "id": "jurisprudencias_77",
       "pergunta": "O que decidiu o STF no Tema 373 sobre controle judicial de políticas públicas?",
-      "resposta": "O STF (Tema 373 RG) admite o controle judicial de políticas públicas quando houver violação ao minimo existencial ou omissão estatal injustificada desde que não haja interferência no merito administrativo discricionário (RE 559.646 STF).",
+      "resposta": "O STF (Tema 373 RG) admite o controle judicial de políticas públicas quando houver violação ao mínimo existencial ou omissão estatal injustificada desde que não haja interferência no merito administrativo discricionário (RE 559.646 STF).",
       "dica": "O Judiciário PODÉ determinar que o Executivo implemente políticas públicas quando isso envolve DIREITOS FUNDAMENTAIS (saúde educação). Limite: não pode substituir a discricionariedade orcamentaria. CESPE: Judiciário não pode intervir em políticas públicas - FALSO.",
       "topico": "Jurisprudências de Direito Administrativo",
       "codigo_topico": "4",
@@ -17919,7 +17919,7 @@
       "id": "jurisprudencias_79",
       "pergunta": "O que decidiu o Tema 129 do STF sobre prescrição da pretensão de ressarcimento ao erário?",
       "resposta": "O STF (Tema 129 RG) decidiu que a pretensão de ressarcimento ao erário É imprescritível (art. 37 5 CF/88) mas as ações de improbidade para aplicar sanções prescrevem conforme o art. 23 da Lei 8.429/92 (RE 852.475 STF).",
-      "dica": "IMPRESCRITÍVEL = RESSARCIMENTO. PRESCRITÍVEL = demais sanções. O STF no Tema 129 consolidou: a ação de improbidade para ressarcimento ao erário NAO prescreve. CESPE: Toda ação de improbidade É imprescritível - FALSO (so o ressarcimento ao erário).",
+      "dica": "IMPRESCRITÍVEL = RESSARCIMENTO. PRESCRITÍVEL = demais sanções. O STF no Tema 129 consolidou: a ação de improbidade para ressarcimento ao erário NÃO prescreve. CESPE: Toda ação de improbidade É imprescritível - FALSO (so o ressarcimento ao erário).",
       "topico": "Jurisprudências de Direito Administrativo",
       "codigo_topico": "4",
       "dificuldade": "dificil"

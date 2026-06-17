@@ -2066,13 +2066,22 @@ function StudySession({
   useEffect(() => {
     setIsExpanded(false);
     setHasOverflow(false);
-    const raf = requestAnimationFrame(() => {
+  }, [currentQueueIndex]);
+
+  useEffect(() => {
+    if (!isFlipped) return;
+    function measure() {
       if (backContentRef.current && backContainerRef.current) {
         setHasOverflow(backContentRef.current.scrollHeight > backContainerRef.current.clientHeight + 2);
       }
-    });
-    return () => cancelAnimationFrame(raf);
-  }, [currentQueueIndex]);
+    }
+    const raf = requestAnimationFrame(measure);
+    window.addEventListener('resize', measure);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener('resize', measure);
+    };
+  }, [isFlipped]);
 
   function handleToggleExpand(e) {
     e.stopPropagation();
