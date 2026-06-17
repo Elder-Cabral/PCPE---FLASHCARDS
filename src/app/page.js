@@ -1603,7 +1603,7 @@ export default function App() {
                         background: isChecked ? "#3b82f6" : "transparent",
                         display: "flex",
                         alignItems: "center",
-                        justifyContent: "center",
+                    justifyContent: isExpanded ? "center" : "flex-start",
                         color: "#fff",
                         fontSize: 9,
                         fontWeight: "bold",
@@ -2173,7 +2173,7 @@ function StudySession({
             flex: isExpanded ? "0 0 auto" : 1,
             minHeight: 200,
             position: "relative",
-            transition: "flex 0.3s ease"
+            transition: "height 0.25s ease, flex 0.3s ease"
           }}
         >
           <div
@@ -2280,8 +2280,8 @@ function StudySession({
                       color: "#94a3b8",
                       cursor: "pointer",
                       borderRadius: 8,
-                      padding: "4px 12px",
-                      fontSize: 11,
+                      padding: "10px 28px",
+                      fontSize: 13,
                       fontWeight: 500,
                       display: "inline-flex",
                       alignItems: "center",
