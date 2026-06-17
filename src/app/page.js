@@ -2065,7 +2065,7 @@ function StudySession({
 
   useLayoutEffect(() => {
     if (isFlipped && backContentRef.current && cardOuterRef.current) {
-      const pad = 42 + 42 + 14 + 8;
+      const pad = 42 + 14 + 42 + 22;
       cardOuterRef.current.style.height = `${Math.max(backContentRef.current.scrollHeight + pad, 200)}px`;
     } else if (!isFlipped && cardOuterRef.current) {
       cardOuterRef.current.style.height = "";
@@ -2135,9 +2135,10 @@ function StudySession({
         {/* Flashcard 3D */}
         <div ref={cardOuterRef} style={{
           width: "100%",
-          flex: 1,
+          flex: isFlipped ? "none" : 1,
           minHeight: 200,
           position: "relative",
+          transition: "height 0.2s ease"
         }}>
           <div
             onClick={() => setIsFlipped(prev => !prev)}
