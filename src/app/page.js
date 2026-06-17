@@ -2052,9 +2052,10 @@ function StudySession({
   const labelText = isGlobal ? "Revisão Geral" : (matInfo?.label || "");
   const emojiText = isGlobal ? "⚡" : (matInfo?.emoji || "");
 
+  const EXPAND_THRESHOLD = 260;
   const [isFlipped, setIsFlipped] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
-  const [hasOverflow, setHasOverflow] = useState(false);
+  const [showExpand, setShowExpand] = useState(false);
   const backContentRef = useRef(null);
   const backContainerRef = useRef(null);
   const cardOuterRef = useRef(null);
@@ -2065,22 +2066,27 @@ function StudySession({
 
   useEffect(() => {
     setIsExpanded(false);
-    setHasOverflow(false);
+    setShowExpand(false);
   }, [currentQueueIndex]);
+
+  function measureOverflow() {
+    if (backContentRef.current) {
+      setShowExpand(backContentRef.current.scrollHeight > EXPAND_THRESHOLD);
+    }
+  }
+
+  useLayoutEffect(() => {
+    if (isFlipped) {
+      measureOverflow();
+    } else {
+      setShowExpand(false);
+    }
+  }, [isFlipped]);
 
   useEffect(() => {
     if (!isFlipped) return;
-    function measure() {
-      if (backContentRef.current && backContainerRef.current) {
-        setHasOverflow(backContentRef.current.scrollHeight > backContainerRef.current.clientHeight + 2);
-      }
-    }
-    const raf = requestAnimationFrame(measure);
-    window.addEventListener('resize', measure);
-    return () => {
-      cancelAnimationFrame(raf);
-      window.removeEventListener('resize', measure);
-    };
+    window.addEventListener('resize', measureOverflow);
+    return () => window.removeEventListener('resize', measureOverflow);
   }, [isFlipped]);
 
   function handleToggleExpand(e) {
@@ -2221,6 +2227,7 @@ function StudySession({
                     width: "100%",
                     flex: "1 1 auto",
                     overflow: "hidden",
+                    maxHeight: isExpanded ? "none" : `${EXPAND_THRESHOLD}px`,
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
@@ -2251,7 +2258,7 @@ function StudySession({
                     </div>
                   )}
 
-                  {hasOverflow && !isExpanded && (
+                  {showExpand && !isExpanded && (
                     <div style={{
                       position: "absolute",
                       bottom: 0,
@@ -2264,7 +2271,7 @@ function StudySession({
                   )}
                 </div>
 
-                {hasOverflow && (
+                {showExpand && (
                   <button
                     onClick={handleToggleExpand}
                     style={{
