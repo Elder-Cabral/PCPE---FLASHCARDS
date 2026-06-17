@@ -10,7 +10,7 @@
 /** @typedef {import('../types').AppStats} AppStats */
 /** @typedef {import('../types').MateriaStats} MateriaStats */
 /** @typedef {import('../types').PomodoroTick} PomodoroTick */
-import React, { useState, useEffect, useCallback, useMemo, useRef } from "react";
+import React, { useState, useEffect, useCallback, useMemo, useRef, useLayoutEffect } from "react";
 import { ErrorBoundary } from "../components/ErrorBoundary";
 import { useAsyncError } from "../hooks/useAsyncError";
 import { safeCall } from "../lib/api";
@@ -2053,10 +2053,24 @@ function StudySession({
   const emojiText = isGlobal ? "⚡" : (matInfo?.emoji || "");
 
   const [isFlipped, setIsFlipped] = useState(false);
+  const backContentRef = useRef(null);
+  const cardOuterRef = useRef(null);
 
   useEffect(() => {
     setIsFlipped(false);
+    if (cardOuterRef.current) {
+      cardOuterRef.current.style.height = "";
+    }
   }, [currentQueueIndex]);
+
+  useLayoutEffect(() => {
+    if (isFlipped && backContentRef.current && cardOuterRef.current) {
+      const pad = 42 + 42 + 14 + 8;
+      cardOuterRef.current.style.height = `${Math.max(backContentRef.current.scrollHeight + pad, 200)}px`;
+    } else if (!isFlipped && cardOuterRef.current) {
+      cardOuterRef.current.style.height = "";
+    }
+  }, [isFlipped]);
 
   return (
     <Shell user={currentUser} stats={stats} onLogout={onLogout} centered userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={onDismissShield} srsData={srsData} hidePomodoro={true}>
@@ -2119,7 +2133,7 @@ function StudySession({
         </div>
 
         {/* Flashcard 3D */}
-        <div style={{
+        <div ref={cardOuterRef} style={{
           width: "100%",
           flex: 1,
           minHeight: 200,
@@ -2162,14 +2176,14 @@ function StudySession({
                   border: `1px solid ${themeColor}40`,
                   justifyContent: "flex-start",
                   alignItems: "center",
-                  overflow: "hidden auto"
+                  overflow: "hidden"
                 }}
               >
                 <div style={{ fontSize: 10, color: themeColor, fontWeight: 600, letterSpacing: 3, marginBottom: 14, flexShrink: 0 }}>
                   ✦ RESPOSTA ✦
                 </div>
 
-                <div style={{
+                <div ref={backContentRef} style={{
                   width: "100%",
                   flex: "1 1 auto",
                   display: "flex",
