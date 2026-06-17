@@ -2064,11 +2064,11 @@ function StudySession({
     if (!backContentRef.current || !cardOuterRef.current || !backContainerRef.current) return;
     const neededH = backContentRef.current.scrollHeight + 120;
     const cardTop = cardOuterRef.current.getBoundingClientRect().top;
-    const reserve = window.innerWidth <= 640 ? 200 : 180;
+    const reserve = window.innerWidth <= 640 ? 200 : 170;
     const maxH = window.innerHeight - cardTop - reserve;
     const finalH = Math.max(Math.min(neededH, maxH), 200);
     cardOuterRef.current.style.height = `${finalH}px`;
-    setNeedsScroll(neededH > maxH);
+    setNeedsScroll(neededH > maxH + 15);
   }
 
   useEffect(() => {
