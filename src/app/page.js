@@ -525,13 +525,10 @@ export default function App() {
         }
       }
 
-      /* Desktop (>640px) — padding reduzido, SRS mais próximo */
+      /* Desktop (>640px) — padding reduzido, SRS+Nav mais próximos */
       @media (min-width: 641px) {
-        .study-container {
-          gap: 10px !important;
-        }
         .nav-wrapper {
-          margin-top: 10px;
+          margin-top: -10px;
         }
         .flashcard-box {
           padding: 32px 34px !important;
@@ -2084,7 +2081,7 @@ function StudySession({
     const overhead = padTop + padBot + 24;
     const neededH = backContentRef.current.scrollHeight + overhead;
     const cardTop = cardOuterRef.current.getBoundingClientRect().top;
-    const reserve = window.innerWidth <= 640 ? 200 : 170;
+    const reserve = window.innerWidth <= 640 ? 200 : 160;
     const maxH = window.innerHeight - cardTop - reserve;
     const finalH = Math.max(Math.min(neededH, maxH), 200);
     cardOuterRef.current.style.height = `${finalH}px`;
