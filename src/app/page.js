@@ -271,6 +271,9 @@ export default function App() {
   const [answerHistory, setAnswerHistory] = useState([]);
   /** @type {boolean} */
   const [showDesempenho, setShowDesempenho] = useState(false);
+  /** @type {boolean} */
+  const [showAdmin, setShowAdmin] = useState(false);
+  if (typeof window !== 'undefined') window.__setShowAdmin = setShowAdmin;
   /** @type {string} */
   const [graphPeriod, setGraphPeriod] = useState("30d");
   /** @type {string} */
@@ -1564,6 +1567,21 @@ export default function App() {
 
   if (!currentUser) {
     return <TelaLogin onLogin={handleLogin} />;
+  }
+
+  if (showAdmin) {
+    return (
+      <AdminPanel
+        user={currentUser}
+        onBack={() => setShowAdmin(false)}
+        onLogout={handleLogout}
+        stats={stats}
+        userMeta={userMeta}
+        showShieldBanner={showShieldBanner}
+        setShowShieldBanner={setShowShieldBanner}
+        srsData={srsData}
+      />
+    );
   }
 
   if (showDesempenho) {
@@ -3557,6 +3575,24 @@ const Shell = React.memo(function Shell({ children, user, stats, onLogout, cente
               <span style={{ color: "#94a3b8", fontSize: 12, fontWeight: 500 }}>
                 {user?.role === "admin" ? "👑" : "👤"} {user?.name}
               </span>
+              {user?.role === "admin" && (
+                <button
+                  onClick={() => window.__setShowAdmin?.(true)}
+                  className="btn-hover"
+                  style={{
+                    background: "rgba(139,92,246,0.08)",
+                    border: "1px solid rgba(139,92,246,0.15)",
+                    borderRadius: 10,
+                    padding: "6px 12px",
+                    fontSize: 11,
+                    fontWeight: 600,
+                    color: "#a78bfa",
+                    cursor: "pointer"
+                  }}
+                >
+                  👑 Admin
+                </button>
+              )}
               <button
                 onClick={onLogout}
                 className="btn-hover"
@@ -3653,6 +3689,309 @@ const Shell = React.memo(function Shell({ children, user, stats, onLogout, cente
     </div>
   );
 });
+
+// ── PAINEL ADMIN ───────────────────────────────────────────────────────────
+
+function AdminPanel({ user, onBack, onLogout, stats, userMeta, showShieldBanner, setShowShieldBanner, srsData }) {
+  const [tab, setTab] = useState("overview");
+  const [adminData, setAdminData] = useState(null);
+  const [suggestions, setSuggestions] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [sugMessage, setSugMessage] = useState("");
+  const [sugSent, setSugSent] = useState(false);
+
+  const fetchData = useCallback(async () => {
+    setLoading(true);
+    try {
+      const [statsRes, sugRes] = await Promise.all([
+        fetch('/api/admin/stats'),
+        fetch('/api/admin/suggestions'),
+      ]);
+      if (statsRes.ok) {
+        const d = await statsRes.json();
+        setAdminData(d);
+      }
+      if (sugRes.ok) {
+        const d = await sugRes.json();
+        setSuggestions(d.suggestions || []);
+      }
+    } catch (e) {
+      console.error('Admin fetch error:', e);
+    }
+    setLoading(false);
+  }, []);
+
+  useEffect(() => { fetchData(); }, [fetchData]);
+
+  const handleMarkReviewed = async (id) => {
+    try {
+      const res = await fetch('/api/admin/suggestions', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id, status: 'reviewed' }),
+      });
+      if (res.ok) {
+        setSuggestions(prev => prev.map(s => s.id === id ? { ...s, status: 'reviewed' } : s));
+      }
+    } catch (e) {
+      console.error('Mark reviewed error:', e);
+    }
+  };
+
+  const handleSendSuggestion = async () => {
+    if (!sugMessage.trim()) return;
+    try {
+      const res = await fetch('/api/suggestions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: sugMessage.trim() }),
+      });
+      if (res.ok) {
+        setSugSent(true);
+        setSugMessage("");
+        setTimeout(() => setSugSent(false), 3000);
+      }
+    } catch (e) {
+      console.error('Suggestion send error:', e);
+    }
+  };
+
+  const tabs = [
+    { id: "overview", label: "Visão Geral", icon: "📊" },
+    { id: "users", label: "Usuários", icon: "👥" },
+    { id: "suggestions", label: "Sugestões", icon: "💡" },
+  ];
+
+  const totalStudiedToday = adminData?.users?.reduce((sum, u) => sum + (u.studiedToday || 0), 0) || 0;
+  const totalCards = adminData?.users?.reduce((sum, u) => sum + (u.totalCards || 0), 0) || 0;
+  const activeStreaks = adminData?.users?.filter(u => (u.current_streak || 0) > 0).length || 0;
+
+  return (
+    <Shell user={user} stats={stats} onLogout={onLogout} userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)} srsData={srsData}>
+      <div style={{ width: "100%", maxWidth: 640, margin: "0 auto", display: "flex", flexDirection: "column", gap: 20, boxSizing: "border-box" }}>
+        <BackButton onClick={onBack} />
+
+        <div style={{ textAlign: "center" }}>
+          <div style={{ fontSize: 44, marginBottom: 8 }}>👑</div>
+          <h2 style={{ color: "#fff", fontSize: 22, fontWeight: 600, margin: 0 }}>Painel Administrativo</h2>
+          <p style={{ color: "#64748b", fontSize: 13, marginTop: 4 }}>Monitoramento e gerenciamento do sistema</p>
+        </div>
+
+        {/* Abas */}
+        <div style={{ display: "flex", gap: 8, justifyContent: "center", flexWrap: "wrap" }}>
+          {tabs.map(t => (
+            <button
+              key={t.id}
+              onClick={() => setTab(t.id)}
+              className="btn-hover"
+              style={{
+                background: tab === t.id ? "rgba(139,92,246,0.12)" : "rgba(255,255,255,0.03)",
+                border: tab === t.id ? "1px solid rgba(139,92,246,0.3)" : "1px solid rgba(255,255,255,0.06)",
+                borderRadius: 12,
+                padding: "8px 16px",
+                cursor: "pointer",
+                color: tab === t.id ? "#a78bfa" : "#94a3b8",
+                fontSize: 12,
+                fontWeight: 600,
+              }}
+            >
+              {t.icon} {t.label}
+            </button>
+          ))}
+        </div>
+
+        {/* CONTEÚDO DAS ABAS */}
+        {tab === "overview" && (
+          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            {loading ? (
+              <p style={{ color: "#64748b", fontSize: 13, textAlign: "center" }}>Carregando...</p>
+            ) : (
+              <>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 12 }}>
+                  <StatCard value={adminData?.totalUsers ?? 0} label="USUÁRIOS" icon="👥" color="#a78bfa" />
+                  <StatCard value={activeStreaks} label="STREAKS ATIVAS" icon="🔥" color="#f97316" />
+                  <StatCard value={totalStudiedToday} label="CARDS HOJE" icon="✅" color="#10b981" />
+                  <StatCard value={totalCards} label="TOTAL CARDS" icon="📚" color="#3b82f6" />
+                </div>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 12 }}>
+                  <StatCard value={adminData?.pendingSuggestions ?? 0} label="SUGESTÕES PENDENTES" icon="💡" color="#eab308" />
+                  <StatCard value="Em breve" label="NOVOS REGISTROS" icon="📝" color="#64748b" />
+                </div>
+              </>
+            )}
+          </div>
+        )}
+
+        {tab === "users" && (
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            {loading ? (
+              <p style={{ color: "#64748b", fontSize: 13, textAlign: "center" }}>Carregando...</p>
+            ) : (
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                {(adminData?.users || []).map(u => (
+                  <div key={u.username} style={{
+                    background: "rgba(255,255,255,0.02)",
+                    border: "1px solid rgba(255,255,255,0.05)",
+                    borderRadius: 14,
+                    padding: "14px 16px",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                    gap: 8,
+                  }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                      <div style={{ fontSize: 20 }}>{u.username === user?.username ? "👑" : "👤"}</div>
+                      <div>
+                        <div style={{ color: "#f1f5f9", fontSize: 14, fontWeight: 600 }}>{u.username}</div>
+                        <div style={{ color: "#64748b", fontSize: 10 }}>
+                          {u.last_study_date ? `Último estudo: ${u.last_study_date}` : "Nunca estudou"}
+                        </div>
+                      </div>
+                    </div>
+                    <div style={{ display: "flex", gap: 14, alignItems: "center" }}>
+                      <span style={{ color: "#f97316", fontSize: 12, fontWeight: 600 }}>🔥 {u.current_streak}d</span>
+                      <span style={{ color: "#3b82f6", fontSize: 12, fontWeight: 600 }}>🛡️ {u.shields_available}</span>
+                      <span style={{ color: "#10b981", fontSize: 12, fontWeight: 600 }}>✅ {u.studiedToday}</span>
+                      <span style={{ color: "#94a3b8", fontSize: 12, fontWeight: 500 }}>📚 {u.totalCards}</span>
+                    </div>
+                  </div>
+                ))}
+                {(!adminData?.users || adminData.users.length === 0) && (
+                  <p style={{ color: "#64748b", fontSize: 13, textAlign: "center" }}>Nenhum usuário encontrado.</p>
+                )}
+              </div>
+            )}
+          </div>
+        )}
+
+        {tab === "suggestions" && (
+          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            {/* Formulário de sugestão (qualquer user pode enviar) */}
+            <div style={{
+              background: "rgba(139,92,246,0.04)",
+              border: "1px solid rgba(139,92,246,0.12)",
+              borderRadius: 14,
+              padding: "14px 16px",
+            }}>
+              <div style={{ color: "#a78bfa", fontSize: 11, fontWeight: 600, letterSpacing: 1, marginBottom: 8 }}>
+                💡 ENVIAR SUGESTÃO
+              </div>
+              <textarea
+                value={sugMessage}
+                onChange={e => setSugMessage(e.target.value)}
+                placeholder="Compartilhe sua ideia para melhorar o app..."
+                maxLength={2000}
+                style={{
+                  width: "100%",
+                  background: "rgba(0,0,0,0.2)",
+                  border: "1px solid rgba(255,255,255,0.06)",
+                  borderRadius: 10,
+                  padding: "10px 12px",
+                  color: "#f1f5f9",
+                  fontSize: 12,
+                  lineHeight: 1.5,
+                  resize: "vertical",
+                  minHeight: 60,
+                  outline: "none",
+                  boxSizing: "border-box",
+                  fontFamily: "inherit",
+                }}
+              />
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 8 }}>
+                <span style={{ color: "#64748b", fontSize: 10 }}>{sugMessage.length}/2000</span>
+                <button
+                  onClick={handleSendSuggestion}
+                  disabled={!sugMessage.trim()}
+                  className="btn-hover"
+                  style={{
+                    background: sugMessage.trim() ? "linear-gradient(135deg, #8b5cf6, #7c3aed)" : "rgba(255,255,255,0.04)",
+                    border: "none",
+                    borderRadius: 10,
+                    padding: "8px 16px",
+                    color: sugMessage.trim() ? "#fff" : "#64748b",
+                    fontSize: 12,
+                    fontWeight: 600,
+                    cursor: sugMessage.trim() ? "pointer" : "default",
+                  }}
+                >
+                  {sugSent ? "✓ Enviada!" : "Enviar Sugestão"}
+                </button>
+              </div>
+            </div>
+
+            {/* Lista de sugestões (admin vê todas) */}
+            {user?.role === "admin" && (
+              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                <div style={{ color: "#94a3b8", fontSize: 11, fontWeight: 600, letterSpacing: 1, marginBottom: 4 }}>
+                  📋 SUGESTÕES RECEBIDAS
+                </div>
+                {loading ? (
+                  <p style={{ color: "#64748b", fontSize: 13, textAlign: "center" }}>Carregando...</p>
+                ) : suggestions.length === 0 ? (
+                  <p style={{ color: "#64748b", fontSize: 13, textAlign: "center" }}>Nenhuma sugestão ainda.</p>
+                ) : (
+                  suggestions.map(s => (
+                    <div key={s.id} style={{
+                      background: "rgba(255,255,255,0.02)",
+                      border: s.status === "pending" ? "1px solid rgba(234,179,8,0.15)" : "1px solid rgba(255,255,255,0.05)",
+                      borderRadius: 12,
+                      padding: "12px 14px",
+                    }}>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 8 }}>
+                        <div style={{ flex: 1 }}>
+                          <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
+                            <span style={{ color: "#94a3b8", fontSize: 11, fontWeight: 600 }}>{s.username}</span>
+                            <span style={{
+                              fontSize: 9,
+                              fontWeight: 600,
+                              padding: "2px 6px",
+                              borderRadius: 6,
+                              background: s.status === "pending" ? "rgba(234,179,8,0.1)" : "rgba(16,185,129,0.1)",
+                              color: s.status === "pending" ? "#eab308" : "#10b981",
+                            }}>
+                              {s.status === "pending" ? "pendente" : "revisado"}
+                            </span>
+                          </div>
+                          <p style={{ color: "#e2e8f0", fontSize: 12, lineHeight: 1.5, margin: 0 }}>
+                            {s.message}
+                          </p>
+                          <div style={{ color: "#475569", fontSize: 9, marginTop: 4 }}>
+                            {new Date(s.created_at).toLocaleString("pt-BR")}
+                          </div>
+                        </div>
+                        {s.status === "pending" && (
+                          <button
+                            onClick={() => handleMarkReviewed(s.id)}
+                            className="btn-hover"
+                            style={{
+                              background: "rgba(16,185,129,0.08)",
+                              border: "1px solid rgba(16,185,129,0.15)",
+                              borderRadius: 8,
+                              padding: "4px 10px",
+                              fontSize: 10,
+                              fontWeight: 600,
+                              color: "#10b981",
+                              cursor: "pointer",
+                              whiteSpace: "nowrap",
+                              flexShrink: 0,
+                            }}
+                          >
+                            ✓ Revisado
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                  ))
+                )}
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    </Shell>
+  );
+}
 
 // ── COMPONENTES REUTILIZÁVEIS ──────────────────────────────────────────────
 

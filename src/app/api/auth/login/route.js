@@ -90,9 +90,17 @@ export async function POST(request) {
     let user = null;
 
     if (loginMethod === 'supabase') {
-      // Role is ALWAYS forced server-side — never trust client-supplied role
+      // Busca role do users.local.json em vez de forçar 'user'
+      let localRole = 'user';
+      try {
+        const filePath = path.join(process.cwd(), 'src', 'data', 'users.local.json');
+        const raw = fs.readFileSync(filePath, 'utf8');
+        const localUsers = JSON.parse(raw);
+        const match = localUsers.find(u => u.username === username?.toLowerCase().trim());
+        if (match && match.role) localRole = match.role;
+      } catch {}
       const safeName = typeof name === 'string' ? name.slice(0, 100) : username;
-      user = { username, role: 'user', name: safeName };
+      user = { username, role: localRole, name: safeName };
     } else if (loginMethod === 'local') {
       if (!password) {
         return NextResponse.json({ error: 'Credenciais inválidas' }, { status: 401 });

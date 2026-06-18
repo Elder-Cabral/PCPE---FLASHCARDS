@@ -70,3 +70,23 @@ CREATE POLICY "user_progress_insert" ON user_progress
 CREATE POLICY "user_progress_update" ON user_progress
   FOR UPDATE USING (username = auth.jwt() ->> 'email')
   WITH CHECK (username = auth.jwt() ->> 'email');
+
+-- ── Tabela de Sugestões ──────────────────────────────────────
+CREATE TABLE IF NOT EXISTS suggestions (
+  id SERIAL PRIMARY KEY,
+  username TEXT NOT NULL,
+  message TEXT NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  status TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'reviewed'))
+);
+
+-- RLS: suggestions
+ALTER TABLE suggestions ENABLE ROW LEVEL SECURITY;
+
+-- Qualquer um pode inserir (anon)
+CREATE POLICY "suggestions_insert" ON suggestions
+  FOR INSERT WITH CHECK (true);
+
+-- Apenas o próprio usuário vê suas sugestões
+CREATE POLICY "suggestions_select_own" ON suggestions
+  FOR SELECT USING (username = auth.jwt() ->> 'email');
