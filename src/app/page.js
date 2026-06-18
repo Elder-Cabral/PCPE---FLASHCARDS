@@ -2868,18 +2868,26 @@ function TelaLogin({ onLogin }) {
             let loginEmail = uname;
             if (!uname.includes("@")) {
               try {
-                const { data: email, error: rpcErr } = await client
+                const result = await client
                   .rpc("get_email_by_username", { p_username: uname });
-                if (rpcErr) {
+                if (result.error) {
                   setErro("Erro de conexão. Verifique sua internet e tente novamente.");
                   return;
                 }
-                if (email) {
-                  loginEmail = email;
-                } else {
+                const raw = result.data;
+                let resolvedEmail = null;
+                if (typeof raw === "string") {
+                  resolvedEmail = raw;
+                } else if (Array.isArray(raw) && raw.length > 0) {
+                  resolvedEmail = typeof raw[0] === "string" ? raw[0] : (raw[0]?.email || null);
+                } else if (raw && typeof raw === "object") {
+                  resolvedEmail = raw.email || null;
+                }
+                if (!resolvedEmail) {
                   setErro("Usuário não encontrado.");
                   return;
                 }
+                loginEmail = resolvedEmail;
               } catch (e) {
                 setErro("Erro de conexão. Verifique sua internet e tente novamente.");
                 return;

@@ -139,7 +139,8 @@ export async function POST(request) {
     setSessionCookie(response, token, SESSION_MAX_AGE);
 
     return response;
-  } catch {
+  } catch (e) {
+    console.error('/api/auth/login error:', e);
     return NextResponse.json({ error: 'Erro interno' }, { status: 500 });
   }
 }
