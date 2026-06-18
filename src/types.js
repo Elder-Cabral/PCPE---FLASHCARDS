@@ -65,13 +65,14 @@
  */
 
 /**
- * Meta-dados do usuário (streak + escudos)
+ * Meta-dados do usuário (streak + escudos + carência)
  * @typedef {Object} UserMeta
  * @property {string}  username
  * @property {number}  current_streak
- * @property {string|null} last_study_date   "YYYY-MM-DD"
+ * @property {string|null} last_study_date       "YYYY-MM-DD"
  * @property {number}  shields_available
- * @property {string}  [updated_at]           ISO string
+ * @property {string|null} shields_exhausted_at  "YYYY-MM-DD" quando o 2º escudo acabou (início da carência de 7 dias)
+ * @property {string}  [updated_at]               ISO string
  */
 
 /**

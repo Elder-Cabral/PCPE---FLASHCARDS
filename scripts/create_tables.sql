@@ -1,9 +1,10 @@
--- Tabela para streak + escudos de ofensiva
+-- Tabela para streak + escudos de ofensiva + carência
 CREATE TABLE IF NOT EXISTS user_meta (
   username TEXT PRIMARY KEY,
   current_streak INTEGER NOT NULL DEFAULT 0,
   last_study_date DATE,
   shields_available INTEGER NOT NULL DEFAULT 2,
+  shields_exhausted_at DATE,
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 

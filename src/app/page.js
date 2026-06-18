@@ -283,6 +283,14 @@ export default function App() {
   const [userMeta, setUserMeta] = useState(null);
   /** @type {boolean} */
   const [showShieldBanner, setShowShieldBanner] = useState(false);
+  /** @type {boolean} */
+  const [challengeActive, setChallengeActive] = useState(false);
+  /** @type {Flashcard[]} */
+  const [challengeCards, setChallengeCards] = useState([]);
+  /** @type {boolean} */
+  const [challengeStarted, setChallengeStarted] = useState(false);
+  /** @type {string|null} */
+  const [challengeBanner, setChallengeBanner] = useState(null);
   const feedbackInProgressCardId = useRef(null);
   const saveQueueRef = useRef(Promise.resolve());
   const isSavingRef = useRef(false);
@@ -709,6 +717,13 @@ export default function App() {
   const loadUserMeta = useCallback(async (username) => {
     if (!username) return;
     const client = getSupabase();
+    const storageKey = "pcpe_meta_" + username;
+    let localFallback = null;
+    try {
+      const raw = localStorage.getItem(storageKey);
+      if (raw) localFallback = JSON.parse(raw);
+    } catch (_) {}
+
     try {
           const { data, error } = await safeCall(() => client
             .from("user_meta")
@@ -718,17 +733,19 @@ export default function App() {
 
       const today = getTodayStr();
 
-      // Se nao existir registro, semear streak do SRS existente
+      // Se nao existir registro, semear streak do localStorage ou SRS
       if (!data) {
-        const seedStreak = calculateStreak(srsDataRef.current);
+        const seedStreak = localFallback?.current_streak || calculateStreak(srsDataRef.current);
         const meta = {
           username,
           current_streak: seedStreak,
-          last_study_date: seedStreak > 0 ? today : null,
-          shields_available: 2,
+          last_study_date: localFallback?.last_study_date || (seedStreak > 0 ? today : null),
+          shields_available: localFallback?.shields_available ?? 2,
+          shields_exhausted_at: localFallback?.shields_exhausted_at || null,
           updated_at: new Date().toISOString(),
         };
           await safeCall(() => client.from("user_meta").upsert(meta));
+        localStorage.setItem(storageKey, JSON.stringify(meta));
         setUserMeta(meta);
         return;
       }
@@ -743,18 +760,44 @@ export default function App() {
         needsUpdate = true;
       }
 
-      // Verificar dias perdidos
+      // Verificar dias perdidos + período de graça
       if (meta.last_study_date) {
         const lastDate = new Date(meta.last_study_date + "T00:00:00");
         const todayDate = new Date(today + "T00:00:00");
         const diffDays = Math.floor((todayDate - lastDate) / 86400000);
+
         if (diffDays >= 2) {
           if (meta.shields_available > 0) {
+            // Consome 1 escudo
             meta.shields_available -= 1;
             shieldActivated = true;
             needsUpdate = true;
+            // Se era o último escudo, marca início da carência
+            if (meta.shields_available === 0) {
+              meta.shields_exhausted_at = today;
+            }
           } else {
-            meta.current_streak = 0;
+            // Escudos esgotados: verifica período de graça de 7 dias
+            if (meta.shields_exhausted_at) {
+              const exhaustDate = new Date(meta.shields_exhausted_at + "T00:00:00");
+              const daysSinceExhaust = Math.floor((todayDate - exhaustDate) / 86400000);
+              if (daysSinceExhaust >= 7) {
+                // Carência expirada: perde a ofensiva
+                meta.current_streak = 0;
+                meta.shields_exhausted_at = null;
+                needsUpdate = true;
+              }
+              // senão: mantém streak (dentro da carência)
+            } else {
+              // shields=0 sem exhausted_at: marca agora
+              meta.shields_exhausted_at = today;
+              needsUpdate = true;
+            }
+          }
+        } else if (diffDays <= 1) {
+          // Usuário estudou recentemente: limpa carência se existir
+          if (meta.shields_exhausted_at) {
+            meta.shields_exhausted_at = null;
             needsUpdate = true;
           }
         }
@@ -767,13 +810,18 @@ export default function App() {
           }));
       }
 
+      localStorage.setItem(storageKey, JSON.stringify(meta));
       setUserMeta(meta);
       if (shieldActivated) setShowShieldBanner(true);
     } catch (e) {
       console.error("Erro ao carregar user_meta:", e);
       setError("Erro ao carregar metas do usuário.");
-      // Fallback: usa streak calculado do SRS
-      setUserMeta({ current_streak: calculateStreak(srsDataRef.current), shields_available: 2 });
+      // Fallback: localStorage ou SRS
+      if (localFallback) {
+        setUserMeta(localFallback);
+      } else {
+        setUserMeta({ current_streak: calculateStreak(srsDataRef.current), shields_available: 2 });
+      }
     }
   }, []);
 
@@ -792,14 +840,11 @@ export default function App() {
       // from username_map so we query by the canonical key.
       if (!username.includes("@")) {
         try {
-          const { data: mapData } = await client
-            .from("username_map")
-            .select("email")
-            .eq("username", username)
-            .maybeSingle();
-          if (mapData && mapData.email) emailKey = mapData.email;
+          const { data: email, error: rpcErr } = await client
+            .rpc("get_email_by_username", { p_username: username });
+          if (!rpcErr && email) emailKey = email;
         } catch (e) {
-          console.warn("username_map lookup failed:", e);
+          console.warn("get_email_by_username RPC failed:", e);
         }
       }
 
@@ -942,6 +987,40 @@ export default function App() {
     }
   }, [currentUser?.username, loadUserMeta]);
 
+  // Restaurar estado do Desafio do localStorage (se ainda válido no mesmo dia)
+  useEffect(() => {
+    if (!currentUser) return;
+    const storageKey = "pcpe_challenge_" + currentUser.username;
+    try {
+      const saved = localStorage.getItem(storageKey);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (parsed.startedDate === getTodayStr()) {
+          // Reconstruir os cards a partir dos IDs salvos
+          const cards = parsed.cards.map(id => {
+            for (const mat of MATERIAS) {
+              const found = (BANCO[mat.id] || []).find(c => c.id === id);
+              if (found) return found;
+            }
+            return null;
+          }).filter(Boolean);
+          if (cards.length > 0) {
+            setChallengeCards(cards);
+            setChallengeActive(true);
+            setChallengeStarted(true);
+            setStudyQueue(cards);
+            setCurrentQueueIndex(0);
+            setStudyMode("challenge");
+            setSelectedMateria(null);
+          }
+        } else {
+          // Desafio expirado (outro dia)
+          localStorage.removeItem(storageKey);
+        }
+      }
+    } catch (_) {}
+  }, [currentUser]);
+
   // Inicializar snapshot de cards para detectar "Novas" questões adicionadas
   useEffect(() => {
     if (!currentUser) return;
@@ -1002,27 +1081,41 @@ export default function App() {
     return () => clearInterval(interval);
   }, [currentUser]);
 
-  // Atualizar streak ao finalizar sessao de estudo
+  // Atualizar streak ao finalizar sessao de estudo (ou desafio)
   useEffect(() => {
     if (!sessionCompleted || !currentUser || answeredSessionIds.size < 1) return;
     const updateMeta = async () => {
       const today = getTodayStr();
-      const prev = userMeta || { current_streak: 0, last_study_date: null, shields_available: 2 };
+      const prev = userMeta || { current_streak: 0, last_study_date: null, shields_available: 2, shields_exhausted_at: null };
       let newStreak = prev.current_streak || 0;
       if (prev.last_study_date !== today) {
         newStreak += 1;
       }
+      // Detecta se foi um Desafio concluído (52 cards respondidos)
+      const isChallengeDone = challengeActive && answeredSessionIds.size >= challengeCards.length;
+
+      // Se shields_exhausted_at ainda existe e NÃO é desafio, mantém (carência continua)
+      // Se for desafio: restaura 2 escudos e limpa carência
       const updated = {
         username: currentUser.username,
         current_streak: newStreak,
         last_study_date: today,
-        shields_available: prev.shields_available ?? 2,
+        shields_available: isChallengeDone ? 2 : (prev.shields_available ?? 2),
+        shields_exhausted_at: isChallengeDone ? null : (prev.shields_exhausted_at ?? null),
         updated_at: new Date().toISOString(),
       };
       try {
         const client = getSupabase();
          await safeCall(() => client.from("user_meta").upsert(updated));
+        localStorage.setItem("pcpe_meta_" + currentUser.username, JSON.stringify(updated));
         setUserMeta(updated);
+        if (isChallengeDone) {
+          setChallengeActive(false);
+          setChallengeCards([]);
+          setChallengeStarted(false);
+          setChallengeBanner(null);
+          localStorage.removeItem("pcpe_challenge_" + currentUser.username);
+        }
         } catch (e) {
           console.error("Erro ao atualizar streak:", e);
           setError("Erro ao atualizar sua sequência.");
@@ -1056,6 +1149,11 @@ export default function App() {
     setStudyMode(null);
     setShowTopicSelector(false);
     setSrsData({});
+    setChallengeActive(false);
+    setChallengeCards([]);
+    setChallengeStarted(false);
+    setChallengeBanner(null);
+    setUserMeta(null);
   };
 
   const updateReviewOrder = (order) => {
@@ -1317,6 +1415,25 @@ export default function App() {
     return result;
   }, [srsData]);
 
+  // Ofensiva em risco? (escudos=0, carência ativa)
+  const streakAtRisk = useMemo(() => {
+    if (!userMeta) return false;
+    if (userMeta.shields_available > 0) return false;
+    if (!userMeta.shields_exhausted_at) return false;
+    const exhaustDate = new Date(userMeta.shields_exhausted_at + "T00:00:00");
+    const todayDate = new Date(getTodayStr() + "T00:00:00");
+    const daysSinceExhaust = Math.floor((todayDate - exhaustDate) / 86400000);
+    return daysSinceExhaust < 7;
+  }, [userMeta]);
+
+  const graceDaysLeft = useMemo(() => {
+    if (!userMeta || !userMeta.shields_exhausted_at) return 0;
+    const exhaustDate = new Date(userMeta.shields_exhausted_at + "T00:00:00");
+    const todayDate = new Date(getTodayStr() + "T00:00:00");
+    const daysSinceExhaust = Math.floor((todayDate - exhaustDate) / 86400000);
+    return Math.max(0, 7 - daysSinceExhaust);
+  }, [userMeta]);
+
   // Preparar fila de estudos padrão (Todos / SRS)
   const startStudySession = (materiaId, mode) => {
     const cards = BANCO[materiaId] || [];
@@ -1358,6 +1475,42 @@ export default function App() {
     setShowTopicSelector(false);
   };
 
+  // ── DESAFIO: Construir fila de 52 cards (5 de cada matéria + 2 jurisprudências) ──
+  const buildChallengeQueue = () => {
+    const mainSubjects = MATERIAS.filter(m => m.id !== 'jurisprudencias');
+    let queue = [];
+    for (const mat of mainSubjects) {
+      const cards = BANCO[mat.id] || [];
+      const shuffled = [...cards].sort(() => Math.random() - 0.5);
+      queue = [...queue, ...shuffled.slice(0, 5)];
+    }
+    const jurisCards = BANCO['jurisprudencias'] || [];
+    const shuffledJuris = [...jurisCards].sort(() => Math.random() - 0.5);
+    queue = [...queue, ...shuffledJuris.slice(0, 2)];
+    return shuffle(queue);
+  };
+
+  const startChallenge = () => {
+    const cards = buildChallengeQueue();
+    const storageKey = "pcpe_challenge_" + currentUser.username;
+    setChallengeCards(cards);
+    setChallengeActive(true);
+    setChallengeStarted(false);
+    setChallengeBanner(null);
+    setStudyQueue(cards);
+    setCurrentQueueIndex(0);
+    setStudyMode("challenge");
+    setSelectedMateria(null);
+    resetSessionState();
+    // Persistir estado do desafio
+    try {
+      localStorage.setItem(storageKey, JSON.stringify({
+        cards: cards.map(c => c.id),
+        startedDate: getTodayStr(),
+      }));
+    } catch (_) {}
+  };
+
   // Responder a um card no modo SRS / Tópicos
   const handleCardFeedback = (q) => {
     const currentCard = studyQueue[currentQueueIndex];
@@ -1380,7 +1533,7 @@ export default function App() {
     const cardMateriaId = currentCard.id.substring(0, currentCard.id.lastIndexOf("_"));
     recordAnswer(currentCard.id, cardMateriaId, q);
 
-    if (studyMode === "srs" || studyMode === "topic" || studyMode === "global_srs" || studyMode === "all") {
+    if (studyMode === "srs" || studyMode === "topic" || studyMode === "global_srs" || studyMode === "all" || studyMode === "challenge") {
       const currentState = srsData[currentCard.id] || { interval: 1, repetition: 0, ef: 2.5 };
       const nextState = calculateSM2(q, currentState.interval, currentState.repetition, currentState.ef);
 
@@ -1437,6 +1590,46 @@ export default function App() {
     );
   }
 
+  // ── TELA DE INSTRUÇÕES DO DESAFIO ────────────────
+  if (challengeActive && !challengeStarted) {
+    const now = new Date();
+    const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+    const hoursLeft = Math.ceil((endOfDay - now) / 3600000);
+    return (
+      <Shell user={currentUser} stats={stats} onLogout={handleLogout} centered userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)} srsData={srsData}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "32px 20px", width: "100%", maxWidth: 480, margin: "0 auto", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 24, boxSizing: "border-box" }}>
+          <div style={{ fontSize: 56, marginBottom: 16 }}>🎯</div>
+          <h2 style={{ color: "#fff", fontSize: 22, fontWeight: 600, margin: 0 }}>
+            Desafio — Salve sua Ofensiva!
+          </h2>
+          <div style={{ marginTop: 16, textAlign: "left", color: "#94a3b8", fontSize: 13, lineHeight: 1.7, display: "flex", flexDirection: "column", gap: 10 }}>
+            <p style={{ margin: 0 }}>⚡ Sua ofensiva de <strong style={{ color: "#f97316" }}>{stats.streak} dias</strong> está em risco.</p>
+            <p style={{ margin: 0 }}>📚 Responda <strong>52 flashcards</strong> (5 de cada matéria + 2 de Jurisprudências) para recuperá-la.</p>
+            <p style={{ margin: 0 }}>⏰ Você tem até <strong style={{ color: "#f59e0b" }}>{hoursLeft}h</strong> para concluir o desafio hoje.</p>
+            <p style={{ margin: 0 }}>🔄 Pode pausar e voltar — seu progresso será salvo.</p>
+            <p style={{ margin: 0 }}>🏆 Ao completar: sua ofensiva é mantida e <strong style={{ color: "#3b82f6" }}>2 escudos são restaurados</strong>!</p>
+          </div>
+          <button
+            onClick={() => {
+              setChallengeStarted(true);
+              setChallengeBanner(`Boa Sorte! Você tem ${hoursLeft}h para completar o desafio.`);
+              setTimeout(() => setChallengeBanner(null), 4000);
+            }}
+            className="btn-hover"
+            style={{
+              marginTop: 24, width: "100%",
+              background: "linear-gradient(135deg, #f97316, #ea580c)",
+              color: "#fff", border: "none", borderRadius: 14,
+              padding: "14px", cursor: "pointer", fontWeight: 700, fontSize: 15, letterSpacing: 1,
+            }}
+          >
+            🔥 Iniciar o Desafio
+          </button>
+        </div>
+      </Shell>
+    );
+  }
+
   // Se estiver estudando
   if (studyMode && studyQueue.length > 0 && !sessionCompleted) {
     return (
@@ -1458,6 +1651,13 @@ export default function App() {
           setStudyMode(null);
           setShowTopicSelector(false);
           setShowFavoritesMateriaSelector(false);
+          if (challengeActive) {
+            setChallengeActive(false);
+            setChallengeCards([]);
+            setChallengeStarted(false);
+            setChallengeBanner(null);
+            localStorage.removeItem("pcpe_challenge_" + currentUser?.username);
+          }
         }}
         onCardFeedback={handleCardFeedback}
         onToggleFav={toggleFavorite}
@@ -1465,25 +1665,36 @@ export default function App() {
         onPrevCard={goToPrevCard}
         onDismissShield={() => setShowShieldBanner(false)}
         onLogout={handleLogout}
+        challengeBanner={challengeBanner}
+        challengeActive={challengeActive}
       />
     );
   }
 
-  // Sessão de Estudos Completada
+  // Sessão de Estudos Completada (ou Desafio Concluído)
   if (sessionCompleted) {
     const isGlobal = studyMode === "global_srs";
-    const matInfo = !isGlobal ? MATERIAS.find(m => m.id === selectedMateria) : null;
+    const isChallenge = studyMode === "challenge";
+    const matInfo = !isGlobal && !isChallenge ? MATERIAS.find(m => m.id === selectedMateria) : null;
     return (
       <Shell user={currentUser} stats={stats} onLogout={handleLogout} centered userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)} srsData={srsData}>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "32px 20px", width: "100%", maxWidth: 480, margin: "0 auto", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 24, boxSizing: "border-box" }}>
-          <div style={{ fontSize: 56, marginBottom: 16 }}>🏆</div>
+          <div style={{ fontSize: 56, marginBottom: 16 }}>
+            {isChallenge ? "🎯" : "🏆"}
+          </div>
           <h2 style={{ color: "#fff", fontSize: 22, fontWeight: 600, margin: 0 }}>
-            {isGlobal ? "Você mandou bem, por hoje, amanhã tem mais." : "Meta Diária Concluída!"}
+            {isChallenge
+              ? "🎉 Desafio Completo!"
+              : isGlobal
+                ? "Você mandou bem, por hoje, amanhã tem mais."
+                : "Meta Diária Concluída!"}
           </h2>
           <p style={{ color: "#64748b", fontSize: 13, lineHeight: 1.5, marginTop: 8, marginBottom: 24 }}>
-            {isGlobal
-              ? "Sua rodada de revisões diárias foi concluída. Todas as respostas foram computadas e seu plano foi atualizado."
-              : <span>Você revisou os cards programados de <strong>{matInfo?.label}</strong>. O progresso foi computado no algoritmo de repetição.</span>
+            {isChallenge
+              ? <span>Sua ofensiva de <strong style={{ color: "#10b981" }}>{stats.streak} dias</strong> foi preservada! <strong style={{ color: "#3b82f6" }}>2 escudos</strong> foram restaurados. Continue assim! 💪</span>
+              : isGlobal
+                ? "Sua rodada de revisões diárias foi concluída. Todas as respostas foram computadas e seu plano foi atualizado."
+                : <span>Você revisou os cards programados de <strong>{matInfo?.label}</strong>. O progresso foi computado no algoritmo de repetição.</span>
             }
           </p>
 
@@ -1498,17 +1709,33 @@ export default function App() {
             </div>
           </div>
 
+          {isChallenge && (
+            <div style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.15)", borderRadius: 12, padding: "10px 16px", marginBottom: 20, width: "100%", boxSizing: "border-box" }}>
+              <span style={{ fontSize: 18 }}>🛡️</span>
+              <span style={{ color: "#6ee7b7", fontSize: 12, fontWeight: 600 }}>2 escudos restaurados — sua ofensiva está protegida!</span>
+            </div>
+          )}
+
           <button
             onClick={() => {
               setStudyMode(null);
               setSelectedMateria(null);
               setShowFavoritesMateriaSelector(false);
               setSessionCompleted(false);
+              if (isChallenge) {
+                setChallengeActive(false);
+                setChallengeCards([]);
+                setChallengeStarted(false);
+                setChallengeBanner(null);
+                localStorage.removeItem("pcpe_challenge_" + currentUser?.username);
+              }
             }}
             className="btn-hover"
             style={{
               width: "100%",
-              background: "linear-gradient(135deg, #3b82f6, #2563eb)",
+              background: isChallenge
+                ? "linear-gradient(135deg, #f97316, #ea580c)"
+                : "linear-gradient(135deg, #3b82f6, #2563eb)",
               color: "#fff",
               border: "none",
               borderRadius: 14,
@@ -1518,7 +1745,7 @@ export default function App() {
               fontSize: 14
             }}
           >
-            Voltar ao Painel
+            {isChallenge ? "🎉 Voltar ao Painel" : "Voltar ao Painel"}
           </button>
         </div>
       </Shell>
@@ -1860,11 +2087,11 @@ export default function App() {
 
       {/* Cards de Métricas Gerais - Utiliza classe responsiva */}
       <div className="dashboard-metrics-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 14, marginBottom: 28 }}>
-        <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 20, padding: 18, display: "flex", alignItems: "center", gap: 16 }}>
-          <div style={{ fontSize: 24, padding: 10, background: "rgba(239,68,68,0.1)", borderRadius: 14, color: "#ef4444" }}>🔥</div>
+        <div style={{ background: streakAtRisk ? "rgba(245,158,11,0.06)" : "rgba(255,255,255,0.02)", border: streakAtRisk ? "1px solid rgba(245,158,11,0.2)" : "1px solid rgba(255,255,255,0.05)", borderRadius: 20, padding: 18, display: "flex", alignItems: "center", gap: 16 }}>
+          <div style={{ fontSize: 24, padding: 10, background: streakAtRisk ? "rgba(245,158,11,0.15)" : "rgba(239,68,68,0.1)", borderRadius: 14, color: streakAtRisk ? "#f59e0b" : "#ef4444" }}>{streakAtRisk ? "⚠️" : "🔥"}</div>
           <div>
-            <div style={{ fontSize: 20, fontWeight: 700, color: "#fff" }}>{stats.streak} {stats.streak === 1 ? 'dia' : 'dias'}</div>
-            <div style={{ fontSize: 10, color: "#64748b", fontWeight: 600, letterSpacing: 0.5, marginTop: 2 }}>OFENSIVA DE ESTUDOS</div>
+            <div style={{ fontSize: 20, fontWeight: 700, color: streakAtRisk ? "#f59e0b" : "#fff" }}>{stats.streak} {stats.streak === 1 ? 'dia' : 'dias'}</div>
+            <div style={{ fontSize: 10, color: streakAtRisk ? "#f59e0b" : "#64748b", fontWeight: 600, letterSpacing: 0.5, marginTop: 2 }}>{streakAtRisk ? "⚠️ OFENSIVA EM RISCO" : "OFENSIVA DE ESTUDOS"}</div>
           </div>
         </div>
         <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 20, padding: 18, display: "flex", flexDirection: "column", gap: 14, justifyContent: "center" }}>
@@ -1909,6 +2136,40 @@ export default function App() {
           </div>
         </div>
       </div>
+
+      {/* Banner de Ofensiva em Risco + Botão Desafio */}
+      {streakAtRisk && (
+        <div style={{ marginBottom: 24 }}>
+          <div style={{
+            background: "rgba(245,158,11,0.06)", border: "1px solid rgba(245,158,11,0.15)",
+            borderRadius: 20, padding: "18px 20px", display: "flex", alignItems: "center",
+            justifyContent: "space-between", gap: 14, flexWrap: "wrap",
+          }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+              <div style={{ fontSize: 28 }}>⚠️</div>
+              <div>
+                <div style={{ color: "#f59e0b", fontSize: 14, fontWeight: 700 }}>Sua ofensiva está em risco!</div>
+                <div style={{ color: "#94a3b8", fontSize: 11, marginTop: 2 }}>
+                  Faltam <strong style={{ color: "#f59e0b" }}>{graceDaysLeft} {graceDaysLeft === 1 ? 'dia' : 'dias'}</strong> para perder tudo. Complete o Desafio e salve sua sequência!
+                </div>
+              </div>
+            </div>
+            <button
+              onClick={startChallenge}
+              className="btn-hover"
+              style={{
+                background: "linear-gradient(135deg, #f97316, #ea580c)",
+                color: "#fff", border: "none", borderRadius: 14,
+                padding: "12px 20px", cursor: "pointer", fontWeight: 700,
+                fontSize: 13, whiteSpace: "nowrap", letterSpacing: 0.5,
+                boxShadow: "0 4px 15px rgba(249,115,22,0.25)"
+              }}
+            >
+              🎯 Fazer Desafio (52 cards)
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Seção de Favoritos */}
       <div style={{ marginBottom: 24 }}>
@@ -2126,15 +2387,18 @@ function StudySession({
   onNextCard,
   onPrevCard,
   onDismissShield,
-  onLogout
+  onLogout,
+  challengeBanner = null,
+  challengeActive = false
 }) {
   const currentCard = studyQueue[currentQueueIndex];
   const currentCardWasAnswered = answeredSessionIds.has(currentCard.id);
+  const isChallenge = studyMode === "challenge";
   const isGlobal = studyMode === "global_srs";
   const matInfo = !isGlobal ? MATERIAS.find(m => m.id === selectedMateria) : null;
-  const themeColor = isGlobal ? "#3b82f6" : (matInfo?.color || "#3b82f6");
-  const labelText = isGlobal ? "Revisão Geral" : (matInfo?.label || "");
-  const emojiText = isGlobal ? "⚡" : (matInfo?.emoji || "");
+  const themeColor = isChallenge ? "#f97316" : (isGlobal ? "#3b82f6" : (matInfo?.color || "#3b82f6"));
+  const labelText = isChallenge ? "Desafio" : (isGlobal ? "Revisão Geral" : (matInfo?.label || ""));
+  const emojiText = isChallenge ? "🎯" : (isGlobal ? "⚡" : (matInfo?.emoji || ""));
 
   const [isFlipped, setIsFlipped] = useState(false);
   const [needsScroll, setNeedsScroll] = useState(false);
@@ -2184,10 +2448,33 @@ function StudySession({
 
   return (
     <Shell user={currentUser} stats={stats} onLogout={onLogout} centered userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={onDismissShield} srsData={srsData} hidePomodoro={true}>
-      {toastMessage && (
+      {challengeBanner && (
         <div style={{
           position: "fixed",
           top: 24,
+          left: "50%",
+          transform: "translateX(-50%)",
+          background: "rgba(249,115,22,0.95)",
+          border: "1px solid rgba(249,115,22,0.2)",
+          color: "#fff",
+          padding: "16px 28px",
+          borderRadius: 16,
+          fontSize: 15,
+          fontWeight: 700,
+          boxShadow: "0 10px 25px rgba(249,115,22,0.3)",
+          zIndex: 9999,
+          backdropFilter: "blur(4px)",
+          transition: "all 0.3s ease",
+          textAlign: "center",
+          letterSpacing: 0.5,
+        }}>
+          🎯 {challengeBanner}
+        </div>
+      )}
+      {toastMessage && (
+        <div style={{
+          position: "fixed",
+          top: 80,
           left: "50%",
           transform: "translateX(-50%)",
           background: "rgba(239,68,68,0.95)",
@@ -2214,15 +2501,17 @@ function StudySession({
               {emojiText} {labelText}
             </span>
             <div style={{ fontSize: 10, color: "#64748b", fontWeight: 500, marginTop: 2 }}>
-              {studyMode === "global_srs"
-                ? "REVISÃO DIÁRIA GLOBAL"
-                : studyMode === "srs"
-                  ? "ESTUDO INTELIGENTE (SM-2)"
-                  : studyMode === "topic"
-                    ? "ESTUDO POR TÓPICOS"
-                    : studyMode === "favorites"
-                      ? "CONSULTA DE FAVORITOS"
-                      : "MODO COMPLETO"}
+              {studyMode === "challenge"
+                ? "🎯 DESAFIO — SALVE SUA OFENSIVA"
+                : studyMode === "global_srs"
+                  ? "REVISÃO DIÁRIA GLOBAL"
+                  : studyMode === "srs"
+                    ? "ESTUDO INTELIGENTE (SM-2)"
+                    : studyMode === "topic"
+                      ? "ESTUDO POR TÓPICOS"
+                      : studyMode === "favorites"
+                        ? "CONSULTA DE FAVORITOS"
+                        : "MODO COMPLETO"}
             </div>
           </div>
           <div style={{ fontSize: 13, color: "#64748b", fontFamily: "monospace" }}>
@@ -2572,14 +2861,21 @@ function TelaLogin({ onLogin }) {
             let loginEmail = uname;
             if (!uname.includes("@")) {
               try {
-                const { data: mapData, error: mapErr } = await client
-                  .from("username_map")
-                  .select("email")
-                  .eq("username", uname)
-                  .maybeSingle();
-                if (!mapErr && mapData && mapData.email) loginEmail = mapData.email;
+                const { data: email, error: rpcErr } = await client
+                  .rpc("get_email_by_username", { p_username: uname });
+                if (rpcErr) {
+                  setErro("Erro de conexão. Verifique sua internet e tente novamente.");
+                  return;
+                }
+                if (email) {
+                  loginEmail = email;
+                } else {
+                  setErro("Usuário não encontrado.");
+                  return;
+                }
               } catch (e) {
-                // ignore mapping errors
+                setErro("Erro de conexão. Verifique sua internet e tente novamente.");
+                return;
               }
             }
 
@@ -3207,6 +3503,17 @@ const Shell = React.memo(function Shell({ children, user, stats, onLogout, cente
     setPomodoroInfo(info);
   }, []);
 
+  // Computar se ofensiva está em risco dentro do Shell
+  const shellStreakAtRisk = useMemo(() => {
+    if (!userMeta) return false;
+    if (userMeta.shields_available > 0) return false;
+    if (!userMeta.shields_exhausted_at) return false;
+    const exhaustDate = new Date(userMeta.shields_exhausted_at + "T00:00:00");
+    const todayDate = new Date(getTodayStr() + "T00:00:00");
+    const daysSinceExhaust = Math.floor((todayDate - exhaustDate) / 86400000);
+    return daysSinceExhaust < 7;
+  }, [userMeta]);
+
   return (
       <div style={{ height: "100vh", overflow: "hidden", background: "#030712", boxSizing: "border-box", position: "relative", width: "100%", display: "flex", flexDirection: "column" }}>
       <div className="shell-hero-composite" />
@@ -3222,8 +3529,8 @@ const Shell = React.memo(function Shell({ children, user, stats, onLogout, cente
                 <span style={{ color: "#fff", fontWeight: 700, fontSize: 9, letterSpacing: 2, fontFamily: "monospace" }}>PC-PE · AGENTE</span>
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                <span style={{ color: "#f97316", fontSize: 12, fontWeight: 600, whiteSpace: "nowrap" }} title="Dias de ofensiva">
-                  🔥 {calculateStreak(srsData)} <span style={{ color: "#94a3b8", fontSize: 10, fontWeight: 400 }}>dias</span>
+                <span style={{ color: shellStreakAtRisk ? "#f59e0b" : "#f97316", fontSize: 12, fontWeight: 600, whiteSpace: "nowrap" }} title={shellStreakAtRisk ? "Ofensiva em risco! Faça o Desafio." : "Dias de ofensiva"}>
+                  {shellStreakAtRisk ? "⚠️" : "🔥"} {calculateStreak(srsData)} <span style={{ color: "#94a3b8", fontSize: 10, fontWeight: 400 }}>dias</span>
                 </span>
                 <span style={{ color: "#334155", fontSize: 11, fontWeight: 300 }}>|</span>
                 <span style={{ color: "#3b82f6", fontSize: 12, fontWeight: 600, whiteSpace: "nowrap" }} title="Escudos disponíveis">
