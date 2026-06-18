@@ -308,6 +308,7 @@ export default function App() {
   useEffect(() => {
     const style = document.createElement("style");
     style.innerHTML = `
+      @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
       @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
       
       * {
@@ -412,6 +413,12 @@ export default function App() {
         overflow: hidden;
         transform: rotateY(180deg);
         padding-right: 60px;
+      }
+
+      .flashcard-question-text,
+      .flashcard-answer-text,
+      .card-dica-text {
+        font-variant-numeric: tabular-nums;
       }
 
       /* Composite hero: banner + overlay + subtle grid on top */
@@ -2561,7 +2568,7 @@ function StudySession({
               {/* Frente */}
               <div className="flashcard-box flashcard-front-style">
                 <div style={{ fontSize: 10, color: "#3b82f6", fontWeight: 600, letterSpacing: 3, marginBottom: 20 }}>✦ PERGUNTA ✦</div>
-                <p className="flashcard-question-text" style={{ color: "#f1f5f9", fontSize: 18, lineHeight: 1.65, textAlign: "center", margin: 0, fontWeight: 400, fontFamily: "Georgia, serif" }}>
+                <p className="flashcard-question-text" style={{ color: "#f1f5f9", fontSize: 18, lineHeight: 1.65, textAlign: "center", margin: 0, fontWeight: 400, fontFamily: "Merriweather, Georgia, serif" }}>
                   {currentCard?.pergunta}
                 </p>
                 <div style={{ marginTop: 28, color: "rgba(255,255,255,0.2)", fontSize: 11, letterSpacing: 1, fontWeight: 500 }}>
@@ -2592,7 +2599,7 @@ function StudySession({
                   alignItems: "center",
                   justifyContent: "flex-start",
                 }}>
-                  <p className="flashcard-answer-text" style={{ color: "#e2e8f0", fontSize: 15, lineHeight: 1.65, textAlign: "center", margin: "0 0 16px 0", fontFamily: "Georgia, serif" }}>
+                  <p className="flashcard-answer-text" style={{ color: "#e2e8f0", fontSize: 15, lineHeight: 1.65, textAlign: "center", margin: "0 0 16px 0", fontFamily: "Merriweather, Georgia, serif" }}>
                     {currentCard?.resposta}
                   </p>
 
@@ -2609,7 +2616,7 @@ function StudySession({
                       <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#eab308", fontSize: 11, fontWeight: 600, letterSpacing: 1, marginBottom: 4 }}>
                         <span>🎓</span> DICA DO PROFESSOR (CEBRASPE)
                       </div>
-                      <p style={{ color: "#d1d5db", fontSize: 11, lineHeight: 1.5, margin: 0 }}>
+                      <p className="card-dica-text" style={{ color: "#d1d5db", fontSize: 11, lineHeight: 1.5, margin: 0 }}>
                         {highlightFalso(currentCard?.dica)}
                       </p>
                     </div>
