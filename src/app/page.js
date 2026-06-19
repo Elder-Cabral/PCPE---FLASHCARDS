@@ -340,6 +340,29 @@ export default function App() {
         animation: loginFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
 
+      @keyframes toastFadeIn {
+        from { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+        to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+      }
+      .toast-fade-in {
+        animation: toastFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      @keyframes modalFadeIn {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+      }
+      @keyframes modalContentIn {
+        from { opacity: 0; transform: translateY(20px) scale(0.96); }
+        to   { opacity: 1; transform: translateY(0) scale(1); }
+      }
+      .modal-overlay {
+        animation: modalFadeIn 0.2s ease forwards;
+      }
+      .modal-content {
+        animation: modalContentIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
       .card-hover {
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
@@ -350,14 +373,15 @@ export default function App() {
         background: rgba(255, 255, 255, 0.04) !important;
       }
       .btn-hover {
-        transition: all 0.2s ease;
+        transition: all 0.15s ease;
       }
       .btn-hover:hover {
         transform: translateY(-1px);
         filter: brightness(1.1);
       }
       .btn-hover:active {
-        transform: translateY(0);
+        transform: scale(0.97);
+        filter: brightness(0.9);
       }
       .custom-scrollbar::-webkit-scrollbar {
         width: 8px;
@@ -2264,7 +2288,7 @@ export default function App() {
         </div>
         <span style={{
           fontSize: 16,
-          color: "#818cf8"
+          color: "#a5b4fc"
         }}>
           →
         </span>
@@ -2476,7 +2500,7 @@ function StudySession({
         </div>
       )}
       {toastMessage && (
-        <div style={{
+        <div className="toast-fade-in" style={{
           position: "fixed",
           top: 80,
           left: "50%",
@@ -2491,7 +2515,6 @@ function StudySession({
           boxShadow: "0 10px 25px rgba(239,68,68,0.2)",
           zIndex: 9999,
           backdropFilter: "blur(4px)",
-          transition: "all 0.3s ease"
         }}>
           ⚠️ {toastMessage}
         </div>
@@ -2527,8 +2550,10 @@ function StudySession({
               style={{
                 background: "transparent", border: "none",
                 color: favorites.includes(currentCard.id) ? "#eab308" : "#475569",
-                cursor: "pointer", display: "flex", alignItems: "center", gap: 3,
-                padding: "2px 4px", outline: "none", fontSize: 16
+                cursor: "pointer", display: "flex", alignItems: "center",
+                justifyContent: "center", padding: "8px", outline: "none",
+                fontSize: 16, minWidth: 44, minHeight: 44,
+                borderRadius: 12
               }}
               title={favorites.includes(currentCard.id) ? "Remover dos favoritos" : "Favoritar"}
             >
@@ -2540,8 +2565,10 @@ function StudySession({
                 style={{
                   background: "transparent", border: "none",
                   color: "#3b82f6", cursor: "pointer",
-                  display: "flex", alignItems: "center", gap: 3,
-                  padding: "2px 4px", outline: "none", fontSize: 16
+                  display: "flex", alignItems: "center",
+                  justifyContent: "center", padding: "8px", outline: "none",
+                  fontSize: 16, minWidth: 44, minHeight: 44,
+                  borderRadius: 12
                 }}
                 title="Camadas de aprendizado"
               >
@@ -2587,7 +2614,8 @@ function StudySession({
                 height: "100%",
                 transformStyle: "preserve-3d",
                 transition: "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)"
+                transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
+                willChange: "transform"
               }}
             >
               {/* Frente */}
@@ -2735,6 +2763,7 @@ function StudySession({
       {showLayersModal && currentCard && (
         <div
           onClick={() => setShowLayersModal(false)}
+          className="modal-overlay"
           style={{
             position: "fixed",
             inset: 0,
@@ -2749,10 +2778,11 @@ function StudySession({
         >
           <div
             onClick={(e) => e.stopPropagation()}
+            className="modal-content"
             style={{
               background: "linear-gradient(135deg, #0e1726, #090d16)",
               border: "1px solid rgba(255,255,255,0.08)",
-              borderRadius: 24,
+              borderRadius: 20,
               padding: "32px 28px",
               maxWidth: 520,
               width: "100%",
@@ -2998,10 +3028,10 @@ function TelaLogin({ onLogin }) {
             style={{
               background: "linear-gradient(135deg, #2563eb, #1d4ed8)",
               border: "none",
-              borderRadius: 10,
-              padding: "11px",
+              borderRadius: 12,
+              padding: "14px",
               color: "#fff",
-              fontSize: 13,
+              fontSize: 14,
               fontWeight: 600,
               cursor: "pointer",
               letterSpacing: 0.5,
@@ -3508,7 +3538,7 @@ const Shell = React.memo(function Shell({ children, user, stats, onLogout, cente
 
       <div style={{ position: "relative", zIndex: 1, width: "100%", maxWidth: 800, margin: "0 auto", boxSizing: "border-box", flex: 1, display: "flex", flexDirection: "column", minHeight: 0, padding: isMobile ? "0 10px" : "0 16px" }}>
         {/* ── CARD PRINCIPAL (ocupa todo o espaço vertical) ── */}
-        <div style={{ flex: 1, display: "flex", flexDirection: "column", background: "#0f172a", borderRadius: 0, border: "1px solid rgba(255,255,255,0.06)", minHeight: 0, padding: isMobile ? "12px 16px" : "14px 20px" }}>
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", background: "#0f172a", borderRadius: 20, border: "1px solid rgba(255,255,255,0.06)", minHeight: 0, padding: isMobile ? "12px 16px" : "14px 20px" }}>
           {/* Topbar */}
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexDirection: "row", flexShrink: 0, flexWrap: "wrap", gap: isMobile ? 6 : 8 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
