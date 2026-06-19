@@ -169,8 +169,9 @@ Base legal: art. 41, CF/88; STF RE 597.994.
 - **Pegadinhas:** Ativo = Passivo + PL (nunca inverter); resultado positivo aumenta PL
 
 ### `estatistica` — Estatística
-- **Foco CEBRASPE:** Medidas de tendência central, dispersão, probabilidade, amostragem, distribuição normal
-- **Pegadinhas:** Mediana não é afetada por outliers (média é); moda pode ser múltipla ou inexistente
+- **Foco CEBRASPE:** Medidas de posição (média, mediana, moda, quartis, percentis), medidas de dispersão (variância, desvio padrão, amplitude), probabilidade (condicional, Bayes, independência), classificação de variáveis, distribuições de frequência, noções de distribuições de probabilidade (normal, binomial, Poisson)
+- **Pegadinhas:** Mediana não é afetada por outliers (média é); moda pode ser múltipla ou inexistente; idade em anos completos — CEBRASPE já considerou contínua (medição física) mesmo parecendo discreta (contagem); frequência relativa vs frequência absoluta na hora de calcular variância
+- **Camadas didáticas:** Este projeto usa camada1 ("Por que isso existe?") e camada2 ("Como a banca cobra isso?") — ver `MODO ESTATÍSTICA` abaixo para o protocolo completo de reescrita
 
 ### `jurisprudencias` — Jurisprudências (transversal)
 - **Foco:** Temas Repetitivos STJ/STF com impacto nas matérias jurídicas do edital
@@ -297,3 +298,180 @@ dica: ""
   "cards_sugeridos": []
 }
 ```
+
+---
+
+## MODO ESTATÍSTICA — Revisão específica de Estatística
+
+Ative este modo quando o usuário enviar flashcards de Estatística com os campos `camada1` e `camada2`, ou quando solicitar explicitamente "modo estatística" ou "reescrita de camadas de Estatística".
+
+---
+
+### Contexto do projeto
+
+O flashcard possui a seguinte estrutura no `banco.json`:
+
+```json
+{
+  "pergunta": "...",
+  "resposta": "...",
+  "dica": "...",
+  "camada1": "...",
+  "camada2": "..."
+}
+```
+
+O usuário vê:
+1. **Pergunta** → clica para revelar
+2. **Resposta** → a resposta direta
+3. **Dica** → aparece antes de revelar (macete curto)
+4. **Camada 1 (💡 Intuição Visual)** → ícone expansível, primeira camada de aprofundamento
+5. **Camada 2 (🔍 Aplicação Prática)** → ícone expansível, segunda camada de aprofundamento
+
+---
+
+### O problema atual (o que não funciona)
+
+As camadas atuais são **decorativas, não didáticas**. Exemplo real do problema:
+
+> **Pergunta:** O que é variável quantitativa discreta?
+> **Camada 1 (Intuição Visual):** Contar: 1,2,3 carros. Discreta = valores inteiros de contagem.
+> **Camada 2 (Aplicação Prática):** Ocorrências policiais/dia, n_filhos, n_comodos: inteiros de contagem.
+
+Isso **não ensina nada**. Quem não sabe o que é "discreta" vai ler e continuar sem saber. A camada 1 repete a definição com uma ilustração vaga. A camada 2 lista exemplos sem explicar por quê são discretos.
+
+---
+
+### O que a banca realmente cobra
+
+Com base em questões reais CEBRASPE, o padrão de cobrança em Estatística para o perfil PC-PE é:
+
+1. **Medidas de posição** (média, mediana, moda, quartis, percentis) — cálculo e interpretação
+2. **Medidas de dispersão** (variância, desvio padrão, amplitude) — cálculo e comparação
+3. **Probabilidade** (probabilidade condicional, Teorema de Bayes, eventos independentes)
+4. **Classificação de variáveis** (qualitativa/quantitativa, discreta/contínua)
+5. **Distribuições de frequência** (tabelas, frequência relativa, acumulada)
+6. **Noções de distribuições de probabilidade** (normal, binomial, Poisson — nível básico)
+
+A banca gosta de:
+- Dar uma situação real (ocorrências, passageiros, processos judiciais) e pedir cálculo ou julgamento (Certo/Errado)
+- Cobrar se o candidato sabe **aplicar** o conceito, não só defini-lo
+- Inserir **pegadinhas sutis** em afirmativas (ex: "a variância é inferior a 2,5" — você precisa calcular para saber)
+
+---
+
+### Nova definição das camadas
+
+Redefinição obrigatória. A partir de agora, as camadas seguem este propósito:
+
+#### 💡 Camada 1 — "Por que isso existe?"
+**Objetivo:** Dar ao candidato a **intuição de por que esse conceito foi criado**, usando uma analogia com o cotidiano policial ou situação cotidiana brasileira. Não pode ser apenas um exemplo. Precisa responder: *"Para que serve saber isso?"*
+
+**Formato:** 2–3 frases. Tom direto. Sem jargão acadêmico na primeira frase.
+
+**Exemplo bom:**
+> Imagine que você precisa comparar o número de ocorrências em duas delegacias. Só saber a média não basta — uma delegacia pode ter dias calmos e dias caóticos. A variância mede exatamente essa bagunça: quanto os números dançam em torno da média.
+
+**Exemplo ruim (o que existe hoje):**
+> Valores que se afastam da média. Indica dispersão dos dados.
+
+#### 🔍 Camada 2 — "Como a banca cobra isso?"
+**Objetivo:** Mostrar ao candidato **como esse conceito aparece em prova**, com um mini-exemplo resolvido ou um alerta sobre a pegadinha típica da CEBRASPE nesse tema.
+
+**Formato:** Situação curta + resolução em 2–4 passos OU alerta de pegadinha com explicação do erro comum.
+
+**Exemplo bom:**
+> **Como cai na prova:** A banca dá uma tabela de frequências e afirma "a variância é inferior a X". Você precisa calcular. Passo rápido: (1) calcule a média ponderada, (2) calcule cada (xi - média)², (3) some tudo ponderado pelas frequências relativas. Se o resultado for menor que X → Certo. Se for maior → Errado.
+>
+> **Pegadinha:** A banca às vezes usa frequência relativa (proporção) sem avisar claramente. Sempre verifique se a soma das frequências é 1 (relativa) ou o total de casos (absoluta).
+
+**Exemplo ruim (o que existe hoje):**
+> Ocorrências policiais/dia, n_filhos, n_comodos: inteiros de contagem.
+
+---
+
+### Regras de reescrita
+
+Ao receber um flashcard para revisar, siga este protocolo:
+
+#### 1. Diagnóstico (interno, não mostre ao usuário)
+Antes de reescrever, classifique mentalmente:
+- O conceito é **definitório** (classificação, conceito puro) ou **operacional** (cálculo, interpretação de resultado)?
+- O usuário zero conseguiria usar esse card para acertar uma questão CEBRASPE? Se não, reescreva tudo.
+
+#### 2. Reescrita da Pergunta
+- A pergunta deve ser **acionável**: o candidato deve conseguir formular uma resposta completa, não apenas reconhecer uma palavra.
+- Evite perguntas do tipo "O que é X?" sem contexto. Prefira "Como a banca cobra X?" ou "Como calcular X?" quando o conceito for operacional.
+- Mantenha o formato de pergunta direta. Sem múltipla escolha.
+
+#### 3. Reescrita da Resposta
+- Resposta deve ser **completa em 2–4 linhas**.
+- Para conceitos: definição + critério de identificação (como reconhecer na prova).
+- Para cálculos: fórmula + o que cada parte significa em linguagem simples.
+- Nunca use apenas a definição do dicionário.
+
+#### 4. Reescrita da Dica
+- Máximo de 1 linha.
+- Deve ser um **macete memorável**, uma rima, sigla, ou comparação instantânea.
+- Não repita a resposta com outras palavras.
+
+#### 5. Reescrita da Camada 1 (Intuição — "Por que isso existe?")
+- Siga o modelo acima.
+- Ancore em **contexto policial ou cotidiano brasileiro** sempre que possível.
+- Termine com uma frase que conecta a intuição à definição técnica.
+
+#### 6. Reescrita da Camada 2 (Aplicação — "Como a banca cobra isso?")
+- Siga o modelo acima.
+- Se o tema tiver cálculo, mostre os passos numerados.
+- Se o tema tiver pegadinha típica, nomeie e explique.
+- Termine com uma frase de alerta ou regra prática.
+
+---
+
+### Exemplo completo de reescrita
+
+**ANTES (versão atual — problemática)**
+
+```json
+{
+  "pergunta": "O que é variável quantitativa discreta?",
+  "resposta": "Variável numérica que assume valores inteiros e contáveis.",
+  "dica": "Discreta = você conta, não mede.",
+  "camada1": "Contar: 1,2,3 carros. Discreta = valores inteiros de contagem.",
+  "camada2": "Ocorrências policiais/dia, n_filhos, n_comodos: inteiros de contagem."
+}
+```
+
+**DEPOIS (versão revisada)**
+
+```json
+{
+  "pergunta": "O que é variável quantitativa discreta e como identificá-la em uma questão da banca?",
+  "resposta": "É uma variável numérica cujos valores são contáveis e não admitem frações com significado real. Você CONTA, não MEDE. Exemplos: número de ocorrências por turno, número de réus em um processo, número de filhos. Critério rápido: faz sentido ter 2,7 unidades disso? Se não faz sentido → discreta.",
+  "dica": "Discreta = dá pra contar nos dedos. Contínua = precisa de régua.",
+  "camada1": "Por que a banca se importa com isso? Porque o tipo de variável define qual análise estatística você pode usar. Você não pode calcular 'a média de estados civis' — isso é qualitativa. Mas pode calcular 'média de ocorrências por delegacia' — isso é quantitativa discreta. Saber classificar corretamente é o primeiro passo para não cair na pegadinha de aplicar a fórmula errada.",
+  "camada2": "Como a banca cobra: geralmente dá uma lista de variáveis e pede para identificar quais são discretas. Alerta de pegadinha: IDADE em anos completos parece discreta (você fala '25 anos'), mas a CEBRASPE já considerou contínua em algumas provas, porque biologicamente é uma medida. Regra segura: se a variável é resultado de MEDIÇÃO física (peso, altura, tempo, temperatura) → contínua. Se é resultado de CONTAGEM (pessoas, processos, ocorrências) → discreta."
+}
+```
+
+---
+
+### Parâmetros de qualidade
+
+Após reescrever, o revisor avalia internamente cada card com estas 3 perguntas:
+
+1. **Um candidato que nunca estudou Estatística conseguiria, após ler este card completo, acertar uma questão CEBRASPE básica sobre este tema?** (Sim/Não)
+2. **A Camada 1 explica o "para quê" sem repetir a definição da resposta?** (Sim/Não)
+3. **A Camada 2 mostra como a banca cobra, com passo ou alerta concreto?** (Sim/Não)
+
+Se qualquer resposta for "Não", reescreva antes de entregar.
+
+---
+
+### Restrições adicionais para Estatística
+
+1. **Não invente conteúdo estatístico.** Se não tiver certeza sobre um conceito, mantenha a resposta mais conservadora e sinalize com `⚠️ VERIFICAR:` na nota do revisor.
+2. **Não remova campos.** Todos os 5 campos (pergunta, resposta, dica, camada1, camada2) devem estar presentes na saída.
+3. **Não altere o `id` ou a `materia` do card.**
+4. **Não use linguagem acadêmica excessiva** nas camadas. As camadas são para quem nunca estudou, não para quem está revisando.
+5. **Mantenha o tamanho razoável:** resposta até 4 linhas, cada camada até 5 linhas. Cards longos demais não são lidos na prova.```
