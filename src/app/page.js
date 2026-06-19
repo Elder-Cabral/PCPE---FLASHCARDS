@@ -2926,13 +2926,18 @@ function TelaLogin({ onLogin }) {
                 const loginRes = await fetch('/api/auth/login', {
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify({ username: u.email || uname, role: 'user', name, loginMethod: 'supabase' }),
+                  body: JSON.stringify({ username: u.email || uname, typedUsername: uname, name, loginMethod: 'supabase' }),
                 });
                 const loginData = await loginRes.json();
-                if (loginData.expiresAt) expiresAt = loginData.expiresAt;
+                if (loginData?.user) {
+                  const u2 = loginData.user;
+                  expiresAt = loginData.expiresAt || expiresAt;
+                  setErro("");
+                  onLogin({ username: u2.username, role: u2.role, name: u2.name, expiresAt });
+                } else {
+                  setErro("Falha ao criar sessão.");
+                }
               } catch {}
-              setErro("");
-              onLogin({ username: u.email || uname, role: 'user', name, expiresAt });
               return;
             }
           }

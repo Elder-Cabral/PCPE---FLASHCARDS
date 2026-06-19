@@ -6,6 +6,7 @@ import { SignJWT } from 'jose';
 import bcrypt from 'bcryptjs';
 import fs from 'fs';
 import path from 'path';
+import { createClient } from '@supabase/supabase-js';
 import { JWT_SECRET, JWT_ISSUER, SESSION_MAX_AGE, SESSION_COOKIE, setSessionCookie } from '../../../../lib/jwt-config';
 
 // Simple in-memory rate limiter
@@ -78,7 +79,7 @@ export async function POST(request) {
     }
 
     const body = await request.json();
-    const { username, password, loginMethod, role, name } = body;
+    const { username, password, loginMethod, typedUsername, name } = body;
 
     if (!username || typeof username !== 'string' || username.length > 200) {
       return NextResponse.json({ error: 'Credenciais inválidas' }, { status: 401 });
@@ -90,16 +91,50 @@ export async function POST(request) {
     let user = null;
 
     if (loginMethod === 'supabase') {
-      // Busca role do users.local.json em vez de forçar 'user'
       let localRole = 'user';
+      let localName = null;
       try {
         const filePath = path.join(process.cwd(), 'src', 'data', 'users.local.json');
         const raw = fs.readFileSync(filePath, 'utf8');
         const localUsers = JSON.parse(raw);
-        const match = localUsers.find(u => u.username === username?.toLowerCase().trim());
-        if (match && match.role) localRole = match.role;
+        // 1) Tenta o username original digitado (typedUsername)
+        if (typedUsername) {
+          const byTyped = localUsers.find(u => u.username === typedUsername.toLowerCase().trim());
+          if (byTyped && byTyped.role) {
+            localRole = byTyped.role;
+            localName = byTyped.name || null;
+          }
+        }
+        // 2) Se não achou, tenta match direto pelo username (pode ser o email)
+        if (!localName) {
+          const direct = localUsers.find(u => u.username === username?.toLowerCase().trim());
+          if (direct && direct.role) {
+            localRole = direct.role;
+            localName = direct.name || null;
+          }
+        }
+        // 3) Se ainda não achou, tenta reverse lookup via username_map
+        if (!localName && username && username.includes('@')) {
+          const supaUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+          const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+          if (supaUrl && serviceKey) {
+            const serviceClient = createClient(supaUrl, serviceKey, { auth: { persistSession: false } });
+            const { data: row } = await serviceClient
+              .from('username_map')
+              .select('username')
+              .eq('email', username.toLowerCase().trim())
+              .maybeSingle();
+            if (row?.username) {
+              const mapped = localUsers.find(u => u.username === row.username.toLowerCase());
+              if (mapped && mapped.role) {
+                localRole = mapped.role;
+                localName = mapped.name || null;
+              }
+            }
+          }
+        }
       } catch {}
-      const safeName = typeof name === 'string' ? name.slice(0, 100) : username;
+      const safeName = localName || (typeof name === 'string' ? name.slice(0, 100) : username);
       user = { username, role: localRole, name: safeName };
     } else if (loginMethod === 'local') {
       if (!password) {
