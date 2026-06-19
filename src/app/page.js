@@ -94,34 +94,40 @@ function highlightFalso(text) {
 
 // ── UTILS: ALGORITMO SM-2 ──────────────────────────────────────────────────
 /**
- * Algoritmo SM-2 modificado para spaced repetition.
- * @param {0|1|2|3} q    0=erro, 1=difícil, 2=bom, 3=fácil
+ * Algoritmo SM-2 original (1987) com escala 0-5.
+ * @param {0|1|2|3} q    0=errei, 1=difícil, 2=bom, 3=fácil
+ *                         Mapeamento interno: 0→SM2 0, 1→SM2 2, 2→SM2 4, 3→SM2 5
  * @param {number} [interval=1]    Dias desde último review
- * @param {number} [repetition=0]  Repetições consecutivas
- * @param {number} [ef=2.5]        Fator de facilidade
+ * @param {number} [repetition=0]  Repetições consecutivas com q≥3
+ * @param {number} [ef=2.5]        Fator de facilidade (1.3 – 3.0)
  * @returns {SM2State}
  */
 function calculateSM2(q, interval = 1, repetition = 0, ef = 2.5) {
-  let newInterval = 1;
-  let newRepetition = 0;
-  let newEf = ef;
+  // Mapeia escala 0-3 dos botões para escala SM-2 0-5
+  const Q_MAP = { 0: 0, 1: 2, 2: 4, 3: 5 };
+  const quality = Q_MAP[q] ?? q;
 
-  if (q === 0) { // Errei
+  // Fórmula original do EF: EF' = EF + (0.1 - (5-q) × (0.08 + (5-q) × 0.02))
+  let newEf = ef + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02));
+  newEf = Math.max(1.3, Math.min(3.0, newEf));
+
+  let newInterval;
+  let newRepetition;
+
+  if (quality < 3) {
+    // q < 3 → não lembra → reset completo
     newInterval = 1;
     newRepetition = 0;
-    newEf = Math.max(1.3, ef - 0.2);
-  } else if (q === 1) { // Difícil
-    newInterval = 3;
+  } else {
+    // q >= 3 → lembrou → progride
     newRepetition = repetition + 1;
-    newEf = Math.max(1.3, ef - 0.15);
-  } else if (q === 2) { // Bom
-    newInterval = 6;
-    newRepetition = repetition + 1;
-    newEf = ef;
-  } else if (q === 3) { // Fácil
-    newInterval = 10;
-    newRepetition = repetition + 1;
-    newEf = Math.min(3.0, ef + 0.15);
+    if (newRepetition === 1) {
+      newInterval = 1;
+    } else if (newRepetition === 2) {
+      newInterval = 6;
+    } else {
+      newInterval = Math.round(interval * ef);
+    }
   }
 
   // Vencimento à meia-noite (00:00:00) de newInterval dias a partir de hoje
@@ -1267,73 +1273,25 @@ export default function App() {
     return arr;
   };
 
-  // ── ALGORITMO DE SELEÇÃO 4/10 ────────────────────────────────────────
+  // ── ORDENAÇÃO DA FILA ─────────────────────────────────────────────────
   /**
-   * @param {AnswerEntry[]} entries
-   * @returns {"nao_visto"|"muito_errado"|"dominado"|"normal"}
-   */
-  const getCardCategory = (entries) => {
-    if (!entries || entries.length === 0) return "nao_visto";
-    let errors = 0, successes = 0;
-    for (const e of entries) {
-      if (e.resultado === 0 || e.resultado === 1) errors++;
-      else if (e.resultado === 2 || e.resultado === 3) successes++;
-    }
-    const netErrors = Math.max(0, errors - successes);
-    if (netErrors >= 2) return "muito_errado";
-    if (successes >= 5) return "dominado";
-    return "normal";
-  };
-
-  /**
-   * Constrói fila com regra 4/10: a cada janela de 10 cards,
-   * no mínimo 4 são prioritários (não vistos ou muito errados).
-   * @param {Flashcard[]} cards
-   * @param {AnswerEntry[]} answerHistory
+   * Ordena cards vencidos por urgência (dueDate ascendente) e novos no final.
+   * @param {Flashcard[]} cards  Cards da matéria
+   * @param {SRSData} srs        Estado SRS atual
+   * @param {number} maxNew      Máximo de cards novos na fila
    * @returns {Flashcard[]}
    */
-  const buildPrioritizedQueue = (cards, answerHistory) => {
-    const historyByCard = new Map();
-    for (const entry of answerHistory) {
-      const arr = historyByCard.get(entry.cardId);
-      if (arr) arr.push(entry);
-      else historyByCard.set(entry.cardId, [entry]);
-    }
+  const buildPriorityQueue = (cards, srs, maxNew = 5) => {
+    const due = cards.filter(c => srs[c.id] && srs[c.id].dueDate <= Date.now());
+    const unseen = cards.filter(c => !srs[c.id]);
 
-    const prioritarios = [];
-    const normais = [];
-    const dominados = [];
+    // Vencidos: mais atrasados primeiro
+    due.sort((a, b) => (srs[a.id]?.dueDate ?? 0) - (srs[b.id]?.dueDate ?? 0));
 
-    for (const card of cards) {
-      const entries = historyByCard.get(card.id) || [];
-      const cat = getCardCategory(entries);
-      if (cat === "nao_visto" || cat === "muito_errado") prioritarios.push(card);
-      else if (cat === "dominado") dominados.push(card);
-      else normais.push(card);
-    }
+    // Novos: aleatório, limitado
+    const shuffledNew = [...unseen].sort(() => Math.random() - 0.5).slice(0, maxNew);
 
-    shuffle(prioritarios);
-    shuffle(normais);
-    shuffle(dominados);
-
-    const allNormais = [...normais, ...dominados];
-    const total = prioritarios.length + allNormais.length;
-    if (total === 0) return [];
-    if (prioritarios.length === 0) return allNormais;
-
-    // Distribuir prioritários uniformemente ao longo da fila
-    const result = new Array(total);
-    const step = total / prioritarios.length;
-    const pPos = new Array(total).fill(false);
-    for (let i = 0; i < prioritarios.length; i++)
-      pPos[Math.min(Math.round(i * step), total - 1)] = true;
-
-    let p = 0, n = 0;
-    for (let i = 0; i < total; i++) {
-      if (pPos[i] && p < prioritarios.length) result[i] = prioritarios[p++];
-      else result[i] = allNormais[n++];
-    }
-    return result;
+    return [...due, ...shuffledNew];
   };
 
   const sortQueue = (queueToSort) => {
@@ -1367,9 +1325,10 @@ export default function App() {
       allDue = [...allDue, ...due];
     }
     
-    // Seleciona até 30 cards vencidos aleatoriamente para evitar repetições
-    const selectedDue = [...allDue].sort(() => Math.random() - 0.5).slice(0, 30);
-    
+    // Vencidos ordenados por urgência (mais atrasados primeiro)
+    allDue.sort((a, b) => (srsData[a.id]?.dueDate ?? 0) - (srsData[b.id]?.dueDate ?? 0));
+    const selectedDue = allDue.slice(0, 30);
+
     const sortedQueue = sortQueue(selectedDue);
     setStudyQueue(sortedQueue);
     setCurrentQueueIndex(0);
@@ -1460,24 +1419,15 @@ export default function App() {
   // Preparar fila de estudos padrão (Todos / SRS)
   const startStudySession = (materiaId, mode) => {
     const cards = BANCO[materiaId] || [];
-    let queue = [];
 
     if (mode === "all") {
-      queue = [...cards];
+      const queue = [...cards].sort(() => Math.random() - 0.5);
+      setStudyQueue(queue);
     } else {
-      const allDueCards = cards.filter(c => srsData[c.id] && srsData[c.id].dueDate <= Date.now());
-      const allNewCards = cards.filter(c => !srsData[c.id]);
-      
-      // Seleciona aleatoriamente até 20 vencidos e até 15 novos para não repetir
-      const dueCards = [...allDueCards].sort(() => Math.random() - 0.5).slice(0, 20);
-      const newCards = [...allNewCards].sort(() => Math.random() - 0.5).slice(0, 15);
-      
-      queue = [...dueCards, ...newCards];
+      const queue = buildPriorityQueue(cards, srsData, 5);
+      setStudyQueue(queue);
     }
 
-    const prioritizedQueue = buildPrioritizedQueue(queue, answerHistory);
-
-    setStudyQueue(prioritizedQueue);
     setCurrentQueueIndex(0);
     setStudyMode(mode);
     setSelectedMateria(materiaId);
@@ -1487,11 +1437,11 @@ export default function App() {
   // Preparar fila de estudos por Tópicos
   const startTopicStudySession = (topicsToStudy) => {
     const cards = BANCO[selectedMateria] || [];
-    let queue = cards.filter(c => topicsToStudy.includes(c.topico));
+    const matched = cards.filter(c => topicsToStudy.includes(c.topico));
 
-    const prioritizedQueue = buildPrioritizedQueue(queue, answerHistory);
+    const queue = buildPriorityQueue(matched, srsData, 5);
 
-    setStudyQueue(prioritizedQueue);
+    setStudyQueue(queue);
     setCurrentQueueIndex(0);
     setStudyMode("topic");
     resetSessionState();
