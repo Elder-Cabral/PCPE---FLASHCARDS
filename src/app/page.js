@@ -415,7 +415,6 @@ export default function App() {
         box-shadow: 0 20px 45px rgba(0,0,0,0.4);
         overflow: hidden;
         transform: rotateY(180deg);
-        padding-right: 60px;
       }
 
       .flashcard-question-text,
@@ -464,7 +463,7 @@ export default function App() {
 
       @media (max-width: 640px) {
         .dashboard-content {
-          padding: 8px 0 !important;
+          padding: 8px 4px !important;
         }
       }
 
@@ -505,9 +504,6 @@ export default function App() {
           padding: 32px 20px !important;
           border-radius: 20px !important;
         }
-        .flashcard-back-style {
-          padding-right: 52px !important;
-        }
         .flashcard-question-text {
           font-size: 16px !important;
           line-height: 1.6 !important;
@@ -530,9 +526,6 @@ export default function App() {
           padding: 28px 16px !important;
           border-radius: 16px !important;
         }
-        .flashcard-back-style {
-          padding-right: 48px !important;
-        }
         .flashcard-question-text {
           font-size: 15px !important;
           line-height: 1.55 !important;
@@ -543,16 +536,9 @@ export default function App() {
         }
       }
 
-      /* Desktop (>640px) — padding reduzido, SRS+Nav mais próximos */
       @media (min-width: 641px) {
-        .nav-wrapper {
-          margin-top: -15px;
-        }
         .flashcard-box {
           padding: 32px 34px !important;
-        }
-        .flashcard-back-style {
-          padding-right: 54px !important;
         }
       }
 
@@ -2260,8 +2246,6 @@ export default function App() {
           padding: "20px 18px",
           textAlign: "left",
           cursor: "pointer",
-          position: "relative",
-          overflow: "hidden",
           outline: "none",
           display: "flex",
           alignItems: "center",
@@ -2269,7 +2253,6 @@ export default function App() {
           marginBottom: 24
         }}
       >
-        <div style={{ position: "absolute", top: 0, right: 0, width: 70, height: 70, borderRadius: "0 20px 0 100%", background: "rgba(99,102,241,0.08)" }} />
         <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
           <div style={{ fontSize: 28 }}>📊</div>
           <div>
@@ -2304,14 +2287,10 @@ export default function App() {
                 padding: "20px 18px",
                 textAlign: "center",
                 cursor: "pointer",
-                position: "relative",
-                overflow: "hidden",
                 width: "100%",
                 outline: "none"
               }}
             >
-              <div style={{ position: "absolute", top: 0, right: 0, width: 70, height: 70, borderRadius: "0 20px 0 100%", background: `${m.color}08` }} />
-              
               <div style={{ fontSize: 28, marginBottom: 10 }}>{m.emoji}</div>
               
               <div style={{ color: "#f1f5f9", fontSize: 14, fontWeight: 600, marginBottom: 8, lineHeight: 1.4 }}>
@@ -2539,8 +2518,36 @@ function StudySession({
                         : "MODO COMPLETO"}
             </div>
           </div>
-          <div style={{ fontSize: 13, color: "#64748b", fontFamily: "monospace" }}>
-            {currentQueueIndex + 1}/{studyQueue.length}
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <span style={{ fontSize: 13, color: "#64748b", fontFamily: "monospace" }}>
+              {currentQueueIndex + 1}/{studyQueue.length}
+            </span>
+            <button
+              onClick={(e) => { e.stopPropagation(); onToggleFav(currentCard.id); }}
+              style={{
+                background: "transparent", border: "none",
+                color: favorites.includes(currentCard.id) ? "#eab308" : "#475569",
+                cursor: "pointer", display: "flex", alignItems: "center", gap: 3,
+                padding: "2px 4px", outline: "none", fontSize: 16
+              }}
+              title={favorites.includes(currentCard.id) ? "Remover dos favoritos" : "Favoritar"}
+            >
+              {favorites.includes(currentCard.id) ? "★" : "☆"}
+            </button>
+            {hasLayers && (
+              <button
+                onClick={(e) => { e.stopPropagation(); setShowLayersModal(true); }}
+                style={{
+                  background: "transparent", border: "none",
+                  color: "#3b82f6", cursor: "pointer",
+                  display: "flex", alignItems: "center", gap: 3,
+                  padding: "2px 4px", outline: "none", fontSize: 16
+                }}
+                title="Camadas de aprendizado"
+              >
+                🧠
+              </button>
+            )}
           </div>
         </div>
 
@@ -2550,7 +2557,7 @@ function StudySession({
             style={{
               width: `${((currentQueueIndex + 1) / studyQueue.length) * 100}%`,
               height: "100%",
-              background: `linear-gradient(90deg, ${themeColor}, #ffffff)`,
+              background: `linear-gradient(90deg, ${themeColor}, ${themeColor}88)`,
               transition: "width 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
             }}
           />
@@ -2644,65 +2651,7 @@ function StudySession({
             </div>
           </div>
 
-          {/* Botão Favoritar */}
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              onToggleFav(currentCard.id);
-            }}
-            style={{
-              position: "absolute",
-              top: 16,
-              right: 16,
-              background: "transparent",
-              border: "none",
-              color: favorites.includes(currentCard.id) ? "#eab308" : "#475569",
-              cursor: "pointer",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: 2,
-              zIndex: 20,
-              outline: "none",
-              pointerEvents: "auto"
-            }}
-          >
-            <span style={{ fontSize: 18 }}>{favorites.includes(currentCard.id) ? "★" : "☆"}</span>
-            <span style={{ fontSize: 9, fontWeight: 500, opacity: 0.6, letterSpacing: 0.5, color: "#94a3b8" }}>
-              {favorites.includes(currentCard.id) ? "favoritado" : "favoritar"}
-            </span>
-          </button>
-
-          {/* Botão de Camadas (apenas Estatística) */}
-          {hasLayers && (
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setShowLayersModal(true);
-              }}
-              style={{
-                position: "absolute",
-                top: 16,
-                left: 16,
-                background: "transparent",
-                border: "none",
-                color: "#3b82f6",
-                cursor: "pointer",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: 2,
-                zIndex: 20,
-                outline: "none",
-                pointerEvents: "auto"
-              }}
-            >
-              <span style={{ fontSize: 18 }}>🧠</span>
-              <span style={{ fontSize: 9, fontWeight: 500, opacity: 0.6, letterSpacing: 0.5, color: "#94a3b8" }}>
-                entender
-              </span>
-            </button>
-          )}
+          {/* Botões movidos para o header acima */}
         </div>
 
         {/* Botões de Ação */}
@@ -3561,7 +3510,7 @@ const Shell = React.memo(function Shell({ children, user, stats, onLogout, cente
         {/* ── CARD PRINCIPAL (ocupa todo o espaço vertical) ── */}
         <div style={{ flex: 1, display: "flex", flexDirection: "column", background: "#0f172a", borderRadius: 0, border: "1px solid rgba(255,255,255,0.06)", minHeight: 0, padding: isMobile ? "12px 16px" : "14px 20px" }}>
           {/* Topbar */}
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: isMobile ? "stretch" : "center", flexDirection: isMobile ? "column" : "row", flexShrink: 0, flexWrap: "wrap", gap: isMobile ? 6 : 8 }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexDirection: "row", flexShrink: 0, flexWrap: "wrap", gap: isMobile ? 6 : 8 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
               <div style={{ display: "inline-block", background: "linear-gradient(135deg,#e11d48,#be123c)", borderRadius: 10, padding: "6px 14px" }}>
                 <span style={{ color: "#fff", fontWeight: 700, fontSize: 9, letterSpacing: 2, fontFamily: "monospace" }}>PC-PE · AGENTE</span>
@@ -3576,7 +3525,7 @@ const Shell = React.memo(function Shell({ children, user, stats, onLogout, cente
                 </span>
               </div>
             </div>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: isMobile ? "flex-start" : "flex-end", gap: 14 }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: 14 }}>
               <span style={{ color: "#94a3b8", fontSize: 12, fontWeight: 500 }}>
                 {user?.role === "admin" ? "👑" : "👤"} {user?.name}
               </span>
@@ -3674,9 +3623,9 @@ const Shell = React.memo(function Shell({ children, user, stats, onLogout, cente
             style={{
               position: 'fixed', zIndex: 100,
               display: 'flex', alignItems: 'center', gap: 6,
-              background: pomodoroInfo?.status === "running" ? 'rgba(34,197,94,0.15)' : 'rgba(255,255,255,0.04)',
-              border: pomodoroInfo?.status === "running" ? '1px solid rgba(34,197,94,0.25)' : '1px solid rgba(255,255,255,0.08)',
-              color: pomodoroInfo?.status === "running" ? '#4ade80' : '#94a3b8',
+              background: pomodoroInfo?.status === "running" ? 'rgba(34,197,94,0.15)' : pomodoroInfo?.status === "paused" ? 'rgba(234,179,8,0.15)' : 'rgba(255,255,255,0.04)',
+              border: pomodoroInfo?.status === "running" ? '1px solid rgba(34,197,94,0.25)' : pomodoroInfo?.status === "paused" ? '1px solid rgba(234,179,8,0.25)' : '1px solid rgba(255,255,255,0.08)',
+              color: pomodoroInfo?.status === "running" ? '#4ade80' : pomodoroInfo?.status === "paused" ? '#eab308' : '#94a3b8',
               fontSize: 16, cursor: 'pointer',
               boxShadow: '0 4px 15px rgba(0,0,0,0.4)',
               outline: 'none',
@@ -4060,6 +4009,7 @@ function NavButtons({ onPrev, onNext, hasPrev, hasNext }) {
           fontSize: 12,
           fontWeight: 600,
           cursor: hasPrev ? "pointer" : "default",
+          opacity: hasPrev ? 1 : 0.35,
           outline: "none"
         }}
       >
@@ -4079,6 +4029,7 @@ function NavButtons({ onPrev, onNext, hasPrev, hasNext }) {
           fontSize: 12,
           fontWeight: 600,
           cursor: hasNext ? "pointer" : "default",
+          opacity: hasNext ? 1 : 0.35,
           outline: "none"
         }}
       >
