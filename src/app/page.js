@@ -2566,13 +2566,17 @@ function StudySession({
                   background: "transparent", border: "none",
                   color: "#3b82f6", cursor: "pointer",
                   display: "flex", alignItems: "center",
-                  justifyContent: "center", padding: "8px", outline: "none",
+                  justifyContent: "center", gap: 3,
+                  padding: "8px 10px", outline: "none",
                   fontSize: 16, minWidth: 44, minHeight: 44,
                   borderRadius: 12
                 }}
                 title="Camadas de aprendizado"
               >
-                🧠
+                <span style={{ fontSize: 16 }}>🧠</span>
+                <span style={{ fontSize: 10, fontWeight: 500, color: "#94a3b8" }}>
+                  explicar
+                </span>
               </button>
             )}
           </div>
