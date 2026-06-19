@@ -1275,23 +1275,26 @@ export default function App() {
 
   // ── ORDENAÇÃO DA FILA ─────────────────────────────────────────────────
   /**
-   * Ordena cards vencidos por urgência (dueDate ascendente) e novos no final.
+   * Constrói fila SRS de exatamente maxTotal cards:
+   * vencidos primeiro (urgência), depois novos para completar.
    * @param {Flashcard[]} cards  Cards da matéria
    * @param {SRSData} srs        Estado SRS atual
-   * @param {number} maxNew      Máximo de cards novos na fila
+   * @param {number} maxTotal    Tamanho exato da fila (padrão 15)
    * @returns {Flashcard[]}
    */
-  const buildPriorityQueue = (cards, srs, maxNew = 5) => {
+  const buildPriorityQueue = (cards, srs, maxTotal = 15) => {
     const due = cards.filter(c => srs[c.id] && srs[c.id].dueDate <= Date.now());
     const unseen = cards.filter(c => !srs[c.id]);
 
     // Vencidos: mais atrasados primeiro
     due.sort((a, b) => (srs[a.id]?.dueDate ?? 0) - (srs[b.id]?.dueDate ?? 0));
 
-    // Novos: aleatório, limitado
-    const shuffledNew = [...unseen].sort(() => Math.random() - 0.5).slice(0, maxNew);
+    // Preenche até maxTotal: vencidos primeiro, novos depois
+    const dueCount = Math.min(due.length, maxTotal);
+    const newCount = Math.min(unseen.length, maxTotal - dueCount);
+    const shuffledNew = [...unseen].sort(() => Math.random() - 0.5).slice(0, newCount);
 
-    return [...due, ...shuffledNew];
+    return [...due.slice(0, dueCount), ...shuffledNew];
   };
 
   const sortQueue = (queueToSort) => {
@@ -1424,7 +1427,7 @@ export default function App() {
       const queue = [...cards].sort(() => Math.random() - 0.5);
       setStudyQueue(queue);
     } else {
-      const queue = buildPriorityQueue(cards, srsData, 5);
+      const queue = buildPriorityQueue(cards, srsData, 15);
       setStudyQueue(queue);
     }
 
@@ -1439,7 +1442,7 @@ export default function App() {
     const cards = BANCO[selectedMateria] || [];
     const matched = cards.filter(c => topicsToStudy.includes(c.topico));
 
-    const queue = buildPriorityQueue(matched, srsData, 5);
+    const queue = buildPriorityQueue(matched, srsData, 15);
 
     setStudyQueue(queue);
     setCurrentQueueIndex(0);
