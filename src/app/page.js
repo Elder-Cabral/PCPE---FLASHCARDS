@@ -155,6 +155,31 @@ function getLocalJSON(key, fallback = "null") {
 /** @returns {string} "YYYY-MM-DD" no fuso local (alias) */
 const getTodayStr = getTodayLocalStr;
 
+async function safeSupabaseCall(fn) {
+  const result = await safeCall(fn);
+  if (result?.error) throw result.error;
+  return result;
+}
+
+function normalizeUserMeta(meta, today) {
+  const normalized = { ...meta };
+  let changed = false;
+
+  if (normalized.current_streak === 0 && (normalized.shields_available ?? 2) < 2) {
+    normalized.shields_available = 2;
+    normalized.shields_exhausted_at = null;
+    changed = true;
+  }
+
+  if ((normalized.current_streak ?? 0) > 0 && (normalized.shields_available ?? 2) <= 0 && !normalized.shields_exhausted_at) {
+    normalized.shields_available = 0;
+    normalized.shields_exhausted_at = today;
+    changed = true;
+  }
+
+  return { meta: normalized, changed };
+}
+
 /**
  * Merge bidirecional de SRS: local sobrescreve remote se tiver lastReviewed mais recente.
  * @param {SRSData} local
@@ -715,7 +740,7 @@ export default function App() {
     } catch (_) {}
 
     try {
-          const { data, error } = await safeCall(() => client
+          const { data } = await safeSupabaseCall(() => client
             .from("user_meta")
             .select("*")
             .eq("username", username)
@@ -726,7 +751,7 @@ export default function App() {
       // Se nao existir registro, semear streak do localStorage ou SRS
       if (!data) {
         const seedStreak = localFallback?.current_streak || calculateStreak(srsDataRef.current);
-        const meta = {
+        let meta = {
           username,
           current_streak: seedStreak,
           last_study_date: localFallback?.last_study_date || (seedStreak > 0 ? today : null),
@@ -739,7 +764,8 @@ export default function App() {
             meta.shields_available = 2;
             meta.shields_exhausted_at = null;
           }
-          await safeCall(() => client.from("user_meta").upsert(meta));
+          meta = normalizeUserMeta(meta, today).meta;
+          await safeSupabaseCall(() => client.from("user_meta").upsert(meta));
         localStorage.setItem(storageKey, JSON.stringify(meta));
         updateUserMetaState(meta);
         return;
@@ -796,13 +822,18 @@ export default function App() {
             }
           }
         } else if (diffDays <= 1) {
-          // Usuário estudou recentemente: limpa carência se existir
-          if (meta.shields_exhausted_at) {
+          // Limpa carência apenas se ainda houver escudos. Com 0 escudos,
+          // shields_exhausted_at é necessário para o desafio/contagem de risco.
+          if (meta.shields_exhausted_at && meta.shields_available > 0) {
             meta.shields_exhausted_at = null;
             needsUpdate = true;
           }
         }
       }
+
+      const normalized = normalizeUserMeta(meta, today);
+      Object.assign(meta, normalized.meta);
+      needsUpdate = needsUpdate || normalized.changed;
 
       // ── Safety: streak zerou, escudos devem voltar a 2 ──
       if (meta.current_streak === 0 && meta.shields_available < 2) {
@@ -813,10 +844,12 @@ export default function App() {
       }
 
       if (needsUpdate) {
-          await safeCall(() => client.from("user_meta").upsert({
+          const persistedMeta = {
             ...meta,
             updated_at: new Date().toISOString(),
-          }));
+          };
+          await safeSupabaseCall(() => client.from("user_meta").upsert(persistedMeta));
+          Object.assign(meta, persistedMeta);
       }
 
       localStorage.setItem(storageKey, JSON.stringify(meta));
@@ -832,6 +865,7 @@ export default function App() {
             localFallback.shields_available = 2;
             localFallback.shields_exhausted_at = null;
           }
+        localFallback = normalizeUserMeta(localFallback, getTodayStr()).meta;
         updateUserMetaState(localFallback);
       } else {
         updateUserMetaState({ current_streak: calculateStreak(srsDataRef.current), shields_available: 2 });
@@ -1064,10 +1098,12 @@ export default function App() {
     if (!currentUser) return;
     const handleFocus = () => {
       loadUserData(currentUser.username);
+      loadUserMeta(currentUser.username);
     };
     const handleVisibilityChange = () => {
       if (document.visibilityState === "visible") {
         loadUserData(currentUser.username);
+        loadUserMeta(currentUser.username);
       }
     };
     window.addEventListener("focus", handleFocus);
@@ -1076,7 +1112,7 @@ export default function App() {
       window.removeEventListener("focus", handleFocus);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
-  }, [currentUser]);
+  }, [currentUser, loadUserMeta]);
 
   // Sincronizar dados a cada 30s (cards revisados em outro dispositivo, virada do dia, etc)
   useEffect(() => {
@@ -1090,10 +1126,11 @@ export default function App() {
         lastDateStr = todayStr;
       }
       loadUserData(currentUser.username);
+      loadUserMeta(currentUser.username);
     }, 30000);
 
     return () => clearInterval(interval);
-  }, [currentUser]);
+  }, [currentUser, loadUserMeta]);
 
   // Atualizar streak ao finalizar sessao de estudo (ou desafio)
   useEffect(() => {
@@ -1118,7 +1155,7 @@ export default function App() {
       // Se shields_exhausted_at ainda existe e NÃO é desafio, mantém (carência continua)
       // Se for desafio: restaura 2 escudos e limpa carência
       const shieldsWereLost = prev.current_streak === 0 && (prev.shields_available ?? 2) < 2;
-      const updated = {
+      let updated = {
         username: currentUser.username,
         current_streak: newStreak,
         last_study_date: today,
@@ -1126,9 +1163,10 @@ export default function App() {
         shields_exhausted_at: isChallengeDone ? null : shieldsWereLost ? null : (prev.shields_exhausted_at ?? null),
         updated_at: new Date().toISOString(),
       };
+      updated = normalizeUserMeta(updated, today).meta;
       try {
         const client = getSupabase();
-        await safeCall(() => client.from("user_meta").upsert(updated));
+        await safeSupabaseCall(() => client.from("user_meta").upsert(updated));
         localStorage.setItem("pcpe_meta_" + currentUser.username, JSON.stringify(updated));
         updateUserMetaState(updated);
         if (isChallengeDone) {
