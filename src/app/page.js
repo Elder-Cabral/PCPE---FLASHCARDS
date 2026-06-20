@@ -22,7 +22,7 @@ import PomodoroBar from "./PomodoroBar";
 import Shell from "../components/Shell";
 import BackButton from "../components/BackButton";
 import StatCard from "../components/StatCard";
-import { getLocalDateString, getTodayLocalStr, calculateStreak, isConsecutiveDay } from "../lib/streak";
+import { getLocalDateString, getTodayLocalStr, calculateStreak, isConsecutiveDay, parseLocalDate } from "../lib/streak";
 const SESSION_COOKIE = 'pcpe_session';
 
 // Cache for a runtime-created Supabase client, so we never lose the auth session
@@ -739,6 +739,11 @@ export default function App() {
       if (raw) localFallback = JSON.parse(raw);
     } catch (_) {}
 
+    // UX: Carrega o fallback local imediatamente para evitar flash de "2" escudos
+    if (localFallback) {
+      updateUserMetaState(localFallback);
+    }
+
     try {
           const { data } = await safeSupabaseCall(() => client
             .from("user_meta")
@@ -784,49 +789,53 @@ export default function App() {
 
       // Verificar dias perdidos + período de graça
       if (meta.last_study_date) {
-        const lastDate = new Date(meta.last_study_date + "T00:00:00");
-        const todayDate = new Date(today + "T00:00:00");
-        const diffDays = Math.floor((todayDate - lastDate) / 86400000);
+        const lastDate = parseLocalDate(meta.last_study_date);
+        const todayDate = parseLocalDate(today);
+        if (lastDate && todayDate) {
+          const diffDays = Math.floor((todayDate - lastDate) / 86400000);
 
-        if (diffDays >= 2) {
-          if (meta.shields_available > 0) {
-            // Consome 1 escudo
-            meta.shields_available -= 1;
-            shieldActivated = true;
-            needsUpdate = true;
-            // Marca a falha como processada. Sem isso, cada reload/login
-            // consumiria outro escudo pelo mesmo intervalo de ausência.
-            meta.last_study_date = getLocalDateString(new Date(Date.now() - 86400000));
-            // Se era o último escudo, marca início da carência
-            if (meta.shields_available === 0) {
-              meta.shields_exhausted_at = today;
-            }
-          } else {
-            // Escudos esgotados: verifica período de graça de 7 dias
-            if (meta.shields_exhausted_at) {
-              const exhaustDate = new Date(meta.shields_exhausted_at + "T00:00:00");
-              const daysSinceExhaust = Math.floor((todayDate - exhaustDate) / 86400000);
-              if (daysSinceExhaust >= 7) {
-                // Carência expirada: perde a ofensiva e restaura escudos
-                meta.current_streak = 0;
-                meta.last_study_date = null;
-                meta.shields_available = 2;
-                meta.shields_exhausted_at = null;
+          if (diffDays >= 2) {
+            if (meta.shields_available > 0) {
+              // Consome 1 escudo
+              meta.shields_available -= 1;
+              shieldActivated = true;
+              needsUpdate = true;
+              // Marca a falha como processada. Sem isso, cada reload/login
+              // consumiria outro escudo pelo mesmo intervalo de ausência.
+              meta.last_study_date = getLocalDateString(new Date(Date.now() - 86400000));
+              // Se era o último escudo, marca início da carência
+              if (meta.shields_available === 0) {
+                meta.shields_exhausted_at = today;
+              }
+            } else {
+              // Escudos esgotados: verifica período de graça de 7 dias
+              if (meta.shields_exhausted_at) {
+                const exhaustDate = parseLocalDate(meta.shields_exhausted_at);
+                if (exhaustDate) {
+                  const daysSinceExhaust = Math.floor((todayDate - exhaustDate) / 86400000);
+                  if (daysSinceExhaust >= 7) {
+                    // Carência expirada: perde a ofensiva e restaura escudos
+                    meta.current_streak = 0;
+                    meta.last_study_date = null;
+                    meta.shields_available = 2;
+                    meta.shields_exhausted_at = null;
+                    needsUpdate = true;
+                  }
+                }
+                // senão: mantém streak (dentro da carência)
+              } else {
+                // shields=0 sem exhausted_at: marca agora
+                meta.shields_exhausted_at = today;
                 needsUpdate = true;
               }
-              // senão: mantém streak (dentro da carência)
-            } else {
-              // shields=0 sem exhausted_at: marca agora
-              meta.shields_exhausted_at = today;
+            }
+          } else if (diffDays <= 1) {
+            // Limpa carência apenas se ainda houver escudos. Com 0 escudos,
+            // shields_exhausted_at é necessário para o desafio/contagem de risco.
+            if (meta.shields_exhausted_at && meta.shields_available > 0) {
+              meta.shields_exhausted_at = null;
               needsUpdate = true;
             }
-          }
-        } else if (diffDays <= 1) {
-          // Limpa carência apenas se ainda houver escudos. Com 0 escudos,
-          // shields_exhausted_at é necessário para o desafio/contagem de risco.
-          if (meta.shields_exhausted_at && meta.shields_available > 0) {
-            meta.shields_exhausted_at = null;
-            needsUpdate = true;
           }
         }
       }
@@ -1436,16 +1445,18 @@ export default function App() {
     if (!userMeta) return false;
     if (userMeta.shields_available > 0) return false;
     if (!userMeta.shields_exhausted_at) return false;
-    const exhaustDate = new Date(userMeta.shields_exhausted_at + "T00:00:00");
-    const todayDate = new Date(getTodayStr() + "T00:00:00");
+    const exhaustDate = parseLocalDate(userMeta.shields_exhausted_at);
+    const todayDate = parseLocalDate(getTodayStr());
+    if (!exhaustDate || !todayDate) return false;
     const daysSinceExhaust = Math.floor((todayDate - exhaustDate) / 86400000);
     return daysSinceExhaust < 7;
   }, [userMeta]);
 
   const graceDaysLeft = useMemo(() => {
     if (!userMeta || !userMeta.shields_exhausted_at) return 0;
-    const exhaustDate = new Date(userMeta.shields_exhausted_at + "T00:00:00");
-    const todayDate = new Date(getTodayStr() + "T00:00:00");
+    const exhaustDate = parseLocalDate(userMeta.shields_exhausted_at);
+    const todayDate = parseLocalDate(getTodayStr());
+    if (!exhaustDate || !todayDate) return 0;
     const daysSinceExhaust = Math.floor((todayDate - exhaustDate) / 86400000);
     return Math.max(0, 7 - daysSinceExhaust);
   }, [userMeta]);

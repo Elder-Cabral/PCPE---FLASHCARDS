@@ -6,7 +6,7 @@
 /** @typedef {import('../types').PomodoroTick} PomodoroTick */
 import React, { useState, useEffect, useMemo, useCallback } from "react";
 import PomodoroBar from "../app/PomodoroBar";
-import { getTodayLocalStr, calculateStreak } from "../lib/streak";
+import { getTodayLocalStr, calculateStreak, parseLocalDate } from "../lib/streak";
 
 const RADIAL_GLOW_BASE = {
   position: "fixed",
@@ -42,8 +42,9 @@ const Shell = React.memo(function Shell({ children, user, stats, onLogout, cente
     if (!userMeta) return false;
     if (userMeta.shields_available > 0) return false;
     if (!userMeta.shields_exhausted_at) return false;
-    const exhaustDate = new Date(userMeta.shields_exhausted_at + "T00:00:00");
-    const todayDate = new Date(getTodayLocalStr() + "T00:00:00");
+    const exhaustDate = parseLocalDate(userMeta.shields_exhausted_at);
+    const todayDate = parseLocalDate(getTodayLocalStr());
+    if (!exhaustDate || !todayDate) return false;
     const daysSinceExhaust = Math.floor((todayDate - exhaustDate) / 86400000);
     return daysSinceExhaust < 7;
   }, [userMeta]);

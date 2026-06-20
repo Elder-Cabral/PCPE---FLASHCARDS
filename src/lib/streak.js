@@ -15,14 +15,26 @@ export function getTodayLocalStr() {
 }
 
 /**
+ * Converte e limpa qualquer string de data para uma data local segura (meia-noite).
+ * @param {string|Date} dateStr
+ * @returns {Date|null}
+ */
+export function parseLocalDate(dateStr) {
+  if (!dateStr) return null;
+  const clean = typeof dateStr === 'string' ? dateStr.substring(0, 10) : getLocalDateString(new Date(dateStr));
+  return new Date(clean + "T00:00:00");
+}
+
+/**
  * Verifica se duas datas (string "YYYY-MM-DD") são consecutivas.
  * @param {string} prevDateStr
  * @param {string} todayStr
  * @returns {boolean}
  */
 export function isConsecutiveDay(prevDateStr, todayStr) {
-  const prev = new Date(prevDateStr + "T00:00:00");
-  const today = new Date(todayStr + "T00:00:00");
+  const prev = parseLocalDate(prevDateStr);
+  const today = parseLocalDate(todayStr);
+  if (!prev || !today) return false;
   const diff = Math.floor((today - prev) / 86400000);
   return diff === 1;
 }
