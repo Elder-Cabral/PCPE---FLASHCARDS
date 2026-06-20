@@ -262,7 +262,13 @@ export default function App() {
   const isSavingRef = useRef(false);
   const toggleFavTimeoutRef = useRef(null);
   const srsDataRef = useRef(srsData);
+  const userMetaRef = useRef(userMeta);
   const { setError, ErrorToast } = useAsyncError();
+
+  const updateUserMetaState = useCallback((meta) => {
+    userMetaRef.current = meta;
+    setUserMeta(meta);
+  }, []);
 
   const resetSessionState = useCallback(() => {
     setSessionCompleted(false);
@@ -571,6 +577,7 @@ export default function App() {
 
   // Manter ref do srsData sempre atualizada
   useEffect(() => { srsDataRef.current = srsData; }, [srsData]);
+  useEffect(() => { userMetaRef.current = userMeta; }, [userMeta]);
 
   // Salvar progresso no Supabase com mesclagem inteligente
   // ── HISTÓRICO DE RESPOSTAS ────────────────────────────────────────────────
@@ -734,7 +741,7 @@ export default function App() {
           }
           await safeCall(() => client.from("user_meta").upsert(meta));
         localStorage.setItem(storageKey, JSON.stringify(meta));
-        setUserMeta(meta);
+        updateUserMetaState(meta);
         return;
       }
 
@@ -745,6 +752,7 @@ export default function App() {
       // Reset semanal de escudos (segunda-feira)
       if (new Date().getDay() === 1 && meta.shields_available < 2) {
         meta.shields_available = 2;
+        meta.shields_exhausted_at = null;
         needsUpdate = true;
       }
 
@@ -760,6 +768,9 @@ export default function App() {
             meta.shields_available -= 1;
             shieldActivated = true;
             needsUpdate = true;
+            // Marca a falha como processada. Sem isso, cada reload/login
+            // consumiria outro escudo pelo mesmo intervalo de ausência.
+            meta.last_study_date = getLocalDateString(new Date(Date.now() - 86400000));
             // Se era o último escudo, marca início da carência
             if (meta.shields_available === 0) {
               meta.shields_exhausted_at = today;
@@ -772,6 +783,7 @@ export default function App() {
               if (daysSinceExhaust >= 7) {
                 // Carência expirada: perde a ofensiva e restaura escudos
                 meta.current_streak = 0;
+                meta.last_study_date = null;
                 meta.shields_available = 2;
                 meta.shields_exhausted_at = null;
                 needsUpdate = true;
@@ -808,7 +820,7 @@ export default function App() {
       }
 
       localStorage.setItem(storageKey, JSON.stringify(meta));
-      setUserMeta(meta);
+      updateUserMetaState(meta);
       if (shieldActivated) setShowShieldBanner(true);
     } catch (e) {
       console.error("Erro ao carregar user_meta:", e);
@@ -820,12 +832,12 @@ export default function App() {
             localFallback.shields_available = 2;
             localFallback.shields_exhausted_at = null;
           }
-        setUserMeta(localFallback);
+        updateUserMetaState(localFallback);
       } else {
-        setUserMeta({ current_streak: calculateStreak(srsDataRef.current), shields_available: 2 });
+        updateUserMetaState({ current_streak: calculateStreak(srsDataRef.current), shields_available: 2 });
       }
     }
-  }, []);
+  }, [updateUserMetaState]);
 
   // Carregar progresso do Supabase com mesclagem inteligente
   /**
@@ -1088,7 +1100,7 @@ export default function App() {
     if (!sessionCompleted || !currentUser || answeredSessionIds.size < 1) return;
     const updateMeta = async () => {
       const today = getTodayStr();
-      const prev = userMeta || { current_streak: 0, last_study_date: null, shields_available: 2, shields_exhausted_at: null };
+      const prev = userMetaRef.current || { current_streak: 0, last_study_date: null, shields_available: 2, shields_exhausted_at: null };
       let newStreak = prev.current_streak || 0;
       if (prev.last_study_date !== today) {
         const gap = prev.last_study_date !== null && !isConsecutiveDay(prev.last_study_date, today);
@@ -1116,9 +1128,9 @@ export default function App() {
       };
       try {
         const client = getSupabase();
-         await safeCall(() => client.from("user_meta").upsert(updated));
+        await safeCall(() => client.from("user_meta").upsert(updated));
         localStorage.setItem("pcpe_meta_" + currentUser.username, JSON.stringify(updated));
-        setUserMeta(updated);
+        updateUserMetaState(updated);
         if (isChallengeDone) {
           setChallengeActive(false);
           setChallengeCards([]);
@@ -1163,7 +1175,7 @@ export default function App() {
     setChallengeCards([]);
     setChallengeStarted(false);
     setChallengeBanner(null);
-    setUserMeta(null);
+    updateUserMetaState(null);
   };
 
   const updateReviewOrder = (order) => {
