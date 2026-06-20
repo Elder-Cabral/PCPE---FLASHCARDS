@@ -2821,12 +2821,12 @@ function StudySession({
               </p>
             </div>
 
-            {/* Camada 2 — Aplicação Prática */}
+            {/* Camada 2 — Padrão CESPE */}
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
                 <span style={{ fontSize: 20 }}>🔍</span>
                 <span style={{ color: "#eab308", fontSize: 13, fontWeight: 700, letterSpacing: 2 }}>
-                  APLICAÇÃO PRÁTICA
+                  PADRÃO CESPE
                 </span>
               </div>
               <p style={{ color: "#e2e8f0", fontSize: 14, lineHeight: 1.7, margin: 0, fontFamily: "Georgia, serif" }}>
