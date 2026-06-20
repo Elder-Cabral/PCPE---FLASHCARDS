@@ -16025,8 +16025,8 @@
       "dificuldade": "media",
       "camada_visual": "DESCRITIVA: retrato falado dos dados. INFERENCIAL: generaliza para a populacao.",
       "camada_aplicacao": "Pesq eleitoral: descritiva=45% na amostra. Inferencial=45%+-3% na populacao.",
-      "camada1": "Intuição: Estatística descritiva é o ramo da estatística que organiza, resume e apresenta dados de forma clara e objetiva, utilizando tabelas, gráficos e medidas descritivas (posição, dispersão, assimetria e curtose).",
-      "camada2": "CESPE cobra a distinção: descritiva -> descreve dados (tabelas, gráficos, medidas); inferencial -> generaliza (testes de hipótese, intervalos de confiança). Exemplo clássico: Qual ramo calcula a média amostral? -> Estatística descritiva.",
+      "camada1": "Intuição: Pense na diferença entre arrumar o quarto (descritiva) e adivinhar o que está dentro de uma caixa fechada (inferencial). A descritiva organiza, conta e mostra os dados como eles são — tabelas e gráficos são a arrumação. A inferencial é o palpite científico: com base no que você viu na amostra, tira conclusões sobre o todo.",
+      "camada2": "CESPE: A banca adora inverter: ‘Calcular a média de uma amostra é inferência estatística’ → FALSO. É DESCRITIVA. A inferencial só começa quando você USA a amostra para GENERALIZAR (testes de hipótese, intervalos de confiança). Outra pegadinha: a banca pergunta ‘Qual ramo da estatística calcula a variância amostral?’ → Descritiva. ‘Qual ramo usa a variância amostral para estimar a populacional?’ → Inferencial.",
       "materia": "estatistica"
     },
     {
@@ -16039,8 +16039,8 @@
       "dificuldade": "media",
       "camada_visual": "Populacao = aquario. Amostra = balde. Parametro (grego) vs Estatistica (latim).",
       "camada_aplicacao": "Altura media dos recifenses (mi)=parametro. Media de 500 entrevistados (x_barra)=estatistica.",
-      "camada1": "Intuição: População: todos os elementos de interesse.",
-      "camada2": "CESPE: POPULAÇÃO = todos (μ,σ,π — GREGO). AMOSTRA = subconjunto (x̄,s,p̂ — LATIM). Grego=população; Latim=amostra.",
+      "camada1": "Intuição: Pense em uma sopa. A população é a panela inteira — todos os ingredientes. A amostra é a colherada que você prova para saber se precisa de mais sal. Você não precisa comer a panela toda; uma colherada bem mexida (amostra representativa) já dá uma boa ideia do sabor geral. O perigo é a colherada pegar só caldo sem legumes — amostra tendenciosa.",
+      "camada2": "CESPE: Troca clássica de notação: a banca escreve μ (mu) e pergunta o que é → parâmetro populacional. Escreve x̄ (x-barra) → estatística amostral. Mnemônico: grego (μ, σ, π) = população (PARÂMETRO); latim (x̄, s, pˆ) = amostra (ESTATÍSTICA). Pergunta certeira: ‘O desvio padrão amostral é um parâmetro’ → FALSO. É uma estatística (ou estimador).",
       "materia": "estatistica"
     },
     {
@@ -16053,8 +16053,8 @@
       "dificuldade": "media",
       "camada_visual": "Variavel = pergunta da pesquisa. Qualitativa=categorias. Quantitativa=numeros.",
       "camada_aplicacao": "BO: tipo de crime=qualitativa nominal, n_envolvidos=quantitativa discreta, valor=continua.",
-      "camada1": "Intuição: Variável é a característica que se deseja estudar em uma pesquisa, podendo ser qualitativa (nominal ou ordinal) ou quantitativa (discreta ou contínua).",
-      "camada2": "CESPE: variável qualitativa NÃO admite operações aritméticas (média de sexo não faz sentido). Quantitativa discreta: valores inteiros e contáveis (ex: nº de filhos). Contínua: valores em intervalo real (ex: peso).",
+      "camada1": "Intuição: Variável é a pergunta do formulário da pesquisa. ‘Qual seu bairro?’ → você responde com um nome (qualitativa). ‘Quantas pessoas moram na sua casa?’ → você responde com um número (quantitativa). A classe da variável decide quais ferramentas você pode usar: não faz sentido calcular a ‘média de bairros’, assim como não faz sentido perguntar ‘qual a moda do número de pessoas?’ (até faz — é o que mais aparece).",
+      "camada2": "CESPE: A banca testa com variáveis do cotidiano policial: ‘Tipo de ocorrência registrada’ → qualitativa nominal. ‘Número de viaturas em operação’ → quantitativa discreta. ‘Tempo de deslocamento até a ocorrência’ → quantitativa contínua. A pegadinha: ‘Idade em anos completos’ para a CESPE é DISCRETA (contagem de anos), NÃO contínua. Já ‘tempo de reação’ (0,45 s) é contínua.",
       "materia": "estatistica"
     },
     {
@@ -16067,8 +16067,8 @@
       "dificuldade": "media",
       "camada_visual": "Cardapio sem ordem: arroz, feijao lado a lado. Nominal = sem hierarquia.",
       "camada_aplicacao": "Cor dos olhos, estado civil, religiao: nominais sem ordenacao natural.",
-      "camada1": "Intuição: Variável qualitativa nominal é aquela cujas categorias não seguem uma ordem natural ou hierarquia.",
-      "camada2": "CESPE: na nominal, NÃO há ordenação entre as categorias. Se a questão disser ordem natural ou hierarquia, é ORDINAL, não nominal. Ex: escolaridade NÃO é nominal, é ordinal.",
+      "camada1": "Intuição: Pense nas cores das viaturas policiais: azul, branca, preta. Não existe ordem — azul não é ‘maior’ que branca, nem preta é ‘melhor’ que azul. São apenas rótulos. Você pode trocar a ordem das colunas no gráfico que a informação não muda. É como um cardápio sem numeração: arroz, feijão, farofa — qualquer ordem serve.",
+      "camada2": "CESPE: Pergunta típica: ‘A variável ‘delegacia de lotação’ (Boa Vista, Casa Amarela etc.) é nominal’ → CERTO. São apenas rótulos sem hierarquia. Pegadinha: ‘A variável ‘cargo na polícia’ (investigador, escrivão, delegado) é ordinal’ → FALSO. São funções distintas, não níveis de uma escala. Para a CESPE, cargo não tem ordenação natural em classificação estatística, a menos que a questão explicite hierarquia.",
       "materia": "estatistica"
     },
     {
@@ -16081,8 +16081,8 @@
       "dificuldade": "media",
       "camada_visual": "Niveis de jogo: facil < medio < dificil. Ordinal = com ordem natural.",
       "camada_aplicacao": "Escolaridade (fundamental<medio<superior), classe social (A>B>C).",
-      "camada1": "Intuição: Variável qualitativa ordinal é aquela cujas categorias possuem uma ordem natural ou hierárquica.",
-      "camada2": "CESPE: se a variável tem hierarquia/ordem, é ORDINAL, não nominal. Cuidado: faixa etária (criança, adolescente, adulto, idoso) é ordinal, pois há ordem implícita.",
+      "camada1": "Intuição: Pense nas medalhas olímpicas: ouro > prata > bronze. Há uma ordem clara — ouro é melhor que prata, que é melhor que bronze. Mas não dá para dizer que ouro é ‘3 vezes’ melhor que bronze. A distância entre ouro e prata não é mensurável numericamente. É isso que caracteriza a ordinal: SABEMOS a ordem, mas NÃO SABEMOS o tamanho do intervalo entre as categorias.",
+      "camada2": "CESPE: A banca testa com um clássico: ‘Satisfação com o serviço público: péssimo, ruim, regular, bom, ótimo’ → ORDINAL. A pegadinha: ‘A variável ‘mês do ano’ (janeiro, fevereiro...) é ordinal’ → DEPENDE. Se tratado como ciclo (sem início fixo), é nominal. Mas a CESPE geralmente considera ORDINAL porque há sequência natural janeiro<fevereiro<...<dezembro. Fique atento ao contexto.",
       "materia": "estatistica"
     },
     {
@@ -16095,8 +16095,8 @@
       "dificuldade": "media",
       "camada_visual": "Contar: 1,2,3 carros. Discreta = valores inteiros de contagem.",
       "camada_aplicacao": "Ocorrencias policiais/dia, n_filhos, n_comodos: inteiros de contagem.",
-      "camada1": "Intuição: Variável quantitativa discreta é aquela que assume valores inteiros, resultantes de contagem.",
-      "camada2": "CESPE: discreta = valores INTEIROS e CONTÁVEIS. Contínua = valores em INTERVALO REAL. Pergunta clássica: Número de pessoas em uma fila é variável... -> discreta. Peso das pessoas -> contínua.",
+      "camada1": "Intuição: Pense em contar suspeitos abordados numa blitz: 0, 1, 2, 3... Você nunca vai abordar 2,7 suspeitos. Os valores pulam de um em um (ou outro número inteiro). Discreta é tudo que se conta em números inteiros: número de tiros disparados, de viaturas, de inquéritos concluídos. Se você pode responder ‘quantos?’, é discreta.",
+      "camada2": "CESPE: Pegadinha clássica: ‘O número de pessoas em uma delegacia é variável contínua’ → FALSO. É discreta (pessoas são unidades contáveis). A banca coloca ‘número de habitantes de Recife: 1.653.461’ e pergunta se é contínua → FALSO. É discreta, mesmo sendo grande. Distinção definitiva: pergunte-se ‘faz sentido ter 1,5 disso?’ Se a resposta for lógica → contínua. Se for absurda → discreta. 1,5 habitantes não existe.",
       "materia": "estatistica"
     },
     {
@@ -16109,8 +16109,8 @@
       "dificuldade": "media",
       "camada_visual": "Medir: 1,73m; 1,735m... sempre mais preciso. Continua = medicao.",
       "camada_aplicacao": "Peso (72,3kg), tempo (25,7min), temperatura (31,5C): qualquer valor no intervalo.",
-      "camada1": "Intuição: Variável quantitativa contínua é aquela que assume valores em um intervalo real, resultantes de medição.",
-      "camada2": "CESPE: contínua = valores DECIMAIS possíveis, resultantes de MEDIÇÃO. Se a questão permite qualquer valor em um intervalo, é contínua. Ex: tempo gasto no percurso é contínuo (pode ser 15,3 min).",
+      "camada1": "Intuição: Pense em medir o nível de álcool no bafômetro: 0,14 mg/L; 0,147 mg/L; 0,1472 mg/L... Quanto mais preciso o aparelho, mais casas decimais você consegue. Nunca chega a um ‘último valor’. Contínuo é tudo que se MEDE: altura, peso, temperatura, tempo, velocidade. Não há ‘pulos’ de valores — entre 1,70 m e 1,71 m cabem infinitos valores: 1,705 m, 1,7023 m etc.",
+      "camada2": "CESPE: ‘A variável ‘tempo gasto em uma ocorrência policial (em minutos)’ é contínua’ → CERTO (pode ser 15,3 min, 22,78 min). Pegadinha que já caiu em prova: ‘A variável ‘tempo de serviço em anos completos’ é contínua’ → FALSO. ‘Anos completos’ é discreto (12, 15, 20 anos — sem fração). Palavras-chave para contínua: ‘medição’, ‘precisão’, ‘intervalo real’. Para discreta: ‘contagem’, ‘inteiro’, ‘número de’.",
       "materia": "estatistica"
     },
     {
@@ -16123,8 +16123,8 @@
       "dificuldade": "dificil",
       "camada_visual": "Organizar armario: separar, contar, calcular proporcao, acumular.",
       "camada_aplicacao": "Transporte: 40 onibus=40%, 30 carro=30%, 20 metro=20%, 10 bike=10%.",
-      "camada1": "Intuição: Tabela de frequência é uma ferramenta que organiza dados em classes ou categorias, apresentando a frequência absoluta (contagem), frequência relativa (percentual/proporção), frequência acumulada (soma progressiva) e frequência relativa acumulada de cada valor ou classe.",
-      "camada2": "CESPE cobra: frequência relativa = frequência absoluta / total. Frequência acumulada = soma das frequências das classes anteriores + classe atual. Atenção: frequência relativa acumulada da última classe é sempre 100% (ou 1).",
+      "camada1": "Intuição: Pense em organizar os boletins de ocorrência de uma semana. Primeiro você separa por tipo: furto (15), roubo (10), ameaça (5) — isso é a tabela de frequência. Você conta quantos de cada (absoluta), calcula que 50% são furtos (relativa) e vê que furtos+roubos = 83% dos BOs (acumulada). A tabela é o ‘Raio-X’ da semana: mostra rapidamente onde está a maior demanda.",
+      "camada2": "CESPE: A banca ama: ‘Em uma tabela de frequências, a frequência relativa acumulada da última classe é sempre 100%’ → CERTO. Pergunta inversa: ‘A frequência absoluta acumulada da última classe é igual a 100’ → FALSO. É igual a n (tamanho da amostra). A CESPE coloca 100 porque 100% confunde o candidato. Outra: ‘A soma das frequências relativas das classes é igual ao total de observações’ → FALSO. A soma é 1 (ou 100%).",
       "materia": "estatistica"
     },
     {
@@ -16137,8 +16137,8 @@
       "dificuldade": "media",
       "camada_visual": "Contagem simples: quantas vezes cada valor aparece.",
       "camada_aplicacao": "30 alunos: 12 nota7, 10 nota8, 8 nota9. Frequencias absolutas: 12,10,8.",
-      "camada1": "Intuição: Frequência absoluta (fi) é o número de vezes que um determinado valor ou categoria aparece no conjunto de dados.",
-      "camada2": "CESPE: frequência absoluta total = n (tamanho da amostra). Ex: em uma pesquisa com 100 pessoas, 30 preferem café -> frequência absoluta = 30. Não confundir com frequência relativa (30/100 = 30%).",
+      "camada1": "Intuição: Pense em um jogo de basquete: você conta quantas cestas cada jogador fez. João fez 12, Pedro fez 8, Lucas fez 15. 12, 8 e 15 são as frequências absolutas — o número real, concreto, sem porcentagem. É a contagem pura: ‘quantas vezes isso aconteceu’. Simples assim: é o número de ocorrências de cada valor.",
+      "camada2": "CESPE: ‘A frequência absoluta da 3ª classe é 25’ → significa que 25 observações estão naquela classe. Ponto. A pegadinha: a banca dá uma tabela com fi = 30, 20, 50 e pergunta ‘qual a frequência absoluta total?’ → 30+20+50 = 100. Mas 100 é o n, não ‘100%’. Nunca confundir: frequência absoluta acumulada da última classe = n (não 100). O 100 é tentador mas errado se o n não for 100.",
       "materia": "estatistica"
     },
     {
@@ -16151,8 +16151,8 @@
       "dificuldade": "dificil",
       "camada_visual": "Fatia do bolo: 12/30 = 40%. Proporcao que cada parte representa.",
       "camada_aplicacao": "500 ocorrencias, 150 furtos. Freq rel = 150/500 = 30%. Soma total = 100%.",
-      "camada1": "Intuição: Frequência relativa (fr) é a proporção ou percentual que cada valor ou categoria representa em relação ao total de dados.",
-      "camada2": "CESPE: a soma de TODAS as frequências relativas é 1 (ou 100%). A frequência relativa acumulada da ÚLTIMA classe é sempre 1 (ou 100%). Cuidado para não confundir frequência relativa com frequência absoluta.",
+      "camada1": "Intuição: Pense no resultado da eleição para delegado-geral: 40% votaram em Ana, 35% em Bruno, 25% em Carlos. Essas porcentagens são as frequências relativas — cada uma mostra a ‘fatia’ que cada candidato representa do total. Se você somar todas as fatias, fecha 100% da torta. A frequência relativa é a resposta para ‘de cada 100 votos, quantos foram para cada um?’",
+      "camada2": "CESPE: Pergunta clássica: ‘A frequência relativa de uma classe é o quociente entre a frequência absoluta da classe e o total de observações’ → CERTO. A banca pergunta: ‘A soma das frequências relativas de todas as classes é igual a n’ → FALSO (é 1 ou 100%). Pegadinha sutil: ‘Se fr = 0,35 e n = 200, então fi = 70’ → CERTO (0,35×200 = 70). A CESPE testa se você sabe reverter o cálculo: fi = fr × n. Dominar ida e volta é essencial.",
       "materia": "estatistica"
     },
     {
@@ -16165,8 +16165,8 @@
       "dificuldade": "dificil",
       "camada_visual": "Escada: cada degrau soma o anterior. No fim, o total.",
       "camada_aplicacao": "Salarios: ate 2SM=10, ate 4SM=25, ate 6SM=40. Fac 3a classe = 10+25+40=75.",
-      "camada1": "Intuição: Frequência acumulada (Fac) é a soma das frequências (absolutas ou relativas) de todas as classes até o ponto considerado, incluindo a classe atual.",
-      "camada2": "CESPE: frequência acumulada é sempre CRESCENTE. A Fac da última classe = n (para absoluta) ou 1/100% (para relativa). Questão clássica: Qual a frequência acumulada da 3ª classe? -> Soma das frequências das classes 1, 2 e 3.",
+      "camada1": "Intuição: Pense em uma corrida de rua com pontos de checagem. No km 5 passaram 100 corredores, no km 10 passaram 150 (já contando os 100 anteriores), no km 15 passaram 200. A frequência acumulada é esse total progressivo: ‘até aqui, já passaram X corredores’. Não importa se você soma absolutas ou relativas — o conceito é o mesmo: o ‘total parcial’ que só cresce.",
+      "camada2": "CESPE: ‘A frequência acumulada é sempre uma função não decrescente’ → CERTO. A banca pergunta: ‘Se a Fac da 3ª classe é 80 e da 4ª classe é 80, o que significa?’ → Que a 4ª classe tem frequência zero. Outra: ‘A frequência relativa acumulada da última classe é 100%’ → CERTO. A CESPE explora o raciocínio: dão uma tabela incompleta com Fac e pedem para completar — você precisa saber subtrair Fac(n) − Fac(n−1) para achar a frequência da classe.",
       "materia": "estatistica"
     },
     {
@@ -16179,8 +16179,8 @@
       "dificuldade": "media",
       "camada_visual": "Gangorra: outlier na ponta desloca a media. Centro de gravidade.",
       "camada_aplicacao": "Notas 5,6,7,8,9 = media 7. Se entra 0: 0,6,7,8,9 = media 6.",
-      "camada1": "Intuição: Média aritmética (x̄) = soma de todos os valores dividida por n: x̄ = Σxi/n.",
-      "camada2": "CESPE: média é AFETADA por outliers (verdadeiro). Mediana NÃO. Ex: {1,2,3,100} → média=26,5; mediana=2,5.",
+      "camada1": "Intuição: Pense na média como o centro de gravidade de uma barra de pesos. Se você pendurar 3 kg, 4 kg e 5 kg, o equilíbrio está no meio (4 kg). Agora pendure um peso de 100 kg na ponta — o centro de gravidade voa para perto do 100 kg. Isso é a média: ela ‘sente’ qualquer valor extremo. Já a mediana é o degrau do meio da escada: não importa se o último degrau está a 100 m de altura, o degrau do meio continua no mesmo lugar.",
+      "camada2": "CESPE: Pergunta que cai todo ano: ‘A média aritmética é resistente a valores extremos’ → FALSO. ‘A mediana é resistente a valores extremos’ → CERTO. A banca apresenta {5,6,7,8,9,100} e pergunta: ‘Qual medida de posição melhor representa o conjunto?’ → MEDIANA (7,5). Outra: ‘Se todos os valores forem iguais, média = mediana = moda’ → CERTO. A CESPE adora esse ‘todos iguais’ para testar se você entende que nesse caso extremo TODAS coincidem.",
       "materia": "estatistica"
     },
     {
@@ -16193,8 +16193,8 @@
       "dificuldade": "dificil",
       "camada_visual": "Sabor mais pedido: valor que mais aparece. Pode ter mais de um.",
       "camada_aplicacao": "Renda {2,2,3,3,3,3,4,5,10,20}: moda=3 (4x). Media=5,5 (distorcida). Unica medida p/ qualitativas.",
-      "camada1": "Intuição: Moda (Mo) é o valor ou categoria que aparece com maior frequência no conjunto de dados.",
-      "camada2": "CESPE: moda é a única medida de posição que se aplica a variáveis QUALITATIVAS. Se a questão disser distribuição bimodal, significa que há DOIS valores com maior frequência. Não confundir: moda em dados agrupados = ponto médio da classe de maior frequência (classe modal).",
+      "camada1": "Intuição: Pense em uma enquete na delegacia: ‘Qual seu tipo de ocorrência mais frequente?’ Se 15 delegados respondem ‘furto’, 10 dizem ‘roubo’, 5 dizem ‘ameaça’ — a moda é FURTO. É o que ‘está na moda’, o que mais aparece. Simples e direto. Diferente da média, você pode ter moda para QUALQUER tipo de variável, até para ‘cor dos olhos’ ou ‘bairro’ — coisas que não dá para somar ou ordenar.",
+      "camada2": "CESPE: ‘A moda é a única medida de posição que pode ser usada para variáveis qualitativas nominais’ → CERTO. Pergunta clássica: ‘Uma distribuição com dois valores de maior frequência é chamada de...’ → BIMODAL. Pegadinha: ‘A moda de {1,1,2,2,3,3} é 1 e 2’ → FALSO. É AMODAL (todos aparecem com mesma frequência, nenhum ‘mais frequente’). CESPE já cobrou: ‘distribuição amodal’ = não tem moda.",
       "materia": "estatistica"
     },
     {
@@ -16207,8 +16207,8 @@
       "dificuldade": "dificil",
       "camada_visual": "Corda com peso na direita: media puxada (assimetria positiva).",
       "camada_aplicacao": "Renda: maioria baixa, ricos puxam media. Mo < Md < x_barra = positiva.",
-      "camada1": "Intuição: Assimetria positiva (cauda à direita): Moda < Mediana < Média.",
-      "camada2": "CESPE: POSITIVA (cauda direita): Mo<Md<x̄. NEGATIVA (cauda esquerda): x̄<Md<Mo. SIMÉTRICA: Mo=Md=x̄.",
+      "camada1": "Intuição: Pense na renda de 10 pessoas: nove ganham R$ 2.000 e uma ganha R$ 200.000. A maioria está na faixa baixa (moda = R$ 2.000), a mediana divide ao meio (também R$ 2.000), mas a média sobe para R$ 21.800 por causa do rico. A média ‘fugiu’ para a direita — ASSIMETRIA POSITIVA (cauda à direita). Quando a média é MAIOR que a mediana, algo está puxando os dados para cima (valores altos, poucos).",
+      "camada2": "CESPE: A banca nunca cansa de perguntar: ‘Em uma distribuição com assimetria à direita, a média é maior que a mediana’ → CERTO. E o contrário: ‘Em assimetria negativa, a moda é menor que a média’ → FALSO (moda > mediana > média → a moda é a maior). Mnemônico infalível para a CESPE: no ALFABETO, a ordem das letras segue a assimetria. POSITIVA: Mo < Md < Média (crescente em tamanho). NEGATIVA: Média < Md < Mo (decrescente). A média sempre ‘corre’ para o lado da cauda.",
       "materia": "estatistica"
     },
     {
@@ -16221,8 +16221,8 @@
       "dificuldade": "dificil",
       "camada_visual": "Espalhamento ao quadrado: metros -> variancia em metros2.",
       "camada_aplicacao": "Alturas {1,70;1,72;1,71;1,69;1,73}: s2=0,0002 m2. Add 2,00m: muito maior.",
-      "camada1": "Intuição: Variância = média dos quadrados dos desvios.",
-      "camada2": "CESPE: variância NÃO está na unidade dos dados (ao quadrado). Desvio padrão SIM. s² não viesado, s viesado.",
+      "camada1": "Intuição: Pense em 5 policiais com alturas: 1,70 m, 1,72 m, 1,71 m, 1,69 m, 1,73 m. A média é 1,71 m. A variância mede ‘o quanto cada um se afasta dessa média AO QUADRADO’. O (1,70 − 1,71)² = 0,0001 é um desvio quadrático. Somando todos e tirando a média, temos a variância. O ‘ao quadrado’ faz duas coisas: elimina sinais negativos e bagunça a unidade (metros viram metros²). Por isso depois tiramos a raiz (desvio padrão).",
+      "camada2": "CESPE: A grande pegadinha: ‘s² = Σ(xi − x̄)² / n é um estimador NÃO VIESADO da variância populacional’ → FALSO. O não viesado usa (n−1). A banca pergunta: ‘A variância pode ser negativa’ → FALSO (soma de quadrados é sempre ≥ 0). ‘Se todos os valores são iguais, a variância é zero’ → CERTO. ‘A unidade da variância é a mesma dos dados’ → FALSO (é o quadrado). A CESPE adora testar: ‘Qual a unidade da variância de pesos em kg?’ → kg².",
       "materia": "estatistica"
     },
     {
@@ -16235,8 +16235,8 @@
       "dificuldade": "dificil",
       "camada_visual": "Elastico ao redor da media: esticado=espalhado, apertado=concentrado.",
       "camada_aplicacao": "Turma A: media70, DP5 (65-75). Turma B: media70, DP20 (50-90).",
-      "camada1": "Intuição: Raiz quadrada da variância.",
-      "camada2": "CESPE: DESVIO PADRÃO = variância na unidade original. CESPE: 'desvio padrão é sempre positivo' -> VERDADEIRO (raiz quadrada).",
+      "camada1": "Intuição: Pense em dois atiradores: um acerta sempre perto do centro (desvio padrão pequeno — tiros concentrados). Outro acerta um no centro, um na borda, um perto do chão (desvio padrão grande — tiros espalhados). O desvio padrão é a ‘régua do espalhamento’: pequeno = dados homogêneos (todos próximos entre si); grande = dados heterogêneos (muita variação). E mais importante: está na mesma unidade dos dados, diferente da variância.",
+      "camada2": "CESPE: ‘O desvio padrão é sempre menor ou igual à variância’ → FALSO (só se a variância ≥ 1). Se σ² = 0,16 → σ = 0,4, então desvio padrão (0,4) > variância (0,16). A banca pergunta: ‘Desvio padrão de uma constante é zero’ → CERTO. ‘Desvio padrão pode ser negativo’ → FALSO (raiz quadrada de número positivo). CESPE cobra: ‘Qual a relação entre desvio padrão e variância?’ → σ = √σ². A variância ‘amplifica’ as diferenças (ao quadrado); o desvio padrão ‘devolve’ à unidade original.",
       "materia": "estatistica"
     },
     {
@@ -16249,8 +16249,8 @@
       "dificuldade": "dificil",
       "camada_visual": "Lupa que compara dispersao: CV elimina unidade, compara kg com m.",
       "camada_aplicacao": "Peso: media70, DP7 -> CV=10%. Altura: media1,70, DP8,5cm -> CV=5%.",
-      "camada1": "Intuição: Coeficiente de variação (CV) é uma medida relativa de dispersão calculada pela fórmula: CV = (desvio padrão / média) × 100 (em percentual).",
-      "camada2": "CESPE: CV é útil quando as médias são muito diferentes ou as unidades são distintas. Ex: comparar dispersão de peso (kg) e altura (m). CV alto (> 30% a 50%) indica alta dispersão relativa. CV = 0 significa dados homogêneos (sem dispersão).",
+      "camada1": "Intuição: Pense em duas turmas de tiro: na Turma A, a média de acertos é 90 com desvio de 5 (CV ≈ 5,6% — muito homogênea, todo mundo bom). Na Turma B, a média é 30 com desvio de 5 (CV ≈ 16,7% — heterogênea relativa, porque errar 5 em 30 é mais significativo). O CV é a ‘régua percentual’: ele responde ‘qual a variação em proporção à média?’. Permite comparar o peso de formigas com o peso de elefantes.",
+      "camada2": "CESPE: A banca pergunta: ‘O CV permite comparar a dispersão de conjuntos com médias diferentes’ → CERTO. ‘O CV é adimensional’ → CERTO (não tem unidade). Pergunta clássica: ‘Se CV = 0, o que significa?’ → Que todos os dados são iguais (desvio padrão = 0). CESPE costuma dar duas distribuições: uma com CV = 5% e outra CV = 15%, e perguntar qual é mais homogênea → a de 5% (menor CV = mais homogêneo). Pegadinha: ‘O CV pode ser maior que 100%’ → SIM (se o desvio padrão > média).",
       "materia": "estatistica"
     },
     {
@@ -16263,8 +16263,8 @@
       "dificuldade": "media",
       "camada_visual": "So extremos: do teto ao chao. Outlier ja muda tudo.",
       "camada_aplicacao": "Idades {18,19,20,21,22,65}: amplitude=47 mas 95% 18-22. Engana.",
-      "camada1": "Intuição: Amplitude total (A ou R) é a diferença entre o maior e o menor valor do conjunto de dados: A = Xmáx - Xmín.",
-      "camada2": "CESPE: amplitude total NÃO é resistente a outliers (diferente do IIQ). É facilmente influenciada por um único valor extremo. Se a questão pedir uma medida de dispersão ROBUSTA, NÃO escolha amplitude total.",
+      "camada1": "Intuição: Pense em uma turma de policiais: o mais novo tem 22 anos, o mais velho tem 58. A amplitude total = 58 − 22 = 36 anos. Moleza de calcular. Mas como está a distribuição? 90% têm entre 22 e 30 anos? Ou estão espalhados uniformemente? A amplitude total NÃO RESPONDE — ela só olha o primeiro e o último da fila, ignorando todo mundo do meio. É como avaliar um filme só pelos 5 minutos iniciais e finais.",
+      "camada2": "CESPE: Pergunta direta: ‘A amplitude total é uma medida de dispersão resistente a outliers’ → FALSO. É a MAIS sensível. A banca dá {2,4,6,8,10,500} e pergunta a amplitude → 498. Depois pergunta: ‘A amplitude representa bem a variabilidade dos dados?’ → NÃO. ‘Qual medida seria melhor?’ → IIQ ou desvio padrão. Outra pegadinha: ‘A amplitude total considera todos os valores do conjunto’ → FALSO (só o mínimo e o máximo). A banca adora esse erro: o candidato acha que ‘total’ significa ‘considera todos’.",
       "materia": "estatistica"
     },
     {
@@ -16277,8 +16277,8 @@
       "dificuldade": "facil",
       "camada_visual": "Pizza 4 fatias: Q1=25%, Q2=50%(mediana), Q3=75%.",
       "camada_aplicacao": "Salarios: Q1=R$2000, Q2=R$3500, Q3=R$6000. IIQ=R$4000 (50% centrais).",
-      "camada1": "Intuição: Quartil é um valor que divide o conjunto de dados ordenados em 4 partes iguais.",
-      "camada2": "CESPE: Q2 = MEDIANA = 50º percentil. Q1 = 25º percentil. Q3 = 75º percentil. O IIQ (Q3 - Q1) contém os 50% centrais dos dados e é resistente a outliers. Método do boxplot: outlier é valor < Q1 - 1,5×IIQ ou > Q3 + 1,5×IIQ.",
+      "camada1": "Intuição: Pense em uma fila de 100 pessoas na porta da delegacia, ordenadas por horário de chegada. O Q1 é a 25ª pessoa — 25% chegaram antes dela, 75% depois. O Q2 é a 50ª (a mediana, meio da fila). O Q3 é a 75ª — 75% chegaram antes, 25% depois. Os quartis dividem a fila em 4 partes IGUAIS em quantidade de pessoas, não em distância. Entre Q1 e Q3 estão os 50% do meio da fila — as pessoas ‘típicas’.",
+      "camada2": "CESPE: A banca testa sinonímia: ‘Q1 = 25º percentil’ → CERTO. ‘Q3 = 75º percentil’ → CERTO. ‘O segundo quartil corresponde à mediana’ → CERTO. Pergunta clássica: ‘O intervalo de Q1 a Q3 contém 75% dos dados’ → FALSO (contém 50%). A CESPE cria pegadinha: ‘Em um boxplot, a linha no interior da caixa representa a média’ → FALSO (representa a MEDIANA). Outra: ‘O Q2 divide os dados em duas partes iguais’ → CERTO (é a mediana).",
       "materia": "estatistica"
     },
     {
@@ -16291,8 +16291,8 @@
       "dificuldade": "medio",
       "camada_visual": "Faixa do meio do alvo: 50% centrais. Resistente a extremos.",
       "camada_aplicacao": "Notas 0-100: Q1=40, Q3=80, IIQ=40. 50% alunos entre 40-80. Outliers < -20 ou > 140.",
-      "camada1": "Intuição: IIQ = Q3−Q1.",
-      "camada2": "CESPE: IIQ = Q3 − Q1, mede a dispersão dos 50% centrais. CESPE: é medida de DISPERSÃO (não de posição). Diferentemente da amplitude total, o IIQ é ROBUSTO a outliers. Usado no boxplot para identificar outliers (valores abaixo de Q1 − 1,5×IIQ ou acima de Q3 + 1,5×IIQ).",
+      "camada1": "Intuição: Pense em uma competição de tiro com 10 atiradores. Você descarta os 3 piores (25%) e os 3 melhores (25%) e olha só os 4 do meio (50%). O IIQ é a ‘faixa dos competitivos’ — a diferença entre o 3º melhor (Q3) e o 3º pior (Q1). Se Q3 = 85 pontos e Q1 = 70, o IIQ = 15. Isso significa que os 50% centrais dos atiradores estão entre 70 e 85 pontos. O IIQ é resistente porque ignora os extremos que bagunçariam a conta.",
+      "camada2": "CESPE: ‘O IIQ é uma medida de POSIÇÃO’ → FALSO. É de DISPERSÃO. ‘O IIQ contém 50% dos dados’ → CERTO. A banca pergunta: ‘Se Q1 = 20 e Q3 = 80, o IIQ é 60’ → CERTO. Depois pergunta: ‘Se Q1 = 20 e Q3 = 80, 50% dos dados estão entre 20 e 80’ → CERTO. Mas CESPE testa: ‘O IIQ é mais robusto que a amplitude total’ → CERTO, porque não é afetado por outliers. Mnemônico: IIQ = Intervalo InterQuartil = Q3 − Q1. Não confundir com IQ (que não existe).",
       "materia": "estatistica"
     },
     {
@@ -16305,8 +16305,8 @@
       "dificuldade": "facil",
       "camada_visual": "Aluno de 2m na turma de criancas: destoa. Investigar.",
       "camada_aplicacao": "Renda media R$5000, aparece R$1.000.000. Se Q3+1,5xIIQ=R$15000, e outlier.",
-      "camada1": "Intuição: Outlier (ou valor discrepante) é uma observação que se distancia significativamente das demais na distribuição.",
-      "camada2": "CESPE: outliers podem indicar erros de medição, valores atípicos genuínos ou problemas na coleta. O método do IIQ é mais robusto (usa mediana e quartis), enquanto o escore Z é influenciado por outliers (já que usa média e desvio padrão, que são sensíveis a extremos).",
+      "camada1": "Intuição: Pense no DHPP investigando homicídios: quase todos os casos têm 1 ou 2 tiros, mas um caso específico tem 47 tiros. Esse caso chama atenção — é um outlier. Pode ser um erro de digitação (47 em vez de 4?) ou pode ser uma chacina real que merece investigação à parte. Outlier não é ‘erro’ automático: é um sinal amarelo que acende: ‘olha aqui, isso é diferente — merece atenção especial’.",
+      "camada2": "CESPE: A banca pergunta: ‘Outliers devem ser automaticamente excluídos da amostra’ → FALSO. ‘Outliers podem ser identificados pelo método do IIQ’ → CERTO. ‘No método do IIQ, são outliers valores acima de Q3 + 1,5×IIQ’ → CERTO. Outra: ‘Escore Z = 2,5 caracteriza um outlier’ → FALSO (só |Z| > 3). A CESPE costuma dar um conjunto e perguntar: ‘Quantos outliers existem?’ Você aplica Q1 − 1,5×IIQ e Q3 + 1,5×IIQ. Atenção: alguns manuais usam 3×IIQ para outliers ‘extremos’. A CESPE usa 1,5×IIQ.",
       "materia": "estatistica"
     },
     {
@@ -16319,8 +16319,8 @@
       "dificuldade": "facil",
       "camada_visual": "Empilhar blocos: colunas se tocam (variavel continua).",
       "camada_aplicacao": "Idades policiais: 20-30(40), 30-40(60), 40-50(35), 50-60(15).",
-      "camada1": "Intuição: Histograma: barras JUNTAS para CONTÍNUAS.",
-      "camada2": "CESPE: histograma barras JUNTAS. Barras têm espaços.",
+      "camada1": "Intuição: Pense em duas prateleiras de supermercado. Na primeira, latas de refrigerante ENCOSTADAS umas nas outras — formam um bloco contínuo. Isso é o histograma: dados contínuos (como faixas de renda) em barras que se tocam. Na segunda, potes de sorvete de sabores diferentes — cada um separado por um espaço. Isso é o gráfico de barras: dados categóricos ou discretos com espaços entre as colunas. O espaço visual já diz tudo: colado = contínuo; separado = categórico.",
+      "camada2": "CESPE: Pergunta recorrente: ‘No histograma, as barras são justapostas, sem espaços entre elas’ → CERTO. ‘O histograma é adequado para variáveis qualitativas’ → FALSO. ‘O gráfico de barras é indicado para variáveis quantitativas contínuas’ → FALSO. A banca mostra um gráfico e pergunta: ‘Qual o tipo de variável?’ Se as barras são separadas → qualitativa ou discreta. Se são juntas → contínua. Outra: ‘A área de cada barra do histograma é proporcional à frequência’ → CERTO (eixo y = densidade de frequência).",
       "materia": "estatistica"
     },
     {
@@ -16333,8 +16333,8 @@
       "dificuldade": "facil",
       "camada_visual": "Torta em fatias: angulo proporcional a frequencia. 360 = 100%.",
       "camada_aplicacao": "Orcamento: 50% salarios (180), 25% equipamentos (90), 15% treinamento (54).",
-      "camada1": "Intuição: Gráfico de setores, também chamado de gráfico de pizza, é um gráfico circular dividido em setores (fatias) cujos ângulos são proporcionais às frequências ou percentuais de cada categoria.",
-      "camada2": "CESPE: gráfico de pizza é INADEQUADO para muitos dados (mais de 5-6 categorias, fica poluído). Não é recomendado para comparar diferenças pequenas entre categorias. A soma dos percentuais deve ser 100%. Cada setor = (frequência relativa) × 360°.",
+      "camada1": "Intuição: Pense em dividir o orçamento da polícia civil de forma visual: uma torta inteira (360°) é o orçamento total. Salários ocupam metade da torta (180° — 50%), viaturas um quarto (90° — 25%), treinamento uma fatia menor (54° — 15%). Cada fatia é proporcional ao gasto. O olho humano entende rapidamente ‘metade da torta = metade do orçamento’. Mas se você tiver 15 gastos diferentes, a torta vira um mosaico confuso — aí é melhor usar barras.",
+      "camada2": "CESPE: ‘O gráfico de setores é recomendado para variáveis com muitas categorias’ → FALSO. ‘No gráfico de pizza, cada setor tem ângulo = frequência relativa × 360°’ → CERTO. Pegadinha: ‘O gráfico de setores é o mais adequado para comparar tendências ao longo do tempo’ → FALSO (para séries temporais usa-se linhas). A CESPE pergunta: ‘Se uma categoria tem frequência relativa de 0,25, qual o ângulo do setor?’ → 0,25 × 360° = 90°. Outra: ‘A soma dos ângulos de todos os setores é 360°’ → CERTO.",
       "materia": "estatistica"
     },
     {
@@ -16347,8 +16347,8 @@
       "dificuldade": "facil",
       "camada_visual": "Balança inclinada: peso na direita = cauda direita = assimetria positiva.",
       "camada_aplicacao": "Boletos: maioria R$100-500, alguns R$10000 puxam media. Cauda direita = positiva.",
-      "camada1": "Intuição: Assimetria (skewness) é uma medida do grau de distorção da distribuição em relação à curva simétrica.",
-      "camada2": "CESPE: assimetria POSITIVA = cauda à DIREITA (valores altos). Assimetria NEGATIVA = cauda à ESQUERDA (valores baixos). Coeficiente de assimetria de Pearson: As = 3(média - mediana) / desvio padrão. Se As = 0 -> simétrica. Se As > 0 -> positiva. Se As < 0 -> negativa.",
+      "camada1": "Intuição: Pense em uma gangorra com um bloco pesado de um lado. Se o bloco pesado está na DIREITA (poucas pessoas com renda altíssima), a gangorra pende para a direita — assimetria POSITIVA. A ‘cauda’ (parte fina da distribuição) está à direita. Se o bloco pesado está na ESQUERDA (prova muito difícil, maioria tira nota baixa), a gangorra pende para a esquerda — assimetria NEGATIVA. A cauda indica o lado dos valores ‘extremos e raros’.",
+      "camada2": "CESPE: A inversão semântica clássica: ‘Assimetria positiva significa que a maioria dos dados está à direita’ → FALSO. A cauda está à direita, mas a MAIORIA está à esquerda. Exemplo: distribuição de renda do Brasil — esquerda tem a maioria (pobres), direita tem a cauda (ricos). A banca pergunta: ‘Coeficiente de assimetria de Pearson = 3(média − mediana)/DP. Se média > mediana, o coeficiente é...’ → POSITIVO. ‘Se assimetria = 0, a distribuição é simétrica’ → CERTO. ‘A curtose mede o achatamento; a assimetria mede o desvio da simetria’ → a CESPE separa os dois conceitos.",
       "materia": "estatistica"
     },
     {
@@ -16361,8 +16361,8 @@
       "dificuldade": "medio",
       "camada_visual": "Grau de pontiagudez: lepto=agulha, plati=chapada, meso=normal.",
       "camada_aplicacao": "Altura soldados: muito concentrada (leptocurtica). Peso populacao: achatado (platicurtico).",
-      "camada1": "Intuição: Medida da concentração dos dados em torno da média.",
-      "camada2": "CESPE: Curtose: grau de achatamento da distribuição. Leptocúrtica = coeficiente > 3 (caudas pesadas/muita concentração). Mesocúrtica = coeficiente = 3 (normal). Platicúrtica = coeficiente < 3 (achatada/caudas leves). CESPE: 'qual distribuição tem maior concentração de dados na média?' LEPTOCÚRTICA. Dica: LEPTO = pontiaguda, PLATI = plana/achatada, MESO = intermediária.",
+      "camada1": "Imagine uma pizza sendo esticada. A curtose mede o quanto a massa (os dados) se concentra no centro ou se espalha para as bordas. Leptocúrtica é uma pizza com quase todo o recheio no centro (pico alto, caudas finas). Platicúrtica é a pizza esticada, com recheio bem espalhado (pico baixo, caudas largas). Mesocúrtica é a pizza 'normal' — a distribuição padrão. LEMBRE: LEPTO = LEvemente POntiaguda (mas é a MAIS concentrada).",
+      "camada2": "CESPE adota coeficiente de curtose com referência 3 (curtose excessiva = coeficiente - 3). Se a assertiva disser 'curtose = 0' sem mencionar 'excesso', desconfie: curtose da normal é 3, não 0. OUTRA PEGADINHA CLÁSSICA: 'distribuição leptocúrtica tem caudas mais leves' — FALSO, leptocúrtica tem caudas PESADAS (cauda gorda = mais dados nos extremos). Memorize a relação inversa: pico alto = cauda gorda; pico baixo = cauda leve.",
       "materia": "estatistica"
     },
     {
@@ -16375,8 +16375,8 @@
       "dificuldade": "facil",
       "camada_visual": "Regras: 1) prob>=0, 2) total=1, 3) exclusivos somam.",
       "camada_aplicacao": "Dado: P(1)=1/6>=0. P(Omega)=1. P(1 ou 2)=1/6+1/6 (exclusivos).",
-      "camada1": "Intuição: Probabilidade é uma função P que associa a cada evento A um número entre 0 e 1, medindo a chance de ocorrência.",
-      "camada2": "CESPE: consequências dos axiomas: P(∅) = 0; P(A) + P(Ac) = 1; P(A ∪ B) = P(A) + P(B) - P(A ∩ B) para eventos NÃO exclusivos. Atenção: a soma das probabilidades de todos os eventos elementares é 1 (decorre do axioma 2).",
+      "camada1": "Pense na probabilidade como uma 'régua de chance' que vai de 0 (nunca) a 1 (sempre). Os axiomas de Kolmogorov são as regras básicas do jogo: (1) nenhuma chance pode ser negativa; (2) a soma de TODAS as possibilidades dá 100% (espaço amostral inteiro); (3) se dois eventos não podem acontecer juntos (ex: cara e coroa no mesmo lance), a chance de um OU outro é a soma das chances individuais — mesmo que haja infinitos eventos. Sem essas regras, a teoria da probabilidade não se sustenta.",
+      "camada2": "CESPE explora o 3º axioma: ele vale para aditividade ENUMERÁVEL, não apenas para dois eventos. Pegadinha clássica: 'o 3º axioma vale para quaisquer eventos A e B' — FALSO, só vale se A e B forem mutuamente exclusivos. OUTRA: 'P(∅)=0 é um axioma' — FALSO, é consequência. A banca adora confundir os alunos trocando axiomas por consequências. Decore: axiomas são APENAS os três de Kolmogorov.",
       "materia": "estatistica"
     },
     {
@@ -16389,8 +16389,8 @@
       "dificuldade": "facil",
       "camada_visual": "Menu completo: todos pedidos possiveis (Omega). Evento = so sucos.",
       "camada_aplicacao": "2 dados: Omega=36. Evento soma7 = {(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)}.",
-      "camada1": "Intuição: Espaço amostral (Ω) é o conjunto de todos os resultados possíveis de um experimento aleatório.",
-      "camada2": "CESPE: a probabilidade do espaço amostral é sempre 1: P(Ω) = 1. Evento é um subconjunto do espaço amostral. Se o espaço amostral tem n elementos igualmente prováveis, P(A) = |A| / |Ω| (definição clássica de probabilidade).",
+      "camada1": "O espaço amostral é o 'cardápio completo' do experimento: todas as opções que podem acontecer. Jogou um dado? Cardápio: {1,2,3,4,5,6}. Perguntou quantas ligações até alguém atender? Cardápio: {1,2,3,4...} — infinito! Cada item do cardápio é um 'ponto amostral'. Um 'evento' é um subconjunto do cardápio — ex: 'sair número par' = {2,4,6}. O segredo é visualizar o experimento e listar mentalmente TUDO que pode dar.",
+      "camada2": "CESPE cobra a classificação do espaço amostral. Ex: 'tempo até a primeira falha de um equipamento' é INFINITO NÃO ENUMERÁVEL (intervalo contínuo de tempo). 'Número de tentativas até o primeiro sucesso' é INFINITO ENUMERÁVEL. PEGADINHA: 'evento certo = Ω' é V, mas 'evento com probabilidade 1 é necessariamente Ω' é FALSO (em espaços contínuos, um subconjunto próprio pode ter probabilidade 1).",
       "materia": "estatistica"
     },
     {
@@ -16403,8 +16403,8 @@
       "dificuldade": "facil",
       "camada_visual": "Agua e oleo: nao se misturam. Exclusivos nao ocorrem juntos.",
       "camada_aplicacao": "Carta: as e rei exclusivos. P(as ou rei)=4/52+4/52=8/52.",
-      "camada1": "Intuição: Eventos mutuamente exclusivos (ou disjuntos) são aqueles que não podem ocorrer simultaneamente, ou seja, a intersecção entre eles é vazia: A ∩ B = ∅.",
-      "camada2": "CESPE: MUTUAMENTE EXCLUSIVOS ≠ INDEPENDENTES. Eventos exclusivos NUNCA são independentes (exceto se P(A) ou P(B) = 0). Se A e B são exclusivos e P(A) > 0 e P(B) > 0, então P(A|B) = 0, logo P(A|B) ≠ P(A), violando a definição de independência.",
+      "camada1": "Eventos mutuamente exclusivos são como água e óleo: nunca se misturam. Tire uma carta de um baralho: 'sair um ás' e 'sair um rei' são exclusivos — uma carta não pode ser ás e rei ao mesmo tempo. A probabilidade de ambos acontecerem juntos é ZERO. Visualize dois círculos que não se tocam: não há área de sobreposição. É um OU outro, nunca os dois.",
+      "camada2": "A PEGADINHA Nº 1 DA CESPE: candidato acha que eventos ME são independentes. NÃO SÃO! Se A e B são ME e ambos têm P>0, então P(A|B)=0, que é ≠ P(A). Logo são DEPENDENTES. Assertiva típica CESPE: 'Se A e B são mutuamente exclusivos, então A e B são independentes' — FALSO. Grave: 'ME COM P>0 É DEPENDENTE'. A banca já repetiu essa pegadinha em pelo menos 5 concursos diferentes.",
       "materia": "estatistica"
     },
     {
@@ -16417,8 +16417,8 @@
       "dificuldade": "facil",
       "camada_visual": "Moeda sem memoria: 1o resultado nao influencia o 2o.",
       "camada_aplicacao": "P(carro roubado)=0,01 e P(chuva)=0,3. Independentes: P(ambos)=0,003.",
-      "camada1": "Intuição: Um não afeta o outro.",
-      "camada2": "CESPE: ME com P>0 NUNCA são independentes! P(A|B)=0≠P(A).",
+      "camada1": "Independência é como jogar uma moeda e um dado ao mesmo tempo: o resultado de um não interfere no outro. Saber que saiu cara na moeda não muda a chance de sair 6 no dado. É o oposto de eventos exclusivos: na independência, os eventos PODEM ocorrer juntos (intersecção > 0), mas a ocorrência de um não altera a probabilidade do outro. Pense em sorteios independentes: com reposição, o que saiu antes não afeta o próximo.",
+      "camada2": "CESPE adora a armadilha inversa: 'eventos independentes têm intersecção vazia' — FALSO. Se P(A)>0, P(B)>0 e são independentes, P(A∩B)=P(A)P(B)>0, intersecção NÃO é vazia. OUTRA PEGADINHA: 'se P(A∩B)=P(A)×P(B), A e B são independentes' — VERDADEIRO (é a definição). CESPE já cobrou as TRÊS condições equivalentes: (1) P(A∩B)=P(A)P(B); (2) P(A|B)=P(A); (3) P(B|A)=P(B). Qualquer uma basta.",
       "materia": "estatistica"
     },
     {
@@ -16431,8 +16431,8 @@
       "dificuldade": "facil",
       "camada_visual": "Atualizar crenca: priori -> evidencia -> posteriori (Bayes).",
       "camada_aplicacao": "Doenca 1%, teste 99% sensivel, 5% falso +. P(doente|+)=16,7%.",
-      "camada1": "Intuição: O Teorema de Bayes permite calcular a probabilidade condicional P(A|B) a partir da probabilidade inversa P(B|A): P(A|B) = P(B|A) × P(A) / P(B).",
-      "camada2": "CESPE: Teorema de Bayes = probabilidade reversa ou atualização de crenças. O denominador P(B) é a probabilidade total de B (soma das probabilidades de todos os caminhos que levam a B). Decore: P(A|B) = [P(B|A) × P(A)] / P(B). Exemplo clássico: testes de doenças e falsos positivos.",
+      "camada1": "Bayes é como um detetive que atualiza suas suspeitas conforme as pistas aparecem. Você começa com uma suspeita inicial (probabilidade a priori: 'qual a chance desse suspeito ser culpado?'). Chega uma evidência (B: 'a testemunha viu alguém de vermelho'). O teorema responde: 'dado que a testemunha viu vermelho, qual a chance atualizada de cada suspeito?' Exemplo clássico: seu exame deu positivo para uma doença rara. A chance real de você estar doente é muito menor do que parece — por causa dos falsos positivos. É aí que Bayes salva.",
+      "camada2": "CESPE cobra Bayes em problemas de teste diagnóstico (doença rara + falso positivo). Erro mais comum: esquecer que o denominador P(B) é a SOMA de TODOS os caminhos (probabilidade total). Fórmula: P(A|B)=P(B|A)×P(A)/P(B). PEGADINHA: CESPE pode dar P(A∩B) e P(A) e pedir P(B|A) — aí é divisão simples, NÃO use Bayes! Só use Bayes quando precisar INVERTER a condicional (sabe P(B|A) e quer P(A|B)).",
       "materia": "estatistica"
     },
     {
@@ -16445,8 +16445,8 @@
       "dificuldade": "facil",
       "camada_visual": "Moeda 10x contar caras: independente, p constante, n fixo.",
       "camada_aplicacao": "20 veiculos, 30% irregulares. P(X=5)=C(20,5)x0,3^5x0,7^15. E(X)=6.",
-      "camada1": "Intuição: A distribuição binomial modela experimentos com n tentativas independentes e idênticas, cada uma com dois resultados possíveis (sucesso/fracasso) e probabilidade p de sucesso constante.",
-      "camada2": "CESPE: pressupostos da binomial: (1) n fixo; (2) independentes; (3) dois resultados; (4) p constante. Desvio padrão = √(np(1-p)). Se n é grande e p próximo de 0,5, a binomial se aproxima da normal. Cuidado: C(n,k) = n! / [k!(n-k)!].",
+      "camada1": "A binomial é a 'máquina de calcular' para problemas de tentativas repetidas. Imagine jogar uma moeda 10 vezes: cada jogada é independente, sempre 50% de chance de cara, e você quer saber a probabilidade de obter EXATAMENTE 3 caras. A fórmula tem três partes: (1) C(n,k) = de quantas maneiras diferentes posso escolher quais das 10 jogadas dão cara; (2) p^k = chance de dar cara k vezes; (3) (1-p)^(n-k) = chance de dar coroa no resto. É como montar um sanduíche: o pão de baixo é a combinação, o recheio são as probabilidades.",
+      "camada2": "CESPE testa os QUATRO pressupostos: (1) n fixo; (2) tentativas independentes; (3) dois resultados; (4) p constante. Se o enunciado disser 'sem reposição' em população finita, NÃO é binomial — é hipergeométrica. FÓRMULAS COBRADAS: E(X)=np, Var(X)=np(1-p). Desvio padrão = √(np(1-p)). PEGADINHA: 'se n=1, a binomial se reduz à Bernoulli' — V. 'Se n é grande e p próximo de 0,5, aproxima-se da normal' — V.",
       "materia": "estatistica"
     },
     {
@@ -16459,8 +16459,8 @@
       "dificuldade": "facil",
       "camada_visual": "Sino de igreja: alto e simetrico. Media=moda=mediana no centro.",
       "camada_aplicacao": "QI: mi=100, sigma=15. 68% 85-115, 95% 70-130, 99,7% 55-145.",
-      "camada1": "Intuição: Curva de Gauss, sino, simétrica.",
-      "camada2": "CESPE: normal SIMÉTRICA (assimetria=0). Mesocúrtica (curtose=3). Curva em sino não = normal.",
+      "camada1": "A distribuição normal é a 'curva perfeita' em forma de sino: a maioria dos dados se concentra no centro e poucos valores nas pontas. Pense nas alturas: a maioria está perto da média (1,70m), poucos são muito baixos (1,50m) ou muito altos (1,90m). Ela é simétrica como um espelho: o lado esquerdo é igual ao direito. Média, mediana e moda se encontram no mesmo ponto — o centro do sino. ARegra 68-95-99,7: 68% dos dados estão a 1 desvio da média, 95% a 2 desvios, 99,7% a 3 desvios.",
+      "camada2": "CESPE EXPLORA: 'curva em forma de sino é sinônimo de distribuição normal' — FALSO. Toda normal é simétrica em sino, mas nem toda curva em sino é normal (pode ser t-Student, Cauchy, etc.). OUTRA PEGADINHA: a normal tem curtose = 3 (mesocúrtica). Assimetria = 0. Transformação Z = (X-μ)/σ: Z tem média 0 e desvio 1, e se X é normal, Z é normal padrão. CESPE já cobrou: 'a transformação Z altera a forma da distribuição' — FALSO, só altera escala e centro.",
       "materia": "estatistica"
     },
     {
@@ -16473,8 +16473,8 @@
       "dificuldade": "facil",
       "camada_visual": "Alvo de tiro: 68% centro, 95% 2o, 99,7% 3o. So para normal.",
       "camada_aplicacao": "Altura policiais 175cm, DP8cm. 68% 167-183, 95% 159-191, 99,7% 151-199.",
-      "camada1": "Intuição: A regra empírica estabelece que na distribuição normal: aproximadamente 68% dos dados estão a 1 desvio padrão da média (μ ± 1σ), 95% a 2 desvios (μ ± 2σ) e 99,7% a 3 desvios (μ ± 3σ) da média.",
-      "camada2": "CESPE: essa regra vale APENAS para a distribuição NORMAL. Para qualquer distribuição (sem suposição de normalidade), vale o Teorema de Chebyshev: pelo menos 1 - 1/k² dos dados estão a k desvios padrão da média. Ex: k=2 -> 1 - 1/4 = 75% dos dados em μ ± 2σ (mínimo, para qualquer distribuição).",
+      "camada1": "Imagine que você está medindo a altura de milhares de pessoas. A maioria vai estar em torno da média. A regra empírica e como um mapa de distâncias: 68% das pessoas estão a ate 1 palmo da média; 95% a ate 2 palmos; e praticamente todo mundo (99,7%) a ate 3 palmos. Pense numa cidade onde 68% mora no centro, 95% no centro expandido e quase ninguém mora a mais de 3 bairros de distância. E uma regra que SO vale para a curva normal nao vale para qualquer formato de distribuição.",
+      "camada2": "A CESPE adora misturar regra empírica com Teorema de Chebyshev. A regra empírica SO vale para distribuição NORMAL. Chebyshev vale para QUALQUER distribuição mas da estimativas conservadoras (ex: mínimo 75% dos dados a 2 sigma nao 95%). Questao tipica CESPE: Em uma distribuição normal 95% dos dados estão a 2 desvios padrão da média CERTO. Mas se a CESPE trocar normal por qualquer distribuição a assertiva fica ERRADA. Outra pegadinha: afirmar que 95% estão a 1 desvio (o correto e 68%).",
       "materia": "estatistica"
     },
     {
@@ -16487,8 +16487,8 @@
       "dificuldade": "facil",
       "camada_visual": "Tradutor universal: qualquer normal vira Z~(0,1). Compara escalas.",
       "camada_aplicacao": "Maria: 80, media70, DP5 -> Z=2. Joao: 60, media50, DP8 -> Z=1,25.",
-      "camada1": "Intuição: Escore Z (ou padronização) é a transformação Z = (X - μ) / σ, que converte um valor X de qualquer distribuição normal em um valor na distribuição normal padrão (média 0, desvio padrão 1).",
-      "camada2": "CESPE: Z = (X - μ) / σ. O escore Z indica quantos desvios padrão o valor X está acima (Z > 0) ou abaixo (Z < 0) da média. Z = 0 significa valor igual à média. Quanto maior |Z|, mais extremo é o valor. |Z| > 3 geralmente indica outlier.",
+      "camada1": "O escore Z e como um tradutor universal de notas. Joao tirou 7 em Matematica (média 5 desvio 1). Maria tirou 60 em Portugues (média 50 desvio 5). Quem foi melhor? Impossivel comparar diretamente. O Z traduz para uma lingua comum: Z do Joao = (7-5)/1 = 2; Z da Maria = (60-50)/5 = 2. Ambos estão igualmente acima de suas medias. Pense no Z como um termometro: ele mede quantos desvios padrão um valor está acima (Z>0) ou abaixo (Z<0) da média.",
+      "camada2": "A CESPE cobra: Z = (X - mu)/sigma. Z = 0 significa valor igual a média. Z negativo NAO significa que o dado original e negativo so indica que está abaixo da média. |Z| > 3 e forte indicativo de outlier. PEGADINHA clássica: A padronizacao altera a forma da distribuição ERRADO. A padronizacao e transformacao linear que so muda a escala (média 0 desvio 1) mas preserva a forma. CESPE: O escore Z permite comparar valores de distribuicoes diferentes CERTO.",
       "materia": "estatistica"
     },
     {
@@ -16501,8 +16501,8 @@
       "dificuldade": "facil",
       "camada_visual": "Sortear nomes do chapeu: todos com mesma chance.",
       "camada_aplicacao": "Sortear 100 policiais de 2000: cada 5% de chance.",
-      "camada1": "Intuição: Amostragem aleatória simples (AAS) é a técnica em que todos os elementos da população têm igual probabilidade de serem selecionados.",
-      "camada2": "CESPE: AAS exige que a população seja homogênea ou que não haja subgrupos relevantes. Na AAS com reposição, as extrações são INDEPENDENTES. Na AAS sem reposição, são DEPENDENTES (mas para população grande, a diferença é desprezível). Vantagem: simplicidade. Desvantagem: requer lista completa da população.",
+      "camada1": "AAS e como sortear nomes de dentro de um chapeu: cada nome tem a mesma chance de sair. Com reposição: você sorteia anota e devolve o nome ao chapeu ele pode sair de novo (extrações independentes). Sem reposição: você sorteia e guarda o papel nao volta (extrações dependentes). Pense num sorteio de rifa: se o bilhete sorteado volta ao sorteio a mesma pessoa pode ganhar varias vezes. Se nao volta cada bilhete ganha uma vez.",
+      "camada2": "CESPE adora: Na AAS com reposição as seleções sao independentes CERTO. Na AAS sem reposição as seleções sao independentes ERRADO sao DEPENDENTES (a população diminui a probabilidade condicional muda). PEGADINHA: Na AAS todas as amostras de mesmo tamanho tem igual probabilidade de serem selecionadas VERDADEIRO e a definicao. Requer cadastro completo da população. Vantagem: simplicidade. Desvantagem: ineficiente se a população e heterogenea.",
       "materia": "estatistica"
     },
     {
@@ -16515,8 +16515,8 @@
       "dificuldade": "facil",
       "camada_visual": "Dividir por altura e sortear de CADA grupo. Homogeneos dentro.",
       "camada_aplicacao": "Pesquisa salarial por cargo: delegados, agentes, escrivães.",
-      "camada1": "Intuição: Amostragem estratificada divide a população em subgrupos homogêneos chamados estratos (com base em características relevantes), e seleciona amostras independentes de cada estrato.",
-      "camada2": "CESPE: ESTRATIFICADA = estratos HOMOGÊNEOS internamente (baixa variabilidade intra-estrato). Diferente de CONGLOMERADOS, que são HETEROGÊNEOS internamente. Objetivo da estratificada: reduzir a variância amostral. Ex: por faixa de renda, por região, por gênero.",
+      "camada1": "Imagine que você quer saber a renda média de uma universidade com 70% alunos de escola publica e 30% de particular. Se colher so alunos de escola particular sua amostra sera viesada. A estratificada divide a universidade em dois estratos (publica e particular) e sorteia DENTRO de cada um. E como fazer uma lasanha: separar os ingredientes por tipo (massa molho queijo) e pegar uma porcao de cada. Dentro de cada tipo os pedacos sao parecidos (homogêneos) mas entre tipos sao diferentes.",
+      "camada2": "A CESPE compara estratificada com conglomerados. ESTRATIFICADA = DENTRO homogêneo ENTRE heterogêneo. PEGADINHA: Os estratos devem ser internamente heterogêneos ERRADO devem ser homogêneos. Objetivo: reduzir a variância amostral. Alocacao proporcional: fracao amostral igual em todos (n_h/N_h = n/N). Alocacao uniforme: mesmo n por estrato (util para comparar grupos). TODOS os estratos participam (diferente de conglomerados).",
       "materia": "estatistica"
     },
     {
@@ -16529,8 +16529,8 @@
       "dificuldade": "facil",
       "camada_visual": "Cada 10o nome: sorteia inicio e pula k. Risco: periodicidade.",
       "camada_aplicacao": "5000 habitantes, k=50. Inicio 23: 23,73,123...4973.",
-      "camada1": "Intuição: Amostragem sistemática seleciona elementos da população seguindo um intervalo fixo de seleção k = N/n (onde N é o tamanho da população e n o tamanho da amostra).",
-      "camada2": "CESPE: amostragem sistemática é prática e de fácil execução, mas pode introduzir viés se houver periodicidade oculta na população (ex: amostrar a cada 7 dias pode pegar sempre o mesmo dia da semana). Vantagem: não exige lista completa numerada, apenas ordem.",
+      "camada1": "Imagine 1000 pessoas em fila. Voce quer entrevistar 100. Calcula k = 1000/100 = 10. Sorteia um número entre 1 e 10 (digamos 7). Pronto: entrevista a 7a 17a 27a... pessoa. E como pegar cada 10o biscoito de um pacote para testar se estão crocantes. Pratico e rapido nao precisa de lista numerada completa. O perigo e se a fila tiver um padrão oculto: a cada 10 pessoas a 7a e sempre um homem de terno (viés!).",
+      "camada2": "CESPE adora o risco de PERIODICIDADE OCULTA. Ex: condominios com 12 andares k=12 pega sempre o mesmo andar. Populacao em ciclos semanais k=7 pega sempre o mesmo dia. A sistemática equivale a AAS quando a ordem da população e aleatória CERTO. O primeiro elemento e sempre o primeiro da lista ERRADO o inicio e sorteado entre 1 e k. Vantagem: nao exige cadastro completo. Desvantagem: risco de viés por periodicidade.",
       "materia": "estatistica"
     },
     {
@@ -16543,8 +16543,8 @@
       "dificuldade": "facil",
       "camada_visual": "Escolher escolas e entrevistar TODOS alunos. Heterogeneos dentro.",
       "camada_aplicacao": "Recife: divide bairros, sorteia 5, entrevista TODOS moradores.",
-      "camada1": "Intuição: Amostragem por conglomerados divide a população em grupos heterogêneos chamados conglomerados (clusters), sorteia aleatoriamente alguns desses conglomerados e analisa todos os elementos (ou uma subamostra) dos conglomerados sorteados.",
-      "camada2": "CESPE: CONGLOMERADOS = heterogêneos internamente (cada grupo reflete a diversidade da população). ESTRATIFICADA = homogêneos internamente. Conglomerados é útil quando não há lista completa da população, mas é possível listar grupos. Ex: sortear escolas e entrevistar todos os alunos.",
+      "camada1": "Pense em escolas de uma cidade. Em vez de sortear 500 alunos individualmente (o que exige lista de todos) você sorteia 10 escolas (conglomerados) e entrevista TODOS os alunos dessas 10 escolas. Cada escola e internamente diversa (alunos bons medios ruins heterogenea). E como testar a qualidade de uma safra: em vez de provar grão por grão você escolhe algumas sacas aleatorias e examina todos os graos dessas sacas.",
+      "camada2": "PEGADINHA No 1 DA CESPE: trocar as definicoes de conglomerados e estratificada. Conglomerados = DENTRO heterogêneo ENTRE homogêneo (cada grupo e uma mini-população). Estratificada = DENTRO homogêneo ENTRE heterogêneo. Todos os conglomerados sao pesquisados ERRADO apenas os sorteados. Os grupos devem ser homogêneos internamente ERRADO. Conglomerados e MENOS preciso que AAS/estratificada mas MAIS barato.",
       "materia": "estatistica"
     },
     {
@@ -16557,8 +16557,8 @@
       "dificuldade": "facil",
       "camada_visual": "Provar sopa: poucas colheres=amostra. Panela inteira=censo.",
       "camada_aplicacao": "95% confianca margem 2%: n=2401. Margem 1%: n=9604.",
-      "camada1": "Intuição: Tamanho amostral (n) é o número de elementos selecionados da população para compor a amostra.",
-      "camada2": "CESPE: n → ∞ reduz a MARGEM DE ERRO, mas NÃO elimina o VIÉS amostral. Quanto MAIOR a variabilidade populacional, MAIOR o tamanho amostral necessário. Quanto MENOR a margem de erro, MAIOR n.",
+      "camada1": "Pense em tres botoes de ajuste para o tamanho amostral: (1) CONFIANCA mais certeza mais amostra; (2) PRECISAO menor margem de erro mais amostra; (3) VARIABILIDADE mais variacao nos dados mais amostra. E como o zoom de uma camera: quanto mais aumento (precisão) mais você precisa se aproximar (aumentar n). Mas ha um limite: aumentar a amostra NAO elimina erros de planejamento (viés).",
+      "camada2": "CESPE adora: Aumentar n elimina o viés da amostragem ERRADO. Vies e erro SISTEMATICO nao diminui com n. Se a lista está desatualizada aumentar n nao resolve. Relacoes: n aumenta margem diminui (nao linear: para reduzir E a metade precisa de 4x n). Variabilidade aumenta n aumenta. Confianca aumenta n aumenta. n deve ser o maior possível sempre ERRADO ha trade-off com custo.",
       "materia": "estatistica"
     },
     {
@@ -16571,8 +16571,8 @@
       "dificuldade": "facil",
       "camada_visual": "Mira 95%: 100 tiros, 95 acertam o alvo (IC contem parametro).",
       "camada_aplicacao": "100 pesquisas: 95 teriam resultado dentro da margem de erro.",
-      "camada1": "Intuição: Nível de confiança é a probabilidade (expressa em percentual) de que o intervalo de confiança construído contenha o verdadeiro parâmetro populacional.",
-      "camada2": "CESPE: nível de confiança de 95% significa: se repetíssemos o experimento muitas vezes, em 95% dos casos o intervalo conteria o parâmetro. NÃO significa 95% de chance de o parâmetro estar no intervalo (interpretação bayesiana incorreta). O valor crítico Z aumenta com o nível de confiança.",
+      "camada1": "Nivel de confiança e a garantia do seu intervalo. Estou 95% confiante de que a média verdadeira está entre 50 e 60 significa: se você repetisse a pesquisa 100 vezes (amostras diferentes) em 95 delas o intervalo conteria o valor verdadeiro. Pense num pescador que joga a rede 100 vezes: 95 vezes pega o peixe 5 vezes nao. O peixe (parâmetro) está fixo em algum lugar a sorte e da rede (intervalo) nao do peixe.",
+      "camada2": "PEGADINHA MAIS COBRADA PELA CESPE EM IC: Ha 95% de probabilidade de o parâmetro estar no intervalo INTERPRETACAO ERRADA (visao bayesiana). O correto: Se repetirmos o experimento 95% dos intervalos conterao o parâmetro. O parâmetro e FIXO; o intervalo e que varia. Decore: Z(90%) = 1,645; Z(95%) = 1,96; Z(99%) = 2,576. IC 99% e MAIS AMPLO que 95% (maior z).",
       "materia": "estatistica"
     },
     {
@@ -16585,8 +16585,8 @@
       "dificuldade": "facil",
       "camada_visual": "Gordura do IC: +-3% = verdade 47%-53%. Mais n = menos gordura.",
       "camada_aplicacao": "Candidato 45%+-3%: verdadeiro apoio 42%-48%. Margem 1% -> 44%-46%.",
-      "camada1": "Intuição: Diferença máxima esperada entre a estimativa amostral e o parâmetro populacional verdadeiro, ao nível de confiança estabelecido.",
-      "camada2": "CESPE: margem de erro depende do nível de confiança (z), da variabilidade (σ) e do tamanho amostral (n). Aumentar n reduz a margem de erro. NÃO confundir com erro padrão (σ/√n): erro padrão é o desvio da distribuição amostral; margem de erro é o erro padrão × valor crítico.",
+      "camada1": "Pense numa pizza entregue em 30 minutos mais ou menos 5 minutos. A margem de erro e esse mais ou menos 5 minutos a tolerancia do palpite. Formula: E = z x (sigma/raiz(n)). sigma/raiz(n) = erro padrão (quanto a média amostral varia de amostra para amostra). z = multiplicador de confiança. Margem de erro = (confiança) x (variacao da média). Se quer mais confiança (z maior) ou mais precisão (E menor) o preco e aumentar n.",
+      "camada2": "CESPE diferencia: ERRO PADRAO = sigma/raiz(n) (desvio da distribuição amostral); MARGEM DE ERRO = z x sigma/raiz(n) (raio do IC). Pegadinha: Margem de erro e sigma/raiz(n) ERRADO isso e erro padrão. Inclui o valor critico z. Para reduzir a margem pela metade quadruplique n VERDADEIRO (n está na raiz). Para proporção: margem = z x raiz[p(1-p)/n].",
       "materia": "estatistica"
     },
     {
@@ -16599,8 +16599,8 @@
       "dificuldade": "facil",
       "camada_visual": "Chutar idade: 35 anos (pontual). IC daria intervalo.",
       "camada_aplicacao": "QI 100 policiais: x_barra=108. IC95%: 108+-3=[105,111].",
-      "camada1": "Intuição: Valor único calculado a partir dos dados amostrais para estimar um parâmetro populacional.",
-      "camada2": "CESPE: estimativa pontual NÃO tem margem de erro associada (por isso o intervalo de confiança é preferível). A média amostral é estimador não viesado da média populacional. Decore: x̄ estima μ; s² estima σ²; p̂ estima p.",
+      "camada1": "Estimativa pontual e chutar um número unico. Qual a altura média dos brasileiros? 1,70 m. E um palpite seco sem margem. O intervalo de confiança seria entre 1,68 m e 1,72 m. Acertar exatamente o valor verdadeiro e como acertar um alvo do tamanho de uma cabeca de alfinete. Por isso o IC e quase sempre preferível: ele incorpora a incerteza da amostragem.",
+      "camada2": "CESPE: A média amostral e estimador nao viesado da média populacional VERDADEIRO (E[x barra] = mu). Idem para s2 estimando sigma2. PEGADINHA: A estimativa pontual e preferível ao IC por ser mais precisa ERRADO. O IC e mais informativo por incorporar a margem de erro. Memorize: x barra vai pra mu; s2 vai pra sigma2; p chapeu vai pra p. Estimativa pontual NAO tem margem de erro essa e sua limitacao.",
       "materia": "estatistica"
     },
     {
@@ -16613,8 +16613,8 @@
       "dificuldade": "dificil",
       "camada_visual": "Rede de pescar: joga e espera o peixe dentro. 95% acertam.",
       "camada_aplicacao": "Tempo resposta 12min, IC95%=[10,5;13,5]. 95/100 amostras contem a media.",
-      "camada1": "Intuição: IC = intervalo que com confiança (1−α) contém o parâmetro.",
-      "camada2": "CESPE: IC de 95%: em 95 das 100 amostras, o intervalo conterá o parâmetro populacional. CESPE: 'o parâmetro populacional está no IC com 95% de probabilidade' é INTERPRETAÇÃO ERRADA — o parâmetro é fixo. Dica: IC = estimativa pontual ± margem de erro (z × σ/√n). A amplitude do IC diminui se n aumenta ou se o nível de confiança reduz.",
+      "camada1": "O IC e como uma rede de pescar. Voce joga a rede (coleta a amostra) e constroi um intervalo ao redor da estimativa. O peixe (parâmetro) está em algum lugar. Se jogar a rede 100 vezes em 95 delas o peixe estara dentro (IC 95%). Numa jogada especifica ou está DENTRO ou FORA nao tem 95% de chance. O centro do alvo e a estimativa pontual; o circulo ao redor e o IC.",
+      "camada2": "PERGUNTA CLASSICA DA CESPE: O IC de 95% significa que ha 95% de probabilidade de o parâmetro estar no intervalo ERRADO (interpretacao bayesiana). A CORRETA: Em 100 amostras 95 ICs conterao o parâmetro. IC 99% e MAIS AMPLO que 95%. Amplitude = 2 x z x sigma/raiz(n). Aumentar n reduz amplitude. Se n dobra a amplitude diminui por raiz(2).",
       "materia": "estatistica"
     },
     {
@@ -16627,8 +16627,8 @@
       "dificuldade": "medio",
       "camada_visual": "Presuncao de inocencia: H0=inocente ate prova contraria.",
       "camada_aplicacao": "H0: mi_nova=mi_atual. H1: mi_nova>mi_atual. So troca se rejeitar H0.",
-      "camada1": "Intuição: H0: hipótese de nulidade.",
-      "camada2": "CESPE: H0 é a hipótese da negação; H1 é a hipótese do pesquisador. Erro Tipo I = rejeitar H0 verdadeira (α). Erro Tipo II = não rejeitar H0 falsa (β). CESPE: 'na dúvida, não se rejeita H0' — padrão conservador da estatística. Poder do teste = 1 − β. Dica: α é controlado pelo pesquisador; β depende do tamanho amostral e do efeito real.",
+      "camada1": "Pense num julgamento. H0 = reu inocente. H1 = reu culpado. Principio: inocente ate prova em contrario na dúvida nao se rejeita H0. O ônus da prova e de quem acusa (pesquisador quer provar H1). Evidencias fortes rejeita H0. Evidencias fracas mantem H0 (nao provou inocencia so nao conseguiu provar culpa).",
+      "camada2": "CESPE adora a analogia do tribunal. H0 = hipótese da negacao (status quo). H1 = hipótese do pesquisador. Na dúvida nao se rejeita H0 CERTO. PEGADINHA: Nao rejeitar H0 significa que H0 e verdadeira ERRADO. Significa que nao ha evidência suficiente. H0 e o que o pesquisador quer provar ERRADO e H1. Erro I = condenar inocente (alfa). Erro II = absolver culpado (beta). Poder = 1 menos beta.",
       "materia": "estatistica"
     },
     {
@@ -16641,8 +16641,8 @@
       "dificuldade": "facil",
       "camada_visual": "Condenar inocente: rejeitar H0 verdadeira. Alfa = falso positivo.",
       "camada_aplicacao": "Medicamento: H0=ineficaz. Erro I=concluir que funciona quando nao. Alfa=0,05.",
-      "camada1": "Intuição: Rejeitar a hipótese nula (H0) quando ela é verdadeira.",
-      "camada2": "CESPE: α é o nível de significância. α = 0,05 significa 5% de chance de erro tipo I. Mnemônico: Tipo I = falso positivo (rejeitar H0 verdadeira). Lembre: a justiça condena um inocente (rejeitar inocência verdadeira).",
+      "camada1": "Erro tipo I e o alarme falso. Detector de incendio dispara sem fogo. Teste de gravidez da positivo sem gravidez. No tribunal condenar um inocente. alfa (geralmente 5%) e o risco máximo que o pesquisador aceita. alfa = 0,05 = a cada 20 testes aceito rejeitar H0 verdadeira em 1. E o preco de ser sensivel demais.",
+      "camada2": "CESPE: Erro tipo I = rejeitar H0 verdadeira. alfa = nivel de significância. Mnemonico: I de Inocente preso condenar inocente. Erro I e nao rejeitar H0 falsa ERRADO isso e tipo II. alfa e a probabilidade maxima de erro I CERTO. alfa = 0,05 e padrão. alfa = 0,01 e mais rigoroso (menos erro I mas mais erro II). CESPE inverte os conceitos para testar o candidato.",
       "materia": "estatistica"
     },
     {
@@ -16655,8 +16655,8 @@
       "dificuldade": "facil",
       "camada_visual": "Absolver culpado: nao rejeitar H0 falsa. Beta = falso negativo.",
       "camada_aplicacao": "Remedio: Erro II=concluir nao funciona quando funciona. Poder=1-beta.",
-      "camada1": "Intuição: NÃO rejeitar a hipótese nula (H0) quando ela é falsa.",
-      "camada2": "CESPE: erro tipo II = falso negativo (deixar de rejeitar H0 falsa). β depende de α, tamanho amostral e magnitude do efeito. Mnemônico: Tipo II = deixar passar (absolver um culpado). α e β são inversamente relacionados (para n fixo).",
+      "camada1": "Erro tipo II e o falso negativo. Detector de metal que NAO apita quando passa uma arma. Teste de gravidez negativo com gravidez real. No tribunal absolver um culpado. beta e a probabilidade desse erro. Poder (1-beta) e a capacidade de detectar um efeito real. alfa e beta sao inimigos: diminuir alfa (mais rigor) aumenta beta (mais absolvicoes de culpados) a menos que aumente n.",
+      "camada2": "CESPE: beta = probabilidade de erro II. Poder = 1 menos beta. Poder e a probabilidade de rejeitar H0 verdadeira ERRADO isso e alfa. O poder e rejeitar H0 FALSA. Mnemonico: II de deixou passar o IImputado. Aumentar n reduz beta aumenta poder. Aumentar alfa reduz beta (mas aumenta erro I). Como aumentar o poder? Aumentar n ou aumentar alfa.",
       "materia": "estatistica"
     },
     {
@@ -16669,8 +16669,8 @@
       "dificuldade": "dificil",
       "camada_visual": "Surpresa dos dados: p pequeno = improvavel sob H0.",
       "camada_aplicacao": "p=0,03 com alfa=0,05 -> rejeita H0. p=0,08 -> nao rejeita.",
-      "camada1": "Intuição: P(resultado ≥ observado | H0 verdadeira). O foco é entender quando e por que aplicar essa fórmula, não apenas decorá-la.",
-      "camada2": "CESPE: p-valor: nível descritivo do teste. Se p < α, REJEITA-SE H0. CESPE: p-valor NÃO é a probabilidade de H0 ser verdadeira! É P(dados | H0), não P(H0 | dados). Quanto menor o p-valor, mais evidência CONTRA H0. Ex: p = 0,03 com α = 0,05 → rejeita H0. p = 0,07 → NÃO rejeita H0. Não confundir com o nível de significância α.",
+      "camada1": "p-valor responde: Supondo H0 verdadeira qual a chance de observar resultado tao extremo quanto o que vi? Moeda viciada? Joga 100 vezes tira 65 caras. p-valor calcula: se a moeda e honesta chance de 65+ caras? Se p = 0,03 (< 5%): se e honesta isso e muito raro talvez nao seja. p pequeno evidência CONTRA H0. p grande dados consistentes com H0.",
+      "camada2": "PEGADINHA FAVORITA DA CESPE: p-valor e a probabilidade de H0 ser verdadeira P(H0|dados). ERRADO! p-valor e P(dados|H0). p < alfa REJEITA H0. p > alfa NAO rejeita. p = 0,03 com alfa = 0,05 rejeita. p = 0,07 nao rejeita. p e o menor alfa para o qual rejeitarfamos H0. Quanto menor p mais evidência CONTRA H0. NAO confundir p-valor com alfa.",
       "materia": "estatistica"
     },
     {
@@ -16683,8 +16683,8 @@
       "dificuldade": "facil",
       "camada_visual": "Danca: X e Y sobem juntos = correlacao positiva. r em [-1,+1].",
       "camada_aplicacao": "Horas estudo e nota: r=0,85 (forte). Faltas e nota: r=-0,70.",
-      "camada1": "Intuição: Mede a intensidade e direção da relação linear entre duas variáveis quantitativas, variando de -1 a +1.",
-      "camada2": "CESPE: Pearson mede relação LINEAR apenas. Pode haver r = 0 e existir relação não linear forte (ex: parabólica). Fórmula: r = Cov(X,Y) / (σX × σY). Atenção: correlação NÃO implica causalidade (falácia cum hoc ergo propter hoc).",
+      "camada1": "Imagine duas variáveis como dois dançarinos. Se os dois se movem juntos no mesmo sentido, correlação positiva; se um vai para a direita enquanto o outro vai para a esquerda, correlação negativa. Se cada um dança sem olhar para o outro, r ≈ 0. Mas Pearson só percebe se os dois dançam em LINHA RETA — se dançam em círculo (relação parabólica), ele marca zero mesmo que estejam perfeitamente sincronizados. É como avaliar amizade só por quem anda junto em linha reta: ignora quem faz questão de se encontrar em outros formatos.",
+      "camada2": "A CEBRASPE adora cobrar que r = 0 NÃO significa independência — apenas ausência de relação LINEAR. Exemplo clássico de prova: distribuição parabólica Y = X² com X simétrico (−3 a +3) → r ≈ 0, mas há dependência matemática perfeita. Outra pegadinha: correlação negativa forte (r = −0,9) é tão forte quanto positiva (r = +0,9) — a força está no |r|, não no sinal. E a falácia preferida: 'r = 0,8, logo X causa Y' → ERRADO, correlação não implica causalidade (cum hoc ergo propter hoc). CESPE já cobrou: 'Se r = 0, as variáveis são independentes' — FALSO, pois só indica ausência de relação linear.",
       "materia": "estatistica"
     },
     {
@@ -16697,8 +16697,8 @@
       "dificuldade": "facil",
       "camada_visual": "Melhor reta entre pontos: Y=a+bX. Minimiza distancia total.",
       "camada_aplicacao": "Tempo resposta x distancia: Y=2+0,5X. 10km -> tempo=7min.",
-      "camada1": "Intuição: Modelo que descreve a relação linear entre uma variável dependente (Y) e uma variável independente (X): Y = a + bX + ε, onde a é o intercepto, b é o coeficiente angular (inclinação) e ε é o erro aleatório.",
-      "camada2": "CESPE: b (inclinação) = Cov(X,Y) / Var(X). a (intercepto) = Ȳ − bX̄. A regressão minimiza a soma dos quadrados dos resíduos (MQO). b é a variação esperada em Y para cada unidade de variação em X.",
+      "camada1": "Pense num personal trainer que quer prever o peso (Y) pela altura (X). Ele procura a 'régua mais reta' que passe no meio da nuvem de pontos dos alunos. O b (inclinação) responde: 'a cada 1 cm a mais de altura, o peso aumenta em média b kg'. O a (intercepto) é o peso quando a altura é zero — sem sentido prático (ninguém tem 0 cm), mas matematicamente necessário para definir onde a reta corta o eixo Y. O erro ε é o 'imprevisto': dois amigos de 1,75 m com pesos diferentes — um é mais musculoso, outro mais magro. A regressão minimiza a soma dos quadrados desses erros (MQO), como quem ajusta uma corda esticada puxando as pontas até ficar o mais reta possível.",
+      "camada2": "CESPE explora a assimetria da regressão: Y depende de X, e trocar Y com X MUDA a reta (diferente da correlação, que é simétrica). Pergunta típica: 'b = 2,5 → quando X aumenta 3 unidades, Y aumenta...' → 7,5 (b × ΔX). O intercepto a = Ȳ − bX̄ — a CESPE pode perguntar se a é 'estatisticamente significativo' (teste t) ou se tem 'interpretação prática' (se X = 0 está fora do domínio, não tem). Cuidado: a regressão minimiza a soma dos QUADRADOS dos resíduos (MQO), não a soma simples. Outra pegadinha: b = Cov(X,Y)/Var(X) — se Var(X) = 0, a regressão não pode ser estimada (divisão por zero).",
       "materia": "estatistica"
     },
     {
@@ -16711,8 +16711,8 @@
       "dificuldade": "medio",
       "camada_visual": "Nota 0-100%: R2=0,80 -> 80% da variacao explicada pelo modelo.",
       "camada_aplicacao": "Criminalidade x desemprego: R2=0,75. 75% explicado.",
-      "camada1": "Intuição: R² = proporção da variação de Y explicada (0 a 1).",
-      "camada2": "CESPE: R² = 1 − (SQResidual / SQTotal). Varia de 0 a 1. CESPE: R² alto indica bom ajuste, mas NÃO prova causalidade. R² = 0,75 significa que 75% da variação de Y é explicada pelo modelo. Em regressão múltipla, use o R² AJUSTADO (penaliza inclusão de variáveis desnecessárias). Dica: R² sempre aumenta com novas variáveis; o R² ajustado não.",
+      "camada1": "R² é como a nota de um professor explicando a matéria. Se R² = 0,80, o modelo 'explica' 80% do que acontece com Y — os outros 20% são 'bagunça' (resíduos) que escaparam. É a proporção da variação total de Y que a reta de regressão consegue capturar. Pense em prever a nota da prova (Y) pelas horas de estudo (X): se R² = 0,70, então 70% da variação das notas é explicada pelo estudo; os outros 30% vêm de outros fatores (sorte, noite mal dormida, questões que 'caíram' o que você estudou).",
+      "camada2": "CESPE: R² NÃO mede inclinação — mede ajuste. Um R² = 0,99 pode vir de reta quase horizontal se Y variar pouco. Em regressão múltipla, R² SEMPRE aumenta ao adicionar variáveis (mesmo irrelevantes) — por isso cobram o R² AJUSTADO, que penaliza variáveis desnecessárias. Fórmula que a CESPE cobra: R² = 1 − SQRes/SQTotal = 1 − (1−r²)×(n−1)/(n−k−1) para o ajustado. Pergunta clássica: 'R² = 0, prova que não há relação entre X e Y?' → NÃO, pode haver relação não linear forte. R² = 0 só significa que a reta horizontal (Y = Ȳ) explica tão bem quanto o modelo.",
       "materia": "estatistica"
     },
     {
@@ -16725,8 +16725,8 @@
       "dificuldade": "facil",
       "camada_visual": "Ficha resumo: min, Q1, mediana, Q3, max. Outliers alem dos bigodes.",
       "camada_aplicacao": "Salarios: caixa R$3000-7000, mediana R$4500. R$50000=outlier.",
-      "camada1": "Intuição: Gráfico que resume a distribuição por meio de cinco números: mínimo, 1º quartil (Q1), mediana (Q2), 3º quartil (Q3) e máximo.",
-      "camada2": "CESPE: a caixa contém 50% dos dados centrais (entre Q1 e Q3). Outliers moderados: além de 1,5×IIQ. Outliers extremos: além de 3×IIQ. O boxplot é útil para comparar distribuições e identificar assimetria.",
+      "camada1": "Imagine 100 pessoas ordenadas por altura. O boxplot desenha uma 'caixa' que vai do 1º quartil (Q1: o 25º mais baixo) até o 3º quartil (Q3: o 75º mais baixo). Dentro da caixa estão os 50% do meio. A mediana é uma linha dentro da caixa. Os 'bigodes' vão até o valor mais próximo dentro de 1,5×IIQ de distância. Pontos além disso são outliers — como um gigante de 2,10 m num grupo onde 75% têm até 1,75 m. É um Raio-X rápido da distribuição: mostra onde está o grosso dos dados e quem está 'fora do padrão'.",
+      "camada2": "CESPE: a caixa contém 50% dos dados (entre Q1 e Q3). Outliers moderados: além de 1,5×IIQ. Extremos: além de 3×IIQ. IIQ = Q3 − Q1. O boxplot NÃO mostra moda, NÃO mostra média (só mediana). Pergunta típica: se a mediana está mais perto de Q1, a distribuição é assimétrica POSITIVA (cauda direita longa); se está mais perto de Q3, assimétrica NEGATIVA. CESPE já cobrou: 'Em um boxplot, o comprimento da caixa representa o desvio padrão' → FALSO, representa o IIQ. Outra: '75% dos dados estão acima de Q1' — CERTO (Q1 = 25% abaixo).",
       "materia": "estatistica"
     },
     {
@@ -16739,8 +16739,8 @@
       "dificuldade": "facil",
       "camada_visual": "Media de longo prazo: jogar dado infinitas vezes -> 3,5.",
       "camada_aplicacao": "Ganha R$10 se cara, perde R$5 se coroa. E(X)=10x0,5-5x0,5=R$2,50.",
-      "camada1": "Intuição: Média ponderada dos valores de uma variável aleatória, usando as probabilidades como pesos.",
-      "camada2": "CESPE: a esperança é o primeiro momento da distribuição. Propriedades: E(c) = c; E(aX + b) = aE(X) + b; E(X + Y) = E(X) + E(Y) (sempre, sem independência). E(XY) = E(X)E(Y) apenas se X e Y são independentes. NÃO confundir com mediana.",
+      "camada1": "Jogue um dado 10 vezes e some os resultados. A 'esperança' é o valor médio que você esperaria se jogasse infinitas vezes: 1×1/6 + 2×1/6 + ... + 6×1/6 = 3,5. Você nunca tira exatamente 3,5 (dado não tem essa face), mas a longo prazo a média se aproxima disso. Esperança é a 'previsão matemática' do centro de gravidade da distribuição. É como calcular o ponto de equilíbrio de uma gangorra onde cada valor tem um peso igual à sua probabilidade.",
+      "camada2": "CESPE: E(X + Y) = E(X) + E(Y) vale SEMPRE, SEM independência — pegadinha frequente pois muitos acham que exige independência. Já E(XY) = E(X)·E(Y) SÓ se X e Y são independentes. E(aX + b) = aE(X) + b. Constante 'sai' multiplicando, constante somada apenas se soma. E(X²) ≠ [E(X)]² — a igualdade só vale se Var(X) = 0 (dado viciadíssimo). A CESPE cobra: 'E(X²) − [E(X)]² = Var(X)'. Outra: se Y = aX + b, então E(Y) = aE(X) + b — a média se transforma com a mesma função linear.",
       "materia": "estatistica"
     },
     {
@@ -16753,8 +16753,8 @@
       "dificuldade": "dificil",
       "camada_visual": "Medias de 30 dados viram normal, mesmo se dados uniformes.",
       "camada_aplicacao": "100 amostras de 50 pessoas: 100 medias ~normal (TCL).",
-      "camada1": "Intuição: Distribuição das médias amostrais → normal conforme n↑, independente da distribuição original.",
-      "camada2": "CESPE: TCL ≠ LGN. LGN: média converge. TCL: FORMA da distribuição amostral → normal.",
+      "camada1": "Pegue uma população esquisita — tipo a distribuição de aluguéis em São Paulo: muitos baratos (R$ 1.000-2.000), poucos caríssimos (R$ 10.000+), uma assimetria violenta. Agora tire amostras de tamanho 30, calcule a média de cada uma, e faça um histograma dessas médias. O TCL diz que esse histograma terá FORMA DE SINO (normal), mesmo que a população original seja torta. É a 'mágica da agregação': médias de amostras grandes sempre viram normais. É por isso que podemos fazer pesquisas eleitorais com 2.000 pessoas e inferir sobre milhões — as médias amostrais se comportam como normal.",
+      "camada2": "CESPE adora confundir TCL com Lei dos Grandes Números (LGN). LGN: a média amostral CONVERGE para μ (valor, tende ao parâmetro). TCL: a DISTRIBUIÇÃO da média amostral se aproxima da NORMAL (forma). Enquanto a LGN diz 'para onde vai', o TCL diz 'qual o formato do caminho'. Outra pegadinha: TCL vale para QUALQUER distribuição (desde que variância finita). n ≥ 30 é regra prática, não lei — distribuições com assimetria extrema podem exigir n > 50. A variância da média amostral = σ²/n — quanto maior n, menor a variabilidade. Pergunta CESPE: 'Pelo TCL, a distribuição da média amostral é exatamente normal para qualquer n' → FALSO, é aproximadamente normal para n grande.",
       "materia": "estatistica"
     },
     {
@@ -16767,8 +16767,8 @@
       "dificuldade": "facil",
       "camada_visual": "Medir dispersao com desconto (n-1) por usar amostra.",
       "camada_aplicacao": "Idades {25,30,35,40,45}: n=5. s2=250/4=62,5. s=7,9 anos.",
-      "camada1": "Intuição: Raiz quadrada da variância amostral: s = √[ Σ(Xi − x̄)² / (n − 1) ].",
-      "camada2": "CESPE: desvio padrão está na MESMA unidade dos dados (diferente da variância). Para população: σ = √[ Σ(Xi − μ)² / N ]. O desvio padrão é sensível a outliers. Atenção: a correção de Bessel (n−1) é para que s² seja não viesado, mas s ainda é viesado.",
+      "camada1": "Desvio padrão é a 'régua da bagunça' dos dados. Duas turmas com média 5: Turma A: 5, 5, 5, 5, 5 (todo mundo igual — desvio = 0). Turma B: 0, 2, 5, 8, 10 (média 5, mas resultados espalhados — desvio alto). O desvio padrão está na MESMA unidade dos dados — se os dados são em kg, o desvio é em kg (ao contrário da variância, que seria kg²). A correção de Bessel (n−1 em vez de n) é type um 'ajuste de honestidade': como você usa a própria média da amostra (em vez da média verdadeira), perde um 'grau de liberdade' e precisa compensar dividindo por n−1 para não subestimar a variância.",
+      "camada2": "CESPE: desvio padrão está na MESMA unidade dos dados (diferente da variância, que está ao quadrado) — ponto frequente. s (amostral) usa n−1; σ (populacional) usa N. A correção de Bessel (n−1) torna s² NÃO VIESADO, mas s (a raiz) ainda é VIESADO — a raiz quadrada quebra a linearidade. CV = s/|x̄| é útil para comparar dispersão entre variáveis com unidades diferentes. Pergunta CESPE: 'O desvio padrão de uma constante é zero' — CERTO. 'Se todos os valores são iguais, o desvio padrão é zero' — CERTO. Outra: somar constante a todos os valores NÃO altera o desvio padrão; multiplicar por constante multiplica o desvio pelo módulo da constante.",
       "materia": "estatistica"
     },
     {
@@ -16781,8 +16781,8 @@
       "dificuldade": "media",
       "camada_visual": "Grego (mi,sigma) = populacao. Latim (x_barra,s) = amostra.",
       "camada_aplicacao": "Altura media real brasileiros = mi. Media de 1000 entrevistados = x_barra.",
-      "camada1": "Intuição: Parâmetro é uma medida descritiva da POPULAÇÃO (valor fixo, geralmente desconhecido, representado por letras gregas: μ, σ, π).",
-      "camada2": "CESPE: a estatística é usada para ESTIMAR o parâmetro. Ex: x̄ (estatística) estima μ (parâmetro). A distribuição amostral da estatística permite fazer inferência. Mnemônico: grego = população; latim = amostra.",
+      "camada1": "Parâmetro é a 'receita original' da população inteira — quase nunca temos acesso. Estatística é a 'colherada de sopa' que prova o tempero. μ (parâmetro) é o sal real na panela gigante; x̄ (estatística) é o sal que você sentiu na colher. Cada colherada pode dar um gostinho diferente (variação amostral), mas todas tentam estimar o verdadeiro sal da panela. É a diferença entre a 'verdade absoluta' (parâmetro) e a 'nossa melhor estimativa' (estatística).",
+      "camada2": "CESPE: grego = população (μ, σ, π, ρ, λ); latim = amostra (x̄, s, p̂, r, λ̂). Pergunta típica: 'μ = 50 é parâmetro ou estatística?' — parâmetro (letra grega). A estatística É uma variável aleatória (muda a cada amostra); o parâmetro é fixo (mas desconhecido). A distribuição amostral da estatística é o que permite inferir sobre o parâmetro. CESPE já cobrou: 'O valor x̄ = 32,5 calculado a partir de uma amostra é um parâmetro' — FALSO, é uma estatística. Outra: 'Uma estatística é um estimador do parâmetro' — CERTO.",
       "materia": "estatistica"
     },
     {
@@ -16795,8 +16795,8 @@
       "dificuldade": "facil",
       "camada_visual": "Circulos sobrepostos: P(AUB)=P(A)+P(B)-P(AnB). Subtrai interseccao.",
       "camada_aplicacao": "Cafe 0,7 ou cha 0,4, 20% ambos. P(cafe ou cha)=0,7+0,4-0,2=0,9.",
-      "camada1": "Intuição: P(A ∪ B) = P(A) + P(B) − P(A ∩ B). O foco é entender quando e por que aplicar essa fórmula, não apenas decorá-la.",
-      "camada2": "CESPE: a SUBTRAÇÃO da interseção é OBRIGATÓRIA quando os eventos não são mutuamente exclusivos. Erro comum: somar sem subtrair a interseção. Para três eventos: P(A ∪ B ∪ C) = P(A)+P(B)+P(C) − P(A∩B) − P(A∩C) − P(B∩C) + P(A∩B∩C).",
+      "camada1": "Pense num baralho: chance de tirar um rei OU uma carta de copas. Tem 4 reis e 13 copas, mas o rei de copas foi contado duas vezes. Então: P(rei ∪ copas) = 4/52 + 13/52 − 1/52 = 16/52. A subtração da interseção evita a 'dupla contagem'. Se os eventos não podem acontecer juntos (rei E dama ao mesmo tempo é impossível), aí a soma direta funciona: P(rei ∪ dama) = 4/52 + 4/52 = 8/52. É como convidar amigos para uma festa: se alguns são amigos em comum, você não pode contar duas vezes.",
+      "camada2": "CESPE: o erro mais comum é somar sem subtrair a interseção quando eventos NÃO são mutuamente exclusivos. Para três eventos: P(A∪B∪C) = P(A)+P(B)+P(C) − P(A∩B) − P(A∩C) − P(B∩C) + P(A∩B∩C). A desigualdade de Bonferroni: P(A∪B) ≤ P(A)+P(B) — a união nunca é maior que a soma. CESPE já cobrou: 'Se P(A) = 0,6 e P(B) = 0,5, então P(A∪B) pode ser 0,3' — SIM, se A e B se sobrepõem muito (P(A∩B) = 0,8). O valor máximo de P(A∪B) é quando a interseção é mínima (mutuamente exclusivos): 1,1, mas como probabilidade máxima é 1, o limite é 1. A união mínima é max(P(A), P(B)).",
       "materia": "estatistica"
     },
     {
@@ -16809,8 +16809,8 @@
       "dificuldade": "facil",
       "camada_visual": "Resto: P(chuva)=30% -> P(nao chover)=70%. Complementar soma 100%.",
       "camada_aplicacao": "P(pelo menos 1 acerto em 3) = 1 - P(nenhum) = 1 - 0,3^3 = 0,973.",
-      "camada1": "Intuição: Evento complementar de A (denotado Aᶜ ou A̅) é o conjunto de todos os resultados do espaço amostral que NÃO estão em A.",
-      "camada2": "CESPE: a probabilidade do complementar é útil para calcular pelo menos um ou nenhum. Ex: P(pelo menos um sucesso) = 1 − P(nenhum sucesso). O complementar do complementar é o próprio evento: (Aᶜ)ᶜ = A.",
+      "camada1": "Chance de chuva de 30%? Automagicamente, chance de NÃO chover é 70%. O complementar é o 'outro lado da moeda' — tudo que NÃO está no evento original. Se A é 'tirar número par no dado' (2, 4, 6), Aᶜ é 'tirar ímpar' (1, 3, 5). Juntos, A e Aᶜ cobrem TODO o espaço amostral — um é o 'restinho' do outro. É útil principalmente para 'pelo menos um': ao invés de calcular P(pelo menos uma cara em 3 moedas) = P(1)+P(2)+P(3) (trabalhoso), calcula-se 1 − P(nenhuma cara) = 1 − 1/8 = 7/8 (muito mais rápido).",
+      "camada2": "CESPE: 'pelo menos um' é o gatilho para pensar em complementar. P(pelo menos 1 sucesso) = 1 − P(nenhum sucesso). Também: P(no máximo k) = 1 − P(pelo menos k+1). (Aᶜ)ᶜ = A. P(A|B) + P(Aᶜ|B) = 1 (complementar condicional também vale). CESPE cobrou: 'Se P(A) = 0,3, então P(Aᶜ) = 0,7' — CERTO. Outra: 'Em uma urna com 5 bolas azuis e 3 vermelhas, a probabilidade de retirar pelo menos uma azul em 2 retiradas sem reposição é 1 − (3/8 × 2/7)' — CERTO (complementar de 'nenhuma azul' = 'duas vermelhas').",
       "materia": "estatistica"
     },
     {
@@ -16823,8 +16823,8 @@
       "dificuldade": "facil",
       "camada_visual": "Eventos raros: chamadas/hora. Media=Variancia=lambda.",
       "camada_aplicacao": "Ocorrencias/hora lambda=3. P(X=5)=e-3x3^5/5!=10%. P(0)=e-3=5%.",
-      "camada1": "Intuição: Distribuição discreta que modela o número de eventos raros que ocorrem em um intervalo fixo de tempo ou espaço, com taxa média λ.",
-      "camada2": "CESPE: Poisson = eventos raros e independentes. A média É IGUAL à variância (equidispersão). Se a variância for maior que a média, há superdispersão (não Poisson). Aproximação: Poisson(λ) ≈ Binomial(n,p) quando n grande e p pequeno (λ = np).",
+      "camada1": "Poisson é a distribuição do 'quase nunca, mas aparece de vez em quando'. Número de clientes que entram numa loja entre 14h e 15h. Número de acidentes por mês numa rodovia. Número de chamadas que um call center recebe por minuto. São eventos raros (cada cliente individual é improvável num dado instante), independentes (chegada de um não depende do outro) e a taxa é constante (não muda no horário). A peculiaridade: a MÉDIA é IGUAL à VARIÂNCIA — é a única distribuição discreta comum com essa propriedade (equidispersão). Se os dados mostram variância muito maior que a média, Poisson não serve.",
+      "camada2": "CESPE: propriedade definidora — MÉDIA = VARIÂNCIA (equidispersão). Se Var > E(X) → superdispersão (não Poisson). Poisson aproxima Binomial(n,p) quando n grande e p pequeno, com λ = np. Pergunta típica: 'Se λ = 4 chamadas/hora, P(X = 2 em 30 min)?' — ajuste λ para 30 min: λ = 2, então P(X=2) = e⁻² × 2²/2! = 2e⁻² ≈ 0,2707. Atenção: o período de referência tem que ser o mesmo da taxa λ. CESPE já cobrou: 'Na distribuição de Poisson, a média é maior que a variância' → FALSO (são iguais). 'Poisson pode ser usada para modelar número de defeitos por metro de tecido' → CERTO.",
       "materia": "estatistica"
     },
     {
@@ -16837,8 +16837,8 @@
       "dificuldade": "facil",
       "camada_visual": "Posicao na fila: P90 = mais alto que 90% das pessoas.",
       "camada_aplicacao": "Teste fisico: candidato P90 superou 90% dos demais.",
-      "camada1": "Intuição: Valor que divide os dados ordenados em 100 partes iguais.",
-      "camada2": "CESPE: existem diferentes métodos de cálculo (a CEBRASPE costuma usar o método de interpolação). Não confundir percentil com porcentagem: percentil é uma medida de posição. Quartis (4 partes), decis (10 partes) e percentis (100 partes) são quantis.",
+      "camada1": "Num concurso com 1000 candidatos, você fica em 100º lugar. Isso significa que 90% dos candidatos estão abaixo de você (e 10% acima) — você está no percentil 90. Percentil é a 'fila ordenada': o Pk é o valor abaixo do qual estão k% dos dados. O 50º percentil é a mediana (metade para cada lado). O 25º é o 1º quartil, o 75º é o 3º quartil. Se você está no P80 numa corrida, 80% dos corredores chegaram depois de você — você foi bem! Se está no P20, 80% chegaram na sua frente.",
+      "camada2": "CESPE: existem vários métodos de cálculo de percentil — a banca geralmente especifica qual usar (método de interpolação mais comum). P50 = mediana = Q2 = D5 (todos o mesmo valor). Não confundir: P90 = 85 significa que 90% dos dados estão ABAIXO de 85, NÃO que o valor é 90% de algo. Quartis = 4 partes; decis = 10; percentis = 100. Pergunta típica: 'O percentil 25 é o valor que deixa 25% dos dados acima dele' → FALSO, é abaixo. CESPE já cobrou interpretação: 'O 3º quartil é o percentil 75' → CERTO.",
       "materia": "estatistica"
     },
     {
@@ -16851,8 +16851,8 @@
       "dificuldade": "facil",
       "camada_visual": "Detetive: examina tudo (graficos, tabelas) antes de hipotese.",
       "camada_aplicacao": "Antes da regressao: histogramas, boxplots, scatter plots. Isso e AED.",
-      "camada1": "Intuição: Abordagem que utiliza gráficos e medidas descritivas para explorar os dados antes de análises formais, identificando padrões, outliers, assimetrias, tendências e possíveis relações entre variáveis.",
-      "camada2": "CESPE: AED usa estatística descritiva (não inferencial). Ferramentas comuns: histograma, boxplot, scatter plot, medidas de posição e dispersão. Tukey foi o pioneiro da AED. O objetivo é gerar hipóteses, não testá-las.",
+      "camada1": "AED é como o exame físico que o médico faz antes de pedir uma ressonância: olhar, apalpar, ouvir. É pegar os dados, fazer gráficos (histograma, boxplot, scatter), calcular média, mediana, desvio — tudo para 'sentir' os dados antes de aplicar métodos complexos. É a fase do 'olha que interessante, parece que tem um padrão aqui!' que gera as perguntas certas. Tukey, o criador da AED, dizia: 'É melhor ter uma resposta aproximada para a pergunta certa do que uma resposta exata para a pergunta errada' — e a AED ajuda a fazer as perguntas certas.",
+      "camada2": "CESPE: AED usa estatística DESCRITIVA, NÃO inferencial. O objetivo é GERAR hipóteses, não testá-las. A inferência vem DEPOIS. Ferramentas: histograma, boxplot, scatter plot, Q-Q plot, medidas de posição e dispersão. CESPE cobra distinguir AED de análise confirmatória. Pergunta: 'A AED permite concluir que a média populacional é diferente de zero' → FALSO, AED só explora, não testa. 'O gráfico de dispersão é uma ferramenta de AED' → CERTO. Tukey é o autor de referência.",
       "materia": "estatistica"
     },
     {
@@ -16865,8 +16865,8 @@
       "dificuldade": "facil",
       "camada_visual": "Mapa 2D: cada ponto = (altura, peso). Nuvem ascendente = correlacao.",
       "camada_aplicacao": "Anos estudo x salario: nuvem ascendente (correlacao positiva).",
-      "camada1": "Intuição: Gráfico bidimensional que mostra a relação entre duas variáveis quantitativas, com cada ponto representando um par de valores (X,Y).",
-      "camada2": "CESPE: útil para verificar a suposição de linearidade antes de aplicar regressão linear. Se os pontos formam uma nuvem sem padrão, r ≈ 0. Se formam uma reta crescente, r > 0. Cuidado: outliers podem distorcer visualmente a percepção da correlação.",
+      "camada1": "Pegue a altura e o peso de 30 amigos. Cada amigo vira um ponto no gráfico: altura no eixo X, peso no eixo Y. Se os pontos sobem juntos em diagonal → correlação positiva. Se descem → negativa. Se formam uma nuvem redonda → sem correlação. Se um ponto está isolado lá longe → outlier (tipo o amigo baixinho mas muito pesado, ou o alto e magríssimo). O scatter plot é o 'retrato falado' da relação entre duas variáveis — antes de qualquer conta, você já vê se a relação existe e se é linear.",
+      "camada2": "CESPE: scatter plot é o PRIMEIRO passo para verificar linearidade antes da regressão. Se a nuvem forma um U, regressão linear simples é inadequada — precisa de transformação ou modelo não linear. Outliers no scatter podem ser pontos de alavancagem (influentes) que distorcem a reta. CESPE já cobrou: 'O gráfico de dispersão mostra correlação positiva perfeita quando todos os pontos estão exatamente sobre uma reta crescente' — CERTO. 'No scatter plot, cada ponto representa uma observação' — CERTO. Pergunta: 'Qual a principal utilidade do scatter plot na regressão linear?' — verificar a suposição de linearidade.",
       "materia": "estatistica"
     },
     {
@@ -16879,8 +16879,8 @@
       "dificuldade": "facil",
       "camada_visual": "Dado honesto: 6 faces, chance 1/6 cada. Exemplo simples.",
       "camada_aplicacao": "Sorteio 1-10: P(X=k)=1/10. Media=(1+10)/2=5,5. P(par)=0,5.",
-      "camada1": "Intuição: Distribuição de probabilidade em que todos os valores possíveis têm a mesma probabilidade de ocorrência.",
-      "camada2": "CESPE: na uniforme discreta, todos os resultados são equiprováveis. Não confundir com uniforme CONTÍNUA (intervalo real). Exemplo clássico: dado não viciado, roleta. Função de probabilidade: P(X = xi) = 1/n para n valores.",
+      "camada1": "É a distribuição mais democrática: todo mundo tem a mesma chance. Um dado honesto: 1/6 para cada face. Um sorteio de amigo secreto: 1/n para cada participante. Uma roleta de cassino sem adulteração: cada número tem a mesma probabilidade. É o modelo mais simples de distribuição de probabilidade — como uma turma onde todos os alunos têm exatamente a mesma altura. Se você sabe que a distribuição é uniforme, sabe também que não há valor 'mais provável' que outro.",
+      "camada2": "CESPE: uniforme DISCRETA ≠ uniforme CONTÍNUA. Na discreta, valores são enumeráveis e cada um tem P = 1/n. Na contínua, a probabilidade de UM valor exato é ZERO (a densidade é constante num intervalo). E(X) = (a+b)/2 para inteiros de a até b. Var(X) = [(b−a+1)² − 1]/12 para discreta; (b−a)²/12 para contínua. CESPE cobrou: 'Na distribuição uniforme discreta, todos os valores têm a mesma probabilidade' — CERTO. 'Na uniforme contínua, a probabilidade de um ponto específico é positiva' — FALSO (é zero). Exemplo: 'Lançamento de um dado não viciado' — uniforme discreta com 6 valores.",
       "materia": "estatistica"
     },
     {
@@ -16893,8 +16893,8 @@
       "dificuldade": "facil",
       "camada_visual": "Provar sopa e concluir sobre a panela. Infere populacao.",
       "camada_aplicacao": "1000 entrevistados: candidato 45%+-3%. So valido com amostragem probabilistica.",
-      "camada1": "Intuição: Processo de fazer generalizações sobre a população com base nos dados amostrais.",
-      "camada2": "CESPE: inferência estatística SÓ é possível com amostragem probabilística. Amostragem não probabilística não permite inferência. A margem de erro e o nível de confiança são usados para quantificar a incerteza da inferência.",
+      "camada1": "Inferência é um detetive com poucas pistas tentando resolver o caso. Você não pode interrogar TODO mundo (a população), então interroga algumas pessoas (amostra) e conclui algo sobre o todo. Sempre com margem de erro, porque a amostra pode não bater 100% com a realidade. É por isso que pesquisa eleitoral vem com 'margem de erro de 2 p.p. para mais ou para menos'. A inferência se divide em: estimar (qual a intenção de voto do candidato?) e testar (será que o novo medicamento funciona melhor que o placebo?).",
+      "camada2": "CESPE: inferência SÓ é válida com amostragem PROBABILÍSTICA (aleatória). Amostra por conveniência NÃO permite inferência. A inferência divide-se em: (1) ESTIMAÇÃO — pontual (x̄ estima μ) e intervalar (IC com nível de confiança); (2) TESTES DE HIPÓTESES — rejeitar ou não H₀. Nível de confiança 95% = em 100 amostras, ≈95 ICs contêm μ. CESPE já cobrou: 'Para fazer inferência sobre uma população, a amostra deve ser aleatória' — CERTO. 'A inferência estatística independe da teoria das probabilidades' — FALSO, a probabilidade é a base. Margem de erro = z × σ/√n.",
       "materia": "estatistica"
     },
     {
@@ -16907,8 +16907,8 @@
       "dificuldade": "facil",
       "camada_visual": "Termometro economico: IPCA 1000->1050 = inflacao 5%.",
       "camada_aplicacao": "Cesta basica R$300 -> R$360. Indice=120. Aumento 20%.",
-      "camada1": "Intuição: Medida relativa que compara valores de uma variável (ou conjunto de variáveis) em diferentes períodos ou localidades.",
-      "camada2": "CESPE: números-índice podem ser de preço, quantidade ou valor. Fórmulas comuns: Laspeyres (ponderação fixa no período base), Paasche (ponderação fixa no período atual), Fisher (média geométrica de Laspeyres e Paasche). Período base é a referência.",
+      "camada1": "Número-índice é um termômetro para comparar preços no tempo. Se o IPCA era 100 em 2019 e virou 125 em 2022, os preços subiram 25% no período. Laspeyres congela a cesta do passado e pergunta: 'Quanto custa HOJE a cesta que eu comprava ANTES?' — tende a superestimar a inflação, porque ignora que você troca produtos que ficaram caros por similares mais baratos. Paasche congela a cesta de hoje e pergunta: 'Quanto essa cesta de HOJE custaria ANTES?' — tende a subestimar. Fisher é a média geométrica dos dois, considerado o 'índice ideal' porque corrige os vieses.",
+      "camada2": "CESPE: Laspeyres = (Σ p₁q₀)/(Σ p₀q₀) — base fixa no período 0. Paasche = (Σ p₁q₁)/(Σ p₀q₁) — base fixa no período 1. Laspeyres tende a SUPERESTIMAR a inflação; Paasche a SUBESTIMAR. Fisher = √(L × P). Para deflacionar: valor real = valor nominal / índice de preços (×100). CESPE já cobrou: 'O índice de Laspeyres utiliza a ponderação do período atual' — FALSO, usa o período base. 'O índice de Fisher é a média aritmética de Laspeyres e Paasche' — FALSO, é geométrica. Pergunta típica: 'L = 1,25 e P = 1,20 → Fisher = ?' → √(1,25 × 1,20) = √1,50 ≈ 1,225.",
       "materia": "estatistica"
     },
     {
@@ -16921,8 +16921,8 @@
       "dificuldade": "medio",
       "camada_visual": "Regua torta: mil medidas todas erradas. n nao resolve.",
       "camada_aplicacao": "Pesquisa telefonica: so ouve quem tem telefone (vies). 1000->10000 nao resolve.",
-      "camada1": "Intuição: Erro ALÉM de n: medição, não resposta, viés.",
-      "camada2": "CESPE: Erro não amostral ≠ erro amostral (variabilidade da amostra). Exemplos: viés de seleção, erro de resposta, erro de processamento, não resposta. CESPE: erro não amostral NÃO diminui com o aumento de n (diferente do erro amostral). É mais perigoso por ser SISTEMÁTICO, comprometendo a validade da pesquisa independentemente do tamanho da amostra.",
+      "camada1": "Erro não amostral é como uma balança de feira que está desregulada: não importa quantas vezes você pese o mesmo saco de batatas — sempre dá 50 g a mais. Aumentar a amostra (pesar mais vezes) não resolve, porque o erro é sistemático (o problema é na balança, não na quantidade de medições). Exemplos: a pergunta do entrevistador influencia a resposta ('Você é a favor da violência?' já induz a resposta); pessoas mentem sobre renda; o questionário tem perguntas mal escritas. É o tipo de erro mais perigoso porque não desaparece com amostras grandes.",
+      "camada2": "CESPE: erro NÃO amostral NÃO diminui com o aumento de n (diferente do erro amostral). É SISTEMÁTICO (viés), não aleatório. Tipos: viés de seleção (amostra não representa a população), erro de não resposta (quem não responde é diferente de quem responde), erro de mensuração (instrumento falho), erro de processamento (digitação errada). CESPE já cobrou: 'O erro não amostral pode ser reduzido aumentando-se o tamanho da amostra' → FALSO. 'O erro amostral é decorrente da variabilidade natural da amostragem' → CERTO. 'O viés de seleção é um tipo de erro não amostral' → CERTO. É mais grave que o erro amostral por ser sistemático e não diminuir com n.",
       "materia": "estatistica"
     },
     {
@@ -16935,8 +16935,8 @@
       "dificuldade": "facil",
       "camada_visual": "Filme dos dados: tendencia, sazonalidade, ciclo, ruido.",
       "camada_aplicacao": "Roubos/mes: queda, pico dezembro, ciclo economico 7 anos, ruido.",
-      "camada1": "Intuição: Análise de dados coletados ao longo do tempo para identificar padrões como tendência (longo prazo), sazonalidade (padrões periódicos fixos), ciclo (flutuações não fixas) e ruído (variações aleatórias).",
-      "camada2": "CESPE: séries temporais têm dependência temporal (observações não independentes). Componentes: T (tendência), S (sazonalidade), C (ciclo), R (ruído). Modelos: aditivo (Y = T+S+C+R) ou multiplicativo (Y = T×S×C×R). Suavização exponencial e ARIMA são métodos comuns.",
+      "camada1": "Pense no preço do café nos últimos 15 anos. A tendência de longo prazo: subiu lentamente. A sazonalidade: todo fim de ano o preço dá um pulinho (mais consumo). Os ciclos: crises econômicas que duram alguns anos, sem periodicidade fixa. O ruído: variações diárias aleatórias. É como uma música: melodia de fundo (tendência) + batida regular (sazonalidade) + improvisos (ruído). Os modelos podem ser aditivos (R$ 10 de tendência + R$ 2 de sazonalidade = R$ 12) ou multiplicativos (R$ 10 × 1,20 = R$ 12) — quando o componente sazonal cresce com o valor da série, usa-se o multiplicativo.",
+      "camada2": "CESPE: séries temporais têm DEPENDÊNCIA temporal — observações NÃO são independentes (erro grave: tratar como amostra aleatória simples). Componentes: T (tendência — longo prazo), S (sazonalidade — período FIXO: trimestre, mês, semana), C (ciclo — período NÃO fixo, > 1 ano), R (ruído aleatório). Modelo aditivo: Y = T + S + C + R (componentes independentes, sazonalidade constante). Modelo multiplicativo: Y = T × S × C × R (sazonalidade proporcional à tendência). CESPE já cobrou: 'A sazonalidade é um movimento periódico de curto prazo' — CERTO. 'O componente cíclico tem duração fixa e conhecida' — FALSO, o ciclo não tem duração fixa (diferente da sazonalidade). Métodos: médias móveis, suavização exponencial, ARIMA.",
       "materia": "estatistica"
     },
     {
@@ -16949,8 +16949,8 @@
       "dificuldade": "facil",
       "camada_visual": "GPS estatistico: censo, PNAD, IPCA.",
       "camada_aplicacao": "IPCA do IBGE usado pelo BC para Selic. Acima meta = juros sobem.",
-      "camada1": "Intuição: O IBGE (Instituto Brasileiro de Geografia e Estatística) é o principal órgão de estatística do Brasil, responsável por censos demográficos, pesquisas amostrais (PNAD, PNAD Contínua) e índices de preços (IPCA, INPC), além de dados geográficos e socioeconômicos.",
-      "camada2": "CESPE: o IPCA é o índice oficial de inflação do Brasil (metas do CMN). PNAD Contínua substituiu a PNAD tradicional desde 2016. O Censo Demográfico é decenal (realizado a cada 10 anos). IBGE também define o método de cálculo da contagem da população.",
+      "camada1": "IBGE é o 'grande contador do Brasil'. É ele que descobre quantos somos (Censo), como vivemos (PNAD), quanto custam as coisas (IPCA, INPC), onde moramos, quanto ganhamos. Sem o IBGE, não haveria meta de inflação do Banco Central, nem distribuição correta de verbas do FPM/FPE para estados e municípios (baseada na contagem populacional), nem sabermos se a população está envelhecendo ou crescendo. É a 'fotografia oficial do país' — essencial para planejamento de políticas públicas, desde construção de escolas até campanhas de vacinação.",
+      "camada2": "CESPE: IPCA = índice oficial de inflação do Brasil (metas do CMN/Banco Central). INPC = voltado para famílias de baixa renda (até 5 salários mínimos). PNAD Contínua (2016) substituiu a PNAD tradicional — coleta trimestral contínua (não anual). Censo Demográfico = decenal (a cada 10 anos). IBGE NÃO calcula IGP-M/IGP-DI (são da FGV). Pergunta clássica CESPE: 'O IPCA é calculado pelo IBGE' → CERTO. 'O IGP-M é calculado pelo IBGE' → FALSO (é FGV). 'O Censo Demográfico é realizado a cada 10 anos' → CERTO. 'A PNAD Contínua substituiu o Censo Demográfico' → FALSO, são pesquisas diferentes com propósitos distintos.",
       "materia": "estatistica"
     },
     {
@@ -16963,8 +16963,8 @@
       "dificuldade": "facil",
       "camada_visual": "Populacional/N. Amostral/(n-1): correcao de Bessel.",
       "camada_aplicacao": "Notas {6,7,8,9,10}: se populacao s2=10/5=2. Se amostra s2=10/4=2,5.",
-      "camada1": "Intuição: Variância populacional: σ² = Σ(Xi − μ)² / N (média dos desvios quadráticos, N no denominador).",
-      "camada2": "CESPE: a correção de Bessel (n−1) é usada porque a média amostral x̄ é estimada a partir dos dados, consumindo 1 grau de liberdade. Se a população for finita e a amostra for censitária, usa-se N. Atenção: s² é não viesado, mas s (desvio padrão) é viesado.",
+      "camada1": "Imagine que voce quer medir o 'espalhamento' das notas de uma turma. Se voce TEM todas as notas (populacao completa), calcula a variancia dividindo por N - e um calculo exato. Mas se voce so TEM UMA AMOSTRA (alguns alunos), precisa dividir por n-1, como se desse um 'desconto de 1' para compensar o fato de voce estar estimando. Esse desconto chama-se correcao de Bessel.",
+      "camada2": "CESPE adora perguntar: 'A variancia amostral s^2 e um estimador nao viesado da variancia populacional sigma^2?' - SIM, s^2 e nao viesado. Mas o DESVIO PADRAO amostral s = sqrt(s^2) E VIESADO! Outra pegadinha classica: a banca inverte os denominadores - coloca N na formula amostral e n-1 na populacional. Atencao redobrada ao enunciado.",
       "materia": "estatistica"
     },
     {
@@ -16977,8 +16977,8 @@
       "dificuldade": "facil",
       "camada_visual": "Rampa sempre sobe: soma frequencias a cada classe. Monotonica.",
       "camada_aplicacao": "Freq [10,20,30,40]: ogiva 10,30,60,100. Percentil 50 onde ogiva=50%.",
-      "camada1": "Intuição: Gráfico de linha que representa as frequências acumuladas (absolutas ou relativas) de uma distribuição.",
-      "camada2": "CESPE: a ogiva NUNCA decresce (sempre não decrescente). Útil para estimar percentis graficamente. Existem dois tipos: ogiva menos que (frequência acumulada crescente) e mais que (frequência acumulada decrescente). Ogiva é diferente do histograma.",
+      "camada1": "A ogiva e como um 'acumulador' que so sobe. Pense em uma barragem enchendo: a cada intervalo de tempo (classe), mais agua entra e o nivel so sobe - nunca desce. No grafico, voce marca nos eixos X os limites superiores das classes e no eixo Y a contagem acumulada. O resultado e uma curva que sempre caminha para cima.",
+      "camada2": "CESPE afirma: 'A ogiva pode decrescer em algum trecho' - JAMAIS. E monotonicamente NAO DECRESCENTE. Outra pegadinha: a ogiva SEMPRE comeca em 0 (antes da 1a classe) e termina em n (total). No eixo X, usam-se os LIMITES SUPERIORES, nunca os pontos medios. Ogiva 'mais que' tambem existe, mas e menos cobrada.",
       "materia": "estatistica"
     },
     {
@@ -16991,8 +16991,8 @@
       "dificuldade": "facil",
       "camada_visual": "Predios separados (barras) vs muro continuo (histograma).",
       "camada_aplicacao": "Barras: ocorrencias/tipo (separado). Histograma: idades 20-30,30-40 (junto).",
-      "camada1": "Intuição: BARRAS: QUALITATIVAS — separadas.",
-      "camada2": "CESPE: Gráfico de BARRAS: variável categórica ou discreta — barras SEPARADAS. HISTOGRAMA: variável contínua — barras JUNTAS (sem espaços). CESPE: 'o histograma tem barras separadas?' NÃO, pois variável contínua não tem lacunas entre classes. Dica: no histograma, a área de cada barra é proporcional à frequência; o eixo Y pode ser frequência absoluta, relativa ou densidade.",
+      "camada1": "Pense na diferenca entre 'tipos de fruta' (maca, banana, laranja) e 'pesos' (50kg, 60kg, 70kg). Para tipos de fruta, desenhamos barras SEPARADAS porque cada categoria e independente - nao existe meio entre maca e banana. Para pesos, as barras sao JUNTAS (histograma) porque 55kg existe entre 50kg e 60kg - nao ha salto.",
+      "camada2": "CESPE testa: 'O histograma e um grafico de barras em que as barras sao adjacentes' - CORRETO. Mas: 'no histograma, a altura da barra e proporcional a frequencia' - NEM SEMPRE. Se as classes tem amplitude VARIAVEL, a AREA da barra e proporcional a frequencia, e a altura representa a DENSIDADE (freq / amplitude). Barras separadas = variavel QUALITATIVA; juntas = CONTINUA.",
       "materia": "estatistica"
     },
     {
@@ -17005,8 +17005,8 @@
       "dificuldade": "facil",
       "camada_visual": "Cartas embaralhadas -> ordenar -> achar carta do meio (mediana).",
       "camada_aplicacao": "{45,23,67,12,89,34,56}. Rol: {12,23,34,45,56,67,89}. Mediana=45.",
-      "camada1": "Intuição: Rol é a ordenação dos dados brutos em ordem crescente ou decrescente.",
-      "camada2": "CESPE: dados brutos → rol → tabela de frequência → gráficos. O rol é essencial para calcular a mediana (valor central do rol). Dados não ordenados geram erros no cálculo de medidas de posição. Rol é sinônimo de dados ordenados.",
+      "camada1": "Rol e simplesmente 'botar em ordem'. Se voce tem as idades 25, 30, 22, 40, 28, o rol crescente e 22, 25, 28, 30, 40. E o primeiro passo antes de qualquer analise - como separar as cartas do baralho por naipe e valor antes de jogar. Sem rol, voce nao consegue achar a mediana, quartis ou valores extremos.",
+      "camada2": "CESPE: 'O rol e uma distribuicao de frequencias' - FALSO. Rol e apenas a ORDENACAO dos dados brutos; a distribuicao de frequencias e o PASSO SEGUINTE (agrupar valores). Questao classica: a banca fornece uma lista DESORDENADA de numeros e pede a mediana. Quem nao faz o rol primeiro erra. Rol pode ser crescente ou decrescente, mas o padrao e crescente.",
       "materia": "estatistica"
     },
     {
@@ -17019,8 +17019,8 @@
       "dificuldade": "facil",
       "camada_visual": "Contar todos graos de arroz: exato mas caro. Amostra pratica.",
       "camada_aplicacao": "Censo IBGE visita todos. Preciso, caro, cada 10 anos. PNAD usa amostragem.",
-      "camada1": "Intuição: Levantamento que coleta dados de TODOS os elementos da população, sem amostragem.",
-      "camada2": "CESPE: censo NÃO tem erro amostral (pois não há amostra), mas pode ter erros não amostrais (medição, não resposta). Censo é inviável para populações infinitas. Apenas a amostragem permite inferência com margem de erro controlada.",
+      "camada1": "Censo e 'perguntar para todo mundo'. E como contar quantos alunos ha na escola batendo em todas as salas e somando um por um. E o metodo mais preciso possivel para aquela populacao, mas da muito trabalho, custa caro e leva tempo. Amostragem e 'perguntar para alguns e estimar para o resto' - mais rapido e barato, mas com margem de erro.",
+      "camada2": "CESPE adora: 'O censo nao apresenta erro amostral, portanto seus resultados sao exatos' - FALSO. Censo tem ERROS NAO AMOSTRAIS: nao resposta, erro de medicao, erro de processamento. Outra pegadinha: 'censo e preferivel a amostragem para populacoes infinitas' - IMPOSSIVEL, pois populacao infinita nao pode ser totalmente enumerada.",
       "materia": "estatistica"
     },
     {
@@ -17033,8 +17033,8 @@
       "dificuldade": "facil",
       "camada_visual": "Comparar media e moda: media>moda = assimetria positiva.",
       "camada_aplicacao": "Salarios: moda=R$2000, media=R$4500. As=(4500-2000)/3000=0,83.",
-      "camada1": "Intuição: As = (média − moda) / desvio padrão.",
-      "camada2": "CESPE: 2ª fórmula de Pearson: As = 3(média − mediana) / desvio padrão. Decore: 1ª fórmula usa MODA; 2ª fórmula usa MEDIANA. Assimetria nula (As=0) não garante normalidade (pode ser simétrica não normal).",
+      "camada1": "Imagine uma gangorra com a media de um lado e a moda do outro. Se os dois estao no mesmo lugar (As=0), a gangorra esta equilibrada - distribuicao simetrica. Se a media esta puxada para a direita (As>0), a cauda longa esta a direita - como salarios com poucos milionarios puxando a media para cima.",
+      "camada2": "CESPE testa as DUAS formulas de Pearson. 1a: (media - moda)/DP. 2a: 3(media - mediana)/DP. Pegadinha: se a questao der media, mediana e moda, QUAL usar? Use a compativel com os dados disponiveis. Se der moda, use 1a. Se der mediana, use 2a. As=0 NAO significa distribuicao normal - pode ser simetrica nao normal (ex: uniforme).",
       "materia": "estatistica"
     },
     {
@@ -17047,8 +17047,8 @@
       "dificuldade": "facil",
       "camada_visual": "Tradutor de posicoes: Z=2 = 2 desvios acima da media.",
       "camada_aplicacao": "Mat: 80, media60, DP10 -> Z=2. Port: 75, media70, DP4 -> Z=1,25.",
-      "camada1": "Intuição: Escore Z = (X − μ) / σ.",
-      "camada2": "CESPE: escore Z é usado para identificar outliers (|Z| > 3). Distribuição normal padrão Z tem μ = 0 e σ = 1. Z é diferente do coeficiente de variação (CV = σ/μ, que mede dispersão relativa).",
+      "camada1": "Escore Z responde: 'Quantos desvios padrao esse valor esta acima ou abaixo da media?' E como medir a altura de uma pessoa em relacao a media da turma: se Z=+2, a pessoa e 2 desvios padrao MAIS ALTA que a media. Se Z=-1,5, e 1,5 desvios padrao MAIS BAIXA. Z=0 significa 'exatamente na media'.",
+      "camada2": "CESPE: |Z| > 3 indica outlier potencial (Regra Empirica: 99,7% dos dados estao a ate 3 DP da media na normal). Na normal padrao, Z ~ N(0,1): media=0, variancia=1. Pegadinha: 'Escore Z pode ser usado para comparar variabilidade entre conjuntos' - NAO. Para isso usa-se o CV. Escore Z compara POSICOES RELATIVAS, nao dispersao.",
       "materia": "estatistica"
     },
     {
@@ -17061,8 +17061,8 @@
       "dificuldade": "facil",
       "camada_visual": "Quadro dupla entrada: linha x coluna com contagens.",
       "camada_aplicacao": "Homens: 30A,20B. Mulheres: 25A,25B. Teste Qui-Quadrado de associacao.",
-      "camada1": "Intuição: Tabela que cruza duas variáveis qualitativas (categóricas), mostrando a frequência conjunta (contagem) de cada combinação de categorias.",
-      "camada2": "CESPE: tabela de contingência pode ter frequências absolutas, relativas (%) ou esperadas. O teste Qui-Quadrado de independência usa a tabela de contingência. Uma tabela 2×2 é o caso mais comum (duas variáveis com duas categorias cada).",
+      "camada1": "Tabela de contingencia e uma 'tabela de dupla entrada' que cruza duas caracteristicas. Exemplo: de um lado, 'genero' (M/F); de outro, 'fuma?' (sim/nao). Cada celula mostra quantos sao 'homens que fumam', 'mulheres que nao fumam', etc. E como uma tabela-verdade de duas perguntas.",
+      "camada2": "CESPE: a tabela de contingencia serve de base para o teste Qui-Quadrado de independencia (H0: as variaveis sao independentes). Frequencia esperada sob H0: Eij = (total_linha_i x total_coluna_j) / total_geral. Pegadinha: tabela 2x2 e a mais comum, mas o teste funciona para tabelas rxc. Atencao: frequencias RELATIVAS tambem podem ser apresentadas, mas o Qui-Quadrado usa absolutas.",
       "materia": "estatistica"
     },
     {
@@ -17075,8 +17075,8 @@
       "dificuldade": "medio",
       "camada_visual": "Balança desregulada: sempre +2kg. n maior nao resolve.",
       "camada_aplicacao": "Pesquisa so com motoristas de app (vies): nao representa quem usa onibus.",
-      "camada1": "Intuição: Erro SISTEMÁTICO.",
-      "camada2": "CESPE: Viés amostral: erro SISTEMÁTICO (não aleatório). Exemplos: viés de seleção, viés de voluntariado, viés de sobrevivência. CESPE: 'o viés amostral diminui com o aumento da amostra?' NÃO! Viés é erro sistemático — aumentar n só reduz o erro amostral (aleatório). Para reduzir viés, é preciso melhorar o desenho amostral (ex: aleatorização).",
+      "camada1": "Vies e como uma balanca de farmacia que sempre marca 2 kg a mais, nao importa quantas vezes voce suba nela. Aumentar o numero de vezes que voce se pesa (aumentar a amostra) NAO resolve - o erro de 2 kg continua la. Para consertar, precisa 'calibrar' a balanca - melhorar o metodo de coleta, nao aumentar a quantidade de dados.",
+      "camada2": "CESPE classica: 'O vies amostral diminui com o aumento do tamanho da amostra' - FALSO. Vies e erro SISTEMATICO (nao aleatorio). Aumentar n reduz o ERRO AMOSTRAL (aleatorio), mas nao elimina o vies. Exemplos: vies de selecao, vies de voluntariado, vies de sobrevivencia, vies de confirmacao. Para reduzir vies, melhora-se o DESENHO AMOSTRAL.",
       "materia": "estatistica"
     },
     {
@@ -17089,8 +17089,8 @@
       "dificuldade": "facil",
       "camada_visual": "Sortear e devolver (com reposicao): independente.",
       "camada_aplicacao": "10 bolas. Com reposicao: prob=1/10. Sem: 1/10,1/9,1/8... dependente.",
-      "camada1": "Intuição: Cada elemento sorteado é devolvido à população antes do próximo sorteio, mantendo a probabilidade de seleção constante.",
-      "camada2": "CESPE: AAS com reposição → extrações independentes. AAS sem reposição → extrações dependentes (mas para N grande, a diferença é desprezível). Na prática, amostragem sem reposição é mais comum. Fator de correção para população finita: √((N−n)/(N−1)).",
+      "camada1": "AAS com reposicao e como sortear bolas de um saco DEVOLVENDO cada bola sorteada antes do proximo sorteio. Assim, as chances de cada bola sao sempre 1/N - sempre iguais. Um sorteio nao interfere no outro (sao independentes). Sem reposicao e como pegar cartas de um baralho sem devolver - a chance muda a cada carta.",
+      "camada2": "CESPE: 'Na AAS com reposicao, as extracoes sao dependentes' - FALSO. Sao INDEPENDENTES. Sem reposicao, sao DEPENDENTES (a probabilidade condicional muda). Pegadinha: para populacoes muito GRANDES (N grande), a diferenca e DESPREZIVEL, e o fator de correcao FPC = sqrt((N-n)/(N-1)) ~ 1. Na pratica, AAS sem reposicao e mais comum em pesquisas reais.",
       "materia": "estatistica"
     },
     {
@@ -17103,8 +17103,8 @@
       "dificuldade": "facil",
       "camada_visual": "Pizza 10 fatias: D1=10%, D5=50%(mediana), D9=90%.",
       "camada_aplicacao": "Renda: D1=R$1000, D5=R$3500, D9=R$10000. D9-D1=desigualdade.",
-      "camada1": "Intuição: Valor que divide os dados ordenados em 10 partes iguais.",
-      "camada2": "CESPE: decis, quartis e percentis são QUANTIS. D1 = P10 (10º percentil). D5 = P50 (mediana). D9 = P90 (90º percentil). Existem 9 decis (D1 a D9) que dividem os dados em 10 partes.",
+      "camada1": "Decil e como dividir a fila do cinema em 10 partes IGUAIS. O D1 sao os 10% mais baixos da fila; o D5 e exatamente o meio (mediana); o D9 sao os 90%. E uma forma de 'fatiar' os dados em 10 pedacos de mesmo tamanho. Se voce esta no D8, esta entre os 20% maiores.",
+      "camada2": "CESPE: existem 9 decis (D1 a D9) que dividem o conjunto em 10 partes iguais. D5 = P50 = Q2 = mediana. D1 = P10. D9 = P90. Pegadinha: 'Q1 equivale a qual decil?' - Q1 = P25, que NAO e um decil exato (esta entre D2=P20 e D3=P30). Atencao a conversao entre quantis: quartis (4 partes), decis (10 partes), percentis (100 partes).",
       "materia": "estatistica"
     },
     {
@@ -17117,8 +17117,8 @@
       "dificuldade": "facil",
       "camada_visual": "Escada 0 a 1: prob acumulada ate cada valor x.",
       "camada_aplicacao": "P(alt<=1,70)=0,40. P(alt<=1,80)=0,75. P(1,70<X<=1,80)=0,35.",
-      "camada1": "Intuição: Função F(x) = P(X ≤ x) que retorna a probabilidade de a variável aleatória X assumir um valor menor ou igual a x.",
-      "camada2": "CESPE: para variável discreta, a FDA é uma função escada (saltos nos valores possíveis). Para variável contínua, a FDA é contínua. P(a < X ≤ b) = F(b) − F(a). A FDA é a integral da função densidade de probabilidade (fdp).",
+      "camada1": "FDA e o 'acumulador de probabilidades'. Pense em um velocimetro que marca a chance acumulada ate um certo valor. Se voce quer saber a probabilidade de uma pessoa ter ate 1,75m de altura, a FDA soma todas as probabilidades desde a altura minima ate 1,75m. A FDA comeca em 0 e termina em 1 (100%).",
+      "camada2": "CESPE: para variavel DISCRETA, a FDA e uma funcao ESCADA (degraus nos valores viaveis). Para CONTINUA, a FDA e continua. Propriedade fundamental: P(a < X <= b) = F(b) - F(a). Pegadinha: 'P(X < x) = F(x)' - NEM SEMPRE. Para variavel discreta, P(X < x) != F(x) porque F(x)=P(X <= x). Para continua, P(X=x)=0, entao tanto faz.",
       "materia": "estatistica"
     },
     {
@@ -17131,8 +17131,8 @@
       "dificuldade": "facil",
       "camada_visual": "Pearson p/ relacoes monotonas. Baseado em ranks. Menos sensivel.",
       "camada_aplicacao": "Classificacao e salario: rho=1. 1o ganha mais que 2o, 2o mais que 3o.",
-      "camada1": "Intuição: Mede a relação MONOTÔNICA (não necessariamente linear) entre duas variáveis, baseada nos postos (ranks) dos dados.",
-      "camada2": "CESPE: Pearson mede relação LINEAR. Spearman mede relação MONOTÔNICA (crescente ou decrescente, não precisa ser reta). Spearman é menos sensível a outliers que Pearson. Fórmula: ρ = 1 − (6Σdᵢ²)/(n(n²−1)), onde dᵢ é a diferença entre os postos.",
+      "camada1": "Spearman e a versao 'sem frescura' de correlacao. Ele nao liga para valores exatos, so para a ORDEM. Exemplo: voce classifica 5 alunos do mais baixo (1o) ao mais alto (5o) e tambem classifica do mais leve ao mais pesado. Se as ordens sao parecidas, a correlacao de Spearman e alta - mesmo que altura e peso nao crescam em linha reta perfeita.",
+      "camada2": "CESPE: Pearson mede relacao LINEAR. Spearman mede relacao MONOTONICA (crescente ou decrescente, mas nao precisa ser reta). Spearman e MENOS sensivel a outliers que Pearson porque usa POSTOS (ranks), nao valores brutos. Pegadinha: 'Spearman pode ser usado para dados ordinais' - SIM, pois trabalha com postos. Formula: rho = 1 - (6*soma_di^2)/(n(n^2-1)).",
       "materia": "estatistica"
     },
     {
@@ -17145,8 +17145,8 @@
       "dificuldade": "medio",
       "camada_visual": "Loteria (probabilistica) vs amigos (nao probabilistica).",
       "camada_aplicacao": "Sorteio cadastro eleitoral (probabilistica). Cotas na rua (nao probabilistica).",
-      "camada1": "Intuição: Probabilística: chance CONHECIDA (AAS, estratificada, sistemática, conglomerados).",
-      "camada2": "CESPE: Probabilística: requer sorteio, permite inferência estatística e cálculo de erro amostral. Tipos: AAS, estratificada, sistemática, conglomerados. Não probabilística: NÃO permite inferência; exemplos: conveniência, bola de neve, intencional. CESPE: 'amostragem por cotas é probabilística?' NÃO — as cotas não são sorteadas, mas preenchidas por conveniência, sendo não probabilística.",
+      "camada1": "Amostragem probabilistica e 'sorteio justo': todo mundo tem chance conhecida de ser escolhido - como um sorteio de loteria. Nao probabilistica e 'escolha a dedo': voce seleciona quem esta mais facil (conveniencia) ou quem se voluntaria. No sorteio, voce pode calcular a margem de erro. Na escolha a dedo, nao.",
+      "camada2": "CESPE: 'amostragem por COTAS e probabilistica' - FALSO. E NAO PROBABILISTICA, pois dentro das cotas a selecao e por conveniencia. Outras nao probabilisticas: bola de neve, intencional, voluntaria. CESPE adora afirmar: 'apenas a amostragem probabilistica permite inferencia estatistica e calculo de erro amostral' - CORRETO.",
       "materia": "estatistica"
     },
     {
@@ -17159,8 +17159,8 @@
       "dificuldade": "facil",
       "camada_visual": "Caixa que agrupa valores: Li, Ls, amplitude, ponto medio.",
       "camada_aplicacao": "Classes renda: [0,1000) PM=500; [1000,2000) PM=1500. Sturges: k=1+3,3 log n.",
-      "camada1": "Intuição: Faixa de valores utilizada para agrupar dados contínuos em uma distribuição de frequências.",
-      "camada2": "CESPE: as classes devem ser mutuamente exclusivas e exaustivas (todo dado pertence a alguma classe). A amplitude do intervalo pode ser constante ou variável. Ponto médio representa a classe. Número de classes: regra de Sturges (k = 1 + 3,3 log n).",
+      "camada1": "Intervalo de classe e como criar 'gavetas' para guardar os dados de forma organizada. Se as idades vao de 0 a 100 anos, voce pode criar gavetas de 10 em 10: [0-10), [10-20), ..., [90-100]. Cada gaveta tem: um comeco (limite inferior), um fim (limite superior), uma largura (amplitude) e um 'centro' (ponto medio).",
+      "camada2": "CESPE: as classes devem ser MUTUAMENTE EXCLUSIVAS (cada dado pertence a UMA classe) e EXAUSTIVAS (nenhum dado fica de fora). Regra de Sturges: k = 1 + 3,3 log n. Pegadinha crucial: com classes de amplitude VARIAVEL, a altura da barra no histograma NAO representa frequencia diretamente - representa DENSIDADE (freq/amplitude), e a AREA e proporcional a frequencia.",
       "materia": "estatistica"
     },
     {
@@ -17173,8 +17173,8 @@
       "dificuldade": "facil",
       "camada_visual": "Achar centro exato na classe mediana (interpolacao).",
       "camada_aplicacao": "Salarios: Md = 1000+(25-10)/25x1000 = 1600.",
-      "camada1": "Intuição: Md = Li + [(n/2 - Fac_ant) / f_md] × h, onde Li = limite inferior da classe mediana, n = total de observações, Fac_ant = frequência acumulada anterior, f_md = frequência absoluta da classe mediana, h = amplitude da classe.",
-      "camada2": "CESPE: a classe mediana é a primeira cuja frequência acumulada ultrapassa n/2. f_md é a frequência ABSOLUTA, não a acumulada. A mediana é resistente a outliers.",
+      "camada1": "Quando os dados estao agrupados em classes, a mediana nao e um valor exato, mas estimado por interpolacao. E como achar o meio de uma escada: primeiro, voce localiza qual degrau (classe) contem o centro (a observacao n/2). Depois, voce 'desce proporcionalmente' dentro desse degrau - quanto mais longe do inicio da classe, mais voce desce.",
+      "camada2": "CESPE: CLASSE MEDIANA = primeira classe com Fac >= n/2 (>=, nao apenas >). f_md na formula e a frequencia ABSOLUTA da classe mediana, NAO a acumulada. Fac_ant e a acumulada ANTERIOR a classe mediana. Pegadinha tipica: o examinador fornece uma Fac errada propositalmente para testar se voce identifica a classe mediana corretamente. Formula: Md = Li + [(n/2 - Fac_ant) / f_md] x h.",
       "materia": "estatistica"
     },
     {
@@ -17187,8 +17187,8 @@
       "dificuldade": "facil",
       "camada_visual": "Representante da classe: todos valem o ponto medio.",
       "camada_aplicacao": "Altura: 1,60-1,70(20p) PM=1,65; 1,70-1,80(30p) PM=1,75. Media=1,71.",
-      "camada1": "Intuição: Valor que representa a classe, calculado como (limite inferior + limite superior) / 2.",
-      "camada2": "CESPE: o ponto médio é uma aproximação. A média calculada com pontos médios é uma estimativa, não o valor exato. Atenção: usar o ponto médio presume distribuição uniforme dentro da classe.",
+      "camada1": "Ponto medio e o 'representante' da classe, como a foto 3x4 de uma pessoa - nao e a pessoa real, mas a representa. Se a classe e '10 a 20 anos', o ponto medio e (10+20)/2 = 15. Ao calcular a media, voce 'finge' que todos os valores naquela classe tem exatamente 15 anos. E uma aproximacao, nao o valor exato.",
+      "camada2": "CESPE: 'A media calculada com pontos medios e exata' - FALSO. E uma APROXIMACAO que presume distribuicao UNIFORME dentro de cada classe. Se os dados sao assimetricos dentro da classe, a aproximacao piora. Pegadinha: o ponto medio e usado na formula da media (x_bar = Soma(PM x f_i)/n) e tambem no calculo da variancia em dados agrupados. PM = (Li + Ls)/2.",
       "materia": "estatistica"
     },
     {
@@ -17201,8 +17201,8 @@
       "dificuldade": "facil",
       "camada_visual": "Album de fotos: classes com contagens, proporcoes, acumulados.",
       "camada_aplicacao": "Notas: 0-2(5),2-4(8),4-6(15),6-8(8),8-10(4). Rel: 12,5%,20%,37,5%,20%,10%.",
-      "camada1": "Intuição: Organização dos dados em classes ou categorias com suas respectivas frequências.",
-      "camada2": "CESPE: frequência relativa = f_i / n. Frequência acumulada (Fac) é usada para calcular mediana, quartis e percentis em dados agrupados. A Fac da última classe é sempre n.",
+      "camada1": "Distribuicao de frequencias e a 'arrumacao' dos dados brutos em uma tabela organizada. E como separar suas despesas do mes em categorias e anotar quanto gastou em cada. Alem da contagem simples (frequencia absoluta), voce pode calcular a porcentagem (frequencia relativa) e o 'total ate agora' (frequencia acumulada).",
+      "camada2": "CESPE: frequencia RELATIVA = f_i / n. A soma de todas as frequencias relativas = 1 (ou 100%). Frequencia ACUMULADA (Fac) da ultima classe = n (total). Pegadinha: 'a frequencia relativa acumulada da ultima classe e sempre 100%' - CORRETO. Fac e usada para identificar a classe mediana e calcular percentis em dados agrupados.",
       "materia": "estatistica"
     },
     {
@@ -17215,8 +17215,8 @@
       "dificuldade": "facil",
       "camada_visual": "Regua percentual: CV elimina unidade. Compara kg com m.",
       "camada_aplicacao": "Investimento A: CV=25%. B: CV=33,3%. A menos arriscado (menor CV).",
-      "camada1": "Intuição: CV = (σ / x̄) × 100%.",
-      "camada2": "CESPE: CV adimensional. CV=(σ/x̄)×100%. Menor CV = mais homogêneo. CV=0 → constantes.",
+      "camada1": "CV e o 'desvio padrao em porcentagem da media'. Se o DP do salario e R$ 200 e a media e R$ 1.000, o CV e 20%. Isso significa que os salarios variam 20% em torno da media. O CV permite comparar coisas diferentes: 'a altura de jogadores de basquete varia mais ou menos que o peso de jogadores de futebol?' - mesmo com unidades diferentes (cm vs kg), o CV resolve.",
+      "camada2": "CESPE: CV = (DP / x_bar) x 100%. E ADIMENSIONAL (sem unidade). CV = 0 -> todos os valores sao IGUAIS. Pegadinha: 'quando a media e ZERO, o CV nao pode ser calculado' - CORRETO (divisao por zero). CV baixo -> homogeneo; CV alto -> heterogeneo. Dica de prova: 'qual medida usar para comparar dispersao de conjuntos com medias muito diferentes?' - Resposta: CV.",
       "materia": "estatistica"
     },
     {
@@ -17229,8 +17229,8 @@
       "dificuldade": "dificil",
       "camada_visual": "Calibrar pesquisa: Z, E, p=0,5 (pior caso) garante n.",
       "camada_aplicacao": "95% (Z=1,96), margem3%: n=1067. Margem2%: n=2401.",
-      "camada1": "Intuição: n = (Z² × p × q) / E², onde Z = valor crítico (nível de confiança), p = proporção estimada, q = 1 − p, E = margem de erro.",
-      "camada2": "CESPE: quando p é desconhecido, usa-se p = 0,5 (máxima variabilidade → maior n, conservador). Quanto maior o nível de confiança (↑ Z) ou menor a margem de erro (↓ E), maior o n necessário.",
+      "camada1": "Para saber 'quantas pessoas entrevistar' para estimar uma proporcao, voce precisa de uma formula. E como perguntar: 'quantas pessoas preciso ouvir para ter 95% de certeza de que o erro e no maximo 3%?' A resposta depende de: (a) o nivel de confianca (Z); (b) a proporcao estimada (p); (c) a margem de erro (E) que voce aceita.",
+      "camada2": "CESPE: quando p e DESCONHECIDO, usa-se p=0,5 (maximiza p x q = 0,25 -> maior n -> postura conservadora). Formula: n = (Z^2 x p x q)/E^2. Para populacao FINITA: n_finito = (n_inf x N)/(n_inf+N-1). Pegadinha: aumentar o nivel de confianca (subir Z) AUMENTA n. Aumentar a margem de erro (subir E) REDUZ n (E esta no denominador ao quadrado).",
       "materia": "estatistica"
     },
     {
@@ -17243,8 +17243,8 @@
       "dificuldade": "media",
       "camada_visual": "AED: tabelas, graficos, medidas p/ explorar dados antes de modelar.",
       "camada_aplicacao": "Boxplot mostra mediana, quartis, IIQ, outliers.",
-      "camada1": "Intuição: Abrange a organização, o resumo e a apresentação dos dados por meio de tabelas, gráficos (histograma, boxplot, ramo-e-folhas, barras, setores) e medidas descritivas (posição, dispersão, assimetria e curtose).",
-      "camada2": "CESPE: o boxplot visualiza mediana (linha interna), quartis (caixas), intervalo interquartil (IIQ) e outliers (pontos além dos limites). Assimetria e curtose complementam a análise descritiva.",
+      "camada1": "Estatistica descritiva e o 'album de fotos' dos dados: graficos (histograma, boxplot, pizza), tabelas (distribuicao de frequencias) e numeros-resumo (media, mediana, desvio padrao). Analise exploratoria e quando voce 'explora' os dados como um detetive em busca de pistas: padroes, outliers, tendencias - sem hipotese pre-definida.",
+      "camada2": "CESPE: AED != estatistica inferencial. AED DESCREVE e EXPLORA; inferencia GENERALIZA para a populacao. Boxplot: caixa vai do Q1 ao Q3 (IIQ), linha interna = mediana, bigodes ate 1,5xIIQ, pontos alem sao outliers. Pegadinha: 'o boxplot sempre identifica outliers' - define limites para identifica-los, mas nao os remove. Ramo-e-folhas preserva os valores originais.",
       "materia": "estatistica"
     },
     {
@@ -17257,8 +17257,8 @@
       "dificuldade": "medio",
       "camada_visual": "Posicao (centro) vs Dispersao (espalhamento). CV une ambos.",
       "camada_aplicacao": "CV=DP/media: adimensional. Compara conjuntos com medias ou unidades diferentes.",
-      "camada1": "Intuição: Medidas de posição (média, mediana, moda) indicam valores centrais/representativos; medidas de dispersão (variância, desvio padrão, amplitude) indicam o grau de variabilidade dos dados.",
-      "camada2": "CESPE: Medidas de POSIÇÃO: média (sensível a outliers), mediana (robusta), moda (mais frequente). Medidas de DISPERSÃO: amplitude (máx − mín, sensível), variância, desvio padrão (√variância), CV (DP/média). CESPE: 'qual dispersão usar para comparar conjuntos com médias diferentes?' O CV (coeficiente de variação), por ser adimensional. Dica: média e desvio padrão usam a mesma unidade dos dados.",
+      "camada1": "Medidas de posicao dizem 'onde esta o centro': e como perguntar 'qual a altura tipica da turma?' - media, mediana ou moda. Medidas de dispersao dizem 'quao espalhados estao os dados': e como perguntar 'todo mundo tem altura parecida ou tem gente muito baixa e muito alta?' - desvio padrao, variancia, amplitude.",
+      "camada2": "CESPE: MEDIA e sensivel a outliers (um valor extremo a puxa). MEDIANA e robusta (nao se altera com outliers). MODA: pode ser multipla (bimodal, multimodal) ou inexistente. Pegadinha: 'o desvio padrao e a raiz quadrada da variancia' - CORRETO. Variancia em unidades ao quadrado, DP volta a unidade original. Para COMPARAR variabilidade entre conjuntos com medias diferentes, usa-se o CV.",
       "materia": "estatistica"
     },
     {
@@ -17271,8 +17271,8 @@
       "dificuldade": "media",
       "camada_visual": "Distorcao (assimetria) e achatamento (curtose) da curva.",
       "camada_aplicacao": "Excesso de curtose = curtose-3. >0 lepto, =0 meso, <0 plati.",
-      "camada1": "Intuição: Assimetria mede o grau de distorção da curva: positiva (cauda à direita, média > mediana > moda), negativa (cauda à esquerda, moda > mediana > média) ou nula (simétrica, média = mediana = moda).",
-      "camada2": "CESPE: excesso de curtose = curtose − 3. Excesso = 0 → mesocúrtica; > 0 → leptocúrtica; < 0 → platicúrtica. Assimetria positiva = cauda longa à direita = valores extremos superiores.",
+      "camada1": "Assimetria e 'para que lado o rabo da curva esta virado'. Curtose e 'quao pontuda ou achatada e a curva'. Imagine uma normal (sino) como padrao: ela e simetrica (assimetria 0) e tem curtose 3 (mesocurtica). Se a curva e mais pontuda que o sino (leptocurtica), tem caudas mais grossas - mais outliers. Se e mais achatada (platicurtica), caudas mais finas.",
+      "camada2": "CESPE usa CURTOSE (valor bruto ~3 para normal) e EXCESSO DE CURTOSE (curtose - 3). Se a questao diz 'curtose' e os valores sao 3; 2,5; 4 - esta falando de CURTOSE NAO EXCEDENTE. Excesso = 0 -> mesocurtica; > 0 -> leptocurtica; < 0 -> platicurtica. Pegadinha: assimetria POSITIVA = cauda a DIREITA = media > mediana > moda.",
       "materia": "estatistica"
     },
     {
@@ -17285,8 +17285,8 @@
       "dificuldade": "media",
       "camada_visual": "Tres axiomas: fundacao da teoria da probabilidade.",
       "camada_aplicacao": "P(AUB)=P(A)+P(B) SO se ME. CESPE testa isso.",
-      "camada1": "Intuição: Probabilidade é uma função P que associa a cada evento A um número entre 0 e 1.",
-      "camada2": "CESPE: o 3º axioma exige que os eventos sejam MUTUAMENTE EXCLUSIVOS (A ∩ B = ∅). CESPE adora testar: P(A∪B) = P(A) + P(B) sempre? — FALSO! Só vale se A e B forem mutuamente exclusivos.",
+      "camada1": "Os tres axiomas de Kolmogorov sao as 'regras do jogo' da probabilidade: (1) nenhuma probabilidade pode ser negativa - nao existe '-30% de chance'; (2) a soma de todas as probabilidades possiveis (omega) e exatamente 1 (100%); (3) se dois eventos nao podem acontecer juntos (mutuamente exclusivos), a chance de um OU outro e a soma das chances.",
+      "camada2": "CESPE adora testar: 'P(AUB) = P(A)+P(B) para QUAISQUER A e B' - FALSO. So vale se A e B forem MUTUAMENTE EXCLUSIVOS (A interseccao B = vazio). Formula geral: P(AUB)=P(A)+P(B)-P(A interseccao B). Pegadinha: 'P(A^c)=1-P(A)' - CORRETO. O 3o axioma exige eventos MUTUAMENTE EXCLUSIVOS DOIS A DOIS.",
       "materia": "estatistica"
     },
     {
@@ -17299,8 +17299,8 @@
       "dificuldade": "dificil",
       "camada_visual": "Condicional reduz espaco amostral. Independencia = sem efeito.",
       "camada_aplicacao": "ME com P>0: P(A|B)=0 != P(A) -> dependentes. Pegadinha CESPE.",
-      "camada1": "Intuição: Probabilidade condicional: P(A|B) = P(A∩B) / P(B), com P(B) > 0.",
-      "camada2": "CESPE: se P(A∩B) = 0 e P(A), P(B) > 0, então A e B são MUTUAMENTE EXCLUSIVOS, NÃO independentes. De fato, P(A|B) = 0 ≠ P(A). Eventos independentes com P>0 SEMPRE têm intersecção não vazia.",
+      "camada1": "Probabilidade condicional e 'recalcular a chance sabendo que algo ja aconteceu'. Ex: 'qual a chance de ter carteira de motorista, sabendo que a pessoa tem mais de 18 anos?' - voce restringe o universo. Independencia e quando uma informacao NAO altera a chance: 'saber que a pessoa usa oculos muda a chance de ela ter carteira?' - provavelmente nao.",
+      "camada2": "CESPE: a MAIOR pegadinha de probabilidade e confundir MUTUAMENTE EXCLUSIVOS com INDEPENDENTES. Se A e B sao mutuamente exclusivos (A interseccao B = vazio) e P(A),P(B)>0, entao P(A|B)=0 != P(A) - logo, sao DEPENDENTES. Eventos exclusivos com P>0 NUNCA sao independentes. Eventos independentes com P>0 SEMPRE tem intersecao NAO vazia. Decore: exclusivo = sem interseccao; independente = interseccao = produto.",
       "materia": "estatistica"
     },
     {
@@ -17313,8 +17313,8 @@
       "dificuldade": "dificil",
       "camada_visual": "Quatro tecnicas: AAS, estratificada, sistematica, conglomerados.",
       "camada_aplicacao": "Estratificada: sorteia TODOS estratos. Conglomerados: sorteia GRUPOS.",
-      "camada1": "Intuição: AAS (todos com igual probabilidade), estratificada (população dividida em estratos homogêneos), sistemática (k = N/n), por conglomerados (grupos heterogêneos sorteados).",
-      "camada2": "CESPE: estratificada = homogeneidade DENTRO dos estratos, sorteia elementos de TODOS os estratos. Conglomerados = heterogeneidade DENTRO dos grupos, sorteia GRUPOS inteiros. AAS com reposição gera amostras independentes; sem reposição, dependentes.",
+      "camada1": "Amostragem e 'escolher uma parte representativa do todo'. AAS: sorteio simples (loteria). Estratificada: divide em grupos parecidos (ex: homens/mulheres) e sorteia pessoas de CADA grupo. Sistematica: pega um a cada k elementos. Conglomerados: sorteia GRUPOS INTEIROS (ex: sorteia 5 escolas e entrevista TODOS os alunos de cada). Tamanho amostral: 'quantas pessoas entrevistar?' - depende da margem de erro, nivel de confianca e variabilidade.",
+      "camada2": "CESPE: ESTRATIFICADA -> DENTRO dos estratos = HOMOGENEO; ENTRE estratos = HETEROGENEO; sorteiam-se elementos de TODOS os estratos. CONGLOMERADOS -> DENTRO dos grupos = HETEROGENEO; ENTRE grupos = HOMOGENEO; sorteiam-se GRUPOS INTEIROS. Pegadinha classica: 'na estratificada, sorteiam-se alguns estratos e todos os elementos dos estratos sorteados' - FALSO: isso e CONGLOMERADOS.",
       "materia": "estatistica"
     },
     {
@@ -17327,8 +17327,8 @@
       "dificuldade": "dificil",
       "camada_visual": "P(A)=favoraveis/possiveis. So se equiproaveis.",
       "camada_aplicacao": "Dado honesto: P(par)=3/6=0,5. Viciado nao vale.",
-      "camada1": "Intuição: P(A) = n(A) / n(Ω), onde n(A) é o número de casos favoráveis ao evento A e n(Ω) é o número total de casos possíveis, supondo todos igualmente prováveis (equiprováveis). O foco é entender quando e por que aplicar essa fórmula, não apenas decorá-la.",
-      "camada2": "CESPE: Só vale quando os eventos elementares são EQUIPROVÁVEIS. Se o enunciado falar em 'dado viciado' ou 'moeda desbalanceada', NÃO use esta definição diretamente.",
+      "camada1": "A definição clássica é a mais natural: 'qual a chance de tirar um ás em um baralho?' Basta dividir os casos favoráveis (4 ases) pelo total de casos (52 cartas) = 4/52 = 1/13. É a 'probabilidade do contador': conte quantos resultados te interessam, divida pelo total de resultados possíveis. Só funciona se todos os resultados forem igualmente prováveis — como dados honestos, moedas equilibradas, urnas com bolas idênticas. É a probabilidade 'de gabarito' para problemas simples de concurso.",
+      "camada2": "CESPE SEMPRE coloca a armadilha: 'P(A) = n(A)/n(Ω) para qualquer espaço amostral' — FALSO. A definição clássica EXIGE equiprobabilidade. Se o enunciado mencionar 'dado viciado', 'moeda desbalanceada' ou 'distribuição desigual', NÃO use Laplace diretamente. OUTRA PEGADINHA: 'a definição clássica também é chamada de probabilidade a posteriori' — FALSO, é a priori (teórica). A frequencial é a posteriori (empírica).",
       "materia": "estatistica"
     },
     {
@@ -17341,8 +17341,8 @@
       "dificuldade": "dificil",
       "camada_visual": "P(A)=limite da frequencia relativa. Lei dos Grandes Numeros.",
       "camada_aplicacao": "Moeda 10x: 7 caras(70%). 100x: 52(52%). 1000x: 503(50,3%).",
-      "camada1": "Intuição: P(A) = limite da frequência relativa de A quando n → ∞. O foco é entender quando e por que aplicar essa fórmula, não apenas decorá-la.",
-      "camada2": "CESPE: a definição frequencial exige REPETIÇÕES INDEPENDENTES. Difere da clássica (que exige equiprobabilidade). A lei dos grandes números garante que a frequência relativa converge para a probabilidade teórica.",
+      "camada1": "Você já viu alguém jogar uma moeda 1000 vezes e anotar as caras? No começo pode sair 7 caras em 10 tentativas (70%), mas depois de 1000 jogadas a proporção se aproxima de 50%. Essa é a definição frequencial: a probabilidade é o limite da frequência relativa quando o número de repetições tende ao infinito. Não precisa de simetria teórica — você REPETE o experimento muitas vezes e vê o que acontece na prática. É a probabilidade de quem 'faz na mão'.",
+      "camada2": "CESPE: a definição frequencial exige REPETIÇÕES INDEPENDENTES sob condições idênticas. Difere da clássica (que exige equiprobabilidade, não repetição). LEI DOS GRANDES NÚMEROS: a frequência relativa CONVERGE para a probabilidade teórica. PEGADINHA: 'a lei dos grandes números garante que a frequência relativa se IGUALA à probabilidade' — FALSO. Converge = tende, aproxima-se, não se iguala. É um limite assintótico.",
       "materia": "estatistica"
     },
     {
@@ -17355,8 +17355,8 @@
       "dificuldade": "dificil",
       "camada_visual": "3 axiomas: fundacao da probabilidade.",
       "camada_aplicacao": "P(AUB)=P(A)+P(B)-P(AnB) decorre dos axiomas.",
-      "camada1": "Intuição: (1) P(A) ≥ 0 para todo evento A; (2) P(Ω) = 1; (3) Para eventos mutuamente exclusivos dois a dois: P(∪_{i=1}^{∞} Ai) = Σ_{i=1}^{∞} P(Ai).",
-      "camada2": "CESPE: o 3º axioma só vale para eventos MUTUAMENTE EXCLUSIVOS. Se A e B não são exclusivos, P(A∪B) = P(A) + P(B) − P(A∩B). O axioma é a base para a aditividade finita e contável.",
+      "camada1": "Os três axiomas de Kolmogorov são como as leis da física da probabilidade — ninguém discute, todo mundo segue. Primeira lei: nenhuma probabilidade pode ser negativa (óbvio, mas precisa estar escrito). Segunda lei: a soma de TUDO que pode acontecer é exatamente 1 (100%). Terceira lei: se você tem eventos que não podem ocorrer juntos (exclusivos), a probabilidade de um OU outro é a soma das probabilidades — e isso vale mesmo que você tenha UMA SEQUÊNCIA INFINITA de eventos exclusivos. É a base de tudo.",
+      "camada2": "CESPE EXPLORA o 3º axioma: ele fala em ADITIVIDADE ENUMERÁVEL (união infinita contável), não apenas finita. PEGADINHA: 'o 3º axioma vale para uniões de eventos quaisquer' — FALSO, só para mutuamente exclusivos. OUTRA: 'P(A) ≥ 0 é um axioma' — V. 'P(A) ≤ 1 é um axioma' — FALSO, é consequência (decorre de P(A)+P(A^c)=1 e P(A^c)≥0). CESPE adora cobrar a diferença entre axioma e consequência.",
       "materia": "estatistica"
     },
     {
@@ -17369,8 +17369,8 @@
       "dificuldade": "dificil",
       "camada_visual": "Complementar: P(A)+P(Ac)=1. P(vazio)=0.",
       "camada_aplicacao": "P(nenhum 6 em 3 dados) = (5/6)^3 = 0,579.",
-      "camada1": "Intuição: P(A^c) = 1 − P(A). O foco é entender quando e por que aplicar essa fórmula, não apenas decorá-la.",
-      "camada2": "CESPE: o complementar de A (A^c) é o conjunto de elementos de Ω que NÃO estão em A. P(A) + P(A^c) = 1. ∅ e Ω são complementares. P(∅) = 0 é consequência do 2º axioma.",
+      "camada1": "O complementar é o 'resto' — se em uma caixa há 30% de bolas vermelhas, a chance de NÃO tirar vermelha (tirar azul) é 70%. Simples: o que falta para 100%. Já o evento impossível (∅) é como 'tirar uma bola verde' de uma caixa que só tem bolas vermelhas e azuis: chance ZERO. A matemática prova: P(vazio) = 0 usando a lógica: se a chance de tudo (Ω) é 1, e o vazio não tem nada, a chance é zero. Complementar e vazio são as duas 'pontas' da probabilidade.",
+      "camada2": "CESPE: P(A^c) = 1 - P(A) e P(∅) = 0 são CONSEQUÊNCIAS dos axiomas, não axiomas. PEGADINHA CLÁSSICA: 'P(A) = 0 implica que A = ∅' — FALSO. Em espaços amostrais CONTÍNUOS, eventos com probabilidade zero podem acontecer. Ex: numa distribuição contínua, a probabilidade de uma altura ser EXATAMENTE 1,700000...m é zero, mas não é um evento impossível. OUTRA: 'se P(A) = 0, então A é impossível' — FALSO para espaços contínuos.",
       "materia": "estatistica"
     },
     {
@@ -17383,8 +17383,8 @@
       "dificuldade": "dificil",
       "camada_visual": "P(AUB)=P(A)+P(B)-P(AnB). Formula geral.",
       "camada_aplicacao": "P(estudar)=0,6, P(trab)=0,5, P(ambos)=0,3. Uniao=0,8.",
-      "camada1": "Intuição: P(A ∪ B) = P(A) + P(B) − P(A ∩ B). O foco é entender quando e por que aplicar essa fórmula, não apenas decorá-la.",
-      "camada2": "CESPE: a fórmula geral SEMPRE subtrai a intersecção. A forma simplificada (só soma) só vale se P(A∩B) = 0, ou seja, eventos mutuamente exclusivos. CESPE adora testar: P(A∪B) = P(A) + P(B) − P(A∩B) é sempre verdade → VERDADEIRO (fórmula geral).",
+      "camada1": "Pense em dois círculos que podem se sobrepor (diagrama de Venn). Se você quer a área TOTAL coberta pelos dois (união), soma a área de cada círculo, mas precisa SUBTRAIR a área da sobreposição uma vez — senão ela é contada em dobro. É como contar os alunos que gostam de matemática OU português: some os que gostam de matemática, some os que gostam de português, mas subtraia os que gostam de AMBOS (contados duas vezes). Resultado: ninguém contado mais de uma vez.",
+      "camada2": "CESPE adora: 'P(A∪B) = P(A) + P(B) - P(A∩B) é SEMPRE verdadeira' → VERDADEIRO (é a fórmula GERAL, vale para quaisquer A e B). A forma P(A∪B)=P(A)+P(B) só vale se A e B são ME. PEGADINHA: 'se P(A∪B)=P(A)+P(B), então A e B são mutuamente exclusivos' → FALSO. Pode ser que P(A∩B)=0 mesmo sem os eventos serem ME (em espaços contínuos, a intersecção pode ter probabilidade zero sem ser vazia).",
       "materia": "estatistica"
     },
     {
@@ -17397,8 +17397,8 @@
       "dificuldade": "dificil",
       "camada_visual": "3 eventos: +individuais -duplas +tripla.",
       "camada_aplicacao": "P(A)=0,5, P(B)=0,4, P(C)=0,3, duplas=0,1, tripla=0,05. Uniao=0,95.",
-      "camada1": "Intuição: P(A ∪ B ∪ C) = P(A) + P(B) + P(C) − P(A∩B) − P(A∩C) − P(B∩C) + P(A∩B∩C). O foco é entender quando e por que aplicar essa fórmula, não apenas decorá-la.",
-      "camada2": "CESPE: para n eventos, alterna-se soma das probabilidades individuais (−) soma das intersecções duplas (+) soma das triplas (−) soma das quádruplas... até ± P(intersecção de todos). O sinal do último termo é (−1)^{n+1}.",
+      "camada1": "Com três círculos sobrepostos (A, B, C), o raciocínio é o mesmo do caso de dois, mas com mais camadas. Soma os três individuais. Subtrai as três intersecções duplas (A∩B, A∩C, B∩C). Depois SOMA DE VOLTA a intersecção tripla (A∩B∩C) que foi subtraída demais. É o princípio do 'cobre e descobre': cobre tudo (+ individuais), descobre o que contou em dobro (- duplas), e cobre de novo o que descobriu em triplo (+ tripla).",
+      "camada2": "CESPE pode cobrar o padrão geral: para n eventos, alterna sinais começando com +. Sinal do último termo: (-1)^(n+1). Para 3 eventos: + (individuais) - (duplas) + (tripla). PEGADINHA: se os eventos são ME (todos com intersecção vazia), P(A∪B∪C) = P(A)+P(B)+P(C). A CESPE já cobrou a assertiva: 'P(A∪B∪C) = P(A) + P(B) + P(C) - P(A∩B) - P(A∩C) - P(B∩C) + P(A∩B∩C)', pedindo para o candidato identificar se está correta (está).",
       "materia": "estatistica"
     },
     {
@@ -17411,8 +17411,8 @@
       "dificuldade": "dificil",
       "camada_visual": "P(AnB)=P(A)P(B|A). Regra do produto.",
       "camada_aplicacao": "2 cartas: P(as na 1a E as na 2a)=4/52x3/51=0,0045.",
-      "camada1": "Intuição: P(A ∩ B) = P(A) × P(B|A) = P(B) × P(A|B). O foco é entender quando e por que aplicar essa fórmula, não apenas decorá-la.",
-      "camada2": "CESPE: a regra do produto geral NÃO exige independência — usa probabilidade condicional. A forma simplificada P(A)P(B) só vale se A e B forem independentes. Para n eventos: P(∩Ai) = P(A1) × P(A2|A1) × P(A3|A1∩A2) × ...",
+      "camada1": "A regra do produto responde: qual a chance de duas coisas acontecerem JUNTAS? Se os eventos são DEPENDENTES (ex: tirar duas cartas sem reposição), você multiplica a chance da primeira pela chance da segunda DADO QUE a primeira aconteceu. A chance da segunda carta muda conforme o que saiu na primeira. Se os eventos são INDEPENDENTES (ex: jogar uma moeda e um dado), a chance de um não depende do outro — é só multiplicar as duas probabilidades simples. A regra geral SEMPRE usa condicional; a simplificada (só produto) só vale para independentes.",
+      "camada2": "ERRO CLÁSSICO DA CESPE: achar que P(A∩B) = P(A) × P(B) vale SEMPRE. FALSO — só se A e B forem independentes. A fórmula GERAL é P(A∩B) = P(A) × P(B|A) = P(B) × P(A|B). CESPE já cobrou: 'a probabilidade da intersecção de dois eventos é igual ao produto de suas probabilidades' — FALSO (falta a condicional). REGRA DA CADEIA: P(A1∩A2∩...∩An) = P(A1) × P(A2|A1) × P(A3|A1∩A2) × ... × P(An|A1∩...∩An-1).",
       "materia": "estatistica"
     },
     {
@@ -17425,8 +17425,8 @@
       "dificuldade": "dificil",
       "camada_visual": "ME vs Independentes: ME com P>0 SAO DEPENDENTES.",
       "camada_aplicacao": "P(as) e P(rei) ME -> dependentes. P(cara1) e P(cara2) indep.",
-      "camada1": "Intuição: Mutuamente exclusivos: A ∩ B = ∅, P(A∩B) = 0.",
-      "camada2": "CESPE: ✅ Grave: 'ME com P>0 são DEPENDENTES'. CESPE adora essa pegadinha! Independentes NUNCA são ME (a menos que P=0).",
+      "camada1": "Pense em duas situações diferentes: (1) Você tira uma carta de um baralho. 'Tirar um ás' e 'tirar um rei' são ME — uma carta não pode ser simultaneamente ás e rei. Eles NUNCA acontecem juntos. (2) Você joga uma moeda e um dado. 'Cara na moeda' e '6 no dado' são independentes — o resultado da moeda não altera o dado. A confusão clássica é achar que 'não se misturar' (ME) é o mesmo que 'não se influenciar' (independência). Não é! ME = interseção vazia. Independentes = P(A∩B) = P(A)P(B). São conceitos radicalmente diferentes.",
+      "camada2": "A PEGADINHA MAIS REPETIDA DA CESPE EM PROBABILIDADE. A banca formula: 'A e B são mutuamente exclusivos com P(A)>0 e P(B)>0. Logo, A e B são independentes.' → FALSO. PROVA: Se ME, P(A∩B)=0. Se independentes, P(A∩B)=P(A)P(B)>0. Contradição. IMPOSSÍVEL dois eventos com probabilidade positiva serem simultaneamente ME e independentes. Memorize: 'ME COM P>0 É DEPENDENTE'. CESPE já usou essa pegadinha em PRF, PF, TCU, STM e INSS.",
       "materia": "estatistica"
     },
     {
@@ -17439,8 +17439,8 @@
       "dificuldade": "dificil",
       "camada_visual": "P(B)=S P(Ai) P(B|Ai). Probabilidade total.",
       "camada_aplicacao": "P(+)=0,01x0,99+0,99x0,05=0,0594.",
-      "camada1": "Intuição: P(B) = Σ_i P(A_i) × P(B|A_i), onde {A_i} é uma partição do espaço amostral (eventos mutuamente exclusivos e exaustivos). O foco é entender quando e por que aplicar essa fórmula, não apenas decorá-la.",
-      "camada2": "CESPE: o teorema da probabilidade total SÓ vale se {Ai} formar uma PARTIÇÃO (mutuamente exclusivos E exaustivos). É a base para o Teorema de Bayes: P(Ai|B) = P(Ai)P(B|Ai) / Σ P(Aj)P(B|Aj).",
+      "camada1": "Imagine que você quer calcular a probabilidade de chegar atrasado ao trabalho. Você pode se atrasar por vários motivos: trânsito intenso (causa A1, 30% dos dias), chuva (causa A2, 20% dos dias), ou acordar tarde (causa A3, 10% dos dias). Cada causa tem uma chance de causar atraso: trânsito causa atraso em 80% das vezes, chuva em 50%, acordar tarde em 90%. O Teorema da Probabilidade Total diz: P(atraso) = (0,3×0,8) + (0,2×0,5) + (0,1×0,9) = 0,24 + 0,10 + 0,09 = 0,43 (43%). Você considera todas as causas, cada uma com seu peso.",
+      "camada2": "CESPE: o TPT SÓ funciona se {Ai} for uma PARTIÇÃO (eventos ME e exaustivos). PEGADINHA: 'se os eventos Ai não são exaustivos, o teorema da probabilidade total ainda é válido' — FALSO. Faltam causas, a probabilidade total de B fica subestimada. OUTRA: o denominador do Teorema de Bayes é exatamente o TPT — é por isso que Bayes exige partição. CESPE pode pedir para calcular P(B) usando TPT em problemas de árvore de probabilidades.",
       "materia": "estatistica"
     },
     {
@@ -17453,8 +17453,8 @@
       "dificuldade": "dificil",
       "camada_visual": "Particao: exclusivos + exaustivos. A e Ac formam uma.",
       "camada_aplicacao": "A=chove, Ac=nao chove: exclusivos e exaustivos. P(A)+P(Ac)=1.",
-      "camada1": "Intuição: Eventos exaustivos: a união deles cobre todo o espaço amostral (∪Ai = Ω).",
-      "camada2": "CESPE: partição = quebra do Ω em pedaços que não se sobrepõem e cuja união é o total. Exemplo clássico: A e A^c formam uma partição de Ω. O TPT e Bayes exigem partição.",
+      "camada1": "Uma partição é como dividir uma pizza entre amigos: cada pedaço é separado (ninguém pega o pedaço do outro = exclusivos) e juntos formam a pizza inteira (não falta nenhum pedaço = exaustivos). O exemplo mais simples: A e 'não A' formam uma partição de Ω — ou A acontece ou não acontece, não tem meio termo, e juntos cobrem todas as possibilidades. Eventos exaustivos são aqueles que, juntos, cobrem TUDO — mas podem ter sobreposição (não são necessariamente exclusivos).",
+      "camada2": "CESPE: 'eventos exaustivos são necessariamente mutuamente exclusivos' — FALSO. Exaustivos = união cobre Ω (pode haver sobreposição). Partição = exclusivos + exaustivos. PEGADINHA: {A, A^c} forma uma partição? SIM, SEMPRE (são ME e exaustivos). OUTRA: 'o TPT exige apenas eventos exaustivos' — FALSO, exige PARTIÇÃO (exaustivos E exclusivos). CESPE pode dar um conjunto de eventos e pedir para identificar se formam uma partição.",
       "materia": "estatistica"
     },
     {
@@ -17467,8 +17467,8 @@
       "dificuldade": "dificil",
       "camada_visual": "Bernoulli: 2 resultados. Binomial: n repeticoes.",
       "camada_aplicacao": "10 questoes p=0,25. X~Bin(10;0,25). P(3)=C(10,3)x0,25^3x0,75^7.",
-      "camada1": "Intuição: Bernoulli: experimento com dois resultados (sucesso/fracasso), P(sucesso) = p.",
-      "camada2": "CESPE: a binomial pressupõe: (1) n fixo, (2) independentes, (3) mesma p, (4) dois resultados. E(X) = np. Var(X) = np(1−p). Se n = 1, a binomial se reduz a Bernoulli.",
+      "camada1": "Bernoulli é a 'unidade básica': um experimento com apenas dois resultados — sucesso ou fracasso. Jogar uma moeda UMA vez: ou dá cara (sucesso) ou coroa (fracasso). A distribuição binomial é a 'repetição' do Bernoulli: jogar a mesma moeda 10 vezes e contar quantas caras deram. A fórmula P(X=k) = C(n,k) × p^k × (1-p)^(n-k) tem um significado intuitivo: C(n,k) = 'de quantas maneiras posso escolher quais das n tentativas serão sucesso'; p^k = 'chance de dar sucesso em todas as k'; (1-p)^(n-k) = 'chance de dar fracasso nas restantes'.",
+      "camada2": "CESPE lista os pressupostos: (1) n fixo; (2) tentativas independentes; (3) dois resultados possíveis; (4) probabilidade p constante. Se n=1, a binomial se reduz a Bernoulli. FÓRMULAS: E(X)=np, Var(X)=np(1-p). PEGADINHA: 'se o problema envolve amostragem sem reposição de população finita, a distribuição é binomial' — FALSO, é hipergeométrica (a falta de reposição quebra a independência). CESPE pode cobrar que o desvio padrão da binomial é √(np(1-p)).",
       "materia": "estatistica"
     },
     {
@@ -17481,8 +17481,8 @@
       "dificuldade": "media",
       "camada_visual": "Aleatorio, Omega, evento, elementar: vocabulario basico.",
       "camada_aplicacao": "Dado: Omega={1,2,3,4,5,6}, evento par={2,4,6}, elementar={3}.",
-      "camada1": "Intuição: Experimento aleatório: processo cujo resultado não pode ser previsto com certeza, mas pode ser descrito probabilisticamente.",
-      "camada2": "CESPE: Ω pode ser finito, infinito enumerável ou não enumerável. Evento é QUALQUER subconjunto de Ω (em espaços discretos). Evento certo = Ω; evento impossível = ∅. Espaço amostral equiprovável: todos os elementos têm mesma chance.",
+      "camada1": "Monte a hierarquia mental: (1) Experimento aleatório = qualquer processo com resultado imprevisível (jogar um dado, sortear uma carta). (2) Espaço amostral (Ω) = conjunto de TUDO que pode dar ({1,2,3,4,5,6}). (3) Evento elementar = cada resultado individual (o '1', o '2'...). (4) Evento = qualquer grupo desses resultados ('sair par' = {2,4,6}). Pense como uma árvore genealógica: o tronco é o experimento, os galhos são os espaços amostrais, os subgalhos são os eventos, e as folhas são os eventos elementares.",
+      "camada2": "CESPE: evento é QUALQUER subconjunto de Ω (em espaços discretos). Evento certo = Ω, P=1. Evento impossível = ∅, P=0. PEGADINHA CLÁSSICA: 'espaço amostral equiprovável significa que todos os EVENTOS têm a mesma probabilidade' — FALSO. Equiprovável significa que os EVENTOS ELEMENTARES (pontos amostrais) têm mesma probabilidade; eventos (subconjuntos) podem ter probabilidades diferentes pois agrupam vários pontos. OUTRA: 'Ω pode ser finito, infinito enumerável ou infinito não enumerável'.",
       "materia": "estatistica"
     },
     {
@@ -17495,8 +17495,8 @@
       "dificuldade": "media",
       "camada_visual": "Consequencias: P(vazio)=0, P(Ac)=1-P(A), etc.",
       "camada_aplicacao": "A sub B: ser mulher sub ser adulto. P(mulher) <= P(adulto).",
-      "camada1": "Intuição: (a) P(∅) = 0; (b) P(A^c) = 1 − P(A); (c) P(A) ≤ 1 ∀ A; (d) P(A ∪ B) = P(A) + P(B) − P(A ∩ B) — regra geral da adição; (e) Se A ⊆ B, então P(A) ≤ P(B) — monotonicidade; (f) P(B − A) = P(B) − P(A∩B).",
-      "camada2": "CESPE: P(A) ≤ 1 decorre de P(A) + P(A^c) = 1 e P(A^c) ≥ 0. A monotonicidade (A ⊆ B ⇒ P(A) ≤ P(B)) é muito cobrada: Todo subconjunto tem probabilidade menor ou igual ao conjunto que o contém.",
+      "camada1": "A partir dos três axiomas (as 'regras básicas'), a matemática deduz várias consequências úteis — como montar estruturas mais complexas com peças de Lego. As principais: (a) P(∅)=0: a chance de nada acontecer é zero. (b) P(A^c)=1-P(A): chance de algo NÃO acontecer é o complemento. (c) P(A) ≤ 1: nenhuma chance passa de 100%. (d) P(A∪B)=P(A)+P(B)-P(A∩B): a fórmula da união. (e) Se A ⊆ B, P(A) ≤ P(B): o menor está contido no maior. (f) P(B-A)=P(B)-P(A∩B): a diferença.",
+      "camada2": "CESPE: MONOTONICIDADE — 'se A ⊂ B, então P(A) ≤ P(B)' é V. PEGADINHA: 'P(A)=0 implica A=∅' — FALSO (já vimos, espaços contínuos). 'P(A) ≤ 1 é um axioma' — FALSO, é consequência. OUTRA: P(B-A)=P(B)-P(A∩B). CESPE já cobrou: 'decorre dos axiomas que P(A∪B)=P(A)+P(B)-P(A∩B) para quaisquer A e B' — V (é consequência). Conheça as seis consequências para não confundir com os axiomas.",
       "materia": "estatistica"
     },
     {
@@ -17509,8 +17509,8 @@
       "dificuldade": "media",
       "camada_visual": "Particao = divisao sem sobras nem sobreposicoes.",
       "camada_aplicacao": "Faixas etarias 0-18, 18-60, 60+: exclusivas, exaustivas, soma=1.",
-      "camada1": "Intuição: Conjunto de eventos {A1, A2,.",
-      "camada2": "CESPE: toda partição é composta por eventos MUTUAMENTE EXCLUSIVOS e EXAUSTIVOS. A e A^c formam a partição mais simples. O Teorema de Bayes exige uma partição do espaço amostral.",
+      "camada1": "Partição é como as peças de um quebra-cabeça: cada peça tem seu lugar único (exclusividade: nenhuma peça invade o espaço de outra) e, juntas, formam a imagem completa (exaustividade: não falta nenhuma peça para completar a cena). A partição mais simples é dividir o dia em 'chove' e 'não chove': essas duas possibilidades são exclusivas (não pode chover e não chover ao mesmo tempo) e exaustivas (ou chove ou não chove, não há terceira opção).",
+      "camada2": "CESPE: 'toda partição é formada por eventos mutuamente exclusivos e exaustivos' — V. Mas: 'eventos exaustivos formam uma partição' — FALSO (falta a exclusividade). A partição mais simples: {A, A^c} — sempre é partição. PEGADINHA: 'a partição é requisito para o Teorema de Bayes' — V. 'a partição é requisito para o Teorema da Probabilidade Total' — V. O TPT e Bayes EXIGEM partição, não basta exaustividade.",
       "materia": "estatistica"
     },
     {
@@ -17523,8 +17523,8 @@
       "dificuldade": "dificil",
       "camada_visual": "P(A|B)=P(AnB)/P(B). Reduz Omega a B.",
       "camada_aplicacao": "P(doente|+)=P(doente n +)/P(+). P(B)=0 -> condicional nao existe.",
-      "camada1": "Intuição: P(A|B) = P(A ∩ B) / P(B), com P(B) > 0. O foco é entender quando e por que aplicar essa fórmula, não apenas decorá-la.",
-      "camada2": "CESPE: a condição P(B) > 0 é essencial — não existe probabilidade condicional para evento de probabilidade zero. P(A|B) redefine a probabilidade no subespaço B, renormalizando por P(B). Se A e B são independentes, P(A|B) = P(A).",
+      "camada1": "Probabilidade condicional é como 'recalcular a chance depois de receber uma informação'. Exemplo: qual a chance de uma pessoa ter CNH sabendo que ela tem mais de 18 anos? Você não considera mais TODAS as pessoas, só as maiores de 18 anos — esse é o novo 'mundo' (evento B). É como reduzir o palco: antes o palco era Ω (todo mundo); depois de saber que B ocorreu, o palco vira B. A probabilidade de A é recalculada DENTRO desse novo palco. Fórmula: P(A|B) = P(A∩B)/P(B).",
+      "camada2": "CESPE: P(A|B) = P(A∩B)/P(B), com P(B)>0. Se P(B)=0, a condicional NÃO EXISTE (divisão por zero). PEGADINHA: confundir P(A|B) com P(B|A) — são geralmente diferentes! CESPE: 'se A e B são independentes, P(A|B)=P(A)' — V. 'P(A|B)+P(A^c|B)=1' — V (a condicional também soma 1 no subespaço B). OUTRA PEGADINHA: 'P(A|B) = P(A∩B)/P(B) = P(B|A)×P(A)/P(B)' — é a conexão com Bayes.",
       "materia": "estatistica"
     },
     {
@@ -17537,8 +17537,8 @@
       "dificuldade": "dificil",
       "camada_visual": "Regra da cadeia p/ n eventos sequenciais.",
       "camada_aplicacao": "3 cartas ouro sem reposicao: 13/52x12/51x11/50=0,0129.",
-      "camada1": "Intuição: P(A1 ∩ A2 ∩ . O foco é entender quando e por que aplicar essa fórmula, não apenas decorá-la.",
-      "camada2": "CESPE: a ordem dos eventos importa na fórmula geral. Se todos os eventos forem independentes, o produto se reduz a P(A1)×P(A2)×...×P(An). Para 2 eventos: P(A∩B) = P(A) × P(B|A) = P(B) × P(A|B).",
+      "camada1": "A regra da cadeia é uma 'corrente de dependência': para calcular a chance de várias coisas acontecerem em sequência, você multiplica a chance da primeira, pela chance da segunda DADO que a primeira já aconteceu, pela chance da terceira DADO que a primeira e a segunda já aconteceram, e assim por diante. Exemplo: tirar 3 cartas de um baralho sem reposição. P(ás, depois rei, depois dama) = P(ás) × P(rei | já saiu ás) × P(dama | já saíram ás e rei). Cada passo condiciona nos anteriores.",
+      "camada2": "CESPE: a ORDEM importa na regra da cadeia. P(A∩B)=P(A)×P(B|A)=P(B)×P(A|B) — duas formas equivalentes. Se os eventos são independentes, P(A2|A1)=P(A2) e o produto simplifica para P(A1)×P(A2)×...×P(An). PEGADINHA: 'a regra da cadeia é útil para problemas com reposição' — FALSO, com reposição os eventos são independentes e o produto simples já basta. A regra da cadeia é essencial para problemas SEM reposição ou com dependência sequencial.",
       "materia": "estatistica"
     },
     {
@@ -17551,8 +17551,8 @@
       "dificuldade": "dificil",
       "camada_visual": "P(AnB)=P(A)P(B). ME nunca sao independentes.",
       "camada_aplicacao": "2 moedas: P(cara1 n cara2)=0,5x0,5=0,25. Se ME, P=0.",
-      "camada1": "Intuição: A e B são independentes se a ocorrência de um não afeta a probabilidade do outro.",
-      "camada2": "CESPE: eventos independentes com P>0 SEMPRE têm intersecção não vazia (P(A∩B) = P(A)P(B) > 0). Logo, eventos mutuamente exclusivos com P>0 NUNCA são independentes! Essa é a pegadinha mais clássica da CESPE em probabilidade.",
+      "camada1": "Dois eventos são independentes quando saber que um deles aconteceu NÃO DÁ NENHUMA INFORMAÇÃO sobre o outro. É como o sexo de dois filhos em gestações diferentes: saber que o primeiro é menino não altera a chance (50%) do segundo ser menina. A condição matemática é P(A∩B)=P(A)×P(B). Pense em dois círculos: a área de sobreposição é EXATAMENTE o produto das áreas individuais — nem maior (dependência positiva), nem menor (dependência negativa).",
+      "camada2": "TRÍPLICE PEGADINHA CESPE: (1) 'Se P(A∩B)=P(A)×P(B), A e B são independentes' → V (é a definição). (2) 'Se A e B são independentes, P(A∩B)=0' → FALSO (exceto se alguma P=0). (3) 'Se A e B são ME com P>0, são independentes' → FALSO (a pegadinha-mor). OUTRA: independência é simétrica — se A é independente de B, B é independente de A. CESPE: 'independência implica que A e B não têm relação causal' — não necessariamente, a definição é probabilística, não causal.",
       "materia": "estatistica"
     },
     {
@@ -17565,8 +17565,8 @@
       "dificuldade": "dificil",
       "camada_visual": "Bayes: atualiza P(causa) com evidencia.",
       "camada_aplicacao": "P(doente|+)=(0,01x0,99)/(0,01x0,99+0,99x0,05)=16,7%.",
-      "camada1": "Intuição: P(A_i|B) = [P(A_i) × P(B|A_i)] / Σ_j [P(A_j) × P(B|A_j)]. O foco é entender quando e por que aplicar essa fórmula, não apenas decorá-la.",
-      "camada2": "CESPE: P(A_i) é a probabilidade a priori (antes da evidência). P(A_i|B) é a probabilidade a posteriori (após a evidência). O Teorema de Bayes inverte a condicional: de P(B|A_i) obtém-se P(A_i|B). Exige partição do espaço amostral.",
+      "camada1": "Bayes é o 'teorema do detetive': você vê o EFEITO (evidência B — uma testemunha viu algo) e quer descobrir a CAUSA mais provável (qual suspeito é o culpado). Você começa com uma suspeita inicial (probabilidade a priori de cada suspeito). Depois, ajusta com a evidência (chance da testemunha observar o que observou DADO que cada suspeito é culpado). O resultado é a probabilidade ATUALIZADA (a posteriori) de cada suspeito. O denominador normaliza tudo para somar 100%. É uma 'recalibragem' de crenças com base em dados novos.",
+      "camada2": "CESPE: fórmula P(Ai|B) = P(Ai)×P(B|Ai) / ΣP(Aj)×P(B|Aj). O denominador é o TPT (soma sobre TODA a partição). ERRO MAIS COMUM: calcular o denominador apenas com o P(B) dado, ignorando que é a soma de todos os caminhos. EXEMPLO CLÁSSICO CESPE: teste diagnóstico — doença atinge 1% da população, teste acerta 95% dos doentes e 90% dos sãos. Teste deu positivo. P(doente|positivo) = (0,01×0,95)/(0,01×0,95+0,99×0,10) ≈ 8,8%. Surpreendente: mesmo com teste positivo, a chance é baixa (doença rara + falso positivo).",
       "materia": "estatistica"
     },
     {
@@ -17579,8 +17579,8 @@
       "dificuldade": "dificil",
       "camada_visual": "VA = numero. Discreta=contavel. Continua=intervalo.",
       "camada_aplicacao": "Chamadas/hora=VA discreta. Tempo atendimento=VA continua. Ponto exato=0.",
-      "camada1": "Intuição: Variável aleatória: função X: Ω → ℝ que associa um número real a cada resultado do espaço amostral.",
-      "camada2": "CESPE: V.A. discreta = função de probabilidade (f.p.) ou massa de probabilidade. V.A. contínua = função densidade de probabilidade (f.d.p.) — a probabilidade em um ponto é ZERO. P(a ≤ X ≤ b) = ∫_a^b f(x)dx.",
+      "camada1": "Uma variavel aleatória e uma maquina de transformar sorte em número. Cara vira 1 coroa vira 0. Dado vira 1 2 3 4 5 ou 6. DISCRETA: você lista todos os resultados possiveis (como lista de compras). CONTINUA: resultados infinitos num intervalo (altura peso tempo). E a diferença entre CONTAR (discreto) e MEDIR (continuo). Numa VA continua P(X = x) = ZERO a probabilidade está nos intervalos.",
+      "camada2": "CESPE: VA discreta = função de probabilidade (f.p.) P(X = x) > 0. VA continua = função densidade (f.d.p.) P(X = x) = 0. PEGADINHA: Numa VA continua P(X = x) != 0 ERRADO e sempre zero. Probabilidade está no INTERVALO: P(a <= X <= b) = integral f(x)dx. f.d.p. pode ser > 1 (nao e probabilidade e densidade). Area total sob f.d.p. = 1.",
       "materia": "estatistica"
     },
     {
@@ -17593,8 +17593,8 @@
       "dificuldade": "dificil",
       "camada_visual": "AAS com/sem reposicao: independente vs dependente.",
       "camada_aplicacao": "AAS 100 de 10000: com reposicao indep; sem reposicao dep. Fator~0,99.",
-      "camada1": "Intuição: AAS: todos os elementos da população têm igual probabilidade de serem selecionados.",
-      "camada2": "CESPE: na AAS sem reposição, as seleções são DEPENDENTES (a probabilidade condicional muda a cada retirada). Na AAS com reposição, as seleções são INDEPENDENTES. AAS pressupõe que a população seja homogênea.",
+      "camada1": "AAS com reposição: pegar bolinha de gude anotar a cor e DEVOLVER a probabilidade de cada cor e sempre a mesma. Sem reposição: pegar e GUARDAR fora as probabilidades mudam. Na pratica para populações enormes (milhoes) a diferença e tao pequena que tratamos como independente. Mega-Sena: bolas nao voltam (sem reposição). Rifa com devolucao: mesma pessoa pode ganhar duas vezes.",
+      "camada2": "CESPE: Na AAS sem reposição seleções sao independentes ERRADO. Sao DEPENDENTES (população diminui). Na AAS com reposição seleções sao independentes CERTO. Para populações GRANDES AAS sem reposição se aproxima da independencia (fator de correção proximo de 1) mas CESPE quer o conceito TEORICO. AAS exige população homogenea NAO exige mas se for heterogenea estratificada e mais eficiente.",
       "materia": "estatistica"
     },
     {
@@ -17607,8 +17607,8 @@
       "dificuldade": "dificil",
       "camada_visual": "Estratos homogeneos. Alocacao proporcional ou uniforme.",
       "camada_aplicacao": "3 estratos (30%,50%,20%). Amostra100: proporcional 30,50,20. Uniforme 33,33,34.",
-      "camada1": "Intuição: Divide a população em estratos homogêneos (internamente) e heterogêneos entre si.",
-      "camada2": "CESPE: estratificada = homogeneidade DENTRO dos estratos, heterogeneidade ENTRE estratos. A alocação proporcional é a mais comum. A alocação uniforme é usada quando os estratos têm tamanhos similares ou quando se quer comparar os estratos.",
+      "camada1": "Turma com 70% meninas 30% meninos. Amostra de 30: alocação PROPORCIONAL = 21 meninas + 9 meninos (mantem proporção). UNIFORME = 15 de cada (meninos super-representados). Uniforme serve quando você quer COMPARAR grupos com mesma precisão. Pizza: proporcional = cada um come conforme seu tamanho; uniforme = todos ganham pedacos iguais.",
+      "camada2": "CESPE: alocação PROPORCIONAL: n_h = n x N_h / N. Fracao amostral IGUAL em todos os estratos (n_h/N_h = n/N). UNIFORME: n_h = n/k. PEGADINHA: Na uniforme a fracao amostral e igual ERRADO a fracao varia (estratos menores super-representados). Uniforme e preferível quando estratos tem tamanhos muito diferentes ERRADO proporcional e mais adequada.",
       "materia": "estatistica"
     },
     {
@@ -17621,8 +17621,8 @@
       "dificuldade": "dificil",
       "camada_visual": "k=N/n. Risco: periodicidade oculta.",
       "camada_aplicacao": "Amostrar cada 7o dia: sempre mesmo dia (vies). Aleatorio = AAS.",
-      "camada1": "Intuição: Seleciona elementos a cada intervalo fixo k = N/n (população ordenada).",
-      "camada2": "CESPE: a amostragem sistemática é mais prática que a AAS quando a população está ordenada, mas o risco de periodicidade é sua maior desvantagem. Se a ordenação for aleatória, equivale à AAS.",
+      "camada1": "Sistematica e pegar cada 10o carro no pedágio para inspecionar. Nao precisa saber quantos carros passarao so o intervalo k. O perigo: se a cada 10o carro for sempre um caminhão (carros vem em grupos de 9 seguidos de 1 caminhão) sua amostra tera SO caminhões! Isso e a periodicidade oculta. Predios de 12 andares: k=12 comecando no apto 1 = so amostra o terreo!",
+      "camada2": "CESPE adora PERIODICIDADE OCULTA. Se a ordenacao coincide com o intervalo k a amostra fica viesada. Sistematica equivale a AAS quando a ordem e aleatória CERTO. O primeiro elemento e sempre o primeiro da lista ERRADO o inicio e sorteado entre 1 e k. A sistemática nao requer sorteio ERRADO o primeiro elemento e sorteado. Nao exige cadastro numerado completo.",
       "materia": "estatistica"
     },
     {
@@ -17635,8 +17635,8 @@
       "dificuldade": "dificil",
       "camada_visual": "Conglomerados (heterogeneos) vs Estratos (homogeneos).",
       "camada_aplicacao": "Escolas (conglom): heterogeneas, sorteia algumas. Series (estratos): homogeneas.",
-      "camada1": "Intuição: Conglomerados: divide-se a população em grupos (heterogêneos dentro, homogêneos entre si), sorteiam-se alguns grupos e pesquisa-se todos (ou uma amostra) os elementos dos grupos sorteados.",
-      "camada2": "CESPE: ✅ Macete: 'Estratos → dentro parecidos; Conglomerados → dentro diferentes'. CESPE: conglomerado é mais barato, mas menos preciso. Usado quando não há lista completa da população.",
+      "camada1": "Pense em pizzas. ESTRATIFICADA: separa por sabores (calabresa frango mussarela) cada sabor e HOMOGENEO. Voce prova de CADA sabor. CONGLOMERADOS: 10 pizzas inteiras (cada pizza tem TODOS os sabores HETEROGENEA). Sorteia 2 pizzas e come TODAS as fatias dessas 2. Na estratificada TODO grupo contribui. Nos conglomerados SO os sorteados participam.",
+      "camada2": "A CESPE NAO CANSA de perguntar isso. Macete: Estratos = DENTRO homogêneo ENTRE heterogêneo (todos participam). Conglomerados = DENTRO heterogêneo ENTRE homogêneo (so sorteados). Nos conglomerados grupos devem ser homogêneos ERRADO. Na estratificada apenas alguns estratos sao selecionados ERRADO todos participam. Conglomerados e MENOS preciso MAIS barato.",
       "materia": "estatistica"
     },
     {
@@ -17649,8 +17649,8 @@
       "dificuldade": "facil",
       "camada_visual": "Amostral (diminui c/ n) vs Nao amostral (nao diminui).",
       "camada_aplicacao": "Amostral +-3% (n=1000). Nao amostral: vies persiste c/ n=10000.",
-      "camada1": "Intuição: Erro amostral: diferença entre a estimativa e o parâmetro devido ao fato de se estudar apenas uma amostra.",
-      "camada2": "CESPE: Aumentar o tamanho amostral reduz o erro amostral, mas NÃO reduz o erro não amostral! Erro não amostral é mais perigoso em grandes amostras.",
+      "camada1": "Erro amostral = preco de nao entrevistar todo mundo diminui com n. E como medir a temperatura da piscina: 10 pontos e melhor que 3. Erro nao amostral = termometro sujo entrevistador que pergunta errado pessoa que mente. Esses NAO diminuem com n. Se o termometro está descalibrado medir 1000 vezes nao adianta.",
+      "camada2": "PONTO FAVORITO DA CESPE. Aumentar n reduz todos os erros ERRADO. So reduz o ERRO AMOSTRAL. Erro nao amostral (viés de selecao erro de resposta nao resposta processamento) NAO diminui com n. Pior: em grandes amostras o erro nao amostral e MAIS GRAVE porque você confia em estimativas precisas mas viesadas. Erro amostral e mensurável; o nao amostral e dificil de quantificar CERTO.",
       "materia": "estatistica"
     },
     {
@@ -17663,8 +17663,8 @@
       "dificuldade": "dificil",
       "camada_visual": "n=Z2pq/E2. p=0,5 conservador.",
       "camada_aplicacao": "95% (Z=1,96), E=0,03, p=0,5: n=1067. E=0,02: n=2401.",
-      "camada1": "Intuição: n = (Z² × p × q) / E², onde Z = valor crítico do nível de confiança, p = proporção estimada, q = 1 − p, E = margem de erro.",
-      "camada2": "CESPE: a fórmula supõe população infinita. Para população finita, aplica-se correção: n_finito = (n_inf × N) / (n_inf + N − 1). Quanto menor E (mais precisão) ou maior Z (mais confiança), maior o n.",
+      "camada1": "n = Z^2 x p x q / E^2. Tres ingredientes: Z (confiança 1,96 para 95%) p x q (variabilidade máximo 0,25 quando p=0,5) E (margem de erro). Se nao sabe a proporção usa p=0,5 caso conservador como preparar comida para o máximo de convidados. Para E=3% 95%: n ~ (4 x 0,25) / 0,0009 ~ 1111.",
+      "camada2": "Formula para população INFINITA. CESPE: p=0,5 p x q = 0,25 (máximo conservador). Aproxime Z^2 x p x q ~ 1 (95% Z~2 p=0,5): n ~ 1/E^2. E=0,05 n~400; E=0,03 n~1111; E=0,02 n~2500. Para população finita: n_finito = (n_inf x N)/(n_inf + N - 1). CESPE pode pedir cálculo direto.",
       "materia": "estatistica"
     },
     {
@@ -17677,8 +17677,8 @@
       "dificuldade": "dificil",
       "camada_visual": "n_finito = (n_inf x N)/(n_inf+N-1).",
       "camada_aplicacao": "N=5000, n_inf=1067. n_finito=880.",
-      "camada1": "Intuição: n_finito = (n_infinito × N) / (n_infinito + N − 1), onde N = tamanho da população, n_infinito = tamanho amostral calculado sem correção (fórmula de população infinita).",
-      "camada2": "CESPE: a correção para população finita é usada quando n/N > 0,05 (amostra > 5% da população). Quanto menor N, maior o efeito da correção. Se N é muito grande, n_finito ≈ n_infinito.",
+      "camada1": "500 alunos. Formula infinita diz n=200. Mas 200/500 = 40% muito! A correção ajusta para baixo. Quando a amostra ja e grande relativa a população a incerteza e menor. Se tem 10 pessoas e a fórmula diz 9 com 9/10 o erro e bem menor que 9/1000. A correção reconhece que pegando quase todo mundo a margem de erro encolhe naturalmente.",
+      "camada2": "n_finito = (n_inf x N)/(n_inf + N - 1). Usada quando n/N > 0,05 (fracao > 5%). SEMPRE reduz n (n_finito < n_inf). Se N e grande n_finito ~ n_inf. Ex: N=1000 n_inf=400 n_finito = (400x1000)/(400+999) ~ 286. Para populações infinitas aplica-se correção ERRADO nao se aplica.",
       "materia": "estatistica"
     },
     {
@@ -17691,8 +17691,8 @@
       "dificuldade": "dificil",
       "camada_visual": "Slovin: n=N/(1+Ne2). Z~2 embutido.",
       "camada_aplicacao": "N=10000, e=0,05: n=10000/(1+10000x0,0025)=385.",
-      "camada1": "Intuição: n = N / (1 + N × e²), onde N = tamanho da população, e = margem de erro (em decimal).",
-      "camada2": "CESPE: a fórmula de Slovin DERIVA de n = (Z² × 0,5 × 0,5) / e² com correção para população finita, assumindo Z = 2 (aproximação para 95% de confiança). Não é preciso usar Z explícito — já está embutido na aproximação.",
+      "camada1": "Slovin e o atalho do estatístico apressado: n = N/(1 + N x e^2). Ja embute p=0,5 Z~2 (95%) e correção para população finita. Formula pronta de bolo. Ex: N=10.000 e=5% n = 10000/(1 + 10000 x 0,0025) = 10000/26 ~ 385. Pratico mas so funciona para 95% de confiança.",
+      "camada2": "Slovin deriva de n_inf = Z^2pq/E^2 com correção Z=2 p=0,5. CESPE raramente cita Slovin mas cobra o conceito: variabilidade desconhecida p=0,5. Slovin dispensa o conhecimento da variabilidade CERTO (assume p=0,5). Slovin e exata para qualquer nivel de confiança ERRADO aproximação para 95%. Nao confundir com fórmula para média.",
       "materia": "estatistica"
     },
     {
@@ -17705,8 +17705,8 @@
       "dificuldade": "dificil",
       "camada_visual": "n=Z2s2/E2. Precisa s. Usa-se amostra piloto.",
       "camada_aplicacao": "95%, E=R$200, s=R$1000: n=96. Maior s2 -> maior n.",
-      "camada1": "Intuição: n = (Z² × σ²) / E², onde Z = valor crítico do nível de confiança, σ² = variância populacional, E = margem de erro (precisão desejada).",
-      "camada2": "CESPE: a fórmula exige CONHECER σ, o que raramente ocorre na prática. Solução: usar s (desvio padrão amostral) como estimativa, ou conduzir amostra-piloto. Quanto maior σ² (mais heterogeneidade), maior o n necessário.",
+      "camada1": "Para estimar a renda média: n = Z^2 x sigma^2 / E^2. sigma^2 (variância) = espalhamento. Renda varia muito (ricos/pobres) sigma^2 grande mais gente. Renda parecida sigma^2 pequeno poucos bastam. Problema: você NAO CONHECE sigma^2! Usa estimativa de estudos anteriores ou amostra-piloto. E como acertar o tamanho do bolo sem saber quantos convidados vem.",
+      "camada2": "CESPE: sigma^2 e DESCONHECIDO. Usa s^2 ou amostra-piloto. Para calcular n e necessario conhecer a média populacional ERRADO precisa da VARIANCIA. n ~ sigma^2/E^2. Variancia dobra n dobra. E reduz a metade n quadruplica (E^2 no denominador). Maior homogeneidade menor n CERTO.",
       "materia": "estatistica"
     },
     {
@@ -17719,8 +17719,8 @@
       "dificuldade": "facil",
       "camada_visual": "Mais confianca, menos margem, mais variancia -> maior n.",
       "camada_aplicacao": "95%->99%: n+73%. E 3%->1,5%: n quadruplica.",
-      "camada1": "Intuição: (1) Nível de confiança (↑ → n ↑): maior confiança exige maior Z, logo maior n; (2) Margem de erro (↓ → n ↑): mais precisão exige maior n; (3) Variabilidade populacional (↑ → n ↑): mais heterogeneidade exige maior n; (4) Tamanho da população (↑ → n ↑ até certo ponto): para N grande, n converge para o valor da fórmula infinita.",
-      "camada2": "CESPE: a relação é: n ∝ Z² × σ² / E². Dobrar a precisão (E/2) quadruplica n. Aumentar o nível de confiança de 95% (Z≈1,96) para 99% (Z≈2,58) aumenta n em ≈73%. A variabilidade é o fator que o pesquisador menos controla.",
+      "camada1": "Quatro botoes: (1) CONFIANCA sobe n sobe; (2) PRECISAO sobe (menor E) n sobe; (3) VARIABILIDADE sobe n sobe; (4) POPULACAO (N pequeno importa; N grande converge). E como uma lupa: mais aumento (precisão) exige mais aproximação (n). Cada fator tem seu custo nao da para maximizar tudo sem gastar muito.",
+      "camada2": "CESPE: n ~ Z^2 x sigma^2 / E^2. (1) Dobrar n reduz E a metade ERRADO precisa 4x n. (2) 95% para 99% aumenta n em ~73% CERTO (Z^2: 3,84 para 6,66). (3) N e o fator que mais influencia ERRADO para N grande n converge. A variabilidade e o fator que o pesquisador menos controla.",
       "materia": "estatistica"
     },
     {
@@ -17733,8 +17733,8 @@
       "dificuldade": "dificil",
       "camada_visual": "E(X)=SxP(x). Var=E(X2)-E(X)2.",
       "camada_aplicacao": "Dado: E(X)=3,5. E(X2)=15,17. Var=2,92. DP=1,71.",
-      "camada1": "Intuição: E(X) = Σ [x_i × P(X = x_i)] — média ponderada pelos valores e suas probabilidades. O foco é entender quando e por que aplicar essa fórmula, não apenas decorá-la.",
-      "camada2": "CESPE: Var(X) = E(X²) − [E(X)]² é a fórmula computacional (mais prática). A esperança é um operador LINEAR: E(aX + b) = aE(X) + b. A variância NÃO é linear: Var(aX + b) = a²Var(X). CESPE adora testar essas propriedades.",
+      "camada1": "Esperanca = média ponderada de um jogo. Dado: E(X) = 1x1/6 + 2x1/6 + ... + 6x1/6 = 3,5. Valor medio em infinitas jogadas. Variancia = risco o quanto os valores se afastam da média. Jogo que paga sempre 3,50 (variância 0) vs 0 ou 7 (variância alta): mesma esperanca riscos totalmente diferentes. Esperanca = pontaria; variância = dispersao dos tiros.",
+      "camada2": "CESPE AMA as propriedades. E(aX + b) = aE(X) + b LINEAR. Var(aX + b) = a^2 Var(X) constante some a ao quadrado. Var(X) = E(X^2) - [E(X)]^2. Var(2X) = 2Var(X) ERRADO e 4Var(X). E(X^2) = [E(X)]^2 ERRADO (exceto Var=0). X e Y independentes Var(X+Y) = Var(X) + Var(Y) CERTO.",
       "materia": "estatistica"
     },
     {
@@ -17747,8 +17747,8 @@
       "dificuldade": "dificil",
       "camada_visual": "Binomial: E(X)=np. Var(X)=np(1-p).",
       "camada_aplicacao": "20 questoes p=0,25: E(X)=5. Var=20x0,25x0,75=3,75. DP=1,94.",
-      "camada1": "Intuição: Se X ~ Binomial(n, p): E(X) = np, Var(X) = np(1 − p), desvio padrão = √[np(1 − p)].",
-      "camada2": "CESPE: a binomial é a SOMA de n Bernoulli independentes. E(X) = np, Var(X) = npq (q = 1−p). A variância é máxima quando p = 0,5 (máxima incerteza). A proporção amostral p̂ = X/n tem E(p̂) = p e Var(p̂) = p(1−p)/n.",
+      "camada1": "Binomial = jogar uma moeda repetidas vezes. n=10 contar caras. E(X) = np = 10x0,5 = 5. Var(X) = np(1-p) = 10x0,5x0,5 = 2,5. Variancia maxima em p=0,5 (maxima incerteza moeda equilibrada e a mais imprevisível). p=0,99 variância pequena você quase sempre sabe o resultado. Caca-niqueis: quanto mais equilibrado mais imprevisível.",
+      "camada2": "PEGADINHA CESPE: confundir variância da binomial (npq) com da proporção (pq/n). X~Bin(n,p): E(X)=np Var(X)=npq. p chapeu = X/n: E(p chapeu)=p Var(p chapeu)=pq/n. Media de p chapeu e np ERRADO E(p chapeu)=p. Var(Bin) maxima em p=0,5 CERTO. Binomial = SOMA de n Bernoulli independentes. Duas formulas: uma para NUMERO (X) outra para PROPORCAO (p chapeu).",
       "materia": "estatistica"
     }
   ],
