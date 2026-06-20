@@ -22,6 +22,7 @@ import PomodoroBar from "./PomodoroBar";
 import Shell from "../components/Shell";
 import BackButton from "../components/BackButton";
 import StatCard from "../components/StatCard";
+import { getLocalDateString, getTodayLocalStr, calculateStreak, isConsecutiveDay } from "../lib/streak";
 const SESSION_COOKIE = 'pcpe_session';
 
 // Cache for a runtime-created Supabase client, so we never lose the auth session
@@ -151,55 +152,8 @@ function getLocalJSON(key, fallback = "null") {
 }
 
 
-/**
- * @param {Date} date
- * @returns {string} "YYYY-MM-DD"
- */
-function getLocalDateString(date) {
-  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
-}
-
-/** @returns {string} "YYYY-MM-DD" */
-function getTodayStr() {
-  return new Date().toISOString().slice(0, 10);
-}
-
-/**
- * Calcula streak de dias consecutivos de estudo.
- * @param {SRSData} srsData
- * @returns {number}
- */
-function calculateStreak(srsData) {
-  const dates = new Set();
-  for (const id in srsData) {
-    if (srsData[id] && srsData[id].lastReviewed) {
-      const d = new Date(srsData[id].lastReviewed);
-      dates.add(getLocalDateString(d));
-    }
-  }
-  if (dates.size === 0) return 0;
-
-  const todayStr = getLocalDateString(new Date());
-  const yesterdayStr = getLocalDateString(new Date(Date.now() - 24 * 60 * 60 * 1000));
-
-  if (!dates.has(todayStr) && !dates.has(yesterdayStr)) {
-    return 0;
-  }
-
-  let streak = 0;
-  let current = dates.has(todayStr) ? new Date() : new Date(Date.now() - 24 * 60 * 60 * 1000);
-
-  while (true) {
-    const currentStr = getLocalDateString(current);
-    if (dates.has(currentStr)) {
-      streak++;
-      current = new Date(current.getTime() - 24 * 60 * 60 * 1000);
-    } else {
-      break;
-    }
-  }
-  return streak;
-}
+/** @returns {string} "YYYY-MM-DD" no fuso local (alias) */
+const getTodayStr = getTodayLocalStr;
 
 /**
  * Merge bidirecional de SRS: local sobrescreve remote se tiver lastReviewed mais recente.
@@ -1118,7 +1072,14 @@ export default function App() {
       const prev = userMeta || { current_streak: 0, last_study_date: null, shields_available: 2, shields_exhausted_at: null };
       let newStreak = prev.current_streak || 0;
       if (prev.last_study_date !== today) {
-        newStreak += 1;
+        const gap = prev.last_study_date !== null && !isConsecutiveDay(prev.last_study_date, today);
+        const shieldProtected = gap && (
+          prev.shields_available < 2 ||
+          prev.shields_exhausted_at !== null
+        );
+        if (!gap || shieldProtected) {
+          newStreak += 1;
+        }
       }
       // Detecta se foi um Desafio concluído (52 cards respondidos)
       const isChallengeDone = challengeActive && answeredSessionIds.size >= challengeCards.length;

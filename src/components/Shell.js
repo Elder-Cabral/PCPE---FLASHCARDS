@@ -6,56 +6,7 @@
 /** @typedef {import('../types').PomodoroTick} PomodoroTick */
 import React, { useState, useEffect, useMemo, useCallback } from "react";
 import PomodoroBar from "../app/PomodoroBar";
-
-/**
- * @param {Date} date
- * @returns {string} "YYYY-MM-DD"
- */
-function getLocalDateString(date) {
-  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
-}
-
-/** @returns {string} "YYYY-MM-DD" */
-function getTodayStr() {
-  return new Date().toISOString().slice(0, 10);
-}
-
-/**
- * Calcula streak de dias consecutivos de estudo.
- * @param {SRSData} srsData
- * @returns {number}
- */
-function calculateStreak(srsData) {
-  const dates = new Set();
-  for (const id in srsData) {
-    if (srsData[id] && srsData[id].lastReviewed) {
-      const d = new Date(srsData[id].lastReviewed);
-      dates.add(getLocalDateString(d));
-    }
-  }
-  if (dates.size === 0) return 0;
-
-  const todayStr = getLocalDateString(new Date());
-  const yesterdayStr = getLocalDateString(new Date(Date.now() - 24 * 60 * 60 * 1000));
-
-  if (!dates.has(todayStr) && !dates.has(yesterdayStr)) {
-    return 0;
-  }
-
-  let streak = 0;
-  let current = dates.has(todayStr) ? new Date() : new Date(Date.now() - 24 * 60 * 60 * 1000);
-
-  while (true) {
-    const currentStr = getLocalDateString(current);
-    if (dates.has(currentStr)) {
-      streak++;
-      current = new Date(current.getTime() - 24 * 60 * 60 * 1000);
-    } else {
-      break;
-    }
-  }
-  return streak;
-}
+import { getTodayLocalStr, calculateStreak } from "../lib/streak";
 
 const RADIAL_GLOW_BASE = {
   position: "fixed",
@@ -92,7 +43,7 @@ const Shell = React.memo(function Shell({ children, user, stats, onLogout, cente
     if (userMeta.shields_available > 0) return false;
     if (!userMeta.shields_exhausted_at) return false;
     const exhaustDate = new Date(userMeta.shields_exhausted_at + "T00:00:00");
-    const todayDate = new Date(getTodayStr() + "T00:00:00");
+    const todayDate = new Date(getTodayLocalStr() + "T00:00:00");
     const daysSinceExhaust = Math.floor((todayDate - exhaustDate) / 86400000);
     return daysSinceExhaust < 7;
   }, [userMeta]);

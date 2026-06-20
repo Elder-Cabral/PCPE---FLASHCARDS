@@ -1,3 +1,4 @@
+
 # Agente: @engenheiro-sistemas
 **Versão:** 1.1 | **Projeto:** pcpe-flashcards | **Data:** Junho/2026
 
