@@ -765,8 +765,9 @@ export default function App() {
               const exhaustDate = new Date(meta.shields_exhausted_at + "T00:00:00");
               const daysSinceExhaust = Math.floor((todayDate - exhaustDate) / 86400000);
               if (daysSinceExhaust >= 7) {
-                // Carência expirada: perde a ofensiva
+                // Carência expirada: perde a ofensiva e restaura escudos
                 meta.current_streak = 0;
+                meta.shields_available = 2;
                 meta.shields_exhausted_at = null;
                 needsUpdate = true;
               }
