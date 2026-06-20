@@ -787,6 +787,13 @@ export default function App() {
         }
       }
 
+      // ── Safety: streak zerou, escudos devem voltar a 2 ──
+      if (meta.current_streak === 0 && meta.shields_available < 2) {
+        meta.shields_available = 2;
+        meta.shields_exhausted_at = null;
+        needsUpdate = true;
+      }
+
       if (needsUpdate) {
           await safeCall(() => client.from("user_meta").upsert({
             ...meta,
@@ -1087,12 +1094,13 @@ export default function App() {
 
       // Se shields_exhausted_at ainda existe e NÃO é desafio, mantém (carência continua)
       // Se for desafio: restaura 2 escudos e limpa carência
+      const shieldsWereLost = prev.current_streak === 0 && (prev.shields_available ?? 2) < 2;
       const updated = {
         username: currentUser.username,
         current_streak: newStreak,
         last_study_date: today,
-        shields_available: isChallengeDone ? 2 : (prev.shields_available ?? 2),
-        shields_exhausted_at: isChallengeDone ? null : (prev.shields_exhausted_at ?? null),
+        shields_available: isChallengeDone ? 2 : shieldsWereLost ? 2 : (prev.shields_available ?? 2),
+        shields_exhausted_at: isChallengeDone ? null : shieldsWereLost ? null : (prev.shields_exhausted_at ?? null),
         updated_at: new Date().toISOString(),
       };
       try {
