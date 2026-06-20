@@ -727,6 +727,11 @@ export default function App() {
           shields_exhausted_at: localFallback?.shields_exhausted_at || null,
           updated_at: new Date().toISOString(),
         };
+          // Safety: mesmo no seed, streak zerado = escudos restaurados
+          if (meta.current_streak === 0 && meta.shields_available < 2) {
+            meta.shields_available = 2;
+            meta.shields_exhausted_at = null;
+          }
           await safeCall(() => client.from("user_meta").upsert(meta));
         localStorage.setItem(storageKey, JSON.stringify(meta));
         setUserMeta(meta);
@@ -791,6 +796,7 @@ export default function App() {
       if (meta.current_streak === 0 && meta.shields_available < 2) {
         meta.shields_available = 2;
         meta.shields_exhausted_at = null;
+        shieldActivated = false; // streak já é 0, nada a proteger
         needsUpdate = true;
       }
 
@@ -809,6 +815,11 @@ export default function App() {
       setError("Erro ao carregar metas do usuário.");
       // Fallback: localStorage ou SRS
       if (localFallback) {
+          // Safety: mesmo no fallback, streak zerado = escudos restaurados
+          if (localFallback.current_streak === 0 && localFallback.shields_available < 2) {
+            localFallback.shields_available = 2;
+            localFallback.shields_exhausted_at = null;
+          }
         setUserMeta(localFallback);
       } else {
         setUserMeta({ current_streak: calculateStreak(srsDataRef.current), shields_available: 2 });
