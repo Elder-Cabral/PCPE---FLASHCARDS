@@ -22,7 +22,7 @@ import PomodoroBar from "./PomodoroBar";
 import Shell from "../components/Shell";
 import BackButton from "../components/BackButton";
 import StatCard from "../components/StatCard";
-import { getLocalDateString, getTodayLocalStr, calculateStreak, isConsecutiveDay, parseLocalDate } from "../lib/streak";
+import { getLocalDateString, getTodayLocalStr, getTodayBR, getDateBR, getYesterdayBR, calculateStreak, isConsecutiveDay, parseLocalDate } from "../lib/streak";
 const SESSION_COOKIE = 'pcpe_session';
 
 // Cache for a runtime-created Supabase client, so we never lose the auth session
@@ -131,16 +131,15 @@ function calculateSM2(q, interval = 1, repetition = 0, ef = 2.5) {
     }
   }
 
-  // Vencimento à meia-noite (00:00:00) de newInterval dias a partir de hoje
-  const targetDate = new Date();
-  targetDate.setDate(targetDate.getDate() + newInterval);
-  targetDate.setHours(0, 0, 0, 0);
+  // Vencimento à meia-noite de Brasília (UTC-3) de newInterval dias a partir de hoje
+  const [y, m, d] = getTodayBR().split('-').map(Number);
+  const dueDate = Date.UTC(y, m - 1, d + newInterval, 3, 0, 0); // 03:00 UTC = 00:00 BRT
 
   return {
     interval: newInterval,
     repetition: newRepetition,
     ef: newEf,
-    dueDate: targetDate.getTime(),
+    dueDate,
     lastReviewed: Date.now()
   };
 }
@@ -152,8 +151,8 @@ function getLocalJSON(key, fallback = "null") {
 }
 
 
-/** @returns {string} "YYYY-MM-DD" no fuso local (alias) */
-const getTodayStr = getTodayLocalStr;
+/** @returns {string} "YYYY-MM-DD" no fuso Brasília (alias) */
+const getTodayStr = getTodayBR;
 
 async function safeSupabaseCall(fn) {
   const result = await safeCall(fn);
@@ -218,7 +217,7 @@ function mergeFavorites(local, remote) {
  */
 const isReviewedToday = (timestamp) => {
   if (!timestamp) return false;
-  return getLocalDateString(new Date(timestamp)) === getLocalDateString(new Date());
+  return getDateBR(timestamp) === getTodayBR();
 };
 
 // ── COMPONENTE PRINCIPAL ───────────────────────────────────────────────────
@@ -780,8 +779,9 @@ export default function App() {
       let shieldActivated = false;
       const meta = { ...data };
 
-      // Reset semanal de escudos (segunda-feira)
-      if (new Date().getDay() === 1 && meta.shields_available < 3) {
+      // Reset semanal de escudos (segunda-feira em Brasília)
+      const brDayOfWeek = new Date().toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo', weekday: 'numeric' });
+      if (brDayOfWeek === '1' && meta.shields_available < 3) {
         meta.shields_available = 3;
         meta.shields_exhausted_at = null;
         needsUpdate = true;
@@ -802,7 +802,7 @@ export default function App() {
               needsUpdate = true;
               // Marca a falha como processada. Sem isso, cada reload/login
               // consumiria outro escudo pelo mesmo intervalo de ausência.
-              meta.last_study_date = getLocalDateString(new Date(Date.now() - 86400000));
+              meta.last_study_date = getYesterdayBR();
               // Se era o último escudo, marca início da carência
               if (meta.shields_available === 0) {
                 meta.shields_exhausted_at = today;
@@ -1126,11 +1126,11 @@ export default function App() {
   // Sincronizar dados a cada 30s (cards revisados em outro dispositivo, virada do dia, etc)
   useEffect(() => {
     if (!currentUser) return;
-    let lastDateStr = getLocalDateString(new Date());
+    let lastDateStr = getTodayBR();
 
     const interval = setInterval(() => {
       if (isSavingRef.current) return;
-      const todayStr = getLocalDateString(new Date());
+      const todayStr = getTodayBR();
       if (todayStr !== lastDateStr) {
         lastDateStr = todayStr;
       }
@@ -3177,12 +3177,12 @@ function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, 
   if (answerHistory.length > 0) {
     const sorted = [...answerHistory].sort((a, b) => a.timestamp - b.timestamp);
     const SESSION_GAP_MS = 15 * 60 * 1000;
-    uniqueStudyDays.add(getLocalDateString(new Date(sorted[0].timestamp)));
+    uniqueStudyDays.add(getDateBR(sorted[0].timestamp));
     totalSessions = 1;
     let lastTs = sorted[0].timestamp;
     for (let i = 1; i < sorted.length; i++) {
       const entry = sorted[i];
-      uniqueStudyDays.add(getLocalDateString(new Date(entry.timestamp)));
+      uniqueStudyDays.add(getDateBR(entry.timestamp));
       if (entry.timestamp - lastTs >= SESSION_GAP_MS) {
         totalSessions++;
       }
@@ -3253,7 +3253,7 @@ function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, 
     for (const entry of answerHistory) {
       if (entry.timestamp < startMs) continue;
       if (graphPeriod === "custom" && graphCustomEnd && entry.timestamp > new Date(graphCustomEnd).getTime()) continue;
-      const dayStr = getLocalDateString(new Date(entry.timestamp));
+      const dayStr = getDateBR(entry.timestamp);
       if (!dayMap[dayStr]) dayMap[dayStr] = { date: dayStr, total: 0, acertos: 0, alertas: 0, erros: 0 };
       dayMap[dayStr].total++;
       if (entry.resultado >= 2) dayMap[dayStr].acertos++;
@@ -3261,9 +3261,12 @@ function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, 
       else dayMap[dayStr].erros++;
     }
 
+    const todayBR = getTodayBR();
+    const [ty, tm, td] = todayBR.split('-').map(Number);
+    const brNow = new Date(ty, tm - 1, td);
     const result = [];
     for (let i = 0; i < days; i++) {
-      const d = new Date(now - (days - 1 - i) * 86400000);
+      const d = new Date(brNow.getTime() - (days - 1 - i) * 86400000);
       const dayStr = getLocalDateString(d);
       const existing = dayMap[dayStr];
       result.push(existing || { date: dayStr, total: 0, acertos: 0, alertas: 0, erros: 0 });

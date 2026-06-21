@@ -4,6 +4,7 @@
 import { useState, useEffect, useRef } from "react";
 import { supabase } from "../lib/supabase";
 import AmbientSound from "./AmbientSound";
+import { getTodayBR } from "../lib/streak";
 
 function playBeep() {
   try {
@@ -105,7 +106,7 @@ async function logPomodoroGlobal() {
   const username = globalUsername;
   if (!username || !supabase?.from) return;
   try {
-    const today = new Date().toISOString().slice(0, 10);
+    const today = getTodayBR();
     const { data: existing } = await supabase
       .from("pomodoro_log")
       .select("count")

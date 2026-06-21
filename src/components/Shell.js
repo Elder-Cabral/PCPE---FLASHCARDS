@@ -6,7 +6,7 @@
 /** @typedef {import('../types').PomodoroTick} PomodoroTick */
 import React, { useState, useEffect, useMemo, useCallback } from "react";
 import PomodoroBar from "../app/PomodoroBar";
-import { getTodayLocalStr, calculateStreak, parseLocalDate } from "../lib/streak";
+import { getTodayBR, calculateStreak, parseLocalDate } from "../lib/streak";
 
 const RADIAL_GLOW_BASE = {
   position: "fixed",
@@ -43,7 +43,7 @@ const Shell = React.memo(function Shell({ children, user, stats, onLogout, cente
     if (userMeta.shields_available > 0) return false;
     if (!userMeta.shields_exhausted_at) return false;
     const exhaustDate = parseLocalDate(userMeta.shields_exhausted_at);
-    const todayDate = parseLocalDate(getTodayLocalStr());
+    const todayDate = parseLocalDate(getTodayBR());
     if (!exhaustDate || !todayDate) return false;
     const daysSinceExhaust = Math.floor((todayDate - exhaustDate) / 86400000);
     return daysSinceExhaust < 5;
@@ -63,7 +63,7 @@ const Shell = React.memo(function Shell({ children, user, stats, onLogout, cente
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                 <span style={{ color: shellStreakAtRisk ? "#f59e0b" : "#f97316", fontSize: 12, fontWeight: 600, whiteSpace: "nowrap" }} title={shellStreakAtRisk ? "Ofensiva em risco! Faça o Desafio." : "Dias de ofensiva"}>
-                  {shellStreakAtRisk ? "⚠️" : "🔥"} {calculateStreak(srsData)} <span style={{ color: "#94a3b8", fontSize: 10, fontWeight: 400 }}>dias</span>
+                  {shellStreakAtRisk ? "⚠️" : "🔥"} {userMeta?.current_streak ?? calculateStreak(srsData)} <span style={{ color: "#94a3b8", fontSize: 10, fontWeight: 400 }}>dias</span>
                 </span>
                 <span style={{ color: "#334155", fontSize: 11, fontWeight: 300 }}>|</span>
                 <span style={{ color: "#3b82f6", fontSize: 12, fontWeight: 600, whiteSpace: "nowrap" }} title="Escudos disponíveis">

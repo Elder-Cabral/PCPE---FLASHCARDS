@@ -2,27 +2,55 @@
 
 /**
  * @param {Date} date
- * @returns {string} "YYYY-MM-DD" no fuso local
+ * @returns {string} "YYYY-MM-DD" no fuso local do dispositivo
+ * @deprecated Use getTodayBR() ou getDateBR() para fuso fixo de Brasília
  */
 export function getLocalDateString(date) {
   return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
 }
 
-/** @returns {string} "YYYY-MM-DD" no fuso local */
+/** @returns {string} "YYYY-MM-DD" no fuso local do dispositivo */
 export function getTodayLocalStr() {
   const d = new Date();
   return getLocalDateString(d);
 }
 
+/** @returns {string} "YYYY-MM-DD" no fuso de Brasília (America/Sao_Paulo, UTC-3) */
+export function getTodayBR() {
+  return new Date()
+    .toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' })
+    .split('/').reverse().join('-');
+}
+
+/** @returns {string} "YYYY-MM-DD" de ontem no fuso Brasília */
+export function getYesterdayBR() {
+  const brStr = new Date()
+    .toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' });
+  const [d, m, y] = brStr.split('/').map(Number);
+  const yesterday = new Date(y, m - 1, d - 1);
+  return `${String(yesterday.getFullYear()).padStart(4, '0')}-${String(yesterday.getMonth() + 1).padStart(2, '0')}-${String(yesterday.getDate()).padStart(2, '0')}`;
+}
+
 /**
- * Converte e limpa qualquer string de data para uma data local segura (meia-noite).
+ * Converte timestamp ms para "YYYY-MM-DD" no fuso Brasília.
+ * @param {number} timestamp ms
+ * @returns {string}
+ */
+export function getDateBR(timestamp) {
+  return new Date(timestamp)
+    .toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' })
+    .split('/').reverse().join('-');
+}
+
+/**
+ * Converte string de data para Date à meia-noite no fuso Brasília (UTC-3).
  * @param {string|Date} dateStr
  * @returns {Date|null}
  */
 export function parseLocalDate(dateStr) {
   if (!dateStr) return null;
   const clean = typeof dateStr === 'string' ? dateStr.substring(0, 10) : getLocalDateString(new Date(dateStr));
-  return new Date(clean + "T00:00:00");
+  return new Date(clean + "T00:00:00-03:00");
 }
 
 /**
@@ -41,6 +69,7 @@ export function isConsecutiveDay(prevDateStr, todayStr) {
 
 /**
  * Calcula streak de dias consecutivos de estudo a partir do SRSData.
+ * Usa o fuso Brasília para garantir consistência entre dispositivos.
  * @param {import('../types').SRSData} srsData
  * @returns {number}
  */
@@ -48,30 +77,26 @@ export function calculateStreak(srsData) {
   const dates = new Set();
   for (const id in srsData) {
     if (srsData[id] && srsData[id].lastReviewed) {
-      const d = new Date(srsData[id].lastReviewed);
-      dates.add(getLocalDateString(d));
+      dates.add(getDateBR(srsData[id].lastReviewed));
     }
   }
   if (dates.size === 0) return 0;
 
-  const todayStr = getLocalDateString(new Date());
-  const yesterdayStr = getLocalDateString(new Date(Date.now() - 24 * 60 * 60 * 1000));
+  const todayStr = getTodayBR();
+  const yesterdayStr = getYesterdayBR();
 
   if (!dates.has(todayStr) && !dates.has(yesterdayStr)) {
     return 0;
   }
 
   let streak = 0;
-  let current = dates.has(todayStr) ? new Date() : new Date(Date.now() - 24 * 60 * 60 * 1000);
+  let currentStr = dates.has(todayStr) ? todayStr : yesterdayStr;
 
-  while (true) {
-    const currentStr = getLocalDateString(current);
-    if (dates.has(currentStr)) {
-      streak++;
-      current = new Date(current.getTime() - 24 * 60 * 60 * 1000);
-    } else {
-      break;
-    }
+  while (dates.has(currentStr)) {
+    streak++;
+    const [y, m, d] = currentStr.split('-').map(Number);
+    const prev = new Date(y, m - 1, d - 1);
+    currentStr = `${String(prev.getFullYear()).padStart(4, '0')}-${String(prev.getMonth() + 1).padStart(2, '0')}-${String(prev.getDate()).padStart(2, '0')}`;
   }
   return streak;
 }
