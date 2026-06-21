@@ -1457,6 +1457,7 @@ export default function App() {
     const exhaustDate = parseLocalDate(userMeta.shields_exhausted_at);
     const todayDate = parseLocalDate(getTodayStr());
     if (!exhaustDate || !todayDate) return 0;
+    const daysSinceExhaust = Math.floor((todayDate - exhaustDate) / 86400000);
     return Math.max(0, 7 - daysSinceExhaust);
   }, [userMeta]);
 
