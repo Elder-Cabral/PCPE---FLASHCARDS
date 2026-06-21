@@ -281,6 +281,8 @@ export default function App() {
   const [challengeStarted, setChallengeStarted] = useState(false);
   /** @type {string|null} */
   const [challengeBanner, setChallengeBanner] = useState(null);
+  /** @type {boolean} */
+  const [hasPendingChallenge, setHasPendingChallenge] = useState(false);
   const feedbackInProgressCardId = useRef(null);
   const saveQueueRef = useRef(Promise.resolve());
   const isSavingRef = useRef(false);
@@ -1063,12 +1065,7 @@ export default function App() {
           }).filter(Boolean);
           if (cards.length > 0) {
             setChallengeCards(cards);
-            setChallengeActive(true);
-            setChallengeStarted(true);
-            setStudyQueue(cards);
-            setCurrentQueueIndex(0);
-            setStudyMode("challenge");
-            setSelectedMateria(null);
+            setHasPendingChallenge(true);
           }
         } else {
           // Desafio expirado (outro dia)
@@ -1183,6 +1180,7 @@ export default function App() {
           setChallengeCards([]);
           setChallengeStarted(false);
           setChallengeBanner(null);
+          setHasPendingChallenge(false);
           localStorage.removeItem("pcpe_challenge_" + currentUser.username);
         }
         } catch (e) {
@@ -1222,6 +1220,7 @@ export default function App() {
     setChallengeCards([]);
     setChallengeStarted(false);
     setChallengeBanner(null);
+    setHasPendingChallenge(false);
     updateUserMetaState(null);
   };
 
@@ -1533,6 +1532,7 @@ export default function App() {
     setCurrentQueueIndex(0);
     setStudyMode("challenge");
     setSelectedMateria(null);
+    setHasPendingChallenge(false);
     resetSessionState();
     // Persistir estado do desafio
     try {
@@ -1541,6 +1541,17 @@ export default function App() {
         startedDate: getTodayStr(),
       }));
     } catch (_) {}
+  };
+
+  const resumeChallenge = () => {
+    if (challengeCards.length === 0) return;
+    setChallengeActive(true);
+    setChallengeStarted(false);
+    setStudyQueue([...challengeCards]);
+    setCurrentQueueIndex(0);
+    setStudyMode("challenge");
+    setSelectedMateria(null);
+    setHasPendingChallenge(false);
   };
 
   const resetStreakToZero = async () => {
@@ -1729,6 +1740,7 @@ export default function App() {
             setChallengeCards([]);
             setChallengeStarted(false);
             setChallengeBanner(null);
+            setHasPendingChallenge(false);
             localStorage.removeItem("pcpe_challenge_" + currentUser?.username);
           }
         }}
@@ -1800,6 +1812,7 @@ export default function App() {
                 setChallengeCards([]);
                 setChallengeStarted(false);
                 setChallengeBanner(null);
+                setHasPendingChallenge(false);
                 localStorage.removeItem("pcpe_challenge_" + currentUser?.username);
               }
             }}
@@ -2211,6 +2224,60 @@ export default function App() {
           </div>
         </div>
       </div>
+
+      {/* Banner de Desafio Pendente — retorno opcional */}
+      {hasPendingChallenge && (
+        <div style={{ marginBottom: 24 }}>
+          <div style={{
+            background: "rgba(59,130,246,0.06)", border: "1px solid rgba(59,130,246,0.15)",
+            borderRadius: 20, padding: "18px 20px", display: "flex", alignItems: "center",
+            justifyContent: "space-between", gap: 14, flexWrap: "wrap",
+          }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+              <div style={{ fontSize: 28 }}>🎯</div>
+              <div>
+                <div style={{ color: "#60a5fa", fontSize: 14, fontWeight: 700 }}>Você tem um desafio pendente hoje!</div>
+                <div style={{ color: "#94a3b8", fontSize: 11, marginTop: 2 }}>
+                  Retorne de onde parou e salve sua ofensiva.
+                </div>
+              </div>
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+              <button
+                onClick={resumeChallenge}
+                className="btn-hover"
+                style={{
+                  background: "linear-gradient(135deg, #3b82f6, #2563eb)",
+                  color: "#fff", border: "none", borderRadius: 14,
+                  padding: "12px 20px", cursor: "pointer", fontWeight: 700,
+                  fontSize: 13, whiteSpace: "nowrap", letterSpacing: 0.5,
+                  boxShadow: "0 4px 15px rgba(59,130,246,0.25)"
+                }}
+              >
+                ▶ Retornar ao Desafio
+              </button>
+              <button
+                onClick={() => {
+                  const storageKey = "pcpe_challenge_" + currentUser?.username;
+                  localStorage.removeItem(storageKey);
+                  setChallengeCards([]);
+                  setHasPendingChallenge(false);
+                }}
+                className="btn-hover"
+                style={{
+                  background: "rgba(255, 255, 255, 0.05)",
+                  color: "#94a3b8", border: "1px solid rgba(255, 255, 255, 0.1)", borderRadius: 14,
+                  padding: "12px 20px", cursor: "pointer", fontWeight: 600,
+                  fontSize: 13, whiteSpace: "nowrap", letterSpacing: 0.5,
+                  transition: "all 0.2s"
+                }}
+              >
+                ✕ Descartar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Banner de Ofensiva em Risco + Botão Desafio */}
       {streakAtRisk && (
