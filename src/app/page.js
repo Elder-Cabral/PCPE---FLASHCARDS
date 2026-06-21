@@ -1044,6 +1044,20 @@ export default function App() {
     }
   }, [currentUser?.username, loadUserMeta]);
 
+  // Forçar retorno à home e fechar seletores se o streak estiver em risco
+  useEffect(() => {
+    if (streakAtRisk) {
+      setSelectedMateria(null);
+      setShowTopicSelector(false);
+      setStudyMode(prev => {
+        if (prev !== "challenge" && prev !== "favorites") {
+          return null;
+        }
+        return prev;
+      });
+    }
+  }, [streakAtRisk]);
+
   // Restaurar estado do Desafio do localStorage (se ainda válido no mesmo dia)
   useEffect(() => {
     if (!currentUser) return;
@@ -2138,17 +2152,18 @@ export default function App() {
           <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
             <button
               onClick={handleGlobalReviewClick}
-              className="btn-hover"
+              disabled={streakAtRisk}
+              className={streakAtRisk ? "" : "btn-hover"}
               style={{
                 width: "100%",
-                background: stats.dueCount > 0 ? "linear-gradient(135deg, #3b82f6, #2563eb)" : "rgba(255,255,255,0.04)",
-                border: stats.dueCount > 0 ? "none" : "1px solid rgba(255,255,255,0.08)",
+                background: streakAtRisk ? "rgba(255,255,255,0.02)" : (stats.dueCount > 0 ? "linear-gradient(135deg, #3b82f6, #2563eb)" : "rgba(255,255,255,0.04)"),
+                border: streakAtRisk ? "1px solid rgba(255,255,255,0.05)" : (stats.dueCount > 0 ? "none" : "1px solid rgba(255,255,255,0.08)"),
                 borderRadius: 10,
                 padding: "8px 12px",
-                color: stats.dueCount > 0 ? "#fff" : "#64748b",
+                color: streakAtRisk ? "#475569" : (stats.dueCount > 0 ? "#fff" : "#64748b"),
                 fontSize: 12,
                 fontWeight: 600,
-                cursor: "pointer",
+                cursor: streakAtRisk ? "not-allowed" : "pointer",
                 textAlign: "center"
               }}
             >
@@ -2301,16 +2316,18 @@ export default function App() {
             <button
               key={m.id}
               onClick={() => setSelectedMateria(m.id)}
-              className="card-hover"
+              disabled={streakAtRisk}
+              className={streakAtRisk ? "" : "card-hover"}
               style={{
                 background: "rgba(255,255,255,0.02)",
                 border: "1px solid rgba(255,255,255,0.05)",
                 borderRadius: 20,
                 padding: "20px 18px",
                 textAlign: "center",
-                cursor: "pointer",
+                cursor: streakAtRisk ? "not-allowed" : "pointer",
                 width: "100%",
-                outline: "none"
+                outline: "none",
+                opacity: streakAtRisk ? 0.4 : 1
               }}
             >
               <div style={{ fontSize: 28, marginBottom: 10 }}>{m.emoji}</div>
