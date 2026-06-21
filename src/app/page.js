@@ -2808,12 +2808,12 @@ function StudySession({
               ✕
             </button>
 
-            {/* Camada 1 — Visual/Intuitivo */}
+            {/* Camada 1 — Intuição */}
             <div style={{ marginBottom: 28 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
                 <span style={{ fontSize: 20 }}>💡</span>
                 <span style={{ color: "#3b82f6", fontSize: 13, fontWeight: 700, letterSpacing: 2 }}>
-                  INTUIÇÃO VISUAL
+                  INTUIÇÃO
                 </span>
               </div>
               <p style={{ color: "#e2e8f0", fontSize: 14, lineHeight: 1.7, margin: 0, fontFamily: "Georgia, serif" }}>
@@ -2903,7 +2903,13 @@ function TelaLogin({ onLogin }) {
                 const loginRes = await fetch('/api/auth/login', {
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify({ username: u.email || uname, typedUsername: uname, name, loginMethod: 'supabase' }),
+                  body: JSON.stringify({
+                    username: u.email || uname,
+                    typedUsername: uname,
+                    name,
+                    loginMethod: 'supabase',
+                    accessToken: data.session?.access_token
+                  }),
                 });
                 const loginData = await loginRes.json();
                 if (loginData?.user) {

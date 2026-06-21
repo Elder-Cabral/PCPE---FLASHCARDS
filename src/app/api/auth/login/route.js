@@ -79,7 +79,7 @@ export async function POST(request) {
     }
 
     const body = await request.json();
-    const { username, password, loginMethod, typedUsername, name } = body;
+    const { username, password, loginMethod, typedUsername, name, accessToken } = body;
 
     if (!username || typeof username !== 'string' || username.length > 200) {
       return NextResponse.json({ error: 'Credenciais inválidas' }, { status: 401 });
@@ -91,6 +91,31 @@ export async function POST(request) {
     let user = null;
 
     if (loginMethod === 'supabase') {
+      if (!accessToken) {
+        return NextResponse.json({ error: 'Token de acesso ausente' }, { status: 401 });
+      }
+
+      const supaUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+      const supaKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+      if (!supaUrl || !supaKey) {
+        return NextResponse.json({ error: 'Supabase não configurado no servidor' }, { status: 500 });
+      }
+
+      // Validação do token com a API do Supabase
+      const verificationClient = createClient(supaUrl, supaKey, { auth: { persistSession: false } });
+      const { data: { user: verifiedUser }, error: verifyError } = await verificationClient.auth.getUser(accessToken);
+
+      if (verifyError || !verifiedUser) {
+        return NextResponse.json({ error: 'Sessão Supabase inválida ou expirada' }, { status: 401 });
+      }
+
+      // Garante que o email retornado pelo Supabase confere com o e-mail da requisição
+      const cleanVerifiedEmail = verifiedUser.email?.toLowerCase().trim();
+      const cleanRequestEmail = username?.toLowerCase().trim();
+      if (cleanVerifiedEmail !== cleanRequestEmail) {
+        return NextResponse.json({ error: 'E-mail do token não corresponde ao e-mail enviado' }, { status: 401 });
+      }
+
       let localRole = 'user';
       let localName = null;
       try {
@@ -115,9 +140,8 @@ export async function POST(request) {
         }
         // 3) Se ainda não achou, tenta reverse lookup via username_map
         if (!localName && username && username.includes('@')) {
-          const supaUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
           const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-          if (supaUrl && serviceKey) {
+          if (serviceKey) {
             const serviceClient = createClient(supaUrl, serviceKey, { auth: { persistSession: false } });
             const { data: row } = await serviceClient
               .from('username_map')
