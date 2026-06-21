@@ -1044,20 +1044,6 @@ export default function App() {
     }
   }, [currentUser?.username, loadUserMeta]);
 
-  // Forçar retorno à home e fechar seletores se o streak estiver em risco
-  useEffect(() => {
-    if (streakAtRisk) {
-      setSelectedMateria(null);
-      setShowTopicSelector(false);
-      setStudyMode(prev => {
-        if (prev !== "challenge" && prev !== "favorites") {
-          return null;
-        }
-        return prev;
-      });
-    }
-  }, [streakAtRisk]);
-
   // Restaurar estado do Desafio do localStorage (se ainda válido no mesmo dia)
   useEffect(() => {
     if (!currentUser) return;
@@ -1471,9 +1457,22 @@ export default function App() {
     const exhaustDate = parseLocalDate(userMeta.shields_exhausted_at);
     const todayDate = parseLocalDate(getTodayStr());
     if (!exhaustDate || !todayDate) return 0;
-    const daysSinceExhaust = Math.floor((todayDate - exhaustDate) / 86400000);
     return Math.max(0, 7 - daysSinceExhaust);
   }, [userMeta]);
+
+  // Forçar retorno à home e fechar seletores se o streak estiver em risco
+  useEffect(() => {
+    if (streakAtRisk) {
+      setSelectedMateria(null);
+      setShowTopicSelector(false);
+      setStudyMode(prev => {
+        if (prev !== "challenge" && prev !== "favorites") {
+          return null;
+        }
+        return prev;
+      });
+    }
+  }, [streakAtRisk]);
 
   // Preparar fila de estudos padrão (Todos / SRS)
   const startStudySession = (materiaId, mode) => {
