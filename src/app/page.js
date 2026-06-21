@@ -1691,6 +1691,7 @@ export default function App() {
             <p style={{ margin: 0 }}>📚 Responda <strong>52 flashcards</strong> (5 de cada matéria + 2 de Jurisprudências) para recuperá-la.</p>
             <p style={{ margin: 0 }}>⏰ Você tem até <strong style={{ color: "#f59e0b" }}>{hoursLeft}h</strong> para concluir o desafio hoje.</p>
             <p style={{ margin: 0 }}>🔄 Pode pausar e voltar — seu progresso será salvo.</p>
+            <p style={{ margin: 0 }}>🎯 Após ver a resposta, avalie seu desempenho: <strong style={{ color: "#ef4444" }}>Errei</strong>, <strong style={{ color: "#f59e0b" }}>Difícil</strong>, <strong style={{ color: "#3b82f6" }}>Bom</strong> ou <strong style={{ color: "#10b981" }}>Fácil</strong>.</p>
             <p style={{ margin: 0 }}>🏆 Ao completar: sua ofensiva é mantida e <strong style={{ color: "#3b82f6" }}>3 escudos são restaurados</strong>!</p>
           </div>
           <button
@@ -1783,16 +1784,45 @@ export default function App() {
             }
           </p>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, width: "100%", marginBottom: 24 }}>
-            <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "14px 10px" }}>
-              <div style={{ fontSize: 20, fontWeight: 700, color: "#3b82f6" }}>{sessionStats.studied}</div>
-              <div style={{ fontSize: 9, color: "#64748b", marginTop: 4, fontWeight: 600, letterSpacing: 0.5 }}>CARDS ESTUDADOS</div>
+          {isChallenge ? (
+            <>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, width: "100%", marginBottom: 12 }}>
+                <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "14px 10px" }}>
+                  <div style={{ fontSize: 20, fontWeight: 700, color: "#3b82f6" }}>{sessionStats.studied}</div>
+                  <div style={{ fontSize: 9, color: "#64748b", marginTop: 4, fontWeight: 600, letterSpacing: 0.5 }}>CARDS ESTUDADOS</div>
+                </div>
+                <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "14px 10px" }}>
+                  <div style={{ fontSize: 20, fontWeight: 700, color: "#10b981" }}>{sessionStats.studied - sessionStats.gotWrong}/{sessionStats.studied}</div>
+                  <div style={{ fontSize: 9, color: "#64748b", marginTop: 4, fontWeight: 600, letterSpacing: 0.5 }}>ACERTOS (BOM + FÁCIL)</div>
+                </div>
+              </div>
+              <div style={{ display: "flex", gap: 8, width: "100%", marginBottom: 16 }}>
+                <div style={{ flex: 1, background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.15)", borderRadius: 12, padding: "10px 8px", textAlign: "center" }}>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: "#ef4444" }}>{sessionStats.gotWrong}</div>
+                  <div style={{ fontSize: 8, color: "#64748b", marginTop: 2, fontWeight: 600 }}>ERREI</div>
+                </div>
+                <div style={{ flex: 1, background: "rgba(245,158,11,0.08)", border: "1px solid rgba(245,158,11,0.15)", borderRadius: 12, padding: "10px 8px", textAlign: "center" }}>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: "#f59e0b" }}>{sessionStats.studied - sessionStats.gotWrong - sessionStats.gotEasy}</div>
+                  <div style={{ fontSize: 8, color: "#64748b", marginTop: 2, fontWeight: 600 }}>DIFÍCIL/BOM</div>
+                </div>
+                <div style={{ flex: 1, background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.15)", borderRadius: 12, padding: "10px 8px", textAlign: "center" }}>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: "#10b981" }}>{sessionStats.gotEasy}</div>
+                  <div style={{ fontSize: 8, color: "#64748b", marginTop: 2, fontWeight: 600 }}>FÁCIL</div>
+                </div>
+              </div>
+            </>
+          ) : (
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, width: "100%", marginBottom: 24 }}>
+              <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "14px 10px" }}>
+                <div style={{ fontSize: 20, fontWeight: 700, color: "#3b82f6" }}>{sessionStats.studied}</div>
+                <div style={{ fontSize: 9, color: "#64748b", marginTop: 4, fontWeight: 600, letterSpacing: 0.5 }}>CARDS ESTUDADOS</div>
+              </div>
+              <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "14px 10px" }}>
+                <div style={{ fontSize: 20, fontWeight: 700, color: "#10b981" }}>{stats.streak} dias</div>
+                <div style={{ fontSize: 9, color: "#64748b", marginTop: 4, fontWeight: 600, letterSpacing: 0.5 }}>OFENSIVA ATUAL</div>
+              </div>
             </div>
-            <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "14px 10px" }}>
-              <div style={{ fontSize: 20, fontWeight: 700, color: "#10b981" }}>{stats.streak} dias</div>
-              <div style={{ fontSize: 9, color: "#64748b", marginTop: 4, fontWeight: 600, letterSpacing: 0.5 }}>OFENSIVA ATUAL</div>
-            </div>
-          </div>
+          )}
 
           {isChallenge && (
             <div style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.15)", borderRadius: 12, padding: "10px 16px", marginBottom: 20, width: "100%", boxSizing: "border-box" }}>
@@ -2810,7 +2840,7 @@ function StudySession({
         {/* Botões de Ação */}
         <div style={{ minHeight: 70, flexShrink: 0 }}>
           {isFlipped ? (
-            studyMode === "srs" || studyMode === "topic" || studyMode === "global_srs" ? (
+            studyMode === "srs" || studyMode === "topic" || studyMode === "global_srs" || studyMode === "challenge" ? (
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {currentCardWasAnswered && (
                 <div style={{ color: "#fbbf24", fontSize: 12, fontWeight: 600, textAlign: "center" }}>
