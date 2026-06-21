@@ -46,7 +46,7 @@ const Shell = React.memo(function Shell({ children, user, stats, onLogout, cente
     const todayDate = parseLocalDate(getTodayLocalStr());
     if (!exhaustDate || !todayDate) return false;
     const daysSinceExhaust = Math.floor((todayDate - exhaustDate) / 86400000);
-    return daysSinceExhaust < 7;
+    return daysSinceExhaust < 5;
   }, [userMeta]);
 
   return (
@@ -67,7 +67,7 @@ const Shell = React.memo(function Shell({ children, user, stats, onLogout, cente
                 </span>
                 <span style={{ color: "#334155", fontSize: 11, fontWeight: 300 }}>|</span>
                 <span style={{ color: "#3b82f6", fontSize: 12, fontWeight: 600, whiteSpace: "nowrap" }} title="Escudos disponíveis">
-                  🛡️ {userMeta?.shields_available ?? 2} <span style={{ color: "#94a3b8", fontSize: 10, fontWeight: 400 }}>escudos</span>
+                  🛡️ {userMeta?.shields_available ?? 3} <span style={{ color: "#94a3b8", fontSize: 10, fontWeight: 400 }}>escudos</span>
                 </span>
               </div>
             </div>

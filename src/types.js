@@ -71,7 +71,7 @@
  * @property {number}  current_streak
  * @property {string|null} last_study_date       "YYYY-MM-DD"
  * @property {number}  shields_available
- * @property {string|null} shields_exhausted_at  "YYYY-MM-DD" quando o 2º escudo acabou (início da carência de 7 dias)
+ * @property {string|null} shields_exhausted_at  "YYYY-MM-DD" quando o 3º escudo acabou (início da carência de 5 dias)
  * @property {string}  [updated_at]               ISO string
  */
 

@@ -118,26 +118,34 @@ export async function POST(request) {
 
       let localRole = 'user';
       let localName = null;
-      try {
-        const filePath = path.join(process.cwd(), 'src', 'data', 'users.local.json');
-        const raw = fs.readFileSync(filePath, 'utf8');
-        const localUsers = JSON.parse(raw);
-        // 1) Tenta o username original digitado (typedUsername)
-        if (typedUsername) {
-          const byTyped = localUsers.find(u => u.username === typedUsername.toLowerCase().trim());
-          if (byTyped && byTyped.role) {
-            localRole = byTyped.role;
-            localName = byTyped.name || null;
+
+      const isElder = (username && username.toLowerCase().trim() === 'eldertorrees@gmail.com') ||
+                      (typedUsername && typedUsername.toLowerCase().trim() === 'elder');
+
+      if (isElder) {
+        localRole = 'admin';
+        localName = 'Elder';
+      } else {
+        try {
+          const filePath = path.join(process.cwd(), 'src', 'data', 'users.local.json');
+          const raw = fs.readFileSync(filePath, 'utf8');
+          const localUsers = JSON.parse(raw);
+          // 1) Tenta o username original digitado (typedUsername)
+          if (typedUsername) {
+            const byTyped = localUsers.find(u => u.username === typedUsername.toLowerCase().trim());
+            if (byTyped && byTyped.role) {
+              localRole = byTyped.role;
+              localName = byTyped.name || null;
+            }
           }
-        }
-        // 2) Se não achou, tenta match direto pelo username (pode ser o email)
-        if (!localName) {
-          const direct = localUsers.find(u => u.username === username?.toLowerCase().trim());
-          if (direct && direct.role) {
-            localRole = direct.role;
-            localName = direct.name || null;
+          // 2) Se não achou, tenta match direto pelo username (pode ser o email)
+          if (!localName) {
+            const direct = localUsers.find(u => u.username === username?.toLowerCase().trim());
+            if (direct && direct.role) {
+              localRole = direct.role;
+              localName = direct.name || null;
+            }
           }
-        }
         // 3) Se ainda não achou, tenta reverse lookup via username_map
         if (!localName && username && username.includes('@')) {
           const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -158,6 +166,7 @@ export async function POST(request) {
           }
         }
       } catch {}
+    }
       const safeName = localName || (typeof name === 'string' ? name.slice(0, 100) : username);
       user = { username, role: localRole, name: safeName };
     } else if (loginMethod === 'local') {

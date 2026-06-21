@@ -165,13 +165,13 @@ function normalizeUserMeta(meta, today) {
   const normalized = { ...meta };
   let changed = false;
 
-  if (normalized.current_streak === 0 && (normalized.shields_available ?? 2) < 2) {
-    normalized.shields_available = 2;
+  if (normalized.current_streak === 0 && (normalized.shields_available ?? 3) < 3) {
+    normalized.shields_available = 3;
     normalized.shields_exhausted_at = null;
     changed = true;
   }
 
-  if ((normalized.current_streak ?? 0) > 0 && (normalized.shields_available ?? 2) <= 0 && !normalized.shields_exhausted_at) {
+  if ((normalized.current_streak ?? 0) > 0 && (normalized.shields_available ?? 3) <= 0 && !normalized.shields_exhausted_at) {
     normalized.shields_available = 0;
     normalized.shields_exhausted_at = today;
     changed = true;
@@ -760,13 +760,13 @@ export default function App() {
           username,
           current_streak: seedStreak,
           last_study_date: localFallback?.last_study_date || (seedStreak > 0 ? today : null),
-          shields_available: localFallback?.shields_available ?? 2,
+          shields_available: localFallback?.shields_available ?? 3,
           shields_exhausted_at: localFallback?.shields_exhausted_at || null,
           updated_at: new Date().toISOString(),
         };
           // Safety: mesmo no seed, streak zerado = escudos restaurados
-          if (meta.current_streak === 0 && meta.shields_available < 2) {
-            meta.shields_available = 2;
+          if (meta.current_streak === 0 && meta.shields_available < 3) {
+            meta.shields_available = 3;
             meta.shields_exhausted_at = null;
           }
           meta = normalizeUserMeta(meta, today).meta;
@@ -781,8 +781,8 @@ export default function App() {
       const meta = { ...data };
 
       // Reset semanal de escudos (segunda-feira)
-      if (new Date().getDay() === 1 && meta.shields_available < 2) {
-        meta.shields_available = 2;
+      if (new Date().getDay() === 1 && meta.shields_available < 3) {
+        meta.shields_available = 3;
         meta.shields_exhausted_at = null;
         needsUpdate = true;
       }
@@ -813,11 +813,11 @@ export default function App() {
                 const exhaustDate = parseLocalDate(meta.shields_exhausted_at);
                 if (exhaustDate) {
                   const daysSinceExhaust = Math.floor((todayDate - exhaustDate) / 86400000);
-                  if (daysSinceExhaust >= 7) {
+                  if (daysSinceExhaust >= 5) {
                     // Carência expirada: perde a ofensiva e restaura escudos
                     meta.current_streak = 0;
                     meta.last_study_date = null;
-                    meta.shields_available = 2;
+                    meta.shields_available = 3;
                     meta.shields_exhausted_at = null;
                     needsUpdate = true;
                   }
@@ -844,9 +844,9 @@ export default function App() {
       Object.assign(meta, normalized.meta);
       needsUpdate = needsUpdate || normalized.changed;
 
-      // ── Safety: streak zerou, escudos devem voltar a 2 ──
-      if (meta.current_streak === 0 && meta.shields_available < 2) {
-        meta.shields_available = 2;
+      // ── Safety: streak zerou, escudos devem voltar a 3 ──
+      if (meta.current_streak === 0 && meta.shields_available < 3) {
+        meta.shields_available = 3;
         meta.shields_exhausted_at = null;
         shieldActivated = false; // streak já é 0, nada a proteger
         needsUpdate = true;
@@ -870,14 +870,14 @@ export default function App() {
       // Fallback: localStorage ou SRS
       if (localFallback) {
           // Safety: mesmo no fallback, streak zerado = escudos restaurados
-          if (localFallback.current_streak === 0 && localFallback.shields_available < 2) {
-            localFallback.shields_available = 2;
+          if (localFallback.current_streak === 0 && localFallback.shields_available < 3) {
+            localFallback.shields_available = 3;
             localFallback.shields_exhausted_at = null;
           }
         localFallback = normalizeUserMeta(localFallback, getTodayStr()).meta;
         updateUserMetaState(localFallback);
       } else {
-        updateUserMetaState({ current_streak: calculateStreak(srsDataRef.current), shields_available: 2 });
+        updateUserMetaState({ current_streak: calculateStreak(srsDataRef.current), shields_available: 3 });
       }
     }
   }, [updateUserMetaState]);
@@ -1146,12 +1146,12 @@ export default function App() {
     if (!sessionCompleted || !currentUser || answeredSessionIds.size < 1) return;
     const updateMeta = async () => {
       const today = getTodayStr();
-      const prev = userMetaRef.current || { current_streak: 0, last_study_date: null, shields_available: 2, shields_exhausted_at: null };
+      const prev = userMetaRef.current || { current_streak: 0, last_study_date: null, shields_available: 3, shields_exhausted_at: null };
       let newStreak = prev.current_streak || 0;
       if (prev.last_study_date !== today) {
         const gap = prev.last_study_date !== null && !isConsecutiveDay(prev.last_study_date, today);
         const shieldProtected = gap && (
-          prev.shields_available < 2 ||
+          prev.shields_available < 3 ||
           prev.shields_exhausted_at !== null
         );
         if (!gap || shieldProtected) {
@@ -1163,12 +1163,12 @@ export default function App() {
 
       // Se shields_exhausted_at ainda existe e NÃO é desafio, mantém (carência continua)
       // Se for desafio: restaura 2 escudos e limpa carência
-      const shieldsWereLost = prev.current_streak === 0 && (prev.shields_available ?? 2) < 2;
+      const shieldsWereLost = prev.current_streak === 0 && (prev.shields_available ?? 3) < 3;
       let updated = {
         username: currentUser.username,
         current_streak: newStreak,
         last_study_date: today,
-        shields_available: isChallengeDone ? 2 : shieldsWereLost ? 2 : (prev.shields_available ?? 2),
+        shields_available: isChallengeDone ? 3 : shieldsWereLost ? 3 : (prev.shields_available ?? 3),
         shields_exhausted_at: isChallengeDone ? null : shieldsWereLost ? null : (prev.shields_exhausted_at ?? null),
         updated_at: new Date().toISOString(),
       };
@@ -1449,7 +1449,7 @@ export default function App() {
     const todayDate = parseLocalDate(getTodayStr());
     if (!exhaustDate || !todayDate) return false;
     const daysSinceExhaust = Math.floor((todayDate - exhaustDate) / 86400000);
-    return daysSinceExhaust < 7;
+    return daysSinceExhaust < 5;
   }, [userMeta]);
 
   const graceDaysLeft = useMemo(() => {
@@ -1458,7 +1458,7 @@ export default function App() {
     const todayDate = parseLocalDate(getTodayStr());
     if (!exhaustDate || !todayDate) return 0;
     const daysSinceExhaust = Math.floor((todayDate - exhaustDate) / 86400000);
-    return Math.max(0, 7 - daysSinceExhaust);
+    return Math.max(0, 5 - daysSinceExhaust);
   }, [userMeta]);
 
   // Forçar retorno à home e fechar seletores se o streak estiver em risco
@@ -1541,6 +1541,32 @@ export default function App() {
         startedDate: getTodayStr(),
       }));
     } catch (_) {}
+  };
+
+  const resetStreakToZero = async () => {
+    if (!currentUser) return;
+    if (!window.confirm("Tem certeza que deseja recomeçar sua ofensiva do zero? Seu progresso de dias consecutivos será zerado, mas seus 3 escudos serão restaurados e os cartões serão liberados.")) return;
+
+    const today = getTodayStr();
+    const updated = {
+      username: currentUser.username,
+      current_streak: 0,
+      last_study_date: null,
+      shields_available: 3,
+      shields_exhausted_at: null,
+      updated_at: new Date().toISOString()
+    };
+
+    try {
+      const client = getSupabase();
+      await safeSupabaseCall(() => client.from("user_meta").upsert(updated));
+      localStorage.setItem("pcpe_meta_" + currentUser.username, JSON.stringify(updated));
+      updateUserMetaState(updated);
+      alert("Ofensiva reiniciada com sucesso! Bons estudos.");
+    } catch (e) {
+      console.error("Erro ao reiniciar ofensiva:", e);
+      alert("Erro ao reiniciar ofensiva. Tente novamente.");
+    }
   };
 
   // Responder a um card no modo SRS / Tópicos
@@ -2154,6 +2180,7 @@ export default function App() {
               onClick={handleGlobalReviewClick}
               disabled={streakAtRisk}
               className={streakAtRisk ? "" : "btn-hover"}
+              title={streakAtRisk ? "Sua ofensiva está em risco! Escolha entre fazer o Desafio ou Começar do zero para liberar as revisões." : ""}
               style={{
                 width: "100%",
                 background: streakAtRisk ? "rgba(255,255,255,0.02)" : (stats.dueCount > 0 ? "linear-gradient(135deg, #3b82f6, #2563eb)" : "rgba(255,255,255,0.04)"),
@@ -2198,23 +2225,38 @@ export default function App() {
               <div>
                 <div style={{ color: "#f59e0b", fontSize: 14, fontWeight: 700 }}>Sua ofensiva está em risco!</div>
                 <div style={{ color: "#94a3b8", fontSize: 11, marginTop: 2 }}>
-                  Faltam <strong style={{ color: "#f59e0b" }}>{graceDaysLeft} {graceDaysLeft === 1 ? 'dia' : 'dias'}</strong> para perder tudo. Complete o Desafio e salve sua sequência!
+                  Faltam <strong style={{ color: "#f59e0b" }}>{graceDaysLeft} {graceDaysLeft === 1 ? 'dia' : 'dias'}</strong> para perder tudo. Complete o Desafio ou reinicie do zero para liberar os cartões!
                 </div>
               </div>
             </div>
-            <button
-              onClick={startChallenge}
-              className="btn-hover"
-              style={{
-                background: "linear-gradient(135deg, #f97316, #ea580c)",
-                color: "#fff", border: "none", borderRadius: 14,
-                padding: "12px 20px", cursor: "pointer", fontWeight: 700,
-                fontSize: 13, whiteSpace: "nowrap", letterSpacing: 0.5,
-                boxShadow: "0 4px 15px rgba(249,115,22,0.25)"
-              }}
-            >
-              🎯 Fazer Desafio (52 cards)
-            </button>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+              <button
+                onClick={startChallenge}
+                className="btn-hover"
+                style={{
+                  background: "linear-gradient(135deg, #f97316, #ea580c)",
+                  color: "#fff", border: "none", borderRadius: 14,
+                  padding: "12px 20px", cursor: "pointer", fontWeight: 700,
+                  fontSize: 13, whiteSpace: "nowrap", letterSpacing: 0.5,
+                  boxShadow: "0 4px 15px rgba(249,115,22,0.25)"
+                }}
+              >
+                🎯 Fazer Desafio (52 cards)
+              </button>
+              <button
+                onClick={resetStreakToZero}
+                className="btn-hover"
+                style={{
+                  background: "rgba(255, 255, 255, 0.05)",
+                  color: "#f3f4f6", border: "1px solid rgba(255, 255, 255, 0.15)", borderRadius: 14,
+                  padding: "12px 20px", cursor: "pointer", fontWeight: 600,
+                  fontSize: 13, whiteSpace: "nowrap", letterSpacing: 0.5,
+                  transition: "all 0.2s"
+                }}
+              >
+                🔄 Começar do zero
+              </button>
+            </div>
           </div>
         </div>
       )}
@@ -2318,6 +2360,7 @@ export default function App() {
               onClick={() => setSelectedMateria(m.id)}
               disabled={streakAtRisk}
               className={streakAtRisk ? "" : "card-hover"}
+              title={streakAtRisk ? "Sua ofensiva está em risco! Escolha entre fazer o Desafio ou Começar do zero para liberar as matérias." : ""}
               style={{
                 background: "rgba(255,255,255,0.02)",
                 border: "1px solid rgba(255,255,255,0.05)",

@@ -59,7 +59,7 @@ export async function GET(request) {
       users: Object.entries(users).map(([username, data]) => ({
         username,
         current_streak: data.current_streak ?? 0,
-        shields_available: data.shields_available ?? 2,
+        shields_available: data.shields_available ?? 3,
         shields_exhausted_at: data.shields_exhausted_at || null,
         last_study_date: data.last_study_date || null,
         lastActivity: data.lastActivity || null,
