@@ -1162,7 +1162,7 @@ export default function App() {
       const isChallengeDone = challengeActive && answeredSessionIds.size >= challengeCards.length;
 
       // Se shields_exhausted_at ainda existe e NÃO é desafio, mantém (carência continua)
-      // Se for desafio: restaura 2 escudos e limpa carência
+      // Se for desafio: restaura 3 escudos e limpa carência
       const shieldsWereLost = prev.current_streak === 0 && (prev.shields_available ?? 3) < 3;
       let updated = {
         username: currentUser.username,
@@ -1545,7 +1545,7 @@ export default function App() {
 
   const resetStreakToZero = async () => {
     if (!currentUser) return;
-    if (!window.confirm("Tem certeza que deseja recomeçar sua ofensiva do zero? Seu progresso de dias consecutivos será zerado, mas seus 3 escudos serão restaurados e os cartões serão liberados.")) return;
+    if (!window.confirm(`Você perderá sua ofensiva de ${stats.streak} dias, mas seus 3 escudos serão restaurados e o modo estudo será liberado imediatamente. Você poderá começar uma nova ofensiva do zero. Deseja continuar?`)) return;
 
     const today = getTodayStr();
     const updated = {
@@ -1680,7 +1680,7 @@ export default function App() {
             <p style={{ margin: 0 }}>📚 Responda <strong>52 flashcards</strong> (5 de cada matéria + 2 de Jurisprudências) para recuperá-la.</p>
             <p style={{ margin: 0 }}>⏰ Você tem até <strong style={{ color: "#f59e0b" }}>{hoursLeft}h</strong> para concluir o desafio hoje.</p>
             <p style={{ margin: 0 }}>🔄 Pode pausar e voltar — seu progresso será salvo.</p>
-            <p style={{ margin: 0 }}>🏆 Ao completar: sua ofensiva é mantida e <strong style={{ color: "#3b82f6" }}>2 escudos são restaurados</strong>!</p>
+            <p style={{ margin: 0 }}>🏆 Ao completar: sua ofensiva é mantida e <strong style={{ color: "#3b82f6" }}>3 escudos são restaurados</strong>!</p>
           </div>
           <button
             onClick={() => {
@@ -1764,7 +1764,7 @@ export default function App() {
           </h2>
           <p style={{ color: "#64748b", fontSize: 13, lineHeight: 1.5, marginTop: 8, marginBottom: 24 }}>
             {isChallenge
-              ? <span>Sua ofensiva de <strong style={{ color: "#10b981" }}>{stats.streak} dias</strong> foi preservada! <strong style={{ color: "#3b82f6" }}>2 escudos</strong> foram restaurados. Continue assim! 💪</span>
+              ? <span>Sua ofensiva de <strong style={{ color: "#10b981" }}>{stats.streak} dias</strong> foi preservada! <strong style={{ color: "#3b82f6" }}>3 escudos</strong> foram restaurados. Continue assim! 💪</span>
               : isGlobal
                 ? "Sua rodada de revisões diárias foi concluída. Todas as respostas foram computadas e seu plano foi atualizado."
                 : <span>Você revisou os cards programados de <strong>{matInfo?.label}</strong>. O progresso foi computado no algoritmo de repetição.</span>
@@ -1785,7 +1785,7 @@ export default function App() {
           {isChallenge && (
             <div style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.15)", borderRadius: 12, padding: "10px 16px", marginBottom: 20, width: "100%", boxSizing: "border-box" }}>
               <span style={{ fontSize: 18 }}>🛡️</span>
-              <span style={{ color: "#6ee7b7", fontSize: 12, fontWeight: 600 }}>2 escudos restaurados — sua ofensiva está protegida!</span>
+              <span style={{ color: "#6ee7b7", fontSize: 12, fontWeight: 600 }}>3 escudos restaurados — sua ofensiva está protegida!</span>
             </div>
           )}
 

@@ -20,12 +20,15 @@ CREATE TABLE IF NOT EXISTS pomodoro_log (
 -- ── RLS: user_meta ──────────────────────────────────────────
 ALTER TABLE user_meta ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "user_meta_select" ON user_meta;
 CREATE POLICY "user_meta_select" ON user_meta
   FOR SELECT USING (username = auth.jwt() ->> 'email');
 
+DROP POLICY IF EXISTS "user_meta_insert" ON user_meta;
 CREATE POLICY "user_meta_insert" ON user_meta
   FOR INSERT WITH CHECK (username = auth.jwt() ->> 'email');
 
+DROP POLICY IF EXISTS "user_meta_update" ON user_meta;
 CREATE POLICY "user_meta_update" ON user_meta
   FOR UPDATE USING (username = auth.jwt() ->> 'email')
   WITH CHECK (username = auth.jwt() ->> 'email');
@@ -33,12 +36,15 @@ CREATE POLICY "user_meta_update" ON user_meta
 -- ── RLS: pomodoro_log ───────────────────────────────────────
 ALTER TABLE pomodoro_log ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "pomodoro_log_select" ON pomodoro_log;
 CREATE POLICY "pomodoro_log_select" ON pomodoro_log
   FOR SELECT USING (username = auth.jwt() ->> 'email');
 
+DROP POLICY IF EXISTS "pomodoro_log_insert" ON pomodoro_log;
 CREATE POLICY "pomodoro_log_insert" ON pomodoro_log
   FOR INSERT WITH CHECK (username = auth.jwt() ->> 'email');
 
+DROP POLICY IF EXISTS "pomodoro_log_update" ON pomodoro_log;
 CREATE POLICY "pomodoro_log_update" ON pomodoro_log
   FOR UPDATE USING (username = auth.jwt() ->> 'email')
   WITH CHECK (username = auth.jwt() ->> 'email');
@@ -47,13 +53,16 @@ CREATE POLICY "pomodoro_log_update" ON pomodoro_log
 ALTER TABLE username_map ENABLE ROW LEVEL SECURITY;
 
 -- Qualquer usuário autenticado pode consultar mappings (lookup público)
+DROP POLICY IF EXISTS "username_map_select" ON username_map;
 CREATE POLICY "username_map_select" ON username_map
   FOR SELECT USING (true);
 
 -- Apenas o próprio usuário pode alterar seu mapping
+DROP POLICY IF EXISTS "username_map_insert" ON username_map;
 CREATE POLICY "username_map_insert" ON username_map
   FOR INSERT WITH CHECK (username = auth.jwt() ->> 'email');
 
+DROP POLICY IF EXISTS "username_map_update" ON username_map;
 CREATE POLICY "username_map_update" ON username_map
   FOR UPDATE USING (username = auth.jwt() ->> 'email')
   WITH CHECK (username = auth.jwt() ->> 'email');
@@ -61,12 +70,15 @@ CREATE POLICY "username_map_update" ON username_map
 -- ── RLS: user_progress ──────────────────────────────────────
 ALTER TABLE user_progress ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "user_progress_select" ON user_progress;
 CREATE POLICY "user_progress_select" ON user_progress
   FOR SELECT USING (username = auth.jwt() ->> 'email');
 
+DROP POLICY IF EXISTS "user_progress_insert" ON user_progress;
 CREATE POLICY "user_progress_insert" ON user_progress
   FOR INSERT WITH CHECK (username = auth.jwt() ->> 'email');
 
+DROP POLICY IF EXISTS "user_progress_update" ON user_progress;
 CREATE POLICY "user_progress_update" ON user_progress
   FOR UPDATE USING (username = auth.jwt() ->> 'email')
   WITH CHECK (username = auth.jwt() ->> 'email');
