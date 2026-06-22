@@ -693,11 +693,19 @@ export default function App() {
         const mergedSRS = mergeSRSData(localSRS, latestSRS);
         const mergedHistory = mergeAnswerHistory(currentHistory, remoteHistory);
 
+        // Incluir challenge_data do localStorage no upsert
+        let challengeData = null;
+        try {
+          const saved = localStorage.getItem("pcpe_challenge_" + username);
+          if (saved) challengeData = JSON.parse(saved);
+        } catch (_) {}
+
           await safeCall(() => client.from("user_progress").upsert({
             username,
             srs_data: mergedSRS,
             settings: latestSettings,
             answer_history: mergedHistory,
+            challenge_data: challengeData,
             updated_at: new Date().toISOString(),
           }));
 
@@ -723,6 +731,108 @@ export default function App() {
     const result = saveQueueRef.current.then(doSave);
     saveQueueRef.current = result.catch(() => {});
     return result;
+  };
+
+  // ── HELPERS: SINCRONIZAÇÃO DO DESAFIO (Supabase) ───────────────────────────
+  /**
+   * Salva estado do desafio no Supabase (coluna challenge_data em user_progress).
+   * @param {string} username
+   * @param {Object} challengeData { cards: string[], startedDate: string, startedAt: number, currentIndex: number, completed: boolean }
+   */
+  const saveChallengeData = async (username, challengeData) => {
+    if (!username) return;
+    try {
+      const client = getSupabase();
+      const { data, error } = await safeCall(() =>
+        client
+          .from("user_progress")
+          .select("challenge_data")
+          .eq("username", username)
+          .maybeSingle()
+      );
+
+      const existing = data?.challenge_data || {};
+      // Preservar cards/startedDate/startedAt do Supabase (source of truth),
+      // mesclar currentIndex do local (progresso local mais recente)
+      const merged = {
+        ...existing,
+        ...challengeData,
+        cards: existing.cards || challengeData.cards,
+        startedDate: existing.startedDate || challengeData.startedDate,
+        startedAt: existing.startedAt || challengeData.startedAt,
+      };
+
+      await safeCall(() => client.from("user_progress").upsert({
+        username,
+        challenge_data: merged,
+        updated_at: new Date().toISOString(),
+      }));
+
+      // Também salva no localStorage para fallback rápido
+      const storageKey = "pcpe_challenge_" + username;
+      localStorage.setItem(storageKey, JSON.stringify(merged));
+    } catch (e) {
+      console.error("Erro ao salvar challenge_data:", e);
+    }
+  };
+
+  /**
+   * Carrega estado do desafio do Supabase.
+   * @param {string} username
+   * @returns {Promise<Object|null>}
+   */
+  const loadChallengeData = async (username) => {
+    if (!username) return null;
+    try {
+      const client = getSupabase();
+      const { data, error } = await safeCall(() =>
+        client
+          .from("user_progress")
+          .select("challenge_data")
+          .eq("username", username)
+          .maybeSingle()
+      );
+
+      if (!error && data?.challenge_data) {
+        const cd = data.challenge_data;
+        // Validar se é do dia atual
+        if (cd.startedDate === getTodayStr() && cd.cards?.length > 0) {
+          // Mesclar com localStorage (currentIndex pode ser mais recente localmente)
+          const storageKey = "pcpe_challenge_" + username;
+          let localIdx = 0;
+          try {
+            const local = localStorage.getItem(storageKey);
+            if (local) localIdx = JSON.parse(local).currentIndex || 0;
+          } catch (_) {}
+          return { ...cd, currentIndex: Math.max(cd.currentIndex || 0, localIdx) };
+        } else {
+          // Desafio expirado: limpar no Supabase também
+          await clearChallengeData(username);
+        }
+      }
+    } catch (e) {
+      console.error("Erro ao carregar challenge_data:", e);
+    }
+    return null;
+  };
+
+  /**
+   * Limpa estado do desafio no Supabase e localStorage.
+   * @param {string} username
+   */
+  const clearChallengeData = async (username) => {
+    if (!username) return;
+    try {
+      const client = getSupabase();
+      await safeCall(() => client.from("user_progress").upsert({
+        username,
+        challenge_data: null,
+        updated_at: new Date().toISOString(),
+      }));
+      localStorage.removeItem("pcpe_challenge_" + username);
+    } catch (e) {
+      console.error("Erro ao limpar challenge_data:", e);
+    }
   };
 
   /**
@@ -913,10 +1023,12 @@ export default function App() {
       let combinedSettings = {};
       let combinedHistory = [];
 
+      let combinedChallengeData = null;
+
       for (const key of queryKeys) {
         const { data, error } = await client
           .from("user_progress")
-          .select("srs_data, settings, answer_history")
+          .select("srs_data, settings, answer_history, challenge_data")
           .eq("username", key);
         if (!error && data && data.length > 0) {
           const row = data[0];
@@ -928,6 +1040,10 @@ export default function App() {
             favorites: mergeFavorites(combinedSettings.favorites || [], rowSettings.favorites || [])
           };
           combinedHistory = mergeAnswerHistory(combinedHistory, row.answer_history || []);
+          // Supabase é source of truth para challenge_data (cards, startedDate)
+          if (row.challenge_data && !combinedChallengeData) {
+            combinedChallengeData = row.challenge_data;
+          }
         }
       }
 
@@ -940,6 +1056,23 @@ export default function App() {
       const localSRS = savedSRS ? JSON.parse(savedSRS) : {};
       const localSettings = savedSettings ? JSON.parse(savedSettings) : { reviewOrder: "random", favorites: [] };
       const localHistory = savedHistory ? JSON.parse(savedHistory) : [];
+
+      // Merge challenge_data: Supabase (cards/startedDate) + localStorage (currentIndex)
+      let finalChallengeData = combinedChallengeData;
+      try {
+        const localChallenge = localStorage.getItem("pcpe_challenge_" + username);
+        if (localChallenge) {
+          const parsed = JSON.parse(localChallenge);
+          if (combinedChallengeData) {
+            finalChallengeData = {
+              ...combinedChallengeData,
+              currentIndex: Math.max(combinedChallengeData.currentIndex || 0, parsed.currentIndex || 0),
+            };
+          } else {
+            finalChallengeData = parsed;
+          }
+        }
+      } catch (_) {}
 
       // Merge remote data with local: remote (Supabase) fills the base,
       // local overwrites any cards with newer timestamps.
@@ -958,6 +1091,11 @@ export default function App() {
       if (mergedSettings.reviewOrder) setReviewOrder(mergedSettings.reviewOrder);
       if (mergedSettings.favorites) setFavorites(mergedSettings.favorites || []);
 
+      // Salvar challenge_data mesclado no localStorage
+      if (finalChallengeData) {
+        localStorage.setItem("pcpe_challenge_" + resolvedUsername, JSON.stringify(finalChallengeData));
+      }
+
       if (!isSavingRef.current) {
         localStorage.setItem("pcpe_srs_" + resolvedUsername, JSON.stringify(finalSRS));
         localStorage.setItem("pcpe_settings_" + resolvedUsername, JSON.stringify(mergedSettings));
@@ -968,6 +1106,7 @@ export default function App() {
             srs_data: finalSRS,
             settings: mergedSettings,
             answer_history: mergedHistory,
+            challenge_data: finalChallengeData,
             updated_at: new Date().toISOString(),
           }));
       }
@@ -1046,33 +1185,63 @@ export default function App() {
     }
   }, [currentUser?.username, loadUserMeta]);
 
-  // Restaurar estado do Desafio do localStorage (se ainda válido no mesmo dia)
+  // Restaurar estado do Desafio: prioriza Supabase, fallback para localStorage
   useEffect(() => {
     if (!currentUser) return;
-    const storageKey = "pcpe_challenge_" + currentUser.username;
-    try {
-      const saved = localStorage.getItem(storageKey);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (parsed.startedDate === getTodayStr()) {
-          // Reconstruir os cards a partir dos IDs salvos
-          const cards = parsed.cards.map(id => {
-            for (const mat of MATERIAS) {
-              const found = (BANCO[mat.id] || []).find(c => c.id === id);
-              if (found) return found;
-            }
-            return null;
-          }).filter(Boolean);
-          if (cards.length > 0) {
-            setChallengeCards(cards);
-            setHasPendingChallenge(true);
+    let mounted = true;
+
+    const restoreChallenge = async () => {
+      const storageKey = "pcpe_challenge_" + currentUser.username;
+
+      // 1. Tentar carregar do Supabase primeiro (source of truth)
+      const supabaseData = await loadChallengeData(currentUser.username);
+      if (supabaseData && mounted) {
+        const cards = supabaseData.cards.map(id => {
+          for (const mat of MATERIAS) {
+            const found = (BANCO[mat.id] || []).find(c => c.id === id);
+            if (found) return found;
           }
-        } else {
-          // Desafio expirado (outro dia)
-          localStorage.removeItem(storageKey);
+          return null;
+        }).filter(Boolean);
+        if (cards.length > 0) {
+          setChallengeCards(cards);
+          setHasPendingChallenge(true);
+          return;
         }
       }
-    } catch (_) {}
+
+      // 2. Fallback: localStorage (para compatibilidade com dados antigos)
+      try {
+        const saved = localStorage.getItem(storageKey);
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (parsed.startedDate === getTodayStr()) {
+            const cards = parsed.cards.map(id => {
+              for (const mat of MATERIAS) {
+                const found = (BANCO[mat.id] || []).find(c => c.id === id);
+                if (found) return found;
+              }
+              return null;
+            }).filter(Boolean);
+            if (cards.length > 0) {
+              setChallengeCards(cards);
+              setHasPendingChallenge(true);
+              // Sincronizar com Supabase para próximas vezes
+              saveChallengeData(currentUser.username, {
+                ...parsed,
+                currentIndex: parsed.currentIndex || 0,
+                completed: false,
+              });
+            }
+          } else {
+            localStorage.removeItem(storageKey);
+          }
+        }
+      } catch (_) {}
+    };
+
+    restoreChallenge();
+    return () => { mounted = false; };
   }, [currentUser]);
 
   // Inicializar snapshot de cards para detectar "Novas" questões adicionadas
@@ -1102,14 +1271,28 @@ export default function App() {
   // Sincronizar ao focar a aba/janela novamente (ex: alternar entre celular e PC)
   useEffect(() => {
     if (!currentUser) return;
-    const handleFocus = () => {
-      loadUserData(currentUser.username);
-      loadUserMeta(currentUser.username);
+    const handleFocus = async () => {
+      await loadUserData(currentUser.username);
+      await loadUserMeta(currentUser.username);
+      const challengeData = await loadChallengeData(currentUser.username);
+      if (challengeData) {
+        // Reconstruir cards a partir dos IDs
+        const cards = challengeData.cards.map(id => {
+          for (const mat of MATERIAS) {
+            const found = (BANCO[mat.id] || []).find(c => c.id === id);
+            if (found) return found;
+          }
+          return null;
+        }).filter(Boolean);
+        if (cards.length > 0) {
+          setChallengeCards(cards);
+          setHasPendingChallenge(true);
+        }
+      }
     };
     const handleVisibilityChange = () => {
       if (document.visibilityState === "visible") {
-        loadUserData(currentUser.username);
-        loadUserMeta(currentUser.username);
+        handleFocus();
       }
     };
     window.addEventListener("focus", handleFocus);
@@ -1125,14 +1308,29 @@ export default function App() {
     if (!currentUser) return;
     let lastDateStr = getTodayBR();
 
-    const interval = setInterval(() => {
+    const interval = setInterval(async () => {
       if (isSavingRef.current) return;
       const todayStr = getTodayBR();
       if (todayStr !== lastDateStr) {
         lastDateStr = todayStr;
       }
-      loadUserData(currentUser.username);
-      loadUserMeta(currentUser.username);
+      await loadUserData(currentUser.username);
+      await loadUserMeta(currentUser.username);
+      // Verificar se há desafio no Supabase que não está no estado local
+      const challengeData = await loadChallengeData(currentUser.username);
+      if (challengeData && !challengeActive && !hasPendingChallenge) {
+        const cards = challengeData.cards.map(id => {
+          for (const mat of MATERIAS) {
+            const found = (BANCO[mat.id] || []).find(c => c.id === id);
+            if (found) return found;
+          }
+          return null;
+        }).filter(Boolean);
+        if (cards.length > 0) {
+          setChallengeCards(cards);
+          setHasPendingChallenge(true);
+        }
+      }
     }, 30000);
 
     return () => clearInterval(interval);
@@ -1182,6 +1380,8 @@ export default function App() {
           setChallengeBanner(null);
           setHasPendingChallenge(false);
           localStorage.removeItem("pcpe_challenge_" + currentUser.username);
+          // Limpar challenge_data no Supabase
+          clearChallengeData(currentUser.username);
         }
         } catch (e) {
           console.error("Erro ao atualizar streak:", e);
@@ -1523,7 +1723,10 @@ export default function App() {
 
   const startChallenge = () => {
     const cards = buildChallengeQueue();
-    const storageKey = "pcpe_challenge_" + currentUser.username;
+    const cardIds = cards.map(c => c.id);
+    const startedDate = getTodayStr();
+    const startedAt = Date.now();
+
     setChallengeCards(cards);
     setChallengeActive(true);
     setChallengeStarted(false);
@@ -1534,13 +1737,15 @@ export default function App() {
     setSelectedMateria(null);
     setHasPendingChallenge(false);
     resetSessionState();
-    // Persistir estado do desafio
-    try {
-      localStorage.setItem(storageKey, JSON.stringify({
-        cards: cards.map(c => c.id),
-        startedDate: getTodayStr(),
-      }));
-    } catch (_) {}
+
+    // Salvar no Supabase + localStorage
+    saveChallengeData(currentUser.username, {
+      cards: cardIds,
+      startedDate,
+      startedAt,
+      currentIndex: 0,
+      completed: false,
+    });
   };
 
   const resumeChallenge = () => {
@@ -1552,6 +1757,12 @@ export default function App() {
     setStudyMode("challenge");
     setSelectedMateria(null);
     setHasPendingChallenge(false);
+
+    // Atualizar currentIndex no Supabase
+    saveChallengeData(currentUser.username, {
+      currentIndex: 0,
+      completed: false,
+    });
   };
 
   const resetStreakToZero = async () => {
@@ -1618,6 +1829,14 @@ export default function App() {
         const next = new Set(prev);
         next.add(currentCard.id);
         return next;
+      });
+    }
+
+    // Atualizar progresso do desafio no Supabase (currentIndex)
+    if (studyMode === "challenge" && currentUser) {
+      saveChallengeData(currentUser.username, {
+        currentIndex: currentQueueIndex + 1,
+        completed: false,
       });
     }
 
