@@ -103,33 +103,64 @@ function highlightFalso(text) {
  * @param {number} [ef=2.5]        Fator de facilidade (1.3 – 3.0)
  * @returns {SM2State}
  */
-function calculateSM2(q, interval = 1, repetition = 0, ef = 2.5) {
+function calculateSM2(q, interval = 1, repetition = 0, ef = 2.5, previousDueDate = null) {
   // Mapeia escala 0-3 dos botões para escala SM-2 0-5
   const Q_MAP = { 0: 0, 1: 2, 2: 4, 3: 5 };
   const quality = Q_MAP[q] ?? q;
 
-  // Fórmula original do EF: EF' = EF + (0.1 - (5-q) × (0.08 + (5-q) × 0.02))
-  let newEf = ef + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02));
+  // Cálculo de atraso
+  let daysLate = 0;
+  if (previousDueDate) {
+    const msLate = Date.now() - previousDueDate;
+    daysLate = Math.max(0, Math.floor(msLate / (1000 * 60 * 60 * 24)));
+  }
+
+  let adjustedRepetition = repetition;
+  let adjustedEf = ef;
+
+  // Penalidade por atraso de revisão
+  if (daysLate > 30) {
+    adjustedRepetition = 0;
+    adjustedEf = Math.max(1.3, ef - 0.5);
+  } else if (daysLate > 7) {
+    adjustedRepetition = Math.max(0, repetition - 1);
+    adjustedEf = Math.max(1.3, ef - 0.2);
+  }
+
+  // Fórmula original do EF baseada no adjustedEf
+  let newEf = adjustedEf + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02));
   newEf = Math.max(1.3, Math.min(3.0, newEf));
 
   let newInterval;
   let newRepetition;
 
-  if (quality < 3) {
-    // q < 3 → não lembra → reset completo
+  if (quality === 0) {
+    // q = 0 (Errei) → reset completo
     newInterval = 1;
     newRepetition = 0;
+  } else if (quality === 2) {
+    // q = 1 (Difícil) → não reseta tudo, reduz repetição em 1, intervalo = 1 dia
+    newRepetition = Math.max(0, adjustedRepetition - 1);
+    newInterval = 1;
   } else {
-    // q >= 3 → lembrou → progride
-    newRepetition = repetition + 1;
+    // q >= 4 (Bom/Fácil) → progride
+    newRepetition = adjustedRepetition + 1;
     if (newRepetition === 1) {
       newInterval = 1;
     } else if (newRepetition === 2) {
       newInterval = 6;
     } else {
-      newInterval = Math.round(interval * ef);
+      newInterval = Math.round(interval * adjustedEf);
+    }
+
+    // Bônus do Fácil (quality = 5)
+    if (quality === 5) {
+      newInterval = Math.round(newInterval * 1.3);
     }
   }
+
+  // Garante que o intervalo é no mínimo 1 dia
+  newInterval = Math.max(1, newInterval);
 
   // Vencimento à meia-noite de Brasília (UTC-3) de newInterval dias a partir de hoje
   const [y, m, d] = getTodayBR().split('-').map(Number);
@@ -599,7 +630,18 @@ export default function App() {
 
   useEffect(() => {
     feedbackInProgressCardId.current = null;
-  }, [currentQueueIndex]);
+    const currentCard = studyQueue[currentQueueIndex];
+    if (currentCard) {
+      setAnsweredSessionIds(prev => {
+        if (prev.has(currentCard.id)) {
+          const next = new Set(prev);
+          next.delete(currentCard.id);
+          return next;
+        }
+        return prev;
+      });
+    }
+  }, [currentQueueIndex, studyQueue]);
 
   // Manter ref do srsData sempre atualizada
   useEffect(() => { srsDataRef.current = srsData; }, [srsData]);
@@ -850,146 +892,41 @@ export default function App() {
       if (raw) localFallback = JSON.parse(raw);
     } catch (_) {}
 
-    // UX: Carrega o fallback local imediatamente para evitar flash de "2" escudos
     if (localFallback) {
       updateUserMetaState(localFallback);
     }
 
     try {
-          const { data } = await safeSupabaseCall(() => client
-            .from("user_meta")
-            .select("*")
-            .eq("username", username)
-            .maybeSingle());
+      const { data } = await safeSupabaseCall(() => client
+        .from("user_meta")
+        .select("*")
+        .eq("username", username)
+        .maybeSingle());
 
       const today = getTodayStr();
 
-      // Se nao existir registro, semear streak do localStorage ou SRS
-      if (!data) {
-        const seedStreak = localFallback?.current_streak || calculateStreak(srsDataRef.current);
-        let meta = {
-          username,
-          current_streak: seedStreak,
-          last_study_date: localFallback?.last_study_date || (seedStreak > 0 ? today : null),
-          shields_available: localFallback?.shields_available ?? 3,
-          shields_exhausted_at: localFallback?.shields_exhausted_at || null,
-          updated_at: new Date().toISOString(),
-        };
-          // Safety: mesmo no seed, streak zerado = escudos restaurados
-          if (meta.current_streak === 0 && meta.shields_available < 3) {
-            meta.shields_available = 3;
-            meta.shields_exhausted_at = null;
-          }
-          meta = normalizeUserMeta(meta, today).meta;
-          await safeSupabaseCall(() => client.from("user_meta").upsert(meta));
-        localStorage.setItem(storageKey, JSON.stringify(meta));
-        updateUserMetaState(meta);
-        return;
-      }
+      let meta = {
+        username,
+        current_streak: 0,
+        last_study_date: data?.last_study_date || localFallback?.last_study_date || null,
+        shields_available: 3,
+        shields_exhausted_at: null,
+        updated_at: new Date().toISOString(),
+      };
 
-      let needsUpdate = false;
-      let shieldActivated = false;
-      const meta = { ...data };
-
-      // Reset semanal de escudos (segunda-feira em Brasília)
-      const brDayOfWeek = new Date().toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo', weekday: 'numeric' });
-      if (brDayOfWeek === '1' && meta.shields_available < 3) {
-        meta.shields_available = 3;
-        meta.shields_exhausted_at = null;
-        needsUpdate = true;
-      }
-
-      // Verificar dias perdidos + período de graça
-      if (meta.last_study_date) {
-        const lastDate = parseLocalDate(meta.last_study_date);
-        const todayDate = parseLocalDate(today);
-        if (lastDate && todayDate) {
-          const diffDays = Math.floor((todayDate - lastDate) / 86400000);
-
-          if (diffDays >= 2) {
-            if (meta.shields_available > 0) {
-              // Consome 1 escudo
-              meta.shields_available -= 1;
-              shieldActivated = true;
-              needsUpdate = true;
-              // Marca a falha como processada. Sem isso, cada reload/login
-              // consumiria outro escudo pelo mesmo intervalo de ausência.
-              meta.last_study_date = getYesterdayBR();
-              // Se era o último escudo, marca início da carência
-              if (meta.shields_available === 0) {
-                meta.shields_exhausted_at = today;
-              }
-            } else {
-              // Escudos esgotados: verifica período de graça de 7 dias
-              if (meta.shields_exhausted_at) {
-                const exhaustDate = parseLocalDate(meta.shields_exhausted_at);
-                if (exhaustDate) {
-                  const daysSinceExhaust = Math.floor((todayDate - exhaustDate) / 86400000);
-                  if (daysSinceExhaust >= 5) {
-                    // Carência expirada: perde a ofensiva e restaura escudos
-                    meta.current_streak = 0;
-                    meta.last_study_date = null;
-                    meta.shields_available = 3;
-                    meta.shields_exhausted_at = null;
-                    needsUpdate = true;
-                  }
-                }
-                // senão: mantém streak (dentro da carência)
-              } else {
-                // shields=0 sem exhausted_at: marca agora
-                meta.shields_exhausted_at = today;
-                needsUpdate = true;
-              }
-            }
-          } else if (diffDays <= 1) {
-            // Limpa carência apenas se ainda houver escudos. Com 0 escudos,
-            // shields_exhausted_at é necessário para o desafio/contagem de risco.
-            if (meta.shields_exhausted_at && meta.shields_available > 0) {
-              meta.shields_exhausted_at = null;
-              needsUpdate = true;
-            }
-          }
-        }
-      }
-
-      const normalized = normalizeUserMeta(meta, today);
-      Object.assign(meta, normalized.meta);
-      needsUpdate = needsUpdate || normalized.changed;
-
-      // ── Safety: streak zerou, escudos devem voltar a 3 ──
-      if (meta.current_streak === 0 && meta.shields_available < 3) {
-        meta.shields_available = 3;
-        meta.shields_exhausted_at = null;
-        shieldActivated = false; // streak já é 0, nada a proteger
-        needsUpdate = true;
-      }
-
-      if (needsUpdate) {
-          const persistedMeta = {
-            ...meta,
-            updated_at: new Date().toISOString(),
-          };
-          await safeSupabaseCall(() => client.from("user_meta").upsert(persistedMeta));
-          Object.assign(meta, persistedMeta);
+      if (!data || data.current_streak !== 0 || data.shields_available !== 3 || data.shields_exhausted_at !== null) {
+        await safeSupabaseCall(() => client.from("user_meta").upsert(meta));
       }
 
       localStorage.setItem(storageKey, JSON.stringify(meta));
       updateUserMetaState(meta);
-      if (shieldActivated) setShowShieldBanner(true);
     } catch (e) {
       console.error("Erro ao carregar user_meta:", e);
       setError("Erro ao carregar metas do usuário.");
-      // Fallback: localStorage ou SRS
       if (localFallback) {
-          // Safety: mesmo no fallback, streak zerado = escudos restaurados
-          if (localFallback.current_streak === 0 && localFallback.shields_available < 3) {
-            localFallback.shields_available = 3;
-            localFallback.shields_exhausted_at = null;
-          }
-        localFallback = normalizeUserMeta(localFallback, getTodayStr()).meta;
         updateUserMetaState(localFallback);
       } else {
-        updateUserMetaState({ current_streak: calculateStreak(srsDataRef.current), shields_available: 3 });
+        updateUserMetaState({ current_streak: 0, shields_available: 3, shields_exhausted_at: null, last_study_date: null });
       }
     }
   }, [updateUserMetaState]);
@@ -1185,64 +1122,7 @@ export default function App() {
     }
   }, [currentUser?.username, loadUserMeta]);
 
-  // Restaurar estado do Desafio: prioriza Supabase, fallback para localStorage
-  useEffect(() => {
-    if (!currentUser) return;
-    let mounted = true;
 
-    const restoreChallenge = async () => {
-      const storageKey = "pcpe_challenge_" + currentUser.username;
-
-      // 1. Tentar carregar do Supabase primeiro (source of truth)
-      const supabaseData = await loadChallengeData(currentUser.username);
-      if (supabaseData && mounted) {
-        const cards = supabaseData.cards.map(id => {
-          for (const mat of MATERIAS) {
-            const found = (BANCO[mat.id] || []).find(c => c.id === id);
-            if (found) return found;
-          }
-          return null;
-        }).filter(Boolean);
-        if (cards.length > 0) {
-          setChallengeCards(cards);
-          setHasPendingChallenge(true);
-          return;
-        }
-      }
-
-      // 2. Fallback: localStorage (para compatibilidade com dados antigos)
-      try {
-        const saved = localStorage.getItem(storageKey);
-        if (saved) {
-          const parsed = JSON.parse(saved);
-          if (parsed.startedDate === getTodayStr()) {
-            const cards = parsed.cards.map(id => {
-              for (const mat of MATERIAS) {
-                const found = (BANCO[mat.id] || []).find(c => c.id === id);
-                if (found) return found;
-              }
-              return null;
-            }).filter(Boolean);
-            if (cards.length > 0) {
-              setChallengeCards(cards);
-              setHasPendingChallenge(true);
-              // Sincronizar com Supabase para próximas vezes
-              saveChallengeData(currentUser.username, {
-                ...parsed,
-                currentIndex: parsed.currentIndex || 0,
-                completed: false,
-              });
-            }
-          } else {
-            localStorage.removeItem(storageKey);
-          }
-        }
-      } catch (_) {}
-    };
-
-    restoreChallenge();
-    return () => { mounted = false; };
-  }, [currentUser]);
 
   // Inicializar snapshot de cards para detectar "Novas" questões adicionadas
   useEffect(() => {
@@ -1274,21 +1154,6 @@ export default function App() {
     const handleFocus = async () => {
       await loadUserData(currentUser.username);
       await loadUserMeta(currentUser.username);
-      const challengeData = await loadChallengeData(currentUser.username);
-      if (challengeData) {
-        // Reconstruir cards a partir dos IDs
-        const cards = challengeData.cards.map(id => {
-          for (const mat of MATERIAS) {
-            const found = (BANCO[mat.id] || []).find(c => c.id === id);
-            if (found) return found;
-          }
-          return null;
-        }).filter(Boolean);
-        if (cards.length > 0) {
-          setChallengeCards(cards);
-          setHasPendingChallenge(true);
-        }
-      }
     };
     const handleVisibilityChange = () => {
       if (document.visibilityState === "visible") {
@@ -1316,77 +1181,32 @@ export default function App() {
       }
       await loadUserData(currentUser.username);
       await loadUserMeta(currentUser.username);
-      // Verificar se há desafio no Supabase que não está no estado local
-      const challengeData = await loadChallengeData(currentUser.username);
-      if (challengeData && !challengeActive && !hasPendingChallenge) {
-        const cards = challengeData.cards.map(id => {
-          for (const mat of MATERIAS) {
-            const found = (BANCO[mat.id] || []).find(c => c.id === id);
-            if (found) return found;
-          }
-          return null;
-        }).filter(Boolean);
-        if (cards.length > 0) {
-          setChallengeCards(cards);
-          setHasPendingChallenge(true);
-        }
-      }
     }, 30000);
 
     return () => clearInterval(interval);
   }, [currentUser, loadUserMeta]);
 
-  // Atualizar streak ao finalizar sessao de estudo (ou desafio)
+  // Atualizar data de estudo ao finalizar sessao
   useEffect(() => {
     if (!sessionCompleted || !currentUser || answeredSessionIds.size < 1) return;
     const updateMeta = async () => {
       const today = getTodayStr();
-      const prev = userMetaRef.current || { current_streak: 0, last_study_date: null, shields_available: 3, shields_exhausted_at: null };
-      let newStreak = prev.current_streak || 0;
-      if (prev.last_study_date !== today) {
-        const gap = prev.last_study_date !== null && !isConsecutiveDay(prev.last_study_date, today);
-        const shieldProtected = gap && (
-          prev.shields_available < 3 ||
-          prev.shields_exhausted_at !== null
-        );
-        if (!gap || shieldProtected) {
-          newStreak += 1;
-        }
-      }
-      // Detecta se foi um Desafio concluído (52 cards respondidos)
-      const isChallengeDone = challengeActive && answeredSessionIds.size >= challengeCards.length;
-
-      // Se shields_exhausted_at ainda existe e NÃO é desafio, mantém (carência continua)
-      // Se for desafio: restaura 3 escudos e limpa carência
-      const shieldsWereLost = prev.current_streak === 0 && (prev.shields_available ?? 3) < 3;
-      let updated = {
+      const updated = {
         username: currentUser.username,
-        current_streak: newStreak,
+        current_streak: 0,
         last_study_date: today,
-        shields_available: isChallengeDone ? 3 : shieldsWereLost ? 3 : (prev.shields_available ?? 3),
-        shields_exhausted_at: isChallengeDone ? null : shieldsWereLost ? null : (prev.shields_exhausted_at ?? null),
+        shields_available: 3,
+        shields_exhausted_at: null,
         updated_at: new Date().toISOString(),
       };
-      updated = normalizeUserMeta(updated, today).meta;
       try {
         const client = getSupabase();
         await safeSupabaseCall(() => client.from("user_meta").upsert(updated));
         localStorage.setItem("pcpe_meta_" + currentUser.username, JSON.stringify(updated));
         updateUserMetaState(updated);
-        if (isChallengeDone) {
-          setChallengeActive(false);
-          setChallengeCards([]);
-          setChallengeStarted(false);
-          setChallengeBanner(null);
-          setHasPendingChallenge(false);
-          localStorage.removeItem("pcpe_challenge_" + currentUser.username);
-          // Limpar challenge_data no Supabase
-          clearChallengeData(currentUser.username);
-        }
-        } catch (e) {
-          console.error("Erro ao atualizar streak:", e);
-          setError("Erro ao atualizar sua sequência.");
-        }
+      } catch (e) {
+        console.error("Erro ao atualizar metas do usuário:", e);
+      }
     };
     updateMeta();
   }, [sessionCompleted]);
@@ -1639,40 +1459,10 @@ export default function App() {
     return result;
   }, [srsData]);
 
-  // Ofensiva em risco? (escudos=0, carência ativa)
-  const streakAtRisk = useMemo(() => {
-    if (!userMeta) return false;
-    if (userMeta.shields_available > 0) return false;
-    if (!userMeta.shields_exhausted_at) return false;
-    const exhaustDate = parseLocalDate(userMeta.shields_exhausted_at);
-    const todayDate = parseLocalDate(getTodayStr());
-    if (!exhaustDate || !todayDate) return false;
-    const daysSinceExhaust = Math.floor((todayDate - exhaustDate) / 86400000);
-    return daysSinceExhaust < 5;
-  }, [userMeta]);
+  // Ofensiva em risco? (Desativado)
+  const streakAtRisk = false;
 
-  const graceDaysLeft = useMemo(() => {
-    if (!userMeta || !userMeta.shields_exhausted_at) return 0;
-    const exhaustDate = parseLocalDate(userMeta.shields_exhausted_at);
-    const todayDate = parseLocalDate(getTodayStr());
-    if (!exhaustDate || !todayDate) return 0;
-    const daysSinceExhaust = Math.floor((todayDate - exhaustDate) / 86400000);
-    return Math.max(0, 5 - daysSinceExhaust);
-  }, [userMeta]);
-
-  // Forçar retorno à home e fechar seletores se o streak estiver em risco
-  useEffect(() => {
-    if (streakAtRisk) {
-      setSelectedMateria(null);
-      setShowTopicSelector(false);
-      setStudyMode(prev => {
-        if (prev !== "challenge" && prev !== "favorites") {
-          return null;
-        }
-        return prev;
-      });
-    }
-  }, [streakAtRisk]);
+  const graceDaysLeft = 0;
 
   // Preparar fila de estudos padrão (Todos / SRS)
   const startStudySession = (materiaId, mode) => {
@@ -1815,7 +1605,7 @@ export default function App() {
 
     if (studyMode === "srs" || studyMode === "topic" || studyMode === "global_srs" || studyMode === "all" || studyMode === "challenge") {
       const currentState = srsData[currentCard.id] || { interval: 1, repetition: 0, ef: 2.5 };
-      const nextState = calculateSM2(q, currentState.interval, currentState.repetition, currentState.ef);
+      const nextState = calculateSM2(q, currentState.interval, currentState.repetition, currentState.ef, currentState.dueDate);
 
       const updatedSRS = {
         ...srsData,
@@ -1828,6 +1618,16 @@ export default function App() {
       setAnsweredSessionIds(prev => {
         const next = new Set(prev);
         next.add(currentCard.id);
+        return next;
+      });
+    }
+
+    // Se errou (q === 0) e não é modo desafio, recoloca o card no fim da fila (Anki-style lapse)
+    if (q === 0 && studyMode !== "challenge" && studyQueue.length > currentQueueIndex + 1) {
+      setStudyQueue(prev => {
+        const next = [...prev];
+        const cardToRepeat = next[currentQueueIndex];
+        next.push(cardToRepeat);
         return next;
       });
     }
@@ -1893,46 +1693,7 @@ export default function App() {
     );
   }
 
-  // ── TELA DE INSTRUÇÕES DO DESAFIO ────────────────
-  if (challengeActive && !challengeStarted) {
-    const now = new Date();
-    const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
-    const hoursLeft = Math.ceil((endOfDay - now) / 3600000);
-    return (
-      <Shell user={currentUser} stats={stats} onLogout={handleLogout} centered userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)} srsData={srsData}>
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "32px 20px", width: "100%", maxWidth: 480, margin: "0 auto", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 24, boxSizing: "border-box" }}>
-          <div style={{ fontSize: 56, marginBottom: 16 }}>🎯</div>
-          <h2 style={{ color: "#fff", fontSize: 22, fontWeight: 600, margin: 0 }}>
-            Desafio — Salve sua Ofensiva!
-          </h2>
-          <div style={{ marginTop: 16, textAlign: "left", color: "#94a3b8", fontSize: 13, lineHeight: 1.7, display: "flex", flexDirection: "column", gap: 10 }}>
-            <p style={{ margin: 0 }}>⚡ Sua ofensiva de <strong style={{ color: "#f97316" }}>{stats.streak} dias</strong> está em risco.</p>
-            <p style={{ margin: 0 }}>📚 Responda <strong>52 flashcards</strong> (5 de cada matéria + 2 de Jurisprudências) para recuperá-la.</p>
-            <p style={{ margin: 0 }}>⏰ Você tem até <strong style={{ color: "#f59e0b" }}>{hoursLeft}h</strong> para concluir o desafio hoje.</p>
-            <p style={{ margin: 0 }}>🔄 Pode pausar e voltar — seu progresso será salvo.</p>
-            <p style={{ margin: 0 }}>🎯 Após ver a resposta, avalie seu desempenho: <strong style={{ color: "#ef4444" }}>Errei</strong>, <strong style={{ color: "#f59e0b" }}>Difícil</strong>, <strong style={{ color: "#3b82f6" }}>Bom</strong> ou <strong style={{ color: "#10b981" }}>Fácil</strong>.</p>
-            <p style={{ margin: 0 }}>🏆 Ao completar: sua ofensiva é mantida e <strong style={{ color: "#3b82f6" }}>3 escudos são restaurados</strong>!</p>
-          </div>
-          <button
-            onClick={() => {
-              setChallengeStarted(true);
-              setChallengeBanner(`Boa Sorte! Você tem ${hoursLeft}h para completar o desafio.`);
-              setTimeout(() => setChallengeBanner(null), 4000);
-            }}
-            className="btn-hover"
-            style={{
-              marginTop: 24, width: "100%",
-              background: "linear-gradient(135deg, #f97316, #ea580c)",
-              color: "#fff", border: "none", borderRadius: 14,
-              padding: "14px", cursor: "pointer", fontWeight: 700, fontSize: 15, letterSpacing: 1,
-            }}
-          >
-            🔥 Iniciar o Desafio
-          </button>
-        </div>
-      </Shell>
-    );
-  }
+
 
   // Se estiver estudando
   if (studyMode && studyQueue.length > 0 && !sessionCompleted) {
@@ -1976,79 +1737,52 @@ export default function App() {
     );
   }
 
-  // Sessão de Estudos Completada (ou Desafio Concluído)
+  // Sessão de Estudos Completada
   if (sessionCompleted) {
     const isGlobal = studyMode === "global_srs";
-    const isChallenge = studyMode === "challenge";
-    const matInfo = !isGlobal && !isChallenge ? MATERIAS.find(m => m.id === selectedMateria) : null;
+    const matInfo = !isGlobal ? MATERIAS.find(m => m.id === selectedMateria) : null;
     return (
-      <Shell user={currentUser} stats={stats} onLogout={handleLogout} centered userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)} srsData={srsData}>
+      <Shell user={currentUser} stats={stats} onLogout={handleLogout} centered srsData={srsData}>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "32px 20px", width: "100%", maxWidth: 480, margin: "0 auto", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 24, boxSizing: "border-box" }}>
           <div style={{ fontSize: 56, marginBottom: 16 }}>
-            {isChallenge ? "🎯" : "🏆"}
+            🏆
           </div>
           <h2 style={{ color: "#fff", fontSize: 22, fontWeight: 600, margin: 0 }}>
-            {isChallenge
-              ? "🎉 Desafio Completo!"
-              : isGlobal
-                ? "Você mandou bem, por hoje, amanhã tem mais."
-                : "Meta Diária Concluída!"}
+            {isGlobal
+              ? "Você mandou bem, por hoje, amanhã tem mais."
+              : "Meta Diária Concluída!"}
           </h2>
           <p style={{ color: "#64748b", fontSize: 13, lineHeight: 1.5, marginTop: 8, marginBottom: 24 }}>
-            {isChallenge
-              ? <span>Sua ofensiva de <strong style={{ color: "#10b981" }}>{stats.streak} dias</strong> foi preservada! <strong style={{ color: "#3b82f6" }}>3 escudos</strong> foram restaurados. Continue assim! 💪</span>
-              : isGlobal
-                ? "Sua rodada de revisões diárias foi concluída. Todas as respostas foram computadas e seu plano foi atualizado."
-                : <span>Você revisou os cards programados de <strong>{matInfo?.label}</strong>. O progresso foi computado no algoritmo de repetição.</span>
+            {isGlobal
+              ? "Sua rodada de revisões diárias foi concluída. Todas as respostas foram computadas e seu plano foi atualizado."
+              : <span>Você revisou os cards programados de <strong>{matInfo?.label}</strong>. O progresso foi computado no algoritmo de repetição.</span>
             }
           </p>
 
-          {isChallenge ? (
-            <>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, width: "100%", marginBottom: 12 }}>
-                <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "14px 10px" }}>
-                  <div style={{ fontSize: 20, fontWeight: 700, color: "#3b82f6" }}>{sessionStats.studied}</div>
-                  <div style={{ fontSize: 9, color: "#64748b", marginTop: 4, fontWeight: 600, letterSpacing: 0.5 }}>CARDS ESTUDADOS</div>
-                </div>
-                <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "14px 10px" }}>
-                  <div style={{ fontSize: 20, fontWeight: 700, color: "#10b981" }}>{sessionStats.studied - sessionStats.gotWrong}/{sessionStats.studied}</div>
-                  <div style={{ fontSize: 9, color: "#64748b", marginTop: 4, fontWeight: 600, letterSpacing: 0.5 }}>ACERTOS (BOM + FÁCIL)</div>
-                </div>
-              </div>
-              <div style={{ display: "flex", gap: 8, width: "100%", marginBottom: 16 }}>
-                <div style={{ flex: 1, background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.15)", borderRadius: 12, padding: "10px 8px", textAlign: "center" }}>
-                  <div style={{ fontSize: 14, fontWeight: 700, color: "#ef4444" }}>{sessionStats.gotWrong}</div>
-                  <div style={{ fontSize: 8, color: "#64748b", marginTop: 2, fontWeight: 600 }}>ERREI</div>
-                </div>
-                <div style={{ flex: 1, background: "rgba(245,158,11,0.08)", border: "1px solid rgba(245,158,11,0.15)", borderRadius: 12, padding: "10px 8px", textAlign: "center" }}>
-                  <div style={{ fontSize: 14, fontWeight: 700, color: "#f59e0b" }}>{sessionStats.studied - sessionStats.gotWrong - sessionStats.gotEasy}</div>
-                  <div style={{ fontSize: 8, color: "#64748b", marginTop: 2, fontWeight: 600 }}>DIFÍCIL/BOM</div>
-                </div>
-                <div style={{ flex: 1, background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.15)", borderRadius: 12, padding: "10px 8px", textAlign: "center" }}>
-                  <div style={{ fontSize: 14, fontWeight: 700, color: "#10b981" }}>{sessionStats.gotEasy}</div>
-                  <div style={{ fontSize: 8, color: "#64748b", marginTop: 2, fontWeight: 600 }}>FÁCIL</div>
-                </div>
-              </div>
-            </>
-          ) : (
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, width: "100%", marginBottom: 24 }}>
-              <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "14px 10px" }}>
-                <div style={{ fontSize: 20, fontWeight: 700, color: "#3b82f6" }}>{sessionStats.studied}</div>
-                <div style={{ fontSize: 9, color: "#64748b", marginTop: 4, fontWeight: 600, letterSpacing: 0.5 }}>CARDS ESTUDADOS</div>
-              </div>
-              <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "14px 10px" }}>
-                <div style={{ fontSize: 20, fontWeight: 700, color: "#10b981" }}>{stats.streak} dias</div>
-                <div style={{ fontSize: 9, color: "#64748b", marginTop: 4, fontWeight: 600, letterSpacing: 0.5 }}>OFENSIVA ATUAL</div>
-              </div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, width: "100%", marginBottom: 12 }}>
+            <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "14px 10px" }}>
+              <div style={{ fontSize: 20, fontWeight: 700, color: "#3b82f6" }}>{sessionStats.studied}</div>
+              <div style={{ fontSize: 9, color: "#64748b", marginTop: 4, fontWeight: 600, letterSpacing: 0.5 }}>CARDS ESTUDADOS</div>
             </div>
-          )}
-
-          {isChallenge && (
-            <div style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.15)", borderRadius: 12, padding: "10px 16px", marginBottom: 20, width: "100%", boxSizing: "border-box" }}>
-              <span style={{ fontSize: 18 }}>🛡️</span>
-              <span style={{ color: "#6ee7b7", fontSize: 12, fontWeight: 600 }}>3 escudos restaurados — sua ofensiva está protegida!</span>
+            <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "14px 10px" }}>
+              <div style={{ fontSize: 20, fontWeight: 700, color: "#10b981" }}>{sessionStats.studied - sessionStats.gotWrong}/{sessionStats.studied}</div>
+              <div style={{ fontSize: 9, color: "#64748b", marginTop: 4, fontWeight: 600, letterSpacing: 0.5 }}>ACERTOS (BOM + FÁCIL)</div>
             </div>
-          )}
+          </div>
+          <div style={{ display: "flex", gap: 8, width: "100%", marginBottom: 24 }}>
+            <div style={{ flex: 1, background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.15)", borderRadius: 12, padding: "10px 8px", textAlign: "center" }}>
+              <div style={{ fontSize: 14, fontWeight: 700, color: "#ef4444" }}>{sessionStats.gotWrong}</div>
+              <div style={{ fontSize: 8, color: "#64748b", marginTop: 2, fontWeight: 600 }}>ERREI</div>
+            </div>
+            <div style={{ flex: 1, background: "rgba(245,158,11,0.08)", border: "1px solid rgba(245,158,11,0.15)", borderRadius: 12, padding: "10px 8px", textAlign: "center" }}>
+              <div style={{ fontSize: 14, fontWeight: 700, color: "#f59e0b" }}>{sessionStats.studied - sessionStats.gotWrong - sessionStats.gotEasy}</div>
+              <div style={{ fontSize: 8, color: "#64748b", marginTop: 2, fontWeight: 600 }}>DIFÍCIL/BOM</div>
+            </div>
+            <div style={{ flex: 1, background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.15)", borderRadius: 12, padding: "10px 8px", textAlign: "center" }}>
+              <div style={{ fontSize: 14, fontWeight: 700, color: "#10b981" }}>{sessionStats.gotEasy}</div>
+              <div style={{ fontSize: 8, color: "#64748b", marginTop: 2, fontWeight: 600 }}>FÁCIL</div>
+            </div>
+          </div>
 
           <button
             onClick={() => {
@@ -2056,21 +1790,11 @@ export default function App() {
               setSelectedMateria(null);
               setShowFavoritesMateriaSelector(false);
               setSessionCompleted(false);
-              if (isChallenge) {
-                setChallengeActive(false);
-                setChallengeCards([]);
-                setChallengeStarted(false);
-                setChallengeBanner(null);
-                setHasPendingChallenge(false);
-                localStorage.removeItem("pcpe_challenge_" + currentUser?.username);
-              }
             }}
             className="btn-hover"
             style={{
               width: "100%",
-              background: isChallenge
-                ? "linear-gradient(135deg, #f97316, #ea580c)"
-                : "linear-gradient(135deg, #3b82f6, #2563eb)",
+              background: "linear-gradient(135deg, #3b82f6, #2563eb)",
               color: "#fff",
               border: "none",
               borderRadius: 14,
@@ -2080,7 +1804,7 @@ export default function App() {
               fontSize: 14
             }}
           >
-            {isChallenge ? "🎉 Voltar ao Painel" : "Voltar ao Painel"}
+            Voltar ao Painel
           </button>
         </div>
       </Shell>
@@ -2094,7 +1818,7 @@ export default function App() {
     }).filter(mat => mat.count > 0);
 
     return (
-      <Shell user={currentUser} stats={stats} onLogout={handleLogout} userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)} srsData={srsData}>
+      <Shell user={currentUser} stats={stats} onLogout={handleLogout} srsData={srsData}>
         <div style={{ width: "100%", maxWidth: 560, margin: "0 auto", display: "flex", flexDirection: "column", gap: 20, boxSizing: "border-box" }}>
           <BackButton onClick={() => setShowFavoritesMateriaSelector(false)} />
 
@@ -2167,7 +1891,7 @@ export default function App() {
       const selectedCardsCount = cards.filter(c => selectedTopics.includes(c.topico)).length;
 
       return (
-        <Shell user={currentUser} stats={stats} onLogout={handleLogout} userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)} srsData={srsData}>
+        <Shell user={currentUser} stats={stats} onLogout={handleLogout} srsData={srsData}>
           <div style={{ width: "100%", maxWidth: 560, margin: "0 auto", display: "flex", flexDirection: "column", gap: 20, boxSizing: "border-box" }}>
             <BackButton onClick={() => setShowTopicSelector(false)} />
 
@@ -2296,7 +2020,7 @@ export default function App() {
     }
 
     return (
-      <Shell user={currentUser} stats={stats} onLogout={handleLogout} userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)} srsData={srsData}>
+      <Shell user={currentUser} stats={stats} onLogout={handleLogout} srsData={srsData}>
         <div style={{ width: "100%", maxWidth: 560, margin: "0 auto", display: "flex", flexDirection: "column", gap: 24, boxSizing: "border-box" }}>
           <BackButton onClick={() => setSelectedMateria(null)} />
 
@@ -2392,7 +2116,7 @@ export default function App() {
 
   // Página Inicial - Lista de Matérias
   return (
-    <Shell user={currentUser} stats={stats} onLogout={handleLogout} userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)} srsData={srsData}>
+    <Shell user={currentUser} stats={stats} onLogout={handleLogout} srsData={srsData}>
       {/* Barra de Preferências */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20, background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 16, padding: "12px 18px", flexWrap: "wrap", gap: 12 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
@@ -2421,14 +2145,7 @@ export default function App() {
       </div>
 
       {/* Cards de Métricas Gerais - Utiliza classe responsiva */}
-      <div className="dashboard-metrics-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 14, marginBottom: 28 }}>
-        <div style={{ background: streakAtRisk ? "rgba(245,158,11,0.06)" : "rgba(255,255,255,0.02)", border: streakAtRisk ? "1px solid rgba(245,158,11,0.2)" : "1px solid rgba(255,255,255,0.05)", borderRadius: 20, padding: 18, display: "flex", alignItems: "center", gap: 16 }}>
-          <div style={{ fontSize: 24, padding: 10, background: streakAtRisk ? "rgba(245,158,11,0.15)" : "rgba(239,68,68,0.1)", borderRadius: 14, color: streakAtRisk ? "#f59e0b" : "#ef4444" }}>{streakAtRisk ? "⚠️" : "🔥"}</div>
-          <div>
-            <div style={{ fontSize: 20, fontWeight: 700, color: streakAtRisk ? "#f59e0b" : "#fff" }}>{stats.streak} {stats.streak === 1 ? 'dia' : 'dias'}</div>
-            <div style={{ fontSize: 10, color: streakAtRisk ? "#f59e0b" : "#64748b", fontWeight: 600, letterSpacing: 0.5, marginTop: 2 }}>{streakAtRisk ? "⚠️ OFENSIVA EM RISCO" : "OFENSIVA DE ESTUDOS"}</div>
-          </div>
-        </div>
+      <div className="dashboard-metrics-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 14, marginBottom: 28 }}>
         <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)", borderRadius: 20, padding: 18, display: "flex", flexDirection: "column", gap: 14, justifyContent: "center" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
             <div style={{ fontSize: 24, padding: 10, background: "rgba(59,130,246,0.1)", borderRadius: 14, color: "#3b82f6" }}>⚡</div>
@@ -2440,19 +2157,17 @@ export default function App() {
           <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
             <button
               onClick={handleGlobalReviewClick}
-              disabled={streakAtRisk}
-              className={streakAtRisk ? "" : "btn-hover"}
-              title={streakAtRisk ? "Sua ofensiva está em risco! Escolha entre fazer o Desafio ou Começar do zero para liberar as revisões." : ""}
+              className="btn-hover"
               style={{
                 width: "100%",
-                background: streakAtRisk ? "rgba(255,255,255,0.02)" : (stats.dueCount > 0 ? "linear-gradient(135deg, #3b82f6, #2563eb)" : "rgba(255,255,255,0.04)"),
-                border: streakAtRisk ? "1px solid rgba(255,255,255,0.05)" : (stats.dueCount > 0 ? "none" : "1px solid rgba(255,255,255,0.08)"),
+                background: stats.dueCount > 0 ? "linear-gradient(135deg, #3b82f6, #2563eb)" : "rgba(255,255,255,0.04)",
+                border: stats.dueCount > 0 ? "none" : "1px solid rgba(255,255,255,0.08)",
                 borderRadius: 10,
                 padding: "8px 12px",
-                color: streakAtRisk ? "#475569" : (stats.dueCount > 0 ? "#fff" : "#64748b"),
+                color: stats.dueCount > 0 ? "#fff" : "#64748b",
                 fontSize: 12,
                 fontWeight: 600,
-                cursor: streakAtRisk ? "not-allowed" : "pointer",
+                cursor: "pointer",
                 textAlign: "center"
               }}
             >
@@ -2473,109 +2188,6 @@ export default function App() {
           </div>
         </div>
       </div>
-
-      {/* Banner de Desafio Pendente — retorno opcional */}
-      {hasPendingChallenge && (
-        <div style={{ marginBottom: 24 }}>
-          <div style={{
-            background: "rgba(59,130,246,0.06)", border: "1px solid rgba(59,130,246,0.15)",
-            borderRadius: 20, padding: "18px 20px", display: "flex", alignItems: "center",
-            justifyContent: "space-between", gap: 14, flexWrap: "wrap",
-          }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-              <div style={{ fontSize: 28 }}>🎯</div>
-              <div>
-                <div style={{ color: "#60a5fa", fontSize: 14, fontWeight: 700 }}>Você tem um desafio pendente hoje!</div>
-                <div style={{ color: "#94a3b8", fontSize: 11, marginTop: 2 }}>
-                  Retorne de onde parou e salve sua ofensiva.
-                </div>
-              </div>
-            </div>
-            <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
-              <button
-                onClick={resumeChallenge}
-                className="btn-hover"
-                style={{
-                  background: "linear-gradient(135deg, #3b82f6, #2563eb)",
-                  color: "#fff", border: "none", borderRadius: 14,
-                  padding: "12px 20px", cursor: "pointer", fontWeight: 700,
-                  fontSize: 13, whiteSpace: "nowrap", letterSpacing: 0.5,
-                  boxShadow: "0 4px 15px rgba(59,130,246,0.25)"
-                }}
-              >
-                ▶ Retornar ao Desafio
-              </button>
-              <button
-                onClick={() => {
-                  const storageKey = "pcpe_challenge_" + currentUser?.username;
-                  localStorage.removeItem(storageKey);
-                  setChallengeCards([]);
-                  setHasPendingChallenge(false);
-                }}
-                className="btn-hover"
-                style={{
-                  background: "rgba(255, 255, 255, 0.05)",
-                  color: "#94a3b8", border: "1px solid rgba(255, 255, 255, 0.1)", borderRadius: 14,
-                  padding: "12px 20px", cursor: "pointer", fontWeight: 600,
-                  fontSize: 13, whiteSpace: "nowrap", letterSpacing: 0.5,
-                  transition: "all 0.2s"
-                }}
-              >
-                ✕ Descartar
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Banner de Ofensiva em Risco + Botão Desafio */}
-      {streakAtRisk && (
-        <div style={{ marginBottom: 24 }}>
-          <div style={{
-            background: "rgba(245,158,11,0.06)", border: "1px solid rgba(245,158,11,0.15)",
-            borderRadius: 20, padding: "18px 20px", display: "flex", alignItems: "center",
-            justifyContent: "space-between", gap: 14, flexWrap: "wrap",
-          }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-              <div style={{ fontSize: 28 }}>⚠️</div>
-              <div>
-                <div style={{ color: "#f59e0b", fontSize: 14, fontWeight: 700 }}>Sua ofensiva está em risco!</div>
-                <div style={{ color: "#94a3b8", fontSize: 11, marginTop: 2 }}>
-                  Faltam <strong style={{ color: "#f59e0b" }}>{graceDaysLeft} {graceDaysLeft === 1 ? 'dia' : 'dias'}</strong> para perder tudo. Complete o Desafio ou reinicie do zero para liberar os cartões!
-                </div>
-              </div>
-            </div>
-            <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
-              <button
-                onClick={startChallenge}
-                className="btn-hover"
-                style={{
-                  background: "linear-gradient(135deg, #f97316, #ea580c)",
-                  color: "#fff", border: "none", borderRadius: 14,
-                  padding: "12px 20px", cursor: "pointer", fontWeight: 700,
-                  fontSize: 13, whiteSpace: "nowrap", letterSpacing: 0.5,
-                  boxShadow: "0 4px 15px rgba(249,115,22,0.25)"
-                }}
-              >
-                🎯 Fazer Desafio (52 cards)
-              </button>
-              <button
-                onClick={resetStreakToZero}
-                className="btn-hover"
-                style={{
-                  background: "rgba(255, 255, 255, 0.05)",
-                  color: "#f3f4f6", border: "1px solid rgba(255, 255, 255, 0.15)", borderRadius: 14,
-                  padding: "12px 20px", cursor: "pointer", fontWeight: 600,
-                  fontSize: 13, whiteSpace: "nowrap", letterSpacing: 0.5,
-                  transition: "all 0.2s"
-                }}
-              >
-                🔄 Começar do zero
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Seção de Favoritos */}
       <div style={{ marginBottom: 24 }}>
@@ -2674,19 +2286,15 @@ export default function App() {
             <button
               key={m.id}
               onClick={() => setSelectedMateria(m.id)}
-              disabled={streakAtRisk}
-              className={streakAtRisk ? "" : "card-hover"}
-              title={streakAtRisk ? "Sua ofensiva está em risco! Escolha entre fazer o Desafio ou Começar do zero para liberar as matérias." : ""}
+              className="card-hover"
               style={{
                 background: "rgba(255,255,255,0.02)",
                 border: "1px solid rgba(255,255,255,0.05)",
                 borderRadius: 20,
                 padding: "20px 18px",
                 textAlign: "center",
-                cursor: streakAtRisk ? "not-allowed" : "pointer",
                 width: "100%",
-                outline: "none",
-                opacity: streakAtRisk ? 0.4 : 1
+                outline: "none"
               }}
             >
               <div style={{ fontSize: 28, marginBottom: 10 }}>{m.emoji}</div>
@@ -2849,7 +2457,7 @@ function StudySession({
   }, [isFlipped]);
 
   return (
-    <Shell user={currentUser} stats={stats} onLogout={onLogout} centered userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={onDismissShield} srsData={srsData} hidePomodoro={true}>
+    <Shell user={currentUser} stats={stats} onLogout={onLogout} centered srsData={srsData} hidePomodoro={true}>
       {challengeBanner && (
         <div style={{
           position: "fixed",
@@ -3598,7 +3206,7 @@ function TelaDesempenho({ user, stats, srsData, answerHistory, BANCO, MATERIAS, 
   };
 
   return (
-    <Shell user={user} stats={stats} onLogout={onLogout} userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)} srsData={srsData}>
+    <Shell user={user} stats={stats} onLogout={onLogout} srsData={srsData}>
       <div style={{ width: "100%", maxWidth: 640, margin: "0 auto", display: "flex", flexDirection: "column", gap: 20, boxSizing: "border-box" }}>
         <BackButton onClick={onBack} />
 
@@ -3959,10 +3567,9 @@ function AdminPanel({ user, onBack, onLogout, stats, userMeta, showShieldBanner,
 
   const totalStudiedToday = adminData?.users?.reduce((sum, u) => sum + (u.studiedToday || 0), 0) || 0;
   const totalCards = adminData?.users?.reduce((sum, u) => sum + (u.totalCards || 0), 0) || 0;
-  const activeStreaks = adminData?.users?.filter(u => (u.current_streak || 0) > 0).length || 0;
 
   return (
-    <Shell user={user} stats={stats} onLogout={onLogout} userMeta={userMeta} showShieldBanner={showShieldBanner} onDismissShield={() => setShowShieldBanner(false)} srsData={srsData}>
+    <Shell user={user} stats={stats} onLogout={onLogout} srsData={srsData}>
       <div style={{ width: "100%", maxWidth: 640, margin: "0 auto", display: "flex", flexDirection: "column", gap: 20, boxSizing: "border-box" }}>
         <BackButton onClick={onBack} />
 
@@ -4004,7 +3611,6 @@ function AdminPanel({ user, onBack, onLogout, stats, userMeta, showShieldBanner,
               <>
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 12 }}>
                   <StatCard value={adminData?.totalUsers ?? 0} label="USUÁRIOS" icon="👥" color="#a78bfa" />
-                  <StatCard value={activeStreaks} label="STREAKS ATIVAS" icon="🔥" color="#f97316" />
                   <StatCard value={totalStudiedToday} label="CARDS HOJE" icon="✅" color="#10b981" />
                   <StatCard value={totalCards} label="TOTAL CARDS" icon="📚" color="#3b82f6" />
                 </div>
@@ -4045,8 +3651,6 @@ function AdminPanel({ user, onBack, onLogout, stats, userMeta, showShieldBanner,
                       </div>
                     </div>
                     <div style={{ display: "flex", gap: 14, alignItems: "center" }}>
-                      <span style={{ color: "#f97316", fontSize: 12, fontWeight: 600 }}>🔥 {u.current_streak}d</span>
-                      <span style={{ color: "#3b82f6", fontSize: 12, fontWeight: 600 }}>🛡️ {u.shields_available}</span>
                       <span style={{ color: "#10b981", fontSize: 12, fontWeight: 600 }}>✅ {u.studiedToday}</span>
                       <span style={{ color: "#94a3b8", fontSize: 12, fontWeight: 500 }}>📚 {u.totalCards}</span>
                     </div>

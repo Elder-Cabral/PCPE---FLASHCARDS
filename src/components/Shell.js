@@ -6,7 +6,6 @@
 /** @typedef {import('../types').PomodoroTick} PomodoroTick */
 import React, { useState, useEffect, useMemo, useCallback } from "react";
 import PomodoroBar from "../app/PomodoroBar";
-import { getTodayBR, calculateStreak, parseLocalDate } from "../lib/streak";
 
 const RADIAL_GLOW_BASE = {
   position: "fixed",
@@ -38,16 +37,7 @@ const Shell = React.memo(function Shell({ children, user, stats, onLogout, cente
     setPomodoroInfo(info);
   }, []);
 
-  const shellStreakAtRisk = useMemo(() => {
-    if (!userMeta) return false;
-    if (userMeta.shields_available > 0) return false;
-    if (!userMeta.shields_exhausted_at) return false;
-    const exhaustDate = parseLocalDate(userMeta.shields_exhausted_at);
-    const todayDate = parseLocalDate(getTodayBR());
-    if (!exhaustDate || !todayDate) return false;
-    const daysSinceExhaust = Math.floor((todayDate - exhaustDate) / 86400000);
-    return daysSinceExhaust < 5;
-  }, [userMeta]);
+
 
   return (
       <div style={{ height: "100vh", overflow: "hidden", background: "#030712", boxSizing: "border-box", position: "relative", width: "100%", display: "flex", flexDirection: "column" }}>
@@ -60,15 +50,6 @@ const Shell = React.memo(function Shell({ children, user, stats, onLogout, cente
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
               <div style={{ display: "inline-block", background: "linear-gradient(135deg,#e11d48,#be123c)", borderRadius: 10, padding: "6px 14px" }}>
                 <span style={{ color: "#fff", fontWeight: 700, fontSize: 9, letterSpacing: 2, fontFamily: "monospace" }}>PC-PE · AGENTE</span>
-              </div>
-              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                <span style={{ color: shellStreakAtRisk ? "#f59e0b" : "#f97316", fontSize: 12, fontWeight: 600, whiteSpace: "nowrap" }} title={shellStreakAtRisk ? "Ofensiva em risco! Faça o Desafio." : "Dias de ofensiva"}>
-                  {shellStreakAtRisk ? "⚠️" : "🔥"} {userMeta?.current_streak ?? calculateStreak(srsData)} <span style={{ color: "#94a3b8", fontSize: 10, fontWeight: 400 }}>dias</span>
-                </span>
-                <span style={{ color: "#334155", fontSize: 11, fontWeight: 300 }}>|</span>
-                <span style={{ color: "#3b82f6", fontSize: 12, fontWeight: 600, whiteSpace: "nowrap" }} title="Escudos disponíveis">
-                  🛡️ {userMeta?.shields_available ?? 3} <span style={{ color: "#94a3b8", fontSize: 10, fontWeight: 400 }}>escudos</span>
-                </span>
               </div>
             </div>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: 14 }}>
@@ -113,30 +94,6 @@ const Shell = React.memo(function Shell({ children, user, stats, onLogout, cente
           </div>
 
           <hr style={{ width: "100%", border: "none", borderTop: "1px solid rgba(255,255,255,0.06)", margin: "12px 0", flexShrink: 0 }} />
-
-          {showShieldBanner && (
-            <div style={{
-              display: "flex", alignItems: "center", gap: 10,
-              background: "rgba(59,130,246,0.1)", border: "1px solid rgba(59,130,246,0.2)",
-              borderRadius: 12, padding: "10px 16px", marginBottom: 12, flexShrink: 0,
-            }}>
-              <span style={{ fontSize: 18 }}>🛡️</span>
-              <p style={{ color: "#93c5fd", fontSize: 12, fontWeight: 500, margin: 0, flex: 1, lineHeight: 1.4 }}>
-                Você perdeu um dia, mas seu Escudo de Ofensiva foi ativado e salvou sua sequência! ({userMeta?.shields_available || 0} escudo(s) restante(s))
-              </p>
-              <button
-                onClick={onDismissShield}
-                style={{
-                  background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)",
-                  borderRadius: 8, padding: "4px 10px", fontSize: 11, fontWeight: 600,
-                  color: "#94a3b8", cursor: "pointer", outline: "none", whiteSpace: "nowrap",
-                }}
-                className="btn-hover"
-              >
-                OK
-              </button>
-            </div>
-          )}
 
           <div style={{ display: showPomodoro ? 'block' : 'none', flexShrink: 0 }}>
             <PomodoroBar username={user?.username} onHide={hidePomodoro ? () => setShowPomodoro(false) : undefined} onTick={handlePomodoroTick} isMobile={isMobile} />
